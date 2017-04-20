@@ -52,7 +52,7 @@
                 android:padding="8dp"
                 android:src="@drawable/ic_menu" />
 
-            <org.lineageos.jelly.ui.EditTextExt
+            <org.lineageos.jelly.ui.EditTextBar
                 android:id="@+id/url_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

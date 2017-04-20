@@ -25,7 +25,6 @@ import android.webkit.GeolocationPermissions;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -33,6 +32,7 @@ import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.history.HistoryDatabaseHandler;
 import org.lineageos.jelly.history.HistoryItem;
+import org.lineageos.jelly.ui.EditTextBar;
 
 
 class ChromeClient extends WebChromeClient {
@@ -41,7 +41,7 @@ class ChromeClient extends WebChromeClient {
     private final HistoryDatabaseHandler mHistoryHandler;
     private final boolean mIncognito;
 
-    private EditText mEditText;
+    private EditTextBar mEditTextBar;
     private ProgressBar mProgressBar;
 
     ChromeClient(Context context, boolean incognito) {
@@ -60,9 +60,12 @@ class ChromeClient extends WebChromeClient {
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
-        mEditText.setText(view.getUrl());
+        mEditTextBar.setTitle(view.getTitle());
+        mEditTextBar.setUrl(view.getUrl());
+        mEditTextBar.setText(view.getTitle());
+
         if (!mIncognito) {
-            mHistoryHandler.addItem(new HistoryItem(title, view.getUrl()));
+            mHistoryHandler.addItem(new HistoryItem(view.getTitle(), view.getUrl()));
         }
     }
 
@@ -96,8 +99,8 @@ class ChromeClient extends WebChromeClient {
         }
     }
 
-    void bindEditText(EditText editText) {
-        mEditText = editText;
+    void bindEditText(EditTextBar editText) {
+        mEditTextBar = editText;
     }
 
     void bindProgressBar(ProgressBar progressBar) {
