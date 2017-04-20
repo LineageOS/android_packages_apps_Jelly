@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="180dp"
+    android:orientation="vertical"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    tools:ignore="UseCompoundDrawables">
+
+    <LinearLayout
+        android:id="@+id/sheet_new_tab"
+        style="@style/AppTheme.BottomSheetLayout">
+
+        <ImageView
+            style="@style/AppTheme.BottomSheetIcon"
+            android:src="@drawable/ic_new_tab" />
+
+        <TextView
+            style="@style/AppTheme.BottomSheetText"
+            android:text="@string/menu_in_new_tab" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sheet_share"
+        style="@style/AppTheme.BottomSheetLayout">
+
+        <ImageView
+            style="@style/AppTheme.BottomSheetIcon"
+            android:src="@drawable/ic_share" />
+
+        <TextView
+            style="@style/AppTheme.BottomSheetText"
+            android:text="@string/menu_share" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sheet_favourite"
+        style="@style/AppTheme.BottomSheetLayout">
+
+        <ImageView
+            style="@style/AppTheme.BottomSheetIcon"
+            app:srcCompat="@drawable/ic_favorite_add" />
+
+        <TextView
+            style="@style/AppTheme.BottomSheetText"
+            android:text="@string/menu_fav_add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sheet_download"
+        style="@style/AppTheme.BottomSheetLayout"
+        android:visibility="gone">
+
+        <ImageView
+            style="@style/AppTheme.BottomSheetIcon"
+            app:srcCompat="@drawable/ic_download" />
+
+        <TextView
+            style="@style/AppTheme.BottomSheetText"
+            android:text="@string/menu_download" />
+    </LinearLayout>
+</LinearLayout>

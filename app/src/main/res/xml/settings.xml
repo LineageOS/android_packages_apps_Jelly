@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="@string/default_search_engine"
+        android:entries="@array/pref_search_engine_entries"
+        android:entryValues="@array/pref_search_engine_entryvalues"
+        android:key="key_search_engine"
+        android:summary="%s"
+        android:title="@string/pref_search_engine" />
+
+    <EditTextPreference
+        android:defaultValue="@string/default_home_page"
+        android:dialogMessage="@string/pref_start_page_dialog_message"
+        android:dialogTitle="@string/pref_start_page_dialog_title"
+        android:key="key_home_page"
+        android:title="@string/pref_start_page" />
+
+    <SwitchPreference
+        android:defaultValue="0"
+        android:key="key_advanced_share"
+        android:summary="@string/pref_screenshot_snap_summary"
+        android:title="@string/pref_screenshot_snap_title" />
+
+    <PreferenceCategory android:title="@string/pref_privacy_security">
+
+        <SwitchPreference
+            android:defaultValue="0"
+            android:key="key_looklock"
+            android:summary="@string/pref_looklock_summary"
+            android:title="@string/pref_looklock_title" />
+
+        <SwitchPreference
+            android:defaultValue="1"
+            android:key="key_javascript"
+            android:summary="@string/pref_js_summary"
+            android:title="@string/pref_js_title" />
+
+        <SwitchPreference
+            android:defaultValue="1"
+            android:key="key_location"
+            android:summary="@string/pref_location_summary"
+            android:title="@string/pref_location_title" />
+
+        <SwitchPreference
+            android:defaultValue="1"
+            android:key="key_cookie"
+            android:summary="@string/pref_cookie_summary"
+            android:title="@string/pref_cookie_title" />
+    </PreferenceCategory>
+</PreferenceScreen>
