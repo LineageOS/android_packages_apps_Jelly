@@ -58,6 +58,7 @@ import org.lineageos.jelly.favorite.Favorite;
 import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
+import org.lineageos.jelly.ui.EditTextBar;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 import org.lineageos.jelly.webview.WebViewExt;
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> refreshLayout.setRefreshing(false), 1000);
         });
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.load_progress);
-        EditText editText = (EditText) findViewById(R.id.url_bar);
+        EditTextBar editText = (EditTextBar) findViewById(R.id.url_bar);
         editText.setOnKeyListener((v, keyCode, event) -> {
             if (event.getAction() != KeyEvent.ACTION_DOWN) {
                 return true;

@@ -24,10 +24,10 @@ import android.util.Patterns;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import org.lineageos.jelly.MainActivity;
+import org.lineageos.jelly.ui.EditTextBar;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
@@ -113,7 +113,7 @@ public class WebViewExt extends WebView {
                         URLUtil.guessFileName(url, contentDescription, mimeType)));
     }
 
-    public void init(Context context, EditText editText,
+    public void init(Context context, EditTextBar editText,
                      ProgressBar progressBar, boolean incognito) {
         ChromeClient chromeClient = new ChromeClient(context, incognito);
         chromeClient.bindEditText(editText);
