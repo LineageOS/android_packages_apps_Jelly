@@ -18,6 +18,7 @@ package org.lineageos.jelly.webview;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -31,11 +32,26 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.lineageos.jelly.R;
+import org.lineageos.jelly.ui.UrlBarController;
 
 class WebClient extends WebViewClient {
+    private UrlBarController mUrlBarController;
 
-    WebClient() {
+    WebClient(UrlBarController urlBarController) {
         super();
+        mUrlBarController = urlBarController;
+    }
+
+    @Override
+    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+        super.onPageStarted(view, url, favicon);
+        mUrlBarController.onPageLoadStarted(url);
+    }
+
+    @Override
+    public void onPageFinished(WebView view, String url) {
+        super.onPageFinished(view, url);
+        mUrlBarController.onPageLoadFinished();
     }
 
     @Override

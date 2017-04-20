@@ -68,6 +68,7 @@ import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.ui.EditTextExt;
+import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 import org.lineageos.jelly.webview.WebViewCompat;
@@ -162,12 +163,13 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
-        ImageView incognitoIcon = (ImageView) findViewById(R.id.incognito);
-        incognitoIcon.setVisibility(mIncognito ? View.VISIBLE : View.GONE);
-
         setupMenu();
+
+        UrlBarController urlBarController = new UrlBarController(editText,
+                (ImageView) findViewById(R.id.indicator_icon), mIncognito);
+
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, editText, mLoadingProgress, mIncognito);
+        mWebView.init(this, urlBarController, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
 
@@ -491,7 +493,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         if (actionBar != null) {
             ColorDrawable newDrawable = new ColorDrawable(color);
             if (mLastActionBarDrawable != null) {
-                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final Drawable[] layers = new Drawable[]{mLastActionBarDrawable, newDrawable};
                 final TransitionDrawable transition = new TransitionDrawable(layers);
                 transition.setCrossFadeEnabled(true);
                 transition.startTransition(200);

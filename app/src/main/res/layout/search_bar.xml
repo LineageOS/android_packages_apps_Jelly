@@ -42,20 +42,19 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/incognito"
+                android:id="@+id/indicator_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:adjustViewBounds="true"
-                android:scaleType="center"
-                android:src="@drawable/ic_incognito" />
+                android:scaleType="center" />
 
             <org.lineageos.jelly.ui.EditTextExt
                 android:id="@+id/url_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignWithParentIfMissing="true"
-                android:layout_toEndOf="@id/incognito"
+                android:layout_toEndOf="@id/indicator_icon"
                 android:layout_toStartOf="@+id/search_menu"
                 android:background="@null"
                 android:fadingEdge="vertical"
