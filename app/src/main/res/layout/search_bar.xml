@@ -50,12 +50,23 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_incognito" />
 
+            <ImageButton
+                android:id="@+id/secure"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/incognito"
+                android:layout_alignWithParentIfMissing="true"
+                android:adjustViewBounds="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_lock"
+                android:visibility="gone" />
+
             <org.lineageos.jelly.ui.EditTextExt
                 android:id="@+id/url_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignWithParentIfMissing="true"
-                android:layout_toEndOf="@id/incognito"
+                android:layout_toEndOf="@id/secure"
                 android:layout_toStartOf="@+id/search_menu"
                 android:background="@null"
                 android:fadingEdge="vertical"
