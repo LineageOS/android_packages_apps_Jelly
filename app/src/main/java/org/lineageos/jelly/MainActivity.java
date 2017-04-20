@@ -76,6 +76,7 @@ import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.suggestions.SuggestionsAdapter;
+import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 import org.lineageos.jelly.webview.WebViewCompat;
@@ -203,8 +204,11 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         setupMenu();
 
+        UrlBarController urlBarController = new UrlBarController(autoCompleteTextView,
+                (ImageView) findViewById(R.id.secure));
+
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, autoCompleteTextView, mLoadingProgress, mIncognito);
+        mWebView.init(this, urlBarController, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
 
