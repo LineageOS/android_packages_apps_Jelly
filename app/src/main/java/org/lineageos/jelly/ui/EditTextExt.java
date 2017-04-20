@@ -27,6 +27,8 @@ import android.util.AttributeSet;
 public class EditTextExt extends AppCompatEditText {
 
     private int mPositionX;
+    private String url;
+    private String title;
 
     public EditTextExt(Context context) {
         super(context);
@@ -40,11 +42,19 @@ public class EditTextExt extends AppCompatEditText {
         super(context, attrs, defStyle);
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     private static LinearGradient getGradient(float widthEnd, float fadeStart,
                                               float stopStart, float stopEnd, int color) {
         return new LinearGradient(0, 0, widthEnd, 0,
-                new int[] { color, Color.TRANSPARENT, color, color, Color.TRANSPARENT },
-                new float[] { 0, fadeStart, stopStart, stopEnd, 1f }, Shader.TileMode.CLAMP);
+                new int[]{color, Color.TRANSPARENT, color, color, Color.TRANSPARENT},
+                new float[]{0, fadeStart, stopStart, stopEnd, 1f}, Shader.TileMode.CLAMP);
     }
 
     @Override
@@ -79,9 +89,13 @@ public class EditTextExt extends AppCompatEditText {
 
     @Override
     public void onFocusChanged(boolean gainFocus, int direction, Rect prevFocusedRect) {
-        super.onFocusChanged(gainFocus, direction, prevFocusedRect);
         if (!gainFocus) {
+            setText(title);
             setSelection(0);
+        } else {
+            setText(url);
         }
+
+        super.onFocusChanged(gainFocus, direction, prevFocusedRect);
     }
 }
