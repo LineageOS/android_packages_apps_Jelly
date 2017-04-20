@@ -39,6 +39,9 @@
     <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">Open in new tab</string>
 
+    <!-- Share webPage: "send to" dialog title -->
+    <string name="share_title">Send to</string>
+
     <!-- Dialog action: dismiss -->
     <string name="dismiss">Dismiss</string>
 
