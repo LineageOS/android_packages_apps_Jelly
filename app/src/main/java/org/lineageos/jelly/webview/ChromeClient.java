@@ -23,24 +23,27 @@ import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.history.HistoryProvider;
+import org.lineageos.jelly.ui.UrlBarController;
 
 class ChromeClient extends WebChromeClientCompat {
     private final WebViewExtActivity mActivity;
     private final boolean mIncognito;
 
-    private EditText mEditText;
-    private ProgressBar mProgressBar;
+    private final UrlBarController mUrlBarController;
+    private final ProgressBar mProgressBar;
 
-    ChromeClient(WebViewExtActivity activity, boolean incognito) {
+    ChromeClient(WebViewExtActivity activity, boolean incognito,
+                 UrlBarController urlBarController, ProgressBar progressBar) {
         super();
         mActivity = activity;
         mIncognito = incognito;
+        mUrlBarController = urlBarController;
+        mProgressBar = progressBar;
     }
 
     @Override
@@ -58,7 +61,7 @@ class ChromeClient extends WebChromeClientCompat {
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
-        mEditText.setText(view.getUrl());
+        mUrlBarController.onTitleReceived(title);
         if (!mIncognito) {
             HistoryProvider.addOrUpdateItem(mActivity.getContentResolver(), title, view.getUrl());
         }
@@ -91,13 +94,5 @@ class ChromeClient extends WebChromeClientCompat {
         } else {
             callback.invoke(origin, true, false);
         }
-    }
-
-    void bindEditText(EditText editText) {
-        mEditText = editText;
-    }
-
-    void bindProgressBar(ProgressBar progressBar) {
-        mProgressBar = progressBar;
     }
 }
