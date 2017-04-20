@@ -31,12 +31,12 @@ public class EditTextBar extends EditTextExt {
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction,
                                   Rect previouslyFocusedRect) {
-        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
-
         if (!gainFocus) {
             setText(title);
         } else {
             setText(url);
         }
+
+        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
     }
 }

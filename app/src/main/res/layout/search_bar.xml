@@ -66,6 +66,7 @@
                 android:nextFocusLeft="@id/url_bar"
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
+                android:selectAllOnFocus="true"
                 android:textColor="@android:color/black"
                 tools:ignore="RtlSymmetry" />
         </RelativeLayout>
