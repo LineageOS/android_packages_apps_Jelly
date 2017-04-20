@@ -25,9 +25,9 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
@@ -103,8 +103,6 @@ public class WebViewExt extends WebView {
         getSettings().setDomStorageEnabled(!mIncognito);
         getSettings().setAppCachePath(mActivity.getDir("appcache", Context.MODE_PRIVATE).getPath());
 
-        setWebViewClient(new WebClient());
-
         setOnLongClickListener(new OnLongClickListener() {
             boolean shouldAllowDownload;
 
@@ -150,14 +148,14 @@ public class WebViewExt extends WebView {
         }
     }
 
-    public void init(WebViewExtActivity activity, EditText editText,
+    public void init(WebViewExtActivity activity, UrlBarController urlBarController,
                      ProgressBar progressBar, boolean incognito) {
         mActivity = activity;
         mIncognito = incognito;
-        ChromeClient chromeClient = new ChromeClient(activity, incognito);
-        chromeClient.bindEditText(editText);
-        chromeClient.bindProgressBar(progressBar);
+        ChromeClient chromeClient = new ChromeClient(activity, incognito,
+                urlBarController, progressBar);
         setWebChromeClient(chromeClient);
+        setWebViewClient(new WebClient(urlBarController));
         setup();
     }
 

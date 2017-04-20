@@ -25,7 +25,7 @@ import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.util.AttributeSet;
 
 public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
-
+    private OnFocusChangeListener mFocusChangeListener;
     private int mPositionX;
 
     public AutoCompleteTextViewExt(Context context) {
@@ -38,6 +38,27 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
 
     public AutoCompleteTextViewExt(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+    }
+
+    // Override View's focus change listener handling so that we're able to
+    // call it before the actual focus change handling, in particular before
+    // the IME is fired up.
+    @Override
+    public void setOnFocusChangeListener(OnFocusChangeListener l) {
+        mFocusChangeListener = l;
+    }
+
+    @Override
+    public OnFocusChangeListener getOnFocusChangeListener() {
+        return mFocusChangeListener;
+    }
+
+    @Override
+    protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
+        if (mFocusChangeListener != null) {
+            mFocusChangeListener.onFocusChange(this, gainFocus);
+        }
+        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
     }
 
     private static LinearGradient getGradient(float widthEnd, float fadeStart,
@@ -75,13 +96,5 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
         float stopEnd = (widthEnd - (lineWidth > widthEnd ? percent : 0)) / widthEnd;
         getPaint().setShader(getGradient(widthEnd, fadeStart, stopStart, stopEnd, textColor));
         super.onDraw(canvas);
-    }
-
-    @Override
-    public void onFocusChanged(boolean gainFocus, int direction, Rect prevFocusedRect) {
-        super.onFocusChanged(gainFocus, direction, prevFocusedRect);
-        if (!gainFocus) {
-            setSelection(0);
-        }
     }
 }
