@@ -236,7 +236,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void openInNewTab(String url) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.setData(Uri.parse(url));
+        if (url != null && !url.isEmpty()) {
+            intent.setData(Uri.parse(url));
+        }
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
         startActivity(intent);
     }
