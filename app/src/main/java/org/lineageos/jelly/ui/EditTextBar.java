@@ -37,6 +37,7 @@ public class EditTextBar extends EditTextExt {
             setText(title);
         } else {
             setText(url);
+            selectAll();
         }
     }
 }
