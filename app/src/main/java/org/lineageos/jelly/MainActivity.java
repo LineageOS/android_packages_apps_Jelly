@@ -56,6 +56,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import org.lineageos.jelly.favorite.Favorite;
@@ -84,6 +85,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
+
+    private ImageView mSecureIcon;
 
     private String mWaitingDownloadUrl;
     private String mWaitingDownloadName;
@@ -143,6 +146,10 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
         setupMenu();
+
+        mSecureIcon = (ImageView) findViewById(R.id.secure);
+        mSecureIcon.setVisibility(View.GONE);
+
         mWebView = (WebViewExt) findViewById(R.id.web_view);
         mWebView.init(this, editText, progressBar, incognito);
         mWebView.setDesktopMode(desktopMode);
@@ -451,6 +458,18 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         if (!favicon.isRecycled()) {
             favicon.recycle();
+        }
+    }
+
+    @Override
+    public void setSecure(boolean secure) {
+        if (mSecureIcon.getVisibility() == View.GONE)
+            mSecureIcon.setVisibility(View.VISIBLE);
+
+        if (secure) {
+            mSecureIcon.setImageDrawable(getDrawable(R.drawable.ic_lock));
+        } else {
+            mSecureIcon.setImageDrawable(getDrawable(R.drawable.ic_lock_open));
         }
     }
 
