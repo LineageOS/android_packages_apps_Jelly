@@ -19,6 +19,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -46,11 +47,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
@@ -97,19 +98,17 @@ public class MainActivity extends AppCompatActivity {
         });
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.load_progress);
         EditTextBar editText = (EditTextBar) findViewById(R.id.url_bar);
-        editText.setOnKeyListener((v, keyCode, event) -> {
-            if (event.getAction() != KeyEvent.ACTION_DOWN) {
+        editText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
+
+                mWebView.loadUrl(editText.getText().toString());
+
+                editText.clearFocus();
                 return true;
             }
-
-            switch (keyCode) {
-                case KeyEvent.KEYCODE_ENTER:
-                case KeyEvent.KEYCODE_DPAD_CENTER:
-                case KeyEvent.KEYCODE_NUMPAD_ENTER:
-                    mWebView.loadUrl(editText.getText().toString());
-                    break;
-            }
-            return true;
+            return false;
         });
 
         Intent intent = getIntent();
