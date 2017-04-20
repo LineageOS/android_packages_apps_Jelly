@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
             intent.setType("text/plain");
         }
 
-        startActivity(intent);
+        startActivity(Intent.createChooser(intent, getResources().getText(R.string.send_to)));
     }
 
     private void setAsFavorite(String title, String url) {
