@@ -25,9 +25,9 @@ import android.view.View;
 import android.webkit.URLUtil;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import org.lineageos.jelly.ui.EditTextExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
@@ -127,7 +127,7 @@ public class WebViewExt extends WebView {
         }
     }
 
-    public void init(WebViewExtActivity activity, EditText editText,
+    public void init(WebViewExtActivity activity, EditTextExt editText,
                      ProgressBar progressBar, boolean incognito) {
         mActivity = activity;
         mIncognito = incognito;
