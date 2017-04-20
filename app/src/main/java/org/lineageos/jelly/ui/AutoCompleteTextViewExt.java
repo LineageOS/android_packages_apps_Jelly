@@ -19,7 +19,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
-import android.graphics.Rect;
 import android.graphics.Shader;
 import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.util.AttributeSet;
@@ -75,13 +74,5 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
         float stopEnd = (widthEnd - (lineWidth > widthEnd ? percent : 0)) / widthEnd;
         getPaint().setShader(getGradient(widthEnd, fadeStart, stopStart, stopEnd, textColor));
         super.onDraw(canvas);
-    }
-
-    @Override
-    public void onFocusChanged(boolean gainFocus, int direction, Rect prevFocusedRect) {
-        super.onFocusChanged(gainFocus, direction, prevFocusedRect);
-        if (!gainFocus) {
-            setSelection(0);
-        }
     }
 }
