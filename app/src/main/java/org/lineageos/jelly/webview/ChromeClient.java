@@ -61,7 +61,8 @@ class ChromeClient extends WebChromeClient {
     @Override
     public void onReceivedTitle(WebView view, String title) {
         mEditText.setText(view.getUrl());
-        mHistoryHandler.addItem(new HistoryItem(title, view.getUrl()));
+        if (!mIncognito)
+            mHistoryHandler.addItem(new HistoryItem(title, view.getUrl()));
     }
 
     @Override
