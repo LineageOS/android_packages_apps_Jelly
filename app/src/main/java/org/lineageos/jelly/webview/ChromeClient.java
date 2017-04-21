@@ -89,7 +89,7 @@ class ChromeClient extends WebChromeClient {
     public void onGeolocationPermissionsShowPrompt(String origin,
                                                    GeolocationPermissions.Callback callback) {
         MainActivity activity = ((MainActivity) mContext);
-        if (activity.hasLocationPermission()) {
+        if (!activity.hasLocationPermission()) {
             activity.requestLocationPermission();
         } else {
             callback.invoke(origin, true, false);
