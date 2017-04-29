@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="8dp">
 
-        <EditTextExt
+        <EditText
             android:id="@+id/favorite_edit_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         app:errorTextAppearance="@string/favorite_edit_error">
 
-        <EditTextExt
+        <EditText
             android:id="@+id/favorite_edit_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
