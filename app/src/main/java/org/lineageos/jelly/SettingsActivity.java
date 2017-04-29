@@ -18,6 +18,7 @@ package org.lineageos.jelly;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -59,7 +60,10 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
             if (homePage.getSummary() == null) {
-                homePage.setSummary(getString(R.string.default_home_page));
+                String homepage_url = PreferenceManager.getDefaultSharedPreferences(getActivity())
+                        .getString("key_home_page", getString(R.string.default_home_page));
+
+                homePage.setSummary(homepage_url);
             }
         }
     }
