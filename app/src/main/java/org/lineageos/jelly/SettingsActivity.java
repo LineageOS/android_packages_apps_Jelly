@@ -15,14 +15,22 @@
  */
 package org.lineageos.jelly;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.CookieManager;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import org.lineageos.jelly.utils.PrefsUtils;
 
 // "noSuchMethodError" is thrown if lambda is used in this class (wtf)
 @SuppressWarnings("Convert2Lambda")
@@ -53,16 +61,14 @@ public class SettingsActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.settings);
 
             Preference homePage = findPreference("key_home_page");
-            homePage.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            homePage.setSummary(PrefsUtils.getHomePage(getContext()));
+            homePage.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    homePage.setSummary(newValue.toString());
+                public boolean onPreferenceClick(Preference preference) {
+                    editHomePage(preference);
                     return true;
                 }
             });
-            if (homePage.getSummary() == null) {
-                homePage.setSummary(getString(R.string.default_home_page));
-            }
 
             Preference clearCookie = findPreference("key_cookie_clear");
             clearCookie.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -74,6 +80,44 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 }
             });
+        }
+
+        private void editHomePage(Preference preference) {
+            Context context = getContext();
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            AlertDialog alertDialog = builder.create();
+            LayoutInflater inflater = alertDialog.getLayoutInflater();
+
+            View homepageView = inflater.inflate(R.layout.dialog_homepage_edit,
+                    new LinearLayout(context));
+            EditText editText = (EditText) homepageView.findViewById(R.id.homepage_edit_url);
+            editText.setText(PrefsUtils.getHomePage(context));
+
+            builder.setTitle(R.string.pref_start_page_dialog_title)
+                    .setMessage(R.string.pref_start_page_dialog_message)
+                    .setView(homepageView)
+                    .setPositiveButton(android.R.string.ok,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String url = editText.getText().toString().isEmpty() ?
+                                            getString(R.string.default_home_page) :
+                                            editText.getText().toString();
+                                    PrefsUtils.setHomePage(context, url);
+                                    preference.setSummary(url);
+                                }
+                            })
+                    .setNeutralButton(R.string.pref_start_page_dialog_reset,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String url = getString(R.string.default_home_page);
+                                    PrefsUtils.setHomePage(context, url);
+                                    preference.setSummary(url);
+                                }
+                            })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
         }
     }
 }
