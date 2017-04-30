@@ -68,4 +68,9 @@ public final class PrefsUtils {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean(KEY_COOKIE, true);
     }
+
+    public static void setHomePage(Context context, String value) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        prefs.edit().putString(KEY_HOME_PAGE, value).apply();
+    }
 }

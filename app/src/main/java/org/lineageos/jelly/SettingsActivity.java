@@ -15,14 +15,23 @@
  */
 package org.lineageos.jelly;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.CookieManager;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import org.lineageos.jelly.utils.PrefsUtils;
+import org.lineageos.jelly.utils.UiUtils;
 
 // "noSuchMethodError" is thrown if lambda is used in this class (wtf)
 @SuppressWarnings("Convert2Lambda")
@@ -53,16 +62,14 @@ public class SettingsActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.settings);
 
             Preference homePage = findPreference("key_home_page");
-            homePage.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            homePage.setSummary(PrefsUtils.getHomePage(getContext()));
+            homePage.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    homePage.setSummary(newValue.toString());
+                public boolean onPreferenceClick(Preference preference) {
+                    editHomePage(preference);
                     return true;
                 }
             });
-            if (homePage.getSummary() == null) {
-                homePage.setSummary(getString(R.string.default_home_page));
-            }
 
             Preference clearCookie = findPreference("key_cookie_clear");
             clearCookie.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -74,6 +81,41 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 }
             });
+        }
+
+        private void editHomePage(Preference preference) {
+            EditText editText = new EditText(getContext());
+            editText.setLayoutParams(new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            editText.setHint(R.string.pref_start_page);
+            editText.setText(PrefsUtils.getHomePage(getContext()));
+
+            new AlertDialog.Builder(getContext())
+                    .setTitle(R.string.pref_start_page_dialog_title)
+                    .setMessage(R.string.pref_start_page_dialog_message)
+                    .setView(editText)
+                    .setPositiveButton(android.R.string.ok,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String url = editText.getText().toString().isEmpty() ?
+                                            getString(R.string.default_home_page) :
+                                            editText.getText().toString();
+                                    PrefsUtils.setHomePage(getContext(), url);
+                                    preference.setSummary(url);
+                                }
+                    })
+                    .setNeutralButton(R.string.pref_start_page_dialog_reset,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String url = getString(R.string.default_home_page);
+                                    PrefsUtils.setHomePage(getContext(), url);
+                                    preference.setSummary(url);
+                                }
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
         }
     }
 }

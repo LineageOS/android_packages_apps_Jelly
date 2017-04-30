@@ -23,10 +23,7 @@
         android:summary="%s"
         android:title="@string/pref_search_engine" />
 
-    <EditTextPreference
-        android:defaultValue="@string/default_home_page"
-        android:dialogMessage="@string/pref_start_page_dialog_message"
-        android:dialogTitle="@string/pref_start_page_dialog_title"
+    <Preference
         android:key="key_home_page"
         android:title="@string/pref_start_page" />
 
