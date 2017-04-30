@@ -96,6 +96,10 @@
     <string name="pref_screenshot_snap_title">Advanced share</string>
     <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">Share preview of the shared WebPage</string>
+    <!-- Settings: clear cookie -->
+    <string name="pref_cookie_clear">Clear cookies</string>
+    <!-- Settings: clear cookie toast confirmation -->
+    <string name="pref_cookie_clear_done">Cleared all the cookie</string>
 
     <!-- History: title -->
     <string name="history_title">History</string>

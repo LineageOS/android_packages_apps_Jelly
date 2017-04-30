@@ -61,5 +61,9 @@
             android:key="key_cookie"
             android:summary="@string/pref_cookie_summary"
             android:title="@string/pref_cookie_title" />
+
+        <Preference
+            android:key="key_cookie_clear"
+            android:title="@string/pref_cookie_clear" />
     </PreferenceCategory>
 </PreferenceScreen>

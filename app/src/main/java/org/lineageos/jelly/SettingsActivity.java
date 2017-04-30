@@ -21,6 +21,8 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.widget.Toast;
 
 // "noSuchMethodError" is thrown if lambda is used in this class (wtf)
 @SuppressWarnings("Convert2Lambda")
@@ -61,6 +63,17 @@ public class SettingsActivity extends AppCompatActivity {
             if (homePage.getSummary() == null) {
                 homePage.setSummary(getString(R.string.default_home_page));
             }
+
+            Preference clearCookie = findPreference("key_cookie_clear");
+            clearCookie.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    CookieManager.getInstance().removeAllCookies(null);
+                    Toast.makeText(getContext(), getString(R.string.pref_cookie_clear_done),
+                            Toast.LENGTH_LONG).show();
+                    return true;
+                }
+            });
         }
     }
 }
