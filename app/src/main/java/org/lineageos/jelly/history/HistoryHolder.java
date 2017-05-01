@@ -17,6 +17,7 @@ package org.lineageos.jelly.history;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -38,6 +39,8 @@ class HistoryHolder extends RecyclerView.ViewHolder {
     private final TextView mTitle;
     private final TextView mSummary;
 
+    private long mId;
+
     HistoryHolder(View view) {
         super(view);
         mRootLayout = (LinearLayout) view.findViewById(R.id.row_history_layout);
@@ -46,6 +49,7 @@ class HistoryHolder extends RecyclerView.ViewHolder {
     }
 
     void setData(Context context, HistoryItem item) {
+        mId = item.getId();
         String title = item.getTitle();
         if (title == null || title.isEmpty()) {
             title = item.getUrl().split("/")[2];
@@ -84,6 +88,10 @@ class HistoryHolder extends RecyclerView.ViewHolder {
                 background = R.color.history_earlier;
                 break;
         }
-        mRootLayout.setBackgroundColor(ContextCompat.getColor(context, background));
+        mRootLayout.setBackground(new ColorDrawable(ContextCompat.getColor(context, background)));
+    }
+
+    long getId() {
+        return mId;
     }
 }
