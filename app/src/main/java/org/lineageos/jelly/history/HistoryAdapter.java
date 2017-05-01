@@ -55,6 +55,16 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         notifyDataSetChanged();
     }
 
+    void removeItemAtPosition(int position) {
+        mList.remove(position);
+        notifyItemRemoved(position);
+
+        if (mList.isEmpty()) {
+            // Show empty status
+            ((HistoryActivity) mContext).refresh();
+        }
+    }
+
     void removeItem(long id) {
         int position = 0;
         for (; position < mList.size(); position++) {
@@ -66,13 +76,6 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         if (position == mList.size()) {
             return;
         }
-
-        mList.remove(position);
-        notifyItemRemoved(position);
-
-        if (mList.isEmpty()) {
-            // Show empty status
-            ((HistoryActivity) mContext).refresh();
-        }
+        removeItemAtPosition(position);
     }
 }

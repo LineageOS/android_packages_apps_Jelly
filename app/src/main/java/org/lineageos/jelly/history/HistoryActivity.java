@@ -25,6 +25,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -60,8 +61,13 @@ public class HistoryActivity extends AppCompatActivity {
         mDbHandler = new HistoryDatabaseHandler(this);
         mAdapter = new HistoryAdapter(this, new ArrayList<>());
         mList.setLayoutManager(new LinearLayoutManager(this));
+        mList.addItemDecoration(new HistoryAnimationDecorator(this));
         mList.setItemAnimator(new DefaultItemAnimator());
         mList.setAdapter(mAdapter);
+
+        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, mList, 0,
+                ItemTouchHelper.LEFT));
+        helper.attachToRecyclerView(mList);
 
         int listTop = mList.getTop();
         mList.addOnScrollListener(new RecyclerView.OnScrollListener() {
