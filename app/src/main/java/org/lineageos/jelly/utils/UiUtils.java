@@ -82,7 +82,7 @@ public final class UiUtils {
         return hour > diff ? 0 : day > diff ? 1 : week > diff ? 2 : month > diff ? 3 : 4;
     }
 
-    public static float dpToPx(Resources res, int dp) {
+    public static float dpToPx(Resources res, float dp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, res.getDisplayMetrics());
     }
 }
