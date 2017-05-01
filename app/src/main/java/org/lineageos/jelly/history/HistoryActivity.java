@@ -76,7 +76,8 @@ public class HistoryActivity extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
 
                 toolbar.setElevation(recyclerView.getChildAt(0).getTop() < listTop ?
-                        UiUtils.dpToPx(getResources(), 8) : 0);
+                        UiUtils.dpToPx(getResources(),
+                                getResources().getDimension(R.dimen.toolbar_elevation)) : 0);
             }
         });
     }
