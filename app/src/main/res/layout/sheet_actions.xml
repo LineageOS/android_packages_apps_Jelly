@@ -20,7 +20,6 @@
     android:layout_height="wrap_content"
     android:minHeight="180dp"
     android:orientation="vertical"
-    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
     tools:ignore="UseCompoundDrawables">
 
     <LinearLayout
