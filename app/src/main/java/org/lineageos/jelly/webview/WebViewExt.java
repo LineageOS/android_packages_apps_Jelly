@@ -35,6 +35,8 @@ public class WebViewExt extends WebView {
 
     private final Context mContext;
 
+    private boolean mIncognito;
+
     public WebViewExt(Context context) {
         super(context);
         mContext = context;
@@ -116,6 +118,7 @@ public class WebViewExt extends WebView {
 
     public void init(Context context, EditText editText,
                      ProgressBar progressBar, boolean incognito) {
+        mIncognito = incognito;
         ChromeClient chromeClient = new ChromeClient(context, incognito);
         chromeClient.bindEditText(editText);
         chromeClient.bindProgressBar(progressBar);
@@ -137,6 +140,10 @@ public class WebViewExt extends WebView {
         canvas.drawBitmap(bitmap, 0, height, paint);
         draw(canvas);
         return bitmap;
+    }
+
+    public boolean isIncognito() {
+        return mIncognito;
     }
 
 }

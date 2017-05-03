@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
     private static final String EXTRA_INCOGNITO = "extra_incognito";
+    private static final String EXTRA_URL = "extra_url";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
 
@@ -114,6 +115,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String url = intent.getDataString();
         boolean incognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
+
+        // Restore from previous instance
+        if (savedInstanceState != null) {
+            incognito = savedInstanceState.getBoolean(EXTRA_INCOGNITO, incognito);
+            if (url == null || url.isEmpty()) {
+                url = savedInstanceState.getString(EXTRA_URL, null);
+            }
+        }
 
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
@@ -176,6 +185,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Preserve webView status
+        outState.putString(EXTRA_URL, mWebView.getUrl());
+        outState.putBoolean(EXTRA_INCOGNITO, mWebView.isIncognito());
     }
 
     private void setupMenu() {
