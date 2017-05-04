@@ -22,6 +22,30 @@
       "revId": "9be745ecb2e1949c6f3abc159535ffd37889f0eb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_885adc81",
+        "filename": "app/src/main/res/layout/sheet_actions.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2017-05-04T13:53:45Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/#/c/171574/",
+      "parentUuid": "1a486d77_8883fccb",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 55
+      },
+      "revId": "9be745ecb2e1949c6f3abc159535ffd37889f0eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
