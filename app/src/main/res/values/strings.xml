@@ -38,6 +38,10 @@
     <string name="menu_download">Download</string>
     <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">Open in new tab</string>
+    <!-- Menu action: enable desktop mode -->
+    <string name="menu_desktop_mode">Switch to desktop site</string>
+    <!-- Menu action: enable phone mode -->
+    <string name="menu_mobile_mode">Switch to mobile site</string>
 
     <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Send to</string>

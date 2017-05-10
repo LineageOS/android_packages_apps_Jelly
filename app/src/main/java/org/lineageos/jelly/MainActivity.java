@@ -47,6 +47,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
     private static final String EXTRA_INCOGNITO = "extra_incognito";
+    private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
     private static final String EXTRA_URL = "extra_url";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
@@ -115,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String url = intent.getDataString();
         boolean incognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
+        boolean desktopMode = false;
 
         // Restore from previous instance
         if (savedInstanceState != null) {
@@ -122,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
             if (url == null || url.isEmpty()) {
                 url = savedInstanceState.getString(EXTRA_URL, null);
             }
+            desktopMode = savedInstanceState.getBoolean(EXTRA_DESKTOP_MODE, false);
         }
 
         // Make sure prefs are set before loading them
@@ -130,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
         mWebView.init(this, editText, progressBar, incognito);
+        mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
     }
 
@@ -200,17 +205,26 @@ public class MainActivity extends AppCompatActivity {
         // Preserve webView status
         outState.putString(EXTRA_URL, mWebView.getUrl());
         outState.putBoolean(EXTRA_INCOGNITO, mWebView.isIncognito());
+        outState.putBoolean(EXTRA_DESKTOP_MODE, mWebView.isDesktopMode());
     }
 
     private void setupMenu() {
         ImageButton menu = (ImageButton) findViewById(R.id.search_menu);
         menu.setOnClickListener(v -> {
+            boolean isDesktop = mWebView.isDesktopMode();
             ContextThemeWrapper wrapper = new ContextThemeWrapper(this,
                     R.style.AppTheme_PopupMenuOverlapAnchor);
 
             PopupMenu popupMenu = new PopupMenu(wrapper, menu, Gravity.NO_GRAVITY,
                     R.attr.actionOverflowMenuStyle, 0);
             popupMenu.inflate(R.menu.menu_main);
+
+            MenuItem desktopMode = popupMenu.getMenu().findItem(R.id.desktop_mode);
+            desktopMode.setTitle(getString(isDesktop ?
+                    R.string.menu_mobile_mode : R.string.menu_desktop_mode));
+            desktopMode.setIcon(ContextCompat.getDrawable(this, isDesktop ?
+                    R.drawable.ic_mobile : R.drawable.ic_desktop));
+
             popupMenu.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
                     case R.id.menu_new:
@@ -242,6 +256,13 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menu_settings:
                         startActivity(new Intent(this, SettingsActivity.class));
+                        break;
+                    case R.id.desktop_mode:
+                        mWebView.setDesktopMode(!isDesktop);
+                        desktopMode.setTitle(getString(isDesktop ?
+                                R.string.menu_desktop_mode : R.string.menu_mobile_mode));
+                        desktopMode.setIcon(ContextCompat.getDrawable(this, isDesktop ?
+                                R.drawable.ic_desktop : R.drawable.ic_mobile));
                         break;
                 }
                 return true;
