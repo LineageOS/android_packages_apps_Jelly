@@ -24,4 +24,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep public class * extends android.support.design.widget.CoordinatorLayout.Behavior { *; }
+-keep public class * extends android.support.design.widget.CoordinatorLayout.Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}

@@ -128,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
         setupMenu();
+
+        CookieManager.getInstance().setAcceptCookie(!incognito);
+
         mWebView = (WebViewExt) findViewById(R.id.web_view);
         mWebView.init(this, editText, progressBar, incognito);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
