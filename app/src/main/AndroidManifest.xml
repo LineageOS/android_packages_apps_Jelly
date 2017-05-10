@@ -35,7 +35,6 @@
             android:documentLaunchMode="always"
             android:hardwareAccelerated="true"
             android:label="@string/app_name"
-            android:persistent="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
