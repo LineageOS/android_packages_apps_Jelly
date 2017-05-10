@@ -45,6 +45,7 @@ LOCAL_PACKAGE_NAME := Jelly
 LOCAL_CERTIFICATE := platform
 
 #LOCAL_PROGUARD_FLAG_FILES := $(LOCAL_PATH)/../../proguard-rules.pro
+LOCAL_PROGUARD_ENABLED := disabled
 
 include $(BUILD_PACKAGE)
 
