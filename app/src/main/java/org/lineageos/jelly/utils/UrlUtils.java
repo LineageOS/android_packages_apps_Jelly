@@ -16,14 +16,14 @@
  */
 package org.lineageos.jelly.utils;
 
-import android.util.Log;
+import android.util.Patterns;
+import android.webkit.URLUtil;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class UrlUtils {
-    public static final Pattern ACCEPTED_URI_SCHEMA = Pattern.compile(
+    private static final Pattern ACCEPTED_URI_SCHEMA = Pattern.compile(
             "(?i)" + // switch on case insensitive matching
                     "(" +    // begin group for schema
                     "(?:http|https|file|chrome):\\/\\/" +
@@ -31,35 +31,41 @@ public final class UrlUtils {
                     ")" +
                     "(.*)"
     );
-    private static final String TAG = UrlUtils.class.getSimpleName();
 
     private UrlUtils() {
     }
 
-    public static String fixUrl(String inUrl) {
-        inUrl = inUrl.toLowerCase();
-        int colon = inUrl.indexOf(':');
-        boolean allLower = true;
-        for (int index = 0; index < colon; index++) {
-            char ch = inUrl.charAt(index);
-            if (!Character.isLetter(ch)) {
-                break;
+    /**
+     * Attempts to determine whether user input is a URL or search
+     * terms.  Anything with a space is passed to search if canBeSearch is true.
+     *
+     * Converts to lowercase any mistakenly uppercased schema (i.e.,
+     * "Http://" converts to "http://"
+     *
+     * @return Original or modified URL
+     *
+     */
+    public static String smartUrlFilter(String url) {
+        String inUrl = url.trim();
+        boolean hasSpace = inUrl.indexOf(' ') != -1;
+
+        Matcher matcher = ACCEPTED_URI_SCHEMA.matcher(inUrl);
+        if (matcher.matches()) {
+            // force scheme to lowercase
+            String scheme = matcher.group(1);
+            String lcScheme = scheme.toLowerCase();
+            if (!lcScheme.equals(scheme)) {
+                inUrl = lcScheme + matcher.group(2);
             }
-            allLower &= Character.isLowerCase(ch);
-            if (index == colon - 1 && !allLower) {
-                inUrl = inUrl.substring(0, colon).toLowerCase()
-                        + inUrl.substring(colon);
+            if (hasSpace && Patterns.WEB_URL.matcher(inUrl).matches()) {
+                inUrl = inUrl.replace(" ", "%20");
             }
-        }
-        if (inUrl.startsWith("http://") || inUrl.startsWith("https://"))
             return inUrl;
-        if (inUrl.startsWith("http:") ||
-                inUrl.startsWith("https:")) {
-            if (inUrl.startsWith("http:/") || inUrl.startsWith("https:/")) {
-                inUrl = inUrl.replaceFirst("/", "//");
-            } else inUrl = inUrl.replaceFirst(":", "://");
         }
-        return inUrl;
+        if (!hasSpace && Patterns.WEB_URL.matcher(inUrl).matches()) {
+            return URLUtil.guessUrl(inUrl);
+        }
+        return null;
     }
 
     /**
@@ -67,17 +73,7 @@ public final class UrlUtils {
      * actual values.
      */
     public static String getFormattedUri(String templateUri, String query) {
-        if (templateUri.isEmpty()) {
-            return null;
-        }
-
-        // Encode the query terms in the UTF-8 encoding
-        try {
-            return templateUri.replace("{searchTerms}", URLEncoder.encode(query, "UTF-8"));
-        } catch (UnsupportedEncodingException e) {
-            Log.e(TAG, "Exception occurred when encoding query " + query + " to UTF-8");
-            return null;
-        }
+        return URLUtil.composeSearchUrl(query, templateUri, "{searchTerms}");
     }
 
 

@@ -20,7 +20,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Patterns;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.webkit.WebView;
@@ -57,29 +56,17 @@ public class WebViewExt extends WebView {
 
     @Override
     public void loadUrl(String url) {
-        // Try to add http prefix
-        if (!url.startsWith("http")) {
-            String withHttp = "http://" + url;
-            if ((Patterns.WEB_URL.matcher(withHttp).matches() ||
-                    UrlUtils.ACCEPTED_URI_SCHEMA.matcher(withHttp).matches()) &&
-                    withHttp.contains(".")) {
-                super.loadUrl(withHttp);
-                return;
-            }
-        }
-
-        // http url
-        String query = UrlUtils.fixUrl(url).trim();
-        if (Patterns.WEB_URL.matcher(query).matches() ||
-                UrlUtils.ACCEPTED_URI_SCHEMA.matcher(query).matches() ||
-                query.isEmpty()) {
-            super.loadUrl(url);
+        String fixedUrl = UrlUtils.smartUrlFilter(url);
+        if (fixedUrl != null) {
+            super.loadUrl(fixedUrl);
             return;
         }
 
-        // Query
-        String baseUrl = PrefsUtils.getSearchEngine(mContext);
-        super.loadUrl(UrlUtils.getFormattedUri(baseUrl, query));
+        String templateUri = PrefsUtils.getSearchEngine(mContext);
+        fixedUrl = UrlUtils.getFormattedUri(templateUri, url);
+        if (fixedUrl != null) {
+            super.loadUrl(fixedUrl);
+        }
     }
 
     private void setup() {
