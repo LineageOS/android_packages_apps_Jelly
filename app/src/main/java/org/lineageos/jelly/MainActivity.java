@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
 
+    private String mWaitingDownloadUrl;
+    private String mWaitingDownloadName;
+
     private Bitmap mUrlIcon;
 
     @Override
@@ -175,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case STORAGE_PERM_REQ:
-                if (hasStoragePermission()) {
+                if (!hasStoragePermission()) {
                     if (shouldShowRequestPermissionRationale(
                             Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                         new AlertDialog.Builder(this)
@@ -191,6 +194,8 @@ public class MainActivity extends AppCompatActivity {
                         Snackbar.make(mCoordinator, getString(R.string.permission_error_forever),
                                 Snackbar.LENGTH_LONG).show();
                     }
+                } else if (mWaitingDownloadUrl != null) {
+                    downloadFileAsk(mWaitingDownloadUrl, mWaitingDownloadName);
                 }
                 break;
         }
@@ -319,9 +324,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void downloadFileAsk(String url, String fileName) {
         if (!hasStoragePermission()) {
+            mWaitingDownloadUrl = url;
+            mWaitingDownloadName = fileName;
             requestStoragePermission();
             return;
         }
+        mWaitingDownloadUrl = null;
+        mWaitingDownloadName = null;
 
         new AlertDialog.Builder(this)
                 .setTitle(R.string.download_title)
