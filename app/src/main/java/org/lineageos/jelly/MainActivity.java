@@ -134,6 +134,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        CookieManager.getInstance().flush();
+        super.onStop();
+    }
+
+    @Override
     protected void onResume() {
         CookieManager.setAcceptFileSchemeCookies(PrefsUtils.getCookie(this));
 
