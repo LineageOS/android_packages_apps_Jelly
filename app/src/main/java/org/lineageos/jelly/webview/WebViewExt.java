@@ -22,6 +22,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.webkit.URLUtil;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -30,11 +31,18 @@ import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class WebViewExt extends WebView {
+    private static final String USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) %1$s Safari/537.36";
+    private static final String DEFAULT_CHROME = "Chrome/37.0.2049.0";
+    private static final String CHROME_PATTERN = " (Chrome/[0-9.]+) ";
 
     private final Context mContext;
 
     private boolean mIncognito;
+    private boolean mDesktopMode;
 
     public WebViewExt(Context context) {
         super(context);
@@ -133,4 +141,28 @@ public class WebViewExt extends WebView {
         return mIncognito;
     }
 
+    /*
+     * Try to determine the version of the current webView instead of using an
+     * hard-coded value. Some websites parse the user agent and show a different
+     * content depending on the version reported.
+     */
+    private static String getDesktopUserAgent(String mobileUserAgent) {
+        Pattern pattern = Pattern.compile(CHROME_PATTERN);
+        Matcher matcher = pattern.matcher(mobileUserAgent);
+        return String.format(USER_AGENT, matcher.find() ? matcher.group(1) : DEFAULT_CHROME);
+    }
+
+    public void setDesktopMode(boolean desktopMode) {
+        mDesktopMode = desktopMode;
+        WebSettings settings = getSettings();
+        settings.setUserAgentString(desktopMode ?
+                getDesktopUserAgent(settings.getUserAgentString()) : null);
+        settings.setUseWideViewPort(desktopMode);
+        settings.setLoadWithOverviewMode(desktopMode);
+        reload();
+    }
+
+    public boolean isDesktopMode() {
+        return mDesktopMode;
+    }
 }
