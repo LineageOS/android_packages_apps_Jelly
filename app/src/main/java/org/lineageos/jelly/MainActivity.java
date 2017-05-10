@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case STORAGE_PERM_REQ:
-                if (hasStoragePermission()) {
+                if (!hasStoragePermission()) {
                     if (shouldShowRequestPermissionRationale(
                             Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                         new AlertDialog.Builder(this)
