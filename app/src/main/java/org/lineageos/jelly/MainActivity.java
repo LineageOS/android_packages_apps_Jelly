@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        CookieManager.setAcceptFileSchemeCookies(PrefsUtils.getCookie(this));
+        CookieManager.getInstance().setAcceptCookie(PrefsUtils.getCookie(this));
 
         super.onResume();
         if (PrefsUtils.getLookLock(this)) {
