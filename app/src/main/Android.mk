@@ -44,7 +44,7 @@ LOCAL_STATIC_JAVA_LIBRARIES += \
 LOCAL_PACKAGE_NAME := Jelly
 LOCAL_CERTIFICATE := platform
 
-#LOCAL_PROGUARD_FLAG_FILES := $(LOCAL_PATH)/../../proguard-rules.pro
+LOCAL_PROGUARD_FLAG_FILES := ../../proguard-rules.pro
 
 include $(BUILD_PACKAGE)
 
