@@ -56,6 +56,12 @@
         android:title="@string/menu_shortcut"
         app:showAsAction="never" />
     <item
+        android:id="@+id/desktop_mode"
+        android:icon="@drawable/ic_desktop"
+        android:title="@string/menu_desktop_mode"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/menu_settings"

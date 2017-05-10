@@ -23,6 +23,7 @@ import android.util.AttributeSet;
 import android.util.Patterns;
 import android.view.View;
 import android.webkit.URLUtil;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -31,11 +32,16 @@ import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class WebViewExt extends WebView {
 
     private final Context mContext;
 
     private boolean mIncognito;
+
+    private boolean mDesktopMode;
 
     public WebViewExt(Context context) {
         super(context);
@@ -135,4 +141,39 @@ public class WebViewExt extends WebView {
         return mIncognito;
     }
 
+    /*
+     * Try to determine the version of the current webview instead of using an
+     * hard-coded value. Some websites parse the user agent and show a different
+     * content depending on the version reported.
+     */
+    private static String getDesktopUserAgent(String mobileUserAgent) {
+        Pattern p = Pattern.compile(" (Chrome/[0-9.]+) ");
+        Matcher m = p.matcher(mobileUserAgent);
+        String chromeVersion;
+        if (m.find()) {
+            chromeVersion = m.group(1);
+        } else {
+            chromeVersion = "Chrome/37.0.2049.0";
+        }
+        return "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) " +
+                chromeVersion + " Safari/537.36";
+    }
+
+    public void setDesktopMode(boolean desktopMode) {
+        mDesktopMode = desktopMode;
+        WebSettings settings = getSettings();
+        if (desktopMode) {
+            settings.setUserAgentString(getDesktopUserAgent(settings.getUserAgentString()));
+            settings.setUseWideViewPort(true);
+            settings.setLoadWithOverviewMode(true);
+        } else {
+            settings.setUserAgentString(null);
+            settings.setUseWideViewPort(false);
+            settings.setLoadWithOverviewMode(false);
+        }
+    }
+
+    public boolean isDesktopMode() {
+        return mDesktopMode;
+    }
 }
