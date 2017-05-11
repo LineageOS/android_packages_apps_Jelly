@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_592dc545",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-05-11T18:11:55Z",
+      "side": 1,
+      "message": "!incognito \u0026\u0026 PrefsUtils.getCookie(this)",
+      "range": {
+        "startLine": 132,
+        "startChar": 52,
+        "endLine": 132,
+        "endChar": 62
+      },
+      "revId": "bf1c9c6250879fa0bcabc0044e6f95b6ae907954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
