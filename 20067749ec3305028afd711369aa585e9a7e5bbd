@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_59a265af",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2017-05-11T18:20:10Z",
+      "side": 0,
+      "message": "Any want to add whether \u0027security\u0027 should be capitalised in this context?\n    Privacy \u0026 security\nOr\n    Privacy \u0026 Security",
+      "revId": "20067749ec3305028afd711369aa585e9a7e5bbd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

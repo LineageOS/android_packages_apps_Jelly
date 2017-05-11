@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_d9e77511",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2017-05-11T18:20:10Z",
+      "side": 1,
+      "message": "Still not too sure about this. Perhaps:\n    There\u0027s nothing here. Browse on the internet to see your history\nBecause repeating \u0027here\u0027 sounds a bit weird",
+      "parentUuid": "",
+      "revId": "43904a45f0c46546a75675bc721680b57358a9a6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
