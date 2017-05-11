@@ -22,6 +22,29 @@
       "revId": "bf1c9c6250879fa0bcabc0044e6f95b6ae907954",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_59d4a51f",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-05-11T18:14:54Z",
+      "side": 1,
+      "message": "This one also needs to be dependent on incognito mode.",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 77
+      },
+      "revId": "bf1c9c6250879fa0bcabc0044e6f95b6ae907954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
