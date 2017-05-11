@@ -42,7 +42,6 @@ LOCAL_STATIC_JAVA_LIBRARIES += \
     android-support-annotations
 
 LOCAL_PACKAGE_NAME := Jelly
-LOCAL_CERTIFICATE := platform
 
 #LOCAL_PROGUARD_FLAG_FILES := $(LOCAL_PATH)/../../proguard-rules.pro
 
