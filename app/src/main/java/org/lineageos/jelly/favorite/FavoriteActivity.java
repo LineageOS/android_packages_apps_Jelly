@@ -95,6 +95,7 @@ public class FavoriteActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressWarnings("SameReturnValue")
     boolean editItem(Favorite item) {
         @SuppressLint("InflateParams")
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_favorite_edit, null);

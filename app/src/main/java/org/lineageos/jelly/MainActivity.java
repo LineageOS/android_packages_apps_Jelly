@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case STORAGE_PERM_REQ:
-                if (!hasStoragePermission()) {
+                if (hasNotStoragePermission()) {
                     if (shouldShowRequestPermissionRationale(
                             Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                         new AlertDialog.Builder(this)
@@ -334,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void downloadFileAsk(String url, String fileName) {
-        if (!hasStoragePermission()) {
+        if (hasNotStoragePermission()) {
             mWaitingDownloadUrl = url;
             mWaitingDownloadName = fileName;
             requestStoragePermission();
@@ -387,9 +387,9 @@ public class MainActivity extends AppCompatActivity {
         requestPermissions(permissionArray, STORAGE_PERM_REQ);
     }
 
-    private boolean hasStoragePermission() {
+    private boolean hasNotStoragePermission() {
         int result = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        return result == PackageManager.PERMISSION_GRANTED;
+        return result != PackageManager.PERMISSION_GRANTED;
     }
 
     public void requestLocationPermission() {

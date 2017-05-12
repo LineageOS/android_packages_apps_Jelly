@@ -39,8 +39,6 @@ class HistoryHolder extends RecyclerView.ViewHolder {
     private final TextView mTitle;
     private final TextView mSummary;
 
-    private long mId;
-
     HistoryHolder(View view) {
         super(view);
         mRootLayout = (LinearLayout) view.findViewById(R.id.row_history_layout);
@@ -49,7 +47,6 @@ class HistoryHolder extends RecyclerView.ViewHolder {
     }
 
     void setData(Context context, HistoryItem item) {
-        mId = item.getId();
         String title = item.getTitle();
         if (title == null || title.isEmpty()) {
             title = item.getUrl().split("/")[2];
@@ -91,7 +88,4 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         mRootLayout.setBackground(new ColorDrawable(ContextCompat.getColor(context, background)));
     }
 
-    long getId() {
-        return mId;
-    }
 }
