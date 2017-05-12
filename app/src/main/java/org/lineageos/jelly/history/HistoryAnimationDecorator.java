@@ -27,7 +27,7 @@ import org.lineageos.jelly.R;
 
 class HistoryAnimationDecorator extends RecyclerView.ItemDecoration {
 
-    private Drawable mBackground;
+    private final Drawable mBackground;
 
     HistoryAnimationDecorator(Context context) {
         mBackground = new ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete));

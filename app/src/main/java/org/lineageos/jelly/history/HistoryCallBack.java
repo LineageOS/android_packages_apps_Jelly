@@ -28,15 +28,15 @@ import org.lineageos.jelly.R;
 
 class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
 
-    private RecyclerView mList;
+    private final RecyclerView mList;
 
-    private Drawable mBackground;
-    private Drawable mDelete;
+    private final Drawable mBackground;
+    private final Drawable mDelete;
 
-    private int mMargin;
+    private final int mMargin;
 
-    HistoryCallBack(Context context, RecyclerView list, int dragDirs, int swipeDirs) {
-        super(dragDirs, swipeDirs);
+    HistoryCallBack(Context context, RecyclerView list) {
+        super(0, ItemTouchHelper.LEFT);
 
         mList = list;
         mBackground = new ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete));

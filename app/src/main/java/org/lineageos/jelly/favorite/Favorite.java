@@ -19,7 +19,7 @@ public class Favorite {
     private long id = -1;
     private String title;
     private String url;
-    private int color;
+    private final int color;
 
     public Favorite(String title, String url, int color) {
         this.title = title;

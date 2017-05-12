@@ -65,8 +65,8 @@ public class HistoryActivity extends AppCompatActivity {
         mList.setItemAnimator(new DefaultItemAnimator());
         mList.setAdapter(mAdapter);
 
-        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, mList, 0,
-                ItemTouchHelper.LEFT));
+        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, mList
+        ));
         helper.attachToRecyclerView(mList);
 
         int listTop = mList.getTop();

@@ -179,7 +179,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case STORAGE_PERM_REQ:
-                if (!hasStoragePermission()) {
+                if (hasStoragePermission() && mWaitingDownloadUrl != null) {
+                    downloadFileAsk(mWaitingDownloadUrl, mWaitingDownloadName);
+                } else {
                     if (shouldShowRequestPermissionRationale(
                             Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                         new AlertDialog.Builder(this)
@@ -195,12 +197,9 @@ public class MainActivity extends AppCompatActivity {
                         Snackbar.make(mCoordinator, getString(R.string.permission_error_forever),
                                 Snackbar.LENGTH_LONG).show();
                     }
-                } else if (mWaitingDownloadUrl != null) {
-                    downloadFileAsk(mWaitingDownloadUrl, mWaitingDownloadName);
                 }
                 break;
         }
-
     }
 
     @Override
