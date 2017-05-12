@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_7f48615b",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2017-05-12T19:40:11Z",
+      "side": 1,
+      "message": "On purpose ?",
+      "revId": "5b713d4cf12001c9d608b9ace11f79b4bce82d12",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
