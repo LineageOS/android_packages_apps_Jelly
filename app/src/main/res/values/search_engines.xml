@@ -21,6 +21,7 @@
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Yahoo</item>
+        <item>StartPage</item>
     </string-array>
 
     <string-array name="pref_search_engine_entryvalues" translatable="false">
@@ -29,5 +30,6 @@
         <item>https://duckduckgo.com/?q={searchTerms}</item>
         <item>https://encrypted.google.com/search?q={searchTerms}</item>
         <item>https://search.yahoo.com/p={searchTerms}</item>
+        <item>https://www.startpage.com/do/dsearch?query={searchTerms}&amp;cat=web&amp;pl=opensearch&amp;language=english</item>
     </string-array>
 </resources>
