@@ -30,4 +30,17 @@
         <item>https://encrypted.google.com/search?q={searchTerms}</item>
         <item>https://search.yahoo.com/p={searchTerms}</item>
     </string-array>
+
+    <string-array name="pref_incognito_policy_entries">
+        <item>Never</item>
+        <item>Always</item>
+        <item>When opening a link from another app</item>
+    </string-array>
+
+    <string-array name="pref_incognito_policy_entryvalues" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
