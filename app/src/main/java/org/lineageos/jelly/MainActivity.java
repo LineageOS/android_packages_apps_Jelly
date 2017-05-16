@@ -54,6 +54,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import org.lineageos.jelly.favorite.Favorite;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String EXTRA_URL = "extra_url";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
+    private static final int ALWAYS_DEFAULT_TO_INCOGNITO = 1;
+    private static final int EXTERNAL_DEFAULT_TO_INCOGNITO = 2;
 
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
@@ -117,10 +120,24 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
+        // Make sure prefs are set before loading them
+        PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+
         Intent intent = getIntent();
         String url = intent.getDataString();
-        boolean incognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
+        boolean incognito;
         boolean desktopMode = false;
+        int incognitoPref = PrefsUtils.getIncognitoDefaults(this);
+        switch(incognitoPref) {
+            case ALWAYS_DEFAULT_TO_INCOGNITO:
+                incognito = true;
+                break;
+            case EXTERNAL_DEFAULT_TO_INCOGNITO:
+                incognito = !Intent.ACTION_MAIN.equals(intent.getAction());
+                break;
+            default:
+                incognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
+        }
 
         // Restore from previous instance
         if (savedInstanceState != null) {
@@ -131,8 +148,8 @@ public class MainActivity extends AppCompatActivity {
             desktopMode = savedInstanceState.getBoolean(EXTRA_DESKTOP_MODE, false);
         }
 
-        // Make sure prefs are set before loading them
-        PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+        ImageView mIncognitoIcon = (ImageView) findViewById(R.id.incognito);
+        mIncognitoIcon.setVisibility(incognito ? View.VISIBLE : View.INVISIBLE);
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
