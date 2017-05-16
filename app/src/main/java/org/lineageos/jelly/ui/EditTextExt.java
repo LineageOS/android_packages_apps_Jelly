@@ -60,8 +60,8 @@ public class EditTextExt extends AppCompatEditText {
         float width = getMeasuredWidth();
 
         if (getText() == null || getText().length() == 0 || lineWidth <= width) {
-            super.onDraw(canvas);
             getPaint().setShader(null);
+            super.onDraw(canvas);
             return;
         }
 
