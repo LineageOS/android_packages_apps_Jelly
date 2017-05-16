@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_3b19d488",
+        "filename": "app/src/main/res/xml/settings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-05-16T23:05:55Z",
+      "side": 0,
+      "message": "no?",
+      "revId": "eab04da14d0ffee5bdd82591959b5d9f0f3a1008",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
