@@ -46,7 +46,6 @@
             android:key="key_javascript"
             android:summary="@string/pref_js_summary"
             android:title="@string/pref_js_title" />
-
         <SwitchPreference
             android:defaultValue="1"
             android:key="key_location"
@@ -62,5 +61,14 @@
         <Preference
             android:key="key_cookie_clear"
             android:title="@string/pref_cookie_clear" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:key="key_incognito_defaults"
+            android:summary="@string/pref_incognito_defaults_summary"
+            android:title="@string/pref_incognito_defaults"
+            android:entries="@array/pref_incognito_defaults_entries"
+            android:entryValues="@array/pref_incognito_defaults_entryvalues" />
+
     </PreferenceCategory>
 </PreferenceScreen>
