@@ -16,7 +16,7 @@
 <resources>
     <color name="colorPrimary">#fafafa</color>
     <color name="colorPrimaryDark">#E0E0E0</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#1565c0</color>
 
     <color name="colorIncognito">#000b4d</color>
     <color name="colorDelete">#F44336</color>
