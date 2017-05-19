@@ -20,6 +20,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.webkit.WebSettings;
@@ -34,11 +35,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WebViewExt extends WebView {
-    private static final String USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) %1$s Safari/537.36";
-    private static final String DEFAULT_CHROME = "Chrome/37.0.2049.0";
-    private static final String CHROME_PATTERN = " (Chrome/[0-9.]+) ";
+
+    private static final String TAG = "WebViewExt";
+
+    private static final String DESKTOP_DEVICE = "X11; Linux x86_64";
+    private static final String DESKTOP_USER_AGENT_FALLBACK =
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36";
 
     private WebViewExtActivity mActivity;
+
+    private String mMobileUserAgent;
+    private String mDesktopUserAgent;
 
     private boolean mIncognito;
     private boolean mDesktopMode;
@@ -101,6 +108,23 @@ public class WebViewExt extends WebView {
         setDownloadListener((url, userAgent, contentDescription, mimeType, contentLength) ->
                 mActivity.downloadFileAsk(url,
                         URLUtil.guessFileName(url, contentDescription, mimeType)));
+
+        // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
+        // properly if the browser reports itself as a simple WebView.
+        // Desktop: Generate the desktop user agent starting from the mobile one so that
+        // we always report the current engine version.
+        Pattern pattern = Pattern.compile("([^)]+ \\()([^)]+)(\\) .*)");
+        Matcher matcher = pattern.matcher(getSettings().getUserAgentString());
+        if (matcher.matches()) {
+            String mobileDevice = matcher.group(2).replace("; wv", "");
+            mMobileUserAgent = matcher.group(1) + mobileDevice + matcher.group(3);
+            mDesktopUserAgent = matcher.group(1) + DESKTOP_DEVICE + matcher.group(3);
+            getSettings().setUserAgentString(mMobileUserAgent);
+        } else {
+            Log.e(TAG, "Couldn't parse the user agent");
+            mMobileUserAgent = getSettings().getUserAgentString();
+            mDesktopUserAgent = DESKTOP_USER_AGENT_FALLBACK;
+        }
     }
 
     public void init(WebViewExtActivity activity, EditText editText,
@@ -135,22 +159,10 @@ public class WebViewExt extends WebView {
         return mIncognito;
     }
 
-    /*
-     * Try to determine the version of the current webView instead of using an
-     * hard-coded value. Some websites parse the user agent and show a different
-     * content depending on the version reported.
-     */
-    private static String getDesktopUserAgent(String mobileUserAgent) {
-        Pattern pattern = Pattern.compile(CHROME_PATTERN);
-        Matcher matcher = pattern.matcher(mobileUserAgent);
-        return String.format(USER_AGENT, matcher.find() ? matcher.group(1) : DEFAULT_CHROME);
-    }
-
     public void setDesktopMode(boolean desktopMode) {
         mDesktopMode = desktopMode;
         WebSettings settings = getSettings();
-        settings.setUserAgentString(desktopMode ?
-                getDesktopUserAgent(settings.getUserAgentString()) : null);
+        settings.setUserAgentString(desktopMode ? mDesktopUserAgent : mMobileUserAgent);
         settings.setUseWideViewPort(desktopMode);
         settings.setLoadWithOverviewMode(desktopMode);
         reload();
