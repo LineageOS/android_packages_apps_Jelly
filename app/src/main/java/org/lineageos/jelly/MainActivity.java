@@ -36,6 +36,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -46,8 +47,10 @@ import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
+import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -69,7 +72,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnTouchListener,
+        View.OnScrollChangeListener {
     public static final int FILE_CHOOSER_REQ = 421;
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
@@ -87,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
     private Bitmap mUrlIcon;
 
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private GestureDetectorCompat mGestureDetector;
+    private boolean mFingerReleased = false;
+    private boolean mGestureOngoing = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mCoordinator = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
-        SwipeRefreshLayout refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
-        refreshLayout.setOnRefreshListener(() -> {
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
             mWebView.reload();
-            new Handler().postDelayed(() -> refreshLayout.setRefreshing(false), 1000);
+            new Handler().postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1000);
         });
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.load_progress);
         EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
@@ -139,6 +148,17 @@ public class MainActivity extends AppCompatActivity {
         mWebView.init(this, editText, progressBar, incognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
+
+        mGestureDetector = new GestureDetectorCompat(this,
+                new GestureDetector.SimpleOnGestureListener() {
+                    @Override
+                    public boolean onDoubleTapEvent(MotionEvent e) {
+                        mGestureOngoing = true;
+                        return false;
+                    }
+                });
+        mWebView.setOnTouchListener(this);
+        mWebView.setOnScrollChangeListener(this);
     }
 
     @Override
@@ -447,5 +467,39 @@ public class MainActivity extends AppCompatActivity {
         launcherIcon.recycle();
         Snackbar.make(mCoordinator, getString(R.string.shortcut_added),
                 Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        mGestureDetector.onTouchEvent(event);
+        mFingerReleased = event.getAction() == MotionEvent.ACTION_UP;
+
+        if (mGestureOngoing && mFingerReleased && mWebView.getScrollY() == 0) {
+            // We are ending a gesture and we are at the top
+            mSwipeRefreshLayout.setEnabled(true);
+        } else if (mGestureOngoing || event.getPointerCount() > 1) {
+            // A gesture is ongoing or starting
+            mSwipeRefreshLayout.setEnabled(false);
+        } else if (event.getAction() != MotionEvent.ACTION_MOVE) {
+            // We are either initiating or ending a movement
+            if (mWebView.getScrollY() == 0) {
+                mSwipeRefreshLayout.setEnabled(true);
+            } else {
+                mSwipeRefreshLayout.setEnabled(false);
+            }
+        }
+        // Reset the flag, the gesture detector will set it to true if the
+        // gesture is still ongoing
+        mGestureOngoing = false;
+
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+        // In case we reach the top without touching the screen (e.g. fling gesture)
+        if (mFingerReleased && scrollY == 0) {
+            mSwipeRefreshLayout.setEnabled(true);
+        }
     }
 }
