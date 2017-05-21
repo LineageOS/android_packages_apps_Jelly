@@ -28,7 +28,6 @@ import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
@@ -43,7 +42,7 @@ public class WebViewExt extends WebView {
     private static final String DESKTOP_USER_AGENT_FALLBACK =
             "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36";
 
-    private final Context mContext;
+    private WebViewExtActivity mActivity;
 
     private String mMobileUserAgent;
     private String mDesktopUserAgent;
@@ -53,20 +52,14 @@ public class WebViewExt extends WebView {
 
     public WebViewExt(Context context) {
         super(context);
-        mContext = context;
-        setup();
     }
 
     public WebViewExt(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContext = context;
-        setup();
     }
 
     public WebViewExt(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        mContext = context;
-        setup();
     }
 
     @Override
@@ -77,7 +70,7 @@ public class WebViewExt extends WebView {
             return;
         }
 
-        String templateUri = PrefsUtils.getSearchEngine(mContext);
+        String templateUri = PrefsUtils.getSearchEngine(mActivity);
         fixedUrl = UrlUtils.getFormattedUri(templateUri, url);
         if (fixedUrl != null) {
             super.loadUrl(fixedUrl);
@@ -85,9 +78,9 @@ public class WebViewExt extends WebView {
     }
 
     private void setup() {
-        getSettings().setJavaScriptEnabled(PrefsUtils.getJavascript(mContext));
-        getSettings().setJavaScriptCanOpenWindowsAutomatically(PrefsUtils.getJavascript(mContext));
-        getSettings().setGeolocationEnabled(PrefsUtils.getLocation(mContext));
+        getSettings().setJavaScriptEnabled(PrefsUtils.getJavascript(mActivity));
+        getSettings().setJavaScriptCanOpenWindowsAutomatically(PrefsUtils.getJavascript(mActivity));
+        getSettings().setGeolocationEnabled(PrefsUtils.getLocation(mActivity));
         getSettings().setBuiltInZoomControls(true);
         getSettings().setDisplayZoomControls(false);
 
@@ -104,8 +97,7 @@ public class WebViewExt extends WebView {
                     case HitTestResult.SRC_IMAGE_ANCHOR_TYPE:
                         shouldAllowDownload = true;
                     case HitTestResult.SRC_ANCHOR_TYPE:
-                        ((MainActivity) mContext).showSheetMenu(result.getExtra(),
-                                shouldAllowDownload);
+                        mActivity.showSheetMenu(result.getExtra(), shouldAllowDownload);
                         shouldAllowDownload = false;
                         return true;
                 }
@@ -114,7 +106,7 @@ public class WebViewExt extends WebView {
         });
 
         setDownloadListener((url, userAgent, contentDescription, mimeType, contentLength) ->
-                ((MainActivity) mContext).downloadFileAsk(url,
+                mActivity.downloadFileAsk(url,
                         URLUtil.guessFileName(url, contentDescription, mimeType)));
 
         // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
@@ -135,13 +127,15 @@ public class WebViewExt extends WebView {
         }
     }
 
-    public void init(Context context, EditText editText,
+    public void init(WebViewExtActivity activity, EditText editText,
                      ProgressBar progressBar, boolean incognito) {
+        mActivity = activity;
         mIncognito = incognito;
-        ChromeClient chromeClient = new ChromeClient(context, incognito);
+        ChromeClient chromeClient = new ChromeClient(activity, incognito);
         chromeClient.bindEditText(editText);
         chromeClient.bindProgressBar(progressBar);
         setWebChromeClient(chromeClient);
+        setup();
     }
 
     public Bitmap getSnap() {
