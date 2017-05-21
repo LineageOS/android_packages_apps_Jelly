@@ -51,10 +51,12 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
+import android.webkit.WebChromeClient;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
@@ -94,6 +96,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private GestureDetectorCompat mGestureDetector;
     private boolean mFingerReleased = false;
     private boolean mGestureOngoing = false;
+
+    private View mCustomView;
+    private WebChromeClient.CustomViewCallback mFullScreenCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,7 +186,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     @Override
     public void onBackPressed() {
-        if (mWebView.canGoBack()) {
+        if (mCustomView != null) {
+            onHideCustomView();
+        } else if (mWebView.canGoBack()) {
             mWebView.goBack();
         } else {
             super.onBackPressed();
@@ -448,6 +455,37 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         }
     }
 
+    @Override
+    public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
+        if (mCustomView != null) {
+            callback.onCustomViewHidden();
+            return;
+        }
+        mCustomView = view;
+        mFullScreenCallback = callback;
+        immersiveModeEnable(true);
+        mCustomView.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black));
+        addContentView(mCustomView, new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        findViewById(R.id.app_bar_layout).setVisibility(View.GONE);
+        mSwipeRefreshLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onHideCustomView() {
+        if (mCustomView == null) {
+            return;
+        }
+        immersiveModeEnable(false);
+        findViewById(R.id.app_bar_layout).setVisibility(View.VISIBLE);
+        mSwipeRefreshLayout.setVisibility(View.VISIBLE);
+        ViewGroup viewGroup = (ViewGroup) mCustomView.getParent();
+        viewGroup.removeView(mCustomView);
+        mFullScreenCallback.onCustomViewHidden();
+        mFullScreenCallback = null;
+        mCustomView = null;
+    }
+
     private void addShortcut() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setData(Uri.parse(mWebView.getUrl()));
@@ -500,5 +538,27 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         if (mFingerReleased && scrollY == 0) {
             mSwipeRefreshLayout.setEnabled(true);
         }
+    }
+
+    private void immersiveModeEnable(boolean enabled) {
+        int flags = getWindow().getDecorView().getSystemUiVisibility();
+        int immersiveModeFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        if (enabled) {
+            flags |= immersiveModeFlags;
+        } else {
+            flags &= ~immersiveModeFlags;
+        }
+        getWindow().getDecorView().setSystemUiVisibility(flags);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        immersiveModeEnable(hasFocus && mCustomView != null);
     }
 }
