@@ -40,7 +40,6 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
@@ -66,15 +65,15 @@ import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.ui.EditTextExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
+import org.lineageos.jelly.webview.WebViewExtActivity;
 import org.lineageos.jelly.webview.WebViewExt;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity implements View.OnTouchListener,
+public class MainActivity extends WebViewExtActivity implements View.OnTouchListener,
         View.OnScrollChangeListener {
-    public static final int FILE_CHOOSER_REQ = 421;
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
     private static final String EXTRA_INCOGNITO = "extra_incognito";
