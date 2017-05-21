@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -91,6 +92,15 @@ class ChromeClient extends WebChromeClientCompat {
         } else {
             callback.invoke(origin, true, false);
         }
+    }
+
+    @Override
+    public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
+        mActivity.onShowCustomView(view, callback);
+    }
+
+    public void onHideCustomView() {
+        mActivity.onHideCustomView();
     }
 
     void bindEditText(EditText editText) {
