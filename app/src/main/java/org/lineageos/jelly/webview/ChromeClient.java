@@ -100,4 +100,12 @@ class ChromeClient extends WebChromeClient {
     void bindProgressBar(ProgressBar progressBar) {
         mProgressBar = progressBar;
     }
+
+    public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
+        mActivity.onShowCustomView(view, callback);
+    }
+
+    public void onHideCustomView() {
+        mActivity.onHideCustomView();
+    }
 }
