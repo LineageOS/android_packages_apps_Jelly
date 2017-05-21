@@ -93,6 +93,15 @@ class ChromeClient extends WebChromeClient {
         }
     }
 
+    @Override
+    public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
+        mActivity.onShowCustomView(view, callback);
+    }
+
+    public void onHideCustomView() {
+        mActivity.onHideCustomView();
+    }
+
     void bindEditText(EditText editText) {
         mEditText = editText;
     }
