@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_9921dea1",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2017-05-21T17:24:12Z",
+      "side": 1,
+      "message": "Irrelevant but would make more sense as immersiveModeEnable (setter logic) instead of immersiveModeEnabled (getter) in my opinion.",
+      "revId": "204012522969699cda7b421a71b90d9f6b66f013",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
