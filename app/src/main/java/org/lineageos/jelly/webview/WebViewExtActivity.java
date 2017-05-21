@@ -17,6 +17,8 @@ package org.lineageos.jelly.webview;
 
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.webkit.WebChromeClient;
 
 public abstract class WebViewExtActivity extends AppCompatActivity {
 
@@ -31,4 +33,8 @@ public abstract class WebViewExtActivity extends AppCompatActivity {
     public abstract void onThemeColorSet(int color);
 
     public abstract void onFaviconLoaded(Bitmap favicon);
+
+    public abstract void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback);
+
+    public abstract void onHideCustomView();
 }
