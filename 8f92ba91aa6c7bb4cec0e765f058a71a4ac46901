@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_0b6a851a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2017-05-24T14:39:25Z",
+      "side": 1,
+      "message": "No longer applies on current PS right ?",
+      "revId": "8f92ba91aa6c7bb4cec0e765f058a71a4ac46901",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
