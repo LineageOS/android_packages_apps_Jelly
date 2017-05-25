@@ -65,8 +65,8 @@ import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.ui.EditTextExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
-import org.lineageos.jelly.webview.WebViewExtActivity;
 import org.lineageos.jelly.webview.WebViewExt;
+import org.lineageos.jelly.webview.WebViewExtActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -176,7 +176,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     protected void onResume() {
         super.onResume();
         mWebView.onResume();
-        CookieManager.getInstance().setAcceptCookie(PrefsUtils.getCookie(this));
+        CookieManager.getInstance()
+                .setAcceptCookie(!mWebView.isIncognito() && PrefsUtils.getCookie(this));
         if (PrefsUtils.getLookLock(this)) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
                     WindowManager.LayoutParams.FLAG_SECURE);
