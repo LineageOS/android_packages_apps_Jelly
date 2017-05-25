@@ -176,7 +176,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     protected void onResume() {
         super.onResume();
         mWebView.onResume();
-        CookieManager.getInstance().setAcceptCookie(PrefsUtils.getCookie(this));
+        CookieManager.getInstance()
+                .setAcceptCookie(!mWebView.isIncognito() && PrefsUtils.getCookie(this));
         if (PrefsUtils.getLookLock(this)) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
                     WindowManager.LayoutParams.FLAG_SECURE);
