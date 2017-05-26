@@ -22,6 +22,52 @@
       "revId": "229c74520de5df13d9959af1504e2f062c83a573",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_4ccae0a2",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryDatabaseHandler.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-05-26T19:17:43Z",
+      "side": 1,
+      "message": "I don\u0027t think you need a writable database.",
+      "range": {
+        "startLine": 93,
+        "startChar": 28,
+        "endLine": 93,
+        "endChar": 47
+      },
+      "revId": "229c74520de5df13d9959af1504e2f062c83a573",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_6ccfa4b1",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryDatabaseHandler.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-05-26T19:17:43Z",
+      "side": 1,
+      "message": "Please use prepared statements or you allow bad things to happen. Also, I think you can make this case insensitive using LOWER() or using LIKE, so something like:\n\n        String escapedQuery \u003d \"%\" + query.replace(\"#\", \"##\").replace(\"%\", \"#%\").replace(\"_\", \"#_\") + \"%\";\n        String[] selectionArgs \u003d { escapedQuery, escapedQuery };\n        String sql \u003d \"SELECT * FROM \" + DB_TABLE_HISTORY + \" WHERE \" +\n                KEY_TITLE + \" LIKE ? ESCAPE \u0027#\u0027 OR \" + KEY_URL + \" LIKE ? ESCAPE \u0027#\u0027;\";",
+      "range": {
+        "startLine": 95,
+        "startChar": 55,
+        "endLine": 95,
+        "endChar": 60
+      },
+      "revId": "229c74520de5df13d9959af1504e2f062c83a573",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
