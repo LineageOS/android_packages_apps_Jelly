@@ -28,6 +28,7 @@ import android.widget.TextView;
 import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
+import org.lineageos.jelly.webview.WebViewExtActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -56,12 +57,21 @@ class HistoryHolder extends RecyclerView.ViewHolder {
                 Locale.getDefault()).format(new Date(item.getId())));
 
         mRootLayout.setOnClickListener(v -> {
+            if (!(context instanceof HistoryActivity)) {
+                ((WebViewExtActivity) context).load(item.getUrl());
+                return;
+            }
+
             Intent intent = new Intent(context, MainActivity.class);
             intent.setData(Uri.parse(item.getUrl()));
             context.startActivity(intent);
         });
 
         mRootLayout.setOnLongClickListener(v -> {
+            if (!(context instanceof HistoryActivity)) {
+                return false;
+            }
+
             new HistoryDatabaseHandler(context).deleteItem(item.getId());
             ((HistoryActivity) context).getAdapter().removeItem(item.getId());
             return true;

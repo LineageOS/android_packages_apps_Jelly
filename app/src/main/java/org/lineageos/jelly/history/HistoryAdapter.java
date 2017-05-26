@@ -24,12 +24,12 @@ import org.lineageos.jelly.R;
 
 import java.util.List;
 
-class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
 
     private final Context mContext;
     private List<HistoryItem> mList;
 
-    HistoryAdapter(Context context, List<HistoryItem> list) {
+    public HistoryAdapter(Context context, List<HistoryItem> list) {
         mContext = context;
         mList = list;
     }
@@ -50,7 +50,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         return mList.size();
     }
 
-    void updateList(List<HistoryItem> list) {
+    public void updateList(List<HistoryItem> list) {
         mList = list;
         notifyDataSetChanged();
     }

@@ -42,8 +42,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
@@ -63,6 +68,9 @@ import org.lineageos.jelly.favorite.Favorite;
 import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
+import org.lineageos.jelly.history.HistoryAdapter;
+import org.lineageos.jelly.history.HistoryDatabaseHandler;
+import org.lineageos.jelly.history.HistoryItem;
 import org.lineageos.jelly.ui.EditTextExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
@@ -72,6 +80,8 @@ import org.lineageos.jelly.webview.WebViewExtActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends WebViewExtActivity implements View.OnTouchListener,
         View.OnScrollChangeListener {
@@ -87,6 +97,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
+
+    private RecyclerView mSuggestions;
+    private HistoryAdapter mSuggestionsAdapter;
 
     private String mWaitingDownloadUrl;
     private String mWaitingDownloadName;
@@ -114,6 +127,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             new Handler().postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1000);
         });
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.load_progress);
+        mSuggestions = (RecyclerView) findViewById(R.id.search_results_list);
         EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
         editText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -123,9 +137,25 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
                 mWebView.loadUrl(editText.getText().toString());
                 editText.clearFocus();
+                mSuggestions.setVisibility(View.GONE);
                 return true;
             }
             return false;
+        });
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mSuggestions.setVisibility(View.VISIBLE);
+                loadSuggestions(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         // Make sure prefs are set before loading them
@@ -157,6 +187,12 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         ImageView mIncognitoIcon = (ImageView) findViewById(R.id.incognito);
         mIncognitoIcon.setVisibility(incognito ? View.VISIBLE : View.GONE);
+
+        // Setup mSuggestions list
+        mSuggestionsAdapter = new HistoryAdapter(this, new ArrayList<>());
+        mSuggestions.setLayoutManager(new LinearLayoutManager(this));
+        mSuggestions.setItemAnimator(new DefaultItemAnimator());
+        mSuggestions.setAdapter(mSuggestionsAdapter);
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
@@ -492,6 +528,19 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                 Snackbar.LENGTH_LONG).show();
     }
 
+    private void loadSuggestions(String query) {
+        List<HistoryItem> itemList = new HistoryDatabaseHandler(this).getByQuery(query);
+        mSuggestionsAdapter.updateList(itemList);
+    }
+
+    public void hideSuggestions() {
+        mSuggestions.setVisibility(View.GONE);
+    }
+
+    public void load(String url) {
+        mWebView.loadUrl(url);
+    }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         mGestureDetector.onTouchEvent(event);
@@ -514,6 +563,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         // Reset the flag, the gesture detector will set it to true if the
         // gesture is still ongoing
         mGestureOngoing = false;
+
+        // Hide suggestions
+        hideSuggestions();
 
         return super.onTouchEvent(event);
     }

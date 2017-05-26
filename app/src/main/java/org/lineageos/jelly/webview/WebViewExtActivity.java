@@ -29,4 +29,8 @@ public abstract class WebViewExtActivity extends AppCompatActivity {
     public abstract void showSheetMenu(String url, boolean shouldAllowDownload);
 
     public abstract void setColor(Bitmap favicon, boolean incognito);
+
+    public abstract void load(String url);
+
+    public abstract void hideSuggestions();
 }
