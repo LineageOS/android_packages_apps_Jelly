@@ -88,6 +88,24 @@ public class HistoryDatabaseHandler extends SQLiteOpenHelper {
         return list;
     }
 
+    public List<HistoryItem> getByQuery(String query) {
+        List<HistoryItem> list = new ArrayList<>();
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + DB_TABLE_HISTORY +
+                " WHERE instr(" + KEY_TITLE + ", \'" + query + "\') > 0 OR" +
+                " instr(" + KEY_URL + ", \'" + query + "\') > 0", null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                list.add(new HistoryItem(Long.parseLong(cursor.getString(0)),
+                        cursor.getString(1), cursor.getString(2)));
+            } while (cursor.moveToNext() && list.size() < 4);
+        }
+        cursor.close();
+        db.close();
+        return list;
+    }
+
     void deleteAll() {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(DB_TABLE_HISTORY, KEY_ID + ">=?", new String[]{"0"});

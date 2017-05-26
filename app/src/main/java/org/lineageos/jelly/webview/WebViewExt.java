@@ -26,6 +26,7 @@ import android.webkit.URLUtil;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import org.lineageos.jelly.utils.PrefsUtils;
