@@ -53,6 +53,14 @@ class ChromeClient extends WebChromeClient {
     public void onProgressChanged(WebView view, int progress) {
         mProgressBar.setVisibility(progress == 100 ? View.INVISIBLE : View.VISIBLE);
         mProgressBar.setProgress(progress == 100 ? 0 : progress);
+        if (progress != 0) {
+            mActivity.hideSuggestions();
+
+            if (mEditText.hasFocus()) {
+                mEditText.clearFocus();
+            }
+        }
+
         super.onProgressChanged(view, progress);
     }
 
