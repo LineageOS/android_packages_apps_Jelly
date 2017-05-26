@@ -16,7 +16,6 @@
 package org.lineageos.jelly;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -32,8 +31,6 @@ import android.widget.Toast;
 
 import org.lineageos.jelly.utils.PrefsUtils;
 
-// "noSuchMethodError" is thrown if lambda is used in this class (wtf)
-@SuppressWarnings("Convert2Lambda")
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -45,12 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> finish());
     }
 
     public static class MyPreferenceFragment extends PreferenceFragment {
@@ -62,23 +54,17 @@ public class SettingsActivity extends AppCompatActivity {
 
             Preference homePage = findPreference("key_home_page");
             homePage.setSummary(PrefsUtils.getHomePage(getContext()));
-            homePage.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    editHomePage(preference);
-                    return true;
-                }
+            homePage.setOnPreferenceClickListener(preference -> {
+                editHomePage(preference);
+                return true;
             });
 
             Preference clearCookie = findPreference("key_cookie_clear");
-            clearCookie.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    CookieManager.getInstance().removeAllCookies(null);
-                    Toast.makeText(getContext(), getString(R.string.pref_cookie_clear_done),
-                            Toast.LENGTH_LONG).show();
-                    return true;
-                }
+            clearCookie.setOnPreferenceClickListener(preference -> {
+                CookieManager.getInstance().removeAllCookies(null);
+                Toast.makeText(getContext(), getString(R.string.pref_cookie_clear_done),
+                        Toast.LENGTH_LONG).show();
+                return true;
             });
         }
 
@@ -97,24 +83,18 @@ public class SettingsActivity extends AppCompatActivity {
                     .setMessage(R.string.pref_start_page_dialog_message)
                     .setView(homepageView)
                     .setPositiveButton(android.R.string.ok,
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    String url = editText.getText().toString().isEmpty() ?
-                                            getString(R.string.default_home_page) :
-                                            editText.getText().toString();
-                                    PrefsUtils.setHomePage(context, url);
-                                    preference.setSummary(url);
-                                }
+                            (dialog, which) -> {
+                                String url = editText.getText().toString().isEmpty() ?
+                                        getString(R.string.default_home_page) :
+                                        editText.getText().toString();
+                                PrefsUtils.setHomePage(context, url);
+                                preference.setSummary(url);
                             })
                     .setNeutralButton(R.string.pref_start_page_dialog_reset,
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    String url = getString(R.string.default_home_page);
-                                    PrefsUtils.setHomePage(context, url);
-                                    preference.setSummary(url);
-                                }
+                            (dialog, which) -> {
+                                String url = getString(R.string.default_home_page);
+                                PrefsUtils.setHomePage(context, url);
+                                preference.setSummary(url);
                             })
                     .setNegativeButton(android.R.string.cancel, null)
                     .show();
