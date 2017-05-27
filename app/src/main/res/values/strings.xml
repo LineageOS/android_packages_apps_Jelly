@@ -121,6 +121,12 @@
     <string name="history_delete_positive">Clear</string>
     <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">Clearing history\u2026</string>
+    <!-- History: delete single entry dialog title -->
+    <string name="history_delete_entry_dialog_title">Remove from history</string>
+    <!-- History: delete single entry dialog message -->
+    <string name="history_delete_entry_dialog_message">Do you want to remove this entry?</string>
+    <!-- History: delete single entry dialog confirm button -->
+    <string name="history_delete_entry_positive">Remove</string>
 
     <!-- Favorite: title -->
     <string name="favorite_title">Favorites</string>

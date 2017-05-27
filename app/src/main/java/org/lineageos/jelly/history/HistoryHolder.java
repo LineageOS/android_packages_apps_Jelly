@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -62,8 +63,16 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         });
 
         mRootLayout.setOnLongClickListener(v -> {
-            new HistoryDatabaseHandler(context).deleteItem(item.getId());
-            ((HistoryActivity) context).getAdapter().removeItem(item.getId());
+            new AlertDialog.Builder(context)
+                    .setTitle(R.string.history_delete_entry_dialog_title)
+                    .setMessage(R.string.history_delete_entry_dialog_message)
+                    .setPositiveButton(R.string.history_delete_entry_positive,
+                            (dialog, whichButton) -> {
+                                new HistoryDatabaseHandler(context).deleteItem(item.getId());
+                                ((HistoryActivity) context).getAdapter().removeItem(item.getId());
+                            })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
             return true;
         });
 
