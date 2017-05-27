@@ -34,7 +34,6 @@ import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity {
@@ -112,8 +111,6 @@ public class HistoryActivity extends AppCompatActivity {
 
     void refresh() {
         List<HistoryItem> items = mDbHandler.getAllItems();
-        // Reverse database list order
-        Collections.reverse(items);
         mAdapter.updateList(items);
 
         if (items.isEmpty()) {

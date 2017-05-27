@@ -74,8 +74,10 @@ public class HistoryDatabaseHandler extends SQLiteOpenHelper {
 
     List<HistoryItem> getAllItems() {
         List<HistoryItem> list = new ArrayList<>();
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + DB_TABLE_HISTORY, null);
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {KEY_ID, KEY_TITLE, KEY_URL};
+        String sortOrder = KEY_ID + " DESC";
+        Cursor cursor = db.query(DB_TABLE_HISTORY, projection, null, null, null, null, sortOrder);
 
         if (cursor.moveToFirst()) {
             do {
