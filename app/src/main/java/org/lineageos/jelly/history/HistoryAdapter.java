@@ -73,4 +73,15 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         }
         removeItemAtPosition(position);
     }
+
+    void addItem(HistoryItem item) {
+        int position = 0;
+        for (; position < mList.size(); position++) {
+            if (mList.get(position).getId() < item.getId()) {
+                break;
+            }
+        }
+        mList.add(position, item);
+        notifyItemInserted(position);
+    }
 }

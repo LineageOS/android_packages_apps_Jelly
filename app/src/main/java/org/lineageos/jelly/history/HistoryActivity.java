@@ -145,7 +145,6 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void updateHistoryView(boolean empty) {
-        mList.setVisibility(empty ? View.GONE : View.VISIBLE);
         mEmptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 

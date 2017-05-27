@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -62,8 +63,15 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         });
 
         mRootLayout.setOnLongClickListener(v -> {
-            new HistoryDatabaseHandler(context).deleteItem(item.getId());
-            ((HistoryActivity) context).getAdapter().removeItem(item.getId());
+            HistoryAdapter adapter = ((HistoryActivity) context).getAdapter();
+            HistoryDatabaseHandler dbHandler = new HistoryDatabaseHandler(context);
+            dbHandler.deleteItem(item.getId());
+            adapter.removeItem(item.getId());
+            Snackbar.make(v, R.string.snackbar_history_item_deleted, Snackbar.LENGTH_LONG)
+                    .setAction(android.R.string.cancel, l -> {
+                        dbHandler.addItem(item);
+                        adapter.addItem(item);
+                    }).show();
             return true;
         });
 
