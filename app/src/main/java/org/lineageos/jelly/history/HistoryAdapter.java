@@ -58,11 +58,6 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
     void removeItemAtPosition(int position) {
         mList.remove(position);
         notifyItemRemoved(position);
-
-        if (mList.isEmpty()) {
-            // Show empty status
-            ((HistoryActivity) mContext).refresh();
-        }
     }
 
     void removeItem(long id) {
