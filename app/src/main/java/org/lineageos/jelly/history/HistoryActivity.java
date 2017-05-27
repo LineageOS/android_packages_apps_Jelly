@@ -103,9 +103,10 @@ public class HistoryActivity extends AppCompatActivity {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                toolbar.setElevation(recyclerView.getChildAt(0).getTop() < listTop ?
-                        UiUtils.dpToPx(getResources(),
-                                getResources().getDimension(R.dimen.toolbar_elevation)) : 0);
+                boolean elevate = recyclerView.getChildAt(0) != null &&
+                        recyclerView.getChildAt(0).getTop() < listTop;
+                toolbar.setElevation(elevate ? UiUtils.dpToPx(getResources(),
+                                        getResources().getDimension(R.dimen.toolbar_elevation)) : 0);
             }
         });
     }
@@ -145,7 +146,6 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void updateHistoryView(boolean empty) {
-        mList.setVisibility(empty ? View.GONE : View.VISIBLE);
         mEmptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 
