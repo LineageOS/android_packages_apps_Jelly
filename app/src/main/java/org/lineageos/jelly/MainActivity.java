@@ -16,7 +16,6 @@
 package org.lineageos.jelly;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.app.DownloadManager;
 import android.content.Context;
@@ -56,6 +55,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import org.lineageos.jelly.favorite.Favorite;
@@ -65,8 +65,8 @@ import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.ui.EditTextExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
-import org.lineageos.jelly.webview.WebViewExtActivity;
 import org.lineageos.jelly.webview.WebViewExt;
+import org.lineageos.jelly.webview.WebViewExtActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -389,8 +389,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     public void showSheetMenu(String url, boolean shouldAllowDownload) {
         final BottomSheetDialog sheet = new BottomSheetDialog(this);
 
-        @SuppressLint("InflateParams")
-        View view = getLayoutInflater().inflate(R.layout.sheet_actions, null);
+        View view = getLayoutInflater().inflate(R.layout.sheet_actions, new LinearLayout(this));
         View tabLayout = view.findViewById(R.id.sheet_new_tab);
         View shareLayout = view.findViewById(R.id.sheet_share);
         View favouriteLayout = view.findViewById(R.id.sheet_favourite);

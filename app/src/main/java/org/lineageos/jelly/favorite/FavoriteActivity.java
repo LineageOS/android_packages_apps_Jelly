@@ -15,7 +15,6 @@
  */
 package org.lineageos.jelly.favorite;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +27,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
@@ -95,10 +95,9 @@ public class FavoriteActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressWarnings("SameReturnValue")
     boolean editItem(Favorite item) {
-        @SuppressLint("InflateParams")
-        View view = LayoutInflater.from(this).inflate(R.layout.dialog_favorite_edit, null);
+        View view = LayoutInflater.from(this)
+                .inflate(R.layout.dialog_favorite_edit, new LinearLayout(this));
         EditText titleEdit = (EditText) view.findViewById(R.id.favorite_edit_title);
         EditText urlEdit = (EditText) view.findViewById(R.id.favorite_edit_url);
 
