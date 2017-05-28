@@ -77,7 +77,7 @@ public class HistoryActivity extends AppCompatActivity {
         };
         mAdapter.registerAdapterDataObserver(mAdapterDataObserver);
 
-        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, list));
+        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this));
         helper.attachToRecyclerView(list);
 
         int listTop = list.getTop();
@@ -163,7 +163,8 @@ public class HistoryActivity extends AppCompatActivity {
         }.execute();
     }
 
-    HistoryAdapter getAdapter() {
-        return mAdapter;
+    public void deleteEntry(int position) {
+        HistoryItem item = mAdapter.removeItemAtPosition(position);
+        mDbHandler.deleteItem(item);
     }
 }
