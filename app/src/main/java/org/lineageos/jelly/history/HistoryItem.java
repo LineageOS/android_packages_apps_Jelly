@@ -47,4 +47,8 @@ public class HistoryItem {
     String getUrl() {
         return url;
     }
+
+    public boolean newerThan(HistoryItem item) {
+        return item.getId() > getId();
+    }
 }
