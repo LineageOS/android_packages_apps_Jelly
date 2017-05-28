@@ -37,7 +37,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity {
-    private RecyclerView mList;
     private View mEmptyView;
 
     private HistoryDatabaseHandler mDbHandler;
@@ -55,15 +54,15 @@ public class HistoryActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(v -> finish());
 
-        mList = (RecyclerView) findViewById(R.id.history_list);
+        RecyclerView list = (RecyclerView) findViewById(R.id.history_list);
         mEmptyView = findViewById(R.id.history_empty_layout);
 
         mDbHandler = new HistoryDatabaseHandler(this);
         mAdapter = new HistoryAdapter(this, new ArrayList<>());
-        mList.setLayoutManager(new LinearLayoutManager(this));
-        mList.addItemDecoration(new HistoryAnimationDecorator(this));
-        mList.setItemAnimator(new DefaultItemAnimator());
-        mList.setAdapter(mAdapter);
+        list.setLayoutManager(new LinearLayoutManager(this));
+        list.addItemDecoration(new HistoryAnimationDecorator(this));
+        list.setItemAnimator(new DefaultItemAnimator());
+        list.setAdapter(mAdapter);
 
         mAdapterDataObserver = new RecyclerView.AdapterDataObserver() {
             @Override
@@ -78,19 +77,19 @@ public class HistoryActivity extends AppCompatActivity {
         };
         mAdapter.registerAdapterDataObserver(mAdapterDataObserver);
 
-        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, mList
-        ));
-        helper.attachToRecyclerView(mList);
+        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, list));
+        helper.attachToRecyclerView(list);
 
-        int listTop = mList.getTop();
-        mList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        int listTop = list.getTop();
+        list.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                toolbar.setElevation(recyclerView.getChildAt(0).getTop() < listTop ?
-                        UiUtils.dpToPx(getResources(),
-                                getResources().getDimension(R.dimen.toolbar_elevation)) : 0);
+                boolean elevate = recyclerView.getChildAt(0) != null &&
+                        recyclerView.getChildAt(0).getTop() < listTop;
+                toolbar.setElevation(elevate ? UiUtils.dpToPx(getResources(),
+                        getResources().getDimension(R.dimen.toolbar_elevation)) : 0);
             }
         });
     }
@@ -130,7 +129,6 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void updateHistoryView(boolean empty) {
-        mList.setVisibility(empty ? View.GONE : View.VISIBLE);
         mEmptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 
