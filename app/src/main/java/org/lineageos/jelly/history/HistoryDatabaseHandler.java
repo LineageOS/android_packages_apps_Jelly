@@ -81,6 +81,10 @@ public class HistoryDatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    void deleteItem(HistoryItem item) {
+        deleteItem(item.getId());
+    }
+
     void deleteItem(long id) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(DB_TABLE_HISTORY, KEY_ID + "=?", new String[]{String.valueOf(id)});
