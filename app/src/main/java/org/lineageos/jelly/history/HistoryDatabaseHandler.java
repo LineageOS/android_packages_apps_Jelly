@@ -78,7 +78,6 @@ public class HistoryDatabaseHandler extends SQLiteOpenHelper {
             db.insert(DB_TABLE_HISTORY, null, values);
         }
         cursor.close();
-        db.close();
     }
 
     void deleteItem(HistoryItem item) {
@@ -88,7 +87,6 @@ public class HistoryDatabaseHandler extends SQLiteOpenHelper {
     void deleteItem(long id) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(DB_TABLE_HISTORY, KEY_ID + "=?", new String[]{String.valueOf(id)});
-        db.close();
     }
 
     List<HistoryItem> getAllItems() {
@@ -105,13 +103,11 @@ public class HistoryDatabaseHandler extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
-        db.close();
         return list;
     }
 
     void deleteAll() {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(DB_TABLE_HISTORY, KEY_ID + ">=?", new String[]{"0"});
-        db.close();
     }
 }
