@@ -42,6 +42,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     private HistoryDatabaseHandler mDbHandler;
     private HistoryAdapter mAdapter;
+    private RecyclerView.AdapterDataObserver mAdapterDataObserver;
 
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -64,6 +65,19 @@ public class HistoryActivity extends AppCompatActivity {
         mList.setItemAnimator(new DefaultItemAnimator());
         mList.setAdapter(mAdapter);
 
+        mAdapterDataObserver = new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onItemRangeInserted(int positionStart, int itemCount) {
+                updateHistoryView(mAdapter.getItemCount() == 0);
+            }
+
+            @Override
+            public void onItemRangeRemoved(int positionStart, int itemCount) {
+                updateHistoryView(mAdapter.getItemCount() == 0);
+            }
+        };
+        mAdapter.registerAdapterDataObserver(mAdapterDataObserver);
+
         ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, mList
         ));
         helper.attachToRecyclerView(mList);
@@ -79,6 +93,12 @@ public class HistoryActivity extends AppCompatActivity {
                                 getResources().getDimension(R.dimen.toolbar_elevation)) : 0);
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        mAdapter.unregisterAdapterDataObserver(mAdapterDataObserver);
+        super.onDestroy();
     }
 
     @Override
@@ -109,14 +129,15 @@ public class HistoryActivity extends AppCompatActivity {
         return true;
     }
 
+    private void updateHistoryView(boolean empty) {
+        mList.setVisibility(empty ? View.GONE : View.VISIBLE);
+        mEmptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
+    }
+
     void refresh() {
         List<HistoryItem> items = mDbHandler.getAllItems();
         mAdapter.updateList(items);
-
-        if (items.isEmpty()) {
-            mList.setVisibility(View.GONE);
-            mEmptyView.setVisibility(View.VISIBLE);
-        }
+        updateHistoryView(items.isEmpty());
     }
 
     private void deleteAll() {
