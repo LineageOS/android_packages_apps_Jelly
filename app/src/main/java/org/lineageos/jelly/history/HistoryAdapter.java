@@ -15,7 +15,6 @@
  */
 package org.lineageos.jelly.history;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -26,11 +25,11 @@ import java.util.List;
 
 class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
 
-    private final Context mContext;
+    private final HistoryActivity mActivity;
     private List<HistoryItem> mList;
 
-    HistoryAdapter(Context context, List<HistoryItem> list) {
-        mContext = context;
+    HistoryAdapter(HistoryActivity activity, List<HistoryItem> list) {
+        mActivity = activity;
         mList = list;
     }
 
@@ -42,7 +41,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
 
     @Override
     public void onBindViewHolder(HistoryHolder holder, int position) {
-        holder.setData(mContext, mList.get(position));
+        holder.setData(mActivity, mList.get(position));
     }
 
     @Override
@@ -55,22 +54,20 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         notifyDataSetChanged();
     }
 
-    void removeItemAtPosition(int position) {
-        mList.remove(position);
+    HistoryItem removeItemAtPosition(int position) {
+        HistoryItem item = mList.remove(position);
         notifyItemRemoved(position);
+        return item;
     }
 
-    void removeItem(long id) {
+    void addItem(HistoryItem item) {
         int position = 0;
         for (; position < mList.size(); position++) {
-            if (mList.get(position).getId() == id) {
+            if (mList.get(position).newerThan(item)) {
                 break;
             }
         }
-
-        if (position == mList.size()) {
-            return;
-        }
-        removeItemAtPosition(position);
+        mList.add(position, item);
+        notifyItemInserted(position);
     }
 }
