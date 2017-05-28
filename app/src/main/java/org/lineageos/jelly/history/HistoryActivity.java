@@ -19,6 +19,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -166,5 +167,11 @@ public class HistoryActivity extends AppCompatActivity {
     public void deleteEntry(int position) {
         HistoryItem item = mAdapter.removeItemAtPosition(position);
         mDbHandler.deleteItem(item);
+        View view = findViewById(R.id.coordinator_layout);
+        Snackbar.make(view, R.string.snackbar_history_item_deleted, Snackbar.LENGTH_LONG)
+                .setAction(android.R.string.cancel, l -> {
+                    mDbHandler.addItem(item);
+                    mAdapter.addItem(item);
+                }).show();
     }
 }
