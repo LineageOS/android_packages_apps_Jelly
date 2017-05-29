@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_b86886f6",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-05-29T14:12:52Z",
+      "side": 1,
+      "message": "wrong?",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 36
+      },
+      "revId": "14e81700f428fa701063fa95988bf67c4a8cee2f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
