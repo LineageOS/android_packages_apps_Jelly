@@ -146,4 +146,11 @@
 
     <string translatable="false" name="default_search_engine">https://duckduckgo.com/?q={searchTerms}</string>
     <string translatable="false" name="default_home_page">https://duckduckgo.com</string>
+
+    <!-- Auth dialog -->
+    <string name="username">User Name:</string>
+    <string name="password">Password:</string>
+    <string name="authentication_title">Authentication Required</string>
+    <string name="authentication_detail">%1$s requires a username and password.</string>
+    <string name="login">LOG IN</string>
 </resources>
