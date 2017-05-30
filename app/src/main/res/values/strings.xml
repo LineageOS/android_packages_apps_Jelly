@@ -146,4 +146,6 @@
 
     <string translatable="false" name="default_search_engine">https://duckduckgo.com/?q={searchTerms}</string>
     <string translatable="false" name="default_home_page">https://duckduckgo.com</string>
+    <string name="menu_search">Find in page</string>
+    <string name="search_bar_hint">Search</string>
 </resources>
