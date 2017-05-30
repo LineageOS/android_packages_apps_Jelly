@@ -24,7 +24,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -84,6 +87,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
+    private boolean mHasThemeColorSupport;
+    private Drawable mLastActionBarDrawable;
 
     private String mWaitingDownloadUrl;
     private String mWaitingDownloadName;
@@ -147,6 +152,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         mWebView.init(this, editText, progressBar, incognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
+
+        mHasThemeColorSupport = mWebView.isThemeColorSupported();
 
         mGestureDetector = new GestureDetectorCompat(this,
                 new GestureDetector.SimpleOnGestureListener() {
@@ -427,15 +434,48 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         return result == PackageManager.PERMISSION_GRANTED;
     }
 
-    public void setColor(Bitmap favicon, boolean incognito) {
-        ActionBar actionBar = getSupportActionBar();
-        if (favicon == null || favicon.isRecycled() || actionBar == null) {
+    public void onThemeColorSet(int color, boolean incognito) {
+        if (mHasThemeColorSupport) {
+            if (color == Color.TRANSPARENT) {
+                color = ContextCompat.getColor(this,
+                        incognito ? R.color.colorIncognito : R.color.colorPrimary);
+            }
+            applyThemeColor(color);
+        }
+    }
+
+    public void onFaviconLoaded(Bitmap favicon, boolean incognito) {
+        if (favicon == null || favicon.isRecycled()) {
             return;
         }
 
         mUrlIcon = favicon.copy(favicon.getConfig(), true);
-        int color = UiUtils.getColor(this, favicon, incognito);
-        actionBar.setBackgroundDrawable(new ColorDrawable(color));
+        if (!mHasThemeColorSupport) {
+            int color = UiUtils.getColor(this, favicon, incognito);
+            applyThemeColor(color);
+        }
+
+        if (!favicon.isRecycled()) {
+            favicon.recycle();
+        }
+    }
+
+    private void applyThemeColor(int color) {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            ColorDrawable newDrawable = new ColorDrawable(color);
+            if (mLastActionBarDrawable != null) {
+                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final TransitionDrawable transition = new TransitionDrawable(layers);
+                transition.setCrossFadeEnabled(true);
+                transition.startTransition(200);
+                actionBar.setBackgroundDrawable(transition);
+            } else {
+                actionBar.setBackgroundDrawable(newDrawable);
+            }
+            mLastActionBarDrawable = newDrawable;
+        }
+
         getWindow().setStatusBarColor(color);
 
         int flags = getWindow().getDecorView().getSystemUiVisibility();
@@ -447,11 +487,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         getWindow().getDecorView().setSystemUiVisibility(flags);
 
         setTaskDescription(new ActivityManager.TaskDescription(mWebView.getTitle(),
-                favicon, color));
-
-        if (!favicon.isRecycled()) {
-            favicon.recycle();
-        }
+                mUrlIcon, color));
     }
 
     private void addShortcut() {
