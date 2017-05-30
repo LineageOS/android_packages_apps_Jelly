@@ -23,7 +23,9 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/v7/cardview/res \
     frameworks/support/v7/recyclerview/res
 
-LOCAL_SRC_FILES := $(call all-java-files-under, java)
+LOCAL_SRC_FILES := \
+    $(call all-java-files-under, java) \
+    $(call all-java-files-under, java_lineage)
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \

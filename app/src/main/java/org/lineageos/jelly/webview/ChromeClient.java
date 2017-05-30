@@ -57,6 +57,12 @@ class ChromeClient extends WebChromeClient {
     }
 
     @Override
+    public void onThemeColorChanged(WebView view, int color) {
+        mActivity.onThemeColorSet(color);
+        super.onThemeColorChanged(view, color);
+    }
+
+    @Override
     public void onReceivedTitle(WebView view, String title) {
         mEditText.setText(view.getUrl());
         if (!mIncognito) {
@@ -66,7 +72,7 @@ class ChromeClient extends WebChromeClient {
 
     @Override
     public void onReceivedIcon(WebView view, Bitmap icon) {
-        mActivity.setColor(icon, mIncognito);
+        mActivity.onFaviconLoaded(icon);
     }
 
     @Override
