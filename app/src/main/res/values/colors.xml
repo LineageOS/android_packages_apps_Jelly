@@ -20,6 +20,7 @@
 
     <color name="colorIncognito">#000b4d</color>
     <color name="colorDelete">#F44336</color>
+    <color name="colorNotFound">@color/colorDelete</color>
 
     <color name="menu_icon">#333333</color>
 
