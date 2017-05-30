@@ -22,6 +22,30 @@
       "revId": "c602cbdfe8c4dc08686a1a3fca1822205619a442",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_7020d29b",
+        "filename": "app/src/main/res/layout/activity_main.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-05-30T19:09:43Z",
+      "side": 1,
+      "message": "I know, didn\u0027t bother to fix",
+      "parentUuid": "fa82b9bf_b0265ab9",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 83
+      },
+      "revId": "c602cbdfe8c4dc08686a1a3fca1822205619a442",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
