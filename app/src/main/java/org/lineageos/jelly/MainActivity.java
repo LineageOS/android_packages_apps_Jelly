@@ -21,9 +21,13 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -66,6 +70,7 @@ import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.ui.EditTextExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
+import org.lineageos.jelly.webview.WebViewCompat;
 import org.lineageos.jelly.webview.WebViewExt;
 import org.lineageos.jelly.webview.WebViewExtActivity;
 
@@ -80,11 +85,16 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private static final String EXTRA_INCOGNITO = "extra_incognito";
     private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
     private static final String EXTRA_URL = "extra_url";
+    private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
 
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
+    private ProgressBar mLoadingProgress;
+    private boolean mHasThemeColorSupport;
+    private Drawable mLastActionBarDrawable;
+    private int mThemeColor;
 
     private String mWaitingDownloadUrl;
     private String mWaitingDownloadName;
@@ -111,7 +121,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             mWebView.reload();
             new Handler().postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1000);
         });
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.load_progress);
+        mLoadingProgress = (ProgressBar) findViewById(R.id.load_progress);
         EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
         editText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -138,6 +148,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                 url = savedInstanceState.getString(EXTRA_URL, null);
             }
             desktopMode = savedInstanceState.getBoolean(EXTRA_DESKTOP_MODE, false);
+            mThemeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0);
         }
 
         // Make sure prefs are set before loading them
@@ -148,9 +159,11 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, editText, progressBar, incognito);
+        mWebView.init(this, editText, mLoadingProgress, incognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
+
+        mHasThemeColorSupport = WebViewCompat.isThemeColorSupported(mWebView);
 
         mGestureDetector = new GestureDetectorCompat(this,
                 new GestureDetector.SimpleOnGestureListener() {
@@ -162,6 +175,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                 });
         mWebView.setOnTouchListener(this);
         mWebView.setOnScrollChangeListener(this);
+
+        applyThemeColor(mThemeColor);
     }
 
     @Override
@@ -240,6 +255,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         outState.putString(EXTRA_URL, mWebView.getUrl());
         outState.putBoolean(EXTRA_INCOGNITO, mWebView.isIncognito());
         outState.putBoolean(EXTRA_DESKTOP_MODE, mWebView.isDesktopMode());
+        outState.putInt(STATE_KEY_THEME_COLOR, mThemeColor);
     }
 
     private void setupMenu() {
@@ -356,9 +372,11 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private void setAsFavorite(String title, String url) {
         FavoriteDatabaseHandler handler = new FavoriteDatabaseHandler(this);
         boolean hasValidIcon = mUrlIcon != null && !mUrlIcon.isRecycled();
-        handler.addItem(new Favorite(title, url, hasValidIcon ?
-                UiUtils.getColor(this, mUrlIcon, false) :
-                ContextCompat.getColor(this, R.color.colorAccent)));
+        int color = hasValidIcon ? UiUtils.getColor(mUrlIcon, false) : Color.TRANSPARENT;
+        if (color == Color.TRANSPARENT) {
+            color = ContextCompat.getColor(this, R.color.colorAccent);
+        }
+        handler.addItem(new Favorite(title, url, color));
         Snackbar.make(mCoordinator, getString(R.string.favorite_added),
                 Snackbar.LENGTH_LONG).show();
     }
@@ -431,15 +449,53 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         return result == PackageManager.PERMISSION_GRANTED;
     }
 
-    public void setColor(Bitmap favicon, boolean incognito) {
-        ActionBar actionBar = getSupportActionBar();
-        if (favicon == null || favicon.isRecycled() || actionBar == null) {
+    public void onThemeColorSet(int color) {
+        if (mHasThemeColorSupport) {
+            applyThemeColor(color);
+        }
+    }
+
+    public void onFaviconLoaded(Bitmap favicon) {
+        if (favicon == null || favicon.isRecycled()) {
             return;
         }
 
         mUrlIcon = favicon.copy(favicon.getConfig(), true);
-        int color = UiUtils.getColor(this, favicon, incognito);
-        actionBar.setBackgroundDrawable(new ColorDrawable(color));
+        if (!mHasThemeColorSupport) {
+            applyThemeColor(UiUtils.getColor(favicon, mWebView.isIncognito()));
+        }
+
+        if (!favicon.isRecycled()) {
+            favicon.recycle();
+        }
+    }
+
+    private void applyThemeColor(int color) {
+        boolean hasValidColor = color != Color.TRANSPARENT;
+        mThemeColor = color;
+        color = getThemeColorWithFallback();
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            ColorDrawable newDrawable = new ColorDrawable(color);
+            if (mLastActionBarDrawable != null) {
+                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final TransitionDrawable transition = new TransitionDrawable(layers);
+                transition.setCrossFadeEnabled(true);
+                transition.startTransition(200);
+                actionBar.setBackgroundDrawable(transition);
+            } else {
+                actionBar.setBackgroundDrawable(newDrawable);
+            }
+            mLastActionBarDrawable = newDrawable;
+        }
+
+        int progressColor = hasValidColor
+                ? UiUtils.isColorLight(color) ? Color.BLACK : Color.WHITE
+                : ContextCompat.getColor(this, R.color.colorAccent);
+        mLoadingProgress.setProgressTintList(ColorStateList.valueOf(progressColor));
+        mLoadingProgress.postInvalidate();
+
         getWindow().setStatusBarColor(color);
 
         int flags = getWindow().getDecorView().getSystemUiVisibility();
@@ -451,11 +507,15 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         getWindow().getDecorView().setSystemUiVisibility(flags);
 
         setTaskDescription(new ActivityManager.TaskDescription(mWebView.getTitle(),
-                favicon, color));
+                mUrlIcon, color));
+    }
 
-        if (!favicon.isRecycled()) {
-            favicon.recycle();
+    private int getThemeColorWithFallback() {
+        if (mThemeColor != Color.TRANSPARENT) {
+            return mThemeColor;
         }
+        return ContextCompat.getColor(this,
+                mWebView.isIncognito() ? R.color.colorIncognito : R.color.colorPrimary);
     }
 
     private void addShortcut() {
@@ -465,7 +525,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         Bitmap icon = mUrlIcon == null ?
                 BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher) : mUrlIcon;
-        Bitmap launcherIcon = UiUtils.getShortcutIcon(this, icon);
+        Bitmap launcherIcon = UiUtils.getShortcutIcon(this, icon, getThemeColorWithFallback());
 
         Intent addIntent = new Intent();
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, mWebView.getTitle());

@@ -24,6 +24,9 @@ android {
     lintOptions {
         disable 'RestrictedApi'
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/java_studio'
+    }
 }
 
 dependencies {

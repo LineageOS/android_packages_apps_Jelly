@@ -13,22 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.webview;
 
-import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebView;
 
-public abstract class WebViewExtActivity extends AppCompatActivity {
+public final class WebViewCompat {
+    private WebViewCompat() {
+    }
 
-    public abstract void downloadFileAsk(String url, String fileName);
-
-    public abstract boolean hasLocationPermission();
-
-    public abstract void requestLocationPermission();
-
-    public abstract void showSheetMenu(String url, boolean shouldAllowDownload);
-
-    public abstract void onThemeColorSet(int color);
-
-    public abstract void onFaviconLoaded(Bitmap favicon);
+    public static boolean isThemeColorSupported(WebView webView) {
+        return webView.isThemeColorSupported();
+    }
 }
+
