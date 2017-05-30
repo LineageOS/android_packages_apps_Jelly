@@ -47,6 +47,14 @@
                     android:progress="54" />
 
                 <include
+                    android:id="@+id/toolbar_search_page"
+                    layout="@layout/search_page"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/toolbar_search_bar"
                     layout="@layout/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
