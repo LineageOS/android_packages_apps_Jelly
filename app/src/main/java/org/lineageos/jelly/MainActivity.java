@@ -46,6 +46,8 @@ import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
@@ -58,10 +60,12 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import org.lineageos.jelly.favorite.Favorite;
 import org.lineageos.jelly.favorite.FavoriteActivity;
@@ -301,6 +305,13 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                         // Delay a bit to allow popup menu hide animation to play
                         new Handler().postDelayed(() -> shareUrl(mWebView.getUrl()), 300);
                         break;
+                    case R.id.menu_search:
+                        // Show the search in page layout
+                        findViewById(R.id.toolbar_search_bar).setVisibility(View.GONE);
+                        findViewById(R.id.toolbar_search_page).setVisibility(View.VISIBLE);
+                        // Run the search setup
+                        setupSearch();
+                        break;
                     case R.id.menu_favorite:
                         startActivity(new Intent(this, FavoriteActivity.class));
                         break;
@@ -332,6 +343,79 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             helper.setForceShowIcon(true);
             //noinspection RestrictedApi
             helper.show();
+        });
+    }
+
+    private void setupSearch() {
+        EditText searchMenuEdit = (EditText) findViewById(R.id.search_menu_edit);
+        TextView searchStatus = (TextView) findViewById(R.id.search_status);
+        ImageButton searchMenuPrev = (ImageButton) findViewById(R.id.search_menu_prev);
+        ImageButton searchMenuNext = (ImageButton) findViewById(R.id.search_menu_next);
+        ImageButton searchMenuCancel = (ImageButton) findViewById(R.id.search_menu_cancel);
+
+        searchMenuEdit.requestFocus();
+        UiUtils.showKeyboard(searchMenuEdit);
+
+        searchMenuEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mWebView.findAllAsync(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        searchMenuEdit.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                UiUtils.hideKeyboard(searchMenuEdit);
+                return true;
+            }
+            return false;
+        });
+        searchMenuEdit.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                searchMenuCancel.callOnClick();
+            }
+        });
+
+        mWebView.setFindListener((activeMatchOrdinal, numberOfMatches, isDoneCounting) -> {
+            // Disabled prev/next if matches are 0
+            searchMenuNext.setEnabled(numberOfMatches > 0);
+            searchMenuPrev.setEnabled(numberOfMatches > 0);
+            // Update status text
+            if (numberOfMatches > 0) {
+                searchStatus.setText(activeMatchOrdinal + 1 + "/" + numberOfMatches);
+            } else {
+                searchStatus.setText("");
+                searchMenuEdit.setTextColor(getColor(R.color.colorDelete));
+            }
+        });
+        searchMenuPrev.setOnClickListener(v -> {
+            UiUtils.hideKeyboard(searchMenuEdit);
+            mWebView.findNext(false);
+        });
+        searchMenuNext.setOnClickListener(v -> {
+            UiUtils.hideKeyboard(searchMenuEdit);
+            mWebView.findNext(true);
+        });
+        searchMenuCancel.setOnClickListener(v -> {
+            UiUtils.hideKeyboard(searchMenuEdit);
+            // Remove search text
+            searchStatus.setText("");
+            // Remove webview finds
+            mWebView.clearMatches();
+            // Remove find listner
+            mWebView.setFindListener(null);
+            // Show the search bar layout
+            findViewById(R.id.toolbar_search_page).setVisibility(View.GONE);
+            findViewById(R.id.toolbar_search_bar).setVisibility(View.VISIBLE);
         });
     }
 
