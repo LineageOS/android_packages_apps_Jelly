@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (c) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -47,6 +46,14 @@
                     android:progress="54" />
 
                 <include
+                    android:id="@+id/toolbar_search_page"
+                    layout="@layout/search_page"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/toolbar_search_bar"
                     layout="@layout/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
