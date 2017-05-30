@@ -24,11 +24,13 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v7.graphics.Palette;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageButton;
 
 public final class UiUtils {
 
@@ -104,4 +106,16 @@ public final class UiUtils {
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
+    /**
+     * Sets the specified image buttonto the given state, while modifying or
+     * "graying-out" the icon as well
+     *
+     * @param enabled The state of the menu item
+     * @param item    The menu item to modify
+     */
+    public static void setImageButtonEnabled(Context context, boolean enabled, ImageButton item) {
+        item.setEnabled(enabled);
+        item.setColorFilter(ContextCompat.getColor(context,
+                enabled ? android.R.color.black : android.R.color.darker_gray));
+    }
 }
