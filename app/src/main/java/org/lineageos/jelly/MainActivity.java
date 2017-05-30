@@ -47,6 +47,8 @@ import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
@@ -59,6 +61,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -106,6 +109,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private boolean mFingerReleased = false;
     private boolean mGestureOngoing = false;
 
+    private InputMethodManager mInputMethodManager = (InputMethodManager)
+            getSystemService(Context.INPUT_METHOD_SERVICE);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,9 +131,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
         editText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                InputMethodManager manager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
-                manager.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
+                mInputMethodManager.hideSoftInputFromWindow(
+                        editText.getApplicationWindowToken(), 0);
 
                 mWebView.loadUrl(editText.getText().toString());
                 editText.clearFocus();
@@ -295,6 +300,13 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                         // Delay a bit to allow popup menu hide animation to play
                         new Handler().postDelayed(() -> shareUrl(mWebView.getUrl()), 300);
                         break;
+                    case R.id.menu_search:
+                        // Show the search in page layout
+                        findViewById(R.id.toolbar_search_bar).setVisibility(View.GONE);
+                        findViewById(R.id.toolbar_search_page).setVisibility(View.VISIBLE);
+                        // Run the search setup
+                        setupSearch();
+                        break;
                     case R.id.menu_favorite:
                         startActivity(new Intent(this, FavoriteActivity.class));
                         break;
@@ -326,6 +338,46 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             helper.setForceShowIcon(true);
             //noinspection RestrictedApi
             helper.show();
+        });
+    }
+
+    private void setupSearch() {
+        EditText search_menu_edit = (EditText) findViewById(R.id.search_menu_edit);
+        ImageButton search_menu_prev = (ImageButton) findViewById(R.id.search_menu_prev);
+        ImageButton search_menu_next = (ImageButton) findViewById(R.id.search_menu_next);
+        ImageButton search_menu_cancel = (ImageButton) findViewById(R.id.search_menu_cancel);
+
+        search_menu_edit.requestFocus();
+
+        search_menu_edit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mWebView.findAllAsync(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        search_menu_prev.setOnClickListener(v -> mWebView.findNext(false));
+        search_menu_next.setOnClickListener(v -> mWebView.findNext(true));
+        search_menu_cancel.setOnClickListener(v -> {
+            // Hide keyboard
+            mInputMethodManager.hideSoftInputFromWindow(mWebView.getApplicationWindowToken(), 0);
+            // Remove search text
+            search_menu_edit.setText("");
+            // Remove webview finds
+            mWebView.clearMatches();
+            // Show the search bar layout
+            findViewById(R.id.toolbar_search_page).setVisibility(View.GONE);
+            findViewById(R.id.toolbar_search_bar).setVisibility(View.VISIBLE);
         });
     }
 
