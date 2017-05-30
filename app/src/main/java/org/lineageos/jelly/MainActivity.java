@@ -47,6 +47,8 @@ import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
@@ -58,6 +60,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -125,9 +128,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
         editText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                InputMethodManager manager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
-                manager.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
+                hideKeyboard(editText);
 
                 mWebView.loadUrl(editText.getText().toString());
                 editText.clearFocus();
@@ -295,6 +296,13 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                         // Delay a bit to allow popup menu hide animation to play
                         new Handler().postDelayed(() -> shareUrl(mWebView.getUrl()), 300);
                         break;
+                    case R.id.menu_search:
+                        // Show the search in page layout
+                        findViewById(R.id.toolbar_search_bar).setVisibility(View.GONE);
+                        findViewById(R.id.toolbar_search_page).setVisibility(View.VISIBLE);
+                        // Run the search setup
+                        setupSearch();
+                        break;
                     case R.id.menu_favorite:
                         startActivity(new Intent(this, FavoriteActivity.class));
                         break;
@@ -327,6 +335,70 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             //noinspection RestrictedApi
             helper.show();
         });
+    }
+
+    private void setupSearch() {
+        EditText search_menu_edit = (EditText) findViewById(R.id.search_menu_edit);
+        ImageButton search_menu_up = (ImageButton) findViewById(R.id.search_menu_up);
+        ImageButton search_menu_down = (ImageButton) findViewById(R.id.search_menu_down);
+        ImageButton search_menu_cancel = (ImageButton) findViewById(R.id.search_menu_cancel);
+
+        search_menu_edit.requestFocus();
+        search_menu_edit.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                // Hide keyboard
+                hideKeyboard(search_menu_edit);
+                return true;
+            }
+            return false;
+        });
+
+        search_menu_edit.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                // Remove webview finds
+                mWebView.clearMatches();
+                // Show the search bar layout
+                findViewById(R.id.toolbar_search_page).setVisibility(View.GONE);
+                findViewById(R.id.toolbar_search_bar).setVisibility(View.VISIBLE);
+            }
+        });
+
+        search_menu_edit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mWebView.findAllAsync(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                mWebView.findAllAsync(s.toString());
+            }
+        });
+
+        search_menu_up.setOnClickListener(v -> mWebView.findNext(false));
+        search_menu_down.setOnClickListener(v -> mWebView.findNext(true));
+        search_menu_cancel.setOnClickListener(v -> {
+            // Hide keyboard
+            hideKeyboard(search_menu_edit);
+            // Remove search text
+            search_menu_edit.setText("");
+            // Remove webview finds
+            mWebView.clearMatches();
+            // Show the search bar layout
+            findViewById(R.id.toolbar_search_page).setVisibility(View.GONE);
+            findViewById(R.id.toolbar_search_bar).setVisibility(View.VISIBLE);
+        });
+    }
+
+    private void hideKeyboard(View v) {
+        InputMethodManager manager = (InputMethodManager)
+                getSystemService(Context.INPUT_METHOD_SERVICE);
+        manager.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
     }
 
     private void openInNewTab(String url) {

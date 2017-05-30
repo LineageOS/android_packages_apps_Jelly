@@ -42,6 +42,8 @@
     <string name="menu_desktop_mode">Switch to desktop site</string>
     <!-- Menu action: enable phone mode -->
     <string name="menu_mobile_mode">Switch to mobile site</string>
+    <!-- Menu action: search in page -->
+    <string name="menu_search">Find in page</string>
 
     <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Send to</string>
@@ -157,4 +159,7 @@
     <string name="auth_dialog_detail">%1$s requires a username and password.</string>
     <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Log in</string>
+
+    <!-- Search in page: search hint -->
+    <string name="search_bar_hint">Search</string>
 </resources>
