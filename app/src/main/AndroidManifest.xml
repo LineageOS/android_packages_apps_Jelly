@@ -91,5 +91,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider" />
         </provider>
+
+        <provider
+            android:name=".history.HistoryProvider"
+            android:authorities="org.lineageos.jelly.history"
+            android:exported="false" />
+
     </application>
 </manifest>
