@@ -15,10 +15,13 @@
  */
 package org.lineageos.jelly.history;
 
+import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -27,18 +30,15 @@ import android.view.View;
 import org.lineageos.jelly.R;
 
 class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
-
-    private final RecyclerView mList;
-
+    private final ContentResolver mResolver;
     private final Drawable mBackground;
     private final Drawable mDelete;
 
     private final int mMargin;
 
-    HistoryCallBack(Context context, RecyclerView list) {
+    HistoryCallBack(Context context) {
         super(0, ItemTouchHelper.LEFT);
-
-        mList = list;
+        mResolver = context.getContentResolver();
         mBackground = new ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete));
         mDelete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action);
         mMargin = (int) context.getResources().getDimension(R.dimen.delete_margin);
@@ -52,7 +52,9 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder holder, int swipeDir) {
-        ((HistoryAdapter) mList.getAdapter()).removeItemAtPosition(holder.getAdapterPosition());
+        Uri uri = ContentUris.withAppendedId(HistoryProvider.Columns.CONTENT_URI,
+                holder.getItemId());
+        mResolver.delete(uri, null, null);
     }
 
     @Override

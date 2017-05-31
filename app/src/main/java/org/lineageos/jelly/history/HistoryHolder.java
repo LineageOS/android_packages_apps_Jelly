@@ -15,6 +15,7 @@
  */
 package org.lineageos.jelly.history;
 
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -46,29 +47,28 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         mSummary = (TextView) view.findViewById(R.id.row_history_summary);
     }
 
-    void setData(Context context, HistoryItem item) {
-        String title = item.getTitle();
+    void bind(final Context context, final long id, String title, String url, long timestamp) {
         if (title == null || title.isEmpty()) {
-            title = item.getUrl().split("/")[2];
+            title = url.split("/")[2];
         }
         mTitle.setText(title);
         mSummary.setText(new SimpleDateFormat(context.getString(R.string.history_date_format),
-                Locale.getDefault()).format(new Date(item.getId())));
+                Locale.getDefault()).format(new Date(timestamp)));
 
         mRootLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, MainActivity.class);
-            intent.setData(Uri.parse(item.getUrl()));
+            intent.setData(Uri.parse(url));
             context.startActivity(intent);
         });
 
         mRootLayout.setOnLongClickListener(v -> {
-            new HistoryDatabaseHandler(context).deleteItem(item.getId());
-            ((HistoryActivity) context).getAdapter().removeItem(item.getId());
+            Uri uri = ContentUris.withAppendedId(HistoryProvider.Columns.CONTENT_URI, id);
+            context.getContentResolver().delete(uri, null, null);
             return true;
         });
 
         int background;
-        switch (UiUtils.getPositionInTime(item.getId())) {
+        switch (UiUtils.getPositionInTime(timestamp)) {
             case 0:
                 background = R.color.history_last_hour;
                 break;
