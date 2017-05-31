@@ -15,7 +15,11 @@
  */
 package org.lineageos.jelly.history;
 
+import android.app.LoaderManager;
 import android.app.ProgressDialog;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,13 +37,9 @@ import android.view.View;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class HistoryActivity extends AppCompatActivity {
     private View mEmptyView;
 
-    private HistoryDatabaseHandler mDbHandler;
     private HistoryAdapter mAdapter;
     private final RecyclerView.AdapterDataObserver mAdapterDataObserver =
             new RecyclerView.AdapterDataObserver() {
@@ -68,8 +68,26 @@ public class HistoryActivity extends AppCompatActivity {
         RecyclerView list = (RecyclerView) findViewById(R.id.history_list);
         mEmptyView = findViewById(R.id.history_empty_layout);
 
-        mDbHandler = new HistoryDatabaseHandler(this);
-        mAdapter = new HistoryAdapter(this, new ArrayList<>());
+        mAdapter = new HistoryAdapter(this);
+
+        getLoaderManager().initLoader(0, null, new LoaderManager.LoaderCallbacks<Cursor>() {
+            @Override
+            public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+                return new CursorLoader(HistoryActivity.this, HistoryProvider.Columns.CONTENT_URI,
+                        null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC");
+            }
+
+            @Override
+            public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+                mAdapter.swapCursor(cursor);
+            }
+
+            @Override
+            public void onLoaderReset(Loader<Cursor> loader) {
+                mAdapter.swapCursor(null);
+            }
+        });
+
         list.setLayoutManager(new LinearLayoutManager(this));
         list.addItemDecoration(new HistoryAnimationDecorator(this));
         list.setItemAnimator(new DefaultItemAnimator());
@@ -77,7 +95,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         mAdapter.registerAdapterDataObserver(mAdapterDataObserver);
 
-        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, list));
+        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this));
         helper.attachToRecyclerView(list);
 
         int listTop = list.getTop();
@@ -98,12 +116,6 @@ public class HistoryActivity extends AppCompatActivity {
     public void onDestroy() {
         mAdapter.unregisterAdapterDataObserver(mAdapterDataObserver);
         super.onDestroy();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        refresh();
     }
 
     @Override
@@ -132,12 +144,6 @@ public class HistoryActivity extends AppCompatActivity {
         mEmptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 
-    void refresh() {
-        List<HistoryItem> items = mDbHandler.getAllItems();
-        mAdapter.updateList(items);
-        updateHistoryView(items.isEmpty());
-    }
-
     private void deleteAll() {
         ProgressDialog dialog = new ProgressDialog(this);
         dialog.setTitle(getString(R.string.history_delete_title));
@@ -149,7 +155,7 @@ public class HistoryActivity extends AppCompatActivity {
         new AsyncTask<Void, Void, Boolean>() {
             @Override
             protected Boolean doInBackground(Void... params) {
-                mDbHandler.deleteAll();
+                getContentResolver().delete(HistoryProvider.Columns.CONTENT_URI, null, null);
                 return true;
             }
 
@@ -157,13 +163,8 @@ public class HistoryActivity extends AppCompatActivity {
             protected void onPostExecute(Boolean param) {
                 new Handler().postDelayed(() -> {
                     dialog.dismiss();
-                    refresh();
                 }, 1000);
             }
         }.execute();
-    }
-
-    HistoryAdapter getAdapter() {
-        return mAdapter;
     }
 }
