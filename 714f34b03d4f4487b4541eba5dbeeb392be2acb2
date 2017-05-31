@@ -16,6 +16,23 @@
       "revId": "714f34b03d4f4487b4541eba5dbeeb392be2acb2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_b0317a0d",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-31T12:49:50Z",
+      "side": 1,
+      "message": "Should also nuke this.",
+      "revId": "714f34b03d4f4487b4541eba5dbeeb392be2acb2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
