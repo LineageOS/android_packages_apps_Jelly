@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_f0ace28e",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-31T04:56:49Z",
+      "side": 1,
+      "message": "Naming suggestion: setImmersiveMode(boolean)",
+      "revId": "0b04ef06fb9b01653974e6e707035557e734f14f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_50a02e90",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-31T04:56:49Z",
+      "side": 1,
+      "message": "@Override missing here and below?",
+      "revId": "0b04ef06fb9b01653974e6e707035557e734f14f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
