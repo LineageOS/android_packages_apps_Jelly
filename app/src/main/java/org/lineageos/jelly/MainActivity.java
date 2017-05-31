@@ -55,6 +55,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
@@ -141,6 +142,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+
+        ImageView incognitoIcon = (ImageView) findViewById(R.id.incognito);
+        incognitoIcon.setVisibility(incognito ? View.VISIBLE : View.GONE);
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
