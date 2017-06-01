@@ -38,6 +38,10 @@
   <string name="menu_download">Descargar</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Abrir en una nueva pestaña</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Cambiar a la versión de escritorio</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Cambiar a la versión móvil</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Enviar a</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">Descargar archivo</string>
   <!-- Download dialog: message -->
-  <string name="download_message">¿Quieres descargar %1$s en la tarjeta SD?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Descargar</string>
   <!-- Permission error dialog: title -->
@@ -55,7 +58,7 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Preguntar de nuevo</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">Permiso denegado permanentemente. Por favor, concédalo en los ajustes</string>
+  <string name="permission_error_forever">Permiso denegado permanentemente. Por favor, concédelo en los ajustes</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Añadido a la pantalla de inicio</string>
   <!-- Settings: title -->
@@ -67,7 +70,7 @@
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">Selecciona la página de inicio</string>
   <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Escriba la url de la página de inicio</string>
+  <string name="pref_start_page_dialog_message">Escriba la URL de la página de inicio</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Restablecer</string>
   <!-- Settings: privacy and security category -->
@@ -77,9 +80,9 @@
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">Impide que otras aplicaciones lean el contenido del navegador</string>
   <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">Javascript</string>
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Activar javascript</string>
+  <string name="pref_js_summary">Activar JavaScript</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Ubicación</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -99,6 +102,7 @@
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->
+  <string name="history_empty">Nada por aquí, navegue por Internet para ver en esta pestaña su historial</string>
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
   <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
@@ -120,13 +124,13 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">Título</string>
   <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">Url</string>
+  <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">Editar</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Borrar</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Introduzca una url válida</string>
+  <string name="favorite_edit_error">Ingrese una URL válida</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Ninguna aplicación puede abrir este enlace</string>
 </resources>

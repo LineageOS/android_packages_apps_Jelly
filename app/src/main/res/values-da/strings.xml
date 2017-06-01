@@ -38,6 +38,10 @@
   <string name="menu_download">Download</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Åbn i ny fane</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Skift til desktopversion</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Skift til mobilversion</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Send til</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">Download fil</string>
   <!-- Download dialog: message -->
-  <string name="download_message">Vil du downloade %1$s til SD-kortet?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Download</string>
   <!-- Permission error dialog: title -->
@@ -55,7 +58,7 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Spørg igen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">Adgang nægtet for evigt. Tildel dette i Indstillinger</string>
+  <string name="permission_error_forever">Adgang nægtet permanent. Tildel dette i Indstillinger</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Føjet til startskærmen</string>
   <!-- Settings: title -->
@@ -77,9 +80,9 @@
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">Forhindr andre apps i at læse browserens indhold</string>
   <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">Javascript</string>
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Aktivér Javascript</string>
+  <string name="pref_js_summary">Aktivér JavaScript</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Placering</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -127,7 +130,7 @@
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Slet</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Indsæt en gyldig adresse</string>
+  <string name="favorite_edit_error">Indsæt en gyldig URL</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Der er ingen apps, som kan håndtere dette link</string>
 </resources>

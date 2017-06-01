@@ -15,9 +15,11 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Browser</string>
   <!-- Menu action: create new tab -->
   <string name="menu_new_tab">Tab baru</string>
   <!-- Menu action: create new incognito tab -->
+  <string name="menu_incognito">Tab penyamaran</string>
   <!-- Menu action: reload current page -->
   <string name="menu_reload">Muat ulang</string>
   <!-- Menu action: add current page to favorites -->
@@ -36,34 +38,48 @@
   <string name="menu_download">Unduh</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Buka di tab baru</string>
+  <!-- Menu action: enable desktop mode -->
+  <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
+  <string name="share_title">Kirim ke</string>
   <!-- Dialog action: dismiss -->
+  <string name="dismiss">Abaikan</string>
   <!-- Download dialog: title -->
   <string name="download_title">Unduh berkas</string>
   <!-- Download dialog: message -->
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Unduh</string>
   <!-- Permission error dialog: title -->
+  <string name="permission_error_title">Kesalahan perizinan</string>
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <!-- Shortcut: the current webPage has been added to the launcher -->
+  <string name="shortcut_added">Ditambahkan ke layar utama</string>
   <!-- Settings: title -->
   <string name="settings_title">Setelan</string>
   <!-- Settings: search engine preference title -->
+  <string name="pref_search_engine">Mesin pencarian</string>
   <!-- Settings: home page preference title -->
+  <string name="pref_start_page">Halaman utama</string>
   <!-- Settings: select home page dialog title -->
+  <string name="pref_start_page_dialog_title">Pilih halaman utama</string>
   <!-- Settings: select home page dialog message -->
+  <string name="pref_start_page_dialog_message">Tulis URL halaman utama</string>
   <!-- Settings: reset home page dialog action -->
+  <string name="pref_start_page_dialog_reset">Atur ulang</string>
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">Privasi &amp; keamanan</string>
   <!-- Settings: lookLock title -->
+  <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
   <!-- Settings: javascript preference title -->
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Lokasi</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+  <string name="pref_location_summary">Izinkan situs web untuk meminta akses ke lokasi Anda</string>
   <!-- Settings: cookie preference title -->
   <!-- Settings: cookie preference summary -->
   <!-- Settings: advanced share preference title -->
@@ -77,6 +93,7 @@
   <!-- History: delete history dialog title -->
   <string name="history_delete_title">Hapus riwayat</string>
   <!-- History: delete history dialog warning message -->
+  <string name="history_delete_message">Anda akan menghapus semua riwayat, tindakan ini tidak bisa dibatalkan. Apakah Anda ingin melanjutkan?</string>
   <!-- History: delete history dialog button that erases all the history -->
   <!-- History: delete history "working" dialog-->
   <!-- Favorite: title -->
@@ -89,6 +106,7 @@
   <!-- Favorite: edit dialog: url of the favorite-->
   <!-- Favorite: edit dialog positive button that save changes -->
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
+  <string name="favorite_edit_delete">Hapus</string>
   <!-- Favorite: edit dialog: invalid url error message -->
   <!-- No activity found to open the given url error -->
 </resources>

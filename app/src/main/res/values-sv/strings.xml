@@ -15,7 +15,9 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Webbläsare</string>
   <!-- Menu action: create new tab -->
+  <string name="menu_new_tab">Ny flik</string>
   <!-- Menu action: create new incognito tab -->
   <!-- Menu action: reload current page -->
   <!-- Menu action: add current page to favorites -->
@@ -26,6 +28,8 @@
   <!-- Menu action: show settings -->
   <!-- Menu action: download selected file / image -->
   <!-- Menu action: open selected link in a new tab -->
+  <!-- Menu action: enable desktop mode -->
+  <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
   <!-- Dialog action: dismiss -->
   <!-- Download dialog: title -->

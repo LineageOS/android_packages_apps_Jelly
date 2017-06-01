@@ -38,6 +38,10 @@
   <string name="menu_download">הורד</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">פתח בכרטיסייה חדשה</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">החלף לאתר שולחן העבודה</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">החלף לאתר נייד</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">שלח אל</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">הורד קובץ</string>
   <!-- Download dialog: message -->
-  <string name="download_message">להוריד את %1$s לכרטיס זיכרון?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">הורד</string>
   <!-- Permission error dialog: title -->
@@ -55,7 +58,7 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">שאל שוב</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">ההרשאות נדחו לתמיד. אנא אשר דרך ההגדרות</string>
+  <string name="permission_error_forever">ההרשאות נדחות באופן קבוע. אנא אשר דרך ההגדרות</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">נוסף למסך הבית</string>
   <!-- Settings: title -->
@@ -79,7 +82,7 @@
   <!-- Settings: javascript preference title -->
   <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">אפשר JavaScript</string>
+  <string name="pref_js_summary">הפעל JavaScript</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">מיקום</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -121,13 +124,13 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">כותרת</string>
   <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">כתובת</string>
+  <string name="favorite_edit_url">כתובת אינטרנט</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">ערוך</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">מחק</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">הקלד כתובת חוקית</string>
+  <string name="favorite_edit_error">הקלד כתובת תקינה</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">אין ישום שיודע לפתוח קישור זה</string>
 </resources>

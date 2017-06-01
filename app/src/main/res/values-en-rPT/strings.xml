@@ -26,6 +26,8 @@
   <!-- Menu action: show settings -->
   <!-- Menu action: download selected file / image -->
   <!-- Menu action: open selected link in a new tab -->
+  <!-- Menu action: enable desktop mode -->
+  <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
   <!-- Dialog action: dismiss -->
   <!-- Download dialog: title -->

@@ -38,6 +38,10 @@
   <string name="menu_download">Transferir</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Abrir num novo separador</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Mudar para a versão de computador</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Mudar para a versão móvel</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Enviar para</string>
   <!-- Dialog action: dismiss -->
@@ -45,16 +49,16 @@
   <!-- Download dialog: title -->
   <string name="download_title">Transferir ficheiro</string>
   <!-- Download dialog: message -->
-  <string name="download_message">Pretende transferir %1$s para o cartão SD?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Transferir</string>
   <!-- Permission error dialog: title -->
   <string name="permission_error_title">Erro de permissão</string>
   <!-- Permission error dialog: message for denied storage access-->
+  <string name="permission_error_storage">O Navegador precisa de acesso ao armazenamento para transferir ficheiros. Por favor, conceda a permissão para guardar ficheiros da internet</string>
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Voltar a perguntar</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">Permissão negada para sempre. Por favor, conceda-a nas definições</string>
+  <string name="permission_error_forever">Permissão negada permanentemente. Por favor, conceda-a nas definições</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Adicionado ao ecrã inicial</string>
   <!-- Settings: title -->
@@ -104,6 +108,7 @@
   <!-- History: delete history dialog title -->
   <string name="history_delete_title">Apagar histórico</string>
   <!-- History: delete history dialog warning message -->
+  <string name="history_delete_message">Irá apagar todo o histórico. Esta ação não pode ser revertida. Deseja continuar?</string>
   <!-- History: delete history dialog button that erases all the history -->
   <string name="history_delete_positive">Apagar</string>
   <!-- History: delete history "working" dialog-->

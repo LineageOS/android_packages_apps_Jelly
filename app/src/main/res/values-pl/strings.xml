@@ -32,8 +32,11 @@
   <!-- Menu action: show settings -->
   <string name="menu_settings">Ustawienia</string>
   <!-- Menu action: download selected file / image -->
+  <string name="menu_download">Pobierz</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Otwórz w nowej karcie</string>
+  <!-- Menu action: enable desktop mode -->
+  <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Wyślij do</string>
   <!-- Dialog action: dismiss -->
@@ -46,18 +49,22 @@
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+  <string name="permission_error_forever">Odmówiono udzielenia uprawnień na stałe. Proszę udzielić je w ustawieniach</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <!-- Settings: title -->
   <!-- Settings: search engine preference title -->
   <!-- Settings: home page preference title -->
   <!-- Settings: select home page dialog title -->
+  <string name="pref_start_page_dialog_title">Wybierz stronę główną</string>
   <!-- Settings: select home page dialog message -->
   <!-- Settings: reset home page dialog action -->
   <!-- Settings: privacy and security category -->
   <!-- Settings: lookLock title -->
   <!-- Settings: lookLock summary -->
   <!-- Settings: javascript preference title -->
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
+  <string name="pref_js_summary">Włącz JavaScript</string>
   <!-- Settings: location preference title -->
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
   <!-- Settings: cookie preference title -->
@@ -79,8 +86,10 @@
   <!-- Favorite: edit dialog title -->
   <!-- Favorite: edit dialog: title of the favorite -->
   <!-- Favorite: edit dialog: url of the favorite-->
+  <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <!-- Favorite: edit dialog: invalid url error message -->
+  <string name="favorite_edit_error">Podaj prawidłowy adres URL</string>
   <!-- No activity found to open the given url error -->
 </resources>

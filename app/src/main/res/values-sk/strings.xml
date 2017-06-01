@@ -38,6 +38,10 @@
   <string name="menu_download">Stiahnuť</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Otvoriť na novej karte</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Prepnúť na klasickú verziu webu</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Prepnúť na mobilnú verziu webu</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Odoslať</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">Stiahnuť súbor</string>
   <!-- Download dialog: message -->
-  <string name="download_message">Chcete stiahnuť %1$s na SD kartu?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Stiahnuť</string>
   <!-- Permission error dialog: title -->
@@ -77,9 +80,9 @@
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">Zabrániť iným aplikáciám čítať obsah z prehliadača</string>
   <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">JavaSkript</string>
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Povoliť JavaSkript</string>
+  <string name="pref_js_summary">Povoliť JavaScript</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Poloha</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -121,7 +124,7 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">Názov</string>
   <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">Adresa Url</string>
+  <string name="favorite_edit_url">URL adresa</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">Editovať</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->

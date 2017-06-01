@@ -38,6 +38,10 @@
   <string name="menu_download">下載</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">在新分頁中開啟</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">切換到桌面版網站</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">切換到手機版網站</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">傳送至</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">下載檔案</string>
   <!-- Download dialog: message -->
-  <string name="download_message">您想下載「%1$s」到 SD 卡中嗎？</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">下載</string>
   <!-- Permission error dialog: title -->
@@ -55,7 +58,7 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">再次詢問</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">未取得權限。請在設定中啟用。</string>
+  <string name="permission_error_forever">權限被永久拒絕。請在設定中進行授予</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">已新增至主畫面</string>
   <!-- Settings: title -->
@@ -77,7 +80,7 @@
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">防止其他應用程式讀取瀏覽器的內容</string>
   <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">Javascript</string>
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
   <string name="pref_js_summary">啟用 JavaScript</string>
   <!-- Settings: location preference title -->
@@ -95,7 +98,7 @@
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">清除 Cookie</string>
   <!-- Settings: clear cookie toast confirmation -->
-  <string name="pref_cookie_clear_done">清除所有 cookie</string>
+  <string name="pref_cookie_clear_done">已清除所有 cookie</string>
   <!-- History: title -->
   <string name="history_title">歷史紀錄</string>
   <!-- History: empty status text -->

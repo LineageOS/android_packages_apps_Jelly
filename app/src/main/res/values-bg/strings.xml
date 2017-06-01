@@ -38,6 +38,10 @@
   <string name="menu_download">Изтегли</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Отвори в нов раздел</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Превключи на версията за компютър</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Превключи на мобилна версия</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Изпрати до</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">Изтегли файла</string>
   <!-- Download dialog: message -->
-  <string name="download_message">Искате ли да изтеглите %1$s на картата памет?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Изтегли</string>
   <!-- Permission error dialog: title -->
@@ -121,7 +124,7 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">Заглавие</string>
   <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">URL</string>
+  <string name="favorite_edit_url">URL АДРЕС</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">Редакция</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->

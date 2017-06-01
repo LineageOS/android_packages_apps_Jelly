@@ -15,61 +15,96 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Browser</string>
   <!-- Menu action: create new tab -->
+  <string name="menu_new_tab">Nieuw tabblad</string>
   <!-- Menu action: create new incognito tab -->
   <!-- Menu action: reload current page -->
+  <string name="menu_reload">Opnieuw laden</string>
   <!-- Menu action: add current page to favorites -->
+  <string name="menu_fav_add">Toevoegen aan bladwijzers</string>
   <!-- Menu action: share current page -->
+  <string name="menu_share">Delen</string>
   <!-- Menu action: show favorites list -->
+  <string name="menu_favorites">Bladwijzers</string>
   <!-- Menu action: show history list -->
+  <string name="menu_history">Geschiedenis</string>
   <!-- Menu action: add shortcut of the current page to the launcher -->
+  <string name="menu_shortcut">Snelkoppeling maken</string>
   <!-- Menu action: show settings -->
+  <string name="menu_settings">Instellingen</string>
   <!-- Menu action: download selected file / image -->
+  <string name="menu_download">Downloaden</string>
   <!-- Menu action: open selected link in a new tab -->
+  <string name="menu_in_new_tab">Openen in nieuw tabblad</string>
+  <!-- Menu action: enable desktop mode -->
+  <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
   <!-- Dialog action: dismiss -->
+  <string name="dismiss">Sluiten</string>
   <!-- Download dialog: title -->
+  <string name="download_title">Bestand downloaden</string>
   <!-- Download dialog: message -->
   <!-- Download dialog: button that starts the download -->
+  <string name="download_positive">Downloaden</string>
   <!-- Permission error dialog: title -->
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <!-- Shortcut: the current webPage has been added to the launcher -->
+  <string name="shortcut_added">Toegevoegd aan thuisscherm</string>
   <!-- Settings: title -->
+  <string name="settings_title">Instellingen</string>
   <!-- Settings: search engine preference title -->
+  <string name="pref_search_engine">Zoekmachine</string>
   <!-- Settings: home page preference title -->
+  <string name="pref_start_page">Startpagina</string>
   <!-- Settings: select home page dialog title -->
   <!-- Settings: select home page dialog message -->
   <!-- Settings: reset home page dialog action -->
+  <string name="pref_start_page_dialog_reset">Opnieuw instellen</string>
   <!-- Settings: privacy and security category -->
+  <string name="pref_privacy_security">Privacy en beveiliging</string>
   <!-- Settings: lookLock title -->
   <!-- Settings: lookLock summary -->
   <!-- Settings: javascript preference title -->
   <!-- Settings: javascript preference summary -->
   <!-- Settings: location preference title -->
+  <string name="pref_location_title">Locatie</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
   <!-- Settings: cookie preference title -->
+  <string name="pref_cookie_title">Cookies</string>
   <!-- Settings: cookie preference summary -->
   <!-- Settings: advanced share preference title -->
   <!-- Settings: advanced share preference summary -->
   <!-- Settings: clear cookie -->
+  <string name="pref_cookie_clear">Cookies wissen</string>
   <!-- Settings: clear cookie toast confirmation -->
   <!-- History: title -->
+  <string name="history_title">Geschiedenis</string>
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+  <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
+  <string name="history_delete_title">Geschiedenis wissen</string>
   <!-- History: delete history dialog warning message -->
   <!-- History: delete history dialog button that erases all the history -->
   <!-- History: delete history "working" dialog-->
+  <string name="history_deleting_message">Geschiedenis wissen\u2026</string>
   <!-- Favorite: title -->
+  <string name="favorite_title">Bladwijzers</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
+  <string name="favorite_added">Toegevoegd aan bladwijzers</string>
   <!-- Favorite: empty status text -->
   <!-- Favorite: edit dialog title -->
+  <string name="favorite_edit_dialog_title">Bladwijzer bewerken</string>
   <!-- Favorite: edit dialog: title of the favorite -->
+  <string name="favorite_edit_title">Titel</string>
   <!-- Favorite: edit dialog: url of the favorite-->
   <!-- Favorite: edit dialog positive button that save changes -->
+  <string name="favorite_edit_positive">Bewerken</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
+  <string name="favorite_edit_delete">Verwijderen</string>
   <!-- Favorite: edit dialog: invalid url error message -->
   <!-- No activity found to open the given url error -->
 </resources>

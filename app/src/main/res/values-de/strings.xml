@@ -19,6 +19,7 @@
   <!-- Menu action: create new tab -->
   <string name="menu_new_tab">Neuer Tab</string>
   <!-- Menu action: create new incognito tab -->
+  <string name="menu_incognito">Privater Tab</string>
   <!-- Menu action: reload current page -->
   <string name="menu_reload">Neu laden</string>
   <!-- Menu action: add current page to favorites -->
@@ -34,8 +35,13 @@
   <!-- Menu action: show settings -->
   <string name="menu_settings">Einstellungen</string>
   <!-- Menu action: download selected file / image -->
+  <string name="menu_download">Herunterladen</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">In neuem Tab öffnen</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Auf Desktop-Ansicht umschalten</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Auf mobile Website umschalten</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Senden an</string>
   <!-- Dialog action: dismiss -->
@@ -48,8 +54,11 @@
   <!-- Permission error dialog: title -->
   <string name="permission_error_title">Berechtigungsfehler</string>
   <!-- Permission error dialog: message for denied storage access-->
+  <string name="permission_error_storage">Der Browser benötigt Zugriff auf den Speicher, um Dateien herunterladen zu können. Bitte erlauben, um Dateien aus dem Netz zu speichern</string>
   <!-- Permission error dialog: button that triggers permission request again -->
+  <string name="permission_error_ask_again">Erneut fragen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+  <string name="permission_error_forever">Berechtigung dauerhaft verweigert. Bitte in den Einstellungen erlauben</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Zum Startbildschirm hinzugefügt</string>
   <!-- Settings: title -->
@@ -61,24 +70,31 @@
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">Startseite auswählen</string>
   <!-- Settings: select home page dialog message -->
+  <string name="pref_start_page_dialog_message">URL der Startseite eingeben</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Zurücksetzen</string>
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">Datenschutz &amp; Sicherheit</string>
   <!-- Settings: lookLock title -->
+  <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
+  <string name="pref_looklock_summary">Andere Apps am Auslesen des Browser-Inhalts hindern</string>
   <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">Javascript</string>
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Javascript aktivieren</string>
+  <string name="pref_js_summary">JavaScript aktivieren</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Standort</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+  <string name="pref_location_summary">Erlaubt Webseiten auf Ihren Standort zuzugreifen</string>
   <!-- Settings: cookie preference title -->
   <string name="pref_cookie_title">Cookies</string>
   <!-- Settings: cookie preference summary -->
+  <string name="pref_cookie_summary">Erlaubt Webseiten das Speichern und Lesen von Cookies</string>
   <!-- Settings: advanced share preference title -->
+  <string name="pref_screenshot_snap_title">Erweitertes Teilen</string>
   <!-- Settings: advanced share preference summary -->
+  <string name="pref_screenshot_snap_summary">Vorschau der freigegebenen Webseite teilen</string>
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Cookies löschen</string>
   <!-- Settings: clear cookie toast confirmation -->
@@ -86,11 +102,13 @@
   <!-- History: title -->
   <string name="history_title">Verlauf</string>
   <!-- History: empty status text -->
+  <string name="history_empty">Hier ist nichts – surfen Sie im Internet und der Verlauf wird hier angezeigt</string>
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
   <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
   <string name="history_delete_title">Verlauf löschen</string>
   <!-- History: delete history dialog warning message -->
+  <string name="history_delete_message">Sie möchten den Verlauf löschen. Diese Aktion kann nicht rückgängig gemacht werden. Möchten Sie fortfahren?</string>
   <!-- History: delete history dialog button that erases all the history -->
   <string name="history_delete_positive">Löschen</string>
   <!-- History: delete history "working" dialog-->
@@ -98,8 +116,9 @@
   <!-- Favorite: title -->
   <string name="favorite_title">Lesezeichen</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <string name="favorite_added">Zu Lesezeichen hinzugefügt</string>
+  <string name="favorite_added">Zu den Lesezeichen hinzugefügt</string>
   <!-- Favorite: empty status text -->
+  <string name="favorite_empty">Hier ist nichts – fügen Sie Lesezeichen hinzu, um diese hier zu sehen</string>
   <!-- Favorite: edit dialog title -->
   <string name="favorite_edit_dialog_title">Lesezeichen bearbeiten</string>
   <!-- Favorite: edit dialog: title of the favorite -->
@@ -111,5 +130,7 @@
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Löschen</string>
   <!-- Favorite: edit dialog: invalid url error message -->
+  <string name="favorite_edit_error">Geben Sie eine gültige URL ein</string>
   <!-- No activity found to open the given url error -->
+  <string name="error_no_activity_found">Keine App zum Öffnen der URL gefunden</string>
 </resources>

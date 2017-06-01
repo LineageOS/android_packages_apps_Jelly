@@ -38,6 +38,10 @@
   <string name="menu_download">下载</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">在新标签页中打开</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">切换到桌面版页面</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">切换到手机版页面</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">发送到</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">下载文件</string>
   <!-- Download dialog: message -->
-  <string name="download_message">您想要下载 %1$s 到设备上吗？</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">下载</string>
   <!-- Permission error dialog: title -->

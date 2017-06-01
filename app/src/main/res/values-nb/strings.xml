@@ -38,6 +38,10 @@
   <string name="menu_download">Last ned</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Åpne i ny fane</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Bytt til skrivebordside</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Bytt til mobilside</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Send til</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">Last ned fil</string>
   <!-- Download dialog: message -->
-  <string name="download_message">Ønsker du å laste ned %1$s til SD-kortet?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Last ned</string>
   <!-- Permission error dialog: title -->
@@ -67,7 +70,7 @@
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">Velg hjemmeside</string>
   <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Skriv hjemmeside-URL</string>
+  <string name="pref_start_page_dialog_message">Angi hjemmeside-adressen</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Tilbakestill</string>
   <!-- Settings: privacy and security category -->
@@ -121,13 +124,13 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">Tittel</string>
   <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">URL</string>
+  <string name="favorite_edit_url">Nettadresse</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">Rediger</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Slett</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Angi en gyldig URL</string>
+  <string name="favorite_edit_error">Angi en gyldig nettadresse</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Ingen app kan tolke denne lenken</string>
 </resources>

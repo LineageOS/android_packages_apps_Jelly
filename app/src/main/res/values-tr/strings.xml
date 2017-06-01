@@ -38,6 +38,10 @@
   <string name="menu_download">İndir</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Yeni sekmede aç</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Masaüstü sürümüne geç</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Mobil sürümüne geç</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Şuraya gönder</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">Dosyayı indir</string>
   <!-- Download dialog: message -->
-  <string name="download_message">%1$s dosyasını indirmek istiyor musunuz?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">İndir</string>
   <!-- Permission error dialog: title -->
@@ -55,7 +58,7 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Tekrar sor</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">İzin sonsuza kadar reddedildi. Lütfen ayarlardan izin verin</string>
+  <string name="permission_error_forever">İzin kalıcı olarak reddedildi. Lütfen ayarlardan izin verin</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Ana ekranda eklendi</string>
   <!-- Settings: title -->
@@ -67,7 +70,7 @@
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">Ana sayfayı seçin</string>
   <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Ana sayfa Url\'sini yazın</string>
+  <string name="pref_start_page_dialog_message">Ana sayfa URL\'sini yazın</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Sıfırla</string>
   <!-- Settings: privacy and security category -->
@@ -77,7 +80,7 @@
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">Diğer uygulamaların Tarayıcı içeriğini okumasını engelleyin</string>
   <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">Javascript</string>
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
   <string name="pref_js_summary">JavaScript\'i etkinleştir</string>
   <!-- Settings: location preference title -->
@@ -91,7 +94,7 @@
   <!-- Settings: advanced share preference title -->
   <string name="pref_screenshot_snap_title">Gelişmiş paylaşma</string>
   <!-- Settings: advanced share preference summary -->
-  <string name="pref_screenshot_snap_summary">Paylaşılan Web Sayfasının önizlemesini paylaşın</string>
+  <string name="pref_screenshot_snap_summary">Paylaşılan sayfanın önizlemesini paylaşın</string>
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Çerezleri temizle</string>
   <!-- Settings: clear cookie toast confirmation -->
@@ -121,13 +124,13 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">Başlık</string>
   <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">Bağlantı</string>
+  <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">Düzenle</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Sil</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Geçerli bir url girin</string>
+  <string name="favorite_edit_error">Geçerli bir URL girin</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Bu eylemi hiç bir uygulama gerçekleştiremez</string>
 </resources>

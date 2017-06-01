@@ -15,61 +15,101 @@
      limitations under the License.
 -->
 <resources>
+  <string name="app_name">Navigateur</string>
   <!-- Menu action: create new tab -->
+  <string name="menu_new_tab">Nouvel onglet</string>
   <!-- Menu action: create new incognito tab -->
   <!-- Menu action: reload current page -->
   <!-- Menu action: add current page to favorites -->
+  <string name="menu_fav_add">Ajouter aux favoris</string>
   <!-- Menu action: share current page -->
+  <string name="menu_share">Partager</string>
   <!-- Menu action: show favorites list -->
+  <string name="menu_favorites">Favoris</string>
   <!-- Menu action: show history list -->
+  <string name="menu_history">Historique</string>
   <!-- Menu action: add shortcut of the current page to the launcher -->
+  <string name="menu_shortcut">Ajouter un raccourci</string>
   <!-- Menu action: show settings -->
+  <string name="menu_settings">Paramètres</string>
   <!-- Menu action: download selected file / image -->
+  <string name="menu_download">Télécharger</string>
   <!-- Menu action: open selected link in a new tab -->
+  <string name="menu_in_new_tab">Ouvrir dans un nouvel onglet</string>
+  <!-- Menu action: enable desktop mode -->
+  <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
+  <string name="share_title">Envoyer à</string>
   <!-- Dialog action: dismiss -->
   <!-- Download dialog: title -->
   <!-- Download dialog: message -->
   <!-- Download dialog: button that starts the download -->
+  <string name="download_positive">Télécharger</string>
   <!-- Permission error dialog: title -->
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
+  <string name="permission_error_ask_again">Demander à nouveau</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <!-- Shortcut: the current webPage has been added to the launcher -->
+  <string name="shortcut_added">Ajouté à l\'écran d\'accueil</string>
   <!-- Settings: title -->
+  <string name="settings_title">Paramètres</string>
   <!-- Settings: search engine preference title -->
+  <string name="pref_search_engine">Moteur de recherche</string>
   <!-- Settings: home page preference title -->
+  <string name="pref_start_page">Page d\'accueil</string>
   <!-- Settings: select home page dialog title -->
+  <string name="pref_start_page_dialog_title">Définir la page d\'accueil</string>
   <!-- Settings: select home page dialog message -->
   <!-- Settings: reset home page dialog action -->
+  <string name="pref_start_page_dialog_reset">Réinitialiser</string>
   <!-- Settings: privacy and security category -->
+  <string name="pref_privacy_security">Vie privée &amp; sécurité</string>
   <!-- Settings: lookLock title -->
   <!-- Settings: lookLock summary -->
+  <string name="pref_looklock_summary">Empêcher les autres applications de lire le contenu du navigateur</string>
   <!-- Settings: javascript preference title -->
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
+  <string name="pref_js_summary">Activer JavaScript</string>
   <!-- Settings: location preference title -->
+  <string name="pref_location_title">Localisation</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+  <string name="pref_location_summary">Autoriser les sites web à demander l\'accès à votre position</string>
   <!-- Settings: cookie preference title -->
+  <string name="pref_cookie_title">Cookies</string>
   <!-- Settings: cookie preference summary -->
   <!-- Settings: advanced share preference title -->
+  <string name="pref_screenshot_snap_title">Partage avancé</string>
   <!-- Settings: advanced share preference summary -->
   <!-- Settings: clear cookie -->
+  <string name="pref_cookie_clear">Effacer les cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
   <!-- History: title -->
+  <string name="history_title">Historique</string>
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
   <!-- History: delete history dialog title -->
+  <string name="history_delete_title">Effacer l\'historique</string>
   <!-- History: delete history dialog warning message -->
+  <string name="history_delete_message">Vous êtes sur le point de supprimer tout l’historique de navigation, cette action ne peut pas être annulée. Confirmer la suppression ?</string>
   <!-- History: delete history dialog button that erases all the history -->
   <!-- History: delete history "working" dialog-->
   <!-- Favorite: title -->
+  <string name="favorite_title">Favoris</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
+  <string name="favorite_added">Ajouté aux favoris</string>
   <!-- Favorite: empty status text -->
   <!-- Favorite: edit dialog title -->
+  <string name="favorite_edit_dialog_title">Modifier le favori</string>
   <!-- Favorite: edit dialog: title of the favorite -->
+  <string name="favorite_edit_title">Titre</string>
   <!-- Favorite: edit dialog: url of the favorite-->
+  <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
+  <string name="favorite_edit_positive">Modifier</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
+  <string name="favorite_edit_delete">Supprimer</string>
   <!-- Favorite: edit dialog: invalid url error message -->
   <!-- No activity found to open the given url error -->
 </resources>

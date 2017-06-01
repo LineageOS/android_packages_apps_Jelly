@@ -38,6 +38,10 @@
   <string name="menu_download">다운로드</string>
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">새 탭에서 열기</string>
+  <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">PC 버전으로 보기</string>
+  <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">모바일 버전으로 보기</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">보내기</string>
   <!-- Dialog action: dismiss -->
@@ -45,7 +49,6 @@
   <!-- Download dialog: title -->
   <string name="download_title">파일 다운로드</string>
   <!-- Download dialog: message -->
-  <string name="download_message">%1$s을(를) SD 카드에 다운로드하시겠습니까?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">다운로드</string>
   <!-- Permission error dialog: title -->
@@ -55,7 +58,7 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">다시 묻기</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">권한이 영구적으로 거부되었습니다. 설정에서 허용해 주세요.</string>
+  <string name="permission_error_forever">권한이 영구적으로 거부되었습니다. 설정에서 권한을 허용해 주세요.</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">홈 화면에 추가되었습니다.</string>
   <!-- Settings: title -->
@@ -67,7 +70,7 @@
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">홈페이지 선택</string>
   <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">홈페이지의 URL을 입력해 주세요.</string>
+  <string name="pref_start_page_dialog_message">홈페이지의 URL을 입력하세요.</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">초기화</string>
   <!-- Settings: privacy and security category -->
