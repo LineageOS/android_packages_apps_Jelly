@@ -50,6 +50,9 @@ public class WebViewExt extends WebView {
     private boolean mIncognito;
     private boolean mDesktopMode;
 
+    private boolean mCanScroll = false;
+    private boolean mCanScrollSet = false;
+
     public WebViewExt(Context context) {
         super(context);
     }
@@ -77,6 +80,15 @@ public class WebViewExt extends WebView {
         }
     }
 
+    @Override
+    protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY) {
+        mCanScrollSet = true;
+        if (!clampedY) {
+            mCanScroll = true;
+        }
+        super.onOverScrolled(scrollX, scrollY, clampedX, clampedY);
+    }
+
     private void setup() {
         getSettings().setJavaScriptEnabled(PrefsUtils.getJavascript(mActivity));
         getSettings().setJavaScriptCanOpenWindowsAutomatically(PrefsUtils.getJavascript(mActivity));
@@ -85,7 +97,14 @@ public class WebViewExt extends WebView {
         getSettings().setDisplayZoomControls(false);
         getSettings().setDomStorageEnabled(true);
 
-        setWebViewClient(new WebClient());
+        setWebViewClient(new WebClient() {
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                mCanScroll = false;
+                mCanScrollSet = false;
+                super.onPageStarted(view, url, favicon);
+            }
+        });
 
         setOnLongClickListener(new OnLongClickListener() {
             boolean shouldAllowDownload;
@@ -171,5 +190,9 @@ public class WebViewExt extends WebView {
 
     public boolean isDesktopMode() {
         return mDesktopMode;
+    }
+
+    public boolean canScroll() {
+        return !mCanScrollSet || mCanScroll;
     }
 }
