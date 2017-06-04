@@ -548,6 +548,11 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         mGestureDetector.onTouchEvent(event);
         mFingerReleased = event.getAction() == MotionEvent.ACTION_UP;
 
+        if (!mWebView.canScroll()) {
+            mSwipeRefreshLayout.setEnabled(false);
+            return super.onTouchEvent(event);
+        }
+
         if (mGestureOngoing && mFingerReleased && mWebView.getScrollY() == 0) {
             // We are ending a gesture and we are at the top
             mSwipeRefreshLayout.setEnabled(true);
