@@ -50,6 +50,8 @@ public class WebViewExt extends WebView {
     private boolean mIncognito;
     private boolean mDesktopMode;
 
+    private boolean mCanScroll;
+
     public WebViewExt(Context context) {
         super(context);
     }
@@ -85,7 +87,19 @@ public class WebViewExt extends WebView {
         getSettings().setDisplayZoomControls(false);
         getSettings().setDomStorageEnabled(true);
 
-        setWebViewClient(new WebClient());
+        setWebViewClient(new WebClient() {
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                mCanScroll = false;
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                mCanScroll = computeVerticalScrollRange() - getHeight() > 0;
+                super.onPageFinished(view, url);
+            }
+        });
 
         setOnLongClickListener(new OnLongClickListener() {
             boolean shouldAllowDownload;
@@ -171,5 +185,9 @@ public class WebViewExt extends WebView {
 
     public boolean isDesktopMode() {
         return mDesktopMode;
+    }
+
+    public boolean canScroll() {
+        return mCanScroll;
     }
 }
