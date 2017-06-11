@@ -55,6 +55,12 @@
 
         <SwitchPreference
             android:defaultValue="1"
+            android:key="key_do_not_track"
+            android:summary="@string/pref_do_not_track_summary"
+            android:title="@string/pref_do_not_track_title" />
+
+        <SwitchPreference
+            android:defaultValue="1"
             android:key="key_cookie"
             android:summary="@string/pref_cookie_summary"
             android:title="@string/pref_cookie_title" />
