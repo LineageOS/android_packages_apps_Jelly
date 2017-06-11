@@ -19,6 +19,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.support.v4.util.ArrayMap;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ import android.widget.ProgressBar;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,6 +51,9 @@ public class WebViewExt extends WebView {
     private boolean mIncognito;
     private boolean mDesktopMode;
 
+    private final Map<String, String> mRequestHeaders = new ArrayMap<>();
+    private static final String HEADER_DNT = "DNT";
+
     public WebViewExt(Context context) {
         super(context);
     }
@@ -65,14 +70,14 @@ public class WebViewExt extends WebView {
     public void loadUrl(String url) {
         String fixedUrl = UrlUtils.smartUrlFilter(url);
         if (fixedUrl != null) {
-            super.loadUrl(fixedUrl);
+            super.loadUrl(fixedUrl, mRequestHeaders);
             return;
         }
 
         String templateUri = PrefsUtils.getSearchEngine(mActivity);
         fixedUrl = UrlUtils.getFormattedUri(templateUri, url);
         if (fixedUrl != null) {
-            super.loadUrl(fixedUrl);
+            super.loadUrl(fixedUrl, mRequestHeaders);
         }
     }
 
@@ -123,6 +128,12 @@ public class WebViewExt extends WebView {
             Log.e(TAG, "Couldn't parse the user agent");
             mMobileUserAgent = getSettings().getUserAgentString();
             mDesktopUserAgent = DESKTOP_USER_AGENT_FALLBACK;
+        }
+
+        if (PrefsUtils.getDoNotTrack(mActivity)) {
+            mRequestHeaders.put(HEADER_DNT, "1");
+        } else {
+            mRequestHeaders.remove(HEADER_DNT);
         }
     }
 
