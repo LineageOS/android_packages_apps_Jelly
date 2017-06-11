@@ -39,6 +39,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v4.util.ArrayMap;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
@@ -77,6 +78,7 @@ import org.lineageos.jelly.webview.WebViewExtActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Map;
 
 public class MainActivity extends WebViewExtActivity implements View.OnTouchListener,
         View.OnScrollChangeListener {
@@ -106,6 +108,17 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private boolean mFingerReleased = false;
     private boolean mGestureOngoing = false;
 
+    private final Map<String, String> mRequestHeaders = new ArrayMap<>();
+    private static final String HEADER_DNT = "DNT";
+
+    private Map<String, String> getCustomRequestHeaders() {
+        if (PrefsUtils.getDoNotTrack(this)) {
+            mRequestHeaders.put(HEADER_DNT, "1");
+        } else {
+            mRequestHeaders.remove(HEADER_DNT);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +127,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setCustomRequestHeaders();
 
         mCoordinator = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
@@ -129,7 +144,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                         getSystemService(Context.INPUT_METHOD_SERVICE);
                 manager.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
 
-                mWebView.loadUrl(editText.getText().toString());
+                mWebView.loadUrl(editText.getText().toString(), mRequestHeaders);
                 editText.clearFocus();
                 return true;
             }
@@ -161,7 +176,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         mWebView = (WebViewExt) findViewById(R.id.web_view);
         mWebView.init(this, editText, mLoadingProgress, incognito);
         mWebView.setDesktopMode(desktopMode);
-        mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
+        mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url, mRequestHeaders);
 
         mHasThemeColorSupport = WebViewCompat.isThemeColorSupported(mWebView);
 
