@@ -31,6 +31,7 @@ import android.widget.ProgressBar;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
 
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -63,17 +64,17 @@ public class WebViewExt extends WebView {
     }
 
     @Override
-    public void loadUrl(String url) {
+    public void loadUrl(String url, Map<String, String> additionalHttpHeaders) {
         String fixedUrl = UrlUtils.smartUrlFilter(url);
         if (fixedUrl != null) {
-            super.loadUrl(fixedUrl);
+            super.loadUrl(fixedUrl, additionalHttpHeaders);
             return;
         }
 
         String templateUri = PrefsUtils.getSearchEngine(mActivity);
         fixedUrl = UrlUtils.getFormattedUri(templateUri, url);
         if (fixedUrl != null) {
-            super.loadUrl(fixedUrl);
+            super.loadUrl(fixedUrl, additionalHttpHeaders);
         }
     }
 
