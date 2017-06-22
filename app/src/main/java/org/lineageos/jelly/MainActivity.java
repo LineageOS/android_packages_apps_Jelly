@@ -402,7 +402,15 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     }
 
     private void fetchFile(String url, String fileName) {
-        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        DownloadManager.Request request;
+
+        try {
+            request = new DownloadManager.Request(Uri.parse(url));
+        } catch (IllegalArgumentException e) {
+            Log.e(TAG, "Cannot download non http or https scheme");
+            return;
+        }
+
         request.setNotificationVisibility(
                 DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
