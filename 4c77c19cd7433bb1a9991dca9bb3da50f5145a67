@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_eb3cd331",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-22T18:15:16Z",
+      "side": 1,
+      "message": "Comment from chromium for android.",
+      "revId": "4c77c19cd7433bb1a9991dca9bb3da50f5145a67",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
