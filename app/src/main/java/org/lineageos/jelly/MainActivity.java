@@ -505,7 +505,14 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     }
 
     private void fetchFile(String url, String fileName) {
-        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        DownloadManager.Request request;
+
+        try {
+            request = new DownloadManager.Request(Uri.parse(url));
+        } catch (IllegalArgumentException e) {
+            Log.e(TAG, "Cannot download non http or https scheme");
+            return;
+        }
 
         // Let this downloaded file be scanned by MediaScanner - so that it can
         // show up in Gallery app, for example.
