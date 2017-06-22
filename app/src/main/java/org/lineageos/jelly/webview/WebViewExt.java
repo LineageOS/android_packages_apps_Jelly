@@ -22,7 +22,6 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.webkit.URLUtil;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.EditText;
@@ -107,8 +106,7 @@ public class WebViewExt extends WebView {
         });
 
         setDownloadListener((url, userAgent, contentDescription, mimeType, contentLength) ->
-                mActivity.downloadFileAsk(url,
-                        URLUtil.guessFileName(url, contentDescription, mimeType)));
+                mActivity.downloadFileAsk(url, contentDescription, mimeType));
 
         // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
         // properly if the browser reports itself as a simple WebView.
