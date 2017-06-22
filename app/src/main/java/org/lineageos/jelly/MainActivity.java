@@ -411,6 +411,9 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             return;
         }
 
+        // Let this downloaded file be scanned by MediaScanner - so that it can
+        // show up in Gallery app, for example.
+        request.allowScanningByMediaScanner();
         request.setNotificationVisibility(
                 DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
