@@ -58,6 +58,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
+import android.webkit.URLUtil;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -416,6 +417,11 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         request.allowScanningByMediaScanner();
         request.setNotificationVisibility(
                 DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+        if (fileName == null) {
+            fileName = URLUtil.guessFileName(url, null, null);
+        }
+
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
         DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
         manager.enqueue(request);
@@ -434,7 +440,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         shareLayout.setOnClickListener(v -> shareUrl(url));
         favouriteLayout.setOnClickListener(v -> setAsFavorite(url, url));
         if (shouldAllowDownload) {
-            downloadLayout.setOnClickListener(v -> downloadFileAsk(url, ""));
+            downloadLayout.setOnClickListener(v -> downloadFileAsk(url, null));
             downloadLayout.setVisibility(View.VISIBLE);
         }
         sheet.setContentView(view);
