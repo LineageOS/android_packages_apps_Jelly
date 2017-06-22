@@ -403,7 +403,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private void fetchFile(String url, String fileName) {
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+        request.setNotificationVisibility(
+                DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
         DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
         manager.enqueue(request);
