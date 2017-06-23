@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Descargar archivo</string>
   <!-- Download dialog: message -->
+  <string name="download_message">¿Quiere descargar %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Descargar</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">Ingrese una URL válida</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Ninguna aplicación puede abrir este enlace</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

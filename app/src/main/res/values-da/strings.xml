@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Download fil</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Ønsker du at downloade %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Download</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">Indsæt en gyldig URL</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Der er ingen apps, som kan håndtere dette link</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

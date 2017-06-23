@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">下载文件</string>
   <!-- Download dialog: message -->
+  <string name="download_message">您想要下载 %1$s 吗？</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">下载</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,14 @@
   <string name="favorite_edit_error">输入一个有效网址</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">没有应用可以处理此链接</string>
+  <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">需要身份验证</string>
+  <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">用户名：</string>
+  <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">密码：</string>
+  <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s 需要用户名和密码</string>
+  <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">登录</string>
 </resources>

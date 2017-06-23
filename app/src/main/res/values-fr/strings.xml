@@ -20,6 +20,7 @@
   <string name="menu_new_tab">Nouvel onglet</string>
   <!-- Menu action: create new incognito tab -->
   <!-- Menu action: reload current page -->
+  <string name="menu_reload">Rafraîchir</string>
   <!-- Menu action: add current page to favorites -->
   <string name="menu_fav_add">Ajouter aux favoris</string>
   <!-- Menu action: share current page -->
@@ -37,15 +38,19 @@
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Ouvrir dans un nouvel onglet</string>
   <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Passer en version bureau</string>
   <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Passer en version mobile</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Envoyer à</string>
   <!-- Dialog action: dismiss -->
+  <string name="dismiss">Rejeter</string>
   <!-- Download dialog: title -->
   <!-- Download dialog: message -->
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Télécharger</string>
   <!-- Permission error dialog: title -->
+  <string name="permission_error_title">Erreur d\'autorisation</string>
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Demander à nouveau</string>
@@ -61,11 +66,13 @@
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">Définir la page d\'accueil</string>
   <!-- Settings: select home page dialog message -->
+  <string name="pref_start_page_dialog_message">Donner l’URL de la page d’accueil</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Réinitialiser</string>
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">Vie privée &amp; sécurité</string>
   <!-- Settings: lookLock title -->
+  <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">Empêcher les autres applications de lire le contenu du navigateur</string>
   <!-- Settings: javascript preference title -->
@@ -82,6 +89,7 @@
   <!-- Settings: advanced share preference title -->
   <string name="pref_screenshot_snap_title">Partage avancé</string>
   <!-- Settings: advanced share preference summary -->
+  <string name="pref_screenshot_snap_summary">Partager la prévisualisation de la page web partagée</string>
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Effacer les cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
@@ -89,12 +97,15 @@
   <string name="history_title">Historique</string>
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+  <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
   <string name="history_delete_title">Effacer l\'historique</string>
   <!-- History: delete history dialog warning message -->
   <string name="history_delete_message">Vous êtes sur le point de supprimer tout l’historique de navigation, cette action ne peut pas être annulée. Confirmer la suppression ?</string>
   <!-- History: delete history dialog button that erases all the history -->
+  <string name="history_delete_positive">Effacer</string>
   <!-- History: delete history "working" dialog-->
+  <string name="history_deleting_message">Suppression de l\'historique en cours\u2026</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Favoris</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
@@ -112,4 +123,10 @@
   <string name="favorite_edit_delete">Supprimer</string>
   <!-- Favorite: edit dialog: invalid url error message -->
   <!-- No activity found to open the given url error -->
+  <string name="error_no_activity_found">Aucune application ne peut gérer ce lien</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

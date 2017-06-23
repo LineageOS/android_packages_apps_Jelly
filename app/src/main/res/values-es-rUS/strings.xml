@@ -37,7 +37,7 @@
   <!-- Menu action: download selected file / image -->
   <string name="menu_download">Descargar</string>
   <!-- Menu action: open selected link in a new tab -->
-  <string name="menu_in_new_tab">Abrir en pestaña nueva</string>
+  <string name="menu_in_new_tab">Abrir en una nueva pestaña</string>
   <!-- Menu action: enable desktop mode -->
   <string name="menu_desktop_mode">Cambiar a la versión de escritorio</string>
   <!-- Menu action: enable phone mode -->
@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Descargar archivo</string>
   <!-- Download dialog: message -->
+  <string name="download_message">¿Quieres descargar %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Descargar</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">Ingresa una URL válida</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Ninguna aplicación puede abrir este enlace</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

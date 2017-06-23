@@ -44,6 +44,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Pobierz plik</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Czy chcesz pobrać %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <!-- Permission error dialog: title -->
   <!-- Permission error dialog: message for denied storage access-->
@@ -71,6 +72,7 @@
   <!-- Settings: cookie preference summary -->
   <!-- Settings: advanced share preference title -->
   <!-- Settings: advanced share preference summary -->
+  <string name="pref_screenshot_snap_summary">Udostępnij podgląd udostępnianej strony internetowej</string>
   <!-- Settings: clear cookie -->
   <!-- Settings: clear cookie toast confirmation -->
   <!-- History: title -->
@@ -92,4 +94,9 @@
   <!-- Favorite: edit dialog: invalid url error message -->
   <string name="favorite_edit_error">Podaj prawidłowy adres URL</string>
   <!-- No activity found to open the given url error -->
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

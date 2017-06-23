@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">下載檔案</string>
   <!-- Download dialog: message -->
+  <string name="download_message">您想下載「%1$s」嗎？</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">下載</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">輸入一個有效網址</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">沒有應用程式可以處理此連結</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

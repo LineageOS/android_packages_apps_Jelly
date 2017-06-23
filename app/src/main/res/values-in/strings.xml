@@ -47,6 +47,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Unduh berkas</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Apakah Anda ingin mengunduh %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Unduh</string>
   <!-- Permission error dialog: title -->
@@ -76,6 +77,7 @@
   <!-- Settings: javascript preference title -->
   <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
+  <string name="pref_js_summary">Hidupkan JavaScript</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Lokasi</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -95,7 +97,9 @@
   <!-- History: delete history dialog warning message -->
   <string name="history_delete_message">Anda akan menghapus semua riwayat, tindakan ini tidak bisa dibatalkan. Apakah Anda ingin melanjutkan?</string>
   <!-- History: delete history dialog button that erases all the history -->
+  <string name="history_delete_positive">Bersihkan</string>
   <!-- History: delete history "working" dialog-->
+  <string name="history_deleting_message">Membersihkan riwayat\u2026</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Favorit</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
@@ -104,9 +108,17 @@
   <!-- Favorite: edit dialog title -->
   <!-- Favorite: edit dialog: title of the favorite -->
   <!-- Favorite: edit dialog: url of the favorite-->
+  <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
+  <string name="favorite_edit_positive">Sunting</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Hapus</string>
   <!-- Favorite: edit dialog: invalid url error message -->
+  <string name="favorite_edit_error">Masukkan URL yang benar</string>
   <!-- No activity found to open the given url error -->
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

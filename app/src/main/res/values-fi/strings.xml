@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Lataa tiedosto</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Haluatko ladata kohteen %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Lataa</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">Syötä kelvollinen URL-osoite</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Mikään sovellus ei voi käsitellä linkkiä</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

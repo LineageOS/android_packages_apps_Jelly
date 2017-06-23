@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Transferir ficheiro</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Deseja transferir %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Transferir</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">Insira um URL válido</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Não tem aplicações que possam abrir a ligação</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

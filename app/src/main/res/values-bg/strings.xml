@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Изтегли файла</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Искате ли да изтеглите %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Изтегли</string>
   <!-- Permission error dialog: title -->
@@ -133,4 +134,9 @@
   <string name="favorite_edit_error">Въведете валиден URL адрес</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Няма приложение което да отвори тази връзка</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>

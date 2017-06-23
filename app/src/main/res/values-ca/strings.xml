@@ -49,6 +49,7 @@
   <!-- Download dialog: title -->
   <string name="download_title">Baixa el fitxer</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Vols baixar %1$s?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Baixa</string>
   <!-- Permission error dialog: title -->
@@ -130,7 +131,12 @@
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Elimina</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Inseriu una URL vàlida</string>
+  <string name="favorite_edit_error">Insereix una URL vàlida</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Cap aplicació pot obrir aquest enllaç</string>
+  <!-- Auth dialog: title -->
+  <!-- Auth dialog: username field -->
+  <!-- Auth dialog: password field -->
+  <!-- Auth dialog: detail -->
+  <!-- Auth dialog: login button -->
 </resources>
