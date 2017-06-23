@@ -157,4 +157,7 @@
     <string name="auth_dialog_detail">%1$s requires a username and password.</string>
     <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Log in</string>
+
+    <!-- Launcher shortcut: new incognito tab -->
+    <string name="shortcut_new_incognito_tab">New incognito tab</string>
 </resources>
