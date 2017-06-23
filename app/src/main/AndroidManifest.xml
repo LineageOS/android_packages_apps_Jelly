@@ -97,5 +97,9 @@
             android:authorities="org.lineageos.jelly.history"
             android:exported="false" />
 
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+
     </application>
 </manifest>
