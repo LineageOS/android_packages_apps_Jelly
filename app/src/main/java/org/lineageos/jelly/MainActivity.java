@@ -105,6 +105,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private GestureDetectorCompat mGestureDetector;
     private boolean mFingerReleased = false;
     private boolean mGestureOngoing = false;
+    private boolean mIncognito;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,12 +139,12 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         Intent intent = getIntent();
         String url = intent.getDataString();
-        boolean incognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
+        mIncognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
         boolean desktopMode = false;
 
         // Restore from previous instance
         if (savedInstanceState != null) {
-            incognito = savedInstanceState.getBoolean(EXTRA_INCOGNITO, incognito);
+            mIncognito = savedInstanceState.getBoolean(EXTRA_INCOGNITO, mIncognito);
             if (url == null || url.isEmpty()) {
                 url = savedInstanceState.getString(EXTRA_URL, null);
             }
@@ -155,11 +156,11 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
         ImageView incognitoIcon = (ImageView) findViewById(R.id.incognito);
-        incognitoIcon.setVisibility(incognito ? View.VISIBLE : View.GONE);
+        incognitoIcon.setVisibility(mIncognito ? View.VISIBLE : View.GONE);
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, editText, mLoadingProgress, incognito);
+        mWebView.init(this, editText, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
 
@@ -278,12 +279,10 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             popupMenu.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
                     case R.id.menu_new:
-                        openInNewTab(null);
+                        openInNewTab(null, false);
                         break;
                     case R.id.menu_incognito:
-                        Intent intent = new Intent(this, MainActivity.class);
-                        intent.putExtra(EXTRA_INCOGNITO, true);
-                        startActivity(intent);
+                        openInNewTab(null, true);
                         break;
                     case R.id.menu_reload:
                         mWebView.reload();
@@ -329,12 +328,13 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         });
     }
 
-    private void openInNewTab(String url) {
+    private void openInNewTab(String url, boolean incognito) {
         Intent intent = new Intent(this, MainActivity.class);
         if (url != null && !url.isEmpty()) {
             intent.setData(Uri.parse(url));
         }
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        intent.putExtra(EXTRA_INCOGNITO, incognito);
         startActivity(intent);
     }
 
@@ -423,7 +423,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         View favouriteLayout = view.findViewById(R.id.sheet_favourite);
         View downloadLayout = view.findViewById(R.id.sheet_download);
 
-        tabLayout.setOnClickListener(v -> openInNewTab(url));
+        tabLayout.setOnClickListener(v -> openInNewTab(url, mIncognito));
         shareLayout.setOnClickListener(v -> shareUrl(url));
         favouriteLayout.setOnClickListener(v -> setAsFavorite(url, url));
         if (shouldAllowDownload) {
