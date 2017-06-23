@@ -162,4 +162,7 @@
 
     <!-- Search in page: search hint -->
     <string name="search_bar_hint">Search</string>
+
+    <!-- Launcher shortcut: new incognito tab -->
+    <string name="shortcut_new_incognito_tab">New incognito tab</string>
 </resources>
