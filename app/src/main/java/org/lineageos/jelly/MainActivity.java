@@ -149,7 +149,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, editText, progressBar, incognito);
+        mWebView.init(this, editText, progressBar, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
 
