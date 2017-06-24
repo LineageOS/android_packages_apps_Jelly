@@ -29,6 +29,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -68,7 +69,9 @@ import org.lineageos.jelly.favorite.Favorite;
 import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
-import org.lineageos.jelly.ui.EditTextExt;
+import org.lineageos.jelly.history.HistoryItem;
+import org.lineageos.jelly.suggestions.GoogleSuggestionsModel;
+import org.lineageos.jelly.ui.AutoCompleteTextViewExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 import org.lineageos.jelly.webview.WebViewCompat;
@@ -78,6 +81,7 @@ import org.lineageos.jelly.webview.WebViewExtActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 public class MainActivity extends WebViewExtActivity implements View.OnTouchListener,
         View.OnScrollChangeListener {
@@ -96,6 +100,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private boolean mHasThemeColorSupport;
     private Drawable mLastActionBarDrawable;
     private int mThemeColor;
+    private AutoCompleteTextViewExt mAutoCompleteTextViewExt;
 
     private String mWaitingDownloadUrl;
 
@@ -123,15 +128,15 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             new Handler().postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1000);
         });
         mLoadingProgress = (ProgressBar) findViewById(R.id.load_progress);
-        EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
-        editText.setOnEditorActionListener((v, actionId, event) -> {
+        mAutoCompleteTextViewExt = (AutoCompleteTextViewExt) findViewById(R.id.url_bar);
+        mAutoCompleteTextViewExt.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 InputMethodManager manager = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
-                manager.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
+                manager.hideSoftInputFromWindow(mAutoCompleteTextViewExt.getApplicationWindowToken(), 0);
 
-                mWebView.loadUrl(editText.getText().toString());
-                editText.clearFocus();
+                mWebView.loadUrl(mAutoCompleteTextViewExt.getText().toString());
+                mAutoCompleteTextViewExt.clearFocus();
                 return true;
             }
             return false;
@@ -160,7 +165,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         setupMenu();
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, editText, mLoadingProgress, mIncognito);
+        mWebView.init(this, mAutoCompleteTextViewExt, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
 
@@ -484,7 +489,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         if (actionBar != null) {
             ColorDrawable newDrawable = new ColorDrawable(color);
             if (mLastActionBarDrawable != null) {
-                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final Drawable[] layers = new Drawable[]{mLastActionBarDrawable, newDrawable};
                 final TransitionDrawable transition = new TransitionDrawable(layers);
                 transition.setCrossFadeEnabled(true);
                 transition.startTransition(200);
@@ -576,4 +581,16 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             mSwipeRefreshLayout.setEnabled(true);
         }
     }
+
+    private class SuggestionsTaks extends AsyncTask<String, Void, List<HistoryItem>> {
+        @Override
+        protected List<HistoryItem> doInBackground(String... query) {
+            return new GoogleSuggestionsModel(getApplication()).fetchResults(query[0]);
+        }
+
+        protected void onPostExecute(List<HistoryItem> historyItems) {
+            mAutoCompleteTextViewExt.addAll(historyItems);
+        }
+    }
+
 }
