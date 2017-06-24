@@ -110,6 +110,8 @@
     <string name="pref_do_not_track_title">Do Not Track</string>
     <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">Send a Do Not Track request to websites you visit</string>
+    <!-- Settings: save form data title -->
+    <string name="pref_save_form_data_title">Save form data</string>
 
     <!-- History: title -->
     <string name="history_title">History</string>
