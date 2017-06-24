@@ -21,30 +21,46 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
-import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.util.AttributeSet;
 
-public class EditTextExt extends AppCompatEditText {
+import org.lineageos.jelly.suggestions.SuggestionItem;
+import org.lineageos.jelly.suggestions.SuggestionsAdapter;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
 
     private int mPositionX;
+    ArrayList<SuggestionItem> historyItems = new ArrayList<>();
+    SuggestionsAdapter mAdaper;
 
-    public EditTextExt(Context context) {
-        super(context);
+    public AutoCompleteTextViewExt(Context context) {
+        this(context, null);
     }
 
-    public EditTextExt(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    public AutoCompleteTextViewExt(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public EditTextExt(Context context, AttributeSet attrs, int defStyle) {
+    public AutoCompleteTextViewExt(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
+        mAdaper = new SuggestionsAdapter(context, historyItems);
+        setAdapter(mAdaper);
+    }
+
+    public void addAll(Collection<SuggestionItem> historyItems) {
+        mAdaper.clear();
+        mAdaper.addAll(historyItems);
     }
 
     private static LinearGradient getGradient(float widthEnd, float fadeStart,
                                               float stopStart, float stopEnd, int color) {
         return new LinearGradient(0, 0, widthEnd, 0,
-                new int[] { color, Color.TRANSPARENT, color, color, Color.TRANSPARENT },
-                new float[] { 0, fadeStart, stopStart, stopEnd, 1f }, Shader.TileMode.CLAMP);
+                new int[]{color, Color.TRANSPARENT, color, color, Color.TRANSPARENT},
+                new float[]{0, fadeStart, stopStart, stopEnd, 1f}, Shader.TileMode.CLAMP);
     }
 
     @Override
