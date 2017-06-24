@@ -50,11 +50,13 @@ class ChromeClient extends WebChromeClientCompat {
         super.onProgressChanged(view, progress);
     }
 
+    /*
     @Override
     public void onThemeColorChanged(WebView view, int color) {
         mActivity.onThemeColorSet(color);
         super.onThemeColorChanged(view, color);
     }
+    */
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
