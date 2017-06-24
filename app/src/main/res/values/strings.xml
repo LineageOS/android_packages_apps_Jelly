@@ -106,6 +106,8 @@
     <string name="pref_cookie_clear">Clear cookies</string>
     <!-- Settings: clear cookie toast confirmation -->
     <string name="pref_cookie_clear_done">Cleared all the cookies</string>
+    <!-- Settings: save form data title -->
+    <string name="pref_save_form_data_title">Save form data</string>
 
     <!-- History: title -->
     <string name="history_title">History</string>

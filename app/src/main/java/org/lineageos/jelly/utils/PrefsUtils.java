@@ -29,6 +29,7 @@ public final class PrefsUtils {
     private static final String KEY_JS = "key_javascript";
     private static final String KEY_LOCATION = "key_location";
     private static final String KEY_COOKIE = "key_cookie";
+    private static final String KEY_SAVE_FORM_DATA = "key_save_form_data";
 
     private PrefsUtils() {
     }
@@ -67,6 +68,11 @@ public final class PrefsUtils {
     public static boolean getCookie(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean(KEY_COOKIE, true);
+    }
+
+    public static boolean getSaveFormData(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean(KEY_SAVE_FORM_DATA, true);
     }
 
     public static void setHomePage(Context context, String value) {
