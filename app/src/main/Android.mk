@@ -32,7 +32,9 @@ LOCAL_AAPT_FLAGS := \
     --extra-packages android.support.design \
     --extra-packages android.support.v7.appcompat \
     --extra-packages android.support.v7.cardview \
-    --extra-packages android.support.v7.recyclerview
+    --extra-packages android.support.v7.recyclerview \
+    --extra-packages com.squareup.okhttp3 \
+    --extra-packages okio
 
 LOCAL_STATIC_JAVA_LIBRARIES += \
     android-support-design \
@@ -41,7 +43,9 @@ LOCAL_STATIC_JAVA_LIBRARIES += \
     android-support-v7-cardview \
     android-support-v7-palette \
     android-support-v7-recyclerview \
-    android-support-annotations
+    android-support-annotations \
+    okhttp3 \
+    okio
 
 LOCAL_PACKAGE_NAME := Jelly
 
