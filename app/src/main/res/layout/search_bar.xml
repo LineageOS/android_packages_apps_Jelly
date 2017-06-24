@@ -50,7 +50,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_incognito" />
 
-            <org.lineageos.jelly.ui.EditTextExt
+            <org.lineageos.jelly.ui.AutoCompleteTextViewExt
                 android:id="@+id/url_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
