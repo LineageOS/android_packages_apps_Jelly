@@ -31,6 +31,7 @@
         android:focusableInTouchMode="true" />
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardBackgroundColor="@color/cardview_light_background"
@@ -50,7 +51,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_incognito" />
 
-            <org.lineageos.jelly.ui.EditTextExt
+            <org.lineageos.jelly.ui.AutoCompleteTextViewExt
                 android:id="@+id/url_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -58,13 +59,17 @@
                 android:layout_toEndOf="@id/incognito"
                 android:layout_toStartOf="@+id/search_menu"
                 android:background="@null"
+                android:completionThreshold="1"
+                android:dropDownAnchor="@id/cardview"
+                android:dropDownVerticalOffset="0dp"
                 android:fadingEdge="vertical"
-                android:imeOptions="actionSearch"
+                android:imeOptions="actionSearch|flagNoFullscreen"
                 android:inputType="textUri"
                 android:maxLines="1"
                 android:nextFocusLeft="@id/url_bar"
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
+                android:popupElevation="2dp"
                 android:selectAllOnFocus="true"
                 android:textColor="@android:color/black"
                 tools:ignore="RtlSymmetry" />
