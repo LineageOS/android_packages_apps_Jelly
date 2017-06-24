@@ -31,6 +31,16 @@ public final class PrefsUtils {
     private static final String KEY_COOKIE = "key_cookie";
     private static final String KEY_DO_NOT_TRACK = "key_do_not_track";
     private static final String KEY_SAVE_FORM_DATA = "key_save_form_data";
+    private static final String KEY_SUGGESTION_PROVIDER = "key_suggestion_provider";
+
+    public enum SuggestionProviderType {
+        BAIDU,
+        BING,
+        DUCK,
+        GOOGLE,
+        YAHOO,
+        NONE
+    }
 
     private PrefsUtils() {
     }
@@ -79,6 +89,16 @@ public final class PrefsUtils {
     public static boolean getSaveFormData(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean(KEY_SAVE_FORM_DATA, true);
+    }
+
+    public static SuggestionProviderType getSuggestionProvider(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        try {
+            return SuggestionProviderType.valueOf(
+                    prefs.getString(KEY_SUGGESTION_PROVIDER, SuggestionProviderType.DUCK.name()));
+        } catch (IllegalArgumentException ignored) {
+            return SuggestionProviderType.NONE;
+        }
     }
 
     public static void setHomePage(Context context, String value) {
