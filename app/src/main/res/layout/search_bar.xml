@@ -50,7 +50,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_incognito" />
 
-            <org.lineageos.jelly.ui.EditTextExt
+            <org.lineageos.jelly.ui.AutoCompleteTextViewExt
                 android:id="@+id/url_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -59,7 +59,7 @@
                 android:layout_toStartOf="@+id/search_menu"
                 android:background="@null"
                 android:fadingEdge="vertical"
-                android:imeOptions="actionSearch"
+                android:imeOptions="actionSearch|flagNoFullscreen"
                 android:inputType="textUri"
                 android:maxLines="1"
                 android:nextFocusLeft="@id/url_bar"
