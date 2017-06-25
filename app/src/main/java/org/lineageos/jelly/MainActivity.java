@@ -74,6 +74,8 @@ import org.lineageos.jelly.favorite.Favorite;
 import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
+import org.lineageos.jelly.suggestions.BaiduSuggestionsModel;
+import org.lineageos.jelly.suggestions.DuckSuggestionsModel;
 import org.lineageos.jelly.suggestions.GoogleSuggestionsModel;
 import org.lineageos.jelly.suggestions.SuggestionItem;
 import org.lineageos.jelly.suggestions.SuggestionsAdapter;
@@ -87,6 +89,7 @@ import org.lineageos.jelly.webview.WebViewExtActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends WebViewExtActivity implements View.OnTouchListener,
@@ -617,7 +620,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         String query = s.toString();
         if (!TextUtils.isEmpty(query))
-            new SuggestionsTaks().execute(query);
+            new SuggestionsTaks(getApplicationContext()).execute(query);
     }
 
     @Override
@@ -626,9 +629,34 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     }
 
     private class SuggestionsTaks extends AsyncTask<String, Void, List<SuggestionItem>> {
+        private Context mContext;
+
+        SuggestionsTaks(Context context) {
+            this.mContext = context;
+        }
+
         @Override
         protected List<SuggestionItem> doInBackground(String... query) {
-            return new GoogleSuggestionsModel(getApplication()).fetchResults(query[0]);
+            List<SuggestionItem> items;
+
+            PrefsUtils.Suggestion suggestion = PrefsUtils.getSuggestionProvider(mContext);
+
+            switch (suggestion) {
+                case SUGGESTION_BAIDU:
+                    items = new BaiduSuggestionsModel(getApplication()).fetchResults(query[0]);
+                    break;
+                case SUGGESTION_DUCK:
+                    items = new DuckSuggestionsModel(getApplication()).fetchResults(query[0]);
+                    break;
+                case SUGGESTION_GOOGLE:
+                    items = new GoogleSuggestionsModel(getApplication()).fetchResults(query[0]);
+                    break;
+                case SUGGESTION_NONE:
+                default:
+                    items = new ArrayList<>();
+            }
+
+            return items;
         }
 
         protected void onPostExecute(List<SuggestionItem> suggestionItems) {
