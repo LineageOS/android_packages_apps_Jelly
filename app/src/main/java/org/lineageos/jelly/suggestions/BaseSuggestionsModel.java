@@ -8,6 +8,7 @@ import android.util.Log;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -117,6 +118,8 @@ public abstract class BaseSuggestionsModel {
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             try {
                 in = new BufferedInputStream(urlConnection.getInputStream());
+            } catch (InterruptedIOException exception) {
+                // Ignored, task cancelled
             } finally {
                 urlConnection.disconnect();
             }
