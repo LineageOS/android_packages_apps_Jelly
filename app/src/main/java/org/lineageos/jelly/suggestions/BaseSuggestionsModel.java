@@ -8,6 +8,7 @@ import android.util.Log;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -120,6 +121,8 @@ public abstract class BaseSuggestionsModel {
             } finally {
                 urlConnection.disconnect();
             }
+        } catch (InterruptedIOException exception){
+            // Ignored, task cancelled
         } catch (IOException exception) {
             Log.e(TAG, "Problem getting search suggestions", exception);
         }

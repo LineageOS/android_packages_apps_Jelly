@@ -123,6 +123,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private AutoCompleteTextView mAutoCompleteTextView;
     private SuggestionsAdapter mAdaper;
+    private SuggestionsTask mSuggestionsTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,6 +222,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         } catch (IOException e) {
             Log.i(TAG, "HTTP response cache installation failed:" + e);
         }
+
+        mSuggestionsTask = new SuggestionsTask(getApplicationContext());
     }
 
     @Override
@@ -635,7 +638,10 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         String query = s.toString();
         if (!TextUtils.isEmpty(query)) {
-            new SuggestionsTask(getApplicationContext()).execute(query);
+            mSuggestionsTask.disable();
+            mSuggestionsTask.cancel(true);
+            mSuggestionsTask = new SuggestionsTask(getApplicationContext());
+            mSuggestionsTask.execute(query);
         } else {
             mAdaper.clear();
         }
@@ -648,9 +654,14 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private class SuggestionsTask extends AsyncTask<String, Void, List<SuggestionItem>> {
         private final Context mContext;
+        private boolean mDisabled;
 
         SuggestionsTask(Context context) {
             this.mContext = context;
+        }
+
+        void disable() {
+            mDisabled = true;
         }
 
         @Override
@@ -678,8 +689,10 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         }
 
         protected void onPostExecute(List<SuggestionItem> suggestionItems) {
-            mAdaper.clear();
-            mAdaper.addAll(suggestionItems);
+            if (!mDisabled) {
+                mAdaper.clear();
+                mAdaper.addAll(suggestionItems);
+            }
         }
     }
 }
