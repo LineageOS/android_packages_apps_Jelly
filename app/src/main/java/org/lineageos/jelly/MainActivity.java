@@ -123,6 +123,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     private AutoCompleteTextView mAutoCompleteTextView;
     private SuggestionsAdapter mAdaper;
+    private SuggestionsTask mSuggestionsTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,6 +222,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         } catch (IOException e) {
             Log.i(TAG, "HTTP response cache installation failed:" + e);
         }
+
+        mSuggestionsTask = new SuggestionsTask(getApplicationContext());
     }
 
     @Override
@@ -632,8 +635,13 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         String query = s.toString();
-        if (!TextUtils.isEmpty(query))
-            new SuggestionsTask(getApplicationContext()).execute(query);
+        if (!TextUtils.isEmpty(query)) {
+            mSuggestionsTask.cancel(true);
+            if (mSuggestionsTask.isCancelled()) {
+                mSuggestionsTask = new SuggestionsTask(getApplicationContext());
+                mSuggestionsTask.execute(query);
+            }
+        }
     }
 
     @Override
