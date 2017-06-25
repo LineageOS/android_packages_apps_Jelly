@@ -112,6 +112,8 @@
     <string name="pref_do_not_track_summary">Send a Do Not Track request to websites you visit</string>
     <!-- Settings: save form data title -->
     <string name="pref_save_form_data_title">Save form data</string>
+    <!-- Settings: suggestion provider title -->
+    <string name="pref_suggestion_provider">Suggestion provider</string>
 
     <!-- History: title -->
     <string name="history_title">History</string>
@@ -152,6 +154,7 @@
 
     <string translatable="false" name="default_search_engine">https://duckduckgo.com/?q={searchTerms}</string>
     <string translatable="false" name="default_home_page">https://duckduckgo.com</string>
+    <string translatable="false" name="default_suggestion_provider">SUGGESTION_GOOGLE</string>
 
     <!-- Auth dialog: title -->
     <string name="auth_dialog_title">Authentication Required</string>
