@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_4575a896",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-25T15:26:03Z",
+      "side": 1,
+      "message": "move near other bools",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 31
+      },
+      "revId": "6fbbe2f54e51712bbd75ce3ce439f728c2fa795b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
