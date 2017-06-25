@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_suggestion_provider_entries" translatable="false">
+        <item>Baidu</item>
+        <item>DuckDuckGo</item>
+        <item>Google</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="pref_uggestion_provider_entryvalues" translatable="false">
+        <item>SUGGESTION_BAIDU</item>
+        <item>SUGGESTION_DUCK</item>
+        <item>SUGGESTION_GOOGLE</item>
+        <item>SUGGESTION_NONE</item>
+    </string-array>
+</resources>
