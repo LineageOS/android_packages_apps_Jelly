@@ -48,8 +48,6 @@
   <string name="dismiss">Отмена</string>
   <!-- Download dialog: title -->
   <string name="download_title">Загрузка файла</string>
-  <!-- Download dialog: message -->
-  <string name="download_message">Загрузить файл?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Загрузить</string>
   <!-- Permission error dialog: title -->

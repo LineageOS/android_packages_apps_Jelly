@@ -161,9 +161,7 @@ public class HistoryActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(Boolean param) {
-                new Handler().postDelayed(() -> {
-                    dialog.dismiss();
-                }, 1000);
+                new Handler().postDelayed(dialog::dismiss, 1000);
             }
         }.execute();
     }
