@@ -155,6 +155,7 @@ public class SuggestionsAdapter extends BaseAdapter implements Filterable {
             String query = constraint.toString().toLowerCase(Locale.getDefault()).trim();
 
             mSuggestionsTask.disable();
+            mSuggestionsTask.cancel(true);
             mSuggestionsTask = new SuggestionsTask(mSuggestionsAdapter);
             mSuggestionsTask.execute(query);
 
