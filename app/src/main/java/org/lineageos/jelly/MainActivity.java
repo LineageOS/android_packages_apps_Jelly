@@ -26,8 +26,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -94,7 +92,6 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private WebViewExt mWebView;
     private ProgressBar mLoadingProgress;
     private boolean mHasThemeColorSupport;
-    private Drawable mLastActionBarDrawable;
     private int mThemeColor;
 
     private String mWaitingDownloadUrl;
@@ -482,17 +479,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            ColorDrawable newDrawable = new ColorDrawable(color);
-            if (mLastActionBarDrawable != null) {
-                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
-                final TransitionDrawable transition = new TransitionDrawable(layers);
-                transition.setCrossFadeEnabled(true);
-                transition.startTransition(200);
-                actionBar.setBackgroundDrawable(transition);
-            } else {
-                actionBar.setBackgroundDrawable(newDrawable);
-            }
-            mLastActionBarDrawable = newDrawable;
+            actionBar.setBackgroundDrawable(new ColorDrawable(color));
         }
 
         int progressColor = hasValidColor
