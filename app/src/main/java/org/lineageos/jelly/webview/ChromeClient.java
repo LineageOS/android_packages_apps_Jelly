@@ -31,7 +31,7 @@ import android.widget.Toast;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.history.HistoryProvider;
 
-class ChromeClient extends WebChromeClient {
+class ChromeClient extends WebChromeClientCompat {
     private final WebViewExtActivity mActivity;
     private final boolean mIncognito;
 
