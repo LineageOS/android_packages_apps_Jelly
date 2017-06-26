@@ -15,7 +15,6 @@
  */
 package org.lineageos.jelly.utils;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -49,7 +48,7 @@ public final class UiUtils {
         return incognito ? palette.getMutedColor(fallback) : palette.getVibrantColor(fallback);
     }
 
-    public static Bitmap getShortcutIcon(Context context, Bitmap bitmap, int themeColor) {
+    public static Bitmap getShortcutIcon(Bitmap bitmap, int themeColor) {
         Bitmap out = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getWidth(),
                 Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(out);
