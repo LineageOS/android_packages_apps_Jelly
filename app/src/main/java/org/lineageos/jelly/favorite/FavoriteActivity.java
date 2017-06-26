@@ -95,7 +95,7 @@ public class FavoriteActivity extends AppCompatActivity {
         }
     }
 
-    boolean editItem(Favorite item) {
+    void editItem(Favorite item) {
         View view = LayoutInflater.from(this)
                 .inflate(R.layout.dialog_favorite_edit, new LinearLayout(this));
         EditText titleEdit = (EditText) view.findViewById(R.id.favorite_edit_title);
@@ -151,7 +151,6 @@ public class FavoriteActivity extends AppCompatActivity {
                 .setNegativeButton(android.R.string.cancel,
                         (dialog, which) -> dialog.dismiss())
                 .show();
-        return true;
     }
 
 }

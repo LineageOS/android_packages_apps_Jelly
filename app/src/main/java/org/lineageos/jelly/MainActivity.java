@@ -530,7 +530,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         Bitmap icon = mUrlIcon == null ?
                 BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher) : mUrlIcon;
-        Bitmap launcherIcon = UiUtils.getShortcutIcon(this, icon, getThemeColorWithFallback());
+        Bitmap launcherIcon = UiUtils.getShortcutIcon(icon, getThemeColorWithFallback());
 
         Intent addIntent = new Intent();
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, mWebView.getTitle());

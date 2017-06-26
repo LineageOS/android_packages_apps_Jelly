@@ -53,6 +53,9 @@ class FavoriteHolder extends RecyclerView.ViewHolder {
             context.startActivity(intent);
         });
 
-        mCard.setOnLongClickListener(v -> ((FavoriteActivity) context).editItem(item));
+        mCard.setOnLongClickListener(v -> {
+            ((FavoriteActivity) context).editItem(item);
+            return true;
+        });
     }
 }
