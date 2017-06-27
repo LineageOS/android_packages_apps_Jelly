@@ -45,6 +45,30 @@
       "revId": "d1e1723d93f67eb3bc1996cf041e3a118e59a87f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_a841e43a",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/GoogleSuggestionsModel.java",
+        "patchSetId": 40
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-27T10:52:26Z",
+      "side": 1,
+      "message": "https://developers.google.com/custom-search/docs/xml_results\n-\u003e\nOptional. The oe parameter sets the character encoding scheme that should be used to decode the XML result. The default oe value is latin1.",
+      "parentUuid": "da87b5cf_c810e850",
+      "range": {
+        "startLine": 31,
+        "startChar": 81,
+        "endLine": 31,
+        "endChar": 91
+      },
+      "revId": "d1e1723d93f67eb3bc1996cf041e3a118e59a87f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
