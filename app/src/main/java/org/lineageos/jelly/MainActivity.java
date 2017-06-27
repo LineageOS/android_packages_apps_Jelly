@@ -51,6 +51,7 @@ import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -129,6 +130,19 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                 InputMethodManager manager = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
                 manager.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
+
+                mWebView.loadUrl(editText.getText().toString());
+                editText.clearFocus();
+                return true;
+            }
+            return false;
+        });
+        editText.setOnKeyListener((v, keyCode, event) -> {
+            if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                InputMethodManager manager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                manager.hideSoftInputFromWindow(
+                        editText.getApplicationWindowToken(), 0);
 
                 mWebView.loadUrl(editText.getText().toString());
                 editText.clearFocus();
