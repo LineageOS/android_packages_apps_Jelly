@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_a813245b",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/GoogleSuggestionsModel.java",
+        "patchSetId": 40
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-06-27T10:47:25Z",
+      "side": 1,
+      "message": "Why not UTF-8? ISO-8859-1 is pretty limiting.",
+      "range": {
+        "startLine": 20,
+        "startChar": 44,
+        "endLine": 20,
+        "endChar": 54
+      },
+      "revId": "d1e1723d93f67eb3bc1996cf041e3a118e59a87f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_c810e850",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/GoogleSuggestionsModel.java",
+        "patchSetId": 40
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-06-27T10:47:25Z",
+      "side": 1,
+      "message": "Probably this should be removed for UTF-8.",
+      "range": {
+        "startLine": 31,
+        "startChar": 81,
+        "endLine": 31,
+        "endChar": 91
+      },
+      "revId": "d1e1723d93f67eb3bc1996cf041e3a118e59a87f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
