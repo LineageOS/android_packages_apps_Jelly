@@ -15,10 +15,7 @@
  */
 package org.lineageos.jelly.webview;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +28,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.lineageos.jelly.R;
+import org.lineageos.jelly.utils.IntentUtils;
 
 class WebClient extends WebViewClient {
     private WebViewExt mWebViewExt;
@@ -43,16 +41,8 @@ class WebClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         String url = request.getUrl().toString();
-        Context context = view.getContext();
-        if (!url.startsWith("http")) {
-            try {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(request.getUrl());
-                context.startActivity(intent);
-            } catch (ActivityNotFoundException e) {
-                Snackbar.make(view, context.getString(R.string.error_no_activity_found),
-                        Snackbar.LENGTH_LONG).show();
-            }
+        if (!mWebViewExt.isIncognito() &&
+                (IntentUtils.isIntent(view, url) || IntentUtils.startActivityForUrl(view, url))) {
             return true;
         }
 

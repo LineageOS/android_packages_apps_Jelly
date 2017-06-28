@@ -23,7 +23,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class UrlUtils {
-    private static final Pattern ACCEPTED_URI_SCHEMA = Pattern.compile(
+    static final Pattern ACCEPTED_URI_SCHEMA = Pattern.compile(
             "(?i)" + // switch on case insensitive matching
                     "(" +    // begin group for schema
                     "(?:http|https|file|chrome):\\/\\/" +
