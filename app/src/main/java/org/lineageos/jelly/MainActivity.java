@@ -18,7 +18,6 @@ package org.lineageos.jelly;
 import android.Manifest;
 import android.app.ActivityManager;
 import android.app.DownloadManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
@@ -57,7 +56,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.widget.ImageButton;
@@ -127,9 +125,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         EditTextExt editText = (EditTextExt) findViewById(R.id.url_bar);
         editText.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                InputMethodManager manager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
-                manager.hideSoftInputFromWindow(editText.getApplicationWindowToken(), 0);
+                UiUtils.hideKeyboard(editText);
 
                 mWebView.loadUrl(editText.getText().toString());
                 editText.clearFocus();
@@ -139,10 +135,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         });
         editText.setOnKeyListener((v, keyCode, event) -> {
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                InputMethodManager manager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
-                manager.hideSoftInputFromWindow(
-                        editText.getApplicationWindowToken(), 0);
+                UiUtils.hideKeyboard(editText);
 
                 mWebView.loadUrl(editText.getText().toString());
                 editText.clearFocus();
