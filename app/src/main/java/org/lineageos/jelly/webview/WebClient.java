@@ -40,18 +40,24 @@ class WebClient extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-        String url = request.getUrl().toString();
-        Context context = view.getContext();
-        if (!url.startsWith("http")) {
-            try {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(request.getUrl());
-                context.startActivity(intent);
-            } catch (ActivityNotFoundException e) {
-                Snackbar.make(view, context.getString(R.string.error_no_activity_found),
-                        Snackbar.LENGTH_LONG).show();
+        if (request.isForMainFrame()) {
+            WebViewExt webViewExt = (WebViewExt) view;
+            String url = request.getUrl().toString();
+            if (!url.startsWith("http")) {
+                Context context = view.getContext();
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(request.getUrl());
+                    context.startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Snackbar.make(view, context.getString(R.string.error_no_activity_found),
+                            Snackbar.LENGTH_LONG).show();
+                }
+                return true;
+            } else if (!webViewExt.getRequestHeaders().isEmpty()) {
+                webViewExt.loadUrl(url);
+                return true;
             }
-            return true;
         }
 
         return false;
