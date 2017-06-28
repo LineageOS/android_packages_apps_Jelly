@@ -50,6 +50,7 @@ public class WebViewExt extends WebView {
 
     private boolean mIncognito;
     private boolean mDesktopMode;
+    private String mLastLoadedUrl;
 
     private final Map<String, String> mRequestHeaders = new ArrayMap<>();
     private static final String HEADER_DNT = "DNT";
@@ -68,6 +69,11 @@ public class WebViewExt extends WebView {
 
     @Override
     public void loadUrl(String url) {
+        mLastLoadedUrl = url;
+        followUrl(url);
+    }
+
+    void followUrl(String url) {
         String fixedUrl = UrlUtils.smartUrlFilter(url);
         if (fixedUrl != null) {
             super.loadUrl(fixedUrl, mRequestHeaders);
@@ -79,6 +85,10 @@ public class WebViewExt extends WebView {
         if (fixedUrl != null) {
             super.loadUrl(fixedUrl, mRequestHeaders);
         }
+    }
+
+    public String getLastLoadedUrl() {
+        return mLastLoadedUrl;
     }
 
     private void setup() {

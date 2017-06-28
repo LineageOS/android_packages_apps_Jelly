@@ -18,7 +18,10 @@ package org.lineageos.jelly;
 import android.Manifest;
 import android.app.ActivityManager;
 import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -32,6 +35,7 @@ import android.net.http.HttpResponseCache;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.ResultReceiver;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
@@ -47,6 +51,7 @@ import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.GestureDetector;
@@ -87,10 +92,27 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
     private static final String EXTRA_INCOGNITO = "extra_incognito";
     private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
-    private static final String EXTRA_URL = "extra_url";
+    public static final String EXTRA_URL = "extra_url";
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
+
+    public static final String ACTION_URL_RESOLVED = "org.lineageos.jelly.action.URL_RESOLVED";
+
+    private BroadcastReceiver mUrlResolvedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Intent resolvedIntent = intent.getParcelableExtra(Intent.EXTRA_INTENT);
+            if (TextUtils.equals(getPackageName(), resolvedIntent.getPackage())) {
+                String url = intent.getStringExtra(EXTRA_URL);
+                mWebView.loadUrl(url);
+            } else {
+                startActivity(resolvedIntent);
+            }
+            ResultReceiver receiver = intent.getParcelableExtra(Intent.EXTRA_RESULT_RECEIVER);
+            receiver.send(RESULT_CANCELED, new Bundle());
+        }
+    };
 
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
@@ -212,8 +234,15 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(mUrlResolvedReceiver, new IntentFilter(ACTION_URL_RESOLVED));
+    }
+
+    @Override
     protected void onStop() {
         CookieManager.getInstance().flush();
+        unregisterReceiver(mUrlResolvedReceiver);
         HttpResponseCache cache = HttpResponseCache.getInstalled();
         if (cache != null) {
             cache.flush();
