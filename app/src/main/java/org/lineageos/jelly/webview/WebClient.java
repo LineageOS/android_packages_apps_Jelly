@@ -33,13 +33,13 @@ import android.widget.TextView;
 import org.lineageos.jelly.R;
 
 class WebClient extends WebViewClient {
-
     WebClient() {
         super();
     }
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+        WebViewExt webViewExt = (WebViewExt) view;
         String url = request.getUrl().toString();
         Context context = view.getContext();
         if (!url.startsWith("http")) {
@@ -54,7 +54,12 @@ class WebClient extends WebViewClient {
             return true;
         }
 
-        return false;
+        if (webViewExt.getRequestHeaders().isEmpty()) {
+            return false;
+        } else {
+            webViewExt.loadUrl(url);
+            return true;
+        }
     }
 
     @Override
