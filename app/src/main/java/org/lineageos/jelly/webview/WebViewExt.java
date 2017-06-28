@@ -133,8 +133,6 @@ public class WebViewExt extends WebView {
 
         if (PrefsUtils.getDoNotTrack(mActivity)) {
             mRequestHeaders.put(HEADER_DNT, "1");
-        } else {
-            mRequestHeaders.remove(HEADER_DNT);
         }
     }
 
@@ -181,5 +179,9 @@ public class WebViewExt extends WebView {
 
     public boolean isDesktopMode() {
         return mDesktopMode;
+    }
+
+    Map<String, String> getRequestHeaders() {
+        return mRequestHeaders;
     }
 }
