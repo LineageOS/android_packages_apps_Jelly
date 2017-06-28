@@ -32,10 +32,14 @@ import android.widget.TextView;
 
 import org.lineageos.jelly.R;
 
-class WebClient extends WebViewClient {
+import java.util.Map;
 
-    WebClient() {
+class WebClient extends WebViewClient {
+    private WebViewExt mWebViewExt;
+
+    WebClient(WebViewExt webViewExt) {
         super();
+        mWebViewExt = webViewExt;
     }
 
     @Override
@@ -54,7 +58,14 @@ class WebClient extends WebViewClient {
             return true;
         }
 
-        return false;
+        Map<String, String> headers = mWebViewExt.getRequestHeaders();
+
+        if (headers.isEmpty()) {
+            return false;
+        } else {
+            mWebViewExt.loadUrl(url, headers);
+            return true;
+        }
     }
 
     @Override
