@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_997a33f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2017-06-29T14:19:12Z",
+      "side": 1,
+      "message": "lunch -\u003e launch",
+      "revId": "6ebda7d10a5a50be8f620d0d81d5c0614b957ad9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
