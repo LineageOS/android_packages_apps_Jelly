@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_399207a0",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/PrefsUtils.java",
+        "patchSetId": 46
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-29T06:34:45Z",
+      "side": 1,
+      "message": "Need to update the string where I stored the default value",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 12
+      },
+      "revId": "ce6a1558b3eacce4282ece1b0826e7db7a26508c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
