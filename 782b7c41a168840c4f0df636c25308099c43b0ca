@@ -67,6 +67,24 @@
       "revId": "782b7c41a168840c4f0df636c25308099c43b0ca",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_d9b99b2f",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/IntentUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-29T06:26:09Z",
+      "side": 1,
+      "message": "startActivityForUrl is available only for Activity, now we\u0027re using webview context to lunch intents",
+      "parentUuid": "da87b5cf_f946df4e",
+      "revId": "782b7c41a168840c4f0df636c25308099c43b0ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
