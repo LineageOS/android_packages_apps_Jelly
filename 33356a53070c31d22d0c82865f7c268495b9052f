@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_59582b32",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-29T05:37:10Z",
+      "side": 1,
+      "message": "I think it\u0027s better to cast view to WebViewExt here instead of having a circular reference.",
+      "revId": "33356a53070c31d22d0c82865f7c268495b9052f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
