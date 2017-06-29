@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_393d27bc",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/IntentUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-29T05:43:56Z",
+      "side": 1,
+      "message": "packageName",
+      "revId": "782b7c41a168840c4f0df636c25308099c43b0ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_d94bdb57",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/IntentUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-29T05:43:56Z",
+      "side": 1,
+      "message": "This can return ActivityNotFoundException for us (not everybody has gapps)",
+      "revId": "782b7c41a168840c4f0df636c25308099c43b0ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_1942a33e",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/IntentUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-29T05:43:56Z",
+      "side": 1,
+      "message": "??? What\u0027s the point of this comment?",
+      "revId": "782b7c41a168840c4f0df636c25308099c43b0ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_f946df4e",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/IntentUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-29T05:43:56Z",
+      "side": 1,
+      "message": "This is misnamed. Better naming suggestion: \u0027handleIntentUrl\u0027.\n\nBut why is this special method even needed - AFAICT startActivityForUrl could handle this just fine?",
+      "revId": "782b7c41a168840c4f0df636c25308099c43b0ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
