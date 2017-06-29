@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_79f72ff6",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 47
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-29T06:45:02Z",
+      "side": 1,
+      "message": "Shall we use duckduckgo even here?",
+      "range": {
+        "startLine": 157,
+        "startChar": 68,
+        "endLine": 157,
+        "endChar": 74
+      },
+      "revId": "d43f13e95742ac2dbbeeefcd7ca668c67ef24499",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
