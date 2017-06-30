@@ -22,6 +22,30 @@
       "revId": "d6b3b84251e3f41a3db238ce88e33806015acdbb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_7f2aaf2d",
+        "filename": "app/src/main/res/values/search_engines.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-30T10:51:36Z",
+      "side": 1,
+      "message": "No",
+      "parentUuid": "da87b5cf_9f2d3349",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 37
+      },
+      "revId": "d6b3b84251e3f41a3db238ce88e33806015acdbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
