@@ -84,6 +84,23 @@
       "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_dcaae918",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T05:56:16Z",
+      "side": 1,
+      "message": "Should probably only do this if needed here, as otherwise selection will be killed (e.g. if URL bar got focus before page load was done).",
+      "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
