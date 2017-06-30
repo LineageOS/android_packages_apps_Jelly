@@ -27,7 +27,7 @@
         <item>https://www.baidu.com/s?wd={searchTerms}</item>
         <item>https://www.bing.com/search?q={searchTerms}</item>
         <item>https://duckduckgo.com/?q={searchTerms}</item>
-        <item>https://encrypted.google.com/search?q={searchTerms}</item>
+        <item>https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</item>
         <item>https://search.yahoo.com/p={searchTerms}</item>
     </string-array>
 </resources>
