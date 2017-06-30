@@ -16,6 +16,24 @@
       "revId": "8be5129feaf5f7658ef4037e4fe46bf360a5b9f0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_3c5af550",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-30T07:28:01Z",
+      "side": 1,
+      "message": "I think we want DNT even for iframes, am I wrong?",
+      "parentUuid": "da87b5cf_9c4b0187",
+      "revId": "8be5129feaf5f7658ef4037e4fe46bf360a5b9f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
