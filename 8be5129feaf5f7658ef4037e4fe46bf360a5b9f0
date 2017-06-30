@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_9c4b0187",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T06:57:24Z",
+      "side": 1,
+      "message": "Should only do this if request.isForMainFrame() is true:\n\nhttps://developer.android.com/reference/android/webkit/WebViewClient.html#shouldOverrideUrlLoading(android.webkit.WebView,%20android.webkit.WebResourceRequest)",
+      "revId": "8be5129feaf5f7658ef4037e4fe46bf360a5b9f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
