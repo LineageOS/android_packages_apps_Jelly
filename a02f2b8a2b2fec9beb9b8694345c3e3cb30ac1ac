@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_1c55b14f",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T04:29:26Z",
+      "side": 1,
+      "message": "Besides the context being unneeded to be passed in, the application context is the wrong context to pass in, as you want to resolve the drawables from the activity\u0027s theme.",
+      "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_bc64c549",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T04:29:26Z",
+      "side": 1,
+      "message": "mIndicatorIcon?",
+      "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_9c61c13b",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T04:29:26Z",
+      "side": 1,
+      "message": "No need to pass in a context here, you can use editor.getContext().",
+      "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_5c5b3987",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T04:29:26Z",
+      "side": 1,
+      "message": "Should collapse the three methods into one:\n\nprivate void updateIconVisibility() {\n    boolean showIcon \u003d mIncognito\n            ? !mUrlBarHasFocus\n            : !mLoading \u0026\u0026 !mUrlBarHasFocus \u0026\u0026 isSecure();\n    mIndicatorIcon.setVisibility(showIcon ? View.VISIBLE : View.GONE);\n}",
+      "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_7c5e3d78",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-06-30T04:29:26Z",
+      "side": 1,
+      "message": "Why should incognito tabs not show the title?",
+      "revId": "a02f2b8a2b2fec9beb9b8694345c3e3cb30ac1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
