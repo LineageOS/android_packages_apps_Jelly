@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string-array name="pref_suggestion_provider_entries" translatable="false">
+    <string-array name="pref_suggestions_provider_entries" translatable="false">
         <item>Baidu</item>
         <item>Bing</item>
         <item>DuckDuckGo</item>
@@ -23,7 +23,7 @@
         <item>None</item>
     </string-array>
 
-    <string-array name="pref_uggestion_provider_entryvalues" translatable="false">
+    <string-array name="pref_suggestions_provider_entryvalues" translatable="false">
         <item>BAIDU</item>
         <item>BING</item>
         <item>DUCK</item>

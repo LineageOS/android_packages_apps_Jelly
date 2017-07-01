@@ -106,8 +106,8 @@
   <string name="pref_do_not_track_summary">发送“不跟踪”请求到您浏览的网站</string>
   <!-- Settings: save form data title -->
   <string name="pref_save_form_data_title">保存表单数据</string>
-  <!-- Settings: suggestion provider title -->
-  <string name="pref_suggestion_provider">建议提供商</string>
+  <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">建议提供商</string>
   <!-- History: title -->
   <string name="history_title">历史记录</string>
   <!-- History: empty status text -->
