@@ -150,7 +150,6 @@ abstract class SuggestionProvider {
             urlConnection.addRequestProperty("Accept-Charset", mEncoding);
             try {
                 in = new BufferedInputStream(urlConnection.getInputStream());
-                String encoding = urlConnection.getContentEncoding();
                 return FileUtils.readStringFromStream(in, getEncoding(urlConnection));
             } finally {
                 urlConnection.disconnect();
