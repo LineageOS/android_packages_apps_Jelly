@@ -31,7 +31,7 @@ public final class PrefsUtils {
     private static final String KEY_COOKIE = "key_cookie";
     private static final String KEY_DO_NOT_TRACK = "key_do_not_track";
     private static final String KEY_SAVE_FORM_DATA = "key_save_form_data";
-    private static final String KEY_SUGGESTION_PROVIDER = "key_suggestion_provider";
+    private static final String KEY_SUGGESTIONS_PROVIDER = "key_suggestions_provider";
 
     public enum SuggestionProviderType {
         BAIDU,
@@ -94,7 +94,7 @@ public final class PrefsUtils {
     public static SuggestionProviderType getSuggestionProvider(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         try {
-            String value = prefs.getString(KEY_SUGGESTION_PROVIDER, null);
+            String value = prefs.getString(KEY_SUGGESTIONS_PROVIDER, null);
             if (value == null) {
                 value = context.getString(R.string.default_suggestion_provider);
             }

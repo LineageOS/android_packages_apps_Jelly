@@ -25,11 +25,11 @@
 
     <ListPreference
         android:defaultValue="@string/default_suggestion_provider"
-        android:entries="@array/pref_suggestion_provider_entries"
-        android:entryValues="@array/pref_uggestion_provider_entryvalues"
-        android:key="key_suggestion_provider"
+        android:entries="@array/pref_suggestions_provider_entries"
+        android:entryValues="@array/pref_suggestions_provider_entryvalues"
+        android:key="key_suggestions_provider"
         android:summary="%s"
-        android:title="@string/pref_suggestion_provider" />
+        android:title="@string/pref_suggestions_provider" />
 
     <Preference
         android:key="key_home_page"
