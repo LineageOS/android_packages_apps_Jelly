@@ -29,6 +29,6 @@ class BingSuggestionProvider extends SuggestionProvider {
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {
-        return "http://api.bing.com/osjson.aspx?query=" + query + "&language=" + language;
+        return "https://api.bing.com/osjson.aspx?query=" + query + "&language=" + language;
     }
 }
