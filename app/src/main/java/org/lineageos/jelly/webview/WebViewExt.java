@@ -98,7 +98,10 @@ public class WebViewExt extends WebView {
         getSettings().setSaveFormData(!mIncognito && PrefsUtils.getSaveFormData(mActivity));
         getSettings().setBuiltInZoomControls(true);
         getSettings().setDisplayZoomControls(false);
-        getSettings().setDomStorageEnabled(true);
+        getSettings().setAppCacheEnabled(!mIncognito);
+        getSettings().setDatabaseEnabled(!mIncognito);
+        getSettings().setDomStorageEnabled(!mIncognito);
+        getSettings().setAppCachePath(mActivity.getDir("appcache", Context.MODE_PRIVATE).getPath());
 
         setWebViewClient(new WebClient());
 
