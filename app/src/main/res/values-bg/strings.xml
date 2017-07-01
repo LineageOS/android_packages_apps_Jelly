@@ -103,7 +103,7 @@
   <!-- Settings: do not track preference title -->
   <!-- Settings: do not track preference summary -->
   <!-- Settings: save form data title -->
-  <!-- Settings: suggestion provider title -->
+  <!-- Settings: suggestions provider title -->
   <!-- History: title -->
   <string name="history_title">История</string>
   <!-- History: empty status text -->
