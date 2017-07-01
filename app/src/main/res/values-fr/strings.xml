@@ -93,6 +93,10 @@
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Effacer les cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Historique</string>
   <!-- History: empty status text -->
@@ -122,6 +126,7 @@
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Supprimer</string>
   <!-- Favorite: edit dialog: invalid url error message -->
+  <string name="favorite_edit_error">Insérer une URL valide</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Aucune application ne peut gérer ce lien</string>
   <!-- Auth dialog: title -->
@@ -129,4 +134,5 @@
   <!-- Auth dialog: password field -->
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

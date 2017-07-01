@@ -59,6 +59,10 @@
   <!-- Settings: advanced share preference summary -->
   <!-- Settings: clear cookie -->
   <!-- Settings: clear cookie toast confirmation -->
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
@@ -81,4 +85,5 @@
   <!-- Auth dialog: password field -->
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

@@ -100,6 +100,10 @@
   <string name="pref_cookie_clear">Poista evästeet</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Kaikki evästeet poistettu</string>
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Historia</string>
   <!-- History: empty status text -->
@@ -139,4 +143,5 @@
   <!-- Auth dialog: password field -->
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

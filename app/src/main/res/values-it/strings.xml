@@ -100,6 +100,10 @@
   <string name="pref_cookie_clear">Cancella cookie</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">I cookie sono stati cancellati</string>
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Cronologia</string>
   <!-- History: empty status text -->
@@ -135,8 +139,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Nessun\'app può aprire questo link</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Autenticazione richiesta</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Nome utente:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Password:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s richiede un nome utente e una password.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Accedi</string>
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

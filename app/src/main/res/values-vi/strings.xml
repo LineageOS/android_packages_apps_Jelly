@@ -100,6 +100,10 @@
   <string name="pref_cookie_clear">Xóa cookie</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Đã xóa tất cả cookie</string>
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Lịch sử</string>
   <!-- History: empty status text -->
@@ -135,8 +139,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Không có ứng dụng có thể xử lý liên kết này</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Yêu cầu xác thực</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Tên Người Dùng:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Mật Khẩu:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s yêu cầu tên người dùng và mật khẩu.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Đăng nhập</string>
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

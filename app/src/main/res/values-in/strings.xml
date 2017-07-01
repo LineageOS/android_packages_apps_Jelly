@@ -88,10 +88,15 @@
   <!-- Settings: advanced share preference summary -->
   <!-- Settings: clear cookie -->
   <!-- Settings: clear cookie toast confirmation -->
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+  <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
   <string name="history_delete_title">Hapus riwayat</string>
   <!-- History: delete history dialog warning message -->
@@ -106,6 +111,7 @@
   <string name="favorite_added">Ditambahkan ke favorit</string>
   <!-- Favorite: empty status text -->
   <!-- Favorite: edit dialog title -->
+  <string name="favorite_edit_dialog_title">Sunting favorit</string>
   <!-- Favorite: edit dialog: title of the favorite -->
   <!-- Favorite: edit dialog: url of the favorite-->
   <string name="favorite_edit_url">URL</string>
@@ -118,7 +124,11 @@
   <!-- No activity found to open the given url error -->
   <!-- Auth dialog: title -->
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Nama Pengguna:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Kata Sandi:</string>
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Masuk</string>
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

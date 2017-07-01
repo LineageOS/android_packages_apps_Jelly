@@ -100,6 +100,10 @@
   <string name="pref_cookie_clear">쿠키 삭제</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">모든 쿠키를 삭제했습니다.</string>
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">방문 기록</string>
   <!-- History: empty status text -->
@@ -135,8 +139,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">이 링크를 열 수 있는 앱이 없습니다.</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">인증 필요</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">사용자 이름:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">암호:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s에는 사용자 이름 및 암호가 필요합니다.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">로그인</string>
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>
