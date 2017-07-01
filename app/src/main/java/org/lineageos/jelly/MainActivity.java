@@ -99,7 +99,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     public static final String ACTION_URL_RESOLVED = "org.lineageos.jelly.action.URL_RESOLVED";
 
-    private BroadcastReceiver mUrlResolvedReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mUrlResolvedReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             Intent resolvedIntent = intent.getParcelableExtra(Intent.EXTRA_INTENT);
