@@ -100,6 +100,14 @@
   <string name="pref_cookie_clear">清除 Cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">已清除所有 Cookies</string>
+  <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">不跟踪</string>
+  <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">发送“不跟踪”请求到您浏览的网站</string>
+  <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">保存表单数据</string>
+  <!-- Settings: suggestion provider title -->
+  <string name="pref_suggestion_provider">建议提供商</string>
   <!-- History: title -->
   <string name="history_title">历史记录</string>
   <!-- History: empty status text -->
@@ -144,4 +152,6 @@
   <string name="auth_dialog_detail">%1$s 需要用户名和密码</string>
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">登录</string>
+  <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">新隐身标签页</string>
 </resources>

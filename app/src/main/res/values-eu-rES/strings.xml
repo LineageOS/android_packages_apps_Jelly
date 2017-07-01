@@ -100,6 +100,10 @@
   <string name="pref_cookie_clear">Garbitu cookieak</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Cookie guztiak garbitu dira</string>
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Historiala</string>
   <!-- History: empty status text -->
@@ -135,8 +139,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Ez dago lotura hau ireki dezakeen aplikaziorik</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Autentifikazioa derrigorrezkoa</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Erabiltzaile-izena:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Pasahitza:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s erabiltzeko erabiltzaile-izena eta pasahitza behar da.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Hasi Saioa</string>
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

@@ -100,6 +100,10 @@
   <string name="pref_cookie_clear">清除 Cookie</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">已清除所有 cookie</string>
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">歷史紀錄</string>
   <!-- History: empty status text -->
@@ -135,8 +139,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">沒有應用程式可以處理此連結</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">需要身份驗證</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">使用者名稱：</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">密碼：</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1 需要使用者名稱與密碼。</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">登入</string>
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

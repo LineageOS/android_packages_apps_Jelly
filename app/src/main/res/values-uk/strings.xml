@@ -95,6 +95,10 @@
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Очистити cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
+  <!-- Settings: do not track preference title -->
+  <!-- Settings: do not track preference summary -->
+  <!-- Settings: save form data title -->
+  <!-- Settings: suggestion provider title -->
   <!-- History: title -->
   <string name="history_title">Історія</string>
   <!-- History: empty status text -->
@@ -131,4 +135,5 @@
   <!-- Auth dialog: password field -->
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
+  <!-- Launcher shortcut: new incognito tab -->
 </resources>

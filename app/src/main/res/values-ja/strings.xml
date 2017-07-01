@@ -77,6 +77,7 @@
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">プライバシーとセキュリティ</string>
   <!-- Settings: lookLock title -->
+  <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">他のアプリがブラウザのコンテンツを読み取るのを防ぎます</string>
   <!-- Settings: javascript preference title -->
@@ -99,6 +100,14 @@
   <string name="pref_cookie_clear">Cookie を消去</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">すべての Cookie を消去しました</string>
+  <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">追跡しない（Do Not Track）</string>
+  <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">ウェブサイトに Do Not Track 要求を送信します</string>
+  <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">フォームデータの保存</string>
+  <!-- Settings: suggestion provider title -->
+  <string name="pref_suggestion_provider">提案プロパイダ</string>
   <!-- History: title -->
   <string name="history_title">履歴</string>
   <!-- History: empty status text -->
@@ -134,8 +143,15 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">このリンクを処理できるアプリがありません</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">認証が必要です</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">ユーザー名 :</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">パスワード：</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s にはユーザー名とパスワードが必要です。</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">ログイン</string>
+  <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">新しいシークレットタブ</string>
 </resources>
