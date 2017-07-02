@@ -70,6 +70,7 @@
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
                 android:popupElevation="2dp"
+                android:popupBackground="@android:color/white"
                 android:selectAllOnFocus="true"
                 android:textColor="@android:color/black"
                 tools:ignore="RtlSymmetry" />
