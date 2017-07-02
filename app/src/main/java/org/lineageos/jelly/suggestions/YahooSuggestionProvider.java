@@ -29,6 +29,6 @@ class YahooSuggestionProvider extends SuggestionProvider {
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {
-        return "http://ff.search.yahoo.com/gossip?output=fxjson&command=" + query;
+        return "https://search.yahoo.com/sugg/chrome?output=fxjson&command=" + query;
     }
 }

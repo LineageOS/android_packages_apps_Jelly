@@ -23,12 +23,12 @@ import android.support.annotation.NonNull;
  */
 class BaiduSuggestionProvider extends SuggestionProvider {
     BaiduSuggestionProvider() {
-        super("GB2312");
+        super("UTF-8");
     }
 
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {
-        return "http://suggestion.baidu.com/s?wd=" + query + "&action=opensearch";
+        return "http://suggestion.baidu.com/s?ie=UTF-8&wd=" + query + "&action=opensearch";
     }
 }

@@ -29,7 +29,7 @@ class GoogleSuggestionProvider extends SuggestionProvider {
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {
-        return "https://www.google.com/complete/search?client=android"
+        return "https://www.google.com/complete/search?client=android&oe=utf8&ie=utf8"
                 + "&hl=" + language + "&q=" + query;
     }
 }
