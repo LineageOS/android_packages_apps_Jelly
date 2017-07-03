@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_258f31ce",
+        "filename": "app/src/main/res/layout/search_page.xml",
+        "patchSetId": 42
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-07-03T19:30:12Z",
+      "side": 1,
+      "message": "Useless, the search is too fast, looks like it flicker and nothing else",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 55
+      },
+      "revId": "782c2bfe0ccc42f4e868cabeff340aeff2476594",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
