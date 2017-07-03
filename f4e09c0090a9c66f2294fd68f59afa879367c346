@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_625a0f52",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-07-03T07:21:39Z",
+      "side": 1,
+      "message": "Wasn\u0027t there a number of pages that don\u0027t work *at all* without this?",
+      "revId": "f4e09c0090a9c66f2294fd68f59afa879367c346",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
