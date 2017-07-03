@@ -34,6 +34,24 @@
       "revId": "f4e09c0090a9c66f2294fd68f59afa879367c346",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_c2199b89",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-07-03T07:33:13Z",
+      "side": 1,
+      "message": "But in chrome it\u0027s session specific, so we have to disable these",
+      "parentUuid": "da87b5cf_4226ebcf",
+      "revId": "f4e09c0090a9c66f2294fd68f59afa879367c346",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
