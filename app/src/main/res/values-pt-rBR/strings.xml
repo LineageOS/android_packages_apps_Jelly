@@ -149,4 +149,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Fazer login</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nova aba anônima</string>
 </resources>

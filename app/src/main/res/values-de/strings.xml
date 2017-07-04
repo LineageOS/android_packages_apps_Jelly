@@ -103,6 +103,7 @@
   <!-- Settings: do not track preference title -->
   <!-- Settings: do not track preference summary -->
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Formulardaten speichern</string>
   <!-- Settings: suggestions provider title -->
   <!-- History: title -->
   <string name="history_title">Verlauf</string>
@@ -149,4 +150,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Anmelden</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Neuer Inkognito-Tab</string>
 </resources>

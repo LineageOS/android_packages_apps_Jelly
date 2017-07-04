@@ -19,6 +19,7 @@
   <!-- Menu action: create new tab -->
   <string name="menu_new_tab">Nouvel onglet</string>
   <!-- Menu action: create new incognito tab -->
+  <string name="menu_incognito">Onglet de navigation privée</string>
   <!-- Menu action: reload current page -->
   <string name="menu_reload">Rafraîchir</string>
   <!-- Menu action: add current page to favorites -->
@@ -46,15 +47,19 @@
   <!-- Dialog action: dismiss -->
   <string name="dismiss">Rejeter</string>
   <!-- Download dialog: title -->
+  <string name="download_title">Télécharger le fichier</string>
   <!-- Download dialog: message -->
+  <string name="download_message">Voulez-vous télécharger %1$s ?</string>
   <!-- Download dialog: button that starts the download -->
   <string name="download_positive">Télécharger</string>
   <!-- Permission error dialog: title -->
   <string name="permission_error_title">Erreur d\'autorisation</string>
   <!-- Permission error dialog: message for denied storage access-->
+  <string name="permission_error_storage">Le navigateur a besoin d\'un accès au stockage pour télécharger des fichiers. Veuillez accorder cet accès pour enregistrer des fichiers depuis le web</string>
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Demander à nouveau</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+  <string name="permission_error_forever">Autorisation refusée de façon permanente. Veuillez accorder l\'accès dans les paramètres</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Ajouté à l\'écran d\'accueil</string>
   <!-- Settings: title -->
@@ -86,6 +91,7 @@
   <!-- Settings: cookie preference title -->
   <string name="pref_cookie_title">Cookies</string>
   <!-- Settings: cookie preference summary -->
+  <string name="pref_cookie_summary">Autoriser les sites web à enregistrer et charger les cookies</string>
   <!-- Settings: advanced share preference title -->
   <string name="pref_screenshot_snap_title">Partage avancé</string>
   <!-- Settings: advanced share preference summary -->
@@ -93,13 +99,16 @@
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Effacer les cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
+  <string name="pref_cookie_clear_done">Tous les cookies ont été effacés</string>
   <!-- Settings: do not track preference title -->
   <!-- Settings: do not track preference summary -->
   <!-- Settings: save form data title -->
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Fournisseur de suggestions</string>
   <!-- History: title -->
   <string name="history_title">Historique</string>
   <!-- History: empty status text -->
+  <string name="history_empty">Il n’y a rien ici, naviguez sur internet pour voir votre historique ici</string>
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
   <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
@@ -115,6 +124,7 @@
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
   <string name="favorite_added">Ajouté aux favoris</string>
   <!-- Favorite: empty status text -->
+  <string name="favorite_empty">Il n’y a rien ici, ajoutez des favoris pour les voir ici</string>
   <!-- Favorite: edit dialog title -->
   <string name="favorite_edit_dialog_title">Modifier le favori</string>
   <!-- Favorite: edit dialog: title of the favorite -->
@@ -130,9 +140,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Aucune application ne peut gérer ce lien</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Authentification requise</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Identifiant :</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Mot de passe :</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s requiert un identifiant et un mot de passe.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Se connecter</string>
   <!-- Launcher shortcut: new incognito tab -->
 </resources>

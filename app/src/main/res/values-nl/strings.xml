@@ -19,6 +19,7 @@
   <!-- Menu action: create new tab -->
   <string name="menu_new_tab">Nieuw tabblad</string>
   <!-- Menu action: create new incognito tab -->
+  <string name="menu_incognito">Incognitotabblad</string>
   <!-- Menu action: reload current page -->
   <string name="menu_reload">Opnieuw laden</string>
   <!-- Menu action: add current page to favorites -->
@@ -40,6 +41,7 @@
   <!-- Menu action: enable desktop mode -->
   <!-- Menu action: enable phone mode -->
   <!-- Share webPage: "send to" dialog title -->
+  <string name="share_title">Verzenden naar</string>
   <!-- Dialog action: dismiss -->
   <string name="dismiss">Sluiten</string>
   <!-- Download dialog: title -->
@@ -50,6 +52,7 @@
   <!-- Permission error dialog: title -->
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
+  <string name="permission_error_ask_again">Opnieuw vragen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Toegevoegd aan thuisscherm</string>
@@ -60,15 +63,19 @@
   <!-- Settings: home page preference title -->
   <string name="pref_start_page">Startpagina</string>
   <!-- Settings: select home page dialog title -->
+  <string name="pref_start_page_dialog_title">Startpagina kiezen</string>
   <!-- Settings: select home page dialog message -->
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Opnieuw instellen</string>
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">Privacy en beveiliging</string>
   <!-- Settings: lookLock title -->
+  <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
   <!-- Settings: javascript preference title -->
+  <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
+  <string name="pref_js_summary">JavaScript inschakelen</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Locatie</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -93,6 +100,7 @@
   <string name="history_delete_title">Geschiedenis wissen</string>
   <!-- History: delete history dialog warning message -->
   <!-- History: delete history dialog button that erases all the history -->
+  <string name="history_delete_positive">Wissen</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Geschiedenis wissen\u2026</string>
   <!-- Favorite: title -->
@@ -105,6 +113,7 @@
   <!-- Favorite: edit dialog: title of the favorite -->
   <string name="favorite_edit_title">Titel</string>
   <!-- Favorite: edit dialog: url of the favorite-->
+  <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
   <string name="favorite_edit_positive">Bewerken</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
@@ -113,8 +122,13 @@
   <!-- No activity found to open the given url error -->
   <!-- Auth dialog: title -->
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Gebruikersnaam:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Wachtwoord:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s vereist een gebruikersnaam en wachtwoord.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Inloggen</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nieuw incognitotabblad</string>
 </resources>

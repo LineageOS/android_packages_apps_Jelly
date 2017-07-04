@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Всички бисквитки са изчистени</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Без проследяване</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Изпраща искане до уеб сайтовете да не преследват дейността</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Запазване на данни за формуляри</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Предложения на доставчици</string>
   <!-- History: title -->
   <string name="history_title">История</string>
   <!-- History: empty status text -->
@@ -149,4 +153,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Вход</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Нов раздел в режим „Инкогнито“</string>
 </resources>

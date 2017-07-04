@@ -101,15 +101,19 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Vymazať všetky súbory cookie</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Funkcia Nesledovať</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Odošle webovým stránkam požiadavku, aby vás nesledovali</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Ukladať údaje formulárov</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Poskytovateľ návrhov</string>
   <!-- History: title -->
   <string name="history_title">História</string>
   <!-- History: empty status text -->
   <string name="history_empty">Nič tu nie je, prechádzaním internetu uvidíte svoju históriu</string>
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+  <string name="history_date_format">EEEE, dd. MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
   <string name="history_delete_title">Vymazať históriu</string>
   <!-- History: delete history dialog warning message -->
@@ -149,4 +153,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Prihlásiť sa</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nová karta v režime inkognito</string>
 </resources>

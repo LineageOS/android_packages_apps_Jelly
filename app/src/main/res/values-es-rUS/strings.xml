@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Se limpiaron todas las cookies</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">No rastrear</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Envía una solicitud para evitar el rastreo en los sitios web visitados</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Guardar datos del formulario</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Proveedor de sugerencias</string>
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->
@@ -149,4 +153,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Iniciar sesión</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nueva pestaña de incógnito</string>
 </resources>

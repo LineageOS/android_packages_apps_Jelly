@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Eliminar todas as cookies</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Non facer seguimento</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Enviar unha solicitude para evitar o seguimento dos sitios web que visitas</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Gardar información do formulario</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Provedor de suxerencias</string>
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->
@@ -139,9 +143,15 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Ninguna aplicación pode abrir este enlace</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Autenticación requirida</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Nome de usuario:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Contrasinal:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s require dun usuario e contrasinal.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Iniciar sesión</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nova lapela de incógnito</string>
 </resources>

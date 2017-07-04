@@ -103,6 +103,7 @@
   <!-- Settings: do not track preference title -->
   <!-- Settings: do not track preference summary -->
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Shrani iz podatkov</string>
   <!-- Settings: suggestions provider title -->
   <!-- History: title -->
   <string name="history_title">Zgodovina</string>
