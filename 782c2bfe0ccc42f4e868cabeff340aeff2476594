@@ -22,6 +22,24 @@
       "revId": "782c2bfe0ccc42f4e868cabeff340aeff2476594",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da87b5cf_1b5e0e13",
+        "filename": "app/src/main/res/layout/search_page.xml",
+        "patchSetId": 42
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-07-04T02:40:36Z",
+      "side": 1,
+      "message": "Try search with a single letter on a large page (I used m.spiegel.de myself) ... you\u0027ll see this for multiple seconds.\nI\u0027ll change it though to show the numbers already while results are still coming in ... progress is indicated that way as well.",
+      "parentUuid": "da87b5cf_258f31ce",
+      "revId": "782c2bfe0ccc42f4e868cabeff340aeff2476594",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
