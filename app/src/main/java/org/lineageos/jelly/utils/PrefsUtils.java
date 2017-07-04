@@ -86,9 +86,13 @@ public final class PrefsUtils {
         return prefs.getBoolean(KEY_DO_NOT_TRACK, false);
     }
 
-    public static boolean getSaveFormData(Context context) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getBoolean(KEY_SAVE_FORM_DATA, true);
+    public static boolean getSaveFormData(Context context, boolean incognito) {
+        if (incognito) {
+            return false;
+        } else {
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            return prefs.getBoolean(KEY_SAVE_FORM_DATA, true);
+        }
     }
 
     public static SuggestionProviderType getSuggestionProvider(Context context) {
