@@ -78,11 +78,13 @@ public class FavoriteDatabaseHandler extends SQLiteOpenHelper {
 
         db.update(DB_TABLE_FAVORITES, values, KEY_ID + "=?",
                 new String[]{String.valueOf(item.getId())});
+        db.close();
     }
 
-    void deleteItem(long id) {
+    void deleteItem(Favorite item) {
         SQLiteDatabase db = getWritableDatabase();
-        db.delete(DB_TABLE_FAVORITES, KEY_ID + "=?", new String[]{String.valueOf(id)});
+        db.delete(DB_TABLE_FAVORITES, KEY_ID + "=?",
+                new String[]{String.valueOf(item.getId())});
         db.close();
     }
 

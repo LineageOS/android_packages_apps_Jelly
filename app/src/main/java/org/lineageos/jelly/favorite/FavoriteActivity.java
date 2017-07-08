@@ -136,16 +136,20 @@ public class FavoriteActivity extends AppCompatActivity {
                                 urlEdit.setError(error);
                                 urlEdit.requestFocus();
                             }
+                            if (item.getUrl().equals(url) && item.getTitle().equals(title)) {
+                                dialog.dismiss();
+                                return;
+                            }
                             item.setTitle(title);
                             item.setUrl(url);
                             mDbHandler.updateItem(item);
-                            refresh();
+                            mAdapter.updateItem(item);
                             dialog.dismiss();
                         }))
                 .setNeutralButton(R.string.favorite_edit_delete,
                         (dialog, which) -> {
-                            mDbHandler.deleteItem(item.getId());
-                            mAdapter.removeItem(item.getId());
+                            mDbHandler.deleteItem(item);
+                            mAdapter.deleteItem(item);
                             dialog.dismiss();
                         })
                 .setNegativeButton(android.R.string.cancel,
