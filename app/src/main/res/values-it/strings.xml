@@ -105,8 +105,7 @@
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Invia una richiesta di non tracciabilità ai siti Web visitati</string>
   <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Salva i dati moduli</string>
-  <!-- Settings: suggestions provider title -->
+    <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Provider per suggerimenti</string>
   <!-- History: title -->
   <string name="history_title">Cronologia</string>

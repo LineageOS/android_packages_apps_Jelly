@@ -105,8 +105,7 @@
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Enviar unha solicitude para evitar o seguimento dos sitios web que visitas</string>
   <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Gardar información do formulario</string>
-  <!-- Settings: suggestions provider title -->
+    <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Provedor de suxerencias</string>
   <!-- History: title -->
   <string name="history_title">Historial</string>

@@ -105,8 +105,7 @@
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Ziyaret ettiğiniz web sitelerine takip edilme isteği gönderme</string>
   <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Form verilerini kaydet</string>
-  <!-- Settings: suggestions provider title -->
+    <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Öneri sağlayıcı</string>
   <!-- History: title -->
   <string name="history_title">Geçmiş</string>

@@ -105,8 +105,7 @@
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Gửi một yêu cầu Không Theo Dõi các trang web bạn truy cập</string>
   <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Lưu dữ liệu biểu mẫu</string>
-  <!-- Settings: suggestions provider title -->
+    <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Nhà cung cấp đề xuất</string>
   <!-- History: title -->
   <string name="history_title">Lịch sử</string>
