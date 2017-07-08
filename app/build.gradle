@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "25.0.3"
+    buildToolsVersion "26.0.0"
 
     defaultConfig {
         applicationId "org.lineageos.jelly.studio"
@@ -34,12 +36,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "com.android.support:appcompat-v7:$android_support_version"
-    compile "com.android.support:design:$android_support_version"
-    compile "com.android.support:cardview-v7:$android_support_version"
-    compile "com.android.support:palette-v7:$android_support_version"
-    compile "com.android.support:support-v4:$android_support_version"
+    implementation "com.android.support:appcompat-v7:$android_support_version"
+    implementation "com.android.support:design:$android_support_version"
+    implementation "com.android.support:cardview-v7:$android_support_version"
+    implementation "com.android.support:palette-v7:$android_support_version"
+    implementation "com.android.support:support-v4:$android_support_version"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 
 repositories {
