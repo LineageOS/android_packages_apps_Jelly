@@ -31,19 +31,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 public class HistoryProvider extends ContentProvider {
-    public interface Columns extends BaseColumns {
-        String AUTHORITY = "org.lineageos.jelly.history";
-        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/history");
-
-        String TITLE = "title";
-        String URL = "url";
-        String TIMESTAMP = "timestamp";
-    }
-
     private static final int MATCH_ALL = 0;
     private static final int MATCH_ID = 1;
-
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+
     static {
         sURIMatcher.addURI(Columns.AUTHORITY, "history", MATCH_ALL);
         sURIMatcher.addURI(Columns.AUTHORITY, "history/#", MATCH_ID);
@@ -53,8 +44,8 @@ public class HistoryProvider extends ContentProvider {
 
     public static void addOrUpdateItem(ContentResolver resolver, String title, String url) {
         long existingId = -1;
-        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[] { Columns._ID },
-                Columns.URL + "=?", new String[] { url }, null);
+        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[]{Columns._ID},
+                Columns.URL + "=?", new String[]{url}, null);
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 existingId = cursor.getLong(0);
@@ -155,7 +146,7 @@ public class HistoryProvider extends ContentProvider {
                             "Cannot update URI " + uri + " with a where clause");
                 }
                 count = db.update(HistoryDbHelper.DB_TABLE_HISTORY, values, Columns._ID + " = ?",
-                        new String[] { uri.getLastPathSegment() });
+                        new String[]{uri.getLastPathSegment()});
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot update that URI: " + uri);
@@ -183,7 +174,7 @@ public class HistoryProvider extends ContentProvider {
                             "Cannot delete URI " + uri + " with a where clause");
                 }
                 selection = Columns._ID + " = ?";
-                selectionArgs = new String[] { uri.getLastPathSegment() };
+                selectionArgs = new String[]{uri.getLastPathSegment()};
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot delete the URI " + uri);
@@ -196,6 +187,15 @@ public class HistoryProvider extends ContentProvider {
         }
 
         return count;
+    }
+
+    public interface Columns extends BaseColumns {
+        String AUTHORITY = "org.lineageos.jelly.studio.history";
+        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/history");
+
+        String TITLE = "title";
+        String URL = "url";
+        String TIMESTAMP = "timestamp";
     }
 
     private static class HistoryDbHelper extends SQLiteOpenHelper {

@@ -21,5 +21,6 @@ import android.webkit.WebView;
 
 class WebChromeClientCompat extends WebChromeClient {
     @SuppressWarnings("UnusedParameters")
-    public void onThemeColorChanged(WebView view, int color) {}
+    void onThemeColorChanged(WebView view, int color) {
+    }
 }

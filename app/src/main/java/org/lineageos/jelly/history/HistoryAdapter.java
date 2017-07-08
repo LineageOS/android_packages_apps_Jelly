@@ -47,7 +47,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         mCursor = cursor;
         if (mCursor != null) {
             mIdColumnIndex = cursor.getColumnIndexOrThrow(HistoryProvider.Columns._ID);
-            mTitleColumnIndex= cursor.getColumnIndexOrThrow(HistoryProvider.Columns.TITLE);
+            mTitleColumnIndex = cursor.getColumnIndexOrThrow(HistoryProvider.Columns.TITLE);
             mUrlColumnIndex = cursor.getColumnIndexOrThrow(HistoryProvider.Columns.URL);
             mTimestampColumnIndex = cursor.getColumnIndexOrThrow(HistoryProvider.Columns.TIMESTAMP);
         }

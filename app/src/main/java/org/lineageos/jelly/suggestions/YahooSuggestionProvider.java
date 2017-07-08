@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
  */
 class YahooSuggestionProvider extends SuggestionProvider {
     YahooSuggestionProvider() {
-        super("UTF-8");
+        super();
     }
 
     @NonNull

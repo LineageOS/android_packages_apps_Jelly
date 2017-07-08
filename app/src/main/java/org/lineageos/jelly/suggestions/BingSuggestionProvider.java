@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
  */
 class BingSuggestionProvider extends SuggestionProvider {
     BingSuggestionProvider() {
-        super("UTF-8");
+        super();
     }
 
     @NonNull

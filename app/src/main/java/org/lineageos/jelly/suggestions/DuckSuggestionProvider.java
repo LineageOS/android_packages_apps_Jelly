@@ -26,7 +26,7 @@ import org.json.JSONObject;
  */
 class DuckSuggestionProvider extends SuggestionProvider {
     DuckSuggestionProvider() {
-        super("UTF-8");
+        super();
     }
 
     @NonNull

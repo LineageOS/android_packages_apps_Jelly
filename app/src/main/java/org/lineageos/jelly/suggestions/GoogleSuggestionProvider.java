@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
  */
 class GoogleSuggestionProvider extends SuggestionProvider {
     GoogleSuggestionProvider() {
-        super("UTF-8");
+        super();
     }
 
     @NonNull

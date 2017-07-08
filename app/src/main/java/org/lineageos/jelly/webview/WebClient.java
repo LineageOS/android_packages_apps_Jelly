@@ -44,7 +44,6 @@ import org.lineageos.jelly.utils.UrlUtils;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 
@@ -83,9 +82,9 @@ class WebClient extends WebViewClient {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View dialogView = layoutInflater.inflate(R.layout.auth_dialog, new LinearLayout(context));
-        EditText username = (EditText) dialogView.findViewById(R.id.username);
-        EditText password = (EditText) dialogView.findViewById(R.id.password);
-        TextView auth_detail = (TextView) dialogView.findViewById(R.id.auth_detail);
+        EditText username = dialogView.findViewById(R.id.username);
+        EditText password = dialogView.findViewById(R.id.password);
+        TextView auth_detail = dialogView.findViewById(R.id.auth_detail);
         String text = context.getString(R.string.auth_dialog_detail, view.getUrl());
         auth_detail.setText(text);
         builder.setView(dialogView)
@@ -153,7 +152,7 @@ class WebClient extends WebViewClient {
         final ArrayList<Intent> chooserIntents = new ArrayList<>();
         final String ourPackageName = context.getPackageName();
 
-        Collections.sort(activities, new ResolveInfo.DisplayNameComparator(pm));
+        activities.sort(new ResolveInfo.DisplayNameComparator(pm));
 
         for (ResolveInfo resolveInfo : activities) {
             IntentFilter filter = resolveInfo.filter;

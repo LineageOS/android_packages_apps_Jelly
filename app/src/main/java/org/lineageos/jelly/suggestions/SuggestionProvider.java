@@ -46,12 +46,11 @@ abstract class SuggestionProvider {
     private static final long INTERVAL_DAY = TimeUnit.DAYS.toSeconds(1);
     private static final String DEFAULT_LANGUAGE = "en";
     @NonNull
-    private final String mEncoding;
+    private final String mEncoding = "UTF-8";
     @NonNull
     private final String mLanguage;
 
-    SuggestionProvider(@NonNull String encoding) {
-        mEncoding = encoding;
+    SuggestionProvider() {
         mLanguage = getLanguage();
     }
 
@@ -78,8 +77,8 @@ abstract class SuggestionProvider {
     /**
      * Parse the results of an input stream into a list of {@link String}.
      *
-     * @param content     the raw input to parse.
-     * @param callback    the callback to invoke for each received suggestion
+     * @param content  the raw input to parse.
+     * @param callback the callback to invoke for each received suggestion
      * @throws Exception throw an exception if anything goes wrong.
      */
     void parseResults(@NonNull String content,

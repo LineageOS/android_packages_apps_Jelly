@@ -16,10 +16,10 @@
 package org.lineageos.jelly.favorite;
 
 public class Favorite {
+    private final int color;
     private long id = -1;
     private String title;
     private String url;
-    private final int color;
 
     public Favorite(String title, String url, int color) {
         this.title = title;

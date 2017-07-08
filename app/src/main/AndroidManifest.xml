@@ -88,7 +88,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="org.lineageos.jelly.fileprovider"
+            android:authorities="org.lineageos.jelly.studio.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -98,7 +98,7 @@
 
         <provider
             android:name=".history.HistoryProvider"
-            android:authorities="org.lineageos.jelly.history"
+            android:authorities="org.lineageos.jelly.studio.history"
             android:exported="false" />
 
         <meta-data

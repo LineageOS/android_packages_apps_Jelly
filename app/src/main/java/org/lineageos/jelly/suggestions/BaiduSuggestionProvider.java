@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
  */
 class BaiduSuggestionProvider extends SuggestionProvider {
     BaiduSuggestionProvider() {
-        super("UTF-8");
+        super();
     }
 
     @NonNull

@@ -33,15 +33,6 @@ public final class PrefsUtils {
     private static final String KEY_SAVE_FORM_DATA = "key_save_form_data";
     private static final String KEY_SUGGESTION_PROVIDER = "key_suggestion_provider";
 
-    public enum SuggestionProviderType {
-        BAIDU,
-        BING,
-        DUCK,
-        GOOGLE,
-        YAHOO,
-        NONE
-    }
-
     private PrefsUtils() {
     }
 
@@ -107,5 +98,14 @@ public final class PrefsUtils {
     public static void setHomePage(Context context, String value) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         prefs.edit().putString(KEY_HOME_PAGE, value).apply();
+    }
+
+    public enum SuggestionProviderType {
+        BAIDU,
+        BING,
+        DUCK,
+        GOOGLE,
+        YAHOO,
+        NONE
     }
 }

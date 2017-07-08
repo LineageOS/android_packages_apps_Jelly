@@ -29,8 +29,7 @@
         style="@android:style/TextAppearance.Medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:maxLines="1" />
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/row_history_summary"

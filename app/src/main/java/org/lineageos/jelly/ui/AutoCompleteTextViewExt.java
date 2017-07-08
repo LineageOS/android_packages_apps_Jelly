@@ -43,8 +43,8 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
     private static LinearGradient getGradient(float widthEnd, float fadeStart,
                                               float stopStart, float stopEnd, int color) {
         return new LinearGradient(0, 0, widthEnd, 0,
-                new int[] { color, Color.TRANSPARENT, color, color, Color.TRANSPARENT },
-                new float[] { 0, fadeStart, stopStart, stopEnd, 1f }, Shader.TileMode.CLAMP);
+                new int[]{color, Color.TRANSPARENT, color, color, Color.TRANSPARENT},
+                new float[]{0, fadeStart, stopStart, stopEnd, 1f}, Shader.TileMode.CLAMP);
     }
 
     @Override

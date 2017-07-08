@@ -88,17 +88,17 @@ import java.io.IOException;
 
 public class MainActivity extends WebViewExtActivity implements View.OnTouchListener,
         View.OnScrollChangeListener {
+    public static final String EXTRA_URL = "extra_url";
+    public static final String ACTION_URL_RESOLVED = "org.lineageos.jelly.action.URL_RESOLVED";
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
+    private static final String PROVIDER = "org.lineageos.jelly.studio.fileprovider";
     private static final String EXTRA_INCOGNITO = "extra_incognito";
     private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
-    public static final String EXTRA_URL = "extra_url";
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
-
-    public static final String ACTION_URL_RESOLVED = "org.lineageos.jelly.action.URL_RESOLVED";
-
+    private CoordinatorLayout mCoordinator;
+    private WebViewExt mWebView;
     private final BroadcastReceiver mUrlResolvedReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -113,9 +113,6 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             receiver.send(RESULT_CANCELED, new Bundle());
         }
     };
-
-    private CoordinatorLayout mCoordinator;
-    private WebViewExt mWebView;
     private ProgressBar mLoadingProgress;
     private boolean mHasThemeColorSupport;
     private Drawable mLastActionBarDrawable;
@@ -137,18 +134,17 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mCoordinator = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        mCoordinator = findViewById(R.id.coordinator_layout);
+        mSwipeRefreshLayout = findViewById(R.id.swipe_refresh);
         mSwipeRefreshLayout.setOnRefreshListener(() -> {
             mWebView.reload();
             new Handler().postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1000);
         });
-        mLoadingProgress = (ProgressBar) findViewById(R.id.load_progress);
-        AutoCompleteTextView autoCompleteTextView =
-                (AutoCompleteTextView) findViewById(R.id.url_bar);
+        mLoadingProgress = findViewById(R.id.load_progress);
+        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.url_bar);
         autoCompleteTextView.setAdapter(new SuggestionsAdapter(this));
         autoCompleteTextView.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -198,12 +194,12 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
-        ImageView incognitoIcon = (ImageView) findViewById(R.id.incognito);
+        ImageView incognitoIcon = findViewById(R.id.incognito);
         incognitoIcon.setVisibility(mIncognito ? View.VISIBLE : View.GONE);
 
         setupMenu();
 
-        mWebView = (WebViewExt) findViewById(R.id.web_view);
+        mWebView = findViewById(R.id.web_view);
         mWebView.init(this, autoCompleteTextView, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
@@ -323,7 +319,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     }
 
     private void setupMenu() {
-        ImageButton menu = (ImageButton) findViewById(R.id.search_menu);
+        ImageButton menu = findViewById(R.id.search_menu);
         menu.setOnClickListener(v -> {
             boolean isDesktop = mWebView.isDesktopMode();
             ContextThemeWrapper wrapper = new ContextThemeWrapper(this,
@@ -547,7 +543,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         if (actionBar != null) {
             ColorDrawable newDrawable = new ColorDrawable(color);
             if (mLastActionBarDrawable != null) {
-                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final Drawable[] layers = new Drawable[]{mLastActionBarDrawable, newDrawable};
                 final TransitionDrawable transition = new TransitionDrawable(layers);
                 transition.setCrossFadeEnabled(true);
                 transition.startTransition(200);
@@ -629,6 +625,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         // gesture is still ongoing
         mGestureOngoing = false;
 
+        v.performClick();
         return super.onTouchEvent(event);
     }
 

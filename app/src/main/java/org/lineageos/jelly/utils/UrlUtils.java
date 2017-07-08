@@ -38,12 +38,11 @@ public final class UrlUtils {
     /**
      * Attempts to determine whether user input is a URL or search
      * terms.  Anything with a space is passed to search if canBeSearch is true.
-     *
+     * <p>
      * Converts to lowercase any mistakenly uppercased schema (i.e.,
      * "Http://" converts to "http://"
      *
      * @return Original or modified URL
-     *
      */
     public static String smartUrlFilter(String url) {
         String inUrl = url.trim();
