@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Vymazat všechny soubory cookie</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Nesledovat</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Odeslat požadavek „Nesledovat“ (Do Not Track) na webové stránky, které navštívíte</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Uložit podrobnosti formuláře</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Poskytovatel návrhů</string>
   <!-- History: title -->
   <string name="history_title">Historie</string>
   <!-- History: empty status text -->
@@ -139,9 +143,15 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">K tomuto odkazu není přiřazena žádná aplikace</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Vyžadováno ověření</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Uživatelské jméno:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Heslo:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s vyžaduje uživatelské jméno a heslo.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Přihlásit se</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nová anonymní karta</string>
 </resources>

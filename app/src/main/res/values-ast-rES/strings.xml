@@ -82,7 +82,7 @@
   <!-- Settings: javascript preference title -->
   <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Habilitar JavaScript</string>
+  <string name="pref_js_summary">Habilita JavaScript</string>
   <!-- Settings: location preference title -->
   <string name="pref_location_title">Allugamientu</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
@@ -99,9 +99,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Llimpiáronse toles cookies</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Nun rastrexar</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Unvia una solicitú de Nun rastrexar a los sitios web que visites</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Guardar datos de formularios</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Fornidor de suxerencies</string>
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->
@@ -137,9 +141,14 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Denguna aplicación pue remanar esti enllaz</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Ríquese l\'autenticación</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Nome d\'usuariu:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Contraseña:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s rique un nome d\'usuariu y contraseña.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Aniciar sesión</string>
   <!-- Launcher shortcut: new incognito tab -->
 </resources>

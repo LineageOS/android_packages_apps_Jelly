@@ -101,10 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Alle Cookies gelöscht</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Aktivitäten nicht verfolgen</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Websites mitteilen, meine Aktivitäten nicht zu verfolgen</string>
   <!-- Settings: save form data title -->
   <string name="pref_save_form_data_title">Formulardaten speichern</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Anbieter für Vorschläge</string>
   <!-- History: title -->
   <string name="history_title">Verlauf</string>
   <!-- History: empty status text -->

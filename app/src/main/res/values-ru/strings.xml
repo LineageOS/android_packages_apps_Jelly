@@ -77,7 +77,7 @@
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">Конфиденциальность и безопасность</string>
   <!-- Settings: lookLock title -->
-  <string name="pref_looklock_title">Доступ других приложений</string>
+  <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
   <string name="pref_looklock_summary">Не допускать другие приложения к содержимому браузера</string>
   <!-- Settings: javascript preference title -->
@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Cookie удалены</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Не отслеживать</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Браузер будет сообщать сайтам, что Вы не хотите, чтобы Вас отслеживали</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Автозаполнение форм</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Поставщик поисковых предложений</string>
   <!-- History: title -->
   <string name="history_title">История</string>
   <!-- History: empty status text -->
@@ -149,4 +153,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Вход</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Новая вкладка инкогнито</string>
 </resources>

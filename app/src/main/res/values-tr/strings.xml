@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Tüm çerezler temizlendi</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Takip Etme</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Ziyaret ettiğiniz web sitelerine takip edilme isteği gönderme</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Form verilerini kaydet</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Öneri sağlayıcı</string>
   <!-- History: title -->
   <string name="history_title">Geçmiş</string>
   <!-- History: empty status text -->
@@ -149,4 +153,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Giriş</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Yeni gizli sekme</string>
 </resources>

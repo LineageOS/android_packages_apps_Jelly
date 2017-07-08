@@ -101,9 +101,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Сви колачићи су очишћени.</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Не желим да ме прате</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Шаље захтев „Не желим да ме прате“ сајтовима које посећујете.</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Чување података из образаца</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Добављач предлога</string>
   <!-- History: title -->
   <string name="history_title">Историја</string>
   <!-- History: empty status text -->
@@ -149,4 +153,5 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Пријави ме</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Картица без архивирања</string>
 </resources>
