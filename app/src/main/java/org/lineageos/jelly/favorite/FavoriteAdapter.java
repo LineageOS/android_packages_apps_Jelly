@@ -54,7 +54,7 @@ class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
         notifyDataSetChanged();
     }
 
-    void removeItem(long id) {
+    void updateItem(long id, boolean remove) {
         int position = 0;
         for (; position < mList.size(); position++) {
             if (mList.get(position).getId() == id) {
@@ -66,12 +66,16 @@ class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
             return;
         }
 
-        mList.remove(position);
-        notifyItemRemoved(position);
+        if (remove) {
+            mList.remove(position);
+            notifyItemRemoved(position);
 
-        if (mList.isEmpty()) {
-            // Show empty status
-            ((FavoriteActivity) mContext).refresh();
+            if (mList.isEmpty()) {
+                // Show empty status
+                ((FavoriteActivity) mContext).refresh();
+            }
+        } else {
+            notifyItemChanged(position)
         }
     }
 }

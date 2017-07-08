@@ -139,13 +139,14 @@ public class FavoriteActivity extends AppCompatActivity {
                             item.setTitle(title);
                             item.setUrl(url);
                             mDbHandler.updateItem(item);
+                            mAdapter.updateItem(item.getId(), false);
                             refresh();
                             dialog.dismiss();
                         }))
                 .setNeutralButton(R.string.favorite_edit_delete,
                         (dialog, which) -> {
                             mDbHandler.deleteItem(item.getId());
-                            mAdapter.removeItem(item.getId());
+                            mAdapter.updateItem(item.getId(), true);
                             dialog.dismiss();
                         })
                 .setNegativeButton(android.R.string.cancel,
