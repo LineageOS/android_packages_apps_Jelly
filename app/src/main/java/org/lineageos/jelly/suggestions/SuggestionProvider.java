@@ -119,7 +119,7 @@ abstract class SuggestionProvider {
             return filter;
         }
         try {
-            parseResults(content, (String suggestion) -> {
+            parseResults(content, suggestion -> {
                 filter.add(suggestion);
                 return filter.size() < 5;
             });
