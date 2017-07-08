@@ -48,11 +48,7 @@ abstract class SuggestionProvider {
     @NonNull
     private final String mEncoding = "UTF-8";
     @NonNull
-    private final String mLanguage;
-
-    SuggestionProvider() {
-        mLanguage = getLanguage();
-    }
+    private final String mLanguage = getLanguage();
 
     @NonNull
     private static String getLanguage() {

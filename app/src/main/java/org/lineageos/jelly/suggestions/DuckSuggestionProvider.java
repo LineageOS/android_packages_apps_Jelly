@@ -25,10 +25,6 @@ import org.json.JSONObject;
  * The search suggestions provider for the DuckDuckGo search engine.
  */
 class DuckSuggestionProvider extends SuggestionProvider {
-    DuckSuggestionProvider() {
-        super();
-    }
-
     @NonNull
     @Override
     protected String createQueryUrl(@NonNull String query,

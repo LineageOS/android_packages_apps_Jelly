@@ -22,10 +22,6 @@ import android.support.annotation.NonNull;
  * Search suggestions provider for Bing search engine.
  */
 class BingSuggestionProvider extends SuggestionProvider {
-    BingSuggestionProvider() {
-        super();
-    }
-
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {

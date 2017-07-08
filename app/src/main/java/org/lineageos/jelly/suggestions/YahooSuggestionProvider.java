@@ -22,10 +22,6 @@ import android.support.annotation.NonNull;
  * Search suggestions provider for Yahoo search engine.
  */
 class YahooSuggestionProvider extends SuggestionProvider {
-    YahooSuggestionProvider() {
-        super();
-    }
-
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {

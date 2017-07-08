@@ -22,10 +22,6 @@ import android.support.annotation.NonNull;
  * Search suggestions provider for Google search engine.
  */
 class GoogleSuggestionProvider extends SuggestionProvider {
-    GoogleSuggestionProvider() {
-        super();
-    }
-
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {

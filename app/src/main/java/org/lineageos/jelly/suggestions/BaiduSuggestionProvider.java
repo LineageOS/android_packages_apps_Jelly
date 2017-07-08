@@ -22,10 +22,6 @@ import android.support.annotation.NonNull;
  * Search suggestions provider for the Baidu search engine.
  */
 class BaiduSuggestionProvider extends SuggestionProvider {
-    BaiduSuggestionProvider() {
-        super();
-    }
-
     @NonNull
     protected String createQueryUrl(@NonNull String query,
                                     @NonNull String language) {
