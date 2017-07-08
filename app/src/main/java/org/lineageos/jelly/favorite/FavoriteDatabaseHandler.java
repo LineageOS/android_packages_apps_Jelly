@@ -91,7 +91,8 @@ public class FavoriteDatabaseHandler extends SQLiteOpenHelper {
     List<Favorite> getAllItems() {
         List<Favorite> list = new ArrayList<>();
         SQLiteDatabase db = getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + DB_TABLE_FAVORITES, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + DB_TABLE_FAVORITES +
+                " ORDER BY " + KEY_ID + " DESC", null);
 
         if (cursor.moveToFirst()) {
             do {
