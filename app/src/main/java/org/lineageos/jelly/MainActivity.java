@@ -486,11 +486,23 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         View favouriteLayout = view.findViewById(R.id.sheet_favourite);
         View downloadLayout = view.findViewById(R.id.sheet_download);
 
-        tabLayout.setOnClickListener(v -> openInNewTab(url, mIncognito));
-        shareLayout.setOnClickListener(v -> shareUrl(url));
-        favouriteLayout.setOnClickListener(v -> setAsFavorite(url, url));
+        tabLayout.setOnClickListener(v -> {
+            openInNewTab(url, mIncognito);
+            sheet.hide();
+        });
+        shareLayout.setOnClickListener(v -> {
+            shareUrl(url);
+            sheet.hide();
+        });
+        favouriteLayout.setOnClickListener(v -> {
+            setAsFavorite(url, url);
+            sheet.hide();
+        });
         if (shouldAllowDownload) {
-            downloadLayout.setOnClickListener(v -> downloadFileAsk(url, null, null));
+            downloadLayout.setOnClickListener(v -> {
+                downloadFileAsk(url, null, null);
+                sheet.hide();
+            });
             downloadLayout.setVisibility(View.VISIBLE);
         }
         sheet.setContentView(view);
