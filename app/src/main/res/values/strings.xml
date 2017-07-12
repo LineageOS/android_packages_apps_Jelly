@@ -152,9 +152,9 @@
     <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">No app can handle this link</string>
 
-    <string translatable="false" name="default_search_engine">https://duckduckgo.com/?q={searchTerms}</string>
-    <string translatable="false" name="default_home_page">https://duckduckgo.com</string>
-    <string translatable="false" name="default_suggestion_provider">DUCK</string>
+    <string translatable="false" name="default_search_engine">https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</string>
+    <string translatable="false" name="default_home_page">https://google.com</string>
+    <string translatable="false" name="default_suggestion_provider">GOOGLE</string>
 
     <!-- Auth dialog: title -->
     <string name="auth_dialog_title">Authentication Required</string>
