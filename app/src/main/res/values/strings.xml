@@ -102,6 +102,10 @@
     <string name="pref_screenshot_snap_title">Advanced share</string>
     <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">Share preview of the shared web page</string>
+    <!-- Settings: background playback preference title -->
+    <string name="pref_background_playback_title">Background playback</string>
+    <!-- Settings: background playback preference summary -->
+    <string name="pref_background_playback_summary">Allow playback of media in the background</string>
     <!-- Settings: clear cookie -->
     <string name="pref_cookie_clear">Clear cookies</string>
     <!-- Settings: clear cookie toast confirmation -->

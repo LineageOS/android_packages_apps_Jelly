@@ -25,6 +25,7 @@ public final class PrefsUtils {
     private static final String KEY_SEARCH_ENGINE = "key_search_engine";
     private static final String KEY_HOME_PAGE = "key_home_page";
     private static final String KEY_ADVANCED_SHARE = "key_advanced_share";
+    private static final String KEY_BACKGROUND_PLAYBACK = "key_background_playback";
     private static final String KEY_LOOKLOCK = "key_looklock";
     private static final String KEY_JS = "key_javascript";
     private static final String KEY_LOCATION = "key_location";
@@ -59,6 +60,11 @@ public final class PrefsUtils {
     public static boolean getAdvancedShare(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean(KEY_ADVANCED_SHARE, false);
+    }
+
+    public static boolean getBackgroundPlayback(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean(KEY_BACKGROUND_PLAYBACK, false);
     }
 
     public static boolean getLookLock(Context context) {

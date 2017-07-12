@@ -41,6 +41,12 @@
         android:summary="@string/pref_screenshot_snap_summary"
         android:title="@string/pref_screenshot_snap_title" />
 
+    <SwitchPreference
+        android:defaultValue="0"
+        android:key="key_background_playback"
+        android:summary="@string/pref_background_playback_summary"
+        android:title="@string/pref_background_playback_title" />
+
     <PreferenceCategory android:title="@string/pref_privacy_security">
 
         <SwitchPreference

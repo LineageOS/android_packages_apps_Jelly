@@ -251,14 +251,22 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     @Override
     public void onPause() {
-        mWebView.onPause();
+        if (PrefsUtils.getBackgroundPlayback(this)) {
+            // do something about media playback
+        } else {
+            mWebView.onPause();
+        }
         super.onPause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mWebView.onResume();
+        if (PrefsUtils.getBackgroundPlayback(this)) {
+            // do something about media playback
+        } else {
+            mWebView.onResume();
+        }
         CookieManager.getInstance()
                 .setAcceptCookie(!mWebView.isIncognito() && PrefsUtils.getCookie(this));
         if (PrefsUtils.getLookLock(this)) {
