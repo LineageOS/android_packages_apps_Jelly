@@ -22,6 +22,7 @@
         <item>Google</item>
         <item>Google encrypted</item>
         <item>Yahoo</item>
+        <item>Yandex</item>
     </string-array>
 
     <string-array name="pref_search_engine_entryvalues" translatable="false">
@@ -31,5 +32,6 @@
         <item>https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</item>
         <item>https://encrypted.google.com/search?q={searchTerms}</item>
         <item>https://search.yahoo.com/p={searchTerms}</item>
+        <item>https://yandex.com/?q={searchTerms}</item>
     </string-array>
 </resources>
