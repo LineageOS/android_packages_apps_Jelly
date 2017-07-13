@@ -96,6 +96,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
+    private static final int REQUEST_CODE_INTRO = 425;
 
     public static final String ACTION_URL_RESOLVED = "org.lineageos.jelly.action.URL_RESOLVED";
 
@@ -139,6 +140,10 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (PrefsUtils.getFirstRun(this)) {
+            startActivityForResult(new Intent(this, IntroActivity.class), REQUEST_CODE_INTRO);
+        }
 
         mCoordinator = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
@@ -229,6 +234,17 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             HttpResponseCache.install(httpCacheDir, httpCacheSize);
         } catch (IOException e) {
             Log.i(TAG, "HTTP response cache installation failed:" + e);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_INTRO) {
+            // Finished the intro
+            PrefsUtils.setFirstRun(this, false);
+            finish();
+            startActivity(new Intent(this, MainActivity.class));
         }
     }
 
@@ -547,7 +563,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         if (actionBar != null) {
             ColorDrawable newDrawable = new ColorDrawable(color);
             if (mLastActionBarDrawable != null) {
-                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final Drawable[] layers = new Drawable[]{mLastActionBarDrawable, newDrawable};
                 final TransitionDrawable transition = new TransitionDrawable(layers);
                 transition.setCrossFadeEnabled(true);
                 transition.startTransition(200);
