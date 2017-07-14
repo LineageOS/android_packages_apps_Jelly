@@ -64,7 +64,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -76,6 +75,7 @@ import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
 import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.suggestions.SuggestionsAdapter;
+import org.lineageos.jelly.ui.AutoCompleteTextViewExt;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 import org.lineageos.jelly.webview.WebViewCompat;
@@ -114,6 +114,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         }
     };
 
+    private AutoCompleteTextViewExt mAutoCompleteTextViewExt;
     private CoordinatorLayout mCoordinator;
     private WebViewExt mWebView;
     private ProgressBar mLoadingProgress;
@@ -147,36 +148,35 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
             new Handler().postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1000);
         });
         mLoadingProgress = (ProgressBar) findViewById(R.id.load_progress);
-        AutoCompleteTextView autoCompleteTextView =
-                (AutoCompleteTextView) findViewById(R.id.url_bar);
-        autoCompleteTextView.setAdapter(new SuggestionsAdapter(this));
-        autoCompleteTextView.setOnEditorActionListener((v, actionId, event) -> {
+        mAutoCompleteTextViewExt = (AutoCompleteTextViewExt) findViewById(R.id.url_bar);
+        mAutoCompleteTextViewExt.setAdapter(new SuggestionsAdapter(this));
+        mAutoCompleteTextViewExt.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                UiUtils.hideKeyboard(autoCompleteTextView);
+                UiUtils.hideKeyboard(mAutoCompleteTextViewExt);
 
-                mWebView.loadUrl(autoCompleteTextView.getText().toString());
-                autoCompleteTextView.clearFocus();
+                mWebView.loadUrl(mAutoCompleteTextViewExt.getText().toString());
+                mAutoCompleteTextViewExt.clearFocus();
                 return true;
             }
             return false;
         });
-        autoCompleteTextView.setOnKeyListener((v, keyCode, event) -> {
+        mAutoCompleteTextViewExt.setOnKeyListener((v, keyCode, event) -> {
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                UiUtils.hideKeyboard(autoCompleteTextView);
+                UiUtils.hideKeyboard(mAutoCompleteTextViewExt);
 
-                mWebView.loadUrl(autoCompleteTextView.getText().toString());
-                autoCompleteTextView.clearFocus();
+                mWebView.loadUrl(mAutoCompleteTextViewExt.getText().toString());
+                mAutoCompleteTextViewExt.clearFocus();
                 return true;
             }
             return false;
         });
-        autoCompleteTextView.setOnItemClickListener((adapterView, view, pos, l) -> {
+        mAutoCompleteTextViewExt.setOnItemClickListener((adapterView, view, pos, l) -> {
             CharSequence searchString = ((TextView) view.findViewById(R.id.title)).getText();
             String url = searchString.toString();
 
-            UiUtils.hideKeyboard(autoCompleteTextView);
+            UiUtils.hideKeyboard(mAutoCompleteTextViewExt);
 
-            autoCompleteTextView.clearFocus();
+            mAutoCompleteTextViewExt.clearFocus();
             mWebView.loadUrl(url);
         });
 
@@ -204,7 +204,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         setupMenu();
 
         mWebView = (WebViewExt) findViewById(R.id.web_view);
-        mWebView.init(this, autoCompleteTextView, mLoadingProgress, mIncognito);
+        mWebView.init(this, mAutoCompleteTextViewExt, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
 
@@ -259,6 +259,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     protected void onResume() {
         super.onResume();
         mWebView.onResume();
+        mAutoCompleteTextViewExt.setIncognito(mIncognito);
         CookieManager.getInstance()
                 .setAcceptCookie(!mWebView.isIncognito() && PrefsUtils.getCookie(this));
         if (PrefsUtils.getLookLock(this)) {
