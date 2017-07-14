@@ -23,10 +23,15 @@ import android.graphics.Rect;
 import android.graphics.Shader;
 import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.util.AttributeSet;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
 
 public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
+    // Hardcoded, only present in O
+    private static final int IME_FLAG_NO_PERSONALIZED_LEARNING = 0x01000000;
 
     private int mPositionX;
+    private boolean mIncognito;
 
     public AutoCompleteTextViewExt(Context context) {
         super(context);
@@ -83,5 +88,18 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
         if (!gainFocus) {
             setSelection(0);
         }
+    }
+
+    @Override
+    public InputConnection onCreateInputConnection(EditorInfo outAttrs) {
+        InputConnection connection = super.onCreateInputConnection(outAttrs);
+        if (mIncognito) {
+            outAttrs.imeOptions |= IME_FLAG_NO_PERSONALIZED_LEARNING;
+        }
+        return connection;
+    }
+
+    public void setIncognito(boolean incognito) {
+        mIncognito = incognito;
     }
 }
