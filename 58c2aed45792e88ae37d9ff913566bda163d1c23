@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f72016a_401ccb42",
+        "filename": "app/src/main/res/values/suggestion_providers.xml",
+        "patchSetId": 68
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 9760
+      },
+      "writtenOn": "2017-07-14T04:22:07Z",
+      "side": 1,
+      "message": "This line needs to be translated into other languages.",
+      "revId": "58c2aed45792e88ae37d9ff913566bda163d1c23",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
