@@ -20,7 +20,7 @@
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Yahoo</item>
-        <item>None</item>
+        <item>@string/suggestions_provider_none</item>
     </string-array>
 
     <string-array name="pref_suggestions_provider_entryvalues" translatable="false">
