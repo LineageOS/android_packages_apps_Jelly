@@ -169,4 +169,7 @@
 
     <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">New incognito tab</string>
+
+    <!-- Suggestion provider: no suggestions provider -->
+    <string name="suggestion_provider_none">None</string>
 </resources>
