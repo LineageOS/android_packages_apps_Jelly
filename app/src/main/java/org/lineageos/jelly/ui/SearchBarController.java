@@ -42,7 +42,6 @@ public class SearchBarController implements
     private ImageButton mCancelButton;
     private OnCancelListener mListener;
     private boolean mHasStartedSearch;
-    private boolean mSearchDone;
     private int mCurrentResultPosition;
     private int mTotalResultCount;
 
@@ -108,7 +107,6 @@ public class SearchBarController implements
                                      boolean isDoneCounting) {
         mCurrentResultPosition = activeMatchOrdinal;
         mTotalResultCount = numberOfMatches;
-        mSearchDone = isDoneCounting;
 
         updateNextAndPrevButtonEnabledState();
         updateStatusText();
@@ -134,7 +132,6 @@ public class SearchBarController implements
         } else {
             mWebView.findAllAsync(query);
             mHasStartedSearch = true;
-            mSearchDone = false;
         }
         updateStatusText();
     }
