@@ -40,6 +40,7 @@
   <string name="menu_in_new_tab">Buka di tab baru</string>
   <!-- Menu action: enable desktop mode -->
   <!-- Menu action: enable phone mode -->
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Kirim ke</string>
   <!-- Dialog action: dismiss -->
@@ -54,7 +55,9 @@
   <string name="permission_error_title">Kesalahan perizinan</string>
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
+  <string name="permission_error_ask_again">Tanya kembali</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+  <string name="permission_error_forever">Izin ditolak secara permanen. Silakan berikan izin lewat pengaturan</string>
   <!-- Shortcut: the current webPage has been added to the launcher -->
   <string name="shortcut_added">Ditambahkan ke layar utama</string>
   <!-- Settings: title -->
@@ -95,6 +98,7 @@
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
   <!-- History: empty status text -->
+  <string name="history_empty">Tidak ada apapun di sini, telusuri di internet untuk melihat riwayat Anda di sini</string>
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
   <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
   <!-- History: delete history dialog title -->
@@ -110,6 +114,7 @@
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
   <string name="favorite_added">Ditambahkan ke favorit</string>
   <!-- Favorite: empty status text -->
+  <string name="favorite_empty">Tidak ada apapun di sini, tambahkan sebuah tautan favorit untuk melihatnya di sini</string>
   <!-- Favorite: edit dialog title -->
   <string name="favorite_edit_dialog_title">Sunting favorit</string>
   <!-- Favorite: edit dialog: title of the favorite -->
@@ -122,6 +127,7 @@
   <!-- Favorite: edit dialog: invalid url error message -->
   <string name="favorite_edit_error">Masukkan URL yang benar</string>
   <!-- No activity found to open the given url error -->
+  <string name="error_no_activity_found">Tidak ada aplikasi yang dapat mengurus tautan ini</string>
   <!-- Auth dialog: title -->
   <!-- Auth dialog: username field -->
   <string name="auth_dialog_username">Nama Pengguna:</string>
@@ -131,4 +137,6 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Masuk</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

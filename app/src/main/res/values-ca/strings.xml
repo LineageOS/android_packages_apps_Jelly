@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Canvia a la versió d\'escriptori</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Canvia a la versió mòbil</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Envia a</string>
   <!-- Dialog action: dismiss -->
@@ -154,4 +155,6 @@
   <string name="auth_dialog_login">Inicia sessió</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Nova pestanya d\'incògnit</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Bytt til skrivebordside</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Bytt til mobilside</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Send til</string>
   <!-- Dialog action: dismiss -->
@@ -153,4 +154,6 @@
   <string name="auth_dialog_login">Logg inn</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Ny inkognitofane</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

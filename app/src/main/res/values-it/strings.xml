@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Passa al sito desktop</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Passa al sito mobile</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Invia a</string>
   <!-- Dialog action: dismiss -->
@@ -154,4 +155,6 @@
   <string name="auth_dialog_login">Accedi</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Scheda in incognito</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

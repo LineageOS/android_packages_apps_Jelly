@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Passer en version bureau</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Passer en version mobile</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Envoyer à</string>
   <!-- Dialog action: dismiss -->
@@ -150,4 +151,6 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Se connecter</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

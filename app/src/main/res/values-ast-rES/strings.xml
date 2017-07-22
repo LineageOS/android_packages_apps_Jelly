@@ -41,6 +41,7 @@
   <string name="menu_desktop_mode">Solicitar sitiu d\'escritoriu</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Solicitar sitiu móvil</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Unviar a</string>
   <!-- Dialog action: dismiss -->
@@ -151,4 +152,6 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Aniciar sesión</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

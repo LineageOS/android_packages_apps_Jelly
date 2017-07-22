@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Пређи на верзију за рачунаре</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Пређи на мобилну верзију</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Дељење</string>
   <!-- Dialog action: dismiss -->
@@ -154,4 +155,6 @@
   <string name="auth_dialog_login">Пријави ме</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Картица без архивирања</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

@@ -27,7 +27,7 @@
   <!-- Menu action: share current page -->
   <string name="menu_share">Sayfayı paylaş</string>
   <!-- Menu action: show favorites list -->
-  <string name="menu_favorites">Sık Kullanılanlar</string>
+  <string name="menu_favorites">Sık kullanılanlar</string>
   <!-- Menu action: show history list -->
   <string name="menu_history">Geçmiş</string>
   <!-- Menu action: add shortcut of the current page to the launcher -->
@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Masaüstü sürümüne geç</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Mobil sürümüne geç</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Şuraya gönder</string>
   <!-- Dialog action: dismiss -->
@@ -55,7 +56,7 @@
   <!-- Permission error dialog: title -->
   <string name="permission_error_title">İzin hatası</string>
   <!-- Permission error dialog: message for denied storage access-->
-  <string name="permission_error_storage">Tarayıcının dosyaları indirmesi için depolama birimi erişimi gereklidir. Lütfen dosyaları indirmek için izin verin</string>
+  <string name="permission_error_storage">Tarayıcı, dosyaları indirmek için depolama erişimine ihtiyaç duyar. Lütfen web\'den dosya indirmek için izin verin</string>
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Tekrar sor</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
@@ -67,7 +68,7 @@
   <!-- Settings: search engine preference title -->
   <string name="pref_search_engine">Arama motoru</string>
   <!-- Settings: home page preference title -->
-  <string name="pref_start_page">Ana Sayfa</string>
+  <string name="pref_start_page">Ana sayfa</string>
   <!-- Settings: select home page dialog title -->
   <string name="pref_start_page_dialog_title">Ana sayfayı seçin</string>
   <!-- Settings: select home page dialog message -->
@@ -123,7 +124,7 @@
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Geçmiş temizleniyor\u2026</string>
   <!-- Favorite: title -->
-  <string name="favorite_title">Sık Kullanılanlar</string>
+  <string name="favorite_title">Sık kullanılanlar</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
   <string name="favorite_added">Sık kullanılanlara eklendi</string>
   <!-- Favorite: empty status text -->
@@ -154,4 +155,6 @@
   <string name="auth_dialog_login">Giriş</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Yeni gizli sekme</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

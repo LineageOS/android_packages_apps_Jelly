@@ -28,6 +28,7 @@
   <!-- Menu action: open selected link in a new tab -->
   <!-- Menu action: enable desktop mode -->
   <!-- Menu action: enable phone mode -->
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <!-- Dialog action: dismiss -->
   <!-- Download dialog: title -->
@@ -50,6 +51,7 @@
   <!-- Settings: javascript preference title -->
   <!-- Settings: javascript preference summary -->
   <!-- Settings: location preference title -->
+  <string name="pref_location_title">Vendndodhja</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
   <!-- Settings: cookie preference title -->
   <!-- Settings: cookie preference summary -->
@@ -84,4 +86,6 @@
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
   <!-- Launcher shortcut: new incognito tab -->
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

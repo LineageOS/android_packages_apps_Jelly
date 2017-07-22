@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">切换到桌面版页面</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">切换到手机版页面</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">发送到</string>
   <!-- Dialog action: dismiss -->
@@ -154,4 +155,6 @@
   <string name="auth_dialog_login">登录</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">新隐身标签页</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

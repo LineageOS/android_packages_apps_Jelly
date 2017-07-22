@@ -39,9 +39,8 @@
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Mở trong tab mới</string>
   <!-- Menu action: enable desktop mode -->
-  <string name="menu_desktop_mode">Chuyển sang trang web dành cho máy tính để bàn</string>
   <!-- Menu action: enable phone mode -->
-  <string name="menu_mobile_mode">Chuyển sang trang web dành cho thiết bị di động</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Gửi đến</string>
   <!-- Dialog action: dismiss -->
@@ -154,4 +153,6 @@
   <string name="auth_dialog_login">Đăng nhập</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Tab ẩn danh mới</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

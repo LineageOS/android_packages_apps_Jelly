@@ -42,6 +42,7 @@
   <string name="menu_desktop_mode">Vaihda työpöytäsivustoon</string>
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Vaihda mobiilisivustoon</string>
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Lähetä</string>
   <!-- Dialog action: dismiss -->
@@ -101,9 +102,13 @@
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Kaikki evästeet poistettu</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Do Not Track</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Lähetä \"Do Not Track\"-pyyntö vierailemillesi verkkosivuille</string>
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Tallenna lomaketiedot</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Ehdotusten tarjoaja</string>
   <!-- History: title -->
   <string name="history_title">Historia</string>
   <!-- History: empty status text -->
@@ -139,9 +144,17 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Mikään sovellus ei voi käsitellä linkkiä</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Todennus vaaditaan</string>
   <!-- Auth dialog: username field -->
+  <string name="auth_dialog_username">Käyttäjänimi:</string>
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Salasana:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s vaatii käyttäjänimen ja salasanan.</string>
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Kirjaudu sisään</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Uusi Incognito-välilehti</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>

@@ -40,6 +40,7 @@
   <string name="menu_in_new_tab">Openen in nieuw tabblad</string>
   <!-- Menu action: enable desktop mode -->
   <!-- Menu action: enable phone mode -->
+  <!-- Menu action: search in page -->
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Verzenden naar</string>
   <!-- Dialog action: dismiss -->
@@ -131,4 +132,6 @@
   <string name="auth_dialog_login">Inloggen</string>
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Nieuw incognitotabblad</string>
+  <!-- Suggestions provider: no suggestions provider -->
+  <!-- Search in page: search hint -->
 </resources>
