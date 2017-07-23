@@ -156,5 +156,6 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Nova aba anônima</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Nenhum</string>
   <!-- Search in page: search hint -->
 </resources>
