@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Mudar para a versão móvel</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Encontrar na página</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Enviar para</string>
   <!-- Dialog action: dismiss -->
@@ -108,6 +109,7 @@
   <!-- Settings: save form data title -->
   <string name="pref_save_form_data_title">Guardar dados do formulário</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Fornecedor de sugestões</string>
   <!-- History: title -->
   <string name="history_title">Histórico</string>
   <!-- History: empty status text -->
@@ -155,5 +157,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Novo separador privado</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Nenhum</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Procurar</string>
 </resources>

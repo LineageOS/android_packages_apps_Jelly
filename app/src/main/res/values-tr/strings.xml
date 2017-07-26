@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Mobil sürümüne geç</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Sayfada bul</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Şuraya gönder</string>
   <!-- Dialog action: dismiss -->
@@ -156,5 +157,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Yeni gizli sekme</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Hiçbiri</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Ara</string>
 </resources>

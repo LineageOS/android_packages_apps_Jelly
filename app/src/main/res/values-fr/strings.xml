@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Passer en version mobile</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Rechercher dans la page</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Envoyer à</string>
   <!-- Dialog action: dismiss -->
@@ -151,6 +152,8 @@
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Se connecter</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Nouvel onglet de navigation privée</string>
   <!-- Suggestions provider: no suggestions provider -->
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Rechercher</string>
 </resources>

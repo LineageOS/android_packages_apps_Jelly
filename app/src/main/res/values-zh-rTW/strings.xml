@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">切換到手機版網站</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">在頁面中尋找</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">傳送至</string>
   <!-- Dialog action: dismiss -->
@@ -156,5 +157,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">新無痕式分頁</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">無</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">搜尋</string>
 </resources>

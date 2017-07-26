@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Aldatu mugikorrerako gunera</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Bilatu orrialdean</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Bidali honi</string>
   <!-- Dialog action: dismiss -->
@@ -156,5 +157,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Ezkutuko fitxa berria</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Bat ere ez</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Bilatu</string>
 </resources>

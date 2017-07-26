@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">모바일 버전으로 보기</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">현재 페이지에서 찾기</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">보내기</string>
   <!-- Dialog action: dismiss -->
@@ -156,5 +157,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">새 시크릿 탭</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">없음</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">검색</string>
 </resources>
