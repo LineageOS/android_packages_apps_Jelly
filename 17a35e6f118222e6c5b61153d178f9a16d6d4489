@@ -16,6 +16,24 @@
       "revId": "17a35e6f118222e6c5b61153d178f9a16d6d4489",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aeeb0fa_59c0d113",
+        "filename": "app/src/main/res/values/search_engines.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 9760
+      },
+      "writtenOn": "2017-07-26T02:41:44Z",
+      "side": 1,
+      "message": "Ok. Let it remain as the author did.",
+      "parentUuid": "8ca44b0b_5d511cba",
+      "revId": "17a35e6f118222e6c5b61153d178f9a16d6d4489",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
