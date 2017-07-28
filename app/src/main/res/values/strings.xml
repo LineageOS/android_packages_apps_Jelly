@@ -116,6 +116,10 @@
     <string name="pref_save_form_data_title">Save form data</string>
     <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Suggestions provider</string>
+    <!-- Settings: remove identifying headers preference title -->
+    <string name="pref_remove_identifying_headers_title">Remove identifying headers</string>
+    <!-- Settings: remove identifying headers preference summary -->
+    <string name="pref_remove_identifying_headers_summary">Prevent some personally identifiable information from being sent to websites you visit</string>
 
     <!-- History: title -->
     <string name="history_title">History</string>
