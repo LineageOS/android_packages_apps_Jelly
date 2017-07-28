@@ -133,7 +133,7 @@ public class WebViewExt extends WebView {
         if (matcher.matches()) {
             String mobileDevice = matcher.group(2).replace("; wv", "");
             mMobileUserAgent = matcher.group(1) + mobileDevice + matcher.group(3);
-            mDesktopUserAgent = matcher.group(1) + DESKTOP_DEVICE + matcher.group(3);
+            mDesktopUserAgent = matcher.group(1) + DESKTOP_DEVICE + matcher.group(3).replace(" Mobile ", " ");
             getSettings().setUserAgentString(mMobileUserAgent);
         } else {
             Log.e(TAG, "Couldn't parse the user agent");
