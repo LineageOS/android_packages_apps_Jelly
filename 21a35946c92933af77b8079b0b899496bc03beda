@@ -46,6 +46,30 @@
       "revId": "21a35946c92933af77b8079b0b899496bc03beda",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c4086a1_a4a412e2",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-07-29T16:53:08Z",
+      "side": 1,
+      "message": "Yes, lines should be 100 chars at most.",
+      "parentUuid": "5a527e89_2e4ff53d",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 110
+      },
+      "revId": "21a35946c92933af77b8079b0b899496bc03beda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
