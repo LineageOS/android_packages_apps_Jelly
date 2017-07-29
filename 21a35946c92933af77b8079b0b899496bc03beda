@@ -22,6 +22,30 @@
       "revId": "21a35946c92933af77b8079b0b899496bc03beda",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a527e89_2e4ff53d",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 15485
+      },
+      "writtenOn": "2017-07-29T16:33:23Z",
+      "side": 1,
+      "message": "What do you mean? Do you want me to move the .replace part to a new line?",
+      "parentUuid": "3cbd27f0_5755c10c",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 110
+      },
+      "revId": "21a35946c92933af77b8079b0b899496bc03beda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
