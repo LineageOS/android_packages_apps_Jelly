@@ -139,6 +139,8 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
     private View mCustomView;
     private WebChromeClient.CustomViewCallback mFullScreenCallback;
 
+    private boolean mSearchActive = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -287,8 +289,10 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
 
     @Override
     public void onBackPressed() {
-        mSearchController.onCancel();
-        if (mCustomView != null) {
+        if (mSearchActive) {
+          mSearchController.onCancel();
+          mSearchActive = false;
+        } else if (mCustomView != null) {
             onHideCustomView();
         } else if (mWebView.canGoBack()) {
             mWebView.goBack();
@@ -418,6 +422,7 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
         findViewById(R.id.toolbar_search_bar).setVisibility(View.GONE);
         findViewById(R.id.toolbar_search_page).setVisibility(View.VISIBLE);
         mSearchController.onShow();
+        mSearchActive = true;
     }
 
     @Override
