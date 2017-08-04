@@ -42,6 +42,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Solicitar sitiu móvil</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Alcontrar na páxina</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Unviar a</string>
   <!-- Dialog action: dismiss -->
@@ -95,6 +96,7 @@
   <!-- Settings: advanced share preference title -->
   <string name="pref_screenshot_snap_title">Compartición avanzada</string>
   <!-- Settings: advanced share preference summary -->
+  <string name="pref_screenshot_snap_summary">Comparte la previsualización de la páxina web compartida</string>
   <!-- Settings: clear cookie -->
   <string name="pref_cookie_clear">Llimpiar cookies</string>
   <!-- Settings: clear cookie toast confirmation -->
@@ -154,4 +156,5 @@
   <!-- Launcher shortcut: new incognito tab -->
   <!-- Suggestions provider: no suggestions provider -->
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Guetar</string>
 </resources>
