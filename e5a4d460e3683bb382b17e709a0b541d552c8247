@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "82591f23_2a0ec90f",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-08-08T16:30:46Z",
+      "side": 1,
+      "message": "Why is this comment here? I removed it. I\u0027m not sure this is config used by the webview, maybe it\u0027s only used for MMS. All I know is that I couldn\u0027t see it in my test requests.",
+      "parentUuid": "7664f603_956b7245",
+      "range": {
+        "startLine": 58,
+        "startChar": 54,
+        "endLine": 58,
+        "endChar": 67
+      },
+      "revId": "e5a4d460e3683bb382b17e709a0b541d552c8247",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04722c35_6422ef13",
         "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
         "patchSetId": 3
