@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7664f603_956b7245",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-08-08T16:27:05Z",
+      "side": 1,
+      "message": "I think this depends on config_useragentprofile_url, which is blank by default and I don\u0027t think any device uses it.",
+      "range": {
+        "startLine": 58,
+        "startChar": 54,
+        "endLine": 58,
+        "endChar": 67
+      },
+      "revId": "e5a4d460e3683bb382b17e709a0b541d552c8247",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04722c35_6422ef13",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-08-08T16:27:05Z",
+      "side": 1,
+      "message": "This seems to work only for the initial request. Any other additional request caused by the content of the page will include the original string.",
+      "range": {
+        "startLine": 152,
+        "startChar": 12,
+        "endLine": 152,
+        "endChar": 59
+      },
+      "revId": "e5a4d460e3683bb382b17e709a0b541d552c8247",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2bbdbb11_262d2b41",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-08-08T16:27:05Z",
+      "side": 1,
+      "message": "Is this header even used?",
+      "range": {
+        "startLine": 153,
+        "startChar": 12,
+        "endLine": 153,
+        "endChar": 56
+      },
+      "revId": "e5a4d460e3683bb382b17e709a0b541d552c8247",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
