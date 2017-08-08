@@ -59,7 +59,9 @@ class ChromeClient extends WebChromeClientCompat {
 
     @Override
     public void onReceivedTitle(WebView view, String title) {
-        mEditText.setText(view.getUrl());
+        if (!mEditText.hasFocus()) {
+            mEditText.setText(view.getUrl());
+        }
         if (!mIncognito) {
             HistoryProvider.addOrUpdateItem(mActivity.getContentResolver(), title, view.getUrl());
         }
