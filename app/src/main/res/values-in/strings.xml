@@ -94,6 +94,7 @@
   <!-- Settings: do not track preference title -->
   <!-- Settings: do not track preference summary -->
   <!-- Settings: save form data title -->
+  <string name="pref_save_form_data_title">Simpan data formulir</string>
   <!-- Settings: suggestions provider title -->
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
@@ -134,9 +135,13 @@
   <!-- Auth dialog: password field -->
   <string name="auth_dialog_password">Kata Sandi:</string>
   <!-- Auth dialog: detail -->
+  <string name="auth_dialog_detail">%1$s membutuhkan nama pengguna dan kata sandi.</string>
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Masuk</string>
   <!-- Launcher shortcut: new incognito tab -->
+  <string name="shortcut_new_incognito_tab">Tab penyamaran baru</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Tidak ada</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Telusuri</string>
 </resources>
