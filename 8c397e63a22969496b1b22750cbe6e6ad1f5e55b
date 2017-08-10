@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "927ac0d5_d06c39cd",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.java",
+        "patchSetId": 30
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-08-10T10:11:45Z",
+      "side": 1,
+      "message": "The title should be passed here, not the URL. The UrlBarController knows the URL already (from the onPageLoadStarted callback).",
+      "revId": "8c397e63a22969496b1b22750cbe6e6ad1f5e55b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
