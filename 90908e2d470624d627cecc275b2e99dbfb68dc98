@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "0ec9ce7b_1a9e6051",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-08-16T08:07:35Z",
+      "side": 1,
+      "message": "Maybe better use \u0027Undo\u0027 here?",
+      "revId": "90908e2d470624d627cecc275b2e99dbfb68dc98",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b3903d3_0b2d4090",
         "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.java",
         "patchSetId": 9
