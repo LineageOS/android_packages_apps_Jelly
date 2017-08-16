@@ -47,11 +47,13 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         mSummary = (TextView) view.findViewById(R.id.row_history_summary);
     }
 
-    void bind(final Context context, final long id, String title, String url, long timestamp) {
-        if (title == null || title.isEmpty()) {
-            title = url.split("/")[2];
+    void bind(final Context context, final long id, final String title, String url, long timestamp,
+              HistoryAdapter.Callback callback) {
+        String history_title = title;
+        if (history_title == null || history_title.isEmpty()) {
+            history_title = url.split("/")[2];
         }
-        mTitle.setText(title);
+        mTitle.setText(history_title);
         mSummary.setText(new SimpleDateFormat(context.getString(R.string.history_date_format),
                 Locale.getDefault()).format(new Date(timestamp)));
 
@@ -64,6 +66,7 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         mRootLayout.setOnLongClickListener(v -> {
             Uri uri = ContentUris.withAppendedId(HistoryProvider.Columns.CONTENT_URI, id);
             context.getContentResolver().delete(uri, null, null);
+            callback.onRemoveItem(title, url, timestamp);
             return true;
         });
 

@@ -64,7 +64,7 @@ class ChromeClient extends WebChromeClientCompat {
     public void onReceivedTitle(WebView view, String title) {
         mUrlBarController.onTitleReceived(title);
         if (!mIncognito) {
-            HistoryProvider.addOrUpdateItem(mActivity.getContentResolver(), title, view.getUrl());
+            HistoryProvider.addOrUpdateItem(mActivity.getContentResolver(), title, view.getUrl(), 0);
         }
     }
 

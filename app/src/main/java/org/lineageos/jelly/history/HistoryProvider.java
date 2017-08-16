@@ -51,7 +51,8 @@ public class HistoryProvider extends ContentProvider {
 
     private HistoryDbHelper mDbHelper;
 
-    public static void addOrUpdateItem(ContentResolver resolver, String title, String url) {
+    public static void addOrUpdateItem(ContentResolver resolver, String title, String url,
+                                       long timestamp) {
         long existingId = -1;
         Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[] { Columns._ID },
                 Columns.URL + "=?", new String[] { url }, null);
@@ -69,7 +70,7 @@ public class HistoryProvider extends ContentProvider {
             resolver.update(ContentUris.withAppendedId(Columns.CONTENT_URI, existingId),
                     values, null, null);
         } else {
-            values.put(Columns.TIMESTAMP, System.currentTimeMillis());
+            values.put(Columns.TIMESTAMP, timestamp != 0 ? timestamp : System.currentTimeMillis());
             values.put(Columns.URL, url);
             resolver.insert(Columns.CONTENT_URI, values);
         }

@@ -26,14 +26,16 @@ import org.lineageos.jelly.R;
 class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
     private final Context mContext;
     private Cursor mCursor;
+    private Callback mCallback;
 
     private int mIdColumnIndex;
     private int mTitleColumnIndex;
     private int mUrlColumnIndex;
     private int mTimestampColumnIndex;
 
-    HistoryAdapter(Context context) {
+    HistoryAdapter(Context context, Callback callback) {
         mContext = context;
+        mCallback = callback;
         setHasStableIds(true);
     }
 
@@ -69,7 +71,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         long timestamp = mCursor.getLong(mTimestampColumnIndex);
         String title = mCursor.getString(mTitleColumnIndex);
         String url = mCursor.getString(mUrlColumnIndex);
-        holder.bind(mContext, id, title, url, timestamp);
+        holder.bind(mContext, id, title, url, timestamp, mCallback);
     }
 
     @Override
@@ -80,5 +82,9 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
     @Override
     public long getItemId(int position) {
         return mCursor.moveToPosition(position) ? mCursor.getLong(mIdColumnIndex) : -1;
+    }
+
+    public interface Callback {
+        void onRemoveItem(String title, String url, long timestamp);
     }
 }
