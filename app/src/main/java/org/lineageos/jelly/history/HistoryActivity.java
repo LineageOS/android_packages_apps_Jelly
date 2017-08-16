@@ -43,16 +43,11 @@ public class HistoryActivity extends AppCompatActivity {
     private HistoryAdapter mAdapter;
     private final RecyclerView.AdapterDataObserver mAdapterDataObserver =
             new RecyclerView.AdapterDataObserver() {
-        @Override
-        public void onItemRangeInserted(int positionStart, int itemCount) {
-            updateHistoryView(mAdapter.getItemCount() == 0);
-        }
-
-        @Override
-        public void onItemRangeRemoved(int positionStart, int itemCount) {
-            updateHistoryView(mAdapter.getItemCount() == 0);
-        }
-    };
+                @Override
+                public void onChanged() {
+                    updateHistoryView(mAdapter.getItemCount() == 0);
+                }
+            };
 
     @Override
     protected void onCreate(Bundle savedInstance) {
