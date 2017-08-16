@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d94db1c_9e25d228",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-08-16T07:45:03Z",
+      "side": 1,
+      "message": "Indention is a bit ugly here. Suggestion: Have a separate variable for the root layout, which should help in fitting the make() call into one line.",
+      "revId": "90908e2d470624d627cecc275b2e99dbfb68dc98",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b3903d3_0b2d4090",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-08-16T07:45:03Z",
+      "side": 1,
+      "message": ".show() should be on a new line",
+      "revId": "90908e2d470624d627cecc275b2e99dbfb68dc98",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "913e3309_d9d263a5",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryHolder.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-08-16T07:45:03Z",
+      "side": 1,
+      "message": "historyTitle",
+      "revId": "90908e2d470624d627cecc275b2e99dbfb68dc98",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
