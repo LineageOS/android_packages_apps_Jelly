@@ -73,12 +73,11 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         if (!mCursor.moveToPosition(position)) {
             return;
         }
-        long id = mCursor.getLong(mIdColumnIndex);
         long timestamp = mCursor.getLong(mTimestampColumnIndex);
         String summary = mHistoryDateFormat.format(new Date(timestamp));
         String title = mCursor.getString(mTitleColumnIndex);
         String url = mCursor.getString(mUrlColumnIndex);
-        holder.bind(mContext, id, title, url, summary, timestamp);
+        holder.bind(mContext, title, url, summary, timestamp);
     }
 
     @Override
