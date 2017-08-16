@@ -17,7 +17,10 @@ package org.lineageos.jelly.history;
 
 import android.content.ContentResolver;
 import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.graphics.Canvas;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -33,15 +36,20 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
     private final ContentResolver mResolver;
     private final Drawable mBackground;
     private final Drawable mDelete;
-
+    private final OnDeleteListener mDeleteListener;
     private final int mMargin;
 
-    HistoryCallBack(Context context) {
+    public interface OnDeleteListener {
+        void onItemDeleted(ContentValues data);
+    }
+
+    HistoryCallBack(Context context, OnDeleteListener deleteListener) {
         super(0, ItemTouchHelper.LEFT);
         mResolver = context.getContentResolver();
         mBackground = new ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete));
         mDelete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action);
         mMargin = (int) context.getResources().getDimension(R.dimen.delete_margin);
+        mDeleteListener = deleteListener;
     }
 
     @Override
@@ -54,7 +62,19 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
     public void onSwiped(RecyclerView.ViewHolder holder, int swipeDir) {
         Uri uri = ContentUris.withAppendedId(HistoryProvider.Columns.CONTENT_URI,
                 holder.getItemId());
+        ContentValues values = null;
+        Cursor cursor = mResolver.query(uri, null, null, null, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                values = new ContentValues();
+                DatabaseUtils.cursorRowToContentValues(cursor, values);
+            }
+            cursor.close();
+        }
         mResolver.delete(uri, null, null);
+        if (values != null && mDeleteListener != null) {
+            mDeleteListener.onItemDeleted(values);
+        }
     }
 
     @Override

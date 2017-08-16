@@ -23,6 +23,7 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -90,7 +91,14 @@ public class HistoryActivity extends AppCompatActivity {
 
         mAdapter.registerAdapterDataObserver(mAdapterDataObserver);
 
-        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this));
+        ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, values -> {
+            View rootView = findViewById(R.id.coordinator_layout);
+            Snackbar.make(rootView, R.string.history_snackbar_item_deleted, Snackbar.LENGTH_LONG)
+                    .setAction(R.string.history_snackbar_item_deleted_message, l -> {
+                        getContentResolver().insert(HistoryProvider.Columns.CONTENT_URI, values);
+                    })
+                    .show();
+        }));
         helper.attachToRecyclerView(list);
 
         int listTop = list.getTop();

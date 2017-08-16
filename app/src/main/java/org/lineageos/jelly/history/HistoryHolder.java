@@ -15,13 +15,13 @@
  */
 package org.lineageos.jelly.history;
 
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -47,11 +47,9 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         mSummary = (TextView) view.findViewById(R.id.row_history_summary);
     }
 
-    void bind(final Context context, final long id, String title, String url, long timestamp) {
-        if (title == null || title.isEmpty()) {
-            title = url.split("/")[2];
-        }
-        mTitle.setText(title);
+    void bind(final Context context, final String title, String url, long timestamp) {
+        final String historyTitle = TextUtils.isEmpty(title) ? url.split("/")[2] : title;
+        mTitle.setText(historyTitle);
         mSummary.setText(new SimpleDateFormat(context.getString(R.string.history_date_format),
                 Locale.getDefault()).format(new Date(timestamp)));
 
@@ -59,12 +57,6 @@ class HistoryHolder extends RecyclerView.ViewHolder {
             Intent intent = new Intent(context, MainActivity.class);
             intent.setData(Uri.parse(url));
             context.startActivity(intent);
-        });
-
-        mRootLayout.setOnLongClickListener(v -> {
-            Uri uri = ContentUris.withAppendedId(HistoryProvider.Columns.CONTENT_URI, id);
-            context.getContentResolver().delete(uri, null, null);
-            return true;
         });
 
         int background;
