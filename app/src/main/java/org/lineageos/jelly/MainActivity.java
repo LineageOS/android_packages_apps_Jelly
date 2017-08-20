@@ -23,12 +23,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.net.http.HttpResponseCache;
@@ -691,12 +694,15 @@ public class MainActivity extends WebViewExtActivity implements View.OnTouchList
                 BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher) : mUrlIcon;
         Bitmap launcherIcon = UiUtils.getShortcutIcon(icon, getThemeColorWithFallback());
 
-        Intent addIntent = new Intent();
-        addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, mWebView.getTitle());
-        addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON, launcherIcon);
-        addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, intent);
-        addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-        sendBroadcast(addIntent);
+        String title = mWebView.getTitle();
+        ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(this, title)
+                .setShortLabel(title)
+                .setIcon(Icon.createWithBitmap(launcherIcon))
+                .setIntent(intent)
+                .build();
+
+        getSystemService(ShortcutManager.class).requestPinShortcut(shortcutInfo, null);
+
         launcherIcon.recycle();
         Snackbar.make(mCoordinator, getString(R.string.shortcut_added),
                 Snackbar.LENGTH_LONG).show();
