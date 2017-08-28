@@ -34,8 +34,9 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="2dp"
         app:cardBackgroundColor="@color/cardview_light_background"
-        app:cardElevation="4dp"
+        app:cardElevation="2dp"
         app:contentPadding="2dp">
 
         <RelativeLayout
