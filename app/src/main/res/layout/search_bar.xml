@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (c) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -34,8 +33,9 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="2dp"
         app:cardBackgroundColor="@color/cardview_light_background"
-        app:cardElevation="4dp"
+        app:cardElevation="2dp"
         app:contentPadding="2dp">
 
         <RelativeLayout
@@ -55,8 +55,8 @@
                 android:id="@+id/secure"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_toEndOf="@id/incognito"
                 android:layout_alignWithParentIfMissing="true"
+                android:layout_toEndOf="@id/incognito"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_lock"
@@ -80,8 +80,8 @@
                 android:nextFocusLeft="@id/url_bar"
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
-                android:popupElevation="2dp"
                 android:popupBackground="@android:color/white"
+                android:popupElevation="2dp"
                 android:selectAllOnFocus="true"
                 android:textColor="@android:color/black"
                 tools:ignore="RtlSymmetry" />
