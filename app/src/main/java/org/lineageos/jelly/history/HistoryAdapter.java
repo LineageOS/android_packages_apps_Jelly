@@ -23,8 +23,14 @@ import android.view.ViewGroup;
 
 import org.lineageos.jelly.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
     private final Context mContext;
+    private final DateFormat mHistoryDateFormat;
     private Cursor mCursor;
 
     private int mIdColumnIndex;
@@ -34,6 +40,8 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
 
     HistoryAdapter(Context context) {
         mContext = context;
+        mHistoryDateFormat = new SimpleDateFormat(context.getString(R.string.history_date_format),
+                Locale.getDefault());
         setHasStableIds(true);
     }
 
@@ -67,9 +75,10 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         }
         long id = mCursor.getLong(mIdColumnIndex);
         long timestamp = mCursor.getLong(mTimestampColumnIndex);
+        String summary = mHistoryDateFormat.format(new Date(timestamp));
         String title = mCursor.getString(mTitleColumnIndex);
         String url = mCursor.getString(mUrlColumnIndex);
-        holder.bind(mContext, id, title, url, timestamp);
+        holder.bind(mContext, id, title, url, summary, timestamp);
     }
 
     @Override
