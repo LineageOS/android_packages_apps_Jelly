@@ -30,10 +30,6 @@ import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 class HistoryHolder extends RecyclerView.ViewHolder {
 
     private final LinearLayout mRootLayout;
@@ -47,13 +43,13 @@ class HistoryHolder extends RecyclerView.ViewHolder {
         mSummary = (TextView) view.findViewById(R.id.row_history_summary);
     }
 
-    void bind(final Context context, final long id, String title, String url, long timestamp) {
+    void bind(final Context context, final long id, String title, String url, String summary,
+              long timestamp) {
         if (title == null || title.isEmpty()) {
             title = url.split("/")[2];
         }
         mTitle.setText(title);
-        mSummary.setText(new SimpleDateFormat(context.getString(R.string.history_date_format),
-                Locale.getDefault()).format(new Date(timestamp)));
+        mSummary.setText(summary);
 
         mRootLayout.setOnClickListener(v -> {
             Intent intent = new Intent(context, MainActivity.class);
