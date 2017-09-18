@@ -75,7 +75,7 @@
   <!-- Settings: select home page dialog message -->
   <string name="pref_start_page_dialog_message">Escreva o URL da página inicial</string>
   <!-- Settings: reset home page dialog action -->
-  <string name="pref_start_page_dialog_reset">Restaurar</string>
+  <string name="pref_start_page_dialog_reset">Repor</string>
   <!-- Settings: privacy and security category -->
   <string name="pref_privacy_security">Privacidade e segurança</string>
   <!-- Settings: lookLock title -->
