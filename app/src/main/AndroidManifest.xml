@@ -97,6 +97,11 @@
         </provider>
 
         <provider
+            android:name=".favorite.FavoriteProvider"
+            android:authorities="org.lineageos.jelly.favorite"
+            android:exported="false" />
+
+        <provider
             android:name=".history.HistoryProvider"
             android:authorities="org.lineageos.jelly.history"
             android:exported="false" />
