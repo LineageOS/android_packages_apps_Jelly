@@ -19,6 +19,7 @@ import android.Manifest;
 import android.app.ActivityManager;
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -32,6 +33,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.net.http.HttpResponseCache;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -70,9 +72,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.lineageos.jelly.favorite.Favorite;
 import org.lineageos.jelly.favorite.FavoriteActivity;
-import org.lineageos.jelly.favorite.FavoriteDatabaseHandler;
+import org.lineageos.jelly.favorite.FavoriteProvider;
 import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.suggestions.SuggestionsAdapter;
 import org.lineageos.jelly.ui.SearchBarController;
@@ -86,6 +87,7 @@ import org.lineageos.jelly.webview.WebViewExtActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 
 public class MainActivity extends WebViewExtActivity implements
          SearchBarController.OnCancelListener {
@@ -453,15 +455,12 @@ public class MainActivity extends WebViewExtActivity implements
     }
 
     private void setAsFavorite(String title, String url) {
-        FavoriteDatabaseHandler handler = new FavoriteDatabaseHandler(this);
         boolean hasValidIcon = mUrlIcon != null && !mUrlIcon.isRecycled();
         int color = hasValidIcon ? UiUtils.getColor(mUrlIcon, false) : Color.TRANSPARENT;
         if (color == Color.TRANSPARENT) {
             color = ContextCompat.getColor(this, R.color.colorAccent);
         }
-        handler.addItem(new Favorite(title, url, color));
-        Snackbar.make(mCoordinator, getString(R.string.favorite_added),
-                Snackbar.LENGTH_LONG).show();
+        new SetAsFavoriteTask(getContentResolver(), title, url, color, mCoordinator).execute();
     }
 
     public void downloadFileAsk(String url, String contentDisposition, String mimeType) {
@@ -698,5 +697,37 @@ public class MainActivity extends WebViewExtActivity implements
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         setImmersiveMode(hasFocus && mCustomView != null);
+    }
+
+    private static class SetAsFavoriteTask extends AsyncTask<Void, Void, Boolean> {
+        private ContentResolver contentResolver;
+        private final String title;
+        private final String url;
+        private final int color;
+        private final WeakReference<View> parentView;
+
+        SetAsFavoriteTask(ContentResolver contentResolver, String title, String url,
+                          int color, View parentView) {
+            this.contentResolver = contentResolver;
+            this.title = title;
+            this.url = url;
+            this.color = color;
+            this.parentView = new WeakReference<>(parentView);
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color);
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            View view = parentView.get();
+            if (view != null) {
+                Snackbar.make(view, view.getContext().getString(R.string.favorite_added),
+                        Snackbar.LENGTH_LONG).show();
+            }
+        }
     }
 }
