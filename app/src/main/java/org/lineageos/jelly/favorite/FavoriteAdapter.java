@@ -16,21 +16,42 @@
 package org.lineageos.jelly.favorite;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import org.lineageos.jelly.R;
 
-import java.util.List;
-
 class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
     private final Context mContext;
-    private List<Favorite> mList;
+    private Cursor mCursor;
 
-    FavoriteAdapter(Context context, List<Favorite> list) {
+    private int mIdColumnIndex;
+    private int mTitleColumnIndex;
+    private int mUrlColumnIndex;
+    private int mColorColumnIndex;
+
+    FavoriteAdapter(Context context) {
         mContext = context;
-        mList = list;
+        setHasStableIds(true);
+    }
+
+    void swapCursor(Cursor cursor) {
+        if (cursor == mCursor) {
+            return;
+        }
+        if (mCursor != null) {
+            mCursor.close();
+        }
+        mCursor = cursor;
+        if (mCursor != null) {
+            mIdColumnIndex = cursor.getColumnIndexOrThrow(FavoriteProvider.Columns._ID);
+            mTitleColumnIndex = cursor.getColumnIndexOrThrow(FavoriteProvider.Columns.TITLE);
+            mUrlColumnIndex = cursor.getColumnIndexOrThrow(FavoriteProvider.Columns.URL);
+            mColorColumnIndex = cursor.getColumnIndexOrThrow(FavoriteProvider.Columns.COLOR);
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -41,37 +62,23 @@ class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
 
     @Override
     public void onBindViewHolder(FavoriteHolder holder, int position) {
-        holder.setData(mContext, mList.get(position));
+        if (!mCursor.moveToPosition(position)) {
+            return;
+        }
+        long id = mCursor.getLong(mIdColumnIndex);
+        String title = mCursor.getString(mTitleColumnIndex);
+        String url = mCursor.getString(mUrlColumnIndex);
+        int color = mCursor.getInt(mColorColumnIndex);
+        holder.bind(mContext, id, title, url, color);
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return mCursor != null ? mCursor.getCount() : 0;
     }
 
-    void updateList(List<Favorite> list) {
-        mList = list;
-        notifyDataSetChanged();
-    }
-
-    void removeItem(long id) {
-        int position = 0;
-        for (; position < mList.size(); position++) {
-            if (mList.get(position).getId() == id) {
-                break;
-            }
-        }
-
-        if (position == mList.size()) {
-            return;
-        }
-
-        mList.remove(position);
-        notifyItemRemoved(position);
-
-        if (mList.isEmpty()) {
-            // Show empty status
-            ((FavoriteActivity) mContext).refresh();
-        }
+    @Override
+    public long getItemId(int position) {
+        return mCursor.moveToPosition(position) ? mCursor.getLong(mIdColumnIndex) : -1;
     }
 }

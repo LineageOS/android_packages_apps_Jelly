@@ -38,23 +38,20 @@ class FavoriteHolder extends RecyclerView.ViewHolder {
         mTitle = (TextView) view.findViewById(R.id.row_favorite_title);
     }
 
-    void setData(Context context, Favorite item) {
-        String title = item.getTitle();
-        if (title == null || title.isEmpty()) {
-            title = item.getUrl().split("/")[2];
-        }
-        mTitle.setText(title);
-        mTitle.setTextColor(UiUtils.isColorLight(item.getColor()) ? Color.BLACK : Color.WHITE);
-        mCard.setCardBackgroundColor(item.getColor());
+    void bind(Context context, long id, String title, String url, int color) {
+        String adjustedTitle = title == null || title.isEmpty() ? url.split("/")[2] : title;
+        mTitle.setText(adjustedTitle);
+        mTitle.setTextColor(UiUtils.isColorLight(color) ? Color.BLACK : Color.WHITE);
+        mCard.setCardBackgroundColor(color);
 
         mCard.setOnClickListener(v -> {
             Intent intent = new Intent(context, MainActivity.class);
-            intent.setData(Uri.parse(item.getUrl()));
+            intent.setData(Uri.parse(url));
             context.startActivity(intent);
         });
 
         mCard.setOnLongClickListener(v -> {
-            ((FavoriteActivity) context).editItem(item);
+            ((FavoriteActivity) context).editItem(id, adjustedTitle, url);
             return true;
         });
     }

@@ -15,6 +15,14 @@
  */
 package org.lineageos.jelly.favorite;
 
+import android.app.LoaderManager;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -32,14 +40,10 @@ import android.widget.LinearLayout;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FavoriteActivity extends AppCompatActivity {
     private RecyclerView mList;
     private View mEmptyView;
 
-    private FavoriteDatabaseHandler mDbHandler;
     private FavoriteAdapter mAdapter;
 
     @Override
@@ -56,8 +60,31 @@ public class FavoriteActivity extends AppCompatActivity {
         mList = (RecyclerView) findViewById(R.id.favorite_list);
         mEmptyView = findViewById(R.id.favorite_empty_layout);
 
-        mDbHandler = new FavoriteDatabaseHandler(this);
-        mAdapter = new FavoriteAdapter(this, new ArrayList<>());
+        mAdapter = new FavoriteAdapter(this);
+
+        getLoaderManager().initLoader(0, null, new LoaderManager.LoaderCallbacks<Cursor>() {
+            @Override
+            public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+                return new CursorLoader(FavoriteActivity.this, FavoriteProvider.Columns.CONTENT_URI,
+                        null, null, null, FavoriteProvider.Columns._ID + " DESC");
+            }
+
+            @Override
+            public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+                mAdapter.swapCursor(cursor);
+
+                if (cursor.getCount() == 0) {
+                    mList.setVisibility(View.GONE);
+                    mEmptyView.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
+            public void onLoaderReset(Loader<Cursor> loader) {
+                mAdapter.swapCursor(null);
+            }
+        });
+
         mList.setLayoutManager(new GridLayoutManager(this, 2));
         mList.setItemAnimator(new DefaultItemAnimator());
         mList.setAdapter(mAdapter);
@@ -76,30 +103,14 @@ public class FavoriteActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        refresh();
-    }
-
-    void refresh() {
-        List<Favorite> items = mDbHandler.getAllItems();
-        mAdapter.updateList(items);
-
-        if (items.isEmpty()) {
-            mList.setVisibility(View.GONE);
-            mEmptyView.setVisibility(View.VISIBLE);
-        }
-    }
-
-    void editItem(Favorite item) {
+    void editItem(long id, String title, String url) {
         View view = LayoutInflater.from(this)
                 .inflate(R.layout.dialog_favorite_edit, new LinearLayout(this));
         EditText titleEdit = (EditText) view.findViewById(R.id.favorite_edit_title);
         EditText urlEdit = (EditText) view.findViewById(R.id.favorite_edit_url);
 
-        titleEdit.setText(item.getTitle());
-        urlEdit.setText(item.getUrl());
+        titleEdit.setText(title);
+        urlEdit.setText(url);
 
         String error = getString(R.string.favorite_edit_error);
         urlEdit.addTextChangedListener(new TextWatcher() {
@@ -127,22 +138,19 @@ public class FavoriteActivity extends AppCompatActivity {
                 .setView(view)
                 .setPositiveButton(R.string.favorite_edit_positive,
                         ((dialog, which) -> {
-                            String url = urlEdit.getText().toString();
-                            String title = titleEdit.getText().toString();
+                            String updatedUrl = urlEdit.getText().toString();
+                            String updatedTitle = titleEdit.getText().toString();
                             if (url.isEmpty()) {
                                 urlEdit.setError(error);
                                 urlEdit.requestFocus();
                             }
-                            item.setTitle(title);
-                            item.setUrl(url);
-                            mDbHandler.updateItem(item);
-                            refresh();
+                            new UpdateFavoriteTask(getContentResolver(), id, updatedTitle,
+                                    updatedUrl).execute();
                             dialog.dismiss();
                         }))
                 .setNeutralButton(R.string.favorite_edit_delete,
                         (dialog, which) -> {
-                            mDbHandler.deleteItem(item.getId());
-                            mAdapter.removeItem(item.getId());
+                            new DeleteFavoriteTask(getContentResolver()).execute(id);
                             dialog.dismiss();
                         })
                 .setNegativeButton(android.R.string.cancel,
@@ -150,4 +158,40 @@ public class FavoriteActivity extends AppCompatActivity {
                 .show();
     }
 
+    private static class UpdateFavoriteTask extends AsyncTask<Void, Void, Void> {
+        private final ContentResolver contentResolver;
+        private final long id;
+        private final String title;
+        private final String url;
+
+        UpdateFavoriteTask(ContentResolver contentResolver, long id, String title, String url) {
+            this.contentResolver = contentResolver;
+            this.id = id;
+            this.title = title;
+            this.url = url;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            FavoriteProvider.updateItem(contentResolver, id, title, url);
+            return null;
+        }
+    }
+
+    private static class DeleteFavoriteTask extends AsyncTask<Long, Void, Void> {
+        private final ContentResolver contentResolver;
+
+        DeleteFavoriteTask(ContentResolver contentResolver) {
+            this.contentResolver = contentResolver;
+        }
+
+        @Override
+        protected Void doInBackground(Long... ids) {
+            for (Long id : ids) {
+                Uri uri = ContentUris.withAppendedId(FavoriteProvider.Columns.CONTENT_URI, id);
+                contentResolver.delete(uri, null, null);
+            }
+            return null;
+        }
+    }
 }
