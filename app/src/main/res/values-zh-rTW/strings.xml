@@ -87,7 +87,7 @@
   <!-- Settings: javascript preference summary -->
   <string name="pref_js_summary">啟用 JavaScript</string>
   <!-- Settings: location preference title -->
-  <string name="pref_location_title">位置</string>
+  <string name="pref_location_title">定位</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
   <string name="pref_location_summary">允許網站向您要求位置資訊存取權</string>
   <!-- Settings: cookie preference title -->
