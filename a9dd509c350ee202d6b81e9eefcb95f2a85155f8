@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e60944c_bfec947d",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-10-31T14:25:48Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "a9dd509c350ee202d6b81e9eefcb95f2a85155f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d99e69c_999b9ed6",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-10-31T14:25:48Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "a9dd509c350ee202d6b81e9eefcb95f2a85155f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "09f33d2d_1ae5af36",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2017-10-31T14:25:48Z",
+      "side": 1,
+      "message": "could keep that in the original class (FavoriteDatabaseHandler) , so it\u0027s more obvious what has changed?",
+      "range": {
+        "startLine": 206,
+        "startChar": 4,
+        "endLine": 242,
+        "endChar": 5
+      },
+      "revId": "a9dd509c350ee202d6b81e9eefcb95f2a85155f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
