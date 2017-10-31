@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "276c3697_482841ba",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-10-31T16:03:01Z",
+      "side": 1,
+      "message": "space",
+      "revId": "a9dd509c350ee202d6b81e9eefcb95f2a85155f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "09f33d2d_1ae5af36",
         "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
         "patchSetId": 2
