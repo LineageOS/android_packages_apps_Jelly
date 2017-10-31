@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0b093ebb_fb20bc7d",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-10-31T19:06:41Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed. The loader will be destroyed automatically if the activity is not going to be recreated.",
+      "revId": "08ba3282709f7e16b5c5fe7fb33c2c6be314ed1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11c3a7a0_a9896dce",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-10-31T19:06:41Z",
+      "side": 1,
+      "message": "Can make the 3rd generic parameter Void here and below.",
+      "revId": "08ba3282709f7e16b5c5fe7fb33c2c6be314ed1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
