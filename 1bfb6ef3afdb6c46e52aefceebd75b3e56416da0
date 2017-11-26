@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dafd8d13_6a982a81",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-11-26T17:50:52Z",
+      "side": 1,
+      "message": "Unused",
+      "revId": "1bfb6ef3afdb6c46e52aefceebd75b3e56416da0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
