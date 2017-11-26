@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95c9b33f_b043bfb1",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-11-26T18:27:04Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 79,
+        "startChar": 30,
+        "endLine": 79,
+        "endChar": 35
+      },
+      "revId": "bf1734dc6e7100e0132c286c9db8376d7d8f2581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
