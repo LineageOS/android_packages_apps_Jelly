@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a9c3ed4_e2325b8d",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-26T19:54:38Z",
+      "side": 1,
+      "message": "Why onTouchListener instead of onClickListener?\nI also think it would be better to construct the dialog when really needed and not unconditionally, whether or not it will be actually used.",
+      "revId": "c594b858323fd0bf76e39a436b3f30ee104660d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "88872796_6ef65e9e",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-26T19:54:38Z",
+      "side": 1,
+      "message": "Just compress the call into onPageLoadFinished(), passing the cert in?",
+      "revId": "c594b858323fd0bf76e39a436b3f30ee104660d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
