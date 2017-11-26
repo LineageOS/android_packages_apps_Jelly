@@ -177,4 +177,17 @@
 
     <!-- Search in page: search hint -->
     <string name="search_bar_hint">Search</string>
+
+    <!-- SSL Certificate Details dialog -->
+    <string name="ssl_cert_dialog_title">SSL Certificate Details</string>
+    <string name="ssl_cert_dialog_domain">Domain</string>
+    <string name="ssl_cert_dialog_domain_label">Domain:</string>
+    <string name="ssl_cert_dialog_issued_to">Issued To</string>
+    <string name="ssl_cert_dialog_issued_by">Issued By</string>
+    <string name="ssl_cert_dialog_validity">Period of Validity</string>
+    <string name="ssl_cert_dialog_common_name">Common Name (CN):</string>
+    <string name="ssl_cert_dialog_organization">Organization (O):</string>
+    <string name="ssl_cert_dialog_organizational_unit">Organizational Unit (UN):</string>
+    <string name="ssl_cert_dialog_valid_not_before">Begins On:</string>
+    <string name="ssl_cert_dialog_valid_not_after">Ends On:</string>
 </resources>
