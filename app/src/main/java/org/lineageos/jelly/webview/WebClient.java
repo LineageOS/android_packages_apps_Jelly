@@ -25,6 +25,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.net.http.SslCertificate;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
@@ -52,6 +53,7 @@ import java.util.regex.Matcher;
 
 class WebClient extends WebViewClient {
     private UrlBarController mUrlBarController;
+    public SslCertificate sslCertificate;
 
     WebClient(UrlBarController urlBarController) {
         super();
@@ -68,6 +70,7 @@ class WebClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         mUrlBarController.onPageLoadFinished();
+        mUrlBarController.updateSSLCertificateDialog(view.getCertificate());
     }
 
     @Override
