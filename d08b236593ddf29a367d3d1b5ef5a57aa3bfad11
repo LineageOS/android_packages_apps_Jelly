@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd44dcfa_3883a972",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/TextViewExt.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-27T06:44:35Z",
+      "side": 1,
+      "message": "Maybe name this a bit more descriptive, like DoubleTextView or KeyValueView?",
+      "revId": "d08b236593ddf29a367d3d1b5ef5a57aa3bfad11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2ae21a6_c262ddfd",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/TextViewExt.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-27T06:44:35Z",
+      "side": 1,
+      "message": "mAttributeView/mValueView",
+      "revId": "d08b236593ddf29a367d3d1b5ef5a57aa3bfad11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc2e7898_8c58b9fc",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-27T06:44:35Z",
+      "side": 1,
+      "message": "The WebView has a different theme than the URL bar? If no, we could simply use mSecureIcon.getContext() here.",
+      "revId": "d08b236593ddf29a367d3d1b5ef5a57aa3bfad11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d00a97b5_3b52dcc8",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-27T06:44:35Z",
+      "side": 1,
+      "message": "Maybe make adapt the signature of setText?\n\nsetText(@StringRes int attributeTextResId, String value)\n\nWould avoid the need for all those label variables.",
+      "revId": "d08b236593ddf29a367d3d1b5ef5a57aa3bfad11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "172adfd0_e23c19d6",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-11-27T06:44:35Z",
+      "side": 1,
+      "message": "Is this really a \u0027title\u0027 to justify the capitalized \u0027to\u0027? I would write \u0027Issued to\u0027. (Same thing applies above and below)",
+      "revId": "d08b236593ddf29a367d3d1b5ef5a57aa3bfad11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
