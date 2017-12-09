@@ -105,13 +105,13 @@ class WebClient extends WebViewClient {
         String text = context.getString(R.string.auth_dialog_detail, view.getUrl());
         auth_detail.setText(text);
         builder.setView(dialogView)
-                .setCancelable(false)
                 .setTitle(R.string.auth_dialog_title)
                 .setPositiveButton(R.string.auth_dialog_login,
                         (dialog, whichButton) -> handler.proceed(
                                 username.getText().toString(), password.getText().toString()))
                 .setNegativeButton(android.R.string.cancel,
                         (dialog, whichButton) -> handler.cancel())
+                .setOnDismissListener(dialog -> handler.cancel())
                 .show();
     }
 
