@@ -169,7 +169,7 @@ class WebClient extends WebViewClient {
         final ArrayList<Intent> chooserIntents = new ArrayList<>();
         final String ourPackageName = context.getPackageName();
 
-        Collections.sort(activities, new ResolveInfo.DisplayNameComparator(pm));
+        activities.sort(new ResolveInfo.DisplayNameComparator(pm));
 
         for (ResolveInfo resolveInfo : activities) {
             IntentFilter filter = resolveInfo.filter;
