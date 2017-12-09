@@ -78,8 +78,8 @@ abstract class SuggestionProvider {
     /**
      * Parse the results of an input stream into a list of {@link String}.
      *
-     * @param content     the raw input to parse.
-     * @param callback    the callback to invoke for each received suggestion
+     * @param content  the raw input to parse.
+     * @param callback the callback to invoke for each received suggestion
      * @throws Exception throw an exception if anything goes wrong.
      */
     void parseResults(@NonNull String content,
@@ -142,24 +142,15 @@ abstract class SuggestionProvider {
                                                @NonNull String language) {
         try {
             URL url = new URL(createQueryUrl(query, language));
-            InputStream in = null;
 
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.addRequestProperty("Cache-Control",
                     "max-age=" + INTERVAL_DAY + ", max-stale=" + INTERVAL_DAY);
             urlConnection.addRequestProperty("Accept-Charset", mEncoding);
-            try {
-                in = new BufferedInputStream(urlConnection.getInputStream());
+            try (InputStream in = new BufferedInputStream(urlConnection.getInputStream())) {
                 return FileUtils.readStringFromStream(in, getEncoding(urlConnection));
             } finally {
                 urlConnection.disconnect();
-                if (in != null) {
-                    try {
-                        in.close();
-                    } catch (IOException e) {
-                        // ignored
-                    }
-                }
             }
         } catch (IOException e) {
             Log.e(TAG, "Problem getting search suggestions", e);
