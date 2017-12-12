@@ -39,8 +39,11 @@
   <!-- Menu action: open selected link in a new tab -->
   <string name="menu_in_new_tab">Buka di tab baru</string>
   <!-- Menu action: enable desktop mode -->
+  <string name="menu_desktop_mode">Beralih ke situs desktop</string>
   <!-- Menu action: enable phone mode -->
+  <string name="menu_mobile_mode">Beralih ke situs mobile</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Temukan di laman</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Kirim ke</string>
   <!-- Dialog action: dismiss -->
@@ -54,6 +57,7 @@
   <!-- Permission error dialog: title -->
   <string name="permission_error_title">Kesalahan perizinan</string>
   <!-- Permission error dialog: message for denied storage access-->
+  <string name="permission_error_storage">Browser membutuhkan akses penyimpanan untuk mengunduh berkas. Silakan berikan izin untuk menyimpan berkas dari web</string>
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Tanya kembali</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
@@ -77,6 +81,7 @@
   <!-- Settings: lookLock title -->
   <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
+  <string name="pref_looklock_summary">Cegah aplikasi lain untuk membaca konten Browser</string>
   <!-- Settings: javascript preference title -->
   <string name="pref_js_title">JavaScript</string>
   <!-- Settings: javascript preference summary -->
@@ -86,16 +91,24 @@
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
   <string name="pref_location_summary">Izinkan situs web untuk meminta akses ke lokasi Anda</string>
   <!-- Settings: cookie preference title -->
+  <string name="pref_cookie_title">Kuki</string>
   <!-- Settings: cookie preference summary -->
+  <string name="pref_cookie_summary">Izinkan situs web untuk menyimpan dan memuat kuki</string>
   <!-- Settings: advanced share preference title -->
+  <string name="pref_screenshot_snap_title">Berbagi lanjutan</string>
   <!-- Settings: advanced share preference summary -->
+  <string name="pref_screenshot_snap_summary">Berbagi pratinjau halaman web</string>
   <!-- Settings: clear cookie -->
   <!-- Settings: clear cookie toast confirmation -->
+  <string name="pref_cookie_clear_done">Membersihkan semua kuki</string>
   <!-- Settings: do not track preference title -->
+  <string name="pref_do_not_track_title">Jangan Melacak</string>
   <!-- Settings: do not track preference summary -->
+  <string name="pref_do_not_track_summary">Kirim permintaan Jangan Melacak ke situs web yang dikunjungi</string>
   <!-- Settings: save form data title -->
   <string name="pref_save_form_data_title">Simpan data formulir</string>
   <!-- Settings: suggestions provider title -->
+  <string name="pref_suggestions_provider">Saran penyedia</string>
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
   <!-- History: empty status text -->
@@ -119,6 +132,7 @@
   <!-- Favorite: edit dialog title -->
   <string name="favorite_edit_dialog_title">Sunting favorit</string>
   <!-- Favorite: edit dialog: title of the favorite -->
+  <string name="favorite_edit_title">Nama</string>
   <!-- Favorite: edit dialog: url of the favorite-->
   <string name="favorite_edit_url">URL</string>
   <!-- Favorite: edit dialog positive button that save changes -->
@@ -130,6 +144,7 @@
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Tidak ada aplikasi yang dapat mengurus tautan ini</string>
   <!-- Auth dialog: title -->
+  <string name="auth_dialog_title">Otentikasi Diperlukan</string>
   <!-- Auth dialog: username field -->
   <string name="auth_dialog_username">Nama Pengguna:</string>
   <!-- Auth dialog: password field -->

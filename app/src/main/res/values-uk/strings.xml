@@ -43,6 +43,7 @@
   <!-- Menu action: enable phone mode -->
   <string name="menu_mobile_mode">Перейти до мобільної версії</string>
   <!-- Menu action: search in page -->
+  <string name="menu_search">Знайти на сторінці</string>
   <!-- Share webPage: "send to" dialog title -->
   <string name="share_title">Надіслати до</string>
   <!-- Dialog action: dismiss -->
@@ -156,5 +157,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Нова вкладка \"інкоґніто\"</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Жоден</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Шукати</string>
 </resources>
