@@ -18,6 +18,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
+    $(LOCAL_PATH)/res_lineage \
     frameworks/support/design/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/cardview/res \
