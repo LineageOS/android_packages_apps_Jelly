@@ -25,6 +25,7 @@ android {
         disable 'RestrictedApi'
     }
     sourceSets {
+        main.res.scrDirs += 'src/main/res_studio'
         main.java.srcDirs += 'src/main/java_studio'
     }
 }
