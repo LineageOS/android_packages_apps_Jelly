@@ -123,7 +123,7 @@
   <!-- History: delete history dialog button that erases all the history -->
   <string name="history_delete_positive">Temizle</string>
   <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">Geçmiş temizleniyor\u2026</string>
+  <string name="history_deleting_message">Arama geçmişi temizleniyor\u2026</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Sık kullanılanlar</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

@@ -158,6 +158,7 @@
   <!-- Launcher shortcut: new incognito tab -->
   <string name="shortcut_new_incognito_tab">Nowa karta incognito</string>
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Brak wyników</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Wyszukaj</string>
 </resources>
