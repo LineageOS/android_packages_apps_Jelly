@@ -638,7 +638,6 @@ public class MainActivity extends WebViewExtActivity implements
         addContentView(mCustomView, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         findViewById(R.id.app_bar_layout).setVisibility(View.GONE);
-        findViewById(R.id.web_view_container).setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -649,7 +648,6 @@ public class MainActivity extends WebViewExtActivity implements
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setImmersiveMode(false);
         findViewById(R.id.app_bar_layout).setVisibility(View.VISIBLE);
-        findViewById(R.id.web_view_container).setVisibility(View.GONE);
         ViewGroup viewGroup = (ViewGroup) mCustomView.getParent();
         viewGroup.removeView(mCustomView);
         mFullScreenCallback.onCustomViewHidden();
