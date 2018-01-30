@@ -23,9 +23,13 @@
 
     <color name="menu_icon">#333333</color>
 
+    <color name="searchbar_text">#000000</color>
+
     <color name="empty_image">#b1b1b1</color>
     <color name="empty_background">#efefef</color>
     <color name="empty_text">@color/empty_image</color>
+
+    <color name="bottom_sheet_bg">#fafafa</color>
 
     <color name="history_last_hour">#fafafa</color>
     <color name="history_today">#f6f6f6</color>

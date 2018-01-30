@@ -27,6 +27,7 @@
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".JellyApp"
         android:appCategory="productivity"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
