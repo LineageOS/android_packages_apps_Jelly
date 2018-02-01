@@ -41,7 +41,8 @@ LOCAL_STATIC_JAVA_LIBRARIES += \
     android-support-v7-cardview \
     android-support-v7-palette \
     android-support-v7-recyclerview \
-    android-support-annotations
+    android-support-annotations \
+    android-support-transition
 
 LOCAL_PACKAGE_NAME := Jelly
 
