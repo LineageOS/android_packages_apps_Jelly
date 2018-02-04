@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Няма</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Търсене</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL сертификат детайли</string>
+  <string name="ssl_cert_dialog_domain">Домейн</string>
+  <string name="ssl_cert_dialog_issued_to">Издаден на</string>
+  <string name="ssl_cert_dialog_issued_by">Издаден от</string>
+  <string name="ssl_cert_dialog_validity">Период на валидност</string>
+  <string name="ssl_cert_dialog_common_name">Обичайно име (ОИ)</string>
+  <string name="ssl_cert_dialog_organization">Организация (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Организационна единица (ОЕ)</string>
+  <string name="ssl_cert_dialog_issued_on">Издадена на</string>
+  <string name="ssl_cert_dialog_expires_on">Изтича на</string>
+  <string name="ssl_cert_dialog_dismiss">Отхвърли</string>
 </resources>

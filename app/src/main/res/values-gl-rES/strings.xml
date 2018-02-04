@@ -160,4 +160,5 @@
   <string name="suggestions_provider_none">Ningún</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Procurar</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

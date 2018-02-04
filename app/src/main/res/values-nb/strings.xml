@@ -159,4 +159,5 @@
   <string name="suggestions_provider_none">Ingen</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Søk</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

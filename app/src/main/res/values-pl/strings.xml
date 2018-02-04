@@ -161,4 +161,5 @@
   <string name="suggestions_provider_none">Brak wyników</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Wyszukaj</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Hiçbiri</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Ara</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL Sertifika Ayrıntıları</string>
+  <string name="ssl_cert_dialog_domain">Alan Adı</string>
+  <string name="ssl_cert_dialog_issued_to">Verilen</string>
+  <string name="ssl_cert_dialog_issued_by">Veren</string>
+  <string name="ssl_cert_dialog_validity">Geçerlilik Süresi</string>
+  <string name="ssl_cert_dialog_common_name">Ortak Ad (CN)</string>
+  <string name="ssl_cert_dialog_organization">Kuruluş (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Kuruluş Birimi (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Verilme</string>
+  <string name="ssl_cert_dialog_expires_on">Sona Erme</string>
+  <string name="ssl_cert_dialog_dismiss">Reddet</string>
 </resources>

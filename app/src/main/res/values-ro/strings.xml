@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Niciunul</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Căutați</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Detalii Certificat SSL</string>
+  <string name="ssl_cert_dialog_domain">Domeniu</string>
+  <string name="ssl_cert_dialog_issued_to">Emis către</string>
+  <string name="ssl_cert_dialog_issued_by">Emis de</string>
+  <string name="ssl_cert_dialog_validity">Perioada de valabilitate</string>
+  <string name="ssl_cert_dialog_common_name">Nume Comun (NC)</string>
+  <string name="ssl_cert_dialog_organization">Organizaţia (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Unitate Organizațională (UO)</string>
+  <string name="ssl_cert_dialog_issued_on">Emis pe</string>
+  <string name="ssl_cert_dialog_expires_on">Expiră pe</string>
+  <string name="ssl_cert_dialog_dismiss">Închideți</string>
 </resources>

@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Bat ere ez</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Bilatu</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL ziurtagiriaren xehetasunak</string>
+  <string name="ssl_cert_dialog_domain">Domeinua</string>
+  <string name="ssl_cert_dialog_issued_to">Honentzat jaulkia:</string>
+  <string name="ssl_cert_dialog_issued_by">Jaulkitzailea:</string>
+  <string name="ssl_cert_dialog_validity">Baliozkotasun epea</string>
+  <string name="ssl_cert_dialog_common_name">Izen arrunta (CN)</string>
+  <string name="ssl_cert_dialog_organization">Erakundea (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Erakunde-unitatea (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Jaulkitze-data:</string>
+  <string name="ssl_cert_dialog_expires_on">Iraungitze-data:</string>
+  <string name="ssl_cert_dialog_dismiss">Baztertu</string>
 </resources>

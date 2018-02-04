@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">כלום</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">חיפוש</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">פרטי אישור SSL</string>
+  <string name="ssl_cert_dialog_domain">שם מתחם - דומיין</string>
+  <string name="ssl_cert_dialog_issued_to">הונפק ל:</string>
+  <string name="ssl_cert_dialog_issued_by">הונפק על ידי</string>
+  <string name="ssl_cert_dialog_validity">משך תוקף: </string>
+  <string name="ssl_cert_dialog_common_name">מוכר בשם</string>
+  <string name="ssl_cert_dialog_organization">ארגון</string>
+  <string name="ssl_cert_dialog_organizational_unit">יחידה ארגונית</string>
+  <string name="ssl_cert_dialog_issued_on">הונפק ב:</string>
+  <string name="ssl_cert_dialog_expires_on">תאריך תפוגה:</string>
+  <string name="ssl_cert_dialog_dismiss">בטל</string>
 </resources>

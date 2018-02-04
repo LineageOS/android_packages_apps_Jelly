@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Nessuno</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Cerca</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Dettagli Certificato SSL</string>
+  <string name="ssl_cert_dialog_domain">Dominio</string>
+  <string name="ssl_cert_dialog_issued_to">Rilasciato a</string>
+  <string name="ssl_cert_dialog_issued_by">Rilasciato da</string>
+  <string name="ssl_cert_dialog_validity">Periodo di validità</string>
+  <string name="ssl_cert_dialog_common_name">Nome comune (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organizzazione (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Unità Organizzativa (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Emesso il</string>
+  <string name="ssl_cert_dialog_expires_on">Scade il</string>
+  <string name="ssl_cert_dialog_dismiss">Chiudi</string>
 </resources>

@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Brez</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Iskanje</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Podrobnosti potrdila SSL</string>
+  <string name="ssl_cert_dialog_domain">Domena</string>
+  <string name="ssl_cert_dialog_issued_to">Izdano za</string>
+  <string name="ssl_cert_dialog_issued_by">Izdal</string>
+  <string name="ssl_cert_dialog_validity">Obdobje veljavnosti</string>
+  <string name="ssl_cert_dialog_common_name">Splošno ime (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organizacija (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organizacijska enota (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Izdano</string>
+  <string name="ssl_cert_dialog_expires_on">Poteče</string>
+  <string name="ssl_cert_dialog_dismiss">Opusti</string>
 </resources>

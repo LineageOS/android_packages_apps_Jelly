@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">無</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">搜尋</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL 憑證詳細資訊</string>
+  <string name="ssl_cert_dialog_domain">網域</string>
+  <string name="ssl_cert_dialog_issued_to">發證對象：</string>
+  <string name="ssl_cert_dialog_issued_by">發證來源：</string>
+  <string name="ssl_cert_dialog_validity">有效期：</string>
+  <string name="ssl_cert_dialog_common_name">通用名稱 (CN)：</string>
+  <string name="ssl_cert_dialog_organization">組織 (O)：</string>
+  <string name="ssl_cert_dialog_organizational_unit">組織單位 (UN)：</string>
+  <string name="ssl_cert_dialog_issued_on">發證時間：</string>
+  <string name="ssl_cert_dialog_expires_on">有效期至：</string>
+  <string name="ssl_cert_dialog_dismiss">忽略</string>
 </resources>

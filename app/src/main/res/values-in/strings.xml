@@ -159,4 +159,5 @@
   <string name="suggestions_provider_none">Tidak ada</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Telusuri</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

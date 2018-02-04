@@ -82,9 +82,11 @@
   <!-- Auth dialog: title -->
   <!-- Auth dialog: username field -->
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Cyfrinair:</string>
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
   <!-- Launcher shortcut: new incognito tab -->
   <!-- Suggestions provider: no suggestions provider -->
   <!-- Search in page: search hint -->
+  <!-- SSL Certificate Details dialog -->
 </resources>

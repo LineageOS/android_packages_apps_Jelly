@@ -160,4 +160,16 @@
   <string name="suggestions_provider_none">Cap</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Cerca</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Detalls del certificat SSL</string>
+  <string name="ssl_cert_dialog_domain">Domini</string>
+  <string name="ssl_cert_dialog_issued_to">Emès per a</string>
+  <string name="ssl_cert_dialog_issued_by">Emès per</string>
+  <string name="ssl_cert_dialog_validity">Període de validesa</string>
+  <string name="ssl_cert_dialog_common_name">Nom comú (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organització (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Unitat organitzativa (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Emès el</string>
+  <string name="ssl_cert_dialog_expires_on">Caduca el</string>
+  <string name="ssl_cert_dialog_dismiss">Descarta</string>
 </resources>
