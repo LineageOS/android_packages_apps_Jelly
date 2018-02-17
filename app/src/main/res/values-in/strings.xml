@@ -99,6 +99,7 @@
   <!-- Settings: advanced share preference summary -->
   <string name="pref_screenshot_snap_summary">Berbagi pratinjau halaman web</string>
   <!-- Settings: clear cookie -->
+  <string name="pref_cookie_clear">Bersihkan Kuki</string>
   <!-- Settings: clear cookie toast confirmation -->
   <string name="pref_cookie_clear_done">Membersihkan semua kuki</string>
   <!-- Settings: do not track preference title -->
@@ -160,4 +161,15 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Telusuri</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Rincian Sertifikat SSL</string>
+  <string name="ssl_cert_dialog_domain">Domain</string>
+  <string name="ssl_cert_dialog_issued_to">Diterbitkan untuk</string>
+  <string name="ssl_cert_dialog_issued_by">Diterbitkan oleh</string>
+  <string name="ssl_cert_dialog_validity">Masa Berlaku</string>
+  <string name="ssl_cert_dialog_common_name">Nama umum (NU)</string>
+  <string name="ssl_cert_dialog_organization">Organisasi (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Unit Organisasi (UO)</string>
+  <string name="ssl_cert_dialog_issued_on">Diterbitkan Pada</string>
+  <string name="ssl_cert_dialog_expires_on">Kadaluarsa Pada</string>
+  <string name="ssl_cert_dialog_dismiss">Tutup</string>
 </resources>

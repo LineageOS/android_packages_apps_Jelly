@@ -162,4 +162,14 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Wyszukaj</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_domain">Domena</string>
+  <string name="ssl_cert_dialog_issued_to">Wydany dla</string>
+  <string name="ssl_cert_dialog_issued_by">Wydany przez</string>
+  <string name="ssl_cert_dialog_validity">Termin Ważności</string>
+  <string name="ssl_cert_dialog_common_name">Nazwa zwyczajowa (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organizacja (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Jednostka organizacyjna (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Wydane na</string>
+  <string name="ssl_cert_dialog_expires_on">Wygasa</string>
+  <string name="ssl_cert_dialog_dismiss">Odrzuć</string>
 </resources>

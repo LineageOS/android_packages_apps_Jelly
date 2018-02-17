@@ -69,9 +69,9 @@
   <!-- Settings: search engine preference title -->
   <string name="pref_search_engine">Motor de pesquisa</string>
   <!-- Settings: home page preference title -->
-  <string name="pref_start_page">Página inicial</string>
+  <string name="pref_start_page">Página Inicial</string>
   <!-- Settings: select home page dialog title -->
-  <string name="pref_start_page_dialog_title">Selecione a página inicial</string>
+  <string name="pref_start_page_dialog_title">Selecione a Página Inicial</string>
   <!-- Settings: select home page dialog message -->
   <string name="pref_start_page_dialog_message">Escreva o URL da página inicial</string>
   <!-- Settings: reset home page dialog action -->
@@ -161,4 +161,15 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Procurar</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Detalhes do Certificado SSL</string>
+  <string name="ssl_cert_dialog_domain">Domínio</string>
+  <string name="ssl_cert_dialog_issued_to">Emitido para</string>
+  <string name="ssl_cert_dialog_issued_by">Emitido por</string>
+  <string name="ssl_cert_dialog_validity">Período de validade</string>
+  <string name="ssl_cert_dialog_common_name">Nome Comum (NC)</string>
+  <string name="ssl_cert_dialog_organization">Organização (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Unidade Organizacional (UO)</string>
+  <string name="ssl_cert_dialog_issued_on">Emitido em</string>
+  <string name="ssl_cert_dialog_expires_on">Expira em</string>
+  <string name="ssl_cert_dialog_dismiss">Ignorar</string>
 </resources>

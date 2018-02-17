@@ -86,8 +86,20 @@
   <!-- Auth dialog: password field -->
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
+  <string name="auth_dialog_login">Logga in</string>
   <!-- Launcher shortcut: new incognito tab -->
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Ingen</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Sök</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_domain">Domän</string>
+  <string name="ssl_cert_dialog_issued_to">Utfärdat den</string>
+  <string name="ssl_cert_dialog_issued_by">Utfärdad av</string>
+  <string name="ssl_cert_dialog_validity">Giltighetstid</string>
+  <string name="ssl_cert_dialog_common_name">Namn (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organisation (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organisationsenhet (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Utfärdat den</string>
+  <string name="ssl_cert_dialog_dismiss">Avvisa</string>
 </resources>
