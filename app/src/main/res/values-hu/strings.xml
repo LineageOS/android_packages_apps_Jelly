@@ -60,8 +60,6 @@
   <!-- Permission error dialog: button that triggers permission request again -->
   <string name="permission_error_ask_again">Kérdezze meg újra</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Hozzáadva a kezdőképernyőhöz</string>
   <!-- Settings: title -->
   <string name="settings_title">Beállítások</string>
   <!-- Settings: search engine preference title -->
@@ -143,4 +141,5 @@
   <string name="suggestions_provider_none">Nincs</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Keresés</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

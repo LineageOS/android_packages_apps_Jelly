@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Tekrar sor</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">İzin kalıcı olarak reddedildi. Lütfen ayarlardan izin verin</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Ana ekranda eklendi</string>
   <!-- Settings: title -->
   <string name="settings_title">Ayarlar</string>
   <!-- Settings: search engine preference title -->
@@ -123,7 +121,7 @@
   <!-- History: delete history dialog button that erases all the history -->
   <string name="history_delete_positive">Temizle</string>
   <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">Geçmiş temizleniyor\u2026</string>
+  <string name="history_deleting_message">Arama geçmişi temizleniyor\u2026</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Sık kullanılanlar</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
@@ -160,4 +158,16 @@
   <string name="suggestions_provider_none">Hiçbiri</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Ara</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL Sertifika Ayrıntıları</string>
+  <string name="ssl_cert_dialog_domain">Alan Adı</string>
+  <string name="ssl_cert_dialog_issued_to">Verilen</string>
+  <string name="ssl_cert_dialog_issued_by">Veren</string>
+  <string name="ssl_cert_dialog_validity">Geçerlilik Süresi</string>
+  <string name="ssl_cert_dialog_common_name">Ortak Ad (CN)</string>
+  <string name="ssl_cert_dialog_organization">Kuruluş (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Kuruluş Birimi (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Verilme</string>
+  <string name="ssl_cert_dialog_expires_on">Sona Erme</string>
+  <string name="ssl_cert_dialog_dismiss">Reddet</string>
 </resources>

@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Erneut fragen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Berechtigung dauerhaft verweigert. Bitte in den Einstellungen erlauben</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Zum Startbildschirm hinzugefügt</string>
   <!-- Settings: title -->
   <string name="settings_title">Einstellungen</string>
   <!-- Settings: search engine preference title -->
@@ -160,4 +158,16 @@
   <string name="suggestions_provider_none">Keiner</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Suchen</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL-Zertifikatdetails</string>
+  <string name="ssl_cert_dialog_domain">Domain</string>
+  <string name="ssl_cert_dialog_issued_to">Ausgestellt für</string>
+  <string name="ssl_cert_dialog_issued_by">Ausgestellt von</string>
+  <string name="ssl_cert_dialog_validity">Gültigkeitsdauer</string>
+  <string name="ssl_cert_dialog_common_name">Allgemeiner Name (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organisation (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organisationseinheit (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Ausgestellt am</string>
+  <string name="ssl_cert_dialog_expires_on">Gültig bis</string>
+  <string name="ssl_cert_dialog_dismiss">Verwerfen</string>
 </resources>

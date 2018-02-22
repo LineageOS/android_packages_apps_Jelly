@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Vra weer</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Toestemming permanent geweier. Laat asseblief in instellings toe</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Voeg tot tuisskerm</string>
   <!-- Settings: title -->
   <string name="settings_title">Instellings</string>
   <!-- Settings: search engine preference title -->
@@ -160,4 +158,5 @@
   <string name="suggestions_provider_none">Geen</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Soektog</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

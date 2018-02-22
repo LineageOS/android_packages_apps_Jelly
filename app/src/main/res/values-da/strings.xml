@@ -61,8 +61,6 @@
   <string name="permission_error_ask_again">Spørg igen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Adgang nægtet permanent. Tildel dette i Indstillinger</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Føjet til startskærmen</string>
   <!-- Settings: title -->
   <string name="settings_title">Indstillinger</string>
   <!-- Settings: search engine preference title -->
@@ -157,4 +155,5 @@
   <string name="shortcut_new_incognito_tab">Ny inkognitofane</string>
   <!-- Suggestions provider: no suggestions provider -->
   <!-- Search in page: search hint -->
+  <!-- SSL Certificate Details dialog -->
 </resources>

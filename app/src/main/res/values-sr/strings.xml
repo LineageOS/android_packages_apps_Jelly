@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Питај поново</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Дозвола је одбијена. Доделите је у подешавањима.</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Додато на почетни екран.</string>
   <!-- Settings: title -->
   <string name="settings_title">Подешавања</string>
   <!-- Settings: search engine preference title -->
@@ -160,4 +158,5 @@
   <string name="suggestions_provider_none">Ниједан</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Претрага</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Opýtať sa znovu</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Povolenie bolo navždy odmietnuté. Udeľte ho prosím v nastaveniach</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Pridané na domovskú obrazovku</string>
   <!-- Settings: title -->
   <string name="settings_title">Nastavenia</string>
   <!-- Settings: search engine preference title -->
@@ -160,4 +158,16 @@
   <string name="suggestions_provider_none">Žiadny</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Vyhľadať</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Podrobnosti certifikátu SSL</string>
+  <string name="ssl_cert_dialog_domain">Doména</string>
+  <string name="ssl_cert_dialog_issued_to">Vydané pre</string>
+  <string name="ssl_cert_dialog_issued_by">Vydal</string>
+  <string name="ssl_cert_dialog_validity">Doba platnosti</string>
+  <string name="ssl_cert_dialog_common_name">Bežný názov (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organizácia (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organizačná jednotka (OSN)</string>
+  <string name="ssl_cert_dialog_issued_on">Vydané</string>
+  <string name="ssl_cert_dialog_expires_on">Platnosť končí</string>
+  <string name="ssl_cert_dialog_dismiss">Zamietnuť</string>
 </resources>

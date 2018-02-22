@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Спросить снова</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Доступ запрещен. Предоставьте его в настройках</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Добавлено на главный экран</string>
   <!-- Settings: title -->
   <string name="settings_title">Настройки</string>
   <!-- Settings: search engine preference title -->
@@ -160,4 +158,16 @@
   <string name="suggestions_provider_none">Не использовать</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Поиск на странице</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Данные сертификата</string>
+  <string name="ssl_cert_dialog_domain">Домен</string>
+  <string name="ssl_cert_dialog_issued_to">Выдан</string>
+  <string name="ssl_cert_dialog_issued_by">Кем выдан</string>
+  <string name="ssl_cert_dialog_validity">Срок действия</string>
+  <string name="ssl_cert_dialog_common_name">Общее имя (CN)</string>
+  <string name="ssl_cert_dialog_organization">Организация (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Подразделение компании (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Дата выдачи</string>
+  <string name="ssl_cert_dialog_expires_on">Срок действия</string>
+  <string name="ssl_cert_dialog_dismiss">Закрыть</string>
 </resources>

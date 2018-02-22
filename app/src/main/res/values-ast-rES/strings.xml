@@ -61,8 +61,6 @@
   <string name="permission_error_ask_again">Entrugar de nueves</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Ñegóse\'l permisu dafechu. Concédelu n\'Axustes, por favor</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Amestóse a la pantalla d\'aniciu</string>
   <!-- Settings: title -->
   <string name="settings_title">Axustes</string>
   <!-- Settings: search engine preference title -->
@@ -157,4 +155,5 @@
   <!-- Suggestions provider: no suggestions provider -->
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Guetar</string>
+  <!-- SSL Certificate Details dialog -->
 </resources>

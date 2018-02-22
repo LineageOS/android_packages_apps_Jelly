@@ -38,7 +38,6 @@
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <!-- Shortcut: the current webPage has been added to the launcher -->
   <!-- Settings: title -->
   <!-- Settings: search engine preference title -->
   <!-- Settings: home page preference title -->
@@ -82,9 +81,11 @@
   <!-- Auth dialog: title -->
   <!-- Auth dialog: username field -->
   <!-- Auth dialog: password field -->
+  <string name="auth_dialog_password">Cyfrinair:</string>
   <!-- Auth dialog: detail -->
   <!-- Auth dialog: login button -->
   <!-- Launcher shortcut: new incognito tab -->
   <!-- Suggestions provider: no suggestions provider -->
   <!-- Search in page: search hint -->
+  <!-- SSL Certificate Details dialog -->
 </resources>

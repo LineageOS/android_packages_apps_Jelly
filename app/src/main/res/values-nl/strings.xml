@@ -62,8 +62,6 @@
   <string name="permission_error_ask_again">Opnieuw vragen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <string name="permission_error_forever">Toestemming permanent geweigerd. Kan toegestaan worden in instellingen</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Toegevoegd aan thuisscherm</string>
   <!-- Settings: title -->
   <string name="settings_title">Instellingen</string>
   <!-- Settings: search engine preference title -->
@@ -160,4 +158,16 @@
   <string name="suggestions_provider_none">Geen</string>
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Zoeken</string>
+  <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL-certificaatinformatie</string>
+  <string name="ssl_cert_dialog_domain">Domein</string>
+  <string name="ssl_cert_dialog_issued_to">Verleend aan</string>
+  <string name="ssl_cert_dialog_issued_by">Verleend door</string>
+  <string name="ssl_cert_dialog_validity">Geldigheidsduur</string>
+  <string name="ssl_cert_dialog_common_name">Algemene Naam (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organisatie (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organisatie-afdeling (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Verleend op</string>
+  <string name="ssl_cert_dialog_expires_on">Verloopt op</string>
+  <string name="ssl_cert_dialog_dismiss">Sluiten</string>
 </resources>
