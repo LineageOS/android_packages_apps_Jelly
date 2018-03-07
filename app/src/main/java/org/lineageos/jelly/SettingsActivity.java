@@ -39,7 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_settings);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(v -> finish());
@@ -76,7 +76,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             View homepageView = inflater.inflate(R.layout.dialog_homepage_edit,
                     new LinearLayout(context));
-            EditText editText = (EditText) homepageView.findViewById(R.id.homepage_edit_url);
+            EditText editText = homepageView.findViewById(R.id.homepage_edit_url);
             editText.setText(PrefsUtils.getHomePage(context));
 
             builder.setTitle(R.string.pref_start_page_dialog_title)

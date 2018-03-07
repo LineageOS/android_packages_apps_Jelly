@@ -96,7 +96,6 @@
   <!-- Settings: do not track preference title -->
   <string name="pref_do_not_track_title">Ne kövesse nyomon</string>
   <!-- Settings: do not track preference summary -->
-  <!-- Settings: save form data title -->
   <!-- Settings: suggestions provider title -->
   <!-- History: title -->
   <string name="history_title">Előzmények</string>

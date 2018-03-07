@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Αιτήματα Do Not Track</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Αποστολή ενός αιτήματος Do Not Track στις ιστοσελίδες που επισκέπτεστε</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Αποθήκευση δεδομένων φόρμας</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Πάροχος προτάσεων</string>
   <!-- History: title -->

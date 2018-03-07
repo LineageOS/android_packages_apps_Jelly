@@ -55,12 +55,12 @@ public class HistoryActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_history);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(v -> finish());
 
-        RecyclerView list = (RecyclerView) findViewById(R.id.history_list);
+        RecyclerView list = findViewById(R.id.history_list);
         mEmptyView = findViewById(R.id.history_empty_layout);
 
         mAdapter = new HistoryAdapter(this);

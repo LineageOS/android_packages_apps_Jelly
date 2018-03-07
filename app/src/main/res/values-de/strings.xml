@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Aktivitäten nicht verfolgen</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Websites mitteilen, meine Aktivitäten nicht zu verfolgen</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Formulardaten speichern</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Anbieter für Vorschläge</string>
   <!-- History: title -->

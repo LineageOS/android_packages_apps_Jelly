@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Não monitorizar</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Enviar às paginas que visitar um pedido para não ser monitorizado</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Guardar dados do formulário</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Fornecedor de sugestões</string>
   <!-- History: title -->

@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Niet volgen</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">\'Niet volgen\'-aanvraag versturen naar websites die u bezoekt</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Formuliergegevens opslaan</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Aanbieder suggesties</string>
   <!-- History: title -->

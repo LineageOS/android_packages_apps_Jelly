@@ -34,8 +34,8 @@ class FavoriteHolder extends RecyclerView.ViewHolder {
 
     FavoriteHolder(View view) {
         super(view);
-        mCard = (CardView) view.findViewById(R.id.row_favorite_card);
-        mTitle = (TextView) view.findViewById(R.id.row_favorite_title);
+        mCard = view.findViewById(R.id.row_favorite_card);
+        mTitle = view.findViewById(R.id.row_favorite_title);
     }
 
     void bind(Context context, long id, String title, String url, int color) {
