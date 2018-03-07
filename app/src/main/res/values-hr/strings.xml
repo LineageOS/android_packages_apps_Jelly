@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Nemoj pratiti</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Pošalji zahtjev Nemoj pratiti web lokacijama koje posjećujete</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Spremi podatke obrasca</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Prijedlozi davatelja</string>
   <!-- History: title -->

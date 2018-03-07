@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Moet my nie navolg nie</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Stuur \'n \'Moet my nie navolg nie\' versoek na webwerwe wat jy besoek</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Stoor vorm data</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Verskaffer van voorstelle</string>
   <!-- History: title -->

@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">추적 안 함 요청</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">방문하는 사이트에 추적 안 함 요청 보내기</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">양식 정보 저장</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">제안 공급자</string>
   <!-- History: title -->

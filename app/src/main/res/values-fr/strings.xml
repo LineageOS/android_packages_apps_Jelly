@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Ne pas me pister</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Envoyer une requête \"ne pas me pister\" aux sites web que vous visitez</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Enregistrer les données du formulaire</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Fournisseur de suggestions</string>
   <!-- History: title -->

@@ -145,13 +145,12 @@ public class MainActivity extends WebViewExtActivity implements
 
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mCoordinator = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
-        mLoadingProgress = (ProgressBar) findViewById(R.id.load_progress);
-        AutoCompleteTextView autoCompleteTextView =
-                (AutoCompleteTextView) findViewById(R.id.url_bar);
+        mCoordinator = findViewById(R.id.coordinator_layout);
+        mLoadingProgress = findViewById(R.id.load_progress);
+        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.url_bar);
         autoCompleteTextView.setAdapter(new SuggestionsAdapter(this));
         autoCompleteTextView.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -206,15 +205,15 @@ public class MainActivity extends WebViewExtActivity implements
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
-        ImageView incognitoIcon = (ImageView) findViewById(R.id.incognito);
+        ImageView incognitoIcon = findViewById(R.id.incognito);
         incognitoIcon.setVisibility(mIncognito ? View.VISIBLE : View.GONE);
 
         setupMenu();
 
         UrlBarController urlBarController = new UrlBarController(autoCompleteTextView,
-                (ImageView) findViewById(R.id.secure));
+                findViewById(R.id.secure));
 
-        mWebView = (WebViewExt) findViewById(R.id.web_view);
+        mWebView = findViewById(R.id.web_view);
         mWebView.init(this, urlBarController, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
@@ -222,11 +221,11 @@ public class MainActivity extends WebViewExtActivity implements
         mHasThemeColorSupport = WebViewCompat.isThemeColorSupported(mWebView);
 
         mSearchController = new SearchBarController(mWebView,
-                (EditText) findViewById(R.id.search_menu_edit),
-                (TextView) findViewById(R.id.search_status),
-                (ImageButton) findViewById(R.id.search_menu_prev),
-                (ImageButton) findViewById(R.id.search_menu_next),
-                (ImageButton) findViewById(R.id.search_menu_cancel),
+                findViewById(R.id.search_menu_edit),
+                findViewById(R.id.search_status),
+                findViewById(R.id.search_menu_prev),
+                findViewById(R.id.search_menu_next),
+                findViewById(R.id.search_menu_cancel),
                 this);
 
         applyThemeColor(mThemeColor);
@@ -335,7 +334,7 @@ public class MainActivity extends WebViewExtActivity implements
     }
 
     private void setupMenu() {
-        ImageButton menu = (ImageButton) findViewById(R.id.search_menu);
+        ImageButton menu = findViewById(R.id.search_menu);
         menu.setOnClickListener(v -> {
             boolean isDesktop = mWebView.isDesktopMode();
             ContextThemeWrapper wrapper = new ContextThemeWrapper(this,
@@ -507,8 +506,7 @@ public class MainActivity extends WebViewExtActivity implements
         request.setNotificationVisibility(
                 DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
-        DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-        manager.enqueue(request);
+        getSystemService(DownloadManager.class).enqueue(request);
     }
 
     public void showSheetMenu(String url, boolean shouldAllowDownload) {

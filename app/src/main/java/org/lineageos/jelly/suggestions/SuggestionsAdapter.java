@@ -71,7 +71,7 @@ public class SuggestionsAdapter extends BaseAdapter implements Filterable {
             convertView = mInflater.inflate(R.layout.item_suggestion, parent, false);
         }
 
-        TextView title = (TextView) convertView.findViewById(R.id.title);
+        TextView title = convertView.findViewById(R.id.title);
         String suggestion = mItems.get(position);
 
         if (mQueryText != null) {

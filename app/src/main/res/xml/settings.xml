@@ -51,11 +51,6 @@
 
         <SwitchPreference
             android:defaultValue="1"
-            android:key="key_save_form_data"
-            android:title="@string/pref_save_form_data_title" />
-
-        <SwitchPreference
-            android:defaultValue="1"
             android:key="key_javascript"
             android:summary="@string/pref_js_summary"
             android:title="@string/pref_js_title" />

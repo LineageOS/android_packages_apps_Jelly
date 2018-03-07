@@ -47,8 +47,8 @@ public class KeyValueView extends LinearLayout {
     private void init() {
         inflate(getContext(), R.layout.key_value_view, this);
 
-        mKeyView = (TextView) findViewById(R.id.key);
-        mValueView = (TextView) findViewById(R.id.value);
+        mKeyView = findViewById(R.id.key);
+        mValueView = findViewById(R.id.value);
     }
 
     public void setText(@StringRes int attributeTextResId, String value) {

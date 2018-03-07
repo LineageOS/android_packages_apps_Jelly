@@ -15,7 +15,6 @@
  */
 package org.lineageos.jelly.utils;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -24,7 +23,6 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v7.graphics.Palette;
 import android.util.TypedValue;
@@ -90,8 +88,7 @@ public final class UiUtils {
      * @param view The currently focused {@link View}, which would receive soft keyboard input.
      */
     public static void showKeyboard(View view) {
-        InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(
-                Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = view.getContext().getSystemService(InputMethodManager.class);
         imm.toggleSoftInputFromWindow(view.getWindowToken(), 0, 0);
     }
 
@@ -101,8 +98,7 @@ public final class UiUtils {
      * @param view The {@link View} that is currently accepting input.
      */
     public static void hideKeyboard(View view) {
-        InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(
-                Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = view.getContext().getSystemService(InputMethodManager.class);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 

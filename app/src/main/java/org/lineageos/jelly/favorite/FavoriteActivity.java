@@ -52,12 +52,12 @@ public class FavoriteActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_favorites);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_back);
         toolbar.setNavigationOnClickListener(v -> finish());
 
-        mList = (RecyclerView) findViewById(R.id.favorite_list);
+        mList = findViewById(R.id.favorite_list);
         mEmptyView = findViewById(R.id.favorite_empty_layout);
 
         mAdapter = new FavoriteAdapter(this);
@@ -106,8 +106,8 @@ public class FavoriteActivity extends AppCompatActivity {
     void editItem(long id, String title, String url) {
         View view = LayoutInflater.from(this)
                 .inflate(R.layout.dialog_favorite_edit, new LinearLayout(this));
-        EditText titleEdit = (EditText) view.findViewById(R.id.favorite_edit_title);
-        EditText urlEdit = (EditText) view.findViewById(R.id.favorite_edit_url);
+        EditText titleEdit = view.findViewById(R.id.favorite_edit_title);
+        EditText urlEdit = view.findViewById(R.id.favorite_edit_url);
 
         titleEdit.setText(title);
         urlEdit.setText(url);

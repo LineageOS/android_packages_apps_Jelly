@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">Funkcia Nesledovať</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Odošle webovým stránkam požiadavku, aby vás nesledovali</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">Ukladať údaje formulárov</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Poskytovateľ návrhov</string>
   <!-- History: title -->

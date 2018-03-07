@@ -102,15 +102,15 @@ public class UrlBarController implements View.OnFocusChangeListener {
                     inflate(R.layout.dialog_ssl_certificate_info, new LinearLayout(context));
 
             // Get the text views
-            TextView domainView = (TextView) view.findViewById(R.id.domain);
-            KeyValueView issuedToCNView = (KeyValueView) view.findViewById(R.id.issued_to_cn);
-            KeyValueView issuedToOView = (KeyValueView) view.findViewById(R.id.issued_to_o);
-            KeyValueView issuedToUNView = (KeyValueView) view.findViewById(R.id.issued_to_un);
-            KeyValueView issuedByCNView = (KeyValueView) view.findViewById(R.id.issued_by_cn);
-            KeyValueView issuedByOView = (KeyValueView) view.findViewById(R.id.issued_by_o);
-            KeyValueView issuedByUNView = (KeyValueView) view.findViewById(R.id.issued_by_un);
-            KeyValueView issuedOnView = (KeyValueView) view.findViewById(R.id.issued_on);
-            KeyValueView expiresOnView = (KeyValueView) view.findViewById(R.id.expires_on);
+            TextView domainView = view.findViewById(R.id.domain);
+            KeyValueView issuedToCNView = view.findViewById(R.id.issued_to_cn);
+            KeyValueView issuedToOView = view.findViewById(R.id.issued_to_o);
+            KeyValueView issuedToUNView = view.findViewById(R.id.issued_to_un);
+            KeyValueView issuedByCNView = view.findViewById(R.id.issued_by_cn);
+            KeyValueView issuedByOView = view.findViewById(R.id.issued_by_o);
+            KeyValueView issuedByUNView = view.findViewById(R.id.issued_by_un);
+            KeyValueView issuedOnView = view.findViewById(R.id.issued_on);
+            KeyValueView expiresOnView = view.findViewById(R.id.expires_on);
 
             // Get the domain name
             String domainString = Uri.parse(mUrl).getHost();

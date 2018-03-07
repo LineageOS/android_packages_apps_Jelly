@@ -38,9 +38,9 @@ class HistoryHolder extends RecyclerView.ViewHolder {
 
     HistoryHolder(View view) {
         super(view);
-        mRootLayout = (LinearLayout) view.findViewById(R.id.row_history_layout);
-        mTitle = (TextView) view.findViewById(R.id.row_history_title);
-        mSummary = (TextView) view.findViewById(R.id.row_history_summary);
+        mRootLayout = view.findViewById(R.id.row_history_layout);
+        mTitle = view.findViewById(R.id.row_history_title);
+        mSummary = view.findViewById(R.id.row_history_summary);
     }
 
     void bind(final Context context, final long id, String title, String url, String summary,

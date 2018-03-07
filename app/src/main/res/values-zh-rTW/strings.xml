@@ -104,8 +104,6 @@
   <string name="pref_do_not_track_title">不追蹤</string>
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">傳送「不追蹤」請求至您瀏覽的網站</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">儲存表單資料</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">建議供應商</string>
   <!-- History: title -->
