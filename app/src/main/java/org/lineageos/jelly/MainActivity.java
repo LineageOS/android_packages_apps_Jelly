@@ -198,6 +198,11 @@ public class MainActivity extends WebViewExtActivity implements
             mThemeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0);
         }
 
+        if (mIncognito) {
+            autoCompleteTextView.setImeOptions(autoCompleteTextView.getImeOptions() |
+                    EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING);
+        }
+
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 
