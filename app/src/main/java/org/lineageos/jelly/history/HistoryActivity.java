@@ -17,6 +17,7 @@ package org.lineageos.jelly.history;
 
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
@@ -147,17 +148,27 @@ public class HistoryActivity extends AppCompatActivity {
         dialog.setIndeterminate(true);
         dialog.show();
 
-        new AsyncTask<Void, Void, Boolean>() {
-            @Override
-            protected Boolean doInBackground(Void... params) {
-                getContentResolver().delete(HistoryProvider.Columns.CONTENT_URI, null, null);
-                return true;
-            }
+        new DeleteAllHistoryTask(getContentResolver(), dialog).execute();
+    }
 
-            @Override
-            protected void onPostExecute(Boolean param) {
-                new Handler().postDelayed(dialog::dismiss, 1000);
-            }
-        }.execute();
+    private static class DeleteAllHistoryTask extends AsyncTask<Void, Void, Void> {
+        private final ContentResolver contentResolver;
+        private final ProgressDialog dialog;
+
+        DeleteAllHistoryTask(ContentResolver contentResolver, ProgressDialog dialog) {
+            this.contentResolver = contentResolver;
+            this.dialog = dialog;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            contentResolver.delete(HistoryProvider.Columns.CONTENT_URI, null, null);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void v) {
+            new Handler().postDelayed(dialog::dismiss, 1000);
+        }
     }
 }
