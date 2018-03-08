@@ -15,8 +15,8 @@
  */
 package org.lineageos.jelly.history;
 
+import android.app.Dialog;
 import android.app.LoaderManager;
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.CursorLoader;
 import android.content.Loader;
@@ -31,9 +31,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
@@ -44,11 +47,11 @@ public class HistoryActivity extends AppCompatActivity {
     private HistoryAdapter mAdapter;
     private final RecyclerView.AdapterDataObserver mAdapterDataObserver =
             new RecyclerView.AdapterDataObserver() {
-        @Override
-        public void onChanged() {
-            updateHistoryView(mAdapter.getItemCount() == 0);
-        }
-    };
+                @Override
+                public void onChanged() {
+                    updateHistoryView(mAdapter.getItemCount() == 0);
+                }
+            };
 
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -141,23 +144,34 @@ public class HistoryActivity extends AppCompatActivity {
     }
 
     private void deleteAll() {
-        ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setTitle(getString(R.string.history_delete_title));
-        dialog.setMessage(getString(R.string.history_deleting_message));
-        dialog.setCancelable(false);
-        dialog.setIndeterminate(true);
-        dialog.show();
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View view = inflater.inflate(R.layout.progress_dialog, new LinearLayout(this));
+
+        ProgressBar progressBar = view.findViewById(R.id.progress);
+        progressBar.setIndeterminate(true);
+
+        Dialog dialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.history_delete_title)
+                .setMessage(R.string.history_deleting_message)
+                .setView(view)
+                .setCancelable(false)
+                .create();
 
         new DeleteAllHistoryTask(getContentResolver(), dialog).execute();
     }
 
     private static class DeleteAllHistoryTask extends AsyncTask<Void, Void, Void> {
         private final ContentResolver contentResolver;
-        private final ProgressDialog dialog;
+        private final Dialog dialog;
 
-        DeleteAllHistoryTask(ContentResolver contentResolver, ProgressDialog dialog) {
+        DeleteAllHistoryTask(ContentResolver contentResolver, Dialog dialog) {
             this.contentResolver = contentResolver;
             this.dialog = dialog;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            dialog.show();
         }
 
         @Override
