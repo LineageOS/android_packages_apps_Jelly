@@ -75,7 +75,7 @@
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Restablecer</string>
   <!-- Settings: privacy and security category -->
-  <string name="pref_privacy_security">Privacidad &amp; securidad</string>
+  <string name="pref_privacy_security">Privacidad y seguridad</string>
   <!-- Settings: lookLock title -->
   <string name="pref_looklock_title">LookLock</string>
   <!-- Settings: lookLock summary -->
