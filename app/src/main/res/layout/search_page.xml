@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="2dp"
-        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardBackgroundColor="@color/card_background"
         app:cardElevation="2dp"
         app:contentPadding="2dp">
 
@@ -51,7 +51,7 @@
                 android:nextFocusUp="@id/search_menu_edit"
                 android:paddingStart="4dp"
                 android:selectAllOnFocus="true"
-                android:textColor="@android:color/black"
+                android:textColor="@color/inverted"
                 android:textColorHint="@android:color/darker_gray"
                 tools:ignore="RtlSymmetry" />
 
@@ -65,7 +65,7 @@
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:maxLines="1"
-                android:textColor="@android:color/black"
+                android:textColor="@color/inverted"
                 android:textSize="12sp" />
 
             <View
@@ -76,7 +76,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_toStartOf="@+id/search_menu_prev"
                 android:alpha="0.1"
-                android:background="#000000" />
+                android:background="@color/inverted" />
 
             <ImageButton
                 android:id="@id/search_menu_prev"
