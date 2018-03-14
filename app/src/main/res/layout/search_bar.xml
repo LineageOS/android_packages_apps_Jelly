@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="2dp"
-        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardBackgroundColor="@color/card_background"
         app:cardElevation="2dp"
         app:contentPadding="2dp">
 
@@ -82,9 +82,9 @@
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
                 android:popupElevation="2dp"
-                android:popupBackground="@android:color/white"
+                android:popupBackground="@color/primary"
                 android:selectAllOnFocus="true"
-                android:textColor="@android:color/black"
+                android:textColor="@color/inverted"
                 tools:ignore="RtlSymmetry" />
 
             <ImageButton
