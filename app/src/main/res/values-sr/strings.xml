@@ -161,4 +161,15 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Претрага</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Детаљи SSL сертификата</string>
+  <string name="ssl_cert_dialog_domain">Домен</string>
+  <string name="ssl_cert_dialog_issued_to">Издато за</string>
+  <string name="ssl_cert_dialog_issued_by">Издато од стране</string>
+  <string name="ssl_cert_dialog_validity">Рок трајања</string>
+  <string name="ssl_cert_dialog_common_name">Уобичајено име (УИ)</string>
+  <string name="ssl_cert_dialog_organization">Организација (О)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Организациона јединица (ОЈ)</string>
+  <string name="ssl_cert_dialog_issued_on">Издато датума</string>
+  <string name="ssl_cert_dialog_expires_on">Истиче</string>
+  <string name="ssl_cert_dialog_dismiss">Одбаци</string>
 </resources>

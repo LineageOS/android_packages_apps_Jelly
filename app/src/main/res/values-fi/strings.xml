@@ -161,4 +161,15 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Haku</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL-sertifikaatin tiedot</string>
+  <string name="ssl_cert_dialog_domain">Toimialue</string>
+  <string name="ssl_cert_dialog_issued_to">Varmenteen saaja</string>
+  <string name="ssl_cert_dialog_issued_by">Myöntäjä</string>
+  <string name="ssl_cert_dialog_validity">Voimassaoloaika</string>
+  <string name="ssl_cert_dialog_common_name">Yleinen nimi (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organisaatio (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organisaatioyksikkö (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Myönnetty</string>
+  <string name="ssl_cert_dialog_expires_on">Vanhenee</string>
+  <string name="ssl_cert_dialog_dismiss">Hylkää</string>
 </resources>

@@ -161,4 +161,15 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Vyhledat</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Detaily certifikátu SSL</string>
+  <string name="ssl_cert_dialog_domain">Doména</string>
+  <string name="ssl_cert_dialog_issued_to">Vydáno pro</string>
+  <string name="ssl_cert_dialog_issued_by">Vydal</string>
+  <string name="ssl_cert_dialog_validity">Doba platnosti</string>
+  <string name="ssl_cert_dialog_common_name">Běžný název (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organizace (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organizační jednotka (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Vydáno</string>
+  <string name="ssl_cert_dialog_expires_on">Platnost končí</string>
+  <string name="ssl_cert_dialog_dismiss">Zamítnout</string>
 </resources>
