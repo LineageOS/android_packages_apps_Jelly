@@ -57,6 +57,7 @@
   <!-- Permission error dialog: title -->
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
+  <string name="permission_error_ask_again">Fråga igen</string>
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <!-- Settings: title -->
   <string name="settings_title">Inställningar</string>
