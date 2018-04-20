@@ -82,10 +82,11 @@ class WebClient extends WebViewClient {
                     && !request.isRedirect()
                     && startActivityForUrl(view, url)) {
                 return true;
-            } else if (!webViewExt.getRequestHeaders().isEmpty()) {
-                webViewExt.followUrl(url);
-                return true;
-            }
+        }
+
+        if (!webViewExt.getRequestHeaders().isEmpty()) {
+            webViewExt.followUrl(url);
+            return true;
         }
 
         return false;
