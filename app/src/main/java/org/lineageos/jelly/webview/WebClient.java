@@ -71,9 +71,10 @@ class WebClient extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+        WebViewExt webViewExt = (WebViewExt) view;
+        String url = request.getUrl().toString();
+
         if (request.isForMainFrame()) {
-            WebViewExt webViewExt = (WebViewExt) view;
-            String url = request.getUrl().toString();
             boolean needsLookup = request.hasGesture()
                     || !TextUtils.equals(url, webViewExt.getLastLoadedUrl());
 
@@ -82,10 +83,12 @@ class WebClient extends WebViewClient {
                     && !request.isRedirect()
                     && startActivityForUrl(view, url)) {
                 return true;
-            } else if (!webViewExt.getRequestHeaders().isEmpty()) {
-                webViewExt.followUrl(url);
-                return true;
             }
+        }
+
+        if (!webViewExt.getRequestHeaders().isEmpty()) {
+            webViewExt.followUrl(url);
+            return true;
         }
 
         return false;
