@@ -109,6 +109,10 @@
     <string name="pref_do_not_track_title">Do Not Track</string>
     <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">Send a Do Not Track request to websites you visit</string>
+    <!-- Settings: remove identifying headers title -->
+    <string name="pref_remove_identifying_headers_title">Remove identifying headers</string>
+    <!-- Settings: remove identifying headers summary -->
+    <string name="pref_remove_identifying_headers_summary">Do not send identifying headers to website you visit</string>
     <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Suggestions provider</string>
 

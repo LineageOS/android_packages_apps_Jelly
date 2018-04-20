@@ -68,6 +68,12 @@
             android:title="@string/pref_do_not_track_title" />
 
         <SwitchPreference
+            android:defaultValue="0"
+            android:key="key_remove_identifying_headers"
+            android:summary="@string/pref_remove_identifying_headers_summary"
+            android:title="@string/pref_remove_identifying_headers_title" />
+
+        <SwitchPreference
             android:defaultValue="1"
             android:key="key_cookie"
             android:summary="@string/pref_cookie_summary"
