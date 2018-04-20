@@ -54,6 +54,7 @@ public class WebViewExt extends WebView {
 
     private final Map<String, String> mRequestHeaders = new ArrayMap<>();
     private static final String HEADER_DNT = "DNT";
+    private static final String HEADER_REQUESTED_WITH = "X-Requested-With";
 
     public WebViewExt(Context context) {
         super(context);
@@ -145,6 +146,11 @@ public class WebViewExt extends WebView {
         if (PrefsUtils.getDoNotTrack(mActivity)) {
             mRequestHeaders.put(HEADER_DNT, "1");
         }
+
+        if (PrefsUtils.getRemoveIdentifyingHeaders(mActivity)) {
+            mRequestHeaders.put(HEADER_REQUESTED_WITH, "");
+        }
+
     }
 
     public void init(WebViewExtActivity activity, UrlBarController urlBarController,
