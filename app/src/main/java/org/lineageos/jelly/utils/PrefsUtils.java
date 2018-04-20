@@ -30,6 +30,7 @@ public final class PrefsUtils {
     private static final String KEY_LOCATION = "key_location";
     private static final String KEY_COOKIE = "key_cookie";
     private static final String KEY_DO_NOT_TRACK = "key_do_not_track";
+    private static final String KEY_REMOVE_IDENTIFYING_HEADERS = "key_remove_identifying_headers";
     private static final String KEY_SUGGESTION_PROVIDER = "key_suggestion_provider";
 
     public enum SuggestionProviderType {
@@ -83,6 +84,11 @@ public final class PrefsUtils {
     public static boolean getDoNotTrack(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         return prefs.getBoolean(KEY_DO_NOT_TRACK, false);
+    }
+
+    public static boolean getRemoveIdentifyingHeaders(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean(KEY_REMOVE_IDENTIFYING_HEADERS, false);
     }
 
     public static SuggestionProviderType getSuggestionProvider(Context context) {
