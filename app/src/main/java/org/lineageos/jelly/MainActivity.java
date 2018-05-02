@@ -43,11 +43,13 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.view.menu.MenuBuilder;
@@ -68,7 +70,7 @@ import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.webkit.WebChromeClient;
 import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -99,6 +101,8 @@ public class MainActivity extends WebViewExtActivity implements
     private static final String EXTRA_INCOGNITO = "extra_incognito";
     private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
     public static final String EXTRA_URL = "extra_url";
+    public static final String EXTRA_UI_MODE = "extra_ui_mode";
+    public static final String EVENT_CHANGE_UI_MODE = "intent_change_ui_mode";
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
@@ -120,7 +124,16 @@ public class MainActivity extends WebViewExtActivity implements
         }
     };
 
+    private final BroadcastReceiver mUiModeChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            setUiMode();
+        }
+    };
+
     private CoordinatorLayout mCoordinator;
+    private AppBarLayout mAppBar;
+    private FrameLayout mWebViewContainer;
     private WebViewExt mWebView;
     private ProgressBar mLoadingProgress;
     private SearchBarController mSearchController;
@@ -149,6 +162,8 @@ public class MainActivity extends WebViewExtActivity implements
         setSupportActionBar(toolbar);
 
         mCoordinator = findViewById(R.id.coordinator_layout);
+        mAppBar = findViewById(R.id.app_bar_layout);
+        mWebViewContainer = findViewById(R.id.web_view_container);
         mLoadingProgress = findViewById(R.id.load_progress);
         AutoCompleteTextView autoCompleteTextView = findViewById(R.id.url_bar);
         autoCompleteTextView.setAdapter(new SuggestionsAdapter(this));
@@ -204,6 +219,11 @@ public class MainActivity extends WebViewExtActivity implements
 
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+
+        // Listen for local broadcasts
+        registerLocalBroadcastListeners();
+
+        setUiMode();
 
         ImageView incognitoIcon = findViewById(R.id.incognito);
         incognitoIcon.setVisibility(mIncognito ? View.VISIBLE : View.GONE);
@@ -274,6 +294,14 @@ public class MainActivity extends WebViewExtActivity implements
         } else {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        // Unregister the local broadcast receiver because the activity is being trashed
+        unregisterLocalBroadcastsListeners();
+
+        super.onDestroy();
     }
 
     @Override
@@ -608,18 +636,37 @@ public class MainActivity extends WebViewExtActivity implements
         mLoadingProgress.setProgressTintList(ColorStateList.valueOf(progressColor));
         mLoadingProgress.postInvalidate();
 
-        getWindow().setStatusBarColor(color);
+        boolean isReachMode = UiUtils.isReachModeEnabled(this);
+        if (isReachMode) {
+            getWindow().setNavigationBarColor(color);
+        } else {
+            getWindow().setStatusBarColor(color);
+        }
 
         int flags = getWindow().getDecorView().getSystemUiVisibility();
         if (UiUtils.isColorLight(color)) {
-            flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            flags |= isReachMode ?
+                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR :
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
         } else {
-            flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            flags &= isReachMode ?
+                    ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR :
+                    ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
         }
         getWindow().getDecorView().setSystemUiVisibility(flags);
 
         setTaskDescription(new ActivityManager.TaskDescription(mWebView.getTitle(),
                 mUrlIcon, color));
+    }
+
+    private void resetSystemUIColor() {
+        int flags = getWindow().getDecorView().getSystemUiVisibility();
+        flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+        flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+        getWindow().getDecorView().setSystemUiVisibility(flags);
+
+        getWindow().setStatusBarColor(Color.BLACK);
+        getWindow().setNavigationBarColor(Color.BLACK);
     }
 
     private int getThemeColorWithFallback() {
@@ -643,8 +690,8 @@ public class MainActivity extends WebViewExtActivity implements
         mCustomView.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black));
         addContentView(mCustomView, new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        findViewById(R.id.app_bar_layout).setVisibility(View.GONE);
-        findViewById(R.id.web_view_container).setVisibility(View.GONE);
+        mAppBar.setVisibility(View.GONE);
+        mWebViewContainer.setVisibility(View.GONE);
     }
 
     @Override
@@ -654,8 +701,8 @@ public class MainActivity extends WebViewExtActivity implements
         }
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setImmersiveMode(false);
-        findViewById(R.id.app_bar_layout).setVisibility(View.VISIBLE);
-        findViewById(R.id.web_view_container).setVisibility(View.VISIBLE);
+        mAppBar.setVisibility(View.VISIBLE);
+        mWebViewContainer.setVisibility(View.VISIBLE);
         ViewGroup viewGroup = (ViewGroup) mCustomView.getParent();
         viewGroup.removeView(mCustomView);
         mFullScreenCallback.onCustomViewHidden();
@@ -704,6 +751,61 @@ public class MainActivity extends WebViewExtActivity implements
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         setImmersiveMode(hasFocus && mCustomView != null);
+    }
+
+    private void registerLocalBroadcastListeners() {
+        LocalBroadcastManager manager = LocalBroadcastManager.getInstance(this);
+
+        if (!UiUtils.isTablet(this)) {
+            manager.registerReceiver(mUiModeChangeReceiver, new IntentFilter(EVENT_CHANGE_UI_MODE));
+        }
+    }
+
+    private void unregisterLocalBroadcastsListeners() {
+        LocalBroadcastManager manager = LocalBroadcastManager.getInstance(this);
+
+        if (!UiUtils.isTablet(this)) {
+            manager.unregisterReceiver(mUiModeChangeReceiver);
+        }
+    }
+
+    private void setUiMode() {
+        // Now you don't see it
+        mCoordinator.setAlpha(0f);
+        // Magic happens
+        changeUiMode(UiUtils.isReachModeEnabled(this));
+        // Now you see it
+        mCoordinator.setAlpha(1f);
+    }
+
+    private void changeUiMode(boolean isReachMode) {
+        CoordinatorLayout.LayoutParams appBarParams =
+                (CoordinatorLayout.LayoutParams) mAppBar.getLayoutParams();
+        CoordinatorLayout.LayoutParams containerParams =
+                (CoordinatorLayout.LayoutParams) mWebViewContainer.getLayoutParams();
+
+
+        int margin = (int) UiUtils.getDimenAttr(this, R.style.AppTheme,
+                android.R.attr.actionBarSize);
+
+        if (isReachMode) {
+            appBarParams.gravity = Gravity.BOTTOM;
+            containerParams.setMargins(0, 0, 0, margin);
+        } else {
+            appBarParams.gravity = Gravity.TOP;
+            containerParams.setMargins(0, margin, 0, 0);
+        }
+
+        mAppBar.setLayoutParams(appBarParams);
+        mAppBar.invalidate();
+        mWebViewContainer.setLayoutParams(containerParams);
+        mWebViewContainer.invalidate();
+
+        resetSystemUIColor();
+
+        if (mThemeColor != 0) {
+            applyThemeColor(mThemeColor);
+        }
     }
 
     private static class SetAsFavoriteTask extends AsyncTask<Void, Void, Boolean> {

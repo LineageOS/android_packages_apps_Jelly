@@ -41,6 +41,12 @@
         android:summary="@string/pref_screenshot_snap_summary"
         android:title="@string/pref_screenshot_snap_title" />
 
+    <SwitchPreference
+        android:defaultValue="0"
+        android:key="key_reach_mode"
+        android:summary="@string/pref_reach_mode_summary"
+        android:title="@string/pref_reach_mode_title" />
+
     <PreferenceCategory android:title="@string/pref_privacy_security">
 
         <SwitchPreference

@@ -111,6 +111,10 @@
     <string name="pref_do_not_track_summary">Send a Do Not Track request to websites you visit</string>
     <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Suggestions provider</string>
+    <!-- Settings: reach mode title -->
+    <string name="pref_reach_mode_title">Reach mode</string>
+    <!-- Settings: reach mode summary -->
+    <string name="pref_reach_mode_summary">Relocate interface elements for easier one-hand usage</string>
 
     <!-- History: title -->
     <string name="history_title">History</string>

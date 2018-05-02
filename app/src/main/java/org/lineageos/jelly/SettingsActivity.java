@@ -16,9 +16,12 @@
 package org.lineageos.jelly;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.SwitchPreference;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +33,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.lineageos.jelly.utils.PrefsUtils;
+import org.lineageos.jelly.utils.UiUtils;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -66,6 +70,18 @@ public class SettingsActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
                 return true;
             });
+
+            SwitchPreference reachMode = (SwitchPreference) findPreference(("key_reach_mode"));
+            if (UiUtils.isTablet(getContext())) {
+                getPreferenceScreen().removePreference(reachMode);
+            } else {
+                reachMode.setOnPreferenceClickListener(preference -> {
+                    Intent intent = new Intent(MainActivity.EVENT_CHANGE_UI_MODE);
+                    intent.putExtra(MainActivity.EVENT_CHANGE_UI_MODE, reachMode.isChecked());
+                    LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
+                    return true;
+                });
+            }
         }
 
         private void editHomePage(Preference preference) {

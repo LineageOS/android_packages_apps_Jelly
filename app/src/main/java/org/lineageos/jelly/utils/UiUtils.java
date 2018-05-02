@@ -15,7 +15,10 @@
  */
 package org.lineageos.jelly.utils;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,12 +26,18 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.preference.PreferenceManager;
+import android.support.annotation.AttrRes;
+import android.support.annotation.DimenRes;
+import android.support.annotation.StyleRes;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v7.graphics.Palette;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
+
+import org.lineageos.jelly.R;
 
 public final class UiUtils {
 
@@ -112,5 +121,22 @@ public final class UiUtils {
     public static void setImageButtonEnabled(ImageButton button, boolean enabled) {
         button.setEnabled(enabled);
         button.setAlpha(enabled ? 1.0f : 0.4f);
+    }
+
+    public static boolean isTablet(Context context) {
+        return context.getResources().getBoolean(R.bool.is_tablet);
+    }
+
+    public static boolean isReachModeEnabled(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean("key_reach_mode", false);
+    }
+
+    public static float getDimenAttr(Context context, @StyleRes int style, @AttrRes int dimen) {
+        int[] args = { dimen };
+        TypedArray array = context.obtainStyledAttributes(style, args);
+        float result = array.getDimension(0, 0f);
+        array.recycle();
+        return result;
     }
 }
