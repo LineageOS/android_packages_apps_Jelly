@@ -160,4 +160,15 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Søk</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">SSL-sertifikatsdetaljer</string>
+  <string name="ssl_cert_dialog_domain">Domene</string>
+  <string name="ssl_cert_dialog_issued_to">Utstedt til</string>
+  <string name="ssl_cert_dialog_issued_by">Utstedt av</string>
+  <string name="ssl_cert_dialog_validity">Gyldighetsperiode</string>
+  <string name="ssl_cert_dialog_common_name">Ordinært navn (CN)</string>
+  <string name="ssl_cert_dialog_organization">Organisasjon (O)</string>
+  <string name="ssl_cert_dialog_organizational_unit">Organisasjonsenhet (UN)</string>
+  <string name="ssl_cert_dialog_issued_on">Utstedt den</string>
+  <string name="ssl_cert_dialog_expires_on">Utløper den</string>
+  <string name="ssl_cert_dialog_dismiss">Avvis</string>
 </resources>
