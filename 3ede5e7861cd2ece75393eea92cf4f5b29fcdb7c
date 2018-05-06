@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f94b60aa_78b1c758",
+        "filename": "build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2018-05-06T12:32:32Z",
+      "side": 1,
+      "message": "this doesn\u0027t really match AOSP, but I guess it\u0027s fine for our support usage",
+      "revId": "3ede5e7861cd2ece75393eea92cf4f5b29fcdb7c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
