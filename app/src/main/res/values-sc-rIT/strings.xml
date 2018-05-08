@@ -20,11 +20,17 @@
   <!-- Menu action: reload current page -->
   <!-- Menu action: add current page to favorites -->
   <!-- Menu action: share current page -->
+  <string name="menu_share">Cumpartzi</string>
   <!-- Menu action: show favorites list -->
+  <string name="menu_favorites">Preferidos</string>
   <!-- Menu action: show history list -->
+  <string name="menu_history">Cronologia</string>
   <!-- Menu action: add shortcut of the current page to the launcher -->
+  <string name="menu_shortcut">Agiunghe collegamentu curtzu</string>
   <!-- Menu action: show settings -->
+  <string name="menu_settings">Cunfiguratziones</string>
   <!-- Menu action: download selected file / image -->
+  <string name="menu_download">Iscàrriga</string>
   <!-- Menu action: open selected link in a new tab -->
   <!-- Menu action: enable desktop mode -->
   <!-- Menu action: enable phone mode -->
@@ -34,22 +40,27 @@
   <!-- Download dialog: title -->
   <!-- Download dialog: message -->
   <!-- Download dialog: button that starts the download -->
+  <string name="download_positive">Iscàrriga</string>
   <!-- Permission error dialog: title -->
   <!-- Permission error dialog: message for denied storage access-->
   <!-- Permission error dialog: button that triggers permission request again -->
   <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
   <!-- Settings: title -->
+  <string name="settings_title">Cunfiguratziones</string>
   <!-- Settings: search engine preference title -->
   <!-- Settings: home page preference title -->
+  <string name="pref_start_page">Pàgina printzipale</string>
   <!-- Settings: select home page dialog title -->
   <!-- Settings: select home page dialog message -->
   <!-- Settings: reset home page dialog action -->
+  <string name="pref_start_page_dialog_reset">Reseta</string>
   <!-- Settings: privacy and security category -->
   <!-- Settings: lookLock title -->
   <!-- Settings: lookLock summary -->
   <!-- Settings: javascript preference title -->
   <!-- Settings: javascript preference summary -->
   <!-- Settings: location preference title -->
+  <string name="pref_location_title">Positzione</string>
   <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
   <!-- Settings: cookie preference title -->
   <!-- Settings: cookie preference summary -->
@@ -61,20 +72,27 @@
   <!-- Settings: do not track preference summary -->
   <!-- Settings: suggestions provider title -->
   <!-- History: title -->
+  <string name="history_title">Cronologia</string>
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
   <!-- History: delete history dialog title -->
+  <string name="history_delete_title">Iscantzella sa cronologia</string>
   <!-- History: delete history dialog warning message -->
   <!-- History: delete history dialog button that erases all the history -->
+  <string name="history_delete_positive">Isbòida</string>
   <!-- History: delete history "working" dialog-->
   <!-- Favorite: title -->
+  <string name="favorite_title">Preferidos</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
   <!-- Favorite: empty status text -->
   <!-- Favorite: edit dialog title -->
   <!-- Favorite: edit dialog: title of the favorite -->
+  <string name="favorite_edit_title">Tìtulu</string>
   <!-- Favorite: edit dialog: url of the favorite-->
   <!-- Favorite: edit dialog positive button that save changes -->
+  <string name="favorite_edit_positive">Modìfica</string>
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
+  <string name="favorite_edit_delete">Iscantzella</string>
   <!-- Favorite: edit dialog: invalid url error message -->
   <!-- No activity found to open the given url error -->
   <!-- Auth dialog: title -->
@@ -84,6 +102,8 @@
   <!-- Auth dialog: login button -->
   <!-- Launcher shortcut: new incognito tab -->
   <!-- Suggestions provider: no suggestions provider -->
+  <string name="suggestions_provider_none">Nudda</string>
   <!-- Search in page: search hint -->
+  <string name="search_bar_hint">Chirca</string>
   <!-- SSL Certificate Details dialog -->
 </resources>

@@ -158,6 +158,7 @@
   <!-- Search in page: search hint -->
   <string name="search_bar_hint">Wyszukaj</string>
   <!-- SSL Certificate Details dialog -->
+  <string name="ssl_cert_dialog_title">Szczegóły Certyfikatu SSL</string>
   <string name="ssl_cert_dialog_domain">Domena</string>
   <string name="ssl_cert_dialog_issued_to">Wydany dla</string>
   <string name="ssl_cert_dialog_issued_by">Wydany przez</string>
