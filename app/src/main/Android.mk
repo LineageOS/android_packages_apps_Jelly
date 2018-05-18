@@ -40,8 +40,3 @@ LOCAL_PACKAGE_NAME := Jelly
 LOCAL_PROGUARD_FLAG_FILES := ../../proguard-rules.pro
 
 include $(BUILD_PACKAGE)
-
-include $(CLEAR_VARS)
-include $(BUILD_MULTI_PREBUILT)
-
-include $(call all-makefiles-under,$(LOCAL_PATH))
