@@ -98,8 +98,8 @@ public class MainActivity extends WebViewExtActivity implements
          SearchBarController.OnCancelListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
-    private static final String EXTRA_INCOGNITO = "extra_incognito";
     private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
+    public static final String EXTRA_INCOGNITO = "extra_incognito";
     public static final String EXTRA_URL = "extra_url";
     public static final String EXTRA_UI_MODE = "extra_ui_mode";
     public static final String EVENT_CHANGE_UI_MODE = "intent_change_ui_mode";

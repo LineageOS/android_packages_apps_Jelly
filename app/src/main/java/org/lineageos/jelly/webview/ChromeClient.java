@@ -18,6 +18,7 @@ package org.lineageos.jelly.webview;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Message;
 import android.net.Uri;
 import android.view.View;
 import android.webkit.GeolocationPermissions;
@@ -27,6 +28,7 @@ import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.history.HistoryProvider;
 import org.lineageos.jelly.ui.UrlBarController;
@@ -105,5 +107,20 @@ class ChromeClient extends WebChromeClientCompat {
     @Override
     public void onHideCustomView() {
         mActivity.onHideCustomView();
+    }
+
+    @Override
+    public boolean onCreateWindow(WebView view, boolean isDialog,
+                                  boolean isUserGesture, Message resultMsg) {
+        WebView.HitTestResult result = view.getHitTestResult();
+        String data = result.getExtra();
+        Intent intent = new Intent(mActivity, MainActivity.class);
+        if (data != null && !data.isEmpty()) {
+            intent.setData(Uri.parse(data));
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        intent.putExtra(MainActivity.EXTRA_INCOGNITO, mIncognito);
+        mActivity.startActivity(intent);
+        return true;
     }
 }
