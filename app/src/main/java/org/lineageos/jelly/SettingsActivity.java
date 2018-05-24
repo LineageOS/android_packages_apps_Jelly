@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import org.lineageos.jelly.utils.IntentUtils;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 
@@ -76,8 +77,8 @@ public class SettingsActivity extends AppCompatActivity {
                 getPreferenceScreen().removePreference(reachMode);
             } else {
                 reachMode.setOnPreferenceClickListener(preference -> {
-                    Intent intent = new Intent(MainActivity.EVENT_CHANGE_UI_MODE);
-                    intent.putExtra(MainActivity.EVENT_CHANGE_UI_MODE, reachMode.isChecked());
+                    Intent intent = new Intent(IntentUtils.EVENT_CHANGE_UI_MODE);
+                    intent.putExtra(IntentUtils.EVENT_CHANGE_UI_MODE, reachMode.isChecked());
                     LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
                     return true;
                 });
