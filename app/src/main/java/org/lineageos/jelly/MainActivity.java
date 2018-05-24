@@ -83,7 +83,9 @@ import org.lineageos.jelly.history.HistoryActivity;
 import org.lineageos.jelly.suggestions.SuggestionsAdapter;
 import org.lineageos.jelly.ui.SearchBarController;
 import org.lineageos.jelly.ui.UrlBarController;
+import org.lineageos.jelly.utils.IntentUtils;
 import org.lineageos.jelly.utils.PrefsUtils;
+import org.lineageos.jelly.utils.TabUtils;
 import org.lineageos.jelly.utils.UiUtils;
 import org.lineageos.jelly.webview.WebViewCompat;
 import org.lineageos.jelly.webview.WebViewExt;
@@ -98,11 +100,6 @@ public class MainActivity extends WebViewExtActivity implements
          SearchBarController.OnCancelListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
-    private static final String EXTRA_INCOGNITO = "extra_incognito";
-    private static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
-    public static final String EXTRA_URL = "extra_url";
-    public static final String EXTRA_UI_MODE = "extra_ui_mode";
-    public static final String EVENT_CHANGE_UI_MODE = "intent_change_ui_mode";
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
@@ -114,7 +111,7 @@ public class MainActivity extends WebViewExtActivity implements
         public void onReceive(Context context, Intent intent) {
             Intent resolvedIntent = intent.getParcelableExtra(Intent.EXTRA_INTENT);
             if (TextUtils.equals(getPackageName(), resolvedIntent.getPackage())) {
-                String url = intent.getStringExtra(EXTRA_URL);
+                String url = intent.getStringExtra(IntentUtils.EXTRA_URL);
                 mWebView.loadUrl(url);
             } else {
                 startActivity(resolvedIntent);
@@ -199,16 +196,16 @@ public class MainActivity extends WebViewExtActivity implements
 
         Intent intent = getIntent();
         String url = intent.getDataString();
-        mIncognito = intent.getBooleanExtra(EXTRA_INCOGNITO, false);
+        mIncognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false);
         boolean desktopMode = false;
 
         // Restore from previous instance
         if (savedInstanceState != null) {
-            mIncognito = savedInstanceState.getBoolean(EXTRA_INCOGNITO, mIncognito);
+            mIncognito = savedInstanceState.getBoolean(IntentUtils.EXTRA_INCOGNITO, mIncognito);
             if (url == null || url.isEmpty()) {
-                url = savedInstanceState.getString(EXTRA_URL, null);
+                url = savedInstanceState.getString(IntentUtils.EXTRA_URL, null);
             }
-            desktopMode = savedInstanceState.getBoolean(EXTRA_DESKTOP_MODE, false);
+            desktopMode = savedInstanceState.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false);
             mThemeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0);
         }
 
@@ -355,9 +352,9 @@ public class MainActivity extends WebViewExtActivity implements
         super.onSaveInstanceState(outState);
 
         // Preserve webView status
-        outState.putString(EXTRA_URL, mWebView.getUrl());
-        outState.putBoolean(EXTRA_INCOGNITO, mWebView.isIncognito());
-        outState.putBoolean(EXTRA_DESKTOP_MODE, mWebView.isDesktopMode());
+        outState.putString(IntentUtils.EXTRA_URL, mWebView.getUrl());
+        outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, mWebView.isIncognito());
+        outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, mWebView.isDesktopMode());
         outState.putInt(STATE_KEY_THEME_COLOR, mThemeColor);
     }
 
@@ -381,10 +378,10 @@ public class MainActivity extends WebViewExtActivity implements
             popupMenu.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
                     case R.id.menu_new:
-                        openInNewTab(null, false);
+                        TabUtils.openInNewTab(this, null, false);
                         break;
                     case R.id.menu_incognito:
-                        openInNewTab(null, true);
+                        TabUtils.openInNewTab(this, null, true);
                         break;
                     case R.id.menu_reload:
                         mWebView.reload();
@@ -446,16 +443,6 @@ public class MainActivity extends WebViewExtActivity implements
         findViewById(R.id.toolbar_search_page).setVisibility(View.GONE);
         findViewById(R.id.toolbar_search_bar).setVisibility(View.VISIBLE);
         mSearchActive = false;
-    }
-
-    private void openInNewTab(String url, boolean incognito) {
-        Intent intent = new Intent(this, MainActivity.class);
-        if (url != null && !url.isEmpty()) {
-            intent.setData(Uri.parse(url));
-        }
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        intent.putExtra(EXTRA_INCOGNITO, incognito);
-        startActivity(intent);
     }
 
     private void shareUrl(String url) {
@@ -547,7 +534,7 @@ public class MainActivity extends WebViewExtActivity implements
         View downloadLayout = view.findViewById(R.id.sheet_download);
 
         tabLayout.setOnClickListener(v -> {
-            openInNewTab(url, mIncognito);
+            TabUtils.openInNewTab(this, url, mIncognito);
             sheet.dismiss();
         });
         shareLayout.setOnClickListener(v -> {
@@ -757,7 +744,7 @@ public class MainActivity extends WebViewExtActivity implements
         LocalBroadcastManager manager = LocalBroadcastManager.getInstance(this);
 
         if (!UiUtils.isTablet(this)) {
-            manager.registerReceiver(mUiModeChangeReceiver, new IntentFilter(EVENT_CHANGE_UI_MODE));
+            manager.registerReceiver(mUiModeChangeReceiver, new IntentFilter(IntentUtils.EVENT_CHANGE_UI_MODE));
         }
     }
 
