@@ -105,6 +105,8 @@
   <string name="pref_do_not_track_summary">Unvia una solicitú de Nun rastrexar a los sitios web que visites</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Fornidor de suxerencies</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->

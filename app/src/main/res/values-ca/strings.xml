@@ -106,6 +106,10 @@
   <string name="pref_do_not_track_summary">Envia una sol·licitud per evitar el rastreig en els llocs web que visiti</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Proveïdor de suggeriments</string>
+  <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Mode simplificat</string>
+  <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Canvieu els elements de la interfície per a un ús més fàcil amb una sola mà</string>
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->

@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Enviar uma solicitação de \"não rastrear\" aos sites que você acessar</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Provedor de sugestões</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Histórico</string>
   <!-- History: empty status text -->

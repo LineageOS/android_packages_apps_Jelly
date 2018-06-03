@@ -106,6 +106,10 @@
   <string name="pref_do_not_track_summary">Invia una richiesta di non tracciabilità ai siti Web visitati</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Provider per suggerimenti</string>
+  <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Modalità una mano</string>
+  <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Riposiziona gli elementi dell\'interfaccia per facilitare l\'utilizzo ad una sola mano</string>
   <!-- History: title -->
   <string name="history_title">Cronologia</string>
   <!-- History: empty status text -->

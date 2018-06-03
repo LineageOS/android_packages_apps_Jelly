@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Kirim permintaan Jangan Melacak ke situs web yang dikunjungi</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Saran penyedia</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
   <!-- History: empty status text -->

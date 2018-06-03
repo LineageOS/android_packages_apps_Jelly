@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Odeslat požadavek „Nesledovat“ (Do Not Track) na webové stránky, které navštívíte</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Poskytovatel návrhů</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Historie</string>
   <!-- History: empty status text -->

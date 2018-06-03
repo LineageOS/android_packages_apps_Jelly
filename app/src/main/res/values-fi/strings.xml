@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Lähetä \"Do Not Track\"-pyyntö vierailemillesi verkkosivuille</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Ehdotusten tarjoaja</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Historia</string>
   <!-- History: empty status text -->

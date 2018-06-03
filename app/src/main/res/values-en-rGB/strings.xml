@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Send a Do Not Track request to websites you visit</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Suggestions provider</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">History</string>
   <!-- History: empty status text -->

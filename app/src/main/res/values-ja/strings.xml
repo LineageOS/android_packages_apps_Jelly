@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">ウェブサイトに Do Not Track 要求を送信します</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">提案プロパイダ</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">履歴</string>
   <!-- History: empty status text -->

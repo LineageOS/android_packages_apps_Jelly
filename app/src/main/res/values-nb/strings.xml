@@ -105,6 +105,8 @@
   <!-- Settings: do not track preference summary -->
   <string name="pref_do_not_track_summary">Send en Ikke-Spor-Meg -forespørsel til alle nettsider du besøker</string>
   <!-- Settings: suggestions provider title -->
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Historikk</string>
   <!-- History: empty status text -->

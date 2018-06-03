@@ -106,6 +106,10 @@
   <string name="pref_do_not_track_summary">Envoyer une requête \"ne pas me pister\" aux sites web que vous visitez</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Fournisseur de suggestions</string>
+  <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Mode Accès simplifié</string>
+  <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Modifier l\'emplacement des éléments de l\'interface pour faciliter l\'utilisation à une main</string>
   <!-- History: title -->
   <string name="history_title">Historique</string>
   <!-- History: empty status text -->

@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Браузер будет сообщать сайтам, что Вы не хотите, чтобы Вас отслеживали</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Поставщик поисковых предложений</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">История</string>
   <!-- History: empty status text -->

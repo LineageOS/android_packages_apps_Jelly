@@ -106,6 +106,10 @@
   <string name="pref_do_not_track_summary">傳送「不追蹤」請求至您瀏覽的網站</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">建議供應商</string>
+  <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">單手模式</string>
+  <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">重新定位介面元素以方便單手使用</string>
   <!-- History: title -->
   <string name="history_title">歷史紀錄</string>
   <!-- History: empty status text -->

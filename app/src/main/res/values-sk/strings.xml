@@ -106,6 +106,10 @@
   <string name="pref_do_not_track_summary">Odošle webovým stránkam požiadavku, aby vás nesledovali</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Poskytovateľ návrhov</string>
+  <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Režim dosahu</string>
+  <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Zmena umiestnenia prvkov rozhrania pre jednoduchšie ovládanie jednou rukou</string>
   <!-- History: title -->
   <string name="history_title">História</string>
   <!-- History: empty status text -->

@@ -106,6 +106,8 @@
   <string name="pref_do_not_track_summary">Надсилати \"Не відстежувати\" до веб-сторінок, які ви відвідуєте</string>
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Постачальник пропозицій</string>
+  <!-- Settings: reach mode title -->
+  <!-- Settings: reach mode summary -->
   <!-- History: title -->
   <string name="history_title">Історія</string>
   <!-- History: empty status text -->
