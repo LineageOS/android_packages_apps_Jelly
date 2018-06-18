@@ -107,7 +107,9 @@
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">提案プロパイダ</string>
   <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">片手モード</string>
   <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">片手で簡単に使用できるよう、UI要素を再配置します</string>
   <!-- History: title -->
   <string name="history_title">履歴</string>
   <!-- History: empty status text -->

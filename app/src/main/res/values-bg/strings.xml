@@ -107,7 +107,9 @@
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Предложения на доставчици</string>
   <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Управление с една ръка</string>
   <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Пренареди интерфейс елементите за по-лесно използване с една ръка</string>
   <!-- History: title -->
   <string name="history_title">История</string>
   <!-- History: empty status text -->

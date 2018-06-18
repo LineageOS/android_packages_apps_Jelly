@@ -107,7 +107,9 @@
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Dostawca sugestii</string>
   <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Tryb zasięgu</string>
   <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Zmień położenie elementów interfejsu dla łatwiejszej obsługi jedną ręką</string>
   <!-- History: title -->
   <string name="history_title">Historia</string>
   <!-- History: empty status text -->

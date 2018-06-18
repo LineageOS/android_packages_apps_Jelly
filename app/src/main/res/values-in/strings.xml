@@ -107,7 +107,9 @@
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Saran penyedia</string>
   <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Modus jangkauan</string>
   <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Relokasi elemen antarmuka untuk penggunaan satu-tangan yang lebih mudah</string>
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
   <!-- History: empty status text -->

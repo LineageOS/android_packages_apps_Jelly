@@ -69,9 +69,9 @@
   <!-- Settings: home page preference title -->
   <string name="pref_start_page">Домашняя страница</string>
   <!-- Settings: select home page dialog title -->
-  <string name="pref_start_page_dialog_title">Выбрать домашнюю страницу</string>
+  <string name="pref_start_page_dialog_title">Выберите домашнюю страницу</string>
   <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Введите адрес главной страницы</string>
+  <string name="pref_start_page_dialog_message">Введите адрес домашней страницы</string>
   <!-- Settings: reset home page dialog action -->
   <string name="pref_start_page_dialog_reset">Сбросить</string>
   <!-- Settings: privacy and security category -->
@@ -107,7 +107,9 @@
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Поставщик поисковых предложений</string>
   <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Управление одной рукой</string>
   <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Изменение расположения элементов интерфейса для удобного управления одной рукой</string>
   <!-- History: title -->
   <string name="history_title">История</string>
   <!-- History: empty status text -->

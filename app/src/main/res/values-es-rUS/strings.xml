@@ -151,7 +151,7 @@
   <!-- Auth dialog: password field -->
   <string name="auth_dialog_password">Contraseña:</string>
   <!-- Auth dialog: detail -->
-  <string name="auth_dialog_detail">%1$s requiere un nombre de usuario y contraseña.</string>
+  <string name="auth_dialog_detail">%1$s necesita un nombre de usuario y contraseña.</string>
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Iniciar sesión</string>
   <!-- Launcher shortcut: new incognito tab -->
