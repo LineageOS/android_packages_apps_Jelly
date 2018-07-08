@@ -96,6 +96,7 @@ public class WebViewExt extends WebView {
         getSettings().setJavaScriptCanOpenWindowsAutomatically(PrefsUtils.getJavascript(mActivity));
         getSettings().setGeolocationEnabled(PrefsUtils.getLocation(mActivity));
         getSettings().setSaveFormData(!mIncognito && PrefsUtils.getSaveFormData(mActivity));
+        getSettings().setSupportMultipleWindows(true);
         getSettings().setBuiltInZoomControls(true);
         getSettings().setDisplayZoomControls(false);
         getSettings().setAppCacheEnabled(!mIncognito);
