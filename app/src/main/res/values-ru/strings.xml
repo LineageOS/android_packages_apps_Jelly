@@ -129,7 +129,7 @@
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
   <string name="favorite_added">Сохранено в закладках</string>
   <!-- Favorite: empty status text -->
-  <string name="favorite_empty">Ничего нет. Добавьте закладку, чтобы увидеть её здесь</string>
+  <string name="favorite_empty">Ничего нет. Добавьте закладку, чтобы увидеть ее здесь</string>
   <!-- Favorite: edit dialog title -->
   <string name="favorite_edit_dialog_title">Редактирование закладки</string>
   <!-- Favorite: edit dialog: title of the favorite -->
@@ -141,7 +141,7 @@
   <!-- Favorite: edit dialog button that deletes the selected favorite -->
   <string name="favorite_edit_delete">Удалить</string>
   <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Введён недопустимый адрес</string>
+  <string name="favorite_edit_error">Введен недопустимый адрес</string>
   <!-- No activity found to open the given url error -->
   <string name="error_no_activity_found">Нет приложения для этой ссылки</string>
   <!-- Auth dialog: title -->
