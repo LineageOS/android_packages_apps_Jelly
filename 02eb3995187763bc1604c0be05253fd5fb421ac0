@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27df5570_52229cc1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2018-07-16T19:49:20Z",
+      "side": 1,
+      "message": "Nobody knows who \"I\" / you are in a commit message.\n\nThe fact you are the \"committer\" right now is not definitive,\na simple rebase to merge, or a cherry-pick, will erase that.",
+      "revId": "02eb3995187763bc1604c0be05253fd5fb421ac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
