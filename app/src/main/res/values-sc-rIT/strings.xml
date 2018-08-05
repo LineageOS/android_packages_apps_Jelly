@@ -83,6 +83,8 @@
   <!-- History: delete history dialog button that erases all the history -->
   <string name="history_delete_positive">Isbòida</string>
   <!-- History: delete history "working" dialog-->
+  <!-- History: entry deleted snackbar message -->
+  <!-- History: entry deleted snackbar button message -->
   <!-- Favorite: title -->
   <string name="favorite_title">Preferidos</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

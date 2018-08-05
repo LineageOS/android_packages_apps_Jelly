@@ -122,6 +122,8 @@
   <string name="history_delete_positive">Borrar</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Borrando el historial\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <!-- History: entry deleted snackbar button message -->
   <!-- Favorite: title -->
   <string name="favorite_title">Favoritos</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

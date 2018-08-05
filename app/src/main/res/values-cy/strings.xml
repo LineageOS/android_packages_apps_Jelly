@@ -69,6 +69,8 @@
   <!-- History: delete history dialog warning message -->
   <!-- History: delete history dialog button that erases all the history -->
   <!-- History: delete history "working" dialog-->
+  <!-- History: entry deleted snackbar message -->
+  <!-- History: entry deleted snackbar button message -->
   <!-- Favorite: title -->
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
   <!-- Favorite: empty status text -->

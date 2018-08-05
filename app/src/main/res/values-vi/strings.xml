@@ -107,7 +107,9 @@
   <!-- Settings: suggestions provider title -->
   <string name="pref_suggestions_provider">Nhà cung cấp đề xuất</string>
   <!-- Settings: reach mode title -->
+  <string name="pref_reach_mode_title">Chế độ tiệm cận</string>
   <!-- Settings: reach mode summary -->
+  <string name="pref_reach_mode_summary">Di chuyển các thành phần giao diện để sử dụng một tay dễ dàng hơn</string>
   <!-- History: title -->
   <string name="history_title">Lịch sử</string>
   <!-- History: empty status text -->
@@ -122,6 +124,10 @@
   <string name="history_delete_positive">Xóa</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Đang xóa lịch sử\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Mục đã xóa</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Hoàn tác</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Yêu thích</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

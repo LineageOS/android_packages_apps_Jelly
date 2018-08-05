@@ -124,6 +124,8 @@
   <string name="history_delete_positive">삭제</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">방문 기록을 삭제하는 중\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <!-- History: entry deleted snackbar button message -->
   <!-- Favorite: title -->
   <string name="favorite_title">즐겨찾기</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
