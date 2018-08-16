@@ -125,7 +125,9 @@
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Mazanie histórie\u2026</string>
   <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Položka bola vymazaná</string>
   <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Späť</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Obľúbené</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
