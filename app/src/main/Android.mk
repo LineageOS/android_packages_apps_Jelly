@@ -24,6 +24,7 @@ LOCAL_SRC_FILES := \
     $(call all-java-files-under, java_lineage)
 
 LOCAL_USE_AAPT2 := true
+LOCAL_CERTIFICATE := platform
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-design \
