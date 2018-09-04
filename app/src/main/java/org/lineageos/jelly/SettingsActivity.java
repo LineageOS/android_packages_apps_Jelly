@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
 import android.support.v4.content.LocalBroadcastManager;
@@ -33,6 +34,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.lineageos.jelly.utils.IntentUtils;
+import org.lineageos.jelly.utils.NetworkSecurityPolicyUtils;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UiUtils;
 
@@ -56,6 +58,9 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreate(Bundle savedInstance) {
             super.onCreate(savedInstance);
             addPreferencesFromResource(R.xml.settings);
+
+            PreferenceCategory securityCategory = (PreferenceCategory)
+                    findPreference("category_security");
 
             Preference homePage = findPreference("key_home_page");
             homePage.setSummary(PrefsUtils.getHomePage(getContext()));
@@ -82,6 +87,21 @@ public class SettingsActivity extends AppCompatActivity {
                     LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
                     return true;
                 });
+            }
+
+            SwitchPreference clearTextTraffic = (SwitchPreference)
+                    findPreference("key_clear_text_traffic");
+            if (NetworkSecurityPolicyUtils.isSupported()) {
+                clearTextTraffic.setOnPreferenceChangeListener((preference, value) -> {
+                    if (value instanceof Boolean) {
+                        NetworkSecurityPolicyUtils.setCleartextTrafficPermitted((Boolean) value);
+                        return true;
+                    }
+
+                    return false;
+                });
+            } else {
+                securityCategory.removePreference(clearTextTraffic);
             }
         }
 
