@@ -47,7 +47,9 @@
         android:summary="@string/pref_reach_mode_summary"
         android:title="@string/pref_reach_mode_title" />
 
-    <PreferenceCategory android:title="@string/pref_privacy_security">
+    <PreferenceCategory
+        android:key="category_security"
+        android:title="@string/pref_privacy_security">
 
         <SwitchPreference
             android:defaultValue="0"
@@ -72,6 +74,13 @@
             android:key="key_do_not_track"
             android:summary="@string/pref_do_not_track_summary"
             android:title="@string/pref_do_not_track_title" />
+
+        <SwitchPreference
+            android:defaultValue="1"
+            android:key="key_clear_text_traffic"
+            android:summaryOff="@string/pref_clear_text_traffic_summary_off"
+            android:summaryOn="@string/pref_clear_text_traffic_summary_on"
+            android:title="@string/pref_clear_text_traffic_title" />
 
         <SwitchPreference
             android:defaultValue="1"
