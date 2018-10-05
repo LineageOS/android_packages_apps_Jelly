@@ -17,6 +17,7 @@ package org.lineageos.jelly.utils;
 
 public final class IntentUtils {
     public static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
+    public static final String EXTRA_ADBLOCK_ENABLED = "extra_adblock_mode";
     public static final String EXTRA_INCOGNITO = "extra_incognito";
     public static final String EXTRA_URL = "extra_url";
     public static final String EXTRA_UI_MODE = "extra_ui_mode";
