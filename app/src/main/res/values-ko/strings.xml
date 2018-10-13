@@ -110,6 +110,9 @@
   <string name="pref_reach_mode_title">한 손 모드</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">한 손으로 잡은 상태에서 편하게 사용할 수 있도록 인터페이스 재배치</string>
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">방문 기록</string>
   <!-- History: empty status text -->
@@ -125,6 +128,7 @@
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">방문 기록을 삭제하는 중\u2026</string>
   <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">항목 삭제됨</string>
   <!-- History: entry deleted snackbar button message -->
   <string name="history_snackbar_item_deleted_message">실행 취소</string>
   <!-- Favorite: title -->

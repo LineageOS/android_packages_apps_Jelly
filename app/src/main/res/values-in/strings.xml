@@ -110,6 +110,9 @@
   <string name="pref_reach_mode_title">Modus jangkauan</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Relokasi elemen antarmuka untuk penggunaan satu-tangan yang lebih mudah</string>
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">Riwayat</string>
   <!-- History: empty status text -->
@@ -125,7 +128,9 @@
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Membersihkan riwayat\u2026</string>
   <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Masukan dihapus</string>
   <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Urungkan</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Favorit</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

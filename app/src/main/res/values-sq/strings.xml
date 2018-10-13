@@ -63,6 +63,9 @@
   <!-- Settings: suggestions provider title -->
   <!-- Settings: reach mode title -->
   <!-- Settings: reach mode summary -->
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <!-- History: empty status text -->
   <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->

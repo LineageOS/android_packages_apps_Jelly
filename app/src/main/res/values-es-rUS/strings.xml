@@ -110,6 +110,9 @@
   <string name="pref_reach_mode_title">Modo simple</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Reubicar los elementos de la interfaz para facilitar el uso con una sola mano</string>
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->
@@ -125,7 +128,9 @@
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Limpiando historial\u2026</string>
   <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Entrada eliminada</string>
   <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Deshacer</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Favoritos</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

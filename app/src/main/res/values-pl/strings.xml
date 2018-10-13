@@ -110,6 +110,9 @@
   <string name="pref_reach_mode_title">Tryb zasięgu</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Zmień położenie elementów interfejsu dla łatwiejszej obsługi jedną ręką</string>
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">Historia</string>
   <!-- History: empty status text -->
@@ -126,7 +129,9 @@
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Czyszczenie historii\u2026</string>
   <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Wpis usunięto</string>
   <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Cofnij</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Ulubione</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

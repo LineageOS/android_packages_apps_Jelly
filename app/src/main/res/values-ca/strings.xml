@@ -110,6 +110,9 @@
   <string name="pref_reach_mode_title">Mode simplificat</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Canvieu els elements de la interfície per a un ús més fàcil amb una sola mà</string>
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">Historial</string>
   <!-- History: empty status text -->

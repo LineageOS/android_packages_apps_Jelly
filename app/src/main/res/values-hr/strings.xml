@@ -108,6 +108,9 @@
   <string name="pref_suggestions_provider">Prijedlozi davatelja</string>
   <!-- Settings: reach mode title -->
   <!-- Settings: reach mode summary -->
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">Povijest</string>
   <!-- History: empty status text -->

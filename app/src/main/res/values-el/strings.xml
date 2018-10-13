@@ -110,6 +110,12 @@
   <string name="pref_reach_mode_title">Λειτουργία προσέγγισης</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Μεταφορά των στοιχείων διεπαφής για ευκολότερη χρήση με ένα χέρι</string>
+  <!-- Settings: clear traffic title -->
+  <string name="pref_clear_text_traffic_title">Να επιτρέπονται μη ασφαλείς ιστοσελίδες</string>
+  <!-- Settings: clear traffic summary on -->
+  <string name="pref_clear_text_traffic_summary_on">Επιτρέπεται η κυκλοφορία απλού κειμένου (όπως το http)</string>
+  <!-- Settings: clear traffic summary off -->
+  <string name="pref_clear_text_traffic_summary_off">Δεν επιτρέπεται η κυκλοφορία απλού κειμένου (όπως το http)</string>
   <!-- History: title -->
   <string name="history_title">Ιστορικό</string>
   <!-- History: empty status text -->

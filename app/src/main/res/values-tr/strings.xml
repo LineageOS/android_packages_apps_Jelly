@@ -110,6 +110,12 @@
   <string name="pref_reach_mode_title">Erişim modu</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Daha kolay tek elle kullanım için arabirim öğelerini yeniden konumlandırın</string>
+  <!-- Settings: clear traffic title -->
+  <string name="pref_clear_text_traffic_title">Güvenli olmayan web sitelerine izin ver</string>
+  <!-- Settings: clear traffic summary on -->
+  <string name="pref_clear_text_traffic_summary_on">Metin trafiğini temizlemeye (http gibi) izin veriliyor</string>
+  <!-- Settings: clear traffic summary off -->
+  <string name="pref_clear_text_traffic_summary_off">Metin trafiğini temizlemeye (http gibi) izin verilmiyor</string>
   <!-- History: title -->
   <string name="history_title">Geçmiş</string>
   <!-- History: empty status text -->

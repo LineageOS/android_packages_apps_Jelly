@@ -110,6 +110,12 @@
   <string name="pref_reach_mode_title">单手模式</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">重新排列界面元素以便于单手操作</string>
+  <!-- Settings: clear traffic title -->
+  <string name="pref_clear_text_traffic_title">允许不安全的网站</string>
+  <!-- Settings: clear traffic summary on -->
+  <string name="pref_clear_text_traffic_summary_on">允许明文流量（如 http）</string>
+  <!-- Settings: clear traffic summary off -->
+  <string name="pref_clear_text_traffic_summary_off">不允许明文流量（如 http）</string>
   <!-- History: title -->
   <string name="history_title">历史记录</string>
   <!-- History: empty status text -->

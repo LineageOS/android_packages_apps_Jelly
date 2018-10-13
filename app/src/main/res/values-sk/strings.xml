@@ -110,6 +110,9 @@
   <string name="pref_reach_mode_title">Režim dosahu</string>
   <!-- Settings: reach mode summary -->
   <string name="pref_reach_mode_summary">Zmena umiestnenia prvkov rozhrania pre jednoduchšie ovládanie jednou rukou</string>
+  <!-- Settings: clear traffic title -->
+  <!-- Settings: clear traffic summary on -->
+  <!-- Settings: clear traffic summary off -->
   <!-- History: title -->
   <string name="history_title">História</string>
   <!-- History: empty status text -->
