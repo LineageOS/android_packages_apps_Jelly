@@ -124,6 +124,10 @@
   <string name="history_delete_positive">Tyhjennä</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Tyhjennetään historiaa\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Merkintä poistettu</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Kumoa</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Kirjanmerkit</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

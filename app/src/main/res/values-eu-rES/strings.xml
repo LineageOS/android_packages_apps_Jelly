@@ -124,6 +124,10 @@
   <string name="history_delete_positive">Garbitu</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Historiala garbitzen\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Sarrera ezabatuta</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Desegin</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Gogokoak</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

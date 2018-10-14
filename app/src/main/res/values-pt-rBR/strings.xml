@@ -124,6 +124,9 @@
   <string name="history_delete_positive">Limpar</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Limpando histórico\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Desfazer</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Favoritos</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

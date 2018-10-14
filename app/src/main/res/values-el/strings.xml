@@ -124,6 +124,10 @@
   <string name="history_delete_positive">Εκκαθάριση</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Διαγραφή ιστορικού\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Η καταχώρηση διαγράφηκε</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Αναίρεση</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Αγαπημένα</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

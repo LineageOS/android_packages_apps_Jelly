@@ -124,6 +124,10 @@
   <string name="history_delete_positive">Počisti</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Čiščenje zgodovine \u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Vnos izbrisan</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Razveljavi</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Zaznamki</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->

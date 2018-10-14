@@ -124,6 +124,10 @@
   <string name="history_delete_positive">Limpiar</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">Limpiando historial\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">Entrada eliminada</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">Deshacer</string>
   <!-- Favorite: title -->
   <string name="favorite_title">Favoritos</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
@@ -151,7 +155,7 @@
   <!-- Auth dialog: password field -->
   <string name="auth_dialog_password">Contraseña:</string>
   <!-- Auth dialog: detail -->
-  <string name="auth_dialog_detail">%1$s requiere un nombre de usuario y contraseña.</string>
+  <string name="auth_dialog_detail">%1$s necesita un nombre de usuario y contraseña.</string>
   <!-- Auth dialog: login button -->
   <string name="auth_dialog_login">Iniciar sesión</string>
   <!-- Launcher shortcut: new incognito tab -->

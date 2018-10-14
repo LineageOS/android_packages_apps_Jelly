@@ -124,6 +124,10 @@
   <string name="history_delete_positive">נקה</string>
   <!-- History: delete history "working" dialog-->
   <string name="history_deleting_message">מוחק את ההיסטוריה\u2026</string>
+  <!-- History: entry deleted snackbar message -->
+  <string name="history_snackbar_item_deleted">הרשומה נמחקה</string>
+  <!-- History: entry deleted snackbar button message -->
+  <string name="history_snackbar_item_deleted_message">ביטול</string>
   <!-- Favorite: title -->
   <string name="favorite_title">מועדפים</string>
   <!-- Favorite: snackBar message shown when an url is added to favorites -->
