@@ -15,163 +15,163 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Nettleser</string>
-  <!-- Menu action: create new tab -->
-  <string name="menu_new_tab">Ny fane</string>
-  <!-- Menu action: create new incognito tab -->
-  <string name="menu_incognito">Inkognito-fane</string>
-  <!-- Menu action: reload current page -->
-  <string name="menu_reload">Last inn på nytt</string>
-  <!-- Menu action: add current page to favorites -->
-  <string name="menu_fav_add">Legg til som favoritt</string>
-  <!-- Menu action: share current page -->
-  <string name="menu_share">Del</string>
-  <!-- Menu action: show favorites list -->
-  <string name="menu_favorites">Favoritter</string>
-  <!-- Menu action: show history list -->
-  <string name="menu_history">Historikk</string>
-  <!-- Menu action: add shortcut of the current page to the launcher -->
-  <string name="menu_shortcut">Legg til snarvei</string>
-  <!-- Menu action: show settings -->
-  <string name="menu_settings">Innstillinger</string>
-  <!-- Menu action: download selected file / image -->
-  <string name="menu_download">Last ned</string>
-  <!-- Menu action: open selected link in a new tab -->
-  <string name="menu_in_new_tab">Åpne i ny fane</string>
-  <!-- Menu action: enable desktop mode -->
-  <string name="menu_desktop_mode">Bytt til skrivebordside</string>
-  <!-- Menu action: enable phone mode -->
-  <string name="menu_mobile_mode">Bytt til mobilside</string>
-  <!-- Menu action: search in page -->
-  <string name="menu_search">Finn på side</string>
-  <!-- Share webPage: "send to" dialog title -->
-  <string name="share_title">Send til</string>
-  <!-- Dialog action: dismiss -->
-  <string name="dismiss">Avvis</string>
-  <!-- Download dialog: title -->
-  <string name="download_title">Last ned fil</string>
-  <!-- Download dialog: message -->
-  <string name="download_message">Vil du laste ned %1$s?</string>
-  <!-- Download dialog: button that starts the download -->
-  <string name="download_positive">Last ned</string>
-  <!-- Permission error dialog: title -->
-  <string name="permission_error_title">Tilgangsfeil</string>
-  <!-- Permission error dialog: message for denied storage access-->
-  <string name="permission_error_storage">Nettleseren trenger lagringstilgang for å laste ned sider. Tildel denne for å lagre filer fra nettet</string>
-  <!-- Permission error dialog: button that triggers permission request again -->
-  <string name="permission_error_ask_again">Spør igjen</string>
-  <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">Tilgang nektet for godt. Tildel den i innstillingene</string>
-  <!-- Settings: title -->
-  <string name="settings_title">Innstillinger</string>
-  <!-- Settings: search engine preference title -->
-  <string name="pref_search_engine">Søkemotor</string>
-  <!-- Settings: home page preference title -->
-  <string name="pref_start_page">Hjemmeside</string>
-  <!-- Settings: select home page dialog title -->
-  <string name="pref_start_page_dialog_title">Velg hjemmeside</string>
-  <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Angi hjemmeside-adressen</string>
-  <!-- Settings: reset home page dialog action -->
-  <string name="pref_start_page_dialog_reset">Tilbakestill</string>
-  <!-- Settings: privacy and security category -->
-  <string name="pref_privacy_security">Personvern og sikkerhet</string>
-  <!-- Settings: lookLock title -->
-  <string name="pref_looklock_title">LookLock</string>
-  <!-- Settings: lookLock summary -->
-  <string name="pref_looklock_summary">Forhindre andre apper i å lese nettleserens innhold</string>
-  <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">JavaScript</string>
-  <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Aktiver JavaScript</string>
-  <!-- Settings: location preference title -->
-  <string name="pref_location_title">Plassering</string>
-  <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
-  <string name="pref_location_summary">Tillat nettsider å forespørre din plassering</string>
-  <!-- Settings: cookie preference title -->
-  <string name="pref_cookie_title">Informasjonskapsler</string>
-  <!-- Settings: cookie preference summary -->
-  <string name="pref_cookie_summary">Tillat nettsider å lagre og laste informasjonskapsler</string>
-  <!-- Settings: advanced share preference title -->
-  <string name="pref_screenshot_snap_title">Avansert deling</string>
-  <!-- Settings: advanced share preference summary -->
-  <string name="pref_screenshot_snap_summary">Del forhåndsvisning av den delte nettsiden</string>
-  <!-- Settings: clear cookie -->
-  <string name="pref_cookie_clear">Tøm informasjonskapsler</string>
-  <!-- Settings: clear cookie toast confirmation -->
-  <string name="pref_cookie_clear_done">Tømte alle informasjonskapsler</string>
-  <!-- Settings: do not track preference title -->
-  <string name="pref_do_not_track_title">Ikke-Spor-Meg</string>
-  <!-- Settings: do not track preference summary -->
-  <string name="pref_do_not_track_summary">Send en Ikke-Spor-Meg -forespørsel til alle nettsider du besøker</string>
-  <!-- Settings: suggestions provider title -->
-  <!-- Settings: reach mode title -->
-  <!-- Settings: reach mode summary -->
-  <!-- Settings: clear traffic title -->
-  <!-- Settings: clear traffic summary on -->
-  <!-- Settings: clear traffic summary off -->
-  <!-- History: title -->
-  <string name="history_title">Historikk</string>
-  <!-- History: empty status text -->
-  <string name="history_empty">Ingenting her, surf på nettet for å se historikken din her</string>
-  <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
-  <!-- History: delete history dialog title -->
-  <string name="history_delete_title">Tøm historikk</string>
-  <!-- History: delete history dialog warning message -->
-  <string name="history_delete_message">Du er i ferd med å slette all din historikk, denne handlingen kan ikke angres. Ønsker du å fortsette?</string>
-  <!-- History: delete history dialog button that erases all the history -->
-  <string name="history_delete_positive">Tøm</string>
-  <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">Tømmer historikk\u2026</string>
-  <!-- History: entry deleted snackbar message -->
-  <!-- History: entry deleted snackbar button message -->
-  <!-- Favorite: title -->
-  <string name="favorite_title">Favoritter</string>
-  <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <string name="favorite_added">Lagt til i favoritter</string>
-  <!-- Favorite: empty status text -->
-  <string name="favorite_empty">Ingenting her, legg til en favorittlenke for å se den her</string>
-  <!-- Favorite: edit dialog title -->
-  <string name="favorite_edit_dialog_title">Rediger favoritt</string>
-  <!-- Favorite: edit dialog: title of the favorite -->
-  <string name="favorite_edit_title">Tittel</string>
-  <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">Nettadresse</string>
-  <!-- Favorite: edit dialog positive button that save changes -->
-  <string name="favorite_edit_positive">Rediger</string>
-  <!-- Favorite: edit dialog button that deletes the selected favorite -->
-  <string name="favorite_edit_delete">Slett</string>
-  <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Angi en gyldig nettadresse</string>
-  <!-- No activity found to open the given url error -->
-  <string name="error_no_activity_found">Ingen app kan tolke denne lenken</string>
-  <!-- Auth dialog: title -->
-  <string name="auth_dialog_title">Autentisering kreves</string>
-  <!-- Auth dialog: username field -->
-  <string name="auth_dialog_username">Brukernavn:</string>
-  <!-- Auth dialog: password field -->
-  <string name="auth_dialog_password">Passord:</string>
-  <!-- Auth dialog: detail -->
-  <string name="auth_dialog_detail">%1$s krever et brukernavn og passord.</string>
-  <!-- Auth dialog: login button -->
-  <string name="auth_dialog_login">Logg inn</string>
-  <!-- Launcher shortcut: new incognito tab -->
-  <string name="shortcut_new_incognito_tab">Ny inkognitofane</string>
-  <!-- Suggestions provider: no suggestions provider -->
-  <string name="suggestions_provider_none">Ingen</string>
-  <!-- Search in page: search hint -->
-  <string name="search_bar_hint">Søk</string>
-  <!-- SSL Certificate Details dialog -->
-  <string name="ssl_cert_dialog_title">SSL-sertifikatsdetaljer</string>
-  <string name="ssl_cert_dialog_domain">Domene</string>
-  <string name="ssl_cert_dialog_issued_to">Utstedt til</string>
-  <string name="ssl_cert_dialog_issued_by">Utstedt av</string>
-  <string name="ssl_cert_dialog_validity">Gyldighetsperiode</string>
-  <string name="ssl_cert_dialog_common_name">Ordinært navn (CN)</string>
-  <string name="ssl_cert_dialog_organization">Organisasjon (O)</string>
-  <string name="ssl_cert_dialog_organizational_unit">Organisasjonsenhet (UN)</string>
-  <string name="ssl_cert_dialog_issued_on">Utstedt den</string>
-  <string name="ssl_cert_dialog_expires_on">Utløper den</string>
-  <string name="ssl_cert_dialog_dismiss">Avvis</string>
+    <string name="app_name">Nettleser</string>
+    <!-- Menu action: create new tab -->
+    <string name="menu_new_tab">Ny fane</string>
+    <!-- Menu action: create new incognito tab -->
+    <string name="menu_incognito">Inkognito-fane</string>
+    <!-- Menu action: reload current page -->
+    <string name="menu_reload">Last inn på nytt</string>
+    <!-- Menu action: add current page to favorites -->
+    <string name="menu_fav_add">Legg til som favoritt</string>
+    <!-- Menu action: share current page -->
+    <string name="menu_share">Del</string>
+    <!-- Menu action: show favorites list -->
+    <string name="menu_favorites">Favoritter</string>
+    <!-- Menu action: show history list -->
+    <string name="menu_history">Historikk</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
+    <string name="menu_shortcut">Legg til snarvei</string>
+    <!-- Menu action: show settings -->
+    <string name="menu_settings">Innstillinger</string>
+    <!-- Menu action: download selected file / image -->
+    <string name="menu_download">Last ned</string>
+    <!-- Menu action: open selected link in a new tab -->
+    <string name="menu_in_new_tab">Åpne i ny fane</string>
+    <!-- Menu action: enable desktop mode -->
+    <string name="menu_desktop_mode">Bytt til skrivebordside</string>
+    <!-- Menu action: enable phone mode -->
+    <string name="menu_mobile_mode">Bytt til mobilside</string>
+    <!-- Menu action: search in page -->
+    <string name="menu_search">Finn på side</string>
+    <!-- Share webPage: "send to" dialog title -->
+    <string name="share_title">Send til</string>
+    <!-- Dialog action: dismiss -->
+    <string name="dismiss">Avvis</string>
+    <!-- Download dialog: title -->
+    <string name="download_title">Last ned fil</string>
+    <!-- Download dialog: message -->
+    <string name="download_message">Vil du laste ned %1$s?</string>
+    <!-- Download dialog: button that starts the download -->
+    <string name="download_positive">Last ned</string>
+    <!-- Permission error dialog: title -->
+    <string name="permission_error_title">Tilgangsfeil</string>
+    <!-- Permission error dialog: message for denied storage access-->
+    <string name="permission_error_storage">Nettleseren trenger lagringstilgang for å laste ned sider. Tildel denne for å lagre filer fra nettet</string>
+    <!-- Permission error dialog: button that triggers permission request again -->
+    <string name="permission_error_ask_again">Spør igjen</string>
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+    <string name="permission_error_forever">Tilgang nektet for godt. Tildel den i innstillingene</string>
+    <!-- Settings: title -->
+    <string name="settings_title">Innstillinger</string>
+    <!-- Settings: search engine preference title -->
+    <string name="pref_search_engine">Søkemotor</string>
+    <!-- Settings: home page preference title -->
+    <string name="pref_start_page">Hjemmeside</string>
+    <!-- Settings: select home page dialog title -->
+    <string name="pref_start_page_dialog_title">Velg hjemmeside</string>
+    <!-- Settings: select home page dialog message -->
+    <string name="pref_start_page_dialog_message">Angi hjemmeside-adressen</string>
+    <!-- Settings: reset home page dialog action -->
+    <string name="pref_start_page_dialog_reset">Tilbakestill</string>
+    <!-- Settings: privacy and security category -->
+    <string name="pref_privacy_security">Personvern og sikkerhet</string>
+    <!-- Settings: lookLock title -->
+    <string name="pref_looklock_title">LookLock</string>
+    <!-- Settings: lookLock summary -->
+    <string name="pref_looklock_summary">Forhindre andre apper i å lese nettleserens innhold</string>
+    <!-- Settings: javascript preference title -->
+    <string name="pref_js_title">JavaScript</string>
+    <!-- Settings: javascript preference summary -->
+    <string name="pref_js_summary">Aktiver JavaScript</string>
+    <!-- Settings: location preference title -->
+    <string name="pref_location_title">Plassering</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+    <string name="pref_location_summary">Tillat nettsider å forespørre din plassering</string>
+    <!-- Settings: cookie preference title -->
+    <string name="pref_cookie_title">Informasjonskapsler</string>
+    <!-- Settings: cookie preference summary -->
+    <string name="pref_cookie_summary">Tillat nettsider å lagre og laste informasjonskapsler</string>
+    <!-- Settings: advanced share preference title -->
+    <string name="pref_screenshot_snap_title">Avansert deling</string>
+    <!-- Settings: advanced share preference summary -->
+    <string name="pref_screenshot_snap_summary">Del forhåndsvisning av den delte nettsiden</string>
+    <!-- Settings: clear cookie -->
+    <string name="pref_cookie_clear">Tøm informasjonskapsler</string>
+    <!-- Settings: clear cookie toast confirmation -->
+    <string name="pref_cookie_clear_done">Tømte alle informasjonskapsler</string>
+    <!-- Settings: do not track preference title -->
+    <string name="pref_do_not_track_title">Ikke-Spor-Meg</string>
+    <!-- Settings: do not track preference summary -->
+    <string name="pref_do_not_track_summary">Send en Ikke-Spor-Meg -forespørsel til alle nettsider du besøker</string>
+    <!-- Settings: suggestions provider title -->
+    <!-- Settings: reach mode title -->
+    <!-- Settings: reach mode summary -->
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
+    <string name="history_title">Historikk</string>
+    <!-- History: empty status text -->
+    <string name="history_empty">Ingenting her, surf på nettet for å se historikken din her</string>
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+    <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
+    <!-- History: delete history dialog title -->
+    <string name="history_delete_title">Tøm historikk</string>
+    <!-- History: delete history dialog warning message -->
+    <string name="history_delete_message">Du er i ferd med å slette all din historikk, denne handlingen kan ikke angres. Ønsker du å fortsette?</string>
+    <!-- History: delete history dialog button that erases all the history -->
+    <string name="history_delete_positive">Tøm</string>
+    <!-- History: delete history "working" dialog-->
+    <string name="history_deleting_message">Tømmer historikk\u2026</string>
+    <!-- History: entry deleted snackbar message -->
+    <!-- History: entry deleted snackbar button message -->
+    <!-- Favorite: title -->
+    <string name="favorite_title">Favoritter</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
+    <string name="favorite_added">Lagt til i favoritter</string>
+    <!-- Favorite: empty status text -->
+    <string name="favorite_empty">Ingenting her, legg til en favorittlenke for å se den her</string>
+    <!-- Favorite: edit dialog title -->
+    <string name="favorite_edit_dialog_title">Rediger favoritt</string>
+    <!-- Favorite: edit dialog: title of the favorite -->
+    <string name="favorite_edit_title">Tittel</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
+    <string name="favorite_edit_url">Nettadresse</string>
+    <!-- Favorite: edit dialog positive button that save changes -->
+    <string name="favorite_edit_positive">Rediger</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
+    <string name="favorite_edit_delete">Slett</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
+    <string name="favorite_edit_error">Angi en gyldig nettadresse</string>
+    <!-- No activity found to open the given url error -->
+    <string name="error_no_activity_found">Ingen app kan tolke denne lenken</string>
+    <!-- Auth dialog: title -->
+    <string name="auth_dialog_title">Autentisering kreves</string>
+    <!-- Auth dialog: username field -->
+    <string name="auth_dialog_username">Brukernavn:</string>
+    <!-- Auth dialog: password field -->
+    <string name="auth_dialog_password">Passord:</string>
+    <!-- Auth dialog: detail -->
+    <string name="auth_dialog_detail">%1$s krever et brukernavn og passord.</string>
+    <!-- Auth dialog: login button -->
+    <string name="auth_dialog_login">Logg inn</string>
+    <!-- Launcher shortcut: new incognito tab -->
+    <string name="shortcut_new_incognito_tab">Ny inkognitofane</string>
+    <!-- Suggestions provider: no suggestions provider -->
+    <string name="suggestions_provider_none">Ingen</string>
+    <!-- Search in page: search hint -->
+    <string name="search_bar_hint">Søk</string>
+    <!-- SSL Certificate Details dialog -->
+    <string name="ssl_cert_dialog_title">SSL-sertifikatsdetaljer</string>
+    <string name="ssl_cert_dialog_domain">Domene</string>
+    <string name="ssl_cert_dialog_issued_to">Utstedt til</string>
+    <string name="ssl_cert_dialog_issued_by">Utstedt av</string>
+    <string name="ssl_cert_dialog_validity">Gyldighetsperiode</string>
+    <string name="ssl_cert_dialog_common_name">Ordinært navn (CN)</string>
+    <string name="ssl_cert_dialog_organization">Organisasjon (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Organisasjonsenhet (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Utstedt den</string>
+    <string name="ssl_cert_dialog_expires_on">Utløper den</string>
+    <string name="ssl_cert_dialog_dismiss">Avvis</string>
 </resources>

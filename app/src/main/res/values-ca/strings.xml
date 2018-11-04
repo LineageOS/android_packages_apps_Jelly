@@ -15,168 +15,171 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Navegador</string>
-  <!-- Menu action: create new tab -->
-  <string name="menu_new_tab">Nova pestanya</string>
-  <!-- Menu action: create new incognito tab -->
-  <string name="menu_incognito">Pestanya d\'incògnit</string>
-  <!-- Menu action: reload current page -->
-  <string name="menu_reload">Recarrega</string>
-  <!-- Menu action: add current page to favorites -->
-  <string name="menu_fav_add">Afegeix als preferits</string>
-  <!-- Menu action: share current page -->
-  <string name="menu_share">Comparteix</string>
-  <!-- Menu action: show favorites list -->
-  <string name="menu_favorites">Preferits</string>
-  <!-- Menu action: show history list -->
-  <string name="menu_history">Historial</string>
-  <!-- Menu action: add shortcut of the current page to the launcher -->
-  <string name="menu_shortcut">Afegeix una drecera</string>
-  <!-- Menu action: show settings -->
-  <string name="menu_settings">Configuració</string>
-  <!-- Menu action: download selected file / image -->
-  <string name="menu_download">Baixa</string>
-  <!-- Menu action: open selected link in a new tab -->
-  <string name="menu_in_new_tab">Obre en una nova pestanya</string>
-  <!-- Menu action: enable desktop mode -->
-  <string name="menu_desktop_mode">Canvia a la versió d\'escriptori</string>
-  <!-- Menu action: enable phone mode -->
-  <string name="menu_mobile_mode">Canvia a la versió mòbil</string>
-  <!-- Menu action: search in page -->
-  <string name="menu_search">Troba-ho a la pàgina</string>
-  <!-- Share webPage: "send to" dialog title -->
-  <string name="share_title">Envia a</string>
-  <!-- Dialog action: dismiss -->
-  <string name="dismiss">Descarta</string>
-  <!-- Download dialog: title -->
-  <string name="download_title">Baixa el fitxer</string>
-  <!-- Download dialog: message -->
-  <string name="download_message">Vols baixar %1$s?</string>
-  <!-- Download dialog: button that starts the download -->
-  <string name="download_positive">Baixa</string>
-  <!-- Permission error dialog: title -->
-  <string name="permission_error_title">Error de permís</string>
-  <!-- Permission error dialog: message for denied storage access-->
-  <string name="permission_error_storage">El navegador necessita accés d\'emmagatzematge per baixar arxius. Permeteu-lo per baixar arxius des de la web</string>
-  <!-- Permission error dialog: button that triggers permission request again -->
-  <string name="permission_error_ask_again">Torna a preguntar</string>
-  <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">Permís denegat permanentment. Permetre\'l a configuració</string>
-  <!-- Settings: title -->
-  <string name="settings_title">Configuració</string>
-  <!-- Settings: search engine preference title -->
-  <string name="pref_search_engine">Motor de cerca</string>
-  <!-- Settings: home page preference title -->
-  <string name="pref_start_page">Pàgina d\'inici</string>
-  <!-- Settings: select home page dialog title -->
-  <string name="pref_start_page_dialog_title">Selecciona la pàgina d\'inici</string>
-  <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Escriu l\'URL de la pàgina d\'inic</string>
-  <!-- Settings: reset home page dialog action -->
-  <string name="pref_start_page_dialog_reset">Reinicia</string>
-  <!-- Settings: privacy and security category -->
-  <string name="pref_privacy_security">Privacitat i seguretat</string>
-  <!-- Settings: lookLock title -->
-  <string name="pref_looklock_title">Bloqueja la vista</string>
-  <!-- Settings: lookLock summary -->
-  <string name="pref_looklock_summary">Evita que altres aplicacions llegeixin el contingut del navegador</string>
-  <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">JavaScript</string>
-  <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Activa JavaScript</string>
-  <!-- Settings: location preference title -->
-  <string name="pref_location_title">Ubicació</string>
-  <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
-  <string name="pref_location_summary">Permet que els llocs web sol·licitin accés a la vostra ubicació</string>
-  <!-- Settings: cookie preference title -->
-  <string name="pref_cookie_title">Galetes</string>
-  <!-- Settings: cookie preference summary -->
-  <string name="pref_cookie_summary">Permet als llocs web desar i carregar galetes</string>
-  <!-- Settings: advanced share preference title -->
-  <string name="pref_screenshot_snap_title">Compartició avançada</string>
-  <!-- Settings: advanced share preference summary -->
-  <string name="pref_screenshot_snap_summary">Comparteix la visualització de la pàgina web compartida</string>
-  <!-- Settings: clear cookie -->
-  <string name="pref_cookie_clear">Esborra les galetes</string>
-  <!-- Settings: clear cookie toast confirmation -->
-  <string name="pref_cookie_clear_done">Totes les galetes s\'han eliminat</string>
-  <!-- Settings: do not track preference title -->
-  <string name="pref_do_not_track_title">No vull ser seguit</string>
-  <!-- Settings: do not track preference summary -->
-  <string name="pref_do_not_track_summary">Envia una sol·licitud per evitar el rastreig en els llocs web que visiti</string>
-  <!-- Settings: suggestions provider title -->
-  <string name="pref_suggestions_provider">Proveïdor de suggeriments</string>
-  <!-- Settings: reach mode title -->
-  <string name="pref_reach_mode_title">Mode simplificat</string>
-  <!-- Settings: reach mode summary -->
-  <string name="pref_reach_mode_summary">Canvieu els elements de la interfície per a un ús més fàcil amb una sola mà</string>
-  <!-- Settings: clear traffic title -->
-  <!-- Settings: clear traffic summary on -->
-  <!-- Settings: clear traffic summary off -->
-  <!-- History: title -->
-  <string name="history_title">Historial</string>
-  <!-- History: empty status text -->
-  <string name="history_empty">No hi ha res aquí, navegueu per Internet per veure el vostre historial aquí</string>
-  <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
-  <!-- History: delete history dialog title -->
-  <string name="history_delete_title">Neteja l\'historial</string>
-  <!-- History: delete history dialog warning message -->
-  <string name="history_delete_message">S\'esborrarà tot l\'historial, aquesta acció no es pot desfer. Vols continuar?</string>
-  <!-- History: delete history dialog button that erases all the history -->
-  <string name="history_delete_positive">Neteja</string>
-  <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">S\'està esborrant l\'historial\u2026</string>
-  <!-- History: entry deleted snackbar message -->
-  <string name="history_snackbar_item_deleted">Entrada eliminada</string>
-  <!-- History: entry deleted snackbar button message -->
-  <string name="history_snackbar_item_deleted_message">Desfés</string>
-  <!-- Favorite: title -->
-  <string name="favorite_title">Preferits</string>
-  <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <string name="favorite_added">Afegit als preferits</string>
-  <!-- Favorite: empty status text -->
-  <string name="favorite_empty">No hi ha res aquí, afegiu un enllaç preferit per veure-ho aquí</string>
-  <!-- Favorite: edit dialog title -->
-  <string name="favorite_edit_dialog_title">Edita el preferit</string>
-  <!-- Favorite: edit dialog: title of the favorite -->
-  <string name="favorite_edit_title">Títol</string>
-  <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">URL</string>
-  <!-- Favorite: edit dialog positive button that save changes -->
-  <string name="favorite_edit_positive">Edita</string>
-  <!-- Favorite: edit dialog button that deletes the selected favorite -->
-  <string name="favorite_edit_delete">Elimina</string>
-  <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Insereix una URL vàlida</string>
-  <!-- No activity found to open the given url error -->
-  <string name="error_no_activity_found">Cap aplicació pot obrir aquest enllaç</string>
-  <!-- Auth dialog: title -->
-  <string name="auth_dialog_title">Es necessita autenticació</string>
-  <!-- Auth dialog: username field -->
-  <string name="auth_dialog_username">Nom d\'usuari:</string>
-  <!-- Auth dialog: password field -->
-  <string name="auth_dialog_password">Contrasenya:</string>
-  <!-- Auth dialog: detail -->
-  <string name="auth_dialog_detail">%1$s requereix un nom d\'usuari i una contrasenya.</string>
-  <!-- Auth dialog: login button -->
-  <string name="auth_dialog_login">Inicia sessió</string>
-  <!-- Launcher shortcut: new incognito tab -->
-  <string name="shortcut_new_incognito_tab">Nova pestanya d\'incògnit</string>
-  <!-- Suggestions provider: no suggestions provider -->
-  <string name="suggestions_provider_none">Cap</string>
-  <!-- Search in page: search hint -->
-  <string name="search_bar_hint">Cerca</string>
-  <!-- SSL Certificate Details dialog -->
-  <string name="ssl_cert_dialog_title">Detalls del certificat SSL</string>
-  <string name="ssl_cert_dialog_domain">Domini</string>
-  <string name="ssl_cert_dialog_issued_to">Emès per a</string>
-  <string name="ssl_cert_dialog_issued_by">Emès per</string>
-  <string name="ssl_cert_dialog_validity">Període de validesa</string>
-  <string name="ssl_cert_dialog_common_name">Nom comú (CN)</string>
-  <string name="ssl_cert_dialog_organization">Organització (O)</string>
-  <string name="ssl_cert_dialog_organizational_unit">Unitat organitzativa (UN)</string>
-  <string name="ssl_cert_dialog_issued_on">Emès el</string>
-  <string name="ssl_cert_dialog_expires_on">Caduca el</string>
-  <string name="ssl_cert_dialog_dismiss">Descarta</string>
+    <string name="app_name">Navegador</string>
+    <!-- Menu action: create new tab -->
+    <string name="menu_new_tab">Nova pestanya</string>
+    <!-- Menu action: create new incognito tab -->
+    <string name="menu_incognito">Pestanya d\'incògnit</string>
+    <!-- Menu action: reload current page -->
+    <string name="menu_reload">Recarrega</string>
+    <!-- Menu action: add current page to favorites -->
+    <string name="menu_fav_add">Afegeix als preferits</string>
+    <!-- Menu action: share current page -->
+    <string name="menu_share">Comparteix</string>
+    <!-- Menu action: show favorites list -->
+    <string name="menu_favorites">Preferits</string>
+    <!-- Menu action: show history list -->
+    <string name="menu_history">Historial</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
+    <string name="menu_shortcut">Afegeix una drecera</string>
+    <!-- Menu action: show settings -->
+    <string name="menu_settings">Configuració</string>
+    <!-- Menu action: download selected file / image -->
+    <string name="menu_download">Baixa</string>
+    <!-- Menu action: open selected link in a new tab -->
+    <string name="menu_in_new_tab">Obre en una nova pestanya</string>
+    <!-- Menu action: enable desktop mode -->
+    <string name="menu_desktop_mode">Canvia a la versió d\'escriptori</string>
+    <!-- Menu action: enable phone mode -->
+    <string name="menu_mobile_mode">Canvia a la versió mòbil</string>
+    <!-- Menu action: search in page -->
+    <string name="menu_search">Troba-ho a la pàgina</string>
+    <!-- Share webPage: "send to" dialog title -->
+    <string name="share_title">Envia a</string>
+    <!-- Dialog action: dismiss -->
+    <string name="dismiss">Descarta</string>
+    <!-- Download dialog: title -->
+    <string name="download_title">Baixa el fitxer</string>
+    <!-- Download dialog: message -->
+    <string name="download_message">Vols baixar %1$s?</string>
+    <!-- Download dialog: button that starts the download -->
+    <string name="download_positive">Baixa</string>
+    <!-- Permission error dialog: title -->
+    <string name="permission_error_title">Error de permís</string>
+    <!-- Permission error dialog: message for denied storage access-->
+    <string name="permission_error_storage">El navegador necessita accés d\'emmagatzematge per baixar arxius. Permeteu-lo per baixar arxius des de la web</string>
+    <!-- Permission error dialog: button that triggers permission request again -->
+    <string name="permission_error_ask_again">Torna a preguntar</string>
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+    <string name="permission_error_forever">Permís denegat permanentment. Permetre\'l a configuració</string>
+    <!-- Settings: title -->
+    <string name="settings_title">Configuració</string>
+    <!-- Settings: search engine preference title -->
+    <string name="pref_search_engine">Motor de cerca</string>
+    <!-- Settings: home page preference title -->
+    <string name="pref_start_page">Pàgina d\'inici</string>
+    <!-- Settings: select home page dialog title -->
+    <string name="pref_start_page_dialog_title">Selecciona la pàgina d\'inici</string>
+    <!-- Settings: select home page dialog message -->
+    <string name="pref_start_page_dialog_message">Escriu l\'URL de la pàgina d\'inic</string>
+    <!-- Settings: reset home page dialog action -->
+    <string name="pref_start_page_dialog_reset">Reinicia</string>
+    <!-- Settings: privacy and security category -->
+    <string name="pref_privacy_security">Privacitat i seguretat</string>
+    <!-- Settings: lookLock title -->
+    <string name="pref_looklock_title">Bloqueja la vista</string>
+    <!-- Settings: lookLock summary -->
+    <string name="pref_looklock_summary">Evita que altres aplicacions llegeixin el contingut del navegador</string>
+    <!-- Settings: javascript preference title -->
+    <string name="pref_js_title">JavaScript</string>
+    <!-- Settings: javascript preference summary -->
+    <string name="pref_js_summary">Activa JavaScript</string>
+    <!-- Settings: location preference title -->
+    <string name="pref_location_title">Ubicació</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+    <string name="pref_location_summary">Permet que els llocs web sol·licitin accés a la vostra ubicació</string>
+    <!-- Settings: cookie preference title -->
+    <string name="pref_cookie_title">Galetes</string>
+    <!-- Settings: cookie preference summary -->
+    <string name="pref_cookie_summary">Permet als llocs web desar i carregar galetes</string>
+    <!-- Settings: advanced share preference title -->
+    <string name="pref_screenshot_snap_title">Compartició avançada</string>
+    <!-- Settings: advanced share preference summary -->
+    <string name="pref_screenshot_snap_summary">Comparteix la visualització de la pàgina web compartida</string>
+    <!-- Settings: clear cookie -->
+    <string name="pref_cookie_clear">Esborra les galetes</string>
+    <!-- Settings: clear cookie toast confirmation -->
+    <string name="pref_cookie_clear_done">Totes les galetes s\'han eliminat</string>
+    <!-- Settings: do not track preference title -->
+    <string name="pref_do_not_track_title">No vull ser seguit</string>
+    <!-- Settings: do not track preference summary -->
+    <string name="pref_do_not_track_summary">Envia una sol·licitud per evitar el rastreig en els llocs web que visiti</string>
+    <!-- Settings: suggestions provider title -->
+    <string name="pref_suggestions_provider">Proveïdor de suggeriments</string>
+    <!-- Settings: reach mode title -->
+    <string name="pref_reach_mode_title">Mode simplificat</string>
+    <!-- Settings: reach mode summary -->
+    <string name="pref_reach_mode_summary">Canvieu els elements de la interfície per a un ús més fàcil amb una sola mà</string>
+    <!-- Settings: clear traffic title -->
+    <string name="pref_clear_text_traffic_title">Permet llocs web no segurs</string>
+    <!-- Settings: clear traffic summary on -->
+    <string name="pref_clear_text_traffic_summary_on">El tràfic de text no xifrat (com ara http) està permès</string>
+    <!-- Settings: clear traffic summary off -->
+    <string name="pref_clear_text_traffic_summary_off">El tràfic de text no xifrat (com ara http) no està permès</string>
+    <!-- History: title -->
+    <string name="history_title">Historial</string>
+    <!-- History: empty status text -->
+    <string name="history_empty">No hi ha res aquí, navegueu per Internet per veure el vostre historial aquí</string>
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+    <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
+    <!-- History: delete history dialog title -->
+    <string name="history_delete_title">Neteja l\'historial</string>
+    <!-- History: delete history dialog warning message -->
+    <string name="history_delete_message">S\'esborrarà tot l\'historial, aquesta acció no es pot desfer. Vols continuar?</string>
+    <!-- History: delete history dialog button that erases all the history -->
+    <string name="history_delete_positive">Neteja</string>
+    <!-- History: delete history "working" dialog-->
+    <string name="history_deleting_message">S\'està esborrant l\'historial\u2026</string>
+    <!-- History: entry deleted snackbar message -->
+    <string name="history_snackbar_item_deleted">Entrada eliminada</string>
+    <!-- History: entry deleted snackbar button message -->
+    <string name="history_snackbar_item_deleted_message">Desfés</string>
+    <!-- Favorite: title -->
+    <string name="favorite_title">Preferits</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
+    <string name="favorite_added">Afegit als preferits</string>
+    <!-- Favorite: empty status text -->
+    <string name="favorite_empty">No hi ha res aquí, afegiu un enllaç preferit per veure-ho aquí</string>
+    <!-- Favorite: edit dialog title -->
+    <string name="favorite_edit_dialog_title">Edita el preferit</string>
+    <!-- Favorite: edit dialog: title of the favorite -->
+    <string name="favorite_edit_title">Títol</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
+    <string name="favorite_edit_url">URL</string>
+    <!-- Favorite: edit dialog positive button that save changes -->
+    <string name="favorite_edit_positive">Edita</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
+    <string name="favorite_edit_delete">Elimina</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
+    <string name="favorite_edit_error">Insereix una URL vàlida</string>
+    <!-- No activity found to open the given url error -->
+    <string name="error_no_activity_found">Cap aplicació pot obrir aquest enllaç</string>
+    <!-- Auth dialog: title -->
+    <string name="auth_dialog_title">Es necessita autenticació</string>
+    <!-- Auth dialog: username field -->
+    <string name="auth_dialog_username">Nom d\'usuari:</string>
+    <!-- Auth dialog: password field -->
+    <string name="auth_dialog_password">Contrasenya:</string>
+    <!-- Auth dialog: detail -->
+    <string name="auth_dialog_detail">%1$s requereix un nom d\'usuari i una contrasenya.</string>
+    <!-- Auth dialog: login button -->
+    <string name="auth_dialog_login">Inicia sessió</string>
+    <!-- Launcher shortcut: new incognito tab -->
+    <string name="shortcut_new_incognito_tab">Nova pestanya d\'incògnit</string>
+    <!-- Suggestions provider: no suggestions provider -->
+    <string name="suggestions_provider_none">Cap</string>
+    <!-- Search in page: search hint -->
+    <string name="search_bar_hint">Cerca</string>
+    <!-- SSL Certificate Details dialog -->
+    <string name="ssl_cert_dialog_title">Detalls del certificat SSL</string>
+    <string name="ssl_cert_dialog_domain">Domini</string>
+    <string name="ssl_cert_dialog_issued_to">Emès per a</string>
+    <string name="ssl_cert_dialog_issued_by">Emès per</string>
+    <string name="ssl_cert_dialog_validity">Període de validesa</string>
+    <string name="ssl_cert_dialog_common_name">Nom comú (CN)</string>
+    <string name="ssl_cert_dialog_organization">Organització (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Unitat organitzativa (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Emès el</string>
+    <string name="ssl_cert_dialog_expires_on">Caduca el</string>
+    <string name="ssl_cert_dialog_dismiss">Descarta</string>
 </resources>
