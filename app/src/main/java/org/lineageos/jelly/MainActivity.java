@@ -706,20 +706,23 @@ public class MainActivity extends WebViewExtActivity implements
         intent.setData(Uri.parse(mWebView.getUrl()));
         intent.setAction(Intent.ACTION_MAIN);
 
-        Bitmap icon = mUrlIcon == null ?
-                BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher) : mUrlIcon;
-        Bitmap launcherIcon = UiUtils.getShortcutIcon(icon, getThemeColorWithFallback());
+        Icon launcherIcon;
+
+        if (mUrlIcon != null) {
+            launcherIcon = Icon.createWithBitmap(
+                    UiUtils.getShortcutIcon(mUrlIcon, getThemeColorWithFallback()));
+        } else {
+            launcherIcon = Icon.createWithResource(this, R.mipmap.ic_launcher);
+        }
 
         String title = mWebView.getTitle();
         ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(this, title)
                 .setShortLabel(title)
-                .setIcon(Icon.createWithBitmap(launcherIcon))
+                .setIcon(launcherIcon)
                 .setIntent(intent)
                 .build();
 
         getSystemService(ShortcutManager.class).requestPinShortcut(shortcutInfo, null);
-
-        launcherIcon.recycle();
     }
 
     private void setImmersiveMode(boolean enable) {
