@@ -172,7 +172,7 @@
     <string name="ssl_cert_dialog_domain">שם מתחם - דומיין</string>
     <string name="ssl_cert_dialog_issued_to">הונפק ל:</string>
     <string name="ssl_cert_dialog_issued_by">הונפק על ידי</string>
-    <string name="ssl_cert_dialog_validity">משך תוקף:</string>
+    <string name="ssl_cert_dialog_validity">משך תוקף: </string>
     <string name="ssl_cert_dialog_common_name">מוכר בשם</string>
     <string name="ssl_cert_dialog_organization">ארגון</string>
     <string name="ssl_cert_dialog_organizational_unit">יחידה ארגונית</string>
