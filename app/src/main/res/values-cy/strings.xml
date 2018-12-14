@@ -29,6 +29,7 @@
     <!-- Menu action: open selected link in a new tab -->
     <!-- Menu action: enable desktop mode -->
     <!-- Menu action: enable phone mode -->
+    <string name="menu_mobile_mode">Newid i wefan symudol</string>
     <!-- Menu action: search in page -->
     <!-- Share webPage: "send to" dialog title -->
     <!-- Dialog action: dismiss -->
@@ -68,18 +69,23 @@
     <!-- Settings: clear traffic summary off -->
     <!-- History: title -->
     <!-- History: empty status text -->
+    <string name="history_empty">Does dim byd yma. Pora\'r we a bydd dy hanes yn ymddangos yma</string>
     <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
     <!-- History: delete history dialog title -->
     <!-- History: delete history dialog warning message -->
+    <string name="history_delete_message">Rwyt yn mynd i ddileu\'r holl hanes. Ni ellir dadwneud hyn. Wyt ti am barhau?</string>
     <!-- History: delete history dialog button that erases all the history -->
     <!-- History: delete history "working" dialog-->
     <!-- History: entry deleted snackbar message -->
     <!-- History: entry deleted snackbar button message -->
+    <string name="history_snackbar_item_deleted_message">Dadwneud</string>
     <!-- Favorite: title -->
     <!-- Favorite: snackBar message shown when an url is added to favorites -->
     <!-- Favorite: empty status text -->
+    <string name="favorite_empty">Does dim byd yma. Ychwanegu dolen ffefryn ac mi fydd yn ymddangos yma</string>
     <!-- Favorite: edit dialog title -->
     <!-- Favorite: edit dialog: title of the favorite -->
+    <string name="favorite_edit_title">Teitl</string>
     <!-- Favorite: edit dialog: url of the favorite-->
     <!-- Favorite: edit dialog positive button that save changes -->
     <!-- Favorite: edit dialog button that deletes the selected favorite -->
@@ -87,6 +93,7 @@
     <!-- No activity found to open the given url error -->
     <!-- Auth dialog: title -->
     <!-- Auth dialog: username field -->
+    <string name="auth_dialog_username">Enw Defnyddiwr:</string>
     <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">Cyfrinair:</string>
     <!-- Auth dialog: detail -->

@@ -164,4 +164,14 @@
     <!-- Search in page: search hint -->
     <string name="search_bar_hint">Шукати</string>
     <!-- SSL Certificate Details dialog -->
+    <string name="ssl_cert_dialog_title">Деталі SSL сертифіката</string>
+    <string name="ssl_cert_dialog_domain">Домен</string>
+    <string name="ssl_cert_dialog_issued_to">Видано для</string>
+    <string name="ssl_cert_dialog_issued_by">Ким видано</string>
+    <string name="ssl_cert_dialog_validity">Термін дії</string>
+    <string name="ssl_cert_dialog_common_name">Загальна назва (CN)</string>
+    <string name="ssl_cert_dialog_organization">Організація (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Організаційний підрозділ (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Дата видачі</string>
+    <string name="ssl_cert_dialog_expires_on">Діє до</string>
 </resources>

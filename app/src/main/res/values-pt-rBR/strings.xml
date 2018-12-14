@@ -113,7 +113,9 @@
     <!-- Settings: clear traffic title -->
     <string name="pref_clear_text_traffic_title">Permitir sites inseguros</string>
     <!-- Settings: clear traffic summary on -->
+    <string name="pref_clear_text_traffic_summary_on">É permitido o tráfego de texto simples (como HTTP)</string>
     <!-- Settings: clear traffic summary off -->
+    <string name="pref_clear_text_traffic_summary_off">Não é permitido o tráfego de texto simples (como HTTP)</string>
     <!-- History: title -->
     <string name="history_title">Histórico</string>
     <!-- History: empty status text -->
