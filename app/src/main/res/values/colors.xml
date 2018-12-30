@@ -21,6 +21,9 @@
     <color name="colorIncognito">#000b4d</color>
     <color name="colorDelete">#F44336</color>
 
+    <color name="navigation_bar_bg">@android:color/white</color>
+    <color name="navigation_bar_divider">#1f000000</color>
+
     <color name="primary">#ffffff</color>
     <color name="inverted">#000000</color>
 

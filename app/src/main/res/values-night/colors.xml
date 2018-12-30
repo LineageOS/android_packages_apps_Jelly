@@ -17,6 +17,9 @@
     <color name="colorPrimary">#303030</color>
     <color name="colorPrimaryDark">#212121</color>
 
+    <color name="navigation_bar_bg">@android:color/black</color>
+    <color name="navigation_bar_divider">@android:color/black</color>
+
     <color name="primary">#000000</color>
     <color name="inverted">#ffffff</color>
 
