@@ -1,0 +1,30 @@
+From 7923e21f281b0362d03175e53e73282dc5cd2877 Mon Sep 17 00:00:00 2001
+From: Paul B <plblaze@blazebox.homeip.net>
+Date: Fri, 28 Dec 2018 16:20:22 -0500
+Subject: Jelly: Remove google encrypted search.
+
+* Google has turned off encrypted search, making https protocol the
+default: https://support.google.com/websearch/answer/7631341
+
+Change-Id: I9c5838bca58c043cd1b22a452cdda9f77a4bee9a
+
+diff --git a/app/src/main/res/values/search_engines.xml b/app/src/main/res/values/search_engines.xml
+index 41077ef..9ee80e3 100644
+--- a/app/src/main/res/values/search_engines.xml
++++ b/app/src/main/res/values/search_engines.xml
+@@ -20,7 +20,6 @@
+         <item>Bing</item>
+         <item>DuckDuckGo</item>
+         <item>Google</item>
+-        <item>Google encrypted</item>
+         <item>Yahoo</item>
+         <item>Yandex</item>
+     </string-array>
+@@ -30,7 +29,6 @@
+         <item>https://www.bing.com/search?q={searchTerms}</item>
+         <item>https://duckduckgo.com/?q={searchTerms}</item>
+         <item>https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</item>
+-        <item>https://encrypted.google.com/search?q={searchTerms}</item>
+         <item>https://search.yahoo.com/p={searchTerms}</item>
+         <item>https://yandex.com/?q={searchTerms}</item>
+     </string-array>

@@ -19,6 +19,7 @@
     <!-- Menu action: create new tab -->
     <string name="menu_new_tab">Llingüeta nueva</string>
     <!-- Menu action: create new incognito tab -->
+    <string name="menu_incognito">Llingüeta d\'incógnito</string>
     <!-- Menu action: reload current page -->
     <string name="menu_reload">Recargar</string>
     <!-- Menu action: add current page to favorites -->
@@ -106,10 +107,15 @@
     <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Fornidor de suxerencies</string>
     <!-- Settings: reach mode title -->
+    <string name="pref_reach_mode_title">Mou con una mano</string>
     <!-- Settings: reach mode summary -->
+    <string name="pref_reach_mode_summary">Recoloca los elementos de la interfaz pa usar el preséu con una mano</string>
     <!-- Settings: clear traffic title -->
+    <string name="pref_clear_text_traffic_title">Permitir sitios web inseguros</string>
     <!-- Settings: clear traffic summary on -->
+    <string name="pref_clear_text_traffic_summary_on">El tráficu (http) en claro ta activáu</string>
     <!-- Settings: clear traffic summary off -->
+    <string name="pref_clear_text_traffic_summary_off">El tráficu (http) en claro ta desactiváu</string>
     <!-- History: title -->
     <string name="history_title">Historial</string>
     <!-- History: empty status text -->
@@ -125,7 +131,9 @@
     <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">Llimpiando l\'historial\u2026</string>
     <!-- History: entry deleted snackbar message -->
+    <string name="history_snackbar_item_deleted">Entrada desaniciada</string>
     <!-- History: entry deleted snackbar button message -->
+    <string name="history_snackbar_item_deleted_message">Desfacer</string>
     <!-- Favorite: title -->
     <string name="favorite_title">Favoritos</string>
     <!-- Favorite: snackBar message shown when an url is added to favorites -->
@@ -157,8 +165,21 @@
     <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Aniciar sesión</string>
     <!-- Launcher shortcut: new incognito tab -->
+    <string name="shortcut_new_incognito_tab">Llingüeta nueva d\'incógnito</string>
     <!-- Suggestions provider: no suggestions provider -->
+    <string name="suggestions_provider_none">Nenguna</string>
     <!-- Search in page: search hint -->
     <string name="search_bar_hint">Guetar</string>
     <!-- SSL Certificate Details dialog -->
+    <string name="ssl_cert_dialog_title">Detalles del certificáu SSL</string>
+    <string name="ssl_cert_dialog_domain">Dominiu</string>
+    <string name="ssl_cert_dialog_issued_to">Emitíu pa</string>
+    <string name="ssl_cert_dialog_issued_by">Emitíu por</string>
+    <string name="ssl_cert_dialog_validity">Periodu de validez</string>
+    <string name="ssl_cert_dialog_common_name">Nome común (CN)</string>
+    <string name="ssl_cert_dialog_organization">Organización (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Unidá organizativa (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Emitíu\'l</string>
+    <string name="ssl_cert_dialog_expires_on">Caduca\'l</string>
+    <string name="ssl_cert_dialog_dismiss">Escartar</string>
 </resources>
