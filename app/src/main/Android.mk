@@ -26,14 +26,13 @@ LOCAL_SRC_FILES := \
 LOCAL_USE_AAPT2 := true
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
-    android-support-design \
-    android-support-transition \
-    android-support-v4 \
-    android-support-v7-appcompat \
-    android-support-v7-cardview \
-    android-support-v7-palette \
-    android-support-v7-recyclerview \
-    android-support-annotations
+    androidx.annotation_annotation \
+    androidx.appcompat_appcompat \
+    androidx.cardview_cardview \
+    androidx.palette_palette \
+    androidx.recyclerview_recyclerview \
+    androidx.transition_transition \
+    com.google.android.material_material
 
 LOCAL_PACKAGE_NAME := Jelly
 

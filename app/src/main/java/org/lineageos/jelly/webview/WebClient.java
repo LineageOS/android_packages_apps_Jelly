@@ -25,8 +25,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +39,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.lineageos.jelly.IntentFilterCompat;
-import org.lineageos.jelly.MainActivity;
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.IntentUtils;
