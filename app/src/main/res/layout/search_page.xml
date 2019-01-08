@@ -23,7 +23,7 @@
     android:paddingStart="16dp"
     android:paddingTop="4dp">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="2dp"
@@ -109,5 +109,5 @@
                 android:src="@drawable/ic_cancel" />
 
         </RelativeLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

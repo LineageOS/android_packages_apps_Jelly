@@ -19,7 +19,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.v4.util.ArrayMap;
+import androidx.collection.ArrayMap;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;

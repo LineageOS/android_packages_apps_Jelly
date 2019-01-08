@@ -16,7 +16,7 @@
 
 package org.lineageos.jelly.suggestions;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Search suggestions provider for Yahoo search engine.
