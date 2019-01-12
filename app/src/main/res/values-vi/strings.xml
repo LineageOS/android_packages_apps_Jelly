@@ -15,165 +15,168 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Trình duyệt</string>
-  <!-- Menu action: create new tab -->
-  <string name="menu_new_tab">Tab mới</string>
-  <!-- Menu action: create new incognito tab -->
-  <string name="menu_incognito">Tab ẩn danh</string>
-  <!-- Menu action: reload current page -->
-  <string name="menu_reload">Tải lại</string>
-  <!-- Menu action: add current page to favorites -->
-  <string name="menu_fav_add">Thêm vào yêu thích</string>
-  <!-- Menu action: share current page -->
-  <string name="menu_share">Chia sẻ</string>
-  <!-- Menu action: show favorites list -->
-  <string name="menu_favorites">Yêu thích</string>
-  <!-- Menu action: show history list -->
-  <string name="menu_history">Lịch sử</string>
-  <!-- Menu action: add shortcut of the current page to the launcher -->
-  <string name="menu_shortcut">Thêm lối tắt</string>
-  <!-- Menu action: show settings -->
-  <string name="menu_settings">Cài đặt</string>
-  <!-- Menu action: download selected file / image -->
-  <string name="menu_download">Tải về</string>
-  <!-- Menu action: open selected link in a new tab -->
-  <string name="menu_in_new_tab">Mở trong tab mới</string>
-  <!-- Menu action: enable desktop mode -->
-  <string name="menu_desktop_mode">Chuyển sang trang cho máy tính</string>
-  <!-- Menu action: enable phone mode -->
-  <string name="menu_mobile_mode">Chuyển sang trang cho điện thoại</string>
-  <!-- Menu action: search in page -->
-  <string name="menu_search">Tìm trong trang</string>
-  <!-- Share webPage: "send to" dialog title -->
-  <string name="share_title">Gửi đến</string>
-  <!-- Dialog action: dismiss -->
-  <string name="dismiss">Loại bỏ</string>
-  <!-- Download dialog: title -->
-  <string name="download_title">Tải về tập tin</string>
-  <!-- Download dialog: message -->
-  <string name="download_message">Bạn có muốn tải về %1$s?</string>
-  <!-- Download dialog: button that starts the download -->
-  <string name="download_positive">Tải về</string>
-  <!-- Permission error dialog: title -->
-  <string name="permission_error_title">Lỗi quyền truy cập</string>
-  <!-- Permission error dialog: message for denied storage access-->
-  <string name="permission_error_storage">Trình duyệt cần truy cập lưu trữ để tải về tập tin. Hãy cho phép nó để lưu các tập tin từ trang web</string>
-  <!-- Permission error dialog: button that triggers permission request again -->
-  <string name="permission_error_ask_again">Hỏi lại</string>
-  <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">Quyền truy cập bị từ chối vĩnh viễn. Hãy cho phép nó trong cài đặt</string>
-  <!-- Settings: title -->
-  <string name="settings_title">Cài đặt</string>
-  <!-- Settings: search engine preference title -->
-  <string name="pref_search_engine">Công cụ tìm kiếm</string>
-  <!-- Settings: home page preference title -->
-  <string name="pref_start_page">Trang chủ</string>
-  <!-- Settings: select home page dialog title -->
-  <string name="pref_start_page_dialog_title">Đặt làm trang chủ</string>
-  <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">Nhập url trang chủ này</string>
-  <!-- Settings: reset home page dialog action -->
-  <string name="pref_start_page_dialog_reset">Thiết lập lại</string>
-  <!-- Settings: privacy and security category -->
-  <string name="pref_privacy_security">Riêng tư &amp; bảo mật</string>
-  <!-- Settings: lookLock title -->
-  <string name="pref_looklock_title">LookLock</string>
-  <!-- Settings: lookLock summary -->
-  <string name="pref_looklock_summary">Ngăn chặn các ứng dụng khác đọc nội dung của Trình duyệt</string>
-  <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">JavaScript</string>
-  <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">Cho phép JavaScript</string>
-  <!-- Settings: location preference title -->
-  <string name="pref_location_title">Vị trí</string>
-  <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
-  <string name="pref_location_summary">Cho phép các trang web yêu cầu quyền truy cập vào vị trí của bạn</string>
-  <!-- Settings: cookie preference title -->
-  <string name="pref_cookie_title">Cookie</string>
-  <!-- Settings: cookie preference summary -->
-  <string name="pref_cookie_summary">Cho phép các trang web đọc và tải các cookie</string>
-  <!-- Settings: advanced share preference title -->
-  <string name="pref_screenshot_snap_title">Chia sẻ nâng cao</string>
-  <!-- Settings: advanced share preference summary -->
-  <string name="pref_screenshot_snap_summary">Chia sẻ các bản xem trước của trang web chia sẻ</string>
-  <!-- Settings: clear cookie -->
-  <string name="pref_cookie_clear">Xóa cookie</string>
-  <!-- Settings: clear cookie toast confirmation -->
-  <string name="pref_cookie_clear_done">Đã xóa tất cả cookie</string>
-  <!-- Settings: do not track preference title -->
-  <string name="pref_do_not_track_title">Không Theo Dõi</string>
-  <!-- Settings: do not track preference summary -->
-  <string name="pref_do_not_track_summary">Gửi một yêu cầu Không Theo Dõi các trang web bạn truy cập</string>
-  <!-- Settings: suggestions provider title -->
-  <string name="pref_suggestions_provider">Nhà cung cấp đề xuất</string>
-  <!-- Settings: reach mode title -->
-  <string name="pref_reach_mode_title">Chế độ tiệm cận</string>
-  <!-- Settings: reach mode summary -->
-  <string name="pref_reach_mode_summary">Di chuyển các thành phần giao diện để sử dụng một tay dễ dàng hơn</string>
-  <!-- History: title -->
-  <string name="history_title">Lịch sử</string>
-  <!-- History: empty status text -->
-  <string name="history_empty">Không có gì ở đây, duyệt internet để xem lịch sử của bạn ở đây</string>
-  <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
-  <!-- History: delete history dialog title -->
-  <string name="history_delete_title">Xóa lịch sử</string>
-  <!-- History: delete history dialog warning message -->
-  <string name="history_delete_message">Bạn sẽ xoá tất cả lịch sử, hành động này không thể hoàn tác. Bạn có muốn tiếp tục?</string>
-  <!-- History: delete history dialog button that erases all the history -->
-  <string name="history_delete_positive">Xóa</string>
-  <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">Đang xóa lịch sử\u2026</string>
-  <!-- History: entry deleted snackbar message -->
-  <string name="history_snackbar_item_deleted">Mục đã xóa</string>
-  <!-- History: entry deleted snackbar button message -->
-  <string name="history_snackbar_item_deleted_message">Hoàn tác</string>
-  <!-- Favorite: title -->
-  <string name="favorite_title">Yêu thích</string>
-  <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <string name="favorite_added">Đã thêm vào yêu thích</string>
-  <!-- Favorite: empty status text -->
-  <string name="favorite_empty">Không có gì ở đây, thêm một liên kết yêu thích để xem nó ở đây</string>
-  <!-- Favorite: edit dialog title -->
-  <string name="favorite_edit_dialog_title">Chỉnh sửa yêu thích</string>
-  <!-- Favorite: edit dialog: title of the favorite -->
-  <string name="favorite_edit_title">Tên</string>
-  <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">URL</string>
-  <!-- Favorite: edit dialog positive button that save changes -->
-  <string name="favorite_edit_positive">Sửa</string>
-  <!-- Favorite: edit dialog button that deletes the selected favorite -->
-  <string name="favorite_edit_delete">Xóa</string>
-  <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">Chèn một URL hợp lệ</string>
-  <!-- No activity found to open the given url error -->
-  <string name="error_no_activity_found">Không có ứng dụng có thể xử lý liên kết này</string>
-  <!-- Auth dialog: title -->
-  <string name="auth_dialog_title">Yêu cầu xác thực</string>
-  <!-- Auth dialog: username field -->
-  <string name="auth_dialog_username">Tên Người Dùng:</string>
-  <!-- Auth dialog: password field -->
-  <string name="auth_dialog_password">Mật Khẩu:</string>
-  <!-- Auth dialog: detail -->
-  <string name="auth_dialog_detail">%1$s yêu cầu tên người dùng và mật khẩu.</string>
-  <!-- Auth dialog: login button -->
-  <string name="auth_dialog_login">Đăng nhập</string>
-  <!-- Launcher shortcut: new incognito tab -->
-  <string name="shortcut_new_incognito_tab">Tab ẩn danh mới</string>
-  <!-- Suggestions provider: no suggestions provider -->
-  <string name="suggestions_provider_none">Không có</string>
-  <!-- Search in page: search hint -->
-  <string name="search_bar_hint">Tìm kiếm</string>
-  <!-- SSL Certificate Details dialog -->
-  <string name="ssl_cert_dialog_title">Chi tiết Chứng Chỉ SSL</string>
-  <string name="ssl_cert_dialog_domain">Tên miền</string>
-  <string name="ssl_cert_dialog_issued_to">Cấp cho</string>
-  <string name="ssl_cert_dialog_issued_by">Cấp bởi</string>
-  <string name="ssl_cert_dialog_validity">Thời hạn hiệu lực</string>
-  <string name="ssl_cert_dialog_common_name">Tên phổ biến (CN)</string>
-  <string name="ssl_cert_dialog_organization">Tổ chức (O)</string>
-  <string name="ssl_cert_dialog_organizational_unit">Đơn vị tổ chức (UN)</string>
-  <string name="ssl_cert_dialog_issued_on">Cấp vào</string>
-  <string name="ssl_cert_dialog_expires_on">Hết hạn vào</string>
-  <string name="ssl_cert_dialog_dismiss">Bỏ qua</string>
+    <string name="app_name">Trình duyệt</string>
+    <!-- Menu action: create new tab -->
+    <string name="menu_new_tab">Tab mới</string>
+    <!-- Menu action: create new incognito tab -->
+    <string name="menu_incognito">Tab ẩn danh</string>
+    <!-- Menu action: reload current page -->
+    <string name="menu_reload">Tải lại</string>
+    <!-- Menu action: add current page to favorites -->
+    <string name="menu_fav_add">Thêm vào yêu thích</string>
+    <!-- Menu action: share current page -->
+    <string name="menu_share">Chia sẻ</string>
+    <!-- Menu action: show favorites list -->
+    <string name="menu_favorites">Yêu thích</string>
+    <!-- Menu action: show history list -->
+    <string name="menu_history">Lịch sử</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
+    <string name="menu_shortcut">Thêm lối tắt</string>
+    <!-- Menu action: show settings -->
+    <string name="menu_settings">Cài đặt</string>
+    <!-- Menu action: download selected file / image -->
+    <string name="menu_download">Tải về</string>
+    <!-- Menu action: open selected link in a new tab -->
+    <string name="menu_in_new_tab">Mở trong tab mới</string>
+    <!-- Menu action: enable desktop mode -->
+    <string name="menu_desktop_mode">Chuyển sang trang cho máy tính</string>
+    <!-- Menu action: enable phone mode -->
+    <string name="menu_mobile_mode">Chuyển sang trang cho điện thoại</string>
+    <!-- Menu action: search in page -->
+    <string name="menu_search">Tìm trong trang</string>
+    <!-- Share webPage: "send to" dialog title -->
+    <string name="share_title">Gửi đến</string>
+    <!-- Dialog action: dismiss -->
+    <string name="dismiss">Loại bỏ</string>
+    <!-- Download dialog: title -->
+    <string name="download_title">Tải về tập tin</string>
+    <!-- Download dialog: message -->
+    <string name="download_message">Bạn có muốn tải về %1$s?</string>
+    <!-- Download dialog: button that starts the download -->
+    <string name="download_positive">Tải về</string>
+    <!-- Permission error dialog: title -->
+    <string name="permission_error_title">Lỗi quyền truy cập</string>
+    <!-- Permission error dialog: message for denied storage access-->
+    <string name="permission_error_storage">Trình duyệt cần truy cập lưu trữ để tải về tập tin. Hãy cho phép nó để lưu các tập tin từ trang web</string>
+    <!-- Permission error dialog: button that triggers permission request again -->
+    <string name="permission_error_ask_again">Hỏi lại</string>
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+    <string name="permission_error_forever">Quyền truy cập bị từ chối vĩnh viễn. Hãy cho phép nó trong cài đặt</string>
+    <!-- Settings: title -->
+    <string name="settings_title">Cài đặt</string>
+    <!-- Settings: search engine preference title -->
+    <string name="pref_search_engine">Công cụ tìm kiếm</string>
+    <!-- Settings: home page preference title -->
+    <string name="pref_start_page">Trang chủ</string>
+    <!-- Settings: select home page dialog title -->
+    <string name="pref_start_page_dialog_title">Đặt làm trang chủ</string>
+    <!-- Settings: select home page dialog message -->
+    <string name="pref_start_page_dialog_message">Nhập url trang chủ này</string>
+    <!-- Settings: reset home page dialog action -->
+    <string name="pref_start_page_dialog_reset">Thiết lập lại</string>
+    <!-- Settings: privacy and security category -->
+    <string name="pref_privacy_security">Riêng tư &amp; bảo mật</string>
+    <!-- Settings: lookLock title -->
+    <string name="pref_looklock_title">LookLock</string>
+    <!-- Settings: lookLock summary -->
+    <string name="pref_looklock_summary">Ngăn chặn các ứng dụng khác đọc nội dung của Trình duyệt</string>
+    <!-- Settings: javascript preference title -->
+    <string name="pref_js_title">JavaScript</string>
+    <!-- Settings: javascript preference summary -->
+    <string name="pref_js_summary">Cho phép JavaScript</string>
+    <!-- Settings: location preference title -->
+    <string name="pref_location_title">Vị trí</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+    <string name="pref_location_summary">Cho phép các trang web yêu cầu quyền truy cập vào vị trí của bạn</string>
+    <!-- Settings: cookie preference title -->
+    <string name="pref_cookie_title">Cookie</string>
+    <!-- Settings: cookie preference summary -->
+    <string name="pref_cookie_summary">Cho phép các trang web đọc và tải các cookie</string>
+    <!-- Settings: advanced share preference title -->
+    <string name="pref_screenshot_snap_title">Chia sẻ nâng cao</string>
+    <!-- Settings: advanced share preference summary -->
+    <string name="pref_screenshot_snap_summary">Chia sẻ các bản xem trước của trang web chia sẻ</string>
+    <!-- Settings: clear cookie -->
+    <string name="pref_cookie_clear">Xóa cookie</string>
+    <!-- Settings: clear cookie toast confirmation -->
+    <string name="pref_cookie_clear_done">Đã xóa tất cả cookie</string>
+    <!-- Settings: do not track preference title -->
+    <string name="pref_do_not_track_title">Không Theo Dõi</string>
+    <!-- Settings: do not track preference summary -->
+    <string name="pref_do_not_track_summary">Gửi một yêu cầu Không Theo Dõi các trang web bạn truy cập</string>
+    <!-- Settings: suggestions provider title -->
+    <string name="pref_suggestions_provider">Nhà cung cấp đề xuất</string>
+    <!-- Settings: reach mode title -->
+    <string name="pref_reach_mode_title">Chế độ tiệm cận</string>
+    <!-- Settings: reach mode summary -->
+    <string name="pref_reach_mode_summary">Di chuyển các thành phần giao diện để sử dụng một tay dễ dàng hơn</string>
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
+    <string name="history_title">Lịch sử</string>
+    <!-- History: empty status text -->
+    <string name="history_empty">Không có gì ở đây, duyệt internet để xem lịch sử của bạn ở đây</string>
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+    <!-- History: delete history dialog title -->
+    <string name="history_delete_title">Xóa lịch sử</string>
+    <!-- History: delete history dialog warning message -->
+    <string name="history_delete_message">Bạn sẽ xoá tất cả lịch sử, hành động này không thể hoàn tác. Bạn có muốn tiếp tục?</string>
+    <!-- History: delete history dialog button that erases all the history -->
+    <string name="history_delete_positive">Xóa</string>
+    <!-- History: delete history "working" dialog-->
+    <string name="history_deleting_message">Đang xóa lịch sử\u2026</string>
+    <!-- History: entry deleted snackbar message -->
+    <string name="history_snackbar_item_deleted">Mục đã xóa</string>
+    <!-- History: entry deleted snackbar button message -->
+    <string name="history_snackbar_item_deleted_message">Hoàn tác</string>
+    <!-- Favorite: title -->
+    <string name="favorite_title">Yêu thích</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
+    <string name="favorite_added">Đã thêm vào yêu thích</string>
+    <!-- Favorite: empty status text -->
+    <string name="favorite_empty">Không có gì ở đây, thêm một liên kết yêu thích để xem nó ở đây</string>
+    <!-- Favorite: edit dialog title -->
+    <string name="favorite_edit_dialog_title">Chỉnh sửa yêu thích</string>
+    <!-- Favorite: edit dialog: title of the favorite -->
+    <string name="favorite_edit_title">Tên</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
+    <string name="favorite_edit_url">URL</string>
+    <!-- Favorite: edit dialog positive button that save changes -->
+    <string name="favorite_edit_positive">Sửa</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
+    <string name="favorite_edit_delete">Xóa</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
+    <string name="favorite_edit_error">Chèn một URL hợp lệ</string>
+    <!-- No activity found to open the given url error -->
+    <string name="error_no_activity_found">Không có ứng dụng có thể xử lý liên kết này</string>
+    <!-- Auth dialog: title -->
+    <string name="auth_dialog_title">Yêu cầu xác thực</string>
+    <!-- Auth dialog: username field -->
+    <string name="auth_dialog_username">Tên Người Dùng:</string>
+    <!-- Auth dialog: password field -->
+    <string name="auth_dialog_password">Mật Khẩu:</string>
+    <!-- Auth dialog: detail -->
+    <string name="auth_dialog_detail">%1$s yêu cầu tên người dùng và mật khẩu.</string>
+    <!-- Auth dialog: login button -->
+    <string name="auth_dialog_login">Đăng nhập</string>
+    <!-- Launcher shortcut: new incognito tab -->
+    <string name="shortcut_new_incognito_tab">Tab ẩn danh mới</string>
+    <!-- Suggestions provider: no suggestions provider -->
+    <string name="suggestions_provider_none">Không có</string>
+    <!-- Search in page: search hint -->
+    <string name="search_bar_hint">Tìm kiếm</string>
+    <!-- SSL Certificate Details dialog -->
+    <string name="ssl_cert_dialog_title">Chi tiết Chứng Chỉ SSL</string>
+    <string name="ssl_cert_dialog_domain">Tên miền</string>
+    <string name="ssl_cert_dialog_issued_to">Cấp cho</string>
+    <string name="ssl_cert_dialog_issued_by">Cấp bởi</string>
+    <string name="ssl_cert_dialog_validity">Thời hạn hiệu lực</string>
+    <string name="ssl_cert_dialog_common_name">Tên phổ biến (CN)</string>
+    <string name="ssl_cert_dialog_organization">Tổ chức (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Đơn vị tổ chức (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Cấp vào</string>
+    <string name="ssl_cert_dialog_expires_on">Hết hạn vào</string>
+    <string name="ssl_cert_dialog_dismiss">Bỏ qua</string>
 </resources>
