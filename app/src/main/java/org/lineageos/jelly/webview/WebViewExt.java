@@ -24,9 +24,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.ProgressBar;
 
+import org.adblockplus.libadblockplus.android.webview.AdblockWebView;
 import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.PrefsUtils;
 import org.lineageos.jelly.utils.UrlUtils;
@@ -35,7 +35,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class WebViewExt extends WebView {
+public class WebViewExt extends AdblockWebView {
 
     private static final String TAG = "WebViewExt";
 
@@ -57,6 +57,7 @@ public class WebViewExt extends WebView {
 
     public WebViewExt(Context context) {
         super(context);
+        setAdblockEnabled(false);
     }
 
     public WebViewExt(Context context, AttributeSet attrs) {

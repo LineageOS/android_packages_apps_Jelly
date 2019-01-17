@@ -34,6 +34,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.transition_transition \
     com.google.android.material_material
 
+LOCAL_STATIC_JAVA_AAR_LIBRARIES:= $(LOCAL_PATH)/adblock-android-webview-3.1/adblock-android-webview-3.1.aar
+
 LOCAL_PACKAGE_NAME := Jelly
 
 LOCAL_PRIVATE_PLATFORM_APIS := true

@@ -199,4 +199,8 @@
     <string name="ssl_cert_dialog_issued_on">Issued On</string>
     <string name="ssl_cert_dialog_expires_on">Expires On</string>
     <string name="ssl_cert_dialog_dismiss">Dismiss</string>
+
+    <!-- AdBlock -->
+    <string name="menu_adblock_enabled">Disable adblock</string>
+    <string name="menu_adblock_disabled">Enable adblock</string>
 </resources>
