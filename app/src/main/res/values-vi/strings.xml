@@ -111,8 +111,11 @@
     <!-- Settings: reach mode summary -->
     <string name="pref_reach_mode_summary">Di chuyển các thành phần giao diện để sử dụng một tay dễ dàng hơn</string>
     <!-- Settings: clear traffic title -->
+    <string name="pref_clear_text_traffic_title">Cho phép các trang web không an toàn</string>
     <!-- Settings: clear traffic summary on -->
+    <string name="pref_clear_text_traffic_summary_on">Xóa lưu lượng dữ liệu văn bản (như http) được cho phép</string>
     <!-- Settings: clear traffic summary off -->
+    <string name="pref_clear_text_traffic_summary_off">Xóa lưu lượng dữ liệu văn bản (như http) không được cho phép</string>
     <!-- History: title -->
     <string name="history_title">Lịch sử</string>
     <!-- History: empty status text -->

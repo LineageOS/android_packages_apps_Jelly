@@ -15,6 +15,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Brauser</string>
     <!-- Menu action: create new tab -->
     <!-- Menu action: create new incognito tab -->
     <!-- Menu action: reload current page -->

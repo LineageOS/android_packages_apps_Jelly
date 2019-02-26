@@ -76,10 +76,13 @@
     <string name="history_empty">Does dim byd yma. Pora\'r we a bydd dy hanes yn ymddangos yma</string>
     <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
     <!-- History: delete history dialog title -->
+    <string name="history_delete_title">Clirio’r hanes</string>
     <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">Rwyt yn mynd i ddileu\'r holl hanes. Ni ellir dadwneud hyn. Wyt ti am barhau?</string>
     <!-- History: delete history dialog button that erases all the history -->
+    <string name="history_delete_positive">Clirio</string>
     <!-- History: delete history "working" dialog-->
+    <string name="history_deleting_message">Yn clirio\'r hanes\u2026</string>
     <!-- History: entry deleted snackbar message -->
     <!-- History: entry deleted snackbar button message -->
     <string name="history_snackbar_item_deleted_message">Dadwneud</string>
