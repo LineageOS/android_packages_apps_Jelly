@@ -16,161 +16,83 @@
 -->
 <resources>
     <string name="app_name">Περιηγητής</string>
-    <!-- Menu action: create new tab -->
     <string name="menu_new_tab">Νέα καρτέλα</string>
-    <!-- Menu action: create new incognito tab -->
     <string name="menu_incognito">Καρτέλα ανώνυμης περιήγησης</string>
-    <!-- Menu action: reload current page -->
     <string name="menu_reload">Επαναφόρτωση</string>
-    <!-- Menu action: add current page to favorites -->
     <string name="menu_fav_add">Προσθήκη στα αγαπημένα</string>
-    <!-- Menu action: share current page -->
     <string name="menu_share">Κοινή χρήση</string>
-    <!-- Menu action: show favorites list -->
     <string name="menu_favorites">Αγαπημένα</string>
-    <!-- Menu action: show history list -->
     <string name="menu_history">Ιστορικό</string>
-    <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">Προσθήκη συντόμευσης</string>
-    <!-- Menu action: show settings -->
     <string name="menu_settings">Ρυθμίσεις</string>
-    <!-- Menu action: download selected file / image -->
     <string name="menu_download">Λήψη</string>
-    <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">Άνοιγμα σε νέα καρτέλα</string>
-    <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">Εναλλαγή σε έκδοση για υπολογιστές</string>
-    <!-- Menu action: enable phone mode -->
     <string name="menu_mobile_mode">Εναλλαγή σε έκδοση για κινητά</string>
-    <!-- Menu action: search in page -->
     <string name="menu_search">Εύρεση στη σελίδα</string>
-    <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Αποστολή σε</string>
-    <!-- Dialog action: dismiss -->
     <string name="dismiss">Απόρριψη</string>
-    <!-- Download dialog: title -->
     <string name="download_title">Λήψη αρχείου</string>
-    <!-- Download dialog: message -->
     <string name="download_message">Θέλετε να κάνετε λήψη του %1$s;</string>
-    <!-- Download dialog: button that starts the download -->
     <string name="download_positive">Λήψη</string>
-    <!-- Permission error dialog: title -->
     <string name="permission_error_title">Σφάλμα δικαιωμάτων</string>
-    <!-- Permission error dialog: message for denied storage access-->
     <string name="permission_error_storage">Το πρόγραμμα περιήγησης χρειάζεται πρόσβαση στο χώρο αποθήκευσης για τη λήψη αρχείων. Παρακαλούμε επιτρέψτε την για να αποθηκεύσετε αρχεία από το διαδίκτυο</string>
-    <!-- Permission error dialog: button that triggers permission request again -->
     <string name="permission_error_ask_again">Ερώτηση ξανά</string>
-    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
     <string name="permission_error_forever">Η άδεια αποκλείστηκε οριστικά. Παρακαλώ επιτρέψτε την στις ρυθμίσεις</string>
-    <!-- Settings: title -->
     <string name="settings_title">Ρυθμίσεις</string>
-    <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">Μηχανή αναζήτησης</string>
-    <!-- Settings: home page preference title -->
     <string name="pref_start_page">Αρχική σελίδα</string>
-    <!-- Settings: select home page dialog title -->
     <string name="pref_start_page_dialog_title">Επιλογή αρχικής σελίδας</string>
-    <!-- Settings: select home page dialog message -->
     <string name="pref_start_page_dialog_message">Γράψτε το URL της αρχικής σελίδας</string>
-    <!-- Settings: reset home page dialog action -->
     <string name="pref_start_page_dialog_reset">Επαναφορά</string>
-    <!-- Settings: privacy and security category -->
     <string name="pref_privacy_security">Απόρρητο &amp; ασφάλεια</string>
-    <!-- Settings: lookLock title -->
     <string name="pref_looklock_title">LookLock</string>
-    <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">Αποτρέπει άλλες εφαρμογές να διαβάζουν το περιεχόμενο του περιηγητή</string>
-    <!-- Settings: javascript preference title -->
     <string name="pref_js_title">JavaScript</string>
-    <!-- Settings: javascript preference summary -->
     <string name="pref_js_summary">Ενεργοποίηση JavaScript</string>
-    <!-- Settings: location preference title -->
     <string name="pref_location_title">Τοποθεσία</string>
-    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
     <string name="pref_location_summary">Να επιτρέπεται σε ιστότοπους το αίτημα πρόσβασης στην τοποθεσία σας</string>
-    <!-- Settings: cookie preference title -->
     <string name="pref_cookie_title">Cookie</string>
-    <!-- Settings: cookie preference summary -->
     <string name="pref_cookie_summary">Να επιτρέπεται η αποθήκευση και η φόρτωση cookie από ιστότοπους</string>
-    <!-- Settings: advanced share preference title -->
     <string name="pref_screenshot_snap_title">Προηγμένη κοινή χρήση</string>
-    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">Κοινή χρήση προεπισκόπησης της κοινοποιημένης ιστοσελίδας</string>
-    <!-- Settings: clear cookie -->
     <string name="pref_cookie_clear">Εκκαθάριση cookie</string>
-    <!-- Settings: clear cookie toast confirmation -->
     <string name="pref_cookie_clear_done">Έγινε εκκαθάριση όλων των cookie</string>
-    <!-- Settings: do not track preference title -->
     <string name="pref_do_not_track_title">Αιτήματα Do Not Track</string>
-    <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">Αποστολή ενός αιτήματος Do Not Track στις ιστοσελίδες που επισκέπτεστε</string>
-    <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Πάροχος προτάσεων</string>
-    <!-- Settings: reach mode title -->
     <string name="pref_reach_mode_title">Λειτουργία προσέγγισης</string>
-    <!-- Settings: reach mode summary -->
     <string name="pref_reach_mode_summary">Μεταφορά των στοιχείων διεπαφής για ευκολότερη χρήση με ένα χέρι</string>
-    <!-- Settings: clear traffic title -->
     <string name="pref_clear_text_traffic_title">Να επιτρέπονται μη ασφαλείς ιστοσελίδες</string>
-    <!-- Settings: clear traffic summary on -->
     <string name="pref_clear_text_traffic_summary_on">Επιτρέπεται η κυκλοφορία απλού κειμένου (όπως το http)</string>
-    <!-- Settings: clear traffic summary off -->
     <string name="pref_clear_text_traffic_summary_off">Δεν επιτρέπεται η κυκλοφορία απλού κειμένου (όπως το http)</string>
-    <!-- History: title -->
     <string name="history_title">Ιστορικό</string>
-    <!-- History: empty status text -->
     <string name="history_empty">Δεν υπάρχει τίποτα εδώ, περιηγηθείτε στο διαδίκτυο για να δείτε το ιστορικό σας εδώ</string>
-    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
-    <!-- History: delete history dialog title -->
     <string name="history_delete_title">Εκκαθάριση ιστορικού</string>
-    <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">Θα διαγράψετε όλο το ιστορικό, αυτή η ενέργεια δεν μπορεί να αναιρεθεί. Θέλετε να συνεχίσετε;</string>
-    <!-- History: delete history dialog button that erases all the history -->
     <string name="history_delete_positive">Εκκαθάριση</string>
-    <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">Διαγραφή ιστορικού\u2026</string>
-    <!-- History: entry deleted snackbar message -->
     <string name="history_snackbar_item_deleted">Η καταχώρηση διαγράφηκε</string>
-    <!-- History: entry deleted snackbar button message -->
     <string name="history_snackbar_item_deleted_message">Αναίρεση</string>
-    <!-- Favorite: title -->
     <string name="favorite_title">Αγαπημένα</string>
-    <!-- Favorite: snackBar message shown when an url is added to favorites -->
     <string name="favorite_added">Προστέθηκε στα αγαπημένα</string>
-    <!-- Favorite: empty status text -->
     <string name="favorite_empty">Δεν υπάρχει τίποτα εδώ, προσθέστε έναν αγαπημένο σύνδεσμο για να τον δείτε εδώ</string>
-    <!-- Favorite: edit dialog title -->
     <string name="favorite_edit_dialog_title">Επεξεργασία αγαπημένων</string>
-    <!-- Favorite: edit dialog: title of the favorite -->
     <string name="favorite_edit_title">Τίτλος</string>
-    <!-- Favorite: edit dialog: url of the favorite-->
     <string name="favorite_edit_url">URL</string>
-    <!-- Favorite: edit dialog positive button that save changes -->
     <string name="favorite_edit_positive">Επεξεργασία</string>
-    <!-- Favorite: edit dialog button that deletes the selected favorite -->
     <string name="favorite_edit_delete">Διαγραφή</string>
-    <!-- Favorite: edit dialog: invalid url error message -->
     <string name="favorite_edit_error">Εισάγετε ένα έγκυρο URL</string>
-    <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">Καμία εφαρμογή δεν μπορεί να χειριστεί αυτόν τον σύνδεσμο</string>
-    <!-- Auth dialog: title -->
     <string name="auth_dialog_title">Απαιτείται ταυτοποίηση</string>
-    <!-- Auth dialog: username field -->
     <string name="auth_dialog_username">Όνομα χρήστη:</string>
-    <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">Κωδικός πρόσβασης:</string>
-    <!-- Auth dialog: detail -->
     <string name="auth_dialog_detail">Το %1$s απαιτεί ένα όνομα χρήστη και κωδικό πρόσβασης.</string>
-    <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Σύνδεση</string>
-    <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">Νέα καρτέλα ανών. περ.</string>
-    <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">Κανένας</string>
-    <!-- Search in page: search hint -->
     <string name="search_bar_hint">Αναζήτηση</string>
-    <!-- SSL Certificate Details dialog -->
     <string name="ssl_cert_dialog_title">Λεπτομέρειες πιστοποιητικού SSL</string>
     <string name="ssl_cert_dialog_domain">Τομέας</string>
     <string name="ssl_cert_dialog_issued_to">Παραχωρήθηκε σε</string>
