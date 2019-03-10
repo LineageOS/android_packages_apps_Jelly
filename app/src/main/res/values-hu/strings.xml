@@ -15,135 +15,60 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">Böngésző</string>
-  <!-- Menu action: create new tab -->
-  <string name="menu_new_tab">Új fül</string>
-  <!-- Menu action: create new incognito tab -->
-  <string name="menu_incognito">Inkognitólap</string>
-  <!-- Menu action: reload current page -->
-  <string name="menu_reload">Újratöltés</string>
-  <!-- Menu action: add current page to favorites -->
-  <string name="menu_fav_add">Kedvencekhez ad</string>
-  <!-- Menu action: share current page -->
-  <string name="menu_share">Megosztás</string>
-  <!-- Menu action: show favorites list -->
-  <string name="menu_favorites">Kedvencek</string>
-  <!-- Menu action: show history list -->
-  <string name="menu_history">Előzmények</string>
-  <!-- Menu action: add shortcut of the current page to the launcher -->
-  <string name="menu_shortcut">Parancsikon létrehozása</string>
-  <!-- Menu action: show settings -->
-  <string name="menu_settings">Beállítások</string>
-  <!-- Menu action: download selected file / image -->
-  <string name="menu_download">Letöltés</string>
-  <!-- Menu action: open selected link in a new tab -->
-  <string name="menu_in_new_tab">Megnyitás új lapon</string>
-  <!-- Menu action: enable desktop mode -->
-  <string name="menu_desktop_mode">Váltás asztali nézetre</string>
-  <!-- Menu action: enable phone mode -->
-  <string name="menu_mobile_mode">Váltás a mobil nézetre</string>
-  <!-- Menu action: search in page -->
-  <string name="menu_search">Keresés az oldalon</string>
-  <!-- Share webPage: "send to" dialog title -->
-  <string name="share_title">Küldés</string>
-  <!-- Dialog action: dismiss -->
-  <string name="dismiss">Elvetés</string>
-  <!-- Download dialog: title -->
-  <string name="download_title">Fájl letöltése</string>
-  <!-- Download dialog: message -->
-  <string name="download_message">Szeretné letölteni: %1$s?</string>
-  <!-- Download dialog: button that starts the download -->
-  <string name="download_positive">Letöltés</string>
-  <!-- Permission error dialog: title -->
-  <string name="permission_error_title">Jogosultság hiba</string>
-  <!-- Permission error dialog: message for denied storage access-->
-  <!-- Permission error dialog: button that triggers permission request again -->
-  <string name="permission_error_ask_again">Kérdezze meg újra</string>
-  <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">Hozzáadva a kezdőképernyőhöz</string>
-  <!-- Settings: title -->
-  <string name="settings_title">Beállítások</string>
-  <!-- Settings: search engine preference title -->
-  <string name="pref_search_engine">Keresőmotor</string>
-  <!-- Settings: home page preference title -->
-  <string name="pref_start_page">Kezdőoldal</string>
-  <!-- Settings: select home page dialog title -->
-  <!-- Settings: select home page dialog message -->
-  <!-- Settings: reset home page dialog action -->
-  <string name="pref_start_page_dialog_reset">Visszaállitás</string>
-  <!-- Settings: privacy and security category -->
-  <string name="pref_privacy_security">Adatvédelem és biztonság</string>
-  <!-- Settings: lookLock title -->
-  <string name="pref_looklock_title">LookLock</string>
-  <!-- Settings: lookLock summary -->
-  <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">JavaScript</string>
-  <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">JavaScript engedélyezése</string>
-  <!-- Settings: location preference title -->
-  <string name="pref_location_title">Hely</string>
-  <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
-  <string name="pref_location_summary">Weboldalak helyadatok kérésének engedélyezése</string>
-  <!-- Settings: cookie preference title -->
-  <string name="pref_cookie_title">Sütik</string>
-  <!-- Settings: cookie preference summary -->
-  <string name="pref_cookie_summary">Sütik mentésének és betöltésének engedélyezése az oldalak számára</string>
-  <!-- Settings: advanced share preference title -->
-  <string name="pref_screenshot_snap_title">Speciális megosztás</string>
-  <!-- Settings: advanced share preference summary -->
-  <!-- Settings: clear cookie -->
-  <string name="pref_cookie_clear">Sütik törlése</string>
-  <!-- Settings: clear cookie toast confirmation -->
-  <!-- Settings: do not track preference title -->
-  <string name="pref_do_not_track_title">Ne kövesse nyomon</string>
-  <!-- Settings: do not track preference summary -->
-  <!-- Settings: save form data title -->
-  <!-- Settings: suggestions provider title -->
-  <!-- History: title -->
-  <string name="history_title">Előzmények</string>
-  <!-- History: empty status text -->
-  <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <string name="history_date_format">EEEE, yyyy. MMMM dd., HH:mm</string>
-  <!-- History: delete history dialog title -->
-  <string name="history_delete_title">Előzmények törlése</string>
-  <!-- History: delete history dialog warning message -->
-  <!-- History: delete history dialog button that erases all the history -->
-  <string name="history_delete_positive">Törlés</string>
-  <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">Előzmények törlése\u2026</string>
-  <!-- History: entry deleted snackbar message -->
-  <!-- History: entry deleted snackbar button message -->
-  <!-- Favorite: title -->
-  <string name="favorite_title">Kedvencek</string>
-  <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <string name="favorite_added">Hozzáadva a kedvencekhez</string>
-  <!-- Favorite: empty status text -->
-  <!-- Favorite: edit dialog title -->
-  <string name="favorite_edit_dialog_title">Kedvenc szerkesztése</string>
-  <!-- Favorite: edit dialog: title of the favorite -->
-  <string name="favorite_edit_title">Cím</string>
-  <!-- Favorite: edit dialog: url of the favorite-->
-  <!-- Favorite: edit dialog positive button that save changes -->
-  <string name="favorite_edit_positive">Szerkesztés</string>
-  <!-- Favorite: edit dialog button that deletes the selected favorite -->
-  <string name="favorite_edit_delete">Törlés</string>
-  <!-- Favorite: edit dialog: invalid url error message -->
-  <!-- No activity found to open the given url error -->
-  <!-- Auth dialog: title -->
-  <string name="auth_dialog_title">Hitelesítés Szükséges</string>
-  <!-- Auth dialog: username field -->
-  <string name="auth_dialog_username">Felhasználónév:</string>
-  <!-- Auth dialog: password field -->
-  <string name="auth_dialog_password">Jelszó:</string>
-  <!-- Auth dialog: detail -->
-  <!-- Auth dialog: login button -->
-  <string name="auth_dialog_login">Bejelentkezés</string>
-  <!-- Launcher shortcut: new incognito tab -->
-  <string name="shortcut_new_incognito_tab">Új inkognitólap</string>
-  <!-- Suggestions provider: no suggestions provider -->
-  <string name="suggestions_provider_none">Nincs</string>
-  <!-- Search in page: search hint -->
-  <string name="search_bar_hint">Keresés</string>
-  <!-- SSL Certificate Details dialog -->
+    <string name="app_name">Böngésző</string>
+    <string name="menu_new_tab">Új fül</string>
+    <string name="menu_incognito">Inkognitólap</string>
+    <string name="menu_reload">Újratöltés</string>
+    <string name="menu_fav_add">Kedvencekhez ad</string>
+    <string name="menu_share">Megosztás</string>
+    <string name="menu_favorites">Kedvencek</string>
+    <string name="menu_history">Előzmények</string>
+    <string name="menu_shortcut">Parancsikon létrehozása</string>
+    <string name="menu_settings">Beállítások</string>
+    <string name="menu_download">Letöltés</string>
+    <string name="menu_in_new_tab">Megnyitás új lapon</string>
+    <string name="menu_desktop_mode">Váltás asztali nézetre</string>
+    <string name="menu_mobile_mode">Váltás a mobil nézetre</string>
+    <string name="menu_search">Keresés az oldalon</string>
+    <string name="share_title">Küldés</string>
+    <string name="dismiss">Elvetés</string>
+    <string name="download_title">Fájl letöltése</string>
+    <string name="download_message">Szeretné letölteni: %1$s?</string>
+    <string name="download_positive">Letöltés</string>
+    <string name="permission_error_title">Jogosultság hiba</string>
+    <string name="permission_error_ask_again">Kérdezze meg újra</string>
+    <string name="shortcut_added">Hozzáadva a kezdőképernyőhöz</string>
+    <string name="settings_title">Beállítások</string>
+    <string name="pref_search_engine">Keresőmotor</string>
+    <string name="pref_start_page">Kezdőoldal</string>
+    <string name="pref_start_page_dialog_reset">Visszaállitás</string>
+    <string name="pref_privacy_security">Adatvédelem és biztonság</string>
+    <string name="pref_looklock_title">LookLock</string>
+    <string name="pref_js_title">JavaScript</string>
+    <string name="pref_js_summary">JavaScript engedélyezése</string>
+    <string name="pref_location_title">Hely</string>
+    <string name="pref_location_summary">Weboldalak helyadatok kérésének engedélyezése</string>
+    <string name="pref_cookie_title">Sütik</string>
+    <string name="pref_cookie_summary">Sütik mentésének és betöltésének engedélyezése az oldalak számára</string>
+    <string name="pref_screenshot_snap_title">Speciális megosztás</string>
+    <string name="pref_cookie_clear">Sütik törlése</string>
+    <string name="pref_do_not_track_title">Ne kövesse nyomon</string>
+    <string name="history_title">Előzmények</string>
+    <string name="history_date_format">EEEE, yyyy. MMMM dd., HH:mm</string>
+    <string name="history_delete_title">Előzmények törlése</string>
+    <string name="history_delete_positive">Törlés</string>
+    <string name="history_deleting_message">Előzmények törlése\u2026</string>
+    <string name="favorite_title">Kedvencek</string>
+    <string name="favorite_added">Hozzáadva a kedvencekhez</string>
+    <string name="favorite_edit_dialog_title">Kedvenc szerkesztése</string>
+    <string name="favorite_edit_title">Cím</string>
+    <string name="favorite_edit_positive">Szerkesztés</string>
+    <string name="favorite_edit_delete">Törlés</string>
+    <string name="auth_dialog_title">Hitelesítés Szükséges</string>
+    <string name="auth_dialog_username">Felhasználónév:</string>
+    <string name="auth_dialog_password">Jelszó:</string>
+    <string name="auth_dialog_login">Bejelentkezés</string>
+    <string name="shortcut_new_incognito_tab">Új inkognitólap</string>
+    <string name="suggestions_provider_none">Nincs</string>
+    <string name="search_bar_hint">Keresés</string>
 </resources>

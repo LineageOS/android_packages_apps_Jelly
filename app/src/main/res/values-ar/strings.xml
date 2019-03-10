@@ -15,79 +15,90 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Menu action: create new tab -->
-  <!-- Menu action: create new incognito tab -->
-  <!-- Menu action: reload current page -->
-  <!-- Menu action: add current page to favorites -->
-  <!-- Menu action: share current page -->
-  <!-- Menu action: show favorites list -->
-  <!-- Menu action: show history list -->
-  <!-- Menu action: add shortcut of the current page to the launcher -->
-  <!-- Menu action: show settings -->
-  <!-- Menu action: download selected file / image -->
-  <!-- Menu action: open selected link in a new tab -->
-  <!-- Menu action: enable desktop mode -->
-  <!-- Menu action: enable phone mode -->
-  <!-- Menu action: search in page -->
-  <!-- Share webPage: "send to" dialog title -->
-  <!-- Dialog action: dismiss -->
-  <!-- Download dialog: title -->
-  <!-- Download dialog: message -->
-  <!-- Download dialog: button that starts the download -->
-  <!-- Permission error dialog: title -->
-  <!-- Permission error dialog: message for denied storage access-->
-  <!-- Permission error dialog: button that triggers permission request again -->
-  <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <!-- Settings: title -->
-  <!-- Settings: search engine preference title -->
-  <!-- Settings: home page preference title -->
-  <!-- Settings: select home page dialog title -->
-  <!-- Settings: select home page dialog message -->
-  <!-- Settings: reset home page dialog action -->
-  <!-- Settings: privacy and security category -->
-  <!-- Settings: lookLock title -->
-  <!-- Settings: lookLock summary -->
-  <!-- Settings: javascript preference title -->
-  <!-- Settings: javascript preference summary -->
-  <!-- Settings: location preference title -->
-  <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
-  <!-- Settings: cookie preference title -->
-  <!-- Settings: cookie preference summary -->
-  <!-- Settings: advanced share preference title -->
-  <!-- Settings: advanced share preference summary -->
-  <!-- Settings: clear cookie -->
-  <!-- Settings: clear cookie toast confirmation -->
-  <!-- Settings: do not track preference title -->
-  <!-- Settings: do not track preference summary -->
-  <!-- Settings: save form data title -->
-  <!-- Settings: suggestions provider title -->
-  <!-- History: title -->
-  <!-- History: empty status text -->
-  <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <!-- History: delete history dialog title -->
-  <!-- History: delete history dialog warning message -->
-  <!-- History: delete history dialog button that erases all the history -->
-  <!-- History: delete history "working" dialog-->
-  <!-- History: entry deleted snackbar message -->
-  <!-- History: entry deleted snackbar button message -->
-  <!-- Favorite: title -->
-  <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <!-- Favorite: empty status text -->
-  <!-- Favorite: edit dialog title -->
-  <!-- Favorite: edit dialog: title of the favorite -->
-  <!-- Favorite: edit dialog: url of the favorite-->
-  <!-- Favorite: edit dialog positive button that save changes -->
-  <!-- Favorite: edit dialog button that deletes the selected favorite -->
-  <!-- Favorite: edit dialog: invalid url error message -->
-  <!-- No activity found to open the given url error -->
-  <!-- Auth dialog: title -->
-  <!-- Auth dialog: username field -->
-  <!-- Auth dialog: password field -->
-  <!-- Auth dialog: detail -->
-  <!-- Auth dialog: login button -->
-  <!-- Launcher shortcut: new incognito tab -->
-  <!-- Suggestions provider: no suggestions provider -->
-  <!-- Search in page: search hint -->
-  <!-- SSL Certificate Details dialog -->
+    <string name="app_name">المتصفح</string>
+    <string name="menu_new_tab">علامة تبويب جديدة</string>
+    <string name="menu_incognito">علامة التبويب التخفي</string>
+    <string name="menu_reload">إعادة تحميل</string>
+    <string name="menu_fav_add">إضافة إلى المفضلة</string>
+    <string name="menu_share">مشاركة</string>
+    <string name="menu_favorites">المفضلة</string>
+    <string name="menu_history">السجل</string>
+    <string name="menu_shortcut">إضافة اختصار</string>
+    <string name="menu_settings">الإعدادات</string>
+    <string name="menu_download">تنزيل</string>
+    <string name="menu_in_new_tab">فتح في علامة تبويب جديدة</string>
+    <string name="menu_desktop_mode">التبديل إلى موقع سطح المكتب</string>
+    <string name="menu_mobile_mode">التبديل إلى موقع الجوال</string>
+    <string name="menu_search">البحث في الصفحة</string>
+    <string name="share_title">إرسال إلى</string>
+    <string name="dismiss">تجاهل</string>
+    <string name="download_title">تنزيل الملف</string>
+    <string name="download_message">هل تريد تنزيل %1$s؟</string>
+    <string name="download_positive">تنزيل</string>
+    <string name="permission_error_title">خطأ في إذن الوصول</string>
+    <string name="permission_error_storage">يحتاج المتصفح الوصول إلى وحدة التخزين لتنزيل الملفات. الرجاء السماح له لحفظ الملفات من الويب</string>
+    <string name="permission_error_ask_again">السؤال مرة أخرى</string>
+    <string name="permission_error_forever">إذن مرفوض بشكل دائم. الرجاء السماح لذلك في الإعدادات</string>
+    <string name="shortcut_added">إضافة إلى الشاشة الرئيسية</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="pref_search_engine">محرك البحث</string>
+    <string name="pref_start_page">الصفحة الرئيسية</string>
+    <string name="pref_start_page_dialog_title">تحديد الصفحة الرئيسية</string>
+    <string name="pref_start_page_dialog_message">اكتب عنوان URL للصفحة الرئيسية</string>
+    <string name="pref_start_page_dialog_reset">إعادة تعيين</string>
+    <string name="pref_privacy_security">الخصوصية والأمان</string>
+    <string name="pref_looklock_title">قفل الوصول</string>
+    <string name="pref_looklock_summary">منع التطبيقات الأخرى من قراءة محتوى المتصفح</string>
+    <string name="pref_js_title">جافا سكريبت</string>
+    <string name="pref_js_summary">تمكين جافا سكريبت</string>
+    <string name="pref_location_title">الموقع</string>
+    <string name="pref_location_summary">السماح لمواقع الويب بطلب حق الوصول إلى موقعك</string>
+    <string name="pref_cookie_title">ملفات تعريف الارتباط</string>
+    <string name="pref_cookie_summary">السماح لمواقع الويب بحفظ وتحميل ملفات تعريف الارتباط</string>
+    <string name="pref_screenshot_snap_title">مشاركة متقّدمة</string>
+    <string name="pref_screenshot_snap_summary">مشاركة المعاينة لصفحة الويب المشاركة</string>
+    <string name="pref_cookie_clear">مسح ملفات تعريف الارتباط</string>
+    <string name="pref_cookie_clear_done">مسح كافة ملفات تعريف الارتباط</string>
+    <string name="pref_do_not_track_title">لا تتبع</string>
+    <string name="pref_do_not_track_summary">إرسال طلب \"لا تتبع\" إلى مواقع الويب التي تزورها</string>
+    <string name="pref_save_form_data_title">حفظ بيانات النموذج</string>
+    <string name="pref_suggestions_provider">مُوفر الاقتراحات</string>
+    <string name="history_title">السجل</string>
+    <string name="history_empty">لا يوجد شيء هنا، تصفح على شبكة الإنترنت لرؤية سجلك هنا</string>
+    <string name="history_date_format">EEEE MMMM dd yyyy hh: mm</string>
+    <string name="history_delete_title">محو السجل</string>
+    <string name="history_delete_message">ستقوم بحذف كافة المحفوظات، لا يمكن التراجع عن هذا الإجراء. هل تريد المتابعة؟</string>
+    <string name="history_delete_positive">محو</string>
+    <string name="history_deleting_message">يتم محو السجل</string>
+    <string name="history_snackbar_item_deleted">تم حذف الإدخال</string>
+    <string name="history_snackbar_item_deleted_message">تراجع</string>
+    <string name="favorite_title">المفضلة</string>
+    <string name="favorite_added">تمت الإضافة إلى المفضلة</string>
+    <string name="favorite_empty">لا يوجد شيء هنا، أضف رابط مفضل لمشاهدته هنا</string>
+    <string name="favorite_edit_dialog_title">تحرير المفضلة</string>
+    <string name="favorite_edit_title">العنوان</string>
+    <string name="favorite_edit_url">URL</string>
+    <string name="favorite_edit_positive">تعديل</string>
+    <string name="favorite_edit_delete">حذف</string>
+    <string name="favorite_edit_error">أدخل عنوان URL صالح</string>
+    <string name="error_no_activity_found">لا يوجد تطبيق يمكنه التعامل مع هذا الرابط</string>
+    <string name="auth_dialog_title">مطلوب المصادقة</string>
+    <string name="auth_dialog_username">اسم المستخدم:</string>
+    <string name="auth_dialog_password">كلمة المرور:</string>
+    <string name="auth_dialog_detail">%1$s يتطلب اسم مستخدم وكلمة مرور.</string>
+    <string name="auth_dialog_login">تسجيل الدخول</string>
+    <string name="shortcut_new_incognito_tab">علامة تبويب جديدة للتصفح الخفي</string>
+    <string name="suggestions_provider_none">لا شيء</string>
+    <string name="search_bar_hint">بحث</string>
+    <string name="ssl_cert_dialog_title">تفاصيل شهادة SSL</string>
+    <string name="ssl_cert_dialog_domain">النطاق</string>
+    <string name="ssl_cert_dialog_issued_to">إصدرت لـ</string>
+    <string name="ssl_cert_dialog_issued_by">أصدرت بواسطة</string>
+    <string name="ssl_cert_dialog_validity">مدة الصلاحية</string>
+    <string name="ssl_cert_dialog_common_name">الاسم الشائع (CN)</string>
+    <string name="ssl_cert_dialog_organization">المنظمة (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">الوحدة التنظيمية (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">الصادر في</string>
+    <string name="ssl_cert_dialog_expires_on">تنتهي صلاحيته في</string>
+    <string name="ssl_cert_dialog_dismiss">تجاهل</string>
 </resources>

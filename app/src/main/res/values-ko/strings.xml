@@ -15,165 +15,90 @@
      limitations under the License.
 -->
 <resources>
-  <string name="app_name">브라우저</string>
-  <!-- Menu action: create new tab -->
-  <string name="menu_new_tab">새 탭</string>
-  <!-- Menu action: create new incognito tab -->
-  <string name="menu_incognito">시크릿 탭</string>
-  <!-- Menu action: reload current page -->
-  <string name="menu_reload">새로고침</string>
-  <!-- Menu action: add current page to favorites -->
-  <string name="menu_fav_add">즐겨찾기에 추가</string>
-  <!-- Menu action: share current page -->
-  <string name="menu_share">공유</string>
-  <!-- Menu action: show favorites list -->
-  <string name="menu_favorites">즐겨찾기</string>
-  <!-- Menu action: show history list -->
-  <string name="menu_history">방문 기록</string>
-  <!-- Menu action: add shortcut of the current page to the launcher -->
-  <string name="menu_shortcut">홈 화면에 바로가기 추가</string>
-  <!-- Menu action: show settings -->
-  <string name="menu_settings">설정</string>
-  <!-- Menu action: download selected file / image -->
-  <string name="menu_download">다운로드</string>
-  <!-- Menu action: open selected link in a new tab -->
-  <string name="menu_in_new_tab">새 탭에서 열기</string>
-  <!-- Menu action: enable desktop mode -->
-  <string name="menu_desktop_mode">PC 버전으로 보기</string>
-  <!-- Menu action: enable phone mode -->
-  <string name="menu_mobile_mode">모바일 버전으로 보기</string>
-  <!-- Menu action: search in page -->
-  <string name="menu_search">현재 페이지에서 찾기</string>
-  <!-- Share webPage: "send to" dialog title -->
-  <string name="share_title">보내기</string>
-  <!-- Dialog action: dismiss -->
-  <string name="dismiss">다시 묻지 않기</string>
-  <!-- Download dialog: title -->
-  <string name="download_title">파일 다운로드</string>
-  <!-- Download dialog: message -->
-  <string name="download_message">%1$s 파일을 다운로드하시겠습니까?</string>
-  <!-- Download dialog: button that starts the download -->
-  <string name="download_positive">다운로드</string>
-  <!-- Permission error dialog: title -->
-  <string name="permission_error_title">권한 오류</string>
-  <!-- Permission error dialog: message for denied storage access-->
-  <string name="permission_error_storage">브라우저에서 파일을 다운로드하기 위해서는 저장소 접근 권한이 필요합니다. 웹에서 파일을 저장할 수 있도록 권한을 허용해 주세요.</string>
-  <!-- Permission error dialog: button that triggers permission request again -->
-  <string name="permission_error_ask_again">다시 묻기</string>
-  <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
-  <string name="permission_error_forever">권한이 영구적으로 거부되었습니다. 설정에서 권한을 허용해 주세요.</string>
-  <!-- Shortcut: the current webPage has been added to the launcher -->
-  <string name="shortcut_added">홈 화면에 추가되었습니다.</string>
-  <!-- Settings: title -->
-  <string name="settings_title">설정</string>
-  <!-- Settings: search engine preference title -->
-  <string name="pref_search_engine">검색 엔진</string>
-  <!-- Settings: home page preference title -->
-  <string name="pref_start_page">홈페이지</string>
-  <!-- Settings: select home page dialog title -->
-  <string name="pref_start_page_dialog_title">홈페이지 선택</string>
-  <!-- Settings: select home page dialog message -->
-  <string name="pref_start_page_dialog_message">홈페이지의 URL을 입력하세요.</string>
-  <!-- Settings: reset home page dialog action -->
-  <string name="pref_start_page_dialog_reset">초기화</string>
-  <!-- Settings: privacy and security category -->
-  <string name="pref_privacy_security">개인정보 보호 및 보안</string>
-  <!-- Settings: lookLock title -->
-  <string name="pref_looklock_title">LookLock</string>
-  <!-- Settings: lookLock summary -->
-  <string name="pref_looklock_summary">다른 앱에서 브라우저의 내용을 읽을 수 없게 합니다.</string>
-  <!-- Settings: javascript preference title -->
-  <string name="pref_js_title">자바스크립트</string>
-  <!-- Settings: javascript preference summary -->
-  <string name="pref_js_summary">자바스크립트 사용</string>
-  <!-- Settings: location preference title -->
-  <string name="pref_location_title">위치</string>
-  <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
-  <string name="pref_location_summary">웹사이트가 위치 정보 접근을 요구할 수 있게 합니다.</string>
-  <!-- Settings: cookie preference title -->
-  <string name="pref_cookie_title">쿠키</string>
-  <!-- Settings: cookie preference summary -->
-  <string name="pref_cookie_summary">웹사이트가 쿠키를 읽고 저장할 수 있게 합니다.</string>
-  <!-- Settings: advanced share preference title -->
-  <string name="pref_screenshot_snap_title">고급 공유</string>
-  <!-- Settings: advanced share preference summary -->
-  <string name="pref_screenshot_snap_summary">공유한 웹페이지의 미리보기 공유</string>
-  <!-- Settings: clear cookie -->
-  <string name="pref_cookie_clear">쿠키 삭제</string>
-  <!-- Settings: clear cookie toast confirmation -->
-  <string name="pref_cookie_clear_done">모든 쿠키를 삭제했습니다.</string>
-  <!-- Settings: do not track preference title -->
-  <string name="pref_do_not_track_title">추적 안 함 요청</string>
-  <!-- Settings: do not track preference summary -->
-  <string name="pref_do_not_track_summary">방문하는 사이트에 추적 안 함 요청 보내기</string>
-  <!-- Settings: save form data title -->
-  <string name="pref_save_form_data_title">양식 정보 저장</string>
-  <!-- Settings: suggestions provider title -->
-  <string name="pref_suggestions_provider">제안 공급자</string>
-  <!-- History: title -->
-  <string name="history_title">방문 기록</string>
-  <!-- History: empty status text -->
-  <string name="history_empty">아무것도 없습니다. 방문 기록을 확인하려면 먼저 인터넷을 둘러보세요.</string>
-  <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
-  <string name="history_date_format">yyyy MMMM dd EEEE, HH:mm</string>
-  <!-- History: delete history dialog title -->
-  <string name="history_delete_title">방문 기록 삭제</string>
-  <!-- History: delete history dialog warning message -->
-  <string name="history_delete_message">모든 방문 기록을 삭제하려 합니다. 이 작업은 취소할 수 없습니다. 정말 계속하시겠습니까?</string>
-  <!-- History: delete history dialog button that erases all the history -->
-  <string name="history_delete_positive">삭제</string>
-  <!-- History: delete history "working" dialog-->
-  <string name="history_deleting_message">방문 기록을 삭제하는 중\u2026</string>
-  <!-- History: entry deleted snackbar message -->
-  <string name="history_snackbar_item_deleted">항목 삭제됨</string>
-  <!-- History: entry deleted snackbar button message -->
-  <string name="history_snackbar_item_deleted_message">실행 취소</string>
-  <!-- Favorite: title -->
-  <string name="favorite_title">즐겨찾기</string>
-  <!-- Favorite: snackBar message shown when an url is added to favorites -->
-  <string name="favorite_added">즐겨찾기에 추가되었습니다.</string>
-  <!-- Favorite: empty status text -->
-  <string name="favorite_empty">아무것도 없습니다. 먼저 즐겨찾는 링크를 추가하세요.</string>
-  <!-- Favorite: edit dialog title -->
-  <string name="favorite_edit_dialog_title">즐겨찾기 편집</string>
-  <!-- Favorite: edit dialog: title of the favorite -->
-  <string name="favorite_edit_title">제목</string>
-  <!-- Favorite: edit dialog: url of the favorite-->
-  <string name="favorite_edit_url">URL</string>
-  <!-- Favorite: edit dialog positive button that save changes -->
-  <string name="favorite_edit_positive">편집</string>
-  <!-- Favorite: edit dialog button that deletes the selected favorite -->
-  <string name="favorite_edit_delete">삭제</string>
-  <!-- Favorite: edit dialog: invalid url error message -->
-  <string name="favorite_edit_error">유효한 URL을 입력하세요.</string>
-  <!-- No activity found to open the given url error -->
-  <string name="error_no_activity_found">이 링크를 열 수 있는 앱이 없습니다.</string>
-  <!-- Auth dialog: title -->
-  <string name="auth_dialog_title">인증 필요</string>
-  <!-- Auth dialog: username field -->
-  <string name="auth_dialog_username">사용자 이름:</string>
-  <!-- Auth dialog: password field -->
-  <string name="auth_dialog_password">암호:</string>
-  <!-- Auth dialog: detail -->
-  <string name="auth_dialog_detail">%1$s에는 사용자 이름 및 암호가 필요합니다.</string>
-  <!-- Auth dialog: login button -->
-  <string name="auth_dialog_login">로그인</string>
-  <!-- Launcher shortcut: new incognito tab -->
-  <string name="shortcut_new_incognito_tab">새 시크릿 탭</string>
-  <!-- Suggestions provider: no suggestions provider -->
-  <string name="suggestions_provider_none">없음</string>
-  <!-- Search in page: search hint -->
-  <string name="search_bar_hint">검색</string>
-  <!-- SSL Certificate Details dialog -->
-  <string name="ssl_cert_dialog_title">SSL 인증서 세부 정보</string>
-  <string name="ssl_cert_dialog_domain">도메인</string>
-  <string name="ssl_cert_dialog_issued_to">발급 대상</string>
-  <string name="ssl_cert_dialog_issued_by">발급자</string>
-  <string name="ssl_cert_dialog_validity">유효 기간</string>
-  <string name="ssl_cert_dialog_common_name">일반 이름 (CN)</string>
-  <string name="ssl_cert_dialog_organization">조직 (O)</string>
-  <string name="ssl_cert_dialog_organizational_unit">조직 구성 단위 (UN)</string>
-  <string name="ssl_cert_dialog_issued_on">발급 날짜</string>
-  <string name="ssl_cert_dialog_expires_on">만료 날짜</string>
-  <string name="ssl_cert_dialog_dismiss">닫기</string>
+    <string name="app_name">브라우저</string>
+    <string name="menu_new_tab">새 탭</string>
+    <string name="menu_incognito">시크릿 탭</string>
+    <string name="menu_reload">새로고침</string>
+    <string name="menu_fav_add">즐겨찾기에 추가</string>
+    <string name="menu_share">공유</string>
+    <string name="menu_favorites">즐겨찾기</string>
+    <string name="menu_history">방문 기록</string>
+    <string name="menu_shortcut">홈 화면에 바로가기 추가</string>
+    <string name="menu_settings">설정</string>
+    <string name="menu_download">다운로드</string>
+    <string name="menu_in_new_tab">새 탭에서 열기</string>
+    <string name="menu_desktop_mode">PC 버전으로 보기</string>
+    <string name="menu_mobile_mode">모바일 버전으로 보기</string>
+    <string name="menu_search">현재 페이지에서 찾기</string>
+    <string name="share_title">보내기</string>
+    <string name="dismiss">다시 묻지 않기</string>
+    <string name="download_title">파일 다운로드</string>
+    <string name="download_message">%1$s 파일을 다운로드하시겠습니까?</string>
+    <string name="download_positive">다운로드</string>
+    <string name="permission_error_title">권한 오류</string>
+    <string name="permission_error_storage">브라우저에서 파일을 다운로드하기 위해서는 저장소 접근 권한이 필요합니다. 웹에서 파일을 저장할 수 있도록 권한을 허용해 주세요.</string>
+    <string name="permission_error_ask_again">다시 묻기</string>
+    <string name="permission_error_forever">권한이 영구적으로 거부되었습니다. 설정에서 권한을 허용해 주세요.</string>
+    <string name="shortcut_added">홈 화면에 추가되었습니다.</string>
+    <string name="settings_title">설정</string>
+    <string name="pref_search_engine">검색 엔진</string>
+    <string name="pref_start_page">홈페이지</string>
+    <string name="pref_start_page_dialog_title">홈페이지 선택</string>
+    <string name="pref_start_page_dialog_message">홈페이지의 URL을 입력하세요.</string>
+    <string name="pref_start_page_dialog_reset">초기화</string>
+    <string name="pref_privacy_security">개인정보 보호 및 보안</string>
+    <string name="pref_looklock_title">LookLock</string>
+    <string name="pref_looklock_summary">다른 앱에서 브라우저의 내용을 읽을 수 없게 합니다.</string>
+    <string name="pref_js_title">자바스크립트</string>
+    <string name="pref_js_summary">자바스크립트 사용</string>
+    <string name="pref_location_title">위치</string>
+    <string name="pref_location_summary">웹사이트가 위치 정보 접근을 요구할 수 있게 합니다.</string>
+    <string name="pref_cookie_title">쿠키</string>
+    <string name="pref_cookie_summary">웹사이트가 쿠키를 읽고 저장할 수 있게 합니다.</string>
+    <string name="pref_screenshot_snap_title">고급 공유</string>
+    <string name="pref_screenshot_snap_summary">공유한 웹페이지의 미리보기 공유</string>
+    <string name="pref_cookie_clear">쿠키 삭제</string>
+    <string name="pref_cookie_clear_done">모든 쿠키를 삭제했습니다.</string>
+    <string name="pref_do_not_track_title">추적 안 함 요청</string>
+    <string name="pref_do_not_track_summary">방문하는 사이트에 추적 안 함 요청 보내기</string>
+    <string name="pref_save_form_data_title">양식 정보 저장</string>
+    <string name="pref_suggestions_provider">제안 공급자</string>
+    <string name="history_title">방문 기록</string>
+    <string name="history_empty">아무것도 없습니다. 방문 기록을 확인하려면 먼저 인터넷을 둘러보세요.</string>
+    <string name="history_date_format">yyyy MMMM dd EEEE, HH:mm</string>
+    <string name="history_delete_title">방문 기록 삭제</string>
+    <string name="history_delete_message">모든 방문 기록을 삭제하려 합니다. 이 작업은 취소할 수 없습니다. 정말 계속하시겠습니까?</string>
+    <string name="history_delete_positive">삭제</string>
+    <string name="history_deleting_message">방문 기록을 삭제하는 중\u2026</string>
+    <string name="history_snackbar_item_deleted">항목 삭제됨</string>
+    <string name="history_snackbar_item_deleted_message">실행 취소</string>
+    <string name="favorite_title">즐겨찾기</string>
+    <string name="favorite_added">즐겨찾기에 추가되었습니다.</string>
+    <string name="favorite_empty">아무것도 없습니다. 먼저 즐겨찾는 링크를 추가하세요.</string>
+    <string name="favorite_edit_dialog_title">즐겨찾기 편집</string>
+    <string name="favorite_edit_title">제목</string>
+    <string name="favorite_edit_url">URL</string>
+    <string name="favorite_edit_positive">편집</string>
+    <string name="favorite_edit_delete">삭제</string>
+    <string name="favorite_edit_error">유효한 URL을 입력하세요.</string>
+    <string name="error_no_activity_found">이 링크를 열 수 있는 앱이 없습니다.</string>
+    <string name="auth_dialog_title">인증 필요</string>
+    <string name="auth_dialog_username">사용자 이름:</string>
+    <string name="auth_dialog_password">암호:</string>
+    <string name="auth_dialog_detail">%1$s에는 사용자 이름 및 암호가 필요합니다.</string>
+    <string name="auth_dialog_login">로그인</string>
+    <string name="shortcut_new_incognito_tab">새 시크릿 탭</string>
+    <string name="suggestions_provider_none">없음</string>
+    <string name="search_bar_hint">검색</string>
+    <string name="ssl_cert_dialog_title">SSL 인증서 세부 정보</string>
+    <string name="ssl_cert_dialog_domain">도메인</string>
+    <string name="ssl_cert_dialog_issued_to">발급 대상</string>
+    <string name="ssl_cert_dialog_issued_by">발급자</string>
+    <string name="ssl_cert_dialog_validity">유효 기간</string>
+    <string name="ssl_cert_dialog_common_name">일반 이름 (CN)</string>
+    <string name="ssl_cert_dialog_organization">조직 (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">조직 구성 단위 (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">발급 날짜</string>
+    <string name="ssl_cert_dialog_expires_on">만료 날짜</string>
+    <string name="ssl_cert_dialog_dismiss">닫기</string>
 </resources>
