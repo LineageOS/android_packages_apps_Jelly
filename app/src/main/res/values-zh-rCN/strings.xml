@@ -16,161 +16,83 @@
 -->
 <resources>
     <string name="app_name">浏览器</string>
-    <!-- Menu action: create new tab -->
     <string name="menu_new_tab">新标签页</string>
-    <!-- Menu action: create new incognito tab -->
     <string name="menu_incognito">隐身标签页</string>
-    <!-- Menu action: reload current page -->
     <string name="menu_reload">重新加载</string>
-    <!-- Menu action: add current page to favorites -->
     <string name="menu_fav_add">添加到收藏夹</string>
-    <!-- Menu action: share current page -->
     <string name="menu_share">分享</string>
-    <!-- Menu action: show favorites list -->
     <string name="menu_favorites">收藏夹</string>
-    <!-- Menu action: show history list -->
     <string name="menu_history">历史记录</string>
-    <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">添加快捷方式</string>
-    <!-- Menu action: show settings -->
     <string name="menu_settings">设置</string>
-    <!-- Menu action: download selected file / image -->
     <string name="menu_download">下载</string>
-    <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">在新标签页中打开</string>
-    <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">切换到桌面版页面</string>
-    <!-- Menu action: enable phone mode -->
     <string name="menu_mobile_mode">切换到手机版页面</string>
-    <!-- Menu action: search in page -->
     <string name="menu_search">在页面内查找</string>
-    <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">发送到</string>
-    <!-- Dialog action: dismiss -->
     <string name="dismiss">忽略</string>
-    <!-- Download dialog: title -->
     <string name="download_title">下载文件</string>
-    <!-- Download dialog: message -->
     <string name="download_message">您想要下载 %1$s 吗？</string>
-    <!-- Download dialog: button that starts the download -->
     <string name="download_positive">下载</string>
-    <!-- Permission error dialog: title -->
     <string name="permission_error_title">权限错误</string>
-    <!-- Permission error dialog: message for denied storage access-->
     <string name="permission_error_storage">浏览器需要获取存储空间使用权限。请授予权限以便于从网页上下载文件</string>
-    <!-- Permission error dialog: button that triggers permission request again -->
     <string name="permission_error_ask_again">再次询问</string>
-    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
     <string name="permission_error_forever">权限请求被永久拒绝。请在系统设置中给予权限</string>
-    <!-- Settings: title -->
     <string name="settings_title">设置</string>
-    <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">搜索引擎</string>
-    <!-- Settings: home page preference title -->
     <string name="pref_start_page">主页</string>
-    <!-- Settings: select home page dialog title -->
     <string name="pref_start_page_dialog_title">设为主页</string>
-    <!-- Settings: select home page dialog message -->
     <string name="pref_start_page_dialog_message">输入主页网址</string>
-    <!-- Settings: reset home page dialog action -->
     <string name="pref_start_page_dialog_reset">重置</string>
-    <!-- Settings: privacy and security category -->
     <string name="pref_privacy_security">隐私和安全</string>
-    <!-- Settings: lookLock title -->
     <string name="pref_looklock_title">内容阻断</string>
-    <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">阻止其他应用程序读取浏览器的内容</string>
-    <!-- Settings: javascript preference title -->
     <string name="pref_js_title">JavaScript</string>
-    <!-- Settings: javascript preference summary -->
     <string name="pref_js_summary">启用 JavaScript</string>
-    <!-- Settings: location preference title -->
     <string name="pref_location_title">位置</string>
-    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
     <string name="pref_location_summary">允许网站获取您的位置信息</string>
-    <!-- Settings: cookie preference title -->
     <string name="pref_cookie_title">Cookie</string>
-    <!-- Settings: cookie preference summary -->
     <string name="pref_cookie_summary">允许网站保存和读取 Cookies 数据</string>
-    <!-- Settings: advanced share preference title -->
     <string name="pref_screenshot_snap_title">高级共享</string>
-    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">共享网页预览</string>
-    <!-- Settings: clear cookie -->
     <string name="pref_cookie_clear">清除 Cookies</string>
-    <!-- Settings: clear cookie toast confirmation -->
     <string name="pref_cookie_clear_done">已清除所有 Cookies</string>
-    <!-- Settings: do not track preference title -->
     <string name="pref_do_not_track_title">不跟踪</string>
-    <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">发送“不跟踪”请求到您浏览的网站</string>
-    <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">建议提供商</string>
-    <!-- Settings: reach mode title -->
     <string name="pref_reach_mode_title">单手模式</string>
-    <!-- Settings: reach mode summary -->
     <string name="pref_reach_mode_summary">重新排列界面元素以便于单手操作</string>
-    <!-- Settings: clear traffic title -->
     <string name="pref_clear_text_traffic_title">允许不安全的网站</string>
-    <!-- Settings: clear traffic summary on -->
     <string name="pref_clear_text_traffic_summary_on">允许明文流量（如 http）</string>
-    <!-- Settings: clear traffic summary off -->
     <string name="pref_clear_text_traffic_summary_off">不允许明文流量（如 http）</string>
-    <!-- History: title -->
     <string name="history_title">历史记录</string>
-    <!-- History: empty status text -->
     <string name="history_empty">这里什么都没有，请浏览互联网并在此处查看您的历史记录</string>
-    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
     <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
-    <!-- History: delete history dialog title -->
     <string name="history_delete_title">清除历史记录</string>
-    <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">您将要删除所有历史记录，此操作无法撤消。您确定继续吗？</string>
-    <!-- History: delete history dialog button that erases all the history -->
     <string name="history_delete_positive">清除</string>
-    <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">正在清除历史记录\u2026</string>
-    <!-- History: entry deleted snackbar message -->
     <string name="history_snackbar_item_deleted">记录已删除</string>
-    <!-- History: entry deleted snackbar button message -->
     <string name="history_snackbar_item_deleted_message">撤销</string>
-    <!-- Favorite: title -->
     <string name="favorite_title">收藏夹</string>
-    <!-- Favorite: snackBar message shown when an url is added to favorites -->
     <string name="favorite_added">已添加到收藏夹</string>
-    <!-- Favorite: empty status text -->
     <string name="favorite_empty">这里什么都没有，请添加一个链接到收藏</string>
-    <!-- Favorite: edit dialog title -->
     <string name="favorite_edit_dialog_title">编辑收藏</string>
-    <!-- Favorite: edit dialog: title of the favorite -->
     <string name="favorite_edit_title">标题</string>
-    <!-- Favorite: edit dialog: url of the favorite-->
     <string name="favorite_edit_url">网址</string>
-    <!-- Favorite: edit dialog positive button that save changes -->
     <string name="favorite_edit_positive">编辑</string>
-    <!-- Favorite: edit dialog button that deletes the selected favorite -->
     <string name="favorite_edit_delete">删除</string>
-    <!-- Favorite: edit dialog: invalid url error message -->
     <string name="favorite_edit_error">输入一个有效网址</string>
-    <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">没有应用可以处理此链接</string>
-    <!-- Auth dialog: title -->
     <string name="auth_dialog_title">需要身份验证</string>
-    <!-- Auth dialog: username field -->
     <string name="auth_dialog_username">用户名：</string>
-    <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">密码：</string>
-    <!-- Auth dialog: detail -->
     <string name="auth_dialog_detail">%1$s 需要用户名和密码</string>
-    <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">登录</string>
-    <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">新隐身标签页</string>
-    <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">无</string>
-    <!-- Search in page: search hint -->
     <string name="search_bar_hint">搜索</string>
-    <!-- SSL Certificate Details dialog -->
     <string name="ssl_cert_dialog_title">SSL 证书明细</string>
     <string name="ssl_cert_dialog_domain">域名</string>
     <string name="ssl_cert_dialog_issued_to">颁发给：</string>
