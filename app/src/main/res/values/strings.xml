@@ -16,10 +16,10 @@
 <resources>
     <string name="app_name">Browser</string>
 
-    <!-- Menu action: create new tab -->
-    <string name="menu_new_tab">New tab</string>
-    <!-- Menu action: create new incognito tab -->
-    <string name="menu_incognito">Incognito tab</string>
+    <!-- Menu action: create new window -->
+    <string name="menu_new_tab">New window</string>
+    <!-- Menu action: create new incognito window -->
+    <string name="menu_incognito">Incognito window</string>
     <!-- Menu action: reload current page -->
     <string name="menu_reload">Reload</string>
     <!-- Menu action: add current page to favorites -->
@@ -36,8 +36,8 @@
     <string name="menu_settings">Settings</string>
     <!-- Menu action: download selected file / image -->
     <string name="menu_download">Download</string>
-    <!-- Menu action: open selected link in a new tab -->
-    <string name="menu_in_new_tab">Open in new tab</string>
+    <!-- Menu action: open selected link in a new window -->
+    <string name="menu_in_new_tab">Open in new window</string>
     <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">Switch to desktop site</string>
     <!-- Menu action: enable phone mode -->
@@ -173,8 +173,8 @@
     <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Log in</string>
 
-    <!-- Launcher shortcut: new incognito tab -->
-    <string name="shortcut_new_incognito_tab">New incognito tab</string>
+    <!-- Launcher shortcut: new incognito window -->
+    <string name="shortcut_new_incognito_tab">New incognito window</string>
 
     <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">None</string>
