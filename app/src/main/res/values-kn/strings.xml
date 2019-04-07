@@ -18,10 +18,12 @@
     <string name="menu_share">ಹಂಚು</string>
     <string name="menu_history">ಇತಿಹಾಸ</string>
     <string name="menu_settings">ಆಯ್ಕೆಗಳು</string>
+    <string name="pref_start_page_dialog_message">ತವರು ಪುಟದ URL ಬರೆ</string>
     <string name="pref_reach_mode_title">ತಲುಪುವ ರೀತಿ</string>
     <string name="pref_reach_mode_summary">ಸುಲಭ ಏಕ-ಕೈ ಬಳಕೆಗಾಗಿ ಪರದೆಯ ಅಂಶಗಳನ್ನು ಸ್ಥಳಾಂತರಿಸು</string>
     <string name="pref_clear_text_traffic_title">ಅಸುರಕ್ಷಿತ ಜಾಲತಾಣಗಳನ್ನು ಅಂಗೀಕರಿಸು</string>
     <string name="pref_clear_text_traffic_summary_on">ಪಾರದರ್ಶಕ ಪಠ್ಯ ಸಂಚಾರ (HTTP ಮಾದರಿ) ಅಂಗೀಕೃತ</string>
     <string name="pref_clear_text_traffic_summary_off">ಪಾರದರ್ಶಕ ಪಠ್ಯ ಸಂಚಾರ (HTTP ಮಾದರಿ) ಅನಂಗೀಕೃತ</string>
+    <string name="history_delete_message">ನೀವು ಎಲ್ಲಾ ಇತಿಹಾಸವನ್ನು ಅಳಿಸಲಿದ್ದೀರಿ, ಈ ಕ್ರಿಯೆಯನ್ನು ಹಿಂತಿರುಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಮುಂದುವರಿಸಬೇಕೆ?</string>
     <string name="history_snackbar_item_deleted">ನಮೂದು ಅಳಿಸಿತು</string>
 </resources>
