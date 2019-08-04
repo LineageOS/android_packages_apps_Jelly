@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">Browser</string>
+    <string name="app_name">Netlæser</string>
     <string name="menu_new_tab">Ny fane</string>
     <string name="menu_incognito">Inkognitofane</string>
     <string name="menu_reload">Genindlæs</string>
@@ -35,9 +35,9 @@
     <string name="download_message">Ønsker du at downloade %1$s?</string>
     <string name="download_positive">Download</string>
     <string name="permission_error_title">Tilladelsesfejl</string>
-    <string name="permission_error_storage">Browseren skal bruge lageradgang for at downloade filer. Tildel denne rettighed for at gemme filer fra nettet</string>
+    <string name="permission_error_storage">Netlæseren behøver lageradgang, for at hente filer. Tildel venligst dette, for at gemme filer fra nettet</string>
     <string name="permission_error_ask_again">Spørg igen</string>
-    <string name="permission_error_forever">Adgang nægtet permanent. Tildel dette i Indstillinger</string>
+    <string name="permission_error_forever">Tilladelse permanent afslået. Tildel den venligst i Indstillinger</string>
     <string name="settings_title">Indstillinger</string>
     <string name="pref_search_engine">Søgemaskine</string>
     <string name="pref_start_page">Startside</string>
@@ -46,7 +46,7 @@
     <string name="pref_start_page_dialog_reset">Nulstil</string>
     <string name="pref_privacy_security">Privatliv &amp; sikkerhed</string>
     <string name="pref_looklock_title">KiggeLås</string>
-    <string name="pref_looklock_summary">Forhindr andre apps i at læse browserens indhold</string>
+    <string name="pref_looklock_summary">Forhindr andre apps i at læse Netlæserens indhold</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Aktivér JavaScript</string>
     <string name="pref_location_title">Placering</string>
@@ -54,7 +54,7 @@
     <string name="pref_cookie_title">Cookies</string>
     <string name="pref_cookie_summary">Tillad websteder til at læse og gemme cookies</string>
     <string name="pref_screenshot_snap_title">Avanceret deling</string>
-    <string name="pref_screenshot_snap_summary">Del eksempel på den delte hjemmeside</string>
+    <string name="pref_screenshot_snap_summary">Del forhåndsvisning af den delte netside</string>
     <string name="pref_cookie_clear">Ryd cookies</string>
     <string name="pref_cookie_clear_done">Alle cookies blev ryddet</string>
     <string name="pref_do_not_track_title">Spor ikke</string>
@@ -67,6 +67,8 @@
     <string name="history_delete_message">Du er ved at slette al historik, denne handling kan ikke fortrydes. Vil du fortsætte?</string>
     <string name="history_delete_positive">Ryd</string>
     <string name="history_deleting_message">Historik ryddes\u2026</string>
+    <string name="history_snackbar_item_deleted">Post slettet</string>
+    <string name="history_snackbar_item_deleted_message">Fortryd</string>
     <string name="favorite_title">Favoritter</string>
     <string name="favorite_added">Føjet til favoritter</string>
     <string name="favorite_empty">Der er intet her. Tilføj et favoritlink for at se det her</string>
@@ -83,4 +85,11 @@
     <string name="auth_dialog_detail">%1$s kræver et brugernavn og en adgangskode.</string>
     <string name="auth_dialog_login">Log ind</string>
     <string name="shortcut_new_incognito_tab">Ny inkognitofane</string>
+    <string name="suggestions_provider_none">Ingen</string>
+    <string name="search_bar_hint">Søg</string>
+    <string name="ssl_cert_dialog_issued_to">Udstedt til</string>
+    <string name="ssl_cert_dialog_issued_by">Udstedt af</string>
+    <string name="ssl_cert_dialog_validity">Gyldighedsperiode</string>
+    <string name="ssl_cert_dialog_expires_on">Udløber den</string>
+    <string name="ssl_cert_dialog_dismiss">Afvis</string>
 </resources>
