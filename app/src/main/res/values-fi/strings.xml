@@ -18,7 +18,7 @@
     <string name="app_name">Selain</string>
     <string name="menu_new_tab">Uusi välilehti</string>
     <string name="menu_incognito">Incognito-välilehti</string>
-    <string name="menu_reload">Lataa uudellleen</string>
+    <string name="menu_reload">Lataa uudelleen</string>
     <string name="menu_fav_add">Lisää sivu kirjanmerkkeihin</string>
     <string name="menu_share">Jaa</string>
     <string name="menu_favorites">Kirjanmerkit</string>
@@ -65,7 +65,7 @@
     <string name="pref_suggestions_provider">Ehdotusten tarjoaja</string>
     <string name="history_title">Historia</string>
     <string name="history_empty">Täällä ei ole mitään. Selaa internetiä nähdäksesi täällä historiaa</string>
-    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+    <string name="history_date_format">EEEE dd. MMMM yyyy, H.mm</string>
     <string name="history_delete_title">Tyhjennä historia</string>
     <string name="history_delete_message">Aiot poistaa koko historian, toimintoa ei voi kumota. Haluatko jatkaa?</string>
     <string name="history_delete_positive">Tyhjennä</string>

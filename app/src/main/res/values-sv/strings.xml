@@ -51,6 +51,7 @@
     <string name="history_delete_message">Du kommer att radera alla historik, denna åtgärd kan inte ångras. Vill du fortsätta?</string>
     <string name="history_delete_positive">Rensa</string>
     <string name="history_deleting_message">Rensar historik\u2026</string>
+    <string name="history_snackbar_item_deleted_message">Ångra</string>
     <string name="favorite_title">Favoriter</string>
     <string name="favorite_added">Lades till i favoriter</string>
     <string name="favorite_edit_dialog_title">Redigera favorit</string>

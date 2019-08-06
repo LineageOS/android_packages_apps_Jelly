@@ -33,7 +33,7 @@
     <string name="share_title">Отправить</string>
     <string name="dismiss">Отмена</string>
     <string name="download_title">Загрузка файла</string>
-    <string name="download_message">Загрузить файл?</string>
+    <string name="download_message">Вы действительно хотите скачать %1$s?</string>
     <string name="download_positive">Загрузить</string>
     <string name="permission_error_title">Ошибка доступа</string>
     <string name="permission_error_storage">Для загрузки файлов браузеру необходим доступ к хранилищу. Предоставьте доступ для сохранения файлов из Интернета</string>
