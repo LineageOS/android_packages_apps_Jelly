@@ -36,7 +36,7 @@
     <string name="download_message">Вы действительно хотите скачать %1$s?</string>
     <string name="download_positive">Загрузить</string>
     <string name="permission_error_title">Ошибка доступа</string>
-    <string name="permission_error_storage">Для загрузки файлов браузеру необходим доступ к хранилищу. Предоставьте доступ для сохранения файлов из Интернета</string>
+    <string name="permission_error_storage">Для загрузки файлов браузеру необходим доступ к хранилищу. Предоставьте доступ для сохранения файлов из интернета</string>
     <string name="permission_error_ask_again">Спросить снова</string>
     <string name="permission_error_forever">Доступ запрещен. Предоставьте его в настройках</string>
     <string name="settings_title">Настройки</string>
