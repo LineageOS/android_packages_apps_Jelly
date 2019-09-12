@@ -24,18 +24,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.content.pm.ShortcutInfo;
-import android.content.pm.ShortcutManager;
+import androidx.core.content.pm.ShortcutInfoCompat;
+import androidx.core.content.pm.ShortcutManagerCompat;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Icon;
+import androidx.core.graphics.drawable.IconCompat;
 import android.graphics.drawable.TransitionDrawable;
 import android.net.Uri;
 import android.net.http.HttpResponseCache;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -210,7 +211,7 @@ public class MainActivity extends WebViewExtActivity implements
             mThemeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0);
         }
 
-        if (mIncognito) {
+        if (mIncognito  && Build.VERSION.SDK_INT >= 26 ) {
             autoCompleteTextView.setImeOptions(autoCompleteTextView.getImeOptions() |
                     EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING);
         }
@@ -635,11 +636,11 @@ public class MainActivity extends WebViewExtActivity implements
 
         int flags = getWindow().getDecorView().getSystemUiVisibility();
         if (UiUtils.isColorLight(color)) {
-            flags |= isReachMode ?
+            flags |= isReachMode && Build.VERSION.SDK_INT >= 26 ?
                     View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR :
                     View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
         } else {
-            flags &= isReachMode ?
+            flags &= isReachMode && Build.VERSION.SDK_INT >= 26 ?
                     ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR :
                     ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
         }
@@ -652,7 +653,8 @@ public class MainActivity extends WebViewExtActivity implements
     private void resetSystemUIColor() {
         int flags = getWindow().getDecorView().getSystemUiVisibility();
         flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-        flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+        if (Build.VERSION.SDK_INT >= 26)
+            flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
         getWindow().getDecorView().setSystemUiVisibility(flags);
 
         getWindow().setStatusBarColor(Color.BLACK);
@@ -705,23 +707,23 @@ public class MainActivity extends WebViewExtActivity implements
         intent.setData(Uri.parse(mWebView.getUrl()));
         intent.setAction(Intent.ACTION_MAIN);
 
-        Icon launcherIcon;
+        IconCompat launcherIcon;
 
         if (mUrlIcon != null) {
-            launcherIcon = Icon.createWithBitmap(
+            launcherIcon = IconCompat.createWithBitmap(
                     UiUtils.getShortcutIcon(mUrlIcon, getThemeColorWithFallback()));
         } else {
-            launcherIcon = Icon.createWithResource(this, R.mipmap.ic_launcher);
+            launcherIcon = IconCompat.createWithResource(this, R.mipmap.ic_launcher);
         }
 
         String title = mWebView.getTitle();
-        ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(this, title)
+        ShortcutInfoCompat shortcutInfo = new ShortcutInfoCompat.Builder(this, title)
                 .setShortLabel(title)
                 .setIcon(launcherIcon)
                 .setIntent(intent)
                 .build();
 
-        getSystemService(ShortcutManager.class).requestPinShortcut(shortcutInfo, null);
+        ShortcutManagerCompat.requestPinShortcut(this, shortcutInfo, null);
     }
 
     private void setImmersiveMode(boolean enable) {

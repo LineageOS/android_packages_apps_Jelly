@@ -27,6 +27,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
+
+import android.os.Build;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +45,8 @@ import org.lineageos.jelly.R;
 import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.IntentUtils;
 import org.lineageos.jelly.utils.UrlUtils;
+
+import java.util.Collections;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -77,7 +81,7 @@ class WebClient extends WebViewClient {
             boolean needsLookup = request.hasGesture()
                     || !TextUtils.equals(url, webViewExt.getLastLoadedUrl());
 
-            if (!webViewExt.isIncognito()
+            if (!webViewExt.isIncognito() && Build.VERSION.SDK_INT >= 24
                     && needsLookup
                     && !request.isRedirect()
                     && startActivityForUrl(view, url)) {
@@ -168,7 +172,7 @@ class WebClient extends WebViewClient {
         final ArrayList<Intent> chooserIntents = new ArrayList<>();
         final String ourPackageName = context.getPackageName();
 
-        activities.sort(new ResolveInfo.DisplayNameComparator(pm));
+        Collections.sort(activities , new ResolveInfo.DisplayNameComparator(pm));
 
         for (ResolveInfo resolveInfo : activities) {
             IntentFilter filter = resolveInfo.filter;
