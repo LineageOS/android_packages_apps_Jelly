@@ -20,6 +20,10 @@ import android.content.IntentFilter;
 
 public class IntentFilterCompat {
     public static boolean filterIsBrowser(IntentFilter filter) {
-        return filter.handleAllWebDataURI();
+        try {
+		return filter.handleAllWebDataURI();
+	} catch (NoSuchMethodError e) {
+		return filter.countDataAuthorities() == 0;
+	}
     }
 }

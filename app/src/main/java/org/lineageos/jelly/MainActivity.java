@@ -645,8 +645,10 @@ public class MainActivity extends WebViewExtActivity implements
         }
         getWindow().getDecorView().setSystemUiVisibility(flags);
 
-        setTaskDescription(new ActivityManager.TaskDescription(mWebView.getTitle(),
-                mUrlIcon, color));
+        try {
+            setTaskDescription(new ActivityManager.TaskDescription(mWebView.getTitle(),
+                    mUrlIcon, color));
+        } catch (NullPointerException e){}
     }
 
     private void resetSystemUIColor() {
