@@ -95,6 +95,7 @@ import org.lineageos.jelly.webview.WebViewExtActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
 public class MainActivity extends WebViewExtActivity implements
@@ -196,7 +197,49 @@ public class MainActivity extends WebViewExtActivity implements
         });
 
         Intent intent = getIntent();
-        String url = intent.getDataString();
+        String url;
+        //Throwable exposed beyond app through Intent.getData()
+        // file:////storage/emulated/0/Android/data/com.oF2pks.jquarks/files/
+        if (intent.getAction() != null &&intent.getAction().equals(Intent.ACTION_SEND)){
+            url = intent.getStringExtra(Intent.EXTRA_TEXT);
+            int indexOfUrl = url.toLowerCase().indexOf("http");
+            if(indexOfUrl == -1)
+                finish();
+            else {
+                String containsURL = url.substring(indexOfUrl);
+
+                int endOfUrl = containsURL.indexOf(" ");
+
+                if (endOfUrl != -1) {
+                    url = containsURL.substring(0, endOfUrl);
+                } else {
+                    url = containsURL;
+                }
+            }
+        } else url = intent.getDataString();
+        if ( intent.getScheme() != null &&
+                ( intent.getScheme().equals("content")
+                        ||intent.getScheme().equals("file"))) {
+            if (!hasStoragePermission()) {
+                requestStoragePermission();
+            }
+            if (intent.getScheme().equals("content")){
+                File f = new File(getBaseContext().getCacheDir(),intent.getData().getLastPathSegment().replaceAll(":","").replaceAll("/","."));
+                try {
+                    FileOutputStream fos = new FileOutputStream(f);
+                    InputStream input = getBaseContext().getContentResolver().openInputStream(intent.getData());
+                    byte[] buffer = new byte[1024*4];
+                    int n = 0;
+                    while (-1 != (n = input.read(buffer))) {
+                        fos.write(buffer, 0, n);
+                    }
+                }catch ( IOException | NullPointerException e){
+                    Log.e("errro",e.toString());
+                }
+                url="file:///"+f.getPath();
+            }
+        }
+
         mIncognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false);
         boolean desktopMode = false;
 
@@ -405,10 +448,20 @@ public class MainActivity extends WebViewExtActivity implements
                         startActivity(new Intent(this, HistoryActivity.class));
                         break;
                     case R.id.menu_shortcut:
-                        addShortcut();
+                        addShortcut(mWebView.getTitle() , mWebView.getUrl());
                         break;
                     case R.id.menu_settings:
                         startActivity(new Intent(this, SettingsActivity.class));
+                        break;
+                    case R.id.save_mht:
+                        String sCacheName = getExternalFilesDir(null)
+                                + File.separator
+                                + mWebView.getTitle().replace("/","").replace(":","")
+                                + ".mht";
+                        sCacheName = sCacheName.replace("\n",".").replace("\"","");
+                        mWebView.saveWebArchive(sCacheName);
+                        addShortcut("\u2707" + mWebView.getTitle() , "file:///" + sCacheName);
+                        setAsFavorite("\u2707" + mWebView.getTitle(), sCacheName);
                         break;
                     case R.id.desktop_mode:
                         mWebView.setDesktopMode(!isDesktop);
@@ -702,9 +755,9 @@ public class MainActivity extends WebViewExtActivity implements
         mCustomView = null;
     }
 
-    private void addShortcut() {
+    private void addShortcut(String sTitle , String sUrl) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.setData(Uri.parse(mWebView.getUrl()));
+        intent.setData(Uri.parse(sUrl));
         intent.setAction(Intent.ACTION_MAIN);
 
         Icon launcherIcon;
@@ -716,9 +769,9 @@ public class MainActivity extends WebViewExtActivity implements
             launcherIcon = Icon.createWithResource(this, R.mipmap.ic_launcher);
         }
 
-        String title = mWebView.getTitle();
-        ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(this, title)
-                .setShortLabel(title)
+        //String title = mWebView.getTitle();
+        ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(this, sTitle)
+                .setShortLabel(sTitle)
                 .setIcon(launcherIcon)
                 .setIntent(intent)
                 .build();

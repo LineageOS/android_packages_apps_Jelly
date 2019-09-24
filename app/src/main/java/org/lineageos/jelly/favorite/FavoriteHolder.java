@@ -46,7 +46,10 @@ class FavoriteHolder extends RecyclerView.ViewHolder {
 
         mCard.setOnClickListener(v -> {
             Intent intent = new Intent(context, MainActivity.class);
-            intent.setData(Uri.parse(url));
+            if (adjustedTitle.startsWith("\u2707")){
+                intent.setDataAndType(Uri.parse("file:///"+url),"application/octet-stream");
+                intent.setAction(Intent.ACTION_VIEW);
+            } else intent.setData(Uri.parse(url));
             context.startActivity(intent);
         });
 
