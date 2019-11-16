@@ -44,6 +44,8 @@
     <string name="menu_mobile_mode">Switch to mobile site</string>
     <!-- Menu action: search in page -->
     <string name="menu_search">Find in page</string>
+    <!-- Menu action: print -->
+    <string name="menu_print">Print</string>
 
     <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Send to</string>

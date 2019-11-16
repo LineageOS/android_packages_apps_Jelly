@@ -41,6 +41,9 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.preference.PreferenceManager;
+import android.print.PrintAttributes;
+import android.print.PrintDocumentAdapter;
+import android.print.PrintManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -403,8 +406,11 @@ public class MainActivity extends WebViewExtActivity implements
                     case R.id.menu_shortcut:
                         addShortcut();
                         break;
-                    case R.id.menu_settings:
-                        startActivity(new Intent(this, SettingsActivity.class));
+                    case R.id.menu_print:
+                        PrintManager printManager = getSystemService(PrintManager.class);
+                        String documentName = "Jelly document";
+                        PrintDocumentAdapter printAdapter = mWebView.createPrintDocumentAdapter(documentName);
+                        printManager.print(documentName, printAdapter, new PrintAttributes.Builder().build());
                         break;
                     case R.id.desktop_mode:
                         mWebView.setDesktopMode(!isDesktop);
@@ -412,6 +418,9 @@ public class MainActivity extends WebViewExtActivity implements
                                 R.string.menu_desktop_mode : R.string.menu_mobile_mode));
                         desktopMode.setIcon(ContextCompat.getDrawable(this, isDesktop ?
                                 R.drawable.ic_desktop : R.drawable.ic_mobile));
+                        break;
+                    case R.id.menu_settings:
+                        startActivity(new Intent(this, SettingsActivity.class));
                         break;
                 }
                 return true;
