@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2017 The LineageOS Project
+<!-- Copyright (C) 2017-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@
     <string name="menu_mobile_mode">Switch to mobile site</string>
     <!-- Menu action: search in page -->
     <string name="menu_search">Find in page</string>
+    <!-- Menu action: print -->
+    <string name="menu_print">Print</string>
 
     <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Send to</string>
