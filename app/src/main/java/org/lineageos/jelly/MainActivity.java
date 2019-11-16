@@ -41,20 +41,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.ResultReceiver;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuPopupHelper;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -66,6 +52,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.webkit.CookieManager;
+import android.webkit.MimeTypeMap;
 import android.webkit.URLUtil;
 import android.webkit.WebChromeClient;
 import android.widget.AutoCompleteTextView;
@@ -73,10 +60,25 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.webkit.MimeTypeMap;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.lineageos.jelly.favorite.FavoriteActivity;
 import org.lineageos.jelly.favorite.FavoriteProvider;
@@ -98,13 +100,16 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 public class MainActivity extends WebViewExtActivity implements
-         SearchBarController.OnCancelListener {
+        SearchBarController.OnCancelListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String PROVIDER = "org.lineageos.jelly.fileprovider";
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
-
+    private CoordinatorLayout mCoordinator;
+    private AppBarLayout mAppBar;
+    private FrameLayout mWebViewContainer;
+    private WebViewExt mWebView;
     private final BroadcastReceiver mUrlResolvedReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -119,29 +124,20 @@ public class MainActivity extends WebViewExtActivity implements
             receiver.send(RESULT_CANCELED, new Bundle());
         }
     };
-
-    private final BroadcastReceiver mUiModeChangeReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            setUiMode();
-        }
-    };
-
-    private CoordinatorLayout mCoordinator;
-    private AppBarLayout mAppBar;
-    private FrameLayout mWebViewContainer;
-    private WebViewExt mWebView;
     private ProgressBar mLoadingProgress;
     private SearchBarController mSearchController;
     private RelativeLayout mToolbarSearchBar;
     private boolean mHasThemeColorSupport;
     private Drawable mLastActionBarDrawable;
     private int mThemeColor;
-
     private String mWaitingDownloadUrl;
-
     private Bitmap mUrlIcon;
-
+    private final BroadcastReceiver mUiModeChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            setUiMode();
+        }
+    };
     private boolean mIncognito;
 
     private View mCustomView;
@@ -349,7 +345,7 @@ public class MainActivity extends WebViewExtActivity implements
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         // Preserve webView status
@@ -453,7 +449,7 @@ public class MainActivity extends WebViewExtActivity implements
         if (PrefsUtils.getAdvancedShare(this) && url.equals(mWebView.getUrl())) {
             try {
                 File file = new File(getCacheDir(),
-                        String.valueOf(System.currentTimeMillis()) + ".png");
+                        System.currentTimeMillis() + ".png");
                 FileOutputStream out = new FileOutputStream(file);
                 Bitmap bm = mWebView.getSnap();
                 if (bm == null) {
@@ -609,7 +605,7 @@ public class MainActivity extends WebViewExtActivity implements
         if (actionBar != null) {
             ColorDrawable newDrawable = new ColorDrawable(color);
             if (mLastActionBarDrawable != null) {
-                final Drawable[] layers = new Drawable[] { mLastActionBarDrawable, newDrawable };
+                final Drawable[] layers = new Drawable[]{mLastActionBarDrawable, newDrawable};
                 final TransitionDrawable transition = new TransitionDrawable(layers);
                 transition.setCrossFadeEnabled(true);
                 transition.startTransition(200);
@@ -817,11 +813,11 @@ public class MainActivity extends WebViewExtActivity implements
     }
 
     private static class SetAsFavoriteTask extends AsyncTask<Void, Void, Boolean> {
-        private ContentResolver contentResolver;
         private final String title;
         private final String url;
         private final int color;
         private final WeakReference<View> parentView;
+        private ContentResolver contentResolver;
 
         SetAsFavoriteTask(ContentResolver contentResolver, String title, String url,
                           int color, View parentView) {

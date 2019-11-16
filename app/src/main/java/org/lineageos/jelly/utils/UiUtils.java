@@ -27,15 +27,15 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.preference.PreferenceManager;
-import androidx.annotation.AttrRes;
-import androidx.annotation.DimenRes;
-import androidx.annotation.StyleRes;
-import androidx.core.graphics.ColorUtils;
-import androidx.palette.graphics.Palette;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
+
+import androidx.annotation.AttrRes;
+import androidx.annotation.StyleRes;
+import androidx.core.graphics.ColorUtils;
+import androidx.palette.graphics.Palette;
 
 import org.lineageos.jelly.R;
 
@@ -49,7 +49,7 @@ public final class UiUtils {
         int green = Color.green(color);
         int blue = Color.blue(color);
 
-        float hsl[] = new float[3];
+        float[] hsl = new float[3];
         ColorUtils.RGBToHSL(red, green, blue, hsl);
         return hsl[2] > 0.5f;
     }
@@ -133,7 +133,7 @@ public final class UiUtils {
     }
 
     public static float getDimenAttr(Context context, @StyleRes int style, @AttrRes int dimen) {
-        int[] args = { dimen };
+        int[] args = {dimen};
         TypedArray array = context.obtainStyledAttributes(style, args);
         float result = array.getDimension(0, 0f);
         array.recycle();

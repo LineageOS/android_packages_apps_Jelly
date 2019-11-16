@@ -30,10 +30,6 @@ import org.lineageos.jelly.utils.UiUtils;
 
 public class SearchBarController implements
         TextWatcher, TextView.OnEditorActionListener, WebView.FindListener, View.OnClickListener {
-    public interface OnCancelListener {
-        void onCancelSearch();
-    }
-
     private WebView mWebView;
     private EditText mEditor;
     private TextView mStatus;
@@ -44,7 +40,6 @@ public class SearchBarController implements
     private boolean mHasStartedSearch;
     private int mCurrentResultPosition;
     private int mTotalResultCount;
-
     public SearchBarController(WebView webView, EditText editor, TextView status,
                                ImageButton prevButton, ImageButton nextButton,
                                ImageButton cancelButton, OnCancelListener listener) {
@@ -162,5 +157,9 @@ public class SearchBarController implements
     private String getQuery() {
         Editable s = mEditor.getText();
         return s != null ? s.toString() : null;
+    }
+
+    public interface OnCancelListener {
+        void onCancelSearch();
     }
 }

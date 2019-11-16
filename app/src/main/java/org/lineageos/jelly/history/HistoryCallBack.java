@@ -25,10 +25,12 @@ import android.graphics.Canvas;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.jelly.R;
 
@@ -38,10 +40,6 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
     private final Drawable mDelete;
     private final OnDeleteListener mDeleteListener;
     private final int mMargin;
-
-    public interface OnDeleteListener {
-        void onItemDeleted(ContentValues data);
-    }
 
     HistoryCallBack(Context context, OnDeleteListener deleteListener) {
         super(0, ItemTouchHelper.LEFT);
@@ -53,8 +51,9 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
     }
 
     @Override
-    public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
-                          RecyclerView.ViewHolder target) {
+    public boolean onMove(@NonNull RecyclerView recyclerView,
+                          @NonNull RecyclerView.ViewHolder viewHolder,
+                          @NonNull RecyclerView.ViewHolder target) {
         return false;
     }
 
@@ -78,7 +77,8 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
     }
 
     @Override
-    public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+    public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView,
+                            RecyclerView.ViewHolder viewHolder,
                             float dX, float dY, int actionState, boolean isCurrentlyActive) {
         View view = viewHolder.itemView;
 
@@ -99,5 +99,9 @@ class HistoryCallBack extends ItemTouchHelper.SimpleCallback {
         mDelete.draw(c);
 
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+    }
+
+    public interface OnDeleteListener {
+        void onItemDeleted(ContentValues data);
     }
 }

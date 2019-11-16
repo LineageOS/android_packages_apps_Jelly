@@ -27,23 +27,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.provider.BaseColumns;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class FavoriteProvider extends ContentProvider {
-    public interface Columns extends BaseColumns {
-        String AUTHORITY = "org.lineageos.jelly.favorite";
-        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/favorite");
-
-        String TITLE = "title";
-        String URL = "url";
-        String COLOR = "color";
-    }
-
     private static final int MATCH_ALL = 0;
     private static final int MATCH_ID = 1;
-
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+
     static {
         sURIMatcher.addURI(Columns.AUTHORITY, "favorite", MATCH_ALL);
         sURIMatcher.addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID);
@@ -54,8 +46,8 @@ public class FavoriteProvider extends ContentProvider {
     public static void addOrUpdateItem(ContentResolver resolver, String title, String url,
                                        int color) {
         long existingId = -1;
-        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[] { Columns._ID },
-                Columns.URL + "=?", new String[] { url }, null);
+        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[]{Columns._ID},
+                Columns.URL + "=?", new String[]{url}, null);
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 existingId = cursor.getLong(0);
@@ -160,7 +152,7 @@ public class FavoriteProvider extends ContentProvider {
                             "Cannot update URI " + uri + " with a where clause");
                 }
                 count = db.update(FavoriteDbHelper.DB_TABLE_FAVORITES, values, Columns._ID + " = ?",
-                        new String[] { uri.getLastPathSegment() });
+                        new String[]{uri.getLastPathSegment()});
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot update that URI: " + uri);
@@ -188,7 +180,7 @@ public class FavoriteProvider extends ContentProvider {
                             "Cannot delete URI " + uri + " with a where clause");
                 }
                 selection = Columns._ID + " = ?";
-                selectionArgs = new String[] { uri.getLastPathSegment() };
+                selectionArgs = new String[]{uri.getLastPathSegment()};
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot delete the URI " + uri);
@@ -201,6 +193,15 @@ public class FavoriteProvider extends ContentProvider {
         }
 
         return count;
+    }
+
+    public interface Columns extends BaseColumns {
+        String AUTHORITY = "org.lineageos.jelly.favorite";
+        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/favorite");
+
+        String TITLE = "title";
+        String URL = "url";
+        String COLOR = "color";
     }
 
     private static class FavoriteDbHelper extends SQLiteOpenHelper {

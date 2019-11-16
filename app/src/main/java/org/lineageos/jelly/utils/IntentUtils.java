@@ -19,7 +19,6 @@ public final class IntentUtils {
     public static final String EXTRA_DESKTOP_MODE = "extra_desktop_mode";
     public static final String EXTRA_INCOGNITO = "extra_incognito";
     public static final String EXTRA_URL = "extra_url";
-    public static final String EXTRA_UI_MODE = "extra_ui_mode";
 
     public static final String EVENT_CHANGE_UI_MODE = "intent_change_ui_mode";
 

@@ -16,9 +16,10 @@
 package org.lineageos.jelly.webview;
 
 import android.graphics.Bitmap;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebChromeClient;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public abstract class WebViewExtActivity extends AppCompatActivity {
 

@@ -24,17 +24,20 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.lineageos.jelly.R;
 import org.lineageos.jelly.utils.UiUtils;
@@ -45,11 +48,11 @@ public class HistoryActivity extends AppCompatActivity {
     private HistoryAdapter mAdapter;
     private final RecyclerView.AdapterDataObserver mAdapterDataObserver =
             new RecyclerView.AdapterDataObserver() {
-        @Override
-        public void onChanged() {
-            updateHistoryView(mAdapter.getItemCount() == 0);
-        }
-    };
+                @Override
+                public void onChanged() {
+                    updateHistoryView(mAdapter.getItemCount() == 0);
+                }
+            };
 
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -95,9 +98,8 @@ public class HistoryActivity extends AppCompatActivity {
         ItemTouchHelper helper = new ItemTouchHelper(new HistoryCallBack(this, values -> {
             View rootView = findViewById(R.id.coordinator_layout);
             Snackbar.make(rootView, R.string.history_snackbar_item_deleted, Snackbar.LENGTH_LONG)
-                    .setAction(R.string.history_snackbar_item_deleted_message, l -> {
-                        getContentResolver().insert(HistoryProvider.Columns.CONTENT_URI, values);
-                    })
+                    .setAction(R.string.history_snackbar_item_deleted_message, l ->
+                            getContentResolver().insert(HistoryProvider.Columns.CONTENT_URI, values))
                     .show();
         }));
         helper.attachToRecyclerView(list);
@@ -105,7 +107,7 @@ public class HistoryActivity extends AppCompatActivity {
         int listTop = list.getTop();
         list.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
                 boolean elevate = recyclerView.getChildAt(0) != null &&

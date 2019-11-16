@@ -21,8 +21,9 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
-import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import android.util.AttributeSet;
+
+import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 
 public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
     private OnFocusChangeListener mFocusChangeListener;
@@ -40,6 +41,18 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
         super(context, attrs, defStyle);
     }
 
+    private static LinearGradient getGradient(float widthEnd, float fadeStart,
+                                              float stopStart, float stopEnd, int color) {
+        return new LinearGradient(0, 0, widthEnd, 0,
+                new int[]{color, Color.TRANSPARENT, color, color, Color.TRANSPARENT},
+                new float[]{0, fadeStart, stopStart, stopEnd, 1f}, Shader.TileMode.CLAMP);
+    }
+
+    @Override
+    public OnFocusChangeListener getOnFocusChangeListener() {
+        return mFocusChangeListener;
+    }
+
     // Override View's focus change listener handling so that we're able to
     // call it before the actual focus change handling, in particular before
     // the IME is fired up.
@@ -49,23 +62,11 @@ public class AutoCompleteTextViewExt extends AppCompatAutoCompleteTextView {
     }
 
     @Override
-    public OnFocusChangeListener getOnFocusChangeListener() {
-        return mFocusChangeListener;
-    }
-
-    @Override
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
         if (mFocusChangeListener != null) {
             mFocusChangeListener.onFocusChange(this, gainFocus);
         }
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
-    }
-
-    private static LinearGradient getGradient(float widthEnd, float fadeStart,
-                                              float stopStart, float stopEnd, int color) {
-        return new LinearGradient(0, 0, widthEnd, 0,
-                new int[] { color, Color.TRANSPARENT, color, color, Color.TRANSPARENT },
-                new float[] { 0, fadeStart, stopStart, stopEnd, 1f }, Shader.TileMode.CLAMP);
     }
 
     @Override

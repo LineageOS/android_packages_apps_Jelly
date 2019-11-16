@@ -19,13 +19,14 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import androidx.collection.ArrayMap;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
+
+import androidx.collection.ArrayMap;
 
 import org.lineageos.jelly.ui.UrlBarController;
 import org.lineageos.jelly.utils.PrefsUtils;
@@ -42,18 +43,14 @@ public class WebViewExt extends WebView {
     private static final String DESKTOP_DEVICE = "X11; Linux x86_64";
     private static final String DESKTOP_USER_AGENT_FALLBACK =
             "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36";
-
+    private static final String HEADER_DNT = "DNT";
+    private final Map<String, String> mRequestHeaders = new ArrayMap<>();
     private WebViewExtActivity mActivity;
-
     private String mMobileUserAgent;
     private String mDesktopUserAgent;
-
     private boolean mIncognito;
     private boolean mDesktopMode;
     private String mLastLoadedUrl;
-
-    private final Map<String, String> mRequestHeaders = new ArrayMap<>();
-    private static final String HEADER_DNT = "DNT";
 
     public WebViewExt(Context context) {
         super(context);
@@ -180,6 +177,10 @@ public class WebViewExt extends WebView {
         return mIncognito;
     }
 
+    public boolean isDesktopMode() {
+        return mDesktopMode;
+    }
+
     public void setDesktopMode(boolean desktopMode) {
         mDesktopMode = desktopMode;
         WebSettings settings = getSettings();
@@ -187,10 +188,6 @@ public class WebViewExt extends WebView {
         settings.setUseWideViewPort(desktopMode);
         settings.setLoadWithOverviewMode(desktopMode);
         reload();
-    }
-
-    public boolean isDesktopMode() {
-        return mDesktopMode;
     }
 
     Map<String, String> getRequestHeaders() {

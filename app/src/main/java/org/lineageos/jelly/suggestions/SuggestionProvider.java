@@ -16,10 +16,11 @@
 
 package org.lineageos.jelly.suggestions;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import org.json.JSONArray;
 import org.lineageos.jelly.utils.FileUtils;

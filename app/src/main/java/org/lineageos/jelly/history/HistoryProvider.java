@@ -27,23 +27,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.provider.BaseColumns;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class HistoryProvider extends ContentProvider {
-    public interface Columns extends BaseColumns {
-        String AUTHORITY = "org.lineageos.jelly.history";
-        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/history");
-
-        String TITLE = "title";
-        String URL = "url";
-        String TIMESTAMP = "timestamp";
-    }
-
     private static final int MATCH_ALL = 0;
     private static final int MATCH_ID = 1;
-
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+
     static {
         sURIMatcher.addURI(Columns.AUTHORITY, "history", MATCH_ALL);
         sURIMatcher.addURI(Columns.AUTHORITY, "history/#", MATCH_ID);
@@ -53,8 +45,8 @@ public class HistoryProvider extends ContentProvider {
 
     public static void addOrUpdateItem(ContentResolver resolver, String title, String url) {
         long existingId = -1;
-        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[] { Columns._ID },
-                Columns.URL + "=?", new String[] { url }, null);
+        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[]{Columns._ID},
+                Columns.URL + "=?", new String[]{url}, null);
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 existingId = cursor.getLong(0);
@@ -122,7 +114,7 @@ public class HistoryProvider extends ContentProvider {
             return null;
         }
 
-        if (!values.containsKey(Columns.TIMESTAMP)) {
+        if (values != null && !values.containsKey(Columns.TIMESTAMP)) {
             values.put(Columns.TIMESTAMP, System.currentTimeMillis() / 1000);
         }
 
@@ -155,7 +147,7 @@ public class HistoryProvider extends ContentProvider {
                             "Cannot update URI " + uri + " with a where clause");
                 }
                 count = db.update(HistoryDbHelper.DB_TABLE_HISTORY, values, Columns._ID + " = ?",
-                        new String[] { uri.getLastPathSegment() });
+                        new String[]{uri.getLastPathSegment()});
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot update that URI: " + uri);
@@ -183,7 +175,7 @@ public class HistoryProvider extends ContentProvider {
                             "Cannot delete URI " + uri + " with a where clause");
                 }
                 selection = Columns._ID + " = ?";
-                selectionArgs = new String[] { uri.getLastPathSegment() };
+                selectionArgs = new String[]{uri.getLastPathSegment()};
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot delete the URI " + uri);
@@ -198,12 +190,21 @@ public class HistoryProvider extends ContentProvider {
         return count;
     }
 
+    public interface Columns extends BaseColumns {
+        String AUTHORITY = "org.lineageos.jelly.history";
+        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/history");
+
+        String TITLE = "title";
+        String URL = "url";
+        String TIMESTAMP = "timestamp";
+    }
+
     private static class HistoryDbHelper extends SQLiteOpenHelper {
         private static final int DB_VERSION = 2;
         private static final String DB_NAME = "HistoryDatabase";
         private static final String DB_TABLE_HISTORY = "history";
 
-        public HistoryDbHelper(Context context) {
+        HistoryDbHelper(Context context) {
             super(context, DB_NAME, null, DB_VERSION);
         }
 
@@ -219,7 +220,7 @@ public class HistoryProvider extends ContentProvider {
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             if (oldVersion < 2) {
-                // Recreate table with now autoincrementing id column,
+                // Recreate table with now auto-incrementing id column,
                 // renaming the old id column to timestamp
                 db.execSQL("CREATE TABLE " + DB_TABLE_HISTORY + "_new (" +
                         Columns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

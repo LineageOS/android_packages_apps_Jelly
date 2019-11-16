@@ -17,9 +17,11 @@ package org.lineageos.jelly.history;
 
 import android.content.Context;
 import android.database.Cursor;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.jelly.R;
 
@@ -45,7 +47,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         setHasStableIds(true);
     }
 
-    public void swapCursor(Cursor cursor) {
+    void swapCursor(Cursor cursor) {
         if (cursor == mCursor) {
             return;
         }
@@ -62,6 +64,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
         notifyDataSetChanged();
     }
 
+    @NonNull
     @Override
     public HistoryHolder onCreateViewHolder(ViewGroup parent, int type) {
         return new HistoryHolder(LayoutInflater.from(parent.getContext())
@@ -69,7 +72,7 @@ class HistoryAdapter extends RecyclerView.Adapter<HistoryHolder> {
     }
 
     @Override
-    public void onBindViewHolder(HistoryHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HistoryHolder holder, int position) {
         if (!mCursor.moveToPosition(position)) {
             return;
         }
