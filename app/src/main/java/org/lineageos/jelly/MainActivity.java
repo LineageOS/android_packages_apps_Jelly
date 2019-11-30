@@ -458,13 +458,10 @@ public class MainActivity extends WebViewExtActivity implements
         intent.putExtra(Intent.EXTRA_TEXT, url);
 
         if (PrefsUtils.getAdvancedShare(this) && url.equals(mWebView.getUrl())) {
-            try {
-                File file = new File(getCacheDir(),
-                        System.currentTimeMillis() + ".png");
-                FileOutputStream out = new FileOutputStream(file);
+            File file = new File(getCacheDir(), System.currentTimeMillis() + ".png");
+            try (FileOutputStream out = new FileOutputStream(file)) {
                 Bitmap bm = mWebView.getSnap();
                 if (bm == null) {
-                    out.close();
                     return;
                 }
                 bm.compress(Bitmap.CompressFormat.PNG, 70, out);
