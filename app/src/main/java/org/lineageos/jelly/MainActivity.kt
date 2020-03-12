@@ -82,14 +82,14 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener 
     private lateinit var mWebView: WebViewExt
     private val mUrlResolvedReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            val resolvedIntent = intent.getParcelableExtra<Intent>(Intent.EXTRA_INTENT)
+            val resolvedIntent: Intent = intent.getParcelableExtra(Intent.EXTRA_INTENT)
             if (TextUtils.equals(packageName, resolvedIntent.getPackage())) {
-                val url = intent.getStringExtra(IntentUtils.EXTRA_URL)
+                val url: String = intent.getStringExtra(IntentUtils.EXTRA_URL)
                 mWebView.loadUrl(url)
             } else {
                 startActivity(resolvedIntent)
             }
-            val receiver = intent.getParcelableExtra<ResultReceiver>(Intent.EXTRA_RESULT_RECEIVER)
+            val receiver: ResultReceiver = intent.getParcelableExtra(Intent.EXTRA_RESULT_RECEIVER)
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
@@ -370,7 +370,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener 
                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 }
             } catch (e: IOException) {
-                Log.e(TAG, e.message)
+                Log.e(TAG, "${e.message}", e)
             }
         } else {
             intent.type = "text/plain"
