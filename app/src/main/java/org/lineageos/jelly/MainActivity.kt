@@ -33,7 +33,6 @@ import android.graphics.drawable.TransitionDrawable
 import android.net.Uri
 import android.net.http.HttpResponseCache
 import android.os.*
-import android.preference.PreferenceManager
 import android.print.PrintAttributes
 import android.print.PrintManager
 import android.text.TextUtils
@@ -55,6 +54,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar

@@ -18,11 +18,6 @@ package org.lineageos.jelly
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.preference.Preference
-import android.preference.Preference.OnPreferenceClickListener
-import android.preference.PreferenceCategory
-import android.preference.PreferenceFragment
-import android.preference.SwitchPreference
 import android.webkit.CookieManager
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -31,9 +26,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.preference.*
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.PrefsUtils
-import org.lineageos.jelly.utils.UiUtils
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,59 +40,84 @@ class SettingsActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
     }
 
-    class MyPreferenceFragment : PreferenceFragment() {
-        override fun onCreate(savedInstance: Bundle?) {
-            super.onCreate(savedInstance)
-            addPreferencesFromResource(R.xml.settings)
-            val securityCategory = findPreference("category_security") as PreferenceCategory
-            val homePage = findPreference("key_home_page")
-            homePage.summary = PrefsUtils.getHomePage(context)
-            homePage.onPreferenceClickListener = OnPreferenceClickListener { preference: Preference ->
-                editHomePage(preference)
-                true
+    class MyPreferenceFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
+        override fun onCreatePreferences(savedInstance: Bundle?, rootKey: String?) {
+            // Load the preferences from an XML resource
+            setPreferencesFromResource(R.xml.settings, rootKey)
+
+            bindPreferenceSummaryToValue(findPreference("key_home_page"), getString(R.string.default_home_page))
+            if (resources.getBoolean(R.bool.is_tablet)) {
+                preferenceScreen.removePreference(findPreference("key_reach_mode"))
             }
-            val clearCookie = findPreference("key_cookie_clear")
-            clearCookie.onPreferenceClickListener = OnPreferenceClickListener {
-                CookieManager.getInstance().removeAllCookies(null)
-                Toast.makeText(context, getString(R.string.pref_cookie_clear_done),
-                        Toast.LENGTH_LONG).show()
-                true
-            }
-            val reachMode = findPreference("key_reach_mode") as SwitchPreference
-            if (UiUtils.isTablet(context)) {
-                preferenceScreen.removePreference(reachMode)
+        }
+
+        private fun bindPreferenceSummaryToValue(preference: Preference?, def: String) {
+            preference?.onPreferenceChangeListener = this
+
+            onPreferenceChange(preference,
+                    PreferenceManager
+                            .getDefaultSharedPreferences(preference?.context)
+                            .getString(preference?.key, def))
+        }
+
+        override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
+            val stringValue = value.toString()
+
+            if (preference is ListPreference) {
+                val prefIndex = preference.findIndexOfValue(stringValue)
+                if (prefIndex >= 0) {
+                    preference.setSummary(preference.entries[prefIndex])
+                }
             } else {
-                reachMode.onPreferenceClickListener = OnPreferenceClickListener {
-                    val intent = Intent(IntentUtils.EVENT_CHANGE_UI_MODE)
-                    intent.putExtra(IntentUtils.EVENT_CHANGE_UI_MODE, reachMode.isChecked)
-                    LocalBroadcastManager.getInstance(context).sendBroadcast(intent)
+                preference?.summary = stringValue
+            }
+            return true
+        }
+
+        override fun onPreferenceTreeClick(preference: Preference): Boolean {
+            return when (preference.key) {
+                "key_home_page" -> {
+                    editHomePage(preference)
                     true
+                }
+                "key_cookie_clear" -> {
+                    CookieManager.getInstance().removeAllCookies(null)
+                    Toast.makeText(preference.context, getString(R.string.pref_cookie_clear_done),
+                            Toast.LENGTH_LONG).show()
+                    true
+                }
+                "key_reach_mode" -> {
+                    val intent = Intent(IntentUtils.EVENT_CHANGE_UI_MODE)
+                    intent.putExtra(IntentUtils.EVENT_CHANGE_UI_MODE, (preference as SwitchPreference).isChecked)
+                    LocalBroadcastManager.getInstance(preference.context).sendBroadcast(intent)
+                }
+                else -> {
+                    super.onPreferenceTreeClick(preference)
                 }
             }
         }
 
         private fun editHomePage(preference: Preference) {
-            val context = context
-            val builder = AlertDialog.Builder(context)
+            val builder = AlertDialog.Builder(preference.context)
             val alertDialog = builder.create()
             val inflater = alertDialog.layoutInflater
             val homepageView = inflater.inflate(R.layout.dialog_homepage_edit,
-                    LinearLayout(context))
+                    LinearLayout(preference.context))
             val editText = homepageView.findViewById<EditText>(R.id.homepage_edit_url)
-            editText.setText(PrefsUtils.getHomePage(context))
+            editText.setText(PrefsUtils.getHomePage(preference.context))
             builder.setTitle(R.string.pref_start_page_dialog_title)
                     .setMessage(R.string.pref_start_page_dialog_message)
                     .setView(homepageView)
                     .setPositiveButton(android.R.string.ok
                     ) { _: DialogInterface?, _: Int ->
                         val url = if (editText.text.toString().isEmpty()) getString(R.string.default_home_page) else editText.text.toString()
-                        PrefsUtils.setHomePage(context, url)
+                        PrefsUtils.setHomePage(preference.context, url)
                         preference.summary = url
                     }
                     .setNeutralButton(R.string.pref_start_page_dialog_reset
                     ) { _: DialogInterface?, _: Int ->
                         val url = getString(R.string.default_home_page)
-                        PrefsUtils.setHomePage(context, url)
+                        PrefsUtils.setHomePage(preference.context, url)
                         preference.summary = url
                     }
                     .setNegativeButton(android.R.string.cancel, null)
