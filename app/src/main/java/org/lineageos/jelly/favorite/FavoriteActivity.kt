@@ -15,8 +15,9 @@
  */
 package org.lineageos.jelly.favorite
 
-import android.app.LoaderManager
-import android.content.*
+import android.content.ContentResolver
+import android.content.ContentUris
+import android.content.DialogInterface
 import android.database.Cursor
 import android.os.AsyncTask
 import android.os.Bundle
@@ -30,11 +31,14 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.loader.app.LoaderManager
+import androidx.loader.app.LoaderManager.LoaderCallbacks
+import androidx.loader.content.CursorLoader
+import androidx.loader.content.Loader
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
-import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteActivity : AppCompatActivity() {
@@ -51,15 +55,15 @@ class FavoriteActivity : AppCompatActivity() {
         mList = findViewById(R.id.favorite_list)
         mEmptyView = findViewById(R.id.favorite_empty_layout)
         mAdapter = FavoriteAdapter(this)
-        loaderManager.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
+        LoaderManager.getInstance(this).initLoader(0, null, object : LoaderCallbacks<Cursor> {
             override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
                 return CursorLoader(this@FavoriteActivity, FavoriteProvider.Columns.CONTENT_URI,
                         null, null, null, BaseColumns._ID + " DESC")
             }
 
-            override fun onLoadFinished(loader: Loader<Cursor>, cursor: Cursor) {
-                mAdapter.swapCursor(cursor)
-                if (cursor.count == 0) {
+            override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
+                mAdapter.swapCursor(data)
+                if (data != null && data.count == 0) {
                     mList.visibility = View.GONE
                     mEmptyView.visibility = View.VISIBLE
                 }
