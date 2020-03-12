@@ -22,6 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.provider.BaseColumns
+import org.lineageos.jelly.utils.requireContext
 
 class FavoriteProvider : ContentProvider() {
     companion object {
@@ -84,7 +85,7 @@ class FavoriteProvider : ContentProvider() {
         }
         val db = mDbHelper!!.readableDatabase
         val ret = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder)
-        ret.setNotificationUri(context.contentResolver, uri)
+        ret.setNotificationUri(requireContext().contentResolver, uri)
         return ret
     }
 
@@ -101,7 +102,7 @@ class FavoriteProvider : ContentProvider() {
         if (rowID <= 0) {
             return null
         }
-        context.contentResolver.notifyChange(Columns.CONTENT_URI, null)
+        requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         return ContentUris.withAppendedId(Columns.CONTENT_URI, rowID)
     }
 
@@ -123,7 +124,7 @@ class FavoriteProvider : ContentProvider() {
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
         if (count > 0) {
-            context.contentResolver.notifyChange(Columns.CONTENT_URI, null)
+            requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
         return count
     }
@@ -143,13 +144,15 @@ class FavoriteProvider : ContentProvider() {
                             "Cannot delete URI $uri with a where clause")
                 }
                 localSelection = BaseColumns._ID + " = ?"
-                localSelectionArgs = arrayOf(uri.lastPathSegment)
+                uri.lastPathSegment?.let {
+                    localSelectionArgs = arrayOf(it)
+                }
             }
             else -> throw UnsupportedOperationException("Cannot delete the URI $uri")
         }
         val count = db.delete(FavoriteDbHelper.DB_TABLE_FAVORITES, localSelection, localSelectionArgs)
         if (count > 0) {
-            context.contentResolver.notifyChange(Columns.CONTENT_URI, null)
+            requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
         return count
     }
