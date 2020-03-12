@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">Təklif təchizatçısı</string>
     <string name="pref_reach_mode_title">Müraciət rejimi</string>
     <string name="pref_reach_mode_summary">Daha asan tək əlli istifadə üçün interfeys elementlərinin yerini dəyişdirin</string>
-    <string name="pref_clear_text_traffic_title">Təhlükəsiz olmayan vebsaytlara icazə ver</string>
-    <string name="pref_clear_text_traffic_summary_on">Mətn trafikini (http kimi) təmizləməyə icazə verildi</string>
-    <string name="pref_clear_text_traffic_summary_off">Mətn trafikini (http kimi) təmizləməyə icazə verilmədi</string>
     <string name="history_title">Tarixçə</string>
     <string name="history_empty">Burada heç bir şey yoxdur, internet tarixçəniz burada görünəcək</string>
     <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>

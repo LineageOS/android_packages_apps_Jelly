@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">Suggestions provider</string>
     <string name="pref_reach_mode_title">Reach mode</string>
     <string name="pref_reach_mode_summary">Relocate interface elements for easier one-hand usage</string>
-    <string name="pref_clear_text_traffic_title">Allow unsecure websites</string>
-    <string name="pref_clear_text_traffic_summary_on">Clear text traffic (such as http) is allowed</string>
-    <string name="pref_clear_text_traffic_summary_off">Clear text traffic (such as http) is not allowed</string>
     <string name="history_title">History</string>
     <string name="history_empty">There\'s nothing here, browse on the internet to see your history here</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
