@@ -53,7 +53,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -75,7 +74,8 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.lang.ref.WeakReference
 
-class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener {
+class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
+        SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var mCoordinator: CoordinatorLayout
     private lateinit var mAppBar: AppBarLayout
     private lateinit var mWebViewContainer: FrameLayout
@@ -103,11 +103,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener 
     private var mThemeColor = 0
     private var mWaitingDownloadUrl: String? = null
     private var mUrlIcon: Bitmap? = null
-    private val mUiModeChangeReceiver: BroadcastReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            setUiMode()
-        }
-    }
     private var mIncognito = false
     private var mCustomView: View? = null
     private var mFullScreenCallback: CustomViewCallback? = null
@@ -170,9 +165,9 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener 
 
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false)
+        val preferenceManager = PreferenceManager.getDefaultSharedPreferences(this)
+        preferenceManager.registerOnSharedPreferenceChangeListener(this);
 
-        // Listen for local broadcasts
-        registerLocalBroadcastListeners()
         setUiMode()
         val incognitoIcon = findViewById<ImageView>(R.id.incognito)
         incognitoIcon.visibility = if (mIncognito) View.VISIBLE else View.GONE
@@ -228,12 +223,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener 
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
         }
-    }
-
-    override fun onDestroy() {
-        // Unregister the local broadcast receiver because the activity is being trashed
-        unregisterLocalBroadcastsListeners()
-        super.onDestroy()
     }
 
     override fun onBackPressed() {
@@ -641,18 +630,9 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener 
         setImmersiveMode(hasFocus && mCustomView != null)
     }
 
-    private fun registerLocalBroadcastListeners() {
-        val manager = LocalBroadcastManager.getInstance(this)
-        if (!UiUtils.isTablet(this)) {
-            manager.registerReceiver(mUiModeChangeReceiver,
-                    IntentFilter(IntentUtils.EVENT_CHANGE_UI_MODE))
-        }
-    }
-
-    private fun unregisterLocalBroadcastsListeners() {
-        val manager = LocalBroadcastManager.getInstance(this)
-        if (!UiUtils.isTablet(this)) {
-            manager.unregisterReceiver(mUiModeChangeReceiver)
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        when (key) {
+            "key_reach_mode" -> setUiMode()
         }
     }
 
