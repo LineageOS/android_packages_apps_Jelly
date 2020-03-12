@@ -105,10 +105,10 @@ class WebViewExt : WebView {
         // we always report the current engine version.
         val pattern = Pattern.compile("([^)]+ \\()([^)]+)(\\) .*)")
         val matcher = pattern.matcher(settings.userAgentString)
-        if (matcher.matches()) {
-            val mobileDevice = matcher.group(2).replace("; wv", "")
-            mMobileUserAgent = matcher.group(1) + mobileDevice + matcher.group(3)
-            mDesktopUserAgent = matcher.group(1) + DESKTOP_DEVICE + matcher.group(3)
+        if (matcher.matches() && matcher.groupCount() == 4) {
+            val mobileDevice = matcher.group(2)!!.replace("; wv", "")
+            mMobileUserAgent = matcher.group(1)!! + mobileDevice + matcher.group(3)
+            mDesktopUserAgent = matcher.group(1)!! + DESKTOP_DEVICE + matcher.group(3)!!
                     .replace(" Mobile ", " ")
             settings.userAgentString = mMobileUserAgent
         } else {
