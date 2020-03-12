@@ -18,9 +18,6 @@
     <string name="app_name">Brauser</string>
     <string name="pref_reach_mode_title">Ulatamisrežiim</string>
     <string name="pref_reach_mode_summary">Paiguta liidese elemente ümber, et neid oleks ühe käega kergem kasutada</string>
-    <string name="pref_clear_text_traffic_title">Luba turvamata veebilehed</string>
-    <string name="pref_clear_text_traffic_summary_on">Lihttekstina liiklus (nagu HTTP) on lubatud</string>
-    <string name="pref_clear_text_traffic_summary_off">Lihttekstina liiklus (nagu HTTP) ei ole lubatud</string>
     <string name="history_snackbar_item_deleted">Sissekanne kustutatud</string>
     <string name="history_snackbar_item_deleted_message">Võta tagasi</string>
 </resources>

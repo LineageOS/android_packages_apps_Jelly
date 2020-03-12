@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">Πάροχος προτάσεων</string>
     <string name="pref_reach_mode_title">Λειτουργία προσέγγισης</string>
     <string name="pref_reach_mode_summary">Μεταφορά των στοιχείων διεπαφής για ευκολότερη χρήση με ένα χέρι</string>
-    <string name="pref_clear_text_traffic_title">Να επιτρέπονται μη ασφαλείς ιστοσελίδες</string>
-    <string name="pref_clear_text_traffic_summary_on">Επιτρέπεται η κυκλοφορία απλού κειμένου (όπως το http)</string>
-    <string name="pref_clear_text_traffic_summary_off">Δεν επιτρέπεται η κυκλοφορία απλού κειμένου (όπως το http)</string>
     <string name="history_title">Ιστορικό</string>
     <string name="history_empty">Δεν υπάρχει τίποτα εδώ, περιηγηθείτε στο διαδίκτυο για να δείτε το ιστορικό σας εδώ</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>

@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">Ponudnik predlogov</string>
     <string name="pref_reach_mode_title">Način dosega</string>
     <string name="pref_reach_mode_summary">Premakni elemente vmesnika za lažjo enoročno uporabo</string>
-    <string name="pref_clear_text_traffic_title">Dovoli nevarne spletne strani</string>
-    <string name="pref_clear_text_traffic_summary_on">Promet čistega besedila (kot je http) je dovoljen</string>
-    <string name="pref_clear_text_traffic_summary_off">Promet čistega besedila (kot je http) ni dovoljen</string>
     <string name="history_title">Zgodovina</string>
     <string name="history_empty">Tukaj ni ničesar, brskajte po internetu za ogled zgodovine tukaj</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
