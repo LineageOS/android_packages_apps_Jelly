@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">Dostawca sugestii</string>
     <string name="pref_reach_mode_title">Tryb zasięgu</string>
     <string name="pref_reach_mode_summary">Zmień położenie elementów interfejsu dla łatwiejszej obsługi jedną ręką</string>
-    <string name="pref_clear_text_traffic_title">Zezwalaj na niezabezpieczone strony internetowe</string>
-    <string name="pref_clear_text_traffic_summary_on">Transfer otwartego tekstu (np. http) jest dozwolony</string>
-    <string name="pref_clear_text_traffic_summary_off">Transfer otwartego tekstu (np. http) jest niedozwolony</string>
     <string name="history_title">Historia</string>
     <string name="history_empty">Nic tu nie ma. Przeglądaj internet, aby zobaczyć tutaj swoją historię przeglądania</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>

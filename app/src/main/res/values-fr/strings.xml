@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">Fournisseur de suggestions</string>
     <string name="pref_reach_mode_title">Mode Accès simplifié</string>
     <string name="pref_reach_mode_summary">Modifier l\'emplacement des éléments de l\'interface pour faciliter l\'utilisation à une main</string>
-    <string name="pref_clear_text_traffic_title">Autoriser les sites non sécurisés</string>
-    <string name="pref_clear_text_traffic_summary_on">La transmission de texte en clair (par exemple, via le protocole HTTP) est autorisée</string>
-    <string name="pref_clear_text_traffic_summary_off">La transmission de texte en clair (par exemple, via le protocole HTTP) n\'est pas autorisée</string>
     <string name="history_title">Historique</string>
     <string name="history_empty">Il n’y a rien ici, naviguez sur internet pour voir votre historique ici</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>

@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">Öneri sağlayıcı</string>
     <string name="pref_reach_mode_title">Erişim modu</string>
     <string name="pref_reach_mode_summary">Daha kolay tek elle kullanım için arabirim öğelerini yeniden konumlandırın</string>
-    <string name="pref_clear_text_traffic_title">Güvenli olmayan web sitelerine izin ver</string>
-    <string name="pref_clear_text_traffic_summary_on">Metin trafiğini temizlemeye (http gibi) izin veriliyor</string>
-    <string name="pref_clear_text_traffic_summary_off">Metin trafiğini temizlemeye (http gibi) izin verilmiyor</string>
     <string name="history_title">Geçmiş</string>
     <string name="history_empty">Burada hiçbir şey yok, internet geçmişiniz burada görüntülenir</string>
     <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
