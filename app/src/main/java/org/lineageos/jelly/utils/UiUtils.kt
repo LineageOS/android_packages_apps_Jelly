@@ -18,7 +18,6 @@ package org.lineageos.jelly.utils
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.*
-import android.preference.PreferenceManager
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -27,6 +26,7 @@ import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
+import androidx.preference.PreferenceManager
 import org.lineageos.jelly.R
 
 object UiUtils {
