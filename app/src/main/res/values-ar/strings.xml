@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">مُوفر الاقتراحات</string>
     <string name="pref_reach_mode_title">وضع الوصول</string>
     <string name="pref_reach_mode_summary">نقل مواقع عناصر الواجهة لتسهيل الاستخدام بيد واحدة</string>
-    <string name="pref_clear_text_traffic_title">السماح لمواقع ويب غير آمنة</string>
-    <string name="pref_clear_text_traffic_summary_on">يتم السماح بمرور النص الواضح (مثل http)</string>
-    <string name="pref_clear_text_traffic_summary_off">لا يتم السماح بمرور النص الواضح (مثل http)</string>
     <string name="history_title">السجل</string>
     <string name="history_empty">لا يوجد شيء هنا، تصفح على شبكة الإنترنت لرؤية سجلك هنا</string>
     <string name="history_date_format">EEEE MMMM dd yyyy hh: mm</string>

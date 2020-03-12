@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">Darparwr awgrymiadau</string>
     <string name="pref_reach_mode_title">Modd cyrraedd</string>
     <string name="pref_reach_mode_summary">Ail-leoli elfennau o\'r rhyngwyneb i hwyluso defnyddio un llaw</string>
-    <string name="pref_clear_text_traffic_title">Caniatáu gwefannau ansicredig</string>
-    <string name="pref_clear_text_traffic_summary_on">Caniateir clirio traffig testun (fel http)</string>
-    <string name="pref_clear_text_traffic_summary_off">Ni chaniateir clirio traffig testun (fel http)</string>
     <string name="history_title">Hanes</string>
     <string name="history_empty">Does dim byd yma. Pora\'r we a bydd dy hanes yn ymddangos yma</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>

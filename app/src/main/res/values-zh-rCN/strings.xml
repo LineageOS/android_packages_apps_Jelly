@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">建议提供商</string>
     <string name="pref_reach_mode_title">单手模式</string>
     <string name="pref_reach_mode_summary">重新排列界面元素以便于单手操作</string>
-    <string name="pref_clear_text_traffic_title">允许不安全的网站</string>
-    <string name="pref_clear_text_traffic_summary_on">允许明文流量（如 http）</string>
-    <string name="pref_clear_text_traffic_summary_off">不允许明文流量（如 http）</string>
     <string name="history_title">历史记录</string>
     <string name="history_empty">这里什么都没有，请浏览互联网并在此处查看您的历史记录</string>
     <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
