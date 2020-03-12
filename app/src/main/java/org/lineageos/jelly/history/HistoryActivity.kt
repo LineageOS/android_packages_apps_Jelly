@@ -15,9 +15,10 @@
  */
 package org.lineageos.jelly.history
 
-import android.app.LoaderManager
 import android.app.ProgressDialog
-import android.content.*
+import android.content.ContentResolver
+import android.content.ContentValues
+import android.content.DialogInterface
 import android.database.Cursor
 import android.os.AsyncTask
 import android.os.Bundle
@@ -28,6 +29,8 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.loader.app.LoaderManager
+import androidx.loader.content.CursorLoader
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,7 +38,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 import com.google.android.material.snackbar.Snackbar
 import org.lineageos.jelly.R
-import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.history.HistoryCallBack.OnDeleteListener
 import org.lineageos.jelly.utils.UiUtils
 
@@ -58,17 +60,17 @@ class HistoryActivity : AppCompatActivity() {
         val list = findViewById<RecyclerView>(R.id.history_list)
         mEmptyView = findViewById(R.id.history_empty_layout)
         mAdapter = HistoryAdapter(this)
-        loaderManager.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
-            override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
+        LoaderManager.getInstance(this).initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
+            override fun onCreateLoader(id: Int, args: Bundle?): androidx.loader.content.Loader<Cursor> {
                 return CursorLoader(this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
                         null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC")
             }
 
-            override fun onLoadFinished(loader: Loader<Cursor>, cursor: Cursor) {
-                mAdapter.swapCursor(cursor)
+            override fun onLoadFinished(loader: androidx.loader.content.Loader<Cursor>, data: Cursor?) {
+                mAdapter.swapCursor(data)
             }
 
-            override fun onLoaderReset(loader: Loader<Cursor>) {
+            override fun onLoaderReset(loader: androidx.loader.content.Loader<Cursor>) {
                 mAdapter.swapCursor(null)
             }
         })
