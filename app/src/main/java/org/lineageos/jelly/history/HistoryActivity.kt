@@ -15,7 +15,6 @@
  */
 package org.lineageos.jelly.history
 
-import android.app.ProgressDialog
 import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.DialogInterface
@@ -132,18 +131,18 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun deleteAll() {
-        val dialog = ProgressDialog(this)
-        dialog.setTitle(getString(R.string.history_delete_title))
-        dialog.setMessage(getString(R.string.history_deleting_message))
-        dialog.setCancelable(false)
-        dialog.isIndeterminate = true
+        val dialog = AlertDialog.Builder(this)
+                .setTitle(R.string.history_delete_title)
+                .setView(R.layout.history_deleting_dialog)
+                .setCancelable(false)
+                .create()
         dialog.show()
         DeleteAllHistoryTask(contentResolver, dialog).execute()
     }
 
     private class DeleteAllHistoryTask constructor(
             private val contentResolver: ContentResolver,
-            private val dialog: ProgressDialog
+            private val dialog: AlertDialog
     ) : AsyncTask<Unit?, Unit?, Unit?>() {
         override fun doInBackground(vararg units: Unit?): Unit? {
             contentResolver.delete(HistoryProvider.Columns.CONTENT_URI, null, null)
