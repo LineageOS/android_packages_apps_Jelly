@@ -77,13 +77,6 @@
 
         <SwitchPreference
             android:defaultValue="1"
-            android:key="key_clear_text_traffic"
-            android:summaryOff="@string/pref_clear_text_traffic_summary_off"
-            android:summaryOn="@string/pref_clear_text_traffic_summary_on"
-            android:title="@string/pref_clear_text_traffic_title" />
-
-        <SwitchPreference
-            android:defaultValue="1"
             android:key="key_cookie"
             android:summary="@string/pref_cookie_summary"
             android:title="@string/pref_cookie_title" />
