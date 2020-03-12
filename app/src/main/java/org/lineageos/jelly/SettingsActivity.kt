@@ -16,7 +16,6 @@
 package org.lineageos.jelly
 
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.webkit.CookieManager
 import android.widget.EditText
@@ -25,9 +24,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import androidx.preference.*
-import org.lineageos.jelly.utils.IntentUtils
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import org.lineageos.jelly.utils.PrefsUtils
 
 class SettingsActivity : AppCompatActivity() {
@@ -86,12 +86,6 @@ class SettingsActivity : AppCompatActivity() {
                     Toast.makeText(preference.context, getString(R.string.pref_cookie_clear_done),
                             Toast.LENGTH_LONG).show()
                     true
-                }
-                "key_reach_mode" -> {
-                    val intent = Intent(IntentUtils.EVENT_CHANGE_UI_MODE)
-                    val checked = (preference as SwitchPreference).isChecked
-                    intent.putExtra(IntentUtils.EVENT_CHANGE_UI_MODE, checked)
-                    LocalBroadcastManager.getInstance(preference.context).sendBroadcast(intent)
                 }
                 else -> {
                     super.onPreferenceTreeClick(preference)
