@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">Ofrues sygjerimesh</string>
     <string name="pref_reach_mode_title">Arritshmëria</string>
     <string name="pref_reach_mode_summary">Zhvendos elementët e ndërfaqes për përdorim të lehtë me një dorë</string>
-    <string name="pref_clear_text_traffic_title">Lejo faqet e pa sigurta</string>
-    <string name="pref_clear_text_traffic_summary_on">Trafiku tekst (siç është http) është i lejuar</string>
-    <string name="pref_clear_text_traffic_summary_off">Trafiku tekst (siç është http) nuk është i lejuar</string>
     <string name="history_title">Historiku</string>
     <string name="history_empty">Këtu nuk ka asnjë gjë, lundroni në internet për të parë historikun këtu</string>
     <string name="history_date_format">EEEE MMMM dd vvvv, HH:mm</string>
