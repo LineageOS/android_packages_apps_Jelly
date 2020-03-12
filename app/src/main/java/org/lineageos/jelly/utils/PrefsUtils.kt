@@ -16,7 +16,7 @@
 package org.lineageos.jelly.utils
 
 import android.content.Context
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import org.lineageos.jelly.R
 
 object PrefsUtils {

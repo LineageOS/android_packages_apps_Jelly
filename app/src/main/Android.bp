@@ -28,6 +28,7 @@ android_app {
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.palette_palette",
+        "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
         "androidx.transition_transition",
         "com.google.android.material_material",

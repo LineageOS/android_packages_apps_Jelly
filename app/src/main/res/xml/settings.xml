@@ -32,6 +32,7 @@
         android:title="@string/pref_suggestions_provider" />
 
     <Preference
+        android:defaultValue="@string/default_home_page"
         android:key="key_home_page"
         android:title="@string/pref_start_page" />
 
