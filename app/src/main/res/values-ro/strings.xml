@@ -64,9 +64,6 @@
     <string name="pref_suggestions_provider">Furnizor de sugestii</string>
     <string name="pref_reach_mode_title">Mod Ajungere</string>
     <string name="pref_reach_mode_summary">Relocalizează elementele de interfață pentru o utilizare mai simplă cu o singură mână</string>
-    <string name="pref_clear_text_traffic_title">Permite site-uri nesigure</string>
-    <string name="pref_clear_text_traffic_summary_on">Traficul de text curat (cum este http) este permis</string>
-    <string name="pref_clear_text_traffic_summary_off">Traficul de text curat (cum este http) nu este permis</string>
     <string name="history_title">Istoric</string>
     <string name="history_empty">Nu există nimic aici, navigați pe internet pentru a vedea istoricul aici</string>
     <string name="history_date_format">EEEE, dd MMMM yyyy, HH:mm</string>

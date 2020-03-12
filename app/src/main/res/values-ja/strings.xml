@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">提案プロパイダ</string>
     <string name="pref_reach_mode_title">片手モード</string>
     <string name="pref_reach_mode_summary">片手で簡単に使用できるよう、UI要素を再配置します</string>
-    <string name="pref_clear_text_traffic_title">セキュリティ保護されていないウェブサイトを許可</string>
-    <string name="pref_clear_text_traffic_summary_on">暗号化されていない通信 (httpなど) が許可されています</string>
-    <string name="pref_clear_text_traffic_summary_off">暗号化されていない通信 (httpなど) は許可されていません</string>
     <string name="history_title">履歴</string>
     <string name="history_empty">ここには何もありません。閲覧したページの履歴がここに表示されます</string>
     <string name="history_date_format">yyyy/MM/dd HH:mm</string>
