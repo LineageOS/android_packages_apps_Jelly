@@ -63,9 +63,6 @@
     <string name="pref_suggestions_provider">Poskytovateľ návrhov</string>
     <string name="pref_reach_mode_title">Režim dosahu</string>
     <string name="pref_reach_mode_summary">Zmena umiestnenia prvkov rozhrania pre jednoduchšie ovládanie jednou rukou</string>
-    <string name="pref_clear_text_traffic_title">Povoliť nezabezpečené internetové stránky</string>
-    <string name="pref_clear_text_traffic_summary_on">Nešifrovaná textová prevádzka (napríklad http) je povolená</string>
-    <string name="pref_clear_text_traffic_summary_off">Nešifrovaná textová prevádzka (napríklad http) nie je povolená</string>
     <string name="history_title">História</string>
     <string name="history_empty">Nič tu nie je, prechádzaním internetu uvidíte svoju históriu</string>
     <string name="history_date_format">EEEE, dd. MMMM yyyy, HH:mm</string>
