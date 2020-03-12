@@ -15,9 +15,10 @@
  */
 package org.lineageos.jelly.history
 
-import android.app.LoaderManager
 import android.app.ProgressDialog
-import android.content.*
+import android.content.ContentResolver
+import android.content.ContentValues
+import android.content.DialogInterface
 import android.database.Cursor
 import android.os.AsyncTask
 import android.os.Bundle
@@ -28,6 +29,9 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.loader.app.LoaderManager
+import androidx.loader.content.CursorLoader
+import androidx.loader.content.Loader
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -57,14 +61,15 @@ class HistoryActivity : AppCompatActivity() {
         val list = findViewById<RecyclerView>(R.id.history_list)
         mEmptyView = findViewById(R.id.history_empty_layout)
         mAdapter = HistoryAdapter(this)
-        loaderManager.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
+        val loader = LoaderManager.getInstance(this)
+        loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
             override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
                 return CursorLoader(this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
                         null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC")
             }
 
-            override fun onLoadFinished(loader: Loader<Cursor>, cursor: Cursor) {
-                mAdapter.swapCursor(cursor)
+            override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
+                mAdapter.swapCursor(data)
             }
 
             override fun onLoaderReset(loader: Loader<Cursor>) {
