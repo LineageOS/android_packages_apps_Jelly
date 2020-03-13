@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ef2ba8d_5a16be7f",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/ExtUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-13T08:15:49Z",
+      "side": 1,
+      "message": "NullPointerException",
+      "range": {
+        "startLine": 5,
+        "startChar": 56,
+        "endLine": 5,
+        "endChar": 65
+      },
+      "revId": "81d9cc6a37684a2560f3a53a87389a6b8d5091f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
