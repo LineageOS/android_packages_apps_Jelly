@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de52a2fc_8cd483da",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteHolder.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T21:32:25Z",
+      "side": 1,
+      "message": "Does our support library already have core-ktx? if so -\u003e url.toUri()",
+      "revId": "3f6c5321beea048bc3ee104b835d734d4d224711",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
