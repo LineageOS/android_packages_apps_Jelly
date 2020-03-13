@@ -187,6 +187,24 @@
       "revId": "366e3307e716869aaa827810f386757f23e24e51",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c7dc61d_88253a59",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/TabUtils.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T21:28:25Z",
+      "side": 1,
+      "message": "I don\u0027t understand. What do you mean here?",
+      "parentUuid": "9142f4df_4ad6eec1",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
