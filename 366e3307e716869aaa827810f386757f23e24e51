@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c50a357_184cce75",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "mCursor?.close()",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96e494bb_04f58d49",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "cursor?.let { c -\u003e ...",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0f39f35_5b95bd3f",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "val cursor \u003d mCursor ?: return",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a33e1d60_199ac522",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "return mCursor?.count ?: 0",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a359d614_dc7ad36d",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteHolder.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "title.isNullOrEmpty",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc54af8c_ce160024",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/DuckSuggestionProvider.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "Rename to obj",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d0e5cd3_874b15cd",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SearchBarController.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "Use when",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1543354_253d3002",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SearchBarController.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "Replace all oft those with isNullOrEmpty",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c2b410a_529e4d3a",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SearchBarController.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "private val query: String? get() \u003d mEditor.text?.toString()",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dace84d1_b388721b",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/TabUtils.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-03-13T19:32:54Z",
+      "side": 1,
+      "message": "Make this an extension func to String?",
+      "revId": "366e3307e716869aaa827810f386757f23e24e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
