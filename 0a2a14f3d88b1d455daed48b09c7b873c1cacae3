@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20635dcd_00f9f92d",
+        "filename": "app/build.gradle",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-13T08:19:56Z",
+      "side": 1,
+      "message": "Useless for this project, also because we wouldn\u0027t have it in the aosp environment",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 41
+      },
+      "revId": "0a2a14f3d88b1d455daed48b09c7b873c1cacae3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
