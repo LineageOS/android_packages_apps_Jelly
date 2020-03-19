@@ -27,23 +27,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.provider.BaseColumns;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.Objects;
+
 public class FavoriteProvider extends ContentProvider {
-    public interface Columns extends BaseColumns {
-        String AUTHORITY = "org.lineageos.jelly.favorite";
-        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/favorite");
-
-        String TITLE = "title";
-        String URL = "url";
-        String COLOR = "color";
-    }
-
     private static final int MATCH_ALL = 0;
     private static final int MATCH_ID = 1;
-
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+
     static {
         sURIMatcher.addURI(Columns.AUTHORITY, "favorite", MATCH_ALL);
         sURIMatcher.addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID);
@@ -54,8 +48,8 @@ public class FavoriteProvider extends ContentProvider {
     public static void addOrUpdateItem(ContentResolver resolver, String title, String url,
                                        int color) {
         long existingId = -1;
-        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[] { Columns._ID },
-                Columns.URL + "=?", new String[] { url }, null);
+        Cursor cursor = resolver.query(Columns.CONTENT_URI, new String[]{Columns._ID},
+                Columns.URL + "=?", new String[]{url}, null);
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 existingId = cursor.getLong(0);
@@ -113,7 +107,7 @@ public class FavoriteProvider extends ContentProvider {
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         Cursor ret = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder);
 
-        ret.setNotificationUri(getContext().getContentResolver(), uri);
+        ret.setNotificationUri(Objects.requireNonNull(getContext()).getContentResolver(), uri);
 
         return ret;
     }
@@ -137,7 +131,7 @@ public class FavoriteProvider extends ContentProvider {
             return null;
         }
 
-        getContext().getContentResolver().notifyChange(Columns.CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(Columns.CONTENT_URI, null);
 
         return ContentUris.withAppendedId(Columns.CONTENT_URI, rowID);
     }
@@ -160,14 +154,14 @@ public class FavoriteProvider extends ContentProvider {
                             "Cannot update URI " + uri + " with a where clause");
                 }
                 count = db.update(FavoriteDbHelper.DB_TABLE_FAVORITES, values, Columns._ID + " = ?",
-                        new String[] { uri.getLastPathSegment() });
+                        new String[]{uri.getLastPathSegment()});
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot update that URI: " + uri);
         }
 
         if (count > 0) {
-            getContext().getContentResolver().notifyChange(Columns.CONTENT_URI, null);
+            Objects.requireNonNull(getContext()).getContentResolver().notifyChange(Columns.CONTENT_URI, null);
         }
 
         return count;
@@ -188,7 +182,7 @@ public class FavoriteProvider extends ContentProvider {
                             "Cannot delete URI " + uri + " with a where clause");
                 }
                 selection = Columns._ID + " = ?";
-                selectionArgs = new String[] { uri.getLastPathSegment() };
+                selectionArgs = new String[]{uri.getLastPathSegment()};
                 break;
             default:
                 throw new UnsupportedOperationException("Cannot delete the URI " + uri);
@@ -197,10 +191,19 @@ public class FavoriteProvider extends ContentProvider {
         int count = db.delete(FavoriteDbHelper.DB_TABLE_FAVORITES, selection, selectionArgs);
 
         if (count > 0) {
-            getContext().getContentResolver().notifyChange(Columns.CONTENT_URI, null);
+            Objects.requireNonNull(getContext()).getContentResolver().notifyChange(Columns.CONTENT_URI, null);
         }
 
         return count;
+    }
+
+    public interface Columns extends BaseColumns {
+        String AUTHORITY = "org.lineageos.jelly.favorite";
+        Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/favorite");
+
+        String TITLE = "title";
+        String URL = "url";
+        String COLOR = "color";
     }
 
     private static class FavoriteDbHelper extends SQLiteOpenHelper {
