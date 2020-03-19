@@ -17,10 +17,10 @@ package org.lineageos.jelly.favorite;
 
 import android.content.Context;
 import android.database.Cursor;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import org.lineageos.jelly.R;
 
 class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
@@ -54,6 +54,7 @@ class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
         notifyDataSetChanged();
     }
 
+    @NonNull
     @Override
     public FavoriteHolder onCreateViewHolder(ViewGroup parent, int type) {
         return new FavoriteHolder(LayoutInflater.from(parent.getContext())
@@ -61,7 +62,7 @@ class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
     }
 
     @Override
-    public void onBindViewHolder(FavoriteHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FavoriteHolder holder, int position) {
         if (!mCursor.moveToPosition(position)) {
             return;
         }
