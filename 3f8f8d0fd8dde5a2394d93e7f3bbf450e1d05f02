@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15d86e4c_08ef69d8",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Empty line (above and bellow) should separate these entries.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa25c24e_6145cba5",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Empty line (above and bellow) should separate these entries.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 49
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48da0ca4_e5a240f7",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteHolder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Pointless.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 42
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7766b749_a3e3c03d",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteHolder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Empty line (above and bellow) should separate these entries.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 49
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0eef77cd_1eff5727",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Empty line (above and bellow) should separate these entries.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 25
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a49657a1_41b1e62c",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Over 100 chars.",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 110
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92489daf_a9e5ca54",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-20T10:09:54Z",
+      "side": 1,
+      "message": "Over 100 chars.",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 110
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
