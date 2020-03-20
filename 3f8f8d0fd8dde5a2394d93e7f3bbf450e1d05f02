@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "16507b60_fe7330eb",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 25440
+      },
+      "writtenOn": "2020-03-20T10:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15d86e4c_08ef69d8",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 49
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa25c24e_6145cba5",
         "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.java",
         "patchSetId": 4
@@ -117,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "9bdd4d31_3fbe392e",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 25440
+      },
+      "writtenOn": "2020-03-20T10:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0eef77cd_1eff5727",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 25
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a49657a1_41b1e62c",
         "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
         "patchSetId": 4
@@ -140,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "717c3fd7_89d17f04",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 25440
+      },
+      "writtenOn": "2020-03-20T10:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a49657a1_41b1e62c",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 110
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "92489daf_a9e5ca54",
         "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
         "patchSetId": 4
@@ -160,6 +232,30 @@
       "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93020f44_cfd8269c",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 25440
+      },
+      "writtenOn": "2020-03-20T10:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92489daf_a9e5ca54",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 110
+      },
+      "revId": "3f8f8d0fd8dde5a2394d93e7f3bbf450e1d05f02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
