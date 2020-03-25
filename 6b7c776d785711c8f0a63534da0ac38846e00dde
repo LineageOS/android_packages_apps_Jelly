@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a352469_93da7d68",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-25T18:24:46Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 101
+      },
+      "revId": "6b7c776d785711c8f0a63534da0ac38846e00dde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "177549ec_ef8c007f",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionsAdapter.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-25T18:24:46Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 64,
+        "startChar": 16,
+        "endLine": 64,
+        "endChar": 101
+      },
+      "revId": "6b7c776d785711c8f0a63534da0ac38846e00dde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81e8ce9a_177ed818",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-25T18:24:46Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 107
+      },
+      "revId": "6b7c776d785711c8f0a63534da0ac38846e00dde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f106c01_ef903529",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarController.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-25T18:24:46Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 86,
+        "startChar": 12,
+        "endLine": 86,
+        "endChar": 120
+      },
+      "revId": "6b7c776d785711c8f0a63534da0ac38846e00dde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
