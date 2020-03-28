@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cd114b9_2b19bf15",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteProvider.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "You should decide where you want companion objects to be places: sometimes you put them at the top, other times at the bottom of their \"parent\" classes",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 20
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d5b12c3_8d978f3c",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "Use Unit instead of Void?",
+      "range": {
+        "startLine": 142,
+        "startChar": 18,
+        "endLine": 142,
+        "endChar": 37
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cdb66e6_792f6224",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryCallBack.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "init block should be at the top since it\u0027s the constructor \"body\"",
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12b1554e_c03be8d5",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/DuckSuggestionProvider.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "Get rid of this pointless thing, we don\u0027t have java code anymore in this project",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 29
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e63e8d5e_699b56f8",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionProvider.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "Begone",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 29
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e91b1517_64b5eda3",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/FileUtils.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "Begone",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 31
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44b66007_a2b4b6b8",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/PrefsUtils.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "Choose whether you want to allow context to be null in these methods or not.\nAnd in case it\u0027s null you should properly handle it",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0dfbe9f_4f6a8505",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/TabUtils.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "This is not really consistent with how you converted the other Util classes.\nYou either make everything an extension or keep the object classes with \"static\"-ish methods",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1aba750_4c5835f3",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "HashMap",
+      "range": {
+        "startLine": 35,
+        "startChar": 64,
+        "endLine": 35,
+        "endChar": 72
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8142272_e554cc60",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2020-03-28T09:21:07Z",
+      "side": 1,
+      "message": "This is not the proper way to do View constructors, do this:\n\n```\nclass WebViewExt @JvmOverloads constructor(\n    context: Context, // Note that this is never null, a View can\u0027t have a null Context\n    attrs: AttributeSet? \u003d null,\n    defStyle: Int \u003d 0) {\n ...\n}\n```\n\nThis way the generated bytecode is exactly what you were doing with 3 different constructors in java and it makes all the android tooling happier",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 51
+      },
+      "revId": "e23e88103cb139bc511260cf32f5c291dbda3ea7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
