@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5296f25c_d788354e",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-17T13:05:38Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 133
+      },
+      "revId": "c7f4b155a646b46f06a5349b629b4157331e190d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2782a7e_754854d4",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 10
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-17T13:05:38Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 167,
+        "startChar": 8,
+        "endLine": 167,
+        "endChar": 107
+      },
+      "revId": "c7f4b155a646b46f06a5349b629b4157331e190d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
