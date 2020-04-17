@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2b7cafe0_9633d261",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-17T13:04:44Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 85,
+        "startChar": 13,
+        "endLine": 85,
+        "endChar": 106
+      },
+      "revId": "94dce4953dc52730a542793e224e38516a89fa8a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
