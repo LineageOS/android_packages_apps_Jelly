@@ -78,7 +78,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
     private inner class ItemFilter : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             val results = FilterResults()
-            if (!constraint.isNullOrBlank()) {
+            if (constraint.isNullOrBlank()) {
                 return results
             }
             val provider = provider
