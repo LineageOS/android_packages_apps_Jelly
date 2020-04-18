@@ -96,6 +96,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
             if (results.values != null) {
                 val items = results.values as List<String>
                 mItems.addAll(items)
+                mQueryText = constraint.toString()
             }
             notifyDataSetChanged()
         }
