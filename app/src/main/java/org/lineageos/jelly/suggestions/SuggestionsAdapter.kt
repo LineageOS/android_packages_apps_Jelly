@@ -76,9 +76,9 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
     }
 
     private inner class ItemFilter : Filter() {
-        override fun performFiltering(constraint: CharSequence): FilterResults {
+        override fun performFiltering(constraint: CharSequence?): FilterResults {
             val results = FilterResults()
-            if (constraint.isEmpty()) {
+            if (!constraint.isNullOrBlank()) {
                 return results
             }
             val provider = provider
@@ -91,13 +91,12 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
             return results
         }
 
-        override fun publishResults(constraint: CharSequence, results: FilterResults) {
+        override fun publishResults(constraint: CharSequence?, results: FilterResults) {
             mItems.clear()
             if (results.values != null) {
                 val items = results.values as List<String>
                 mItems.addAll(items)
             }
-            mQueryText = constraint.toString().toLowerCase(Locale.getDefault()).trim { it <= ' ' }
             notifyDataSetChanged()
         }
 
