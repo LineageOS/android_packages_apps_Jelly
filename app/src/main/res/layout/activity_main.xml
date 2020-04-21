@@ -73,6 +73,8 @@
         <org.lineageos.jelly.webview.WebViewExt
             android:id="@+id/web_view"
             android:layout_width="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_height="match_parent" />
     </FrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
