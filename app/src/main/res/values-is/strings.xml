@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="permission_error_forever">Heimild endanlega hafnað. Gefðu heimild í stillingunum</string>
+    <string name="pref_start_page_dialog_message">Skrifa URL-slóð heimasíðu</string>
+    <string name="pref_looklock_summary">Hindra önnur forrit í að lesa efni í vafranum</string>
+    <string name="pref_cookie_summary">Leyfa vefsvæðum að vista og hlaða inn vefkökum</string>
+    <string name="pref_screenshot_snap_title">Ítarleg deiling</string>
+    <string name="pref_screenshot_snap_summary">Deila forskoðun á deildu vefsíðunni</string>
+    <string name="pref_do_not_track_title">\"Ekki fylgjast með mér\" (Do-Not-Track)</string>
+    <string name="pref_do_not_track_summary">Senda \"ekki fylgjast með mér\" (Do-Not-Track) haus til vefþjóna sem þú heimsækir</string>
+    <string name="pref_suggestions_provider">Tillöguveita</string>
+    <string name="history_empty">Það er ekkert hér, vafraðu um internetið til að sjá ferilinn þinn hérna</string>
+    <string name="history_delete_message">Þú ert í þann mund að fara að eyða öllum vafurferlinum, það er ekki hægt að afturkalla við þessa aðgerð. Viltu halda áfram?</string>
+    <string name="favorite_empty">Það er ekkert hér, bættu tengli í eftirlæti til að sjá hann hérna</string>
+    <string name="favorite_edit_error">Settu inn gilda vefslóð</string>
+</resources>
