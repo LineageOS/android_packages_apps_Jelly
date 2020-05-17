@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "134a9ea2_5a9e6189",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionsAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2020-05-17T13:39:59Z",
+      "side": 1,
+      "message": "For the record:\n\npackages/apps/Jelly/app/src/main:Jelly kotlinc packages/apps/Jelly/app/src/main/java/org/lineageos/jelly/MainActivity.kt:547:28: warning: \u0027constructor TaskDescription(String!, Bitmap!, Int)\u0027 is deprecated. Deprecated in Java\n        setTaskDescription(TaskDescription(mWebView.title,\n                           ^\npackages/apps/Jelly/app/src/main/java/org/lineageos/jelly/suggestions/SuggestionsAdapter.kt:97:44: warning: unchecked cast: Any! to List\u003cString\u003e\n                val items \u003d results.values as List\u003cString\u003e",
+      "revId": "394a88d0955889ed94146fa48b48687bb1ec702e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
