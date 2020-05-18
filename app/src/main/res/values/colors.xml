@@ -16,7 +16,7 @@
 <resources>
     <color name="colorPrimary">#fafafa</color>
     <color name="colorPrimaryDark">#E0E0E0</color>
-    <color name="colorAccent">#2962FF</color>
+    <color name="colorAccent">@*android:color/accent_device_default_light</color>
 
     <color name="colorIncognito">#000b4d</color>
     <color name="colorDelete">#F44336</color>
