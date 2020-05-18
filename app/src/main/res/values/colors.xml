@@ -14,9 +14,9 @@
      limitations under the License.
 -->
 <resources>
-    <color name="colorPrimary">#fafafa</color>
-    <color name="colorPrimaryDark">#E0E0E0</color>
-    <color name="colorAccent">#2962FF</color>
+    <color name="colorPrimary">#f8f8f8</color>
+    <color name="colorPrimaryDark">#e0e0e0</color>
+    <color name="colorAccent">#167c80</color>
 
     <color name="colorIncognito">#000b4d</color>
     <color name="colorDelete">#F44336</color>
