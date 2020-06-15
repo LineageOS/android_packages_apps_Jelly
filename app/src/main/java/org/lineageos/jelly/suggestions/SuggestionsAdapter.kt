@@ -93,8 +93,9 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
 
         override fun publishResults(constraint: CharSequence?, results: FilterResults) {
             mItems.clear()
-            if (results.values != null) {
-                val items = results.values as List<String>
+            val values = results.values;
+            if (values != null && values is List<*>) {
+                val items = values.filterIsInstance<String>()
                 mItems.addAll(items)
                 mQueryText = constraint.toString().toLowerCase(Locale.getDefault()).trim {
                     it <= ' '
