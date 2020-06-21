@@ -21,7 +21,9 @@
     <string name="settings_title">პარამეტრები</string>
     <string name="pref_search_engine">საძიებო სისტემა</string>
     <string name="pref_js_summary">JavaScript-ის ჩართვა</string>
-    <string name="pref_location_title">ადგილმდებარეობა</string>
+    <string name="pref_location_title">მდებარეობა</string>
+    <string name="pref_screenshot_snap_title">გაფართოებული გაზიარება</string>
+    <string name="pref_screenshot_snap_summary">გაზიარებული ვებგვერდის შეთვალიერების გაზიარება</string>
     <string name="history_title">ისტორია</string>
     <string name="history_delete_title">ისტორიის გასუფთავება</string>
     <string name="favorite_title">რჩეულები</string>
