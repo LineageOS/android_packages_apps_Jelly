@@ -26,6 +26,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.TextView.OnEditorActionListener
+import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class SearchBarController(
@@ -124,7 +125,8 @@ class SearchBarController(
 
     private fun updateStatusText() {
         if (mTotalResultCount > 0) {
-            mStatus.text = (mCurrentResultPosition + 1).toString() + "/" + mTotalResultCount
+            mStatus.text = mWebView.context.getString(
+                    R.string.find_result_format, (mCurrentResultPosition + 1), mTotalResultCount)
         } else {
             mStatus.text = null
         }
