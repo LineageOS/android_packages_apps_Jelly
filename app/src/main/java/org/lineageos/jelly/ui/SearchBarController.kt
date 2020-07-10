@@ -40,6 +40,9 @@ class SearchBarController(
     private var mHasStartedSearch = false
     private var mCurrentResultPosition = 0
     private var mTotalResultCount = 0
+    private val query: String?
+        get() = mEditor.text?.toString()
+
     fun onShow() {
         mEditor.requestFocus()
         UiUtils.showKeyboard(mEditor)
@@ -61,7 +64,7 @@ class SearchBarController(
         updateNextAndPrevButtonEnabledState()
     }
 
-    override fun onEditorAction(view: TextView, actionId: Int, event: KeyEvent): Boolean {
+    override fun onEditorAction(view: TextView, actionId: Int, event: KeyEvent?): Boolean {
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
             UiUtils.hideKeyboard(view)
             startSearch()
@@ -126,8 +129,6 @@ class SearchBarController(
             mStatus.text = null
         }
     }
-
-    private val query = mEditor.text?.toString()
 
     interface OnCancelListener {
         fun onCancelSearch()
