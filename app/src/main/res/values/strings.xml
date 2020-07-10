@@ -198,4 +198,7 @@
     <string name="ssl_cert_dialog_issued_on">Issued On</string>
     <string name="ssl_cert_dialog_expires_on">Expires On</string>
     <string name="ssl_cert_dialog_dismiss">Dismiss</string>
+
+    <!--Find in page: result counter -->
+    <string name="find_result_counter">%1$d/%2$d</string>
 </resources>
