@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e024b398_80a80879",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SearchBarController.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-07-17T12:32:15Z",
+      "side": 1,
+      "message": "i\u0027d just hardcode string format if i were you, also `(mCurrentResultPosition + 1)` -\u003e `mCurrentResultPosition + 1`.",
+      "range": {
+        "startLine": 128,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 97
+      },
+      "revId": "4e5ef53d4b4b07899492fa8788d77a133afd2901",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
