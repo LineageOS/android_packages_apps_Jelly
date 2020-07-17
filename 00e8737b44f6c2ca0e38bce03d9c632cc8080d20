@@ -16,6 +16,24 @@
       "revId": "00e8737b44f6c2ca0e38bce03d9c632cc8080d20",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4226f776_f40c6bea",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SearchBarController.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 19936
+      },
+      "writtenOn": "2020-07-17T10:18:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a6a2b5b4_04ff4c3b",
+      "revId": "00e8737b44f6c2ca0e38bce03d9c632cc8080d20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
