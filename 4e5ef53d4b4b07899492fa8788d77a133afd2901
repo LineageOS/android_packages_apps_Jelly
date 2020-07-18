@@ -22,6 +22,30 @@
       "revId": "4e5ef53d4b4b07899492fa8788d77a133afd2901",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c067944f_aecdebdf",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SearchBarController.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 19936
+      },
+      "writtenOn": "2020-07-18T05:14:23Z",
+      "side": 1,
+      "message": "I was of the impression that hard-coding the string will mess up this in RTL layouts, and then I realised I can just change the primary locale to a RTL one and check myself and seems its fine.",
+      "parentUuid": "e024b398_80a80879",
+      "range": {
+        "startLine": 128,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 97
+      },
+      "revId": "4e5ef53d4b4b07899492fa8788d77a133afd2901",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
