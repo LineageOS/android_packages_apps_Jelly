@@ -101,7 +101,7 @@ class SearchBarController(
             clearSearchResults()
             mStatus.text = null
         } else {
-            mWebView.findAllAsync(query)
+            mWebView.findAllAsync(query!!)
             mHasStartedSearch = true
         }
         updateStatusText()
