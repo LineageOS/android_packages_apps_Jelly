@@ -19,7 +19,6 @@ import android.content.ContentResolver
 import android.content.ContentUris
 import android.content.DialogInterface
 import android.database.Cursor
-import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.BaseColumns
 import android.text.Editable
@@ -38,13 +37,19 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteActivity : AppCompatActivity() {
+    private val uiScope = CoroutineScope(Dispatchers.Main)
     private lateinit var mList: RecyclerView
     private lateinit var mEmptyView: View
     private lateinit var mAdapter: FavoriteAdapter
+
     override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
         setContentView(R.layout.activity_favorites)
@@ -123,13 +128,17 @@ class FavoriteActivity : AppCompatActivity() {
                         urlEdit.error = error
                         urlEdit.requestFocus()
                     }
-                    UpdateFavoriteTask(contentResolver, id, updatedTitle,
-                            updatedUrl).execute()
+                    uiScope.launch {
+                        updateFavourite(contentResolver, id, updatedTitle,
+                                updatedUrl)
+                    }
                     dialog.dismiss()
                 }
                 .setNeutralButton(R.string.favorite_edit_delete
                 ) { dialog: DialogInterface, _: Int ->
-                    DeleteFavoriteTask(contentResolver, id).execute()
+                    uiScope.launch {
+                        deleteFavourite(contentResolver, id)
+                    }
                     dialog.dismiss()
                 }
                 .setNegativeButton(android.R.string.cancel
@@ -137,22 +146,15 @@ class FavoriteActivity : AppCompatActivity() {
                 .show()
     }
 
-    private class UpdateFavoriteTask constructor(
-            private val contentResolver: ContentResolver,
-            private val id: Long,
-            private val title: String,
-            private val url: String
-    ) : AsyncTask<Unit, Unit, Unit>() {
-        override fun doInBackground(vararg units: Unit) {
+    private suspend fun updateFavourite(contentResolver: ContentResolver, id: Long,
+                                        title: String, url: String) {
+        withContext(Dispatchers.Default) {
             FavoriteProvider.updateItem(contentResolver, id, title, url)
         }
     }
 
-    private class DeleteFavoriteTask constructor(
-            private val contentResolver: ContentResolver,
-            private val id: Long
-    ) : AsyncTask<Unit, Unit, Unit>() {
-        override fun doInBackground(vararg units: Unit) {
+    private suspend fun deleteFavourite(contentResolver: ContentResolver, id: Long) {
+        withContext(Dispatchers.Default) {
             val uri = ContentUris.withAppendedId(FavoriteProvider.Columns.CONTENT_URI, id)
             contentResolver.delete(uri, null, null)
         }

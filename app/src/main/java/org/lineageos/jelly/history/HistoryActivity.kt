@@ -19,9 +19,9 @@ import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.DialogInterface
 import android.database.Cursor
-import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -37,11 +37,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryCallBack.OnDeleteListener
 import org.lineageos.jelly.utils.UiUtils
 
 class HistoryActivity : AppCompatActivity() {
+    private val uiScope = CoroutineScope(Dispatchers.Main)
     private lateinit var mEmptyView: View
     private lateinit var mAdapter: HistoryAdapter
     private val mAdapterDataObserver: AdapterDataObserver = object : AdapterDataObserver() {
@@ -137,20 +142,17 @@ class HistoryActivity : AppCompatActivity() {
                 .setCancelable(false)
                 .create()
         dialog.show()
-        DeleteAllHistoryTask(contentResolver, dialog).execute()
+        uiScope.launch {
+            deleteAllHistory(contentResolver, dialog)
+        }
     }
 
-    private class DeleteAllHistoryTask constructor(
-            private val contentResolver: ContentResolver,
-            private val dialog: AlertDialog
-    ) : AsyncTask<Unit, Unit, Unit>() {
-        override fun doInBackground(vararg units: Unit) {
+    private suspend fun deleteAllHistory(contentResolver: ContentResolver, dialog: AlertDialog) {
+        withContext(Dispatchers.Default) {
             contentResolver.delete(HistoryProvider.Columns.CONTENT_URI, null, null)
+            withContext(Dispatchers.Main) {
+                Handler(Looper.getMainLooper()).postDelayed({ dialog.dismiss() }, 1000)
+            }
         }
-
-        override fun onPostExecute(u: Unit) {
-            Handler().postDelayed({ dialog.dismiss() }, 1000)
-        }
-
     }
 }
