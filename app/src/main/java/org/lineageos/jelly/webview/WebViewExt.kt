@@ -66,10 +66,8 @@ class WebViewExt @JvmOverloads constructor(
         settings.setSupportMultipleWindows(true)
         settings.builtInZoomControls = true
         settings.displayZoomControls = false
-        settings.setAppCacheEnabled(!isIncognito)
         settings.databaseEnabled = !isIncognito
         settings.domStorageEnabled = !isIncognito
-        settings.setAppCachePath(mActivity.getDir("appcache", Context.MODE_PRIVATE).path)
         setOnLongClickListener(object : OnLongClickListener {
             var shouldAllowDownload = false
             override fun onLongClick(v: View): Boolean {
