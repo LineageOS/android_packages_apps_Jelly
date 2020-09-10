@@ -32,6 +32,8 @@ android_app {
         "androidx.recyclerview_recyclerview",
         "androidx.transition_transition",
         "com.google.android.material_material",
+        "kotlinx-coroutines-android",
+        "kotlinx-coroutines-core",
     ],
 
     sdk_version: "current",
