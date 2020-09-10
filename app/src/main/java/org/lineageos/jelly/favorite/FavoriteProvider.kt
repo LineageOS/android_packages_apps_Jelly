@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.provider.BaseColumns
-import org.lineageos.jelly.utils.requireContext
+import org.lineageos.jelly.utils.requireContextExt
 
 class FavoriteProvider : ContentProvider() {
     companion object {
@@ -85,7 +85,7 @@ class FavoriteProvider : ContentProvider() {
         }
         val db = mDbHelper.readableDatabase
         val ret = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder)
-        ret.setNotificationUri(requireContext().contentResolver, uri)
+        ret.setNotificationUri(requireContextExt().contentResolver, uri)
         return ret
     }
 
@@ -102,7 +102,7 @@ class FavoriteProvider : ContentProvider() {
         if (rowID <= 0) {
             return null
         }
-        requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
+        requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         return ContentUris.withAppendedId(Columns.CONTENT_URI, rowID)
     }
 
@@ -125,7 +125,7 @@ class FavoriteProvider : ContentProvider() {
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
         if (count > 0) {
-            requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
+            requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
         return count
     }
@@ -154,7 +154,7 @@ class FavoriteProvider : ContentProvider() {
         val count = db.delete(FavoriteDbHelper.DB_TABLE_FAVORITES,
                 localSelection, localSelectionArgs)
         if (count > 0) {
-            requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
+            requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
         return count
     }
