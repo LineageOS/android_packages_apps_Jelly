@@ -250,6 +250,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
                                             results: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, results)
         when (requestCode) {
             LOCATION_PERM_REQ -> if (hasLocationPermission()) {
                 mWebView.reload()
