@@ -57,6 +57,10 @@ import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
@@ -72,7 +76,6 @@ import org.lineageos.jelly.webview.WebViewExtActivity
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.lang.ref.WeakReference
 
 class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         SharedPreferences.OnSharedPreferenceChangeListener {
@@ -108,6 +111,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     private var mCustomView: View? = null
     private var mFullScreenCallback: CustomViewCallback? = null
     private var mSearchActive = false
+    private val uiScope = CoroutineScope(Dispatchers.Main)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -167,7 +172,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false)
         val preferenceManager = PreferenceManager.getDefaultSharedPreferences(this)
-        preferenceManager.registerOnSharedPreferenceChangeListener(this);
+        preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
         setUiMode()
         val incognitoIcon = findViewById<ImageView>(R.id.incognito)
@@ -306,10 +311,14 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                     R.id.menu_new -> openInNewTab(this, null, false)
                     R.id.menu_incognito -> openInNewTab(this, null, true)
                     R.id.menu_reload -> mWebView.reload()
-                    R.id.menu_add_favorite -> setAsFavorite(mWebView.title, mWebView.url)
+                    R.id.menu_add_favorite -> uiScope.launch {
+                        setAsFavorite(mWebView.title, mWebView.url)
+                    }
                     R.id.menu_share ->
                         // Delay a bit to allow popup menu hide animation to play
-                        Handler().postDelayed({ shareUrl(mWebView.url) }, 300)
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            shareUrl(mWebView.url)
+                        }, 300)
                     R.id.menu_search ->
                         // Run the search setup
                         showSearch()
@@ -389,7 +398,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         startActivity(Intent.createChooser(intent, getString(R.string.share_title)))
     }
 
-    private fun setAsFavorite(title: String?, url: String?) {
+
+    private suspend fun setAsFavorite(title: String?, url: String?) {
         if (title == null || url == null) {
             return
         }
@@ -398,7 +408,13 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         if (color == Color.TRANSPARENT) {
             color = ContextCompat.getColor(this, R.color.colorAccent)
         }
-        SetAsFavoriteTask(contentResolver, title, url, color, mCoordinator).execute()
+        withContext(Dispatchers.Default) {
+            FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
+            withContext(Dispatchers.Main) {
+                Snackbar.make(mCoordinator, getString(R.string.favorite_added),
+                        Snackbar.LENGTH_LONG).show()
+            }
+        }
     }
 
     override fun downloadFileAsk(url: String?, contentDisposition: String?, mimeType: String?) {
@@ -457,7 +473,9 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             sheet.dismiss()
         }
         favouriteLayout.setOnClickListener {
-            setAsFavorite(url, url)
+            uiScope.launch {
+                setAsFavorite(url, url)
+            }
             sheet.dismiss()
         }
         if (shouldAllowDownload) {
@@ -688,27 +706,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         resetSystemUIColor()
         if (mThemeColor != 0) {
             applyThemeColor(mThemeColor)
-        }
-    }
-
-    private class SetAsFavoriteTask constructor(
-            private val contentResolver: ContentResolver,
-            private val title: String,
-            private val url: String,
-            private val color: Int, parentView: View?
-    ) : AsyncTask<Void?, Void?, Boolean>() {
-        private val parentView = WeakReference(parentView)
-        override fun doInBackground(vararg params: Void?): Boolean {
-            FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
-            return true
-        }
-
-        override fun onPostExecute(aBoolean: Boolean) {
-            val view = parentView.get()
-            if (view != null) {
-                Snackbar.make(view, view.context.getString(R.string.favorite_added),
-                        Snackbar.LENGTH_LONG).show()
-            }
         }
     }
 
