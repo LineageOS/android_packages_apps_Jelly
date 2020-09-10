@@ -44,8 +44,10 @@ internal class ChromeClient(
 
     override fun onReceivedTitle(view: WebView, title: String) {
         mUrlBarController.onTitleReceived(title)
-        if (!mIncognito) {
-            HistoryProvider.addOrUpdateItem(mActivity.contentResolver, title, view.url)
+        view.url?.let {
+            if (!mIncognito) {
+                HistoryProvider.addOrUpdateItem(mActivity.contentResolver, title, it)
+            }
         }
     }
 

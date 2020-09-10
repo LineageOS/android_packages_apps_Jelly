@@ -97,12 +97,14 @@ class SearchBarController(
     }
 
     private fun startSearch() {
-        if (query.isNullOrEmpty()) {
-            clearSearchResults()
-            mStatus.text = null
-        } else {
-            mWebView.findAllAsync(query)
-            mHasStartedSearch = true
+        query.let {
+            if (it.isNullOrEmpty()) {
+                clearSearchResults()
+                mStatus.text = null
+            } else {
+                mWebView.findAllAsync(it)
+                mHasStartedSearch = true
+            }
         }
         updateStatusText()
     }

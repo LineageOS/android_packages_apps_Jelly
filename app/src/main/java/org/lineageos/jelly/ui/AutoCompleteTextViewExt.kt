@@ -24,9 +24,9 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
     private var mFocusChangeListener: OnFocusChangeListener? = null
     private var mPositionX = 0
 
-    constructor(context: Context?) : super(context)
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context?, attrs: AttributeSet?, defStyle: Int) :
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet?, defStyle: Int) :
             super(context, attrs, defStyle)
 
     override fun getOnFocusChangeListener(): OnFocusChangeListener {
