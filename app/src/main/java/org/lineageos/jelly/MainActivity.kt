@@ -38,6 +38,8 @@ import android.print.PrintManager
 import android.text.TextUtils
 import android.util.Log
 import android.view.*
+import android.view.WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import android.view.inputmethod.EditorInfo
 import android.webkit.CookieManager
 import android.webkit.MimeTypeMap
@@ -522,6 +524,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun applyThemeColor(color: Int) {
         var localColor = color
         val hasValidColor = localColor != Color.TRANSPARENT
@@ -554,30 +557,52 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         } else {
             window.statusBarColor = localColor
         }
-        var flags = window.decorView.systemUiVisibility
-        flags = if (UiUtils.isColorLight(localColor)) {
-            flags or if (isReachMode) {
-                View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (UiUtils.isColorLight(localColor)) {
+                if (isReachMode) {
+                    window.insetsController?.setSystemBarsAppearance(APPEARANCE_LIGHT_NAVIGATION_BARS, APPEARANCE_LIGHT_NAVIGATION_BARS)
+                } else {
+                    window.insetsController?.setSystemBarsAppearance(APPEARANCE_LIGHT_STATUS_BARS, APPEARANCE_LIGHT_STATUS_BARS)
+                }
             } else {
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                if (isReachMode) {
+                    window.insetsController?.setSystemBarsAppearance(0, APPEARANCE_LIGHT_NAVIGATION_BARS)
+                } else {
+                    window.insetsController?.setSystemBarsAppearance(0, APPEARANCE_LIGHT_STATUS_BARS)
+                }
             }
         } else {
-            flags and if (isReachMode) {
-                View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
+            var flags = window.decorView.systemUiVisibility
+            flags = if (UiUtils.isColorLight(localColor)) {
+                flags or if (isReachMode) {
+                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                } else {
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                }
             } else {
-                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+                flags and if (isReachMode) {
+                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
+                } else {
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+                }
             }
+            window.decorView.systemUiVisibility = flags
         }
-        window.decorView.systemUiVisibility = flags
         setTaskDescription(TaskDescription(mWebView.title,
                 mUrlIcon, localColor))
     }
 
+    @Suppress("DEPRECATION")
     private fun resetSystemUIColor() {
-        var flags = window.decorView.systemUiVisibility
-        flags = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
-        flags = flags and View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
-        window.decorView.systemUiVisibility = flags
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.setSystemBarsAppearance(0, APPEARANCE_LIGHT_NAVIGATION_BARS)
+            window.insetsController?.setSystemBarsAppearance(0, APPEARANCE_LIGHT_STATUS_BARS)
+        } else {
+            var flags = window.decorView.systemUiVisibility
+            flags = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+            flags = flags and View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
+            window.decorView.systemUiVisibility = flags
+        }
         window.statusBarColor = Color.BLACK
         window.navigationBarColor = Color.BLACK
     }
@@ -638,20 +663,35 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         getSystemService(ShortcutManager::class.java).requestPinShortcut(shortcutInfo, null)
     }
 
+    @Suppress("DEPRECATION")
     private fun setImmersiveMode(enable: Boolean) {
-        var flags = window.decorView.systemUiVisibility
-        val immersiveModeFlags = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN
-                or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
-        flags = if (enable) {
-            flags or immersiveModeFlags
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setDecorFitsSystemWindows(!enable)
+            val controller = window.insetsController
+            if (controller != null) {
+                if (enable) {
+                    controller.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+                    controller.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+                } else {
+                    controller.show(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+                    controller.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE.inv()
+                }
+            }
         } else {
-            flags and immersiveModeFlags.inv()
+            var flags = window.decorView.systemUiVisibility
+            val immersiveModeFlags = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+            flags = if (enable) {
+                flags or immersiveModeFlags
+            } else {
+                flags and immersiveModeFlags.inv()
+            }
+            window.decorView.systemUiVisibility = flags
         }
-        window.decorView.systemUiVisibility = flags
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
