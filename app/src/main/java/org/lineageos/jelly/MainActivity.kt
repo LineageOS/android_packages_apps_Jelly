@@ -361,7 +361,10 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         mSearchActive = false
     }
 
-    private fun shareUrl(url: String) {
+    private fun shareUrl(url: String?) {
+        if (url == null) {
+            return
+        }
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_TEXT, url)
         if (PrefsUtils.getAdvancedShare(this) && url == mWebView.url) {
@@ -386,7 +389,10 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         startActivity(Intent.createChooser(intent, getString(R.string.share_title)))
     }
 
-    private fun setAsFavorite(title: String, url: String) {
+    private fun setAsFavorite(title: String?, url: String?) {
+        if (title == null || url == null) {
+            return
+        }
         val hasValidIcon = mUrlIcon != null && !mUrlIcon!!.isRecycled
         var color = if (hasValidIcon) UiUtils.getColor(mUrlIcon, false) else Color.TRANSPARENT
         if (color == Color.TRANSPARENT) {
@@ -604,7 +610,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         } else {
             Icon.createWithResource(this, R.mipmap.ic_launcher)
         }
-        val title = mWebView.title
+        val title = mWebView.title.toString()
         val shortcutInfo = ShortcutInfo.Builder(this, title)
                 .setShortLabel(title)
                 .setIcon(launcherIcon)
