@@ -22,7 +22,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.provider.BaseColumns
-import org.lineageos.jelly.utils.requireContext
+import org.lineageos.jelly.utils.requireContextExt
 
 class HistoryProvider : ContentProvider() {
     companion object {
@@ -77,7 +77,7 @@ class HistoryProvider : ContentProvider() {
         }
         val db = mDbHelper.readableDatabase
         val ret = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder)
-        ret.setNotificationUri(requireContext().contentResolver, uri)
+        ret.setNotificationUri(requireContextExt().contentResolver, uri)
         return ret
     }
 
@@ -97,7 +97,7 @@ class HistoryProvider : ContentProvider() {
         if (rowID <= 0) {
             return null
         }
-        requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
+        requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         return ContentUris.withAppendedId(Columns.CONTENT_URI, rowID)
     }
 
@@ -120,7 +120,7 @@ class HistoryProvider : ContentProvider() {
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
         if (count > 0) {
-            requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
+            requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
         return count
     }
@@ -149,7 +149,7 @@ class HistoryProvider : ContentProvider() {
         val count = db.delete(HistoryDbHelper.DB_TABLE_HISTORY,
                 localSelection, localSelectionArgs)
         if (count > 0) {
-            requireContext().contentResolver.notifyChange(Columns.CONTENT_URI, null)
+            requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
         return count
     }
@@ -164,7 +164,7 @@ class HistoryProvider : ContentProvider() {
         }
     }
 
-    private class HistoryDbHelper internal constructor(context: Context?) :
+    private class HistoryDbHelper(context: Context?) :
             SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
         override fun onCreate(db: SQLiteDatabase) {
             db.execSQL("CREATE TABLE " + DB_TABLE_HISTORY + " (" +
