@@ -306,10 +306,10 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                     R.id.menu_new -> openInNewTab(this, null, false)
                     R.id.menu_incognito -> openInNewTab(this, null, true)
                     R.id.menu_reload -> mWebView.reload()
-                    R.id.menu_add_favorite -> setAsFavorite(mWebView.title, mWebView.url)
+                    R.id.menu_add_favorite -> setAsFavorite(mWebView.title!!, mWebView.url!!)
                     R.id.menu_share ->
                         // Delay a bit to allow popup menu hide animation to play
-                        Handler().postDelayed({ shareUrl(mWebView.url) }, 300)
+                        Handler().postDelayed({ shareUrl(mWebView.url!!) }, 300)
                     R.id.menu_search ->
                         // Run the search setup
                         showSearch()
@@ -604,7 +604,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         } else {
             Icon.createWithResource(this, R.mipmap.ic_launcher)
         }
-        val title = mWebView.title
+        val title = mWebView.title!!
         val shortcutInfo = ShortcutInfo.Builder(this, title)
                 .setShortLabel(title)
                 .setIcon(launcherIcon)

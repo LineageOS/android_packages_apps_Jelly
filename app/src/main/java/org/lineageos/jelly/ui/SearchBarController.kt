@@ -97,6 +97,7 @@ class SearchBarController(
     }
 
     private fun startSearch() {
+        val query = query
         if (query.isNullOrEmpty()) {
             clearSearchResults()
             mStatus.text = null
