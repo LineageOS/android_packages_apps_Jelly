@@ -26,6 +26,7 @@
     <string name="menu_settings">การตั้งค่า</string>
     <string name="menu_download">ดาวน์โหลด</string>
     <string name="menu_in_new_tab">เปิดในแท็บใหม่</string>
+    <string name="menu_desktop_mode">สลับไปยังไซต์เวอร์ชัน​เดสก์ท็อป</string>
     <string name="menu_mobile_mode">สลับไปยังไซต์เวอร์ชันมือถือ</string>
     <string name="menu_search">ค้นหาในหน้านี้</string>
     <string name="menu_print">พิมพ์</string>
@@ -42,6 +43,7 @@
     <string name="pref_search_engine">เครื่องมือค้นหา</string>
     <string name="pref_start_page">หน้าหลัก</string>
     <string name="pref_start_page_dialog_title">เลือกหน้าหลัก</string>
+    <string name="pref_start_page_dialog_message">เขียน URL ของหน้าแรก</string>
     <string name="pref_start_page_dialog_reset">รีเซ็ต</string>
     <string name="pref_privacy_security">ข้อมูลส่วนบุคคลและความปลอดภัย</string>
     <string name="pref_looklock_summary">ป้องกันไม่ให้แอปอื่นๆ อ่านเนื้อหาของเบราว์เซอร์</string>
