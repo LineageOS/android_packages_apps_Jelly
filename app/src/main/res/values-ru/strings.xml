@@ -60,7 +60,7 @@
     <string name="pref_cookie_clear_done">Cookie удалены</string>
     <string name="pref_do_not_track_title">Не отслеживать</string>
     <string name="pref_do_not_track_summary">Браузер будет сообщать сайтам, что Вы не хотите, чтобы Вас отслеживали</string>
-    <string name="pref_suggestions_provider">Поставщик поисковых предложений</string>
+    <string name="pref_suggestions_provider">Провайдер поисковых предложений</string>
     <string name="pref_reach_mode_title">Управление одной рукой</string>
     <string name="pref_reach_mode_summary">Изменение расположения элементов интерфейса для удобного управления одной рукой</string>
     <string name="history_title">История</string>
