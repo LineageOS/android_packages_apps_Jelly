@@ -17,6 +17,7 @@ package org.lineageos.jelly
 
 import android.Manifest
 import android.app.Activity
+import android.app.ActivityManager
 import android.app.ActivityManager.TaskDescription
 import android.app.DownloadManager
 import android.content.*
@@ -291,6 +292,39 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     private fun setupMenu() {
         val menu = findViewById<ImageButton>(R.id.search_menu)
+        menu.setOnLongClickListener {
+            val wrapper = ContextThemeWrapper(this,
+                    R.style.AppTheme_PopupMenuOverlapAnchor)
+            val popupMenu = PopupMenu(wrapper, menu, Gravity.NO_GRAVITY,
+                    R.attr.actionOverflowMenuStyle, 0)
+            popupMenu.inflate(R.menu.menu_kill)
+            popupMenu.setOnMenuItemClickListener { item: MenuItem ->
+                val itemId = item.itemId
+                val am: ActivityManager = getSystemService(ACTIVITY_SERVICE) as ActivityManager
+                val tasks: List<ActivityManager.AppTask> = am.getAppTasks()
+                if (tasks.size > 0) {
+                    if (itemId != R.id.kill_this) {
+                        for (i in 1 until tasks.size) {
+                            tasks[i].setExcludeFromRecents(true)
+                            tasks[i].finishAndRemoveTask()
+                        }
+                    }
+                    if (itemId != R.id.kill_others) {
+                        tasks[0].setExcludeFromRecents(true)
+                        tasks[0].finishAndRemoveTask()
+                    }
+                }
+                true
+            }
+
+            val helper = MenuPopupHelper(wrapper,
+                    (popupMenu.menu as MenuBuilder), menu)
+            helper.setForceShowIcon(true)
+            helper.show()
+            true
+        }
+
+
         menu.setOnClickListener {
             val isDesktop = mWebView.isDesktopMode
             val wrapper = ContextThemeWrapper(this,
