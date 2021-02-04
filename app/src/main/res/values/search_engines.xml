@@ -21,6 +21,7 @@
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Google encrypted</item>
+        <item>Qwant</item>
         <item>Yahoo</item>
         <item>Yandex</item>
     </string-array>
@@ -31,6 +32,7 @@
         <item>https://duckduckgo.com/?q={searchTerms}</item>
         <item>https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</item>
         <item>https://encrypted.google.com/search?q={searchTerms}</item>
+        <item>https://www.qwant.com/?q={searchTerms}</item>
         <item>https://search.yahoo.com/p={searchTerms}</item>
         <item>https://yandex.com/?q={searchTerms}</item>
     </string-array>
