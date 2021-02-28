@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Vaihda työpöytäsivustoon</string>
     <string name="menu_mobile_mode">Vaihda mobiilisivustoon</string>
     <string name="menu_search">Etsi sivulta</string>
+    <string name="menu_print">Tulosta</string>
     <string name="share_title">Lähetä</string>
     <string name="dismiss">Hylkää</string>
     <string name="download_title">Lataa tiedosto</string>
