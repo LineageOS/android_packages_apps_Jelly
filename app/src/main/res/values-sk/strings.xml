@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Prepnúť na klasickú verziu webu</string>
     <string name="menu_mobile_mode">Prepnúť na mobilnú verziu webu</string>
     <string name="menu_search">Nájsť na stránke</string>
+    <string name="menu_print">Vytlačiť</string>
     <string name="share_title">Odoslať</string>
     <string name="dismiss">Odmietnuť</string>
     <string name="download_title">Stiahnuť súbor</string>
