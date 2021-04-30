@@ -20,12 +20,10 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Message
 import android.view.View
-import android.webkit.GeolocationPermissions
-import android.webkit.ValueCallback
-import android.webkit.WebChromeClient
-import android.webkit.WebView
+import android.webkit.*
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts.OpenMultipleDocuments
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.ui.UrlBarController
@@ -36,6 +34,8 @@ internal class ChromeClient(
         private val mIncognito: Boolean,
         private val mUrlBarController: UrlBarController,
         private val mProgressBar: ProgressBar) : WebChromeClient() {
+    private lateinit var mFilePathCallback: ValueCallback<Array<Uri>>
+
     override fun onProgressChanged(view: WebView, progress: Int) {
         mProgressBar.visibility = if (progress == 100) View.INVISIBLE else View.VISIBLE
         mProgressBar.progress = if (progress == 100) 0 else progress
@@ -55,11 +55,18 @@ internal class ChromeClient(
         mActivity.onFaviconLoaded(icon)
     }
 
-    override fun onShowFileChooser(view: WebView, path: ValueCallback<Array<Uri>>,
+    override fun onShowFileChooser(view: WebView,
+                                   filePathCallback: ValueCallback<Array<Uri>>,
                                    params: FileChooserParams): Boolean {
-        val intent = params.createIntent()
+        val getContent = mActivity.registerForActivityResult(OpenMultipleDocuments()) {
+            filePathCallback.onReceiveValue(it.toTypedArray())
+        }
+
         try {
-            mActivity.startActivity(intent)
+            mFilePathCallback = filePathCallback
+            getContent.launch(params.acceptTypes.map {
+                MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
+            }.toTypedArray())
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(mActivity, mActivity.getString(R.string.error_no_activity_found),
                     Toast.LENGTH_LONG).show()
