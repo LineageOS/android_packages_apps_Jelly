@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,12 +20,10 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Message
 import android.view.View
-import android.webkit.GeolocationPermissions
-import android.webkit.ValueCallback
-import android.webkit.WebChromeClient
-import android.webkit.WebView
+import android.webkit.*
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts.OpenMultipleDocuments
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.ui.UrlBarController
@@ -57,9 +55,14 @@ internal class ChromeClient(
 
     override fun onShowFileChooser(view: WebView, path: ValueCallback<Array<Uri>>,
                                    params: FileChooserParams): Boolean {
-        val intent = params.createIntent()
+        val getContent = mActivity.registerForActivityResult(OpenMultipleDocuments()) {
+            path.onReceiveValue(it.toTypedArray())
+        }
+
         try {
-            mActivity.startActivity(intent)
+            getContent.launch(params.acceptTypes.map {
+                MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
+            }.toTypedArray())
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(mActivity, mActivity.getString(R.string.error_no_activity_found),
                     Toast.LENGTH_LONG).show()
