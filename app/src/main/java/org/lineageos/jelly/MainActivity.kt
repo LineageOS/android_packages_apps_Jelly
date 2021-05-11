@@ -592,8 +592,10 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             }
             window.decorView.systemUiVisibility = flags
         }
-        setTaskDescription(TaskDescription(mWebView.title,
-                mUrlIcon, localColor))
+        if (this::mWebView.isInitialized) {
+            setTaskDescription(TaskDescription(mWebView.title,
+                                               mUrlIcon, localColor))
+        }
     }
 
     @Suppress("DEPRECATION")
