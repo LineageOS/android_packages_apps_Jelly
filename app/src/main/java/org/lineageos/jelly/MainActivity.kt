@@ -176,7 +176,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         val preferenceManager = PreferenceManager.getDefaultSharedPreferences(this)
         preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
-        setUiMode()
         val incognitoIcon = findViewById<ImageView>(R.id.incognito)
         incognitoIcon.visibility = if (mIncognito) View.VISIBLE else View.GONE
         setupMenu()
@@ -193,7 +192,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                 findViewById(R.id.search_menu_next),
                 findViewById(R.id.search_menu_cancel),
                 this)
-        applyThemeColor(mThemeColor)
+        setUiMode()
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")
             val httpCacheSize = 1024 * 1024.toLong() // 1 MiB
