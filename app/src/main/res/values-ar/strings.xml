@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">التبديل إلى موقع سطح المكتب</string>
     <string name="menu_mobile_mode">التبديل إلى موقع الجوال</string>
     <string name="menu_search">البحث في الصفحة</string>
+    <string name="menu_print">طباعة</string>
     <string name="share_title">إرسال إلى</string>
     <string name="dismiss">تجاهل</string>
     <string name="download_title">تنزيل الملف</string>

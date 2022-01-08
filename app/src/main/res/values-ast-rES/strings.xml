@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Solicitar sitiu d\'escritoriu</string>
     <string name="menu_mobile_mode">Solicitar sitiu móvil</string>
     <string name="menu_search">Alcontrar na páxina</string>
+    <string name="menu_print">Imprentar</string>
     <string name="share_title">Unviar a</string>
     <string name="dismiss">Escartar</string>
     <string name="download_title">Baxar ficheru</string>
@@ -60,8 +61,8 @@
     <string name="pref_do_not_track_title">Nun rastrexar</string>
     <string name="pref_do_not_track_summary">Unvia una solicitú de Nun rastrexar a los sitios web que visites</string>
     <string name="pref_suggestions_provider">Fornidor de suxerencies</string>
-    <string name="pref_reach_mode_title">Mou con una mano</string>
-    <string name="pref_reach_mode_summary">Recoloca los elementos de la interfaz pa usar el preséu con una mano</string>
+    <string name="pref_reach_mode_title">Mou amañosu</string>
+    <string name="pref_reach_mode_summary">Reorganiza los elementos de la interfaz pa que seyan más amañosos usalos con una mano</string>
     <string name="history_title">Historial</string>
     <string name="history_empty">Equí nun hai nada, restola per internet pa ver equí\'l to historial</string>
     <string name="history_date_format">EEE dd MMMM yyyy, HH:mm</string>

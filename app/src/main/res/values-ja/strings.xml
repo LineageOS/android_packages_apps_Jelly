@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">PC版サイトを表示</string>
     <string name="menu_mobile_mode">モバイル版サイトを表示</string>
     <string name="menu_search">ページ内検索</string>
+    <string name="menu_print">印刷</string>
     <string name="share_title">送信</string>
     <string name="dismiss">閉じる</string>
     <string name="download_title">ファイルのダウンロード</string>

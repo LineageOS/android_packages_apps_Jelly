@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">切換到桌面版網站</string>
     <string name="menu_mobile_mode">切換到手機版網站</string>
     <string name="menu_search">在頁面中尋找</string>
+    <string name="menu_print">列印</string>
     <string name="share_title">傳送至</string>
     <string name="dismiss">忽略</string>
     <string name="download_title">下載檔案</string>
