@@ -15,81 +15,160 @@
 -->
 <resources>
     <string name="app_name">Brabhsair</string>
+    <!-- Menu action: create new tab -->
     <string name="menu_new_tab">Taba ùr</string>
+    <!-- Menu action: create new incognito tab -->
     <string name="menu_incognito">Taba incognito</string>
+    <!-- Menu action: reload current page -->
     <string name="menu_reload">Ath-luchdaich</string>
+    <!-- Menu action: add current page to favorites -->
     <string name="menu_fav_add">Cuir ris na h-annsachdan</string>
+    <!-- Menu action: share current page -->
     <string name="menu_share">Co-roinn</string>
+    <!-- Menu action: show favorites list -->
     <string name="menu_favorites">Annsachdan</string>
+    <!-- Menu action: show history list -->
     <string name="menu_history">Eachdraidh</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">Cuir ath-ghoirid ris</string>
+    <!-- Menu action: show settings -->
     <string name="menu_settings">Roghainnean</string>
+    <!-- Menu action: download selected file / image -->
     <string name="menu_download">Luchdaich a-nuas</string>
+    <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">Fosgail ann an taba ùr</string>
+    <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">Geàrr leum gun làrach desktop</string>
+    <!-- Menu action: enable phone mode -->
     <string name="menu_mobile_mode">Geàrr leum gun làrach mobile</string>
+    <!-- Menu action: search in page -->
     <string name="menu_search">Lorg air an duilleag</string>
+    <!-- Menu action: print -->
     <string name="menu_print">Clò-bhuail</string>
+    <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Cuir gu</string>
+    <!-- Dialog action: dismiss -->
     <string name="dismiss">Leig seachad</string>
+    <!-- Download dialog: title -->
     <string name="download_title">Luchdaich am faidhle a-nuas</string>
+    <!-- Download dialog: message -->
     <string name="download_message">A bheil thu airson %1$s a luchdadh a-nuas?</string>
+    <!-- Download dialog: button that starts the download -->
     <string name="download_positive">Luchdaich a-nuas</string>
+    <!-- Permission error dialog: title -->
     <string name="permission_error_title">Mearachd le cead</string>
+    <!-- Permission error dialog: message for denied storage access-->
     <string name="permission_error_storage">Feumaidh am brabhsair inntrigeadh dhan stòras airson faidhlichean a luchdadh a-nuas. Thoir cead dha airson faidhlichean on lìon a shàbhaladh</string>
+    <!-- Permission error dialog: button that triggers permission request again -->
     <string name="permission_error_ask_again">Faighnich dhìom a-rithist</string>
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
     <string name="permission_error_forever">Chaidh an cead a dhiùltadh gu buan. Thoir cead dha sna roghainnean</string>
+    <!-- Settings: title -->
     <string name="settings_title">Roghainnean</string>
+    <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">Einnsean-luirg</string>
+    <!-- Settings: home page preference title -->
     <string name="pref_start_page">An duilleag-dhachaigh</string>
+    <!-- Settings: select home page dialog title -->
     <string name="pref_start_page_dialog_title">Tagh duilleag-dhachaigh</string>
+    <!-- Settings: select home page dialog message -->
     <string name="pref_start_page_dialog_message">Sgrìobh URL na duilleige-dachaigh</string>
+    <!-- Settings: reset home page dialog action -->
     <string name="pref_start_page_dialog_reset">Ath-shuidhich</string>
+    <!-- Settings: privacy and security category -->
     <string name="pref_privacy_security">Prìobhaideachd ⁊ tèarainteachd</string>
+    <!-- Settings: lookLock title -->
     <string name="pref_looklock_title">LookLock</string>
+    <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">Na leig le aplacaidean eile susbaint a’ bhrabhsair a leughadh</string>
+    <!-- Settings: javascript preference title -->
     <string name="pref_js_title">JavaScript</string>
+    <!-- Settings: javascript preference summary -->
     <string name="pref_js_summary">Cuir JavaScript an comas</string>
+    <!-- Settings: location preference title -->
     <string name="pref_location_title">Ionad</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
     <string name="pref_location_summary">Thoir cead do làraichean-lìn gun iarr iad inntrigeadh air d’ ionad</string>
+    <!-- Settings: cookie preference title -->
     <string name="pref_cookie_title">Briosgaidean</string>
+    <!-- Settings: cookie preference summary -->
     <string name="pref_cookie_summary">Thoir cead do làraichean-lìn gun sàbhail is luchdaich iad briosgaidean</string>
+    <!-- Settings: advanced share preference title -->
     <string name="pref_screenshot_snap_title">Co-roinneadh adhartach</string>
+    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">Co-roinn ro-shealladh dhen duilleag-lìn a tha ’ga co-roinneadh</string>
+    <!-- Settings: clear cookie -->
     <string name="pref_cookie_clear">Falamhaich na briosgaidean</string>
+    <!-- Settings: clear cookie toast confirmation -->
     <string name="pref_cookie_clear_done">Chaidh a h-uile briosgaid fhalamhachadh</string>
+    <!-- Settings: do not track preference title -->
     <string name="pref_do_not_track_title">Na tracaich</string>
+    <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">Cuir iarrtas “Na tracaich\" dha na làraichean-lìn a thadhlas tu orra</string>
+    <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Solaraiche mholaidhean</string>
+    <!-- Settings: reach mode title -->
     <string name="pref_reach_mode_title">Modh ruigsinn</string>
+    <!-- Settings: reach mode summary -->
     <string name="pref_reach_mode_summary">Gluais nithean na h-eadar-aghaidh ach an gabh an cleachdadh le làmh a-mhàin gun duilgheadas</string>
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
     <string name="history_title">Eachdraidh</string>
+    <!-- History: empty status text -->
     <string name="history_empty">Chan eil dad an-seo; dèan brabhsadh an eadar-lìn agus chì thu an eachdraidh agad an-seo</string>
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
     <string name="history_date_format">EEEE, dd MMMM yyyy, HH:mm</string>
+    <!-- History: delete history dialog title -->
     <string name="history_delete_title">Falamhaich an eachdraidh</string>
+    <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">Tha thu gu bhith sguabadh às an eachdraidh ’s chan fhaigh thu air ais i. A bheil thu airson leantainn air adhart?</string>
+    <!-- History: delete history dialog button that erases all the history -->
     <string name="history_delete_positive">Falamhaich</string>
+    <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">A’ falamhachadh na h-eachdraidh\u2026</string>
+    <!-- History: entry deleted snackbar message -->
     <string name="history_snackbar_item_deleted">Chaidh an innteart a sguabadh às</string>
+    <!-- History: entry deleted snackbar button message -->
     <string name="history_snackbar_item_deleted_message">Neo-dhèan</string>
+    <!-- Favorite: title -->
     <string name="favorite_title">Annsachdan</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
     <string name="favorite_added">Chaidh a chur ris na h-annsachdan</string>
+    <!-- Favorite: empty status text -->
     <string name="favorite_empty">Chan eil dad an-seo, cuir ris ceangal as annsa leat is chì thu an-seo e</string>
+    <!-- Favorite: edit dialog title -->
     <string name="favorite_edit_dialog_title">Deasaich an annsachd</string>
+    <!-- Favorite: edit dialog: title of the favorite -->
     <string name="favorite_edit_title">Tiotal</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
     <string name="favorite_edit_url">URL</string>
+    <!-- Favorite: edit dialog positive button that save changes -->
     <string name="favorite_edit_positive">Deasaich</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
     <string name="favorite_edit_delete">Sguab às</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
     <string name="favorite_edit_error">Cuir a-steach URL dligheach</string>
+    <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">Chan eil aplacaid ann a làimhsicheas an ceangal seo</string>
+    <!-- Auth dialog: title -->
     <string name="auth_dialog_title">Feum air dearbhadh</string>
+    <!-- Auth dialog: username field -->
     <string name="auth_dialog_username">Ainm a\' chleachdaiche:</string>
+    <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">Facal-faire:</string>
+    <!-- Auth dialog: detail -->
     <string name="auth_dialog_detail">Tha feum aig %1$s air facal-faire ’s ainm-cleachdaiche.</string>
+    <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Clàraich a-steach</string>
+    <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">Taba incognito ùr</string>
+    <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">Chan eil gin</string>
+    <!-- Search in page: search hint -->
     <string name="search_bar_hint">Lorg</string>
+    <!-- SSL Certificate Details dialog -->
     <string name="ssl_cert_dialog_title">Mion-fhiosrachadh an teisteanais SSL</string>
     <string name="ssl_cert_dialog_domain">Domain</string>
     <string name="ssl_cert_dialog_issued_to">Foillsichte dha</string>

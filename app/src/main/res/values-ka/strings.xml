@@ -15,24 +15,103 @@
 -->
 <resources>
     <string name="app_name">ბრაუზერი</string>
+    <!-- Menu action: create new tab -->
+    <!-- Menu action: create new incognito tab -->
+    <!-- Menu action: reload current page -->
+    <!-- Menu action: add current page to favorites -->
+    <!-- Menu action: share current page -->
     <string name="menu_share">გაზიარება</string>
+    <!-- Menu action: show favorites list -->
+    <!-- Menu action: show history list -->
     <string name="menu_history">ისტორია</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
+    <!-- Menu action: show settings -->
     <string name="menu_settings">პარამეტრები</string>
+    <!-- Menu action: download selected file / image -->
+    <!-- Menu action: open selected link in a new tab -->
+    <!-- Menu action: enable desktop mode -->
+    <!-- Menu action: enable phone mode -->
+    <!-- Menu action: search in page -->
+    <!-- Menu action: print -->
+    <!-- Share webPage: "send to" dialog title -->
+    <!-- Dialog action: dismiss -->
+    <!-- Download dialog: title -->
+    <!-- Download dialog: message -->
+    <!-- Download dialog: button that starts the download -->
+    <!-- Permission error dialog: title -->
+    <!-- Permission error dialog: message for denied storage access-->
+    <!-- Permission error dialog: button that triggers permission request again -->
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
+    <!-- Settings: title -->
     <string name="settings_title">პარამეტრები</string>
+    <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">საძიებო სისტემა</string>
+    <!-- Settings: home page preference title -->
+    <!-- Settings: select home page dialog title -->
+    <!-- Settings: select home page dialog message -->
+    <!-- Settings: reset home page dialog action -->
+    <!-- Settings: privacy and security category -->
+    <!-- Settings: lookLock title -->
+    <!-- Settings: lookLock summary -->
+    <!-- Settings: javascript preference title -->
+    <!-- Settings: javascript preference summary -->
     <string name="pref_js_summary">JavaScript-ის ჩართვა</string>
+    <!-- Settings: location preference title -->
     <string name="pref_location_title">მდებარეობა</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+    <!-- Settings: cookie preference title -->
+    <!-- Settings: cookie preference summary -->
+    <!-- Settings: advanced share preference title -->
     <string name="pref_screenshot_snap_title">გაფართოებული გაზიარება</string>
+    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">გაზიარებული ვებგვერდის შეთვალიერების გაზიარება</string>
+    <!-- Settings: clear cookie -->
+    <!-- Settings: clear cookie toast confirmation -->
+    <!-- Settings: do not track preference title -->
+    <!-- Settings: do not track preference summary -->
+    <!-- Settings: suggestions provider title -->
+    <!-- Settings: reach mode title -->
+    <!-- Settings: reach mode summary -->
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
     <string name="history_title">ისტორია</string>
+    <!-- History: empty status text -->
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+    <!-- History: delete history dialog title -->
     <string name="history_delete_title">ისტორიის გასუფთავება</string>
+    <!-- History: delete history dialog warning message -->
+    <!-- History: delete history dialog button that erases all the history -->
+    <!-- History: delete history "working" dialog-->
+    <!-- History: entry deleted snackbar message -->
+    <!-- History: entry deleted snackbar button message -->
+    <!-- Favorite: title -->
     <string name="favorite_title">რჩეულები</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
+    <!-- Favorite: empty status text -->
+    <!-- Favorite: edit dialog title -->
+    <!-- Favorite: edit dialog: title of the favorite -->
     <string name="favorite_edit_title">სათაური</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
+    <!-- Favorite: edit dialog positive button that save changes -->
     <string name="favorite_edit_positive">ჩასწორება</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
     <string name="favorite_edit_delete">წაშლა</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
+    <!-- No activity found to open the given url error -->
+    <!-- Auth dialog: title -->
+    <!-- Auth dialog: username field -->
     <string name="auth_dialog_username">მომხმარებლის სახელი:</string>
+    <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">პაროლი:</string>
+    <!-- Auth dialog: detail -->
+    <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">შესვლა</string>
+    <!-- Launcher shortcut: new incognito tab -->
+    <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">არცერთი</string>
+    <!-- Search in page: search hint -->
     <string name="search_bar_hint">ძიება</string>
+    <!-- SSL Certificate Details dialog -->
 </resources>

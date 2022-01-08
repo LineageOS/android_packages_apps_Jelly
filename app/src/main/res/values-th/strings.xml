@@ -15,73 +15,152 @@
 -->
 <resources>
     <string name="app_name">เบราว์เซอร์</string>
+    <!-- Menu action: create new tab -->
     <string name="menu_new_tab">แท็บใหม่</string>
+    <!-- Menu action: create new incognito tab -->
     <string name="menu_incognito">แท็บใหม่ที่ไม่ระบุตัวตน</string>
+    <!-- Menu action: reload current page -->
     <string name="menu_reload">โหลดใหม่</string>
+    <!-- Menu action: add current page to favorites -->
     <string name="menu_fav_add">เพิ่มไปยังรายการโปรด</string>
+    <!-- Menu action: share current page -->
     <string name="menu_share">แชร์</string>
+    <!-- Menu action: show favorites list -->
     <string name="menu_favorites">รายการโปรด</string>
+    <!-- Menu action: show history list -->
     <string name="menu_history">ประวัติการเข้าชม</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">เพิ่มทางลัดไปหน้าแรก</string>
+    <!-- Menu action: show settings -->
     <string name="menu_settings">การตั้งค่า</string>
+    <!-- Menu action: download selected file / image -->
     <string name="menu_download">ดาวน์โหลด</string>
+    <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">เปิดในแท็บใหม่</string>
+    <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">สลับไปยังไซต์เวอร์ชัน​เดสก์ท็อป</string>
+    <!-- Menu action: enable phone mode -->
     <string name="menu_mobile_mode">สลับไปยังไซต์เวอร์ชันมือถือ</string>
+    <!-- Menu action: search in page -->
     <string name="menu_search">ค้นหาในหน้านี้</string>
+    <!-- Menu action: print -->
     <string name="menu_print">พิมพ์</string>
+    <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">ส่งถึง</string>
+    <!-- Dialog action: dismiss -->
     <string name="dismiss">ยกเลิก</string>
+    <!-- Download dialog: title -->
     <string name="download_title">ดาวน์โหลดไฟล์</string>
+    <!-- Download dialog: message -->
     <string name="download_message">คุณต้องการดาวน์โหลด %1$s หรือไม่</string>
+    <!-- Download dialog: button that starts the download -->
     <string name="download_positive">ดาวน์โหลด</string>
+    <!-- Permission error dialog: title -->
     <string name="permission_error_title">เกิดข้อผิดพลาดในการอนุญาต</string>
+    <!-- Permission error dialog: message for denied storage access-->
     <string name="permission_error_storage">เบราว์เซอร์ต้องการเก็บการเข้าถึงไฟล์ดาวน์โหลด โปรดอนุญาตเพื่อบันทึกไฟล์จากเว็บ</string>
+    <!-- Permission error dialog: button that triggers permission request again -->
     <string name="permission_error_ask_again">ถามอีกครั้ง</string>
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
     <string name="permission_error_forever">การให้สิทธิ์​ถูกปฏิเสธอย่างถาวร โปรดให้สิทธิ์ในการตั้งค่า</string>
+    <!-- Settings: title -->
     <string name="settings_title">การตั้งค่า</string>
+    <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">เครื่องมือค้นหา</string>
+    <!-- Settings: home page preference title -->
     <string name="pref_start_page">หน้าหลัก</string>
+    <!-- Settings: select home page dialog title -->
     <string name="pref_start_page_dialog_title">เลือกหน้าหลัก</string>
+    <!-- Settings: select home page dialog message -->
     <string name="pref_start_page_dialog_message">เขียน URL ของหน้าแรก</string>
+    <!-- Settings: reset home page dialog action -->
     <string name="pref_start_page_dialog_reset">รีเซ็ต</string>
+    <!-- Settings: privacy and security category -->
     <string name="pref_privacy_security">ข้อมูลส่วนบุคคลและความปลอดภัย</string>
+    <!-- Settings: lookLock title -->
+    <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">ป้องกันไม่ให้แอปอื่นๆ อ่านเนื้อหาของเบราว์เซอร์</string>
+    <!-- Settings: javascript preference title -->
+    <!-- Settings: javascript preference summary -->
     <string name="pref_js_summary">เปิดการใช้งาน JavaScript</string>
+    <!-- Settings: location preference title -->
     <string name="pref_location_title">ตำแหน่ง</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
     <string name="pref_location_summary">อนุญาตให้เว็บไซต์ขอการเข้าถึงตำแหน่งของคุณ</string>
+    <!-- Settings: cookie preference title -->
     <string name="pref_cookie_title">คุกกี้</string>
+    <!-- Settings: cookie preference summary -->
     <string name="pref_cookie_summary">อนุญาต​ให้​เว็บไซต์​บันทึก​และ​อ่าน​ข้อมูล​คุกกี้</string>
+    <!-- Settings: advanced share preference title -->
+    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">แชร์ตัวอย่างภาพหน้าจอเว็บเพจที่ถูกแชร์</string>
+    <!-- Settings: clear cookie -->
     <string name="pref_cookie_clear">ล้างคุ้กกี้</string>
+    <!-- Settings: clear cookie toast confirmation -->
     <string name="pref_cookie_clear_done">ล้างคุกกี้ทั้งหมด</string>
+    <!-- Settings: do not track preference title -->
     <string name="pref_do_not_track_title">ไม่ต้องติดตาม</string>
+    <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">ส่งข้อมูลไม่ติดตามไปยังเว็บไซต์ที่คุณเยี่ยมชม</string>
+    <!-- Settings: suggestions provider title -->
+    <!-- Settings: reach mode title -->
     <string name="pref_reach_mode_title">โหมดการเข้าถึง</string>
+    <!-- Settings: reach mode summary -->
     <string name="pref_reach_mode_summary">ย้ายองค์ประกอบของอินเทอร์เฟซสำหรับการใช้งานมือเดียวได้ง่ายขึ้น</string>
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
     <string name="history_title">ประวัติการเข้าชม</string>
+    <!-- History: empty status text -->
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+    <!-- History: delete history dialog title -->
     <string name="history_delete_title">ล้างประวัติการเข้าชม</string>
+    <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">คุณกำลังจะลบประวัติทั้งหมด การกระทำนี้ไม่สามารถยกเลิกได้ คุณต้องการที่จะ​ดำเนินการหรือไม่</string>
+    <!-- History: delete history dialog button that erases all the history -->
     <string name="history_delete_positive">ล้างข้อมูล</string>
+    <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">กำลังล้างประวัติเข้าชม\u2026</string>
+    <!-- History: entry deleted snackbar message -->
     <string name="history_snackbar_item_deleted">รายการถูกลบ</string>
+    <!-- History: entry deleted snackbar button message -->
     <string name="history_snackbar_item_deleted_message">ย้อนกลับ</string>
+    <!-- Favorite: title -->
     <string name="favorite_title">รายการโปรด</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
     <string name="favorite_added">ถูกเพิ่มไปยังรายการโปรด</string>
+    <!-- Favorite: empty status text -->
     <string name="favorite_empty">ไม่พบข้อมูล เพิ่มรายการโปรดได้ที่นี่</string>
+    <!-- Favorite: edit dialog title -->
     <string name="favorite_edit_dialog_title">แก้ไขรายการโปรด</string>
+    <!-- Favorite: edit dialog: title of the favorite -->
     <string name="favorite_edit_title">ชื่อเรื่อง</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
+    <!-- Favorite: edit dialog positive button that save changes -->
     <string name="favorite_edit_positive">แก้ไข</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
     <string name="favorite_edit_delete">ลบ</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
     <string name="favorite_edit_error">ใส่ URL ที่ถูกต้อง</string>
+    <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">ไม่มีแอปพลิเคชันที่สามารถเปิดลิงก์นี้ได้</string>
+    <!-- Auth dialog: title -->
+    <!-- Auth dialog: username field -->
     <string name="auth_dialog_username">ชื่อผู้ใช้:</string>
+    <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">รหัสผ่าน:</string>
+    <!-- Auth dialog: detail -->
     <string name="auth_dialog_detail">%1$s ต้องการใช้ชื่อผู้ใช้และรหัสผ่าน</string>
+    <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">เข้าสู่ระบบ</string>
+    <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">เปิดแท็บใหม่ที่ไม่ระบุตัวตน</string>
+    <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">ไม่มี</string>
+    <!-- Search in page: search hint -->
     <string name="search_bar_hint">ค้นหา</string>
+    <!-- SSL Certificate Details dialog -->
     <string name="ssl_cert_dialog_title">รายละเอียดใบรับรอง SSL</string>
     <string name="ssl_cert_dialog_domain">โดเมน</string>
     <string name="ssl_cert_dialog_issued_to">ออกให้</string>

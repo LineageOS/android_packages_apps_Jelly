@@ -15,81 +15,160 @@
 -->
 <resources>
     <string name="app_name">Browser</string>
+    <!-- Menu action: create new tab -->
     <string name="menu_new_tab">Nij ljepblêd</string>
+    <!-- Menu action: create new incognito tab -->
     <string name="menu_incognito">Priveeljepblêd</string>
+    <!-- Menu action: reload current page -->
     <string name="menu_reload">Opnij lade</string>
+    <!-- Menu action: add current page to favorites -->
     <string name="menu_fav_add">Oan blêdwizers Tafoegje</string>
+    <!-- Menu action: share current page -->
     <string name="menu_share">Diele</string>
+    <!-- Menu action: show favorites list -->
     <string name="menu_favorites">Blêdwizers</string>
+    <!-- Menu action: show history list -->
     <string name="menu_history">Skiednis</string>
+    <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">Fluchkeppeling tafoegje</string>
+    <!-- Menu action: show settings -->
     <string name="menu_settings">Ynstellingen</string>
+    <!-- Menu action: download selected file / image -->
     <string name="menu_download">Downloade</string>
+    <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">Yn nij ljepblêd Iepenje</string>
+    <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">Nei desktopwebsite wikselje</string>
+    <!-- Menu action: enable phone mode -->
     <string name="menu_mobile_mode">Nei mobile website wikselje</string>
+    <!-- Menu action: search in page -->
     <string name="menu_search">Sykje op side</string>
+    <!-- Menu action: print -->
     <string name="menu_print">Ofdrukke</string>
+    <!-- Share webPage: "send to" dialog title -->
     <string name="share_title">Ferstjoere nei</string>
+    <!-- Dialog action: dismiss -->
     <string name="dismiss">Slute</string>
+    <!-- Download dialog: title -->
     <string name="download_title">Bestân downloade</string>
+    <!-- Download dialog: message -->
     <string name="download_message">Wolle jo %1$s downloade?</string>
+    <!-- Download dialog: button that starts the download -->
     <string name="download_positive">Downloade</string>
+    <!-- Permission error dialog: title -->
     <string name="permission_error_title">Machtigingsprobleem</string>
+    <!-- Permission error dialog: message for denied storage access-->
     <string name="permission_error_storage">Browser hat tagong nedich ta it ûnthâld om bestannen downloade te kinnen. Ferlien tagong om bestannen fan it ynternet ôf te bewarjen</string>
+    <!-- Permission error dialog: button that triggers permission request again -->
     <string name="permission_error_ask_again">Opnij freegje</string>
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
     <string name="permission_error_forever">Tastimming permanint wegere. Kin tastien wurde yn ynstellingen</string>
+    <!-- Settings: title -->
     <string name="settings_title">Ynstellingen</string>
+    <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">Sykmasine</string>
+    <!-- Settings: home page preference title -->
     <string name="pref_start_page">Startside</string>
+    <!-- Settings: select home page dialog title -->
     <string name="pref_start_page_dialog_title">Startside kieze</string>
+    <!-- Settings: select home page dialog message -->
     <string name="pref_start_page_dialog_message">URL fan de startside ynfiere</string>
+    <!-- Settings: reset home page dialog action -->
     <string name="pref_start_page_dialog_reset">Opnij ynstelle</string>
+    <!-- Settings: privacy and security category -->
     <string name="pref_privacy_security">Privacy en befeiliging</string>
+    <!-- Settings: lookLock title -->
     <string name="pref_looklock_title">LookLock</string>
+    <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">Opkeare dat oare apps de ynhâld fan de Browser lêze</string>
+    <!-- Settings: javascript preference title -->
     <string name="pref_js_title">JavaScript</string>
+    <!-- Settings: javascript preference summary -->
     <string name="pref_js_summary">JavaScript ynskeakelje</string>
+    <!-- Settings: location preference title -->
     <string name="pref_location_title">Lokaasje</string>
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
     <string name="pref_location_summary">Tastean dat websites jo lokaasje opfreegje kinne</string>
+    <!-- Settings: cookie preference title -->
     <string name="pref_cookie_title">Cookies</string>
+    <!-- Settings: cookie preference summary -->
     <string name="pref_cookie_summary">Tastean dat websites cookies bewarje en lade</string>
+    <!-- Settings: advanced share preference title -->
     <string name="pref_screenshot_snap_title">Wiidweidich diele</string>
+    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">Foarbyld fan de dielde webside diele</string>
+    <!-- Settings: clear cookie -->
     <string name="pref_cookie_clear">Cookies wiskje</string>
+    <!-- Settings: clear cookie toast confirmation -->
     <string name="pref_cookie_clear_done">Alle cookies wiske</string>
+    <!-- Settings: do not track preference title -->
     <string name="pref_do_not_track_title">Net folgje</string>
+    <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">‘Net folgje’-oanfraach nei websites dy\'t jo besykje ferstjoere</string>
+    <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Oanbieder suggestjes</string>
+    <!-- Settings: reach mode title -->
     <string name="pref_reach_mode_title">Ferienfâldige modus</string>
+    <!-- Settings: reach mode summary -->
     <string name="pref_reach_mode_summary">Ferpleats eleminten fan de brûkersynterface foar ienfâldich gebrûk mei ien hân</string>
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
     <string name="history_title">Skiednis</string>
+    <!-- History: empty status text -->
     <string name="history_empty">Der is hjir neat, sneupje op it ynternet om de skiednis hjir te besjen</string>
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
+    <!-- History: delete history dialog title -->
     <string name="history_delete_title">Skiednis wiskje</string>
+    <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">Jo stean op it punt alle skiednis fuort te smiten. Dizze aksje kin net ûngedien makke wurde. Wolle jo trochgean?</string>
+    <!-- History: delete history dialog button that erases all the history -->
     <string name="history_delete_positive">Wiskje</string>
+    <!-- History: delete history "working" dialog-->
     <string name="history_deleting_message">Skiednis wiskje\u2026</string>
+    <!-- History: entry deleted snackbar message -->
     <string name="history_snackbar_item_deleted">Fermelding fuortmsiten</string>
+    <!-- History: entry deleted snackbar button message -->
     <string name="history_snackbar_item_deleted_message">Ungedien meitsje</string>
+    <!-- Favorite: title -->
     <string name="favorite_title">Blêdwizers</string>
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
     <string name="favorite_added">Oan blêdwizers tafoege</string>
+    <!-- Favorite: empty status text -->
     <string name="favorite_empty">Der is hjir neat, foegje in blêdwizer ta om hjir te toanen</string>
+    <!-- Favorite: edit dialog title -->
     <string name="favorite_edit_dialog_title">Blêdwizer bewurkje</string>
+    <!-- Favorite: edit dialog: title of the favorite -->
     <string name="favorite_edit_title">Titel</string>
+    <!-- Favorite: edit dialog: url of the favorite-->
     <string name="favorite_edit_url">URL</string>
+    <!-- Favorite: edit dialog positive button that save changes -->
     <string name="favorite_edit_positive">Bewurkje</string>
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
     <string name="favorite_edit_delete">Fuortsmite</string>
+    <!-- Favorite: edit dialog: invalid url error message -->
     <string name="favorite_edit_error">Fier in jildige URL yn</string>
+    <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">Gjin ien app kin dizze keppeling iepenje</string>
+    <!-- Auth dialog: title -->
     <string name="auth_dialog_title">Autentikaasje fereaske</string>
+    <!-- Auth dialog: username field -->
     <string name="auth_dialog_username">Brûkersnamme:</string>
+    <!-- Auth dialog: password field -->
     <string name="auth_dialog_password">Wachtwurd:</string>
+    <!-- Auth dialog: detail -->
     <string name="auth_dialog_detail">%1$s fereasket in brûkersnamme en wachtwurd.</string>
+    <!-- Auth dialog: login button -->
     <string name="auth_dialog_login">Oanmelde</string>
+    <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">Nij priveeljepblêd</string>
+    <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">Gjin</string>
+    <!-- Search in page: search hint -->
     <string name="search_bar_hint">Sykje</string>
+    <!-- SSL Certificate Details dialog -->
     <string name="ssl_cert_dialog_title">SSL-sertifikaatynformaasje</string>
     <string name="ssl_cert_dialog_domain">Domein</string>
     <string name="ssl_cert_dialog_issued_to">Utjûn oan:</string>

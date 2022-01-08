@@ -14,17 +14,96 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Menu action: create new tab -->
+    <!-- Menu action: create new incognito tab -->
+    <!-- Menu action: reload current page -->
+    <!-- Menu action: add current page to favorites -->
+    <!-- Menu action: share current page -->
+    <!-- Menu action: show favorites list -->
+    <!-- Menu action: show history list -->
+    <!-- Menu action: add shortcut of the current page to the launcher -->
+    <!-- Menu action: show settings -->
+    <!-- Menu action: download selected file / image -->
+    <!-- Menu action: open selected link in a new tab -->
+    <!-- Menu action: enable desktop mode -->
+    <!-- Menu action: enable phone mode -->
+    <!-- Menu action: search in page -->
+    <!-- Menu action: print -->
+    <!-- Share webPage: "send to" dialog title -->
+    <!-- Dialog action: dismiss -->
+    <!-- Download dialog: title -->
+    <!-- Download dialog: message -->
+    <!-- Download dialog: button that starts the download -->
+    <!-- Permission error dialog: title -->
+    <!-- Permission error dialog: message for denied storage access-->
+    <!-- Permission error dialog: button that triggers permission request again -->
+    <!-- Permission error snackBar: the permission has been denied until user enables it in settings -->
     <string name="permission_error_forever">Heimild endanlega hafnað. Gefðu heimild í stillingunum</string>
+    <!-- Settings: title -->
+    <!-- Settings: search engine preference title -->
+    <!-- Settings: home page preference title -->
+    <!-- Settings: select home page dialog title -->
+    <!-- Settings: select home page dialog message -->
     <string name="pref_start_page_dialog_message">Skrifa URL-slóð heimasíðu</string>
+    <!-- Settings: reset home page dialog action -->
+    <!-- Settings: privacy and security category -->
+    <!-- Settings: lookLock title -->
+    <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">Hindra önnur forrit í að lesa efni í vafranum</string>
+    <!-- Settings: javascript preference title -->
+    <!-- Settings: javascript preference summary -->
+    <!-- Settings: location preference title -->
+    <!-- Settings: location preference summary. Note that this doesn't allow permission access to the websites, but just allows the possibility of requesting access to it -->
+    <!-- Settings: cookie preference title -->
+    <!-- Settings: cookie preference summary -->
     <string name="pref_cookie_summary">Leyfa vefsvæðum að vista og hlaða inn vefkökum</string>
+    <!-- Settings: advanced share preference title -->
     <string name="pref_screenshot_snap_title">Ítarleg deiling</string>
+    <!-- Settings: advanced share preference summary -->
     <string name="pref_screenshot_snap_summary">Deila forskoðun á deildu vefsíðunni</string>
+    <!-- Settings: clear cookie -->
+    <!-- Settings: clear cookie toast confirmation -->
+    <!-- Settings: do not track preference title -->
     <string name="pref_do_not_track_title">\"Ekki fylgjast með mér\" (Do-Not-Track)</string>
+    <!-- Settings: do not track preference summary -->
     <string name="pref_do_not_track_summary">Senda \"ekki fylgjast með mér\" (Do-Not-Track) haus til vefþjóna sem þú heimsækir</string>
+    <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Tillöguveita</string>
+    <!-- Settings: reach mode title -->
+    <!-- Settings: reach mode summary -->
+    <!-- Settings: clear traffic title -->
+    <!-- Settings: clear traffic summary on -->
+    <!-- Settings: clear traffic summary off -->
+    <!-- History: title -->
+    <!-- History: empty status text -->
     <string name="history_empty">Það er ekkert hér, vafraðu um internetið til að sjá ferilinn þinn hérna</string>
+    <!-- History: date format for items. EEEE = day (Monday), MMMM = month (January), yyyy = year (1970), HH = hour (12), mm = minutes (30) -->
+    <!-- History: delete history dialog title -->
+    <!-- History: delete history dialog warning message -->
     <string name="history_delete_message">Þú ert í þann mund að fara að eyða öllum vafurferlinum, það er ekki hægt að afturkalla við þessa aðgerð. Viltu halda áfram?</string>
+    <!-- History: delete history dialog button that erases all the history -->
+    <!-- History: delete history "working" dialog-->
+    <!-- History: entry deleted snackbar message -->
+    <!-- History: entry deleted snackbar button message -->
+    <!-- Favorite: title -->
+    <!-- Favorite: snackBar message shown when an url is added to favorites -->
+    <!-- Favorite: empty status text -->
     <string name="favorite_empty">Það er ekkert hér, bættu tengli í eftirlæti til að sjá hann hérna</string>
+    <!-- Favorite: edit dialog title -->
+    <!-- Favorite: edit dialog: title of the favorite -->
+    <!-- Favorite: edit dialog: url of the favorite-->
+    <!-- Favorite: edit dialog positive button that save changes -->
+    <!-- Favorite: edit dialog button that deletes the selected favorite -->
+    <!-- Favorite: edit dialog: invalid url error message -->
     <string name="favorite_edit_error">Settu inn gilda vefslóð</string>
+    <!-- No activity found to open the given url error -->
+    <!-- Auth dialog: title -->
+    <!-- Auth dialog: username field -->
+    <!-- Auth dialog: password field -->
+    <!-- Auth dialog: detail -->
+    <!-- Auth dialog: login button -->
+    <!-- Launcher shortcut: new incognito tab -->
+    <!-- Suggestions provider: no suggestions provider -->
+    <!-- Search in page: search hint -->
+    <!-- SSL Certificate Details dialog -->
 </resources>
