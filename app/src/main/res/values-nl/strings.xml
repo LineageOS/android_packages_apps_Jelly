@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Omschakelen naar desktopversie</string>
     <string name="menu_mobile_mode">Omschakelen naar mobiele versie</string>
     <string name="menu_search">Vinden op pagina</string>
+    <string name="menu_print">Druk af</string>
     <string name="share_title">Verzenden naar</string>
     <string name="dismiss">Sluiten</string>
     <string name="download_title">Bestand downloaden</string>
@@ -41,7 +42,7 @@
     <string name="settings_title">Instellingen</string>
     <string name="pref_search_engine">Zoekmachine</string>
     <string name="pref_start_page">Startpagina</string>
-    <string name="pref_start_page_dialog_title">Startpagina kiezen</string>
+    <string name="pref_start_page_dialog_title">Selecteer startpagina</string>
     <string name="pref_start_page_dialog_message">URL van de startpagina invoeren</string>
     <string name="pref_start_page_dialog_reset">Opnieuw instellen</string>
     <string name="pref_privacy_security">Privacy en beveiliging</string>
@@ -60,6 +61,8 @@
     <string name="pref_do_not_track_title">Niet volgen</string>
     <string name="pref_do_not_track_summary">\'Niet volgen\'-aanvraag versturen naar websites die u bezoekt</string>
     <string name="pref_suggestions_provider">Aanbieder suggesties</string>
+    <string name="pref_reach_mode_title">Één hand gebruik</string>
+    <string name="pref_reach_mode_summary">Verplaats elementen van de gebruikersinterface voor eenvoudig gebruik met één hand</string>
     <string name="history_title">Geschiedenis</string>
     <string name="history_empty">Er is hier niks, doorzoek het internet om de geschiedenis hier te bekijken</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
@@ -67,6 +70,7 @@
     <string name="history_delete_message">U staat op het punt alle geschiedenis te verwijderen. Deze actie kan niet ongedaan worden gemaakt. Wilt u verdergaan?</string>
     <string name="history_delete_positive">Wissen</string>
     <string name="history_deleting_message">Geschiedenis wissen\u2026</string>
+    <string name="history_snackbar_item_deleted">Invoer verwijderd</string>
     <string name="history_snackbar_item_deleted_message">Ongedaan maken</string>
     <string name="favorite_title">Bladwijzers</string>
     <string name="favorite_added">Toegevoegd aan bladwijzers</string>
