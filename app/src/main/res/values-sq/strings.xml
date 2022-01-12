@@ -13,6 +13,20 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<!-- Copyright (C) 2017-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
     <string name="app_name">Shfletuesi</string>
     <string name="menu_new_tab">Tab i ri</string>
@@ -65,7 +79,7 @@
     <string name="pref_reach_mode_summary">Zhvendos elementët e ndërfaqes për përdorim të lehtë me një dorë</string>
     <string name="history_title">Historiku</string>
     <string name="history_empty">Këtu nuk ka asnjë gjë, lundroni në internet për të parë historikun këtu</string>
-    <string name="history_date_format">EEEE MMMM dd vvvv, HH:mm</string>
+    <string name="history_date_format">EEEE dd MMMM vvvv, HH:mm</string>
     <string name="history_delete_title">Fshij historikun</string>
     <string name="history_delete_message">Ju po fshini të gjithë historikun, ky veprim nuk mund të zhbëhet. Doni të vazhdoni?</string>
     <string name="history_delete_positive">Pastro</string>

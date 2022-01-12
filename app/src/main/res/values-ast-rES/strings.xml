@@ -13,6 +13,20 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<!-- Copyright (C) 2017-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
     <string name="app_name">Restolador</string>
     <string name="menu_new_tab">Llingüeta nueva</string>
@@ -29,6 +43,7 @@
     <string name="menu_desktop_mode">Solicitar sitiu d\'escritoriu</string>
     <string name="menu_mobile_mode">Solicitar sitiu móvil</string>
     <string name="menu_search">Alcontrar na páxina</string>
+    <string name="menu_print">Imprentar</string>
     <string name="share_title">Unviar a</string>
     <string name="dismiss">Escartar</string>
     <string name="download_title">Baxar ficheru</string>
@@ -60,8 +75,8 @@
     <string name="pref_do_not_track_title">Nun rastrexar</string>
     <string name="pref_do_not_track_summary">Unvia una solicitú de Nun rastrexar a los sitios web que visites</string>
     <string name="pref_suggestions_provider">Fornidor de suxerencies</string>
-    <string name="pref_reach_mode_title">Mou con una mano</string>
-    <string name="pref_reach_mode_summary">Recoloca los elementos de la interfaz pa usar el preséu con una mano</string>
+    <string name="pref_reach_mode_title">Mou amañosu</string>
+    <string name="pref_reach_mode_summary">Reorganiza los elementos de la interfaz pa que seyan más amañosos usalos con una mano</string>
     <string name="history_title">Historial</string>
     <string name="history_empty">Equí nun hai nada, restola per internet pa ver equí\'l to historial</string>
     <string name="history_date_format">EEE dd MMMM yyyy, HH:mm</string>
