@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">ბრაუზერი</string>
+    <string name="menu_share">გაზიარება</string>
+    <string name="menu_history">ისტორია</string>
+    <string name="menu_settings">პარამეტრები</string>
+    <string name="settings_title">პარამეტრები</string>
+    <string name="pref_search_engine">საძიებო სისტემა</string>
+    <string name="pref_js_summary">JavaScript-ის ჩართვა</string>
+    <string name="pref_location_title">მდებარეობა</string>
+    <string name="pref_screenshot_snap_title">გაფართოებული გაზიარება</string>
+    <string name="pref_screenshot_snap_summary">გაზიარებული ვებგვერდის შეთვალიერების გაზიარება</string>
+    <string name="history_title">ისტორია</string>
+    <string name="history_delete_title">ისტორიის გასუფთავება</string>
+    <string name="favorite_title">რჩეულები</string>
+    <string name="favorite_edit_title">სათაური</string>
+    <string name="favorite_edit_positive">ჩასწორება</string>
+    <string name="favorite_edit_delete">წაშლა</string>
+    <string name="auth_dialog_username">მომხმარებლის სახელი:</string>
+    <string name="auth_dialog_password">პაროლი:</string>
+    <string name="auth_dialog_login">შესვლა</string>
+    <string name="suggestions_provider_none">არცერთი</string>
+    <string name="search_bar_hint">ძიება</string>
+</resources>

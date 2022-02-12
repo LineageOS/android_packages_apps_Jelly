@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Navegador</string>
+    <string name="menu_new_tab">Nova lapela</string>
+    <string name="menu_incognito">Lapela de incógnito</string>
+    <string name="menu_reload">Refrescar</string>
+    <string name="menu_fav_add">Engadir a favoritos</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_favorites">Favoritos</string>
+    <string name="menu_history">Historial</string>
+    <string name="menu_shortcut">Engadir atallo</string>
+    <string name="menu_settings">Axustes</string>
+    <string name="menu_download">Descargar</string>
+    <string name="menu_in_new_tab">Abrir nunha nova lapela</string>
+    <string name="menu_desktop_mode">Mudar cara a versión de escritorio</string>
+    <string name="menu_mobile_mode">Mudar cara a versión móbil</string>
+    <string name="menu_search">Procurar na páxina</string>
+    <string name="share_title">Enviar a</string>
+    <string name="dismiss">Rexeitar</string>
+    <string name="download_title">Descargar ficheiro</string>
+    <string name="download_message">Desexa descargar %1$s?</string>
+    <string name="download_positive">Descargar</string>
+    <string name="permission_error_title">Erro do permiso</string>
+    <string name="permission_error_storage">O Navegador precisa de aceso ao almacenamento para transferir ficheiros. Por favor, concedalle o permiso para guardar ficheiros da web</string>
+    <string name="permission_error_ask_again">Preguntar de novo</string>
+    <string name="permission_error_forever">Permiso denegado permanentemente. Por favor, concédeo nos axustes</string>
+    <string name="shortcut_added">Añadido á pantalla de inicio</string>
+    <string name="settings_title">Axustes</string>
+    <string name="pref_search_engine">Motor de busca</string>
+    <string name="pref_start_page">Páxina de Inicio</string>
+    <string name="pref_start_page_dialog_title">Definir como páxina de inicio</string>
+    <string name="pref_start_page_dialog_message">Escribir o URl da páxina de inicio</string>
+    <string name="pref_start_page_dialog_reset">Restablecer</string>
+    <string name="pref_privacy_security">Privacidade &amp; seguranza</string>
+    <string name="pref_looklock_title">Bloquear vista</string>
+    <string name="pref_looklock_summary">Impide que outras aplicacións lean o contido do navegador</string>
+    <string name="pref_js_title">JavaScript</string>
+    <string name="pref_js_summary">Activar JavaScript</string>
+    <string name="pref_location_title">Localización</string>
+    <string name="pref_location_summary">Permitir aos sitios web acceder á ubicación</string>
+    <string name="pref_cookie_title">Cookies</string>
+    <string name="pref_cookie_summary">Permitir aos sitios web gardar e cargar cookies</string>
+    <string name="pref_screenshot_snap_title">Compartición avanzada</string>
+    <string name="pref_screenshot_snap_summary">Compartir vista previa da páxina web compartida</string>
+    <string name="pref_cookie_clear">Borrar cookies</string>
+    <string name="pref_cookie_clear_done">Eliminar todas as cookies</string>
+    <string name="pref_do_not_track_title">Non facer seguimento</string>
+    <string name="pref_do_not_track_summary">Enviar unha solicitude para evitar o seguimento dos sitios web que visitas</string>
+    <string name="pref_save_form_data_title">Gardar información do formulario</string>
+    <string name="pref_suggestions_provider">Provedor de suxerencias</string>
+    <string name="history_title">Historial</string>
+    <string name="history_empty">Nada por aquí, navegue por Internet para ver nesta pestaña seu historial</string>
+    <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
+    <string name="history_delete_title">Limpar o historial</string>
+    <string name="history_delete_message">Borrará todo o historial, esta acción non se pode desfacer. Desexa continuar?</string>
+    <string name="history_delete_positive">Limpar</string>
+    <string name="history_deleting_message">Borrando o historial\u2026</string>
+    <string name="history_snackbar_item_deleted">Entrada eliminada</string>
+    <string name="history_snackbar_item_deleted_message">Desfacer</string>
+    <string name="favorite_title">Favoritos</string>
+    <string name="favorite_added">Engadir a favoritos</string>
+    <string name="favorite_empty">Nada por aquí, añada un enlace a favoritos para visualizalo nesta pestaña</string>
+    <string name="favorite_edit_dialog_title">Editar favorito</string>
+    <string name="favorite_edit_title">Título</string>
+    <string name="favorite_edit_url">URL</string>
+    <string name="favorite_edit_positive">Editar</string>
+    <string name="favorite_edit_delete">Borrar</string>
+    <string name="favorite_edit_error">Inserir un URL válido</string>
+    <string name="error_no_activity_found">Ninguna aplicación pode abrir este enlace</string>
+    <string name="auth_dialog_title">Autenticación requirida</string>
+    <string name="auth_dialog_username">Nome de usuario:</string>
+    <string name="auth_dialog_password">Contrasinal:</string>
+    <string name="auth_dialog_detail">%1$s require dun usuario e contrasinal.</string>
+    <string name="auth_dialog_login">Iniciar sesión</string>
+    <string name="shortcut_new_incognito_tab">Nova lapela de incógnito</string>
+    <string name="suggestions_provider_none">Ningún</string>
+    <string name="search_bar_hint">Procurar</string>
+    <string name="ssl_cert_dialog_title">Detalles do certificado SSL</string>
+    <string name="ssl_cert_dialog_domain">Dominio</string>
+    <string name="ssl_cert_dialog_issued_to">Emitido para</string>
+    <string name="ssl_cert_dialog_issued_by">Emitido por</string>
+    <string name="ssl_cert_dialog_validity">Período de validez</string>
+    <string name="ssl_cert_dialog_common_name">Nome común (CN)</string>
+    <string name="ssl_cert_dialog_organization">Organización (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Unidade organizativa (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Emitido o</string>
+    <string name="ssl_cert_dialog_expires_on">Caduca o</string>
+    <string name="ssl_cert_dialog_dismiss">Rexeitar</string>
+</resources>
