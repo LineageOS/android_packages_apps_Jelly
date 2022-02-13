@@ -71,11 +71,11 @@
     <string name="history_delete_title">Falamhaich an eachdraidh</string>
     <string name="history_delete_message">Tha thu gu bhith sguabadh às an eachdraidh ’s chan fhaigh thu air ais i. A bheil thu airson leantainn air adhart?</string>
     <string name="history_delete_positive">Falamhaich</string>
-    <string name="history_deleting_message">A’ falamhachadh na h-eachdraidh…</string>
+    <string name="history_deleting_message">A’ falamhachadh na h-eachdraidh\u2026</string>
     <string name="history_snackbar_item_deleted">Chaidh an innteart a sguabadh às</string>
     <string name="history_snackbar_item_deleted_message">Neo-dhèan</string>
     <string name="favorite_title">Annsachdan</string>
-    <string name="favorite_added">Air a chur ris na h-annsachdan</string>
+    <string name="favorite_added">Chaidh a chur ris na h-annsachdan</string>
     <string name="favorite_empty">Chan eil dad an-seo, cuir ris ceangal as annsa leat is chì thu an-seo e</string>
     <string name="favorite_edit_dialog_title">Deasaich an annsachd</string>
     <string name="favorite_edit_title">Tiotal</string>
