@@ -92,7 +92,7 @@ object UiUtils {
      */
     fun showKeyboard(view: View) {
         val imm = view.context.getSystemService(InputMethodManager::class.java)
-        imm.toggleSoftInputFromWindow(view.windowToken, 0, 0)
+        imm.showSoftInput(view, 0)
     }
 
     /**
