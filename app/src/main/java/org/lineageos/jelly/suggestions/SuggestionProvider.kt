@@ -139,7 +139,7 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
         }
         val contentType = connection.contentType
         for (value in contentType.split(";").toTypedArray().map { str -> str.trim { it <= ' ' } }) {
-            if (value.toLowerCase(Locale.US).startsWith("charset=")) {
+            if (value.lowercase(Locale.US).startsWith("charset=")) {
                 return value.substring(8)
             }
         }
