@@ -28,6 +28,7 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
+import androidx.preference.SwitchPreference
 import org.lineageos.jelly.utils.PrefsUtils
 
 class SettingsActivity : AppCompatActivity() {
@@ -45,23 +46,26 @@ class SettingsActivity : AppCompatActivity() {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.settings, rootKey)
 
-            bindPreferenceSummaryToValue(findPreference("key_home_page"),
-                    getString(R.string.default_home_page))
+            findPreference<Preference>("key_home_page")?.let{
+                bindPreferenceSummaryToValue(it, getString(R.string.default_home_page))
+            }
             if (resources.getBoolean(R.bool.is_tablet)) {
-                preferenceScreen.removePreference(findPreference("key_reach_mode"))
+                findPreference<SwitchPreference>("key_reach_mode")?.let {
+                    preferenceScreen.removePreference(it)
+                }
             }
         }
 
-        private fun bindPreferenceSummaryToValue(preference: Preference?, def: String) {
-            preference?.onPreferenceChangeListener = this
+        private fun bindPreferenceSummaryToValue(preference: Preference, def: String) {
+            preference.onPreferenceChangeListener = this
 
             onPreferenceChange(preference,
                     PreferenceManager
-                            .getDefaultSharedPreferences(preference?.context)
-                            .getString(preference?.key, def))
+                            .getDefaultSharedPreferences(preference.context)
+                            .getString(preference.key, def))
         }
 
-        override fun onPreferenceChange(preference: Preference?, value: Any?): Boolean {
+        override fun onPreferenceChange(preference: Preference, value: Any?): Boolean {
             val stringValue = value.toString()
 
             if (preference is ListPreference) {
@@ -70,7 +74,7 @@ class SettingsActivity : AppCompatActivity() {
                     preference.setSummary(preference.entries[prefIndex])
                 }
             } else {
-                preference?.summary = stringValue
+                preference.summary = stringValue
             }
             return true
         }
