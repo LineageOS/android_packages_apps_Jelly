@@ -24,12 +24,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    lintOptions {
-        disable 'RestrictedApi'
-    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/java_studio'
+    }
+    lint {
+        disable 'RestrictedApi'
     }
 }
 
