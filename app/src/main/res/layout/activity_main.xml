@@ -37,15 +37,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <ProgressBar
+                <com.google.android.material.progressindicator.LinearProgressIndicator
                     android:id="@+id/load_progress"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
                     android:max="100"
                     android:paddingTop="2dp"
-                    android:progress="54" />
+                    android:progress="54"
+                    app:indicatorColor="@color/colorAccent" />
 
                 <include
                     android:id="@+id/toolbar_search_page"
