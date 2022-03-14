@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4ebe47c_6c6127bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21651
+      },
+      "writtenOn": "2022-03-14T20:37:39Z",
+      "side": 1,
+      "message": "It doesn\u0027t build for me:\n\n    packages/apps/Jelly/app/src/main/java/org/lineageos/jelly/suggestions/SuggestionProvider.kt:142:23: \n    error: this declaration is experimental and its usage must be marked with \n    \u0027@kotlin.ExperimentalStdlibApi\u0027 or \u0027@OptIn(kotlin.ExperimentalStdlibApi::class)\u0027                                                  \n    if (value.lowercase(Locale.US).startsWith(\"charset\u003d\")) {\n              ^",
+      "revId": "72d69b4f309d36aee372bec7d9477aba3f70f202",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
