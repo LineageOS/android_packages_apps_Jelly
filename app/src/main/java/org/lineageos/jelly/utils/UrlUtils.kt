@@ -48,7 +48,7 @@ object UrlUtils {
         if (matcher.matches()) {
             // force scheme to lowercase
             val scheme = matcher.group(1)
-            val lcScheme = scheme!!.lowercase(Locale.getDefault())
+            val lcScheme = scheme!!.toLowerCase(Locale.getDefault())
             if (lcScheme != scheme) {
                 inUrl = lcScheme + matcher.group(2)
             }
