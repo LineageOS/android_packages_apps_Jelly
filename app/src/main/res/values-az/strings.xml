@@ -51,7 +51,7 @@
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">JavaScript-i fəallaşdır</string>
     <string name="pref_location_title">Yer</string>
-    <string name="pref_location_summary">Olduğunuz yerə müraciət sorğulayan vebsaytlara icazə ver</string>
+    <string name="pref_location_summary">Olduğunuz yerə müraciət tələb edən vebsaytlara icazə ver</string>
     <string name="pref_cookie_title">Çərəzlər</string>
     <string name="pref_cookie_summary">Vebsaytların çərəzləri saxlayıb baxmasına icazə ver</string>
     <string name="pref_screenshot_snap_title">Qabaqcıl paylaşma</string>
@@ -59,7 +59,7 @@
     <string name="pref_cookie_clear">Çərəzləri təmizlə</string>
     <string name="pref_cookie_clear_done">Bütün çərəzlər təmizləndi</string>
     <string name="pref_do_not_track_title">İzləmə</string>
-    <string name="pref_do_not_track_summary">Ziyarət etdiyin vebsaytlara İzləmə sorğusu göndər</string>
+    <string name="pref_do_not_track_summary">Ziyarət etdiyin vebsaytlara İzləmə tələbi göndər</string>
     <string name="pref_suggestions_provider">Təklif təchizatçısı</string>
     <string name="pref_reach_mode_title">Müraciət rejimi</string>
     <string name="pref_reach_mode_summary">Daha asan tək əlli istifadə üçün interfeys elementlərinin yerini dəyişdirin</string>
@@ -100,5 +100,5 @@
     <string name="ssl_cert_dialog_organizational_unit">Təşkilat Vahidi (UN)</string>
     <string name="ssl_cert_dialog_issued_on">Verilmə</string>
     <string name="ssl_cert_dialog_expires_on">Bitmə Vaxtı</string>
-    <string name="ssl_cert_dialog_dismiss">İmtina et</string>
+    <string name="ssl_cert_dialog_dismiss">Rədd et</string>
 </resources>

@@ -18,6 +18,7 @@
     <string name="menu_share">გაზიარება</string>
     <string name="menu_history">ისტორია</string>
     <string name="menu_settings">პარამეტრები</string>
+    <string name="permission_error_ask_again">კვლავ შეკითხვა</string>
     <string name="settings_title">პარამეტრები</string>
     <string name="pref_search_engine">საძიებო სისტემა</string>
     <string name="pref_js_summary">JavaScript-ის ჩართვა</string>
