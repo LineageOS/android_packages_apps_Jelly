@@ -55,6 +55,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -668,35 +670,18 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         getSystemService(ShortcutManager::class.java).requestPinShortcut(shortcutInfo, null)
     }
 
-    @Suppress("DEPRECATION")
     private fun setImmersiveMode(enable: Boolean) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setDecorFitsSystemWindows(!enable)
-            window.insetsController?.let {
-                val flags = WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
-                val behavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-                if (enable) {
-                    it.hide(flags)
-                    it.systemBarsBehavior = behavior
-                } else {
-                    it.show(flags)
-                    it.systemBarsBehavior = behavior.inv()
-                }
-            }
-        } else {
-            var flags = window.decorView.systemUiVisibility
-            val immersiveModeFlags = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    or View.SYSTEM_UI_FLAG_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
-            flags = if (enable) {
-                flags or immersiveModeFlags
+        window.setDecorFitsSystemWindows(!enable)
+        window.insetsController?.let {
+            val flags = WindowInsetsCompat.Type.statusBars() or WindowInsetsCompat.Type.navigationBars()
+            val behavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            if (enable) {
+                it.hide(flags)
+                it.systemBarsBehavior = behavior
             } else {
-                flags and immersiveModeFlags.inv()
+                it.show(flags)
+                it.systemBarsBehavior = behavior.inv()
             }
-            window.decorView.systemUiVisibility = flags
         }
     }
 
