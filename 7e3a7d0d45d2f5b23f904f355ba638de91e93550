@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3d4682d_73017c6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 26777
+      },
+      "writtenOn": "2022-04-04T08:40:46Z",
+      "side": 1,
+      "message": "haven\u0027t testing compiling, but it should be fine for our current minSdk",
+      "revId": "7e3a7d0d45d2f5b23f904f355ba638de91e93550",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
