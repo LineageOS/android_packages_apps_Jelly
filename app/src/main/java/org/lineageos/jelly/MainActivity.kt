@@ -751,9 +751,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         mToolbarSearchBar.layoutParams = searchBarParams
         mToolbarSearchBar.invalidate()
         resetSystemUIColor()
-        if (mThemeColor != 0) {
-            applyThemeColor(mThemeColor)
-        }
+        applyThemeColor(mThemeColor)
     }
 
     companion object {
