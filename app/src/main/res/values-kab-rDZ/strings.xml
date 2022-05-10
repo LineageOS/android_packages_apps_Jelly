@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="menu_fav_add">Rnu ar ismenyifen</string>
+    <string name="menu_share">Bḍu</string>
+    <string name="menu_favorites">Ismenyifen</string>
+    <string name="menu_history">Amazray</string>
+    <string name="menu_shortcut">Rnu anegzum</string>
+    <string name="menu_settings">Iɣewwaṛen</string>
+    <string name="menu_download">Sider</string>
+    <string name="menu_in_new_tab">Ldi deg iccer amaynut</string>
+    <string name="menu_desktop_mode">Ɛeddi ar usnas n uselkim</string>
+    <string name="menu_mobile_mode">Ɛeddi ar usnas n uziraz</string>
+    <string name="menu_search">Aff deg usebter</string>
+    <string name="menu_print">Siggez</string>
+    <string name="share_title">Azen i</string>
+    <string name="dismiss">Suref</string>
+    <string name="download_title">Sider afaylu</string>
+    <string name="download_message">Tebɣiḍ ad tessidreḍ %1$s?</string>
+    <string name="download_positive">Sider</string>
+    <string name="permission_error_title">Tuccḍa n tasiregt</string>
+    <string name="permission_error_storage">Iminig iḥwej tasiregt unekcum ar usekles iw-sider n ifuyla. Ttxilek efkk-iṭ iwakken ad-isekles ifuyla seg l-Web</string>
+    <string name="permission_error_ask_again">Ssuter tikkelt-nniḍen</string>
+    <string name="permission_error_forever">Tasiregt tegdel i lebda. Ttxilek efkk-iṭ deg γewwaṛen</string>
+    <string name="settings_title">Iɣewwaṛen</string>
+    <string name="pref_search_engine">Amsedday n unadi</string>
+    <string name="pref_start_page">Asebter agejdan</string>
+    <string name="pref_start_page_dialog_title">Fren asebter agejdan</string>
+    <string name="pref_start_page_dialog_message">Aru URL n usebter agejdan</string>
+    <string name="pref_start_page_dialog_reset">Ales awennez</string>
+    <string name="pref_js_title">JavaScript</string>
+    <string name="pref_js_summary">Rmed JavaScript</string>
+    <string name="pref_location_title">Adig</string>
+    <string name="pref_location_summary">Sireg ismal ad-sutren anekcum ar wadig-ik</string>
+    <string name="pref_cookie_title">Inagan n tuqqna</string>
+    <string name="pref_cookie_summary">Sireg ismal ad-tseklsen w ad-tssalin inagan n tuqqna</string>
+    <string name="pref_screenshot_snap_title">Talqayt n beṭṭu</string>
+    <string name="pref_screenshot_snap_summary">Bḍu askan n usebter n Web ibḍan</string>
+    <string name="pref_cookie_clear">Sfeḍ inagan n tuqqna</string>
+    <string name="pref_cookie_clear_done">Inagan n tuqqna ttwasfden mara</string>
+    <string name="pref_do_not_track_title">Ur ḍfer ara</string>
+    <string name="pref_do_not_track_summary">Azen asuter \"Ur ḍfer ara\" i yismal itrezzuḍ</string>
+    <string name="pref_suggestions_provider">Amessis n isumar</string>
+    <string name="history_title">Amazray</string>
+    <string name="history_empty">Ulac illan da, innig g Internet akk ad-twaliḍ amazray da</string>
+    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+    <string name="history_delete_title">Sfeḍ amazray</string>
+    <string name="history_delete_message">Ad-d-tekkseḍ akk amazray n tunigin, Ulac tuɣalin ar deffir. Tebɣiḍ ad tkemmleḍ?</string>
+    <string name="history_delete_positive">Sfeḍ</string>
+    <string name="history_deleting_message">Asfeḍ n umazray\u2026</string>
+    <string name="history_snackbar_item_deleted_message">Err-d</string>
+    <string name="favorite_title">Ismenyifen</string>
+    <string name="favorite_added">Ittwarna ar ismenyifen</string>
+</resources>

@@ -43,6 +43,7 @@
     <string name="pref_screenshot_snap_summary">Comparte la previsualización de la páxina web compartida</string>
     <string name="pref_do_not_track_title">Nun rastrexar</string>
     <string name="pref_suggestions_provider">Fornidor de les suxerencies</string>
+    <string name="pref_reach_mode_title">Mou amañosu</string>
     <string name="history_title">Historial</string>
     <string name="history_empty">Nun hai nada, restola per internet pa ver equí l\'historial</string>
     <string name="history_snackbar_item_deleted">Desanicióse la entrada</string>
