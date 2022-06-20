@@ -14,6 +14,10 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Iminig</string>
+    <string name="menu_new_tab">Iccer amaynut</string>
+    <string name="menu_incognito">Iccer abnabak</string>
+    <string name="menu_reload">Smiren</string>
     <string name="menu_fav_add">Rnu ar ismenyifen</string>
     <string name="menu_share">Bḍu</string>
     <string name="menu_favorites">Ismenyifen</string>
@@ -64,4 +68,22 @@
     <string name="history_snackbar_item_deleted_message">Err-d</string>
     <string name="favorite_title">Ismenyifen</string>
     <string name="favorite_added">Ittwarna ar ismenyifen</string>
+    <string name="favorite_empty">Ulac illan da, rnu aseɣwen amenyaf ad-twaliḍ da</string>
+    <string name="favorite_edit_dialog_title">Ẓreg amenyaf</string>
+    <string name="favorite_edit_title">Azwel</string>
+    <string name="favorite_edit_url">URL</string>
+    <string name="favorite_edit_positive">Ẓreg</string>
+    <string name="favorite_edit_delete">Kkes</string>
+    <string name="favorite_edit_error">Ger URL ameɣtu</string>
+    <string name="error_no_activity_found">Ulac asnas izmren ad isseqdec aseɣwen-agi</string>
+    <string name="auth_dialog_title">Illaq usesteb</string>
+    <string name="auth_dialog_username">Isem n useqdac:</string>
+    <string name="auth_dialog_password">Awal uffir:</string>
+    <string name="auth_dialog_detail">%1$s illaqas isem n useqdac ak wawal uffir.</string>
+    <string name="auth_dialog_login">Qqen</string>
+    <string name="shortcut_new_incognito_tab">Iccer abnabak amaynut</string>
+    <string name="suggestions_provider_none">Ula yiwen</string>
+    <string name="search_bar_hint">Nadi</string>
+    <string name="ssl_cert_dialog_domain">Taɣult</string>
+    <string name="ssl_cert_dialog_dismiss">Suref</string>
 </resources>
