@@ -261,7 +261,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             } else {
                 if (shouldShowRequestPermissionRationale(
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    AlertDialog.Builder(this)
+                    val AlertBox = AlertDialog.Builder(this)
                             .setTitle(R.string.permission_error_title)
                             .setMessage(R.string.permission_error_storage)
                             .setCancelable(false)
@@ -269,7 +269,12 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                             ) { _: DialogInterface?, _: Int -> requestStoragePermission() }
                             .setNegativeButton(getString(R.string.dismiss)
                             ) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
-                            .show()
+                            .create()
+                    AlertBox.setOnShowListener {
+                             AlertBox.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.colorAccent))
+                             AlertBox.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.colorAccent))
+                    }
+                    AlertBox.show()
                 } else {
                     Snackbar.make(mCoordinator, getString(R.string.permission_error_forever),
                             Snackbar.LENGTH_LONG).show()
@@ -427,14 +432,19 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             return
         }
         mWaitingDownloadUrl = null
-        AlertDialog.Builder(this)
+        val AlertBox = AlertDialog.Builder(this)
                 .setTitle(R.string.download_title)
                 .setMessage(getString(R.string.download_message, fileName))
                 .setPositiveButton(getString(R.string.download_positive)
                 ) { _: DialogInterface?, _: Int -> fetchFile(url, fileName) }
                 .setNegativeButton(getString(R.string.dismiss)
                 ) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
-                .show()
+                .create()
+        AlertBox.setOnShowListener {
+                AlertBox.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.colorAccent))
+                AlertBox.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.colorAccent))
+        }
+        AlertBox.show()
     }
 
     private fun fetchFile(url: String?, fileName: String) {
