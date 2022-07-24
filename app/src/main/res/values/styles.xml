@@ -20,6 +20,16 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar">@bool/is_theme_light</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/DialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogButtonStyle</item>
+    </style>
+
+    <style name="DialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

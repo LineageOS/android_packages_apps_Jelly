@@ -47,7 +47,6 @@ import android.webkit.URLUtil
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
@@ -58,6 +57,7 @@ import androidx.core.content.FileProvider
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -261,7 +261,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             } else {
                 if (shouldShowRequestPermissionRationale(
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    AlertDialog.Builder(this)
+                    MaterialAlertDialogBuilder(this)
                             .setTitle(R.string.permission_error_title)
                             .setMessage(R.string.permission_error_storage)
                             .setCancelable(false)
@@ -427,7 +427,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             return
         }
         mWaitingDownloadUrl = null
-        AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.download_title)
                 .setMessage(getString(R.string.download_message, fileName))
                 .setPositiveButton(getString(R.string.download_positive)
