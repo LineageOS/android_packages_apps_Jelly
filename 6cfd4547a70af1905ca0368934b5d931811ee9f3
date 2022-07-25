@@ -16,6 +16,23 @@
       "message": "\u003e Patch Set 2: Code-Review-1\n\u003e \n\u003e Coloring should be done via theme XML, not hard coding. I guess the currently used theme doesn\u0027t set an `alertDialogTheme`.\n\ndone",
       "revId": "6cfd4547a70af1905ca0368934b5d931811ee9f3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "217fe01f_1670ca50",
+        "filename": "app/src/main/res/values/styles.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2022-07-25T07:29:34Z",
+      "side": 1,
+      "message": "I think overriding the button style isn\u0027t necessary here. It should be sufficient to set colorPrimary/colorAccent for this theme, and the button color then should fall into place.",
+      "revId": "6cfd4547a70af1905ca0368934b5d931811ee9f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
