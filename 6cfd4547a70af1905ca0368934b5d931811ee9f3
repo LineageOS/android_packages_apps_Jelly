@@ -33,6 +33,24 @@
       "message": "I think overriding the button style isn\u0027t necessary here. It should be sufficient to set colorPrimary/colorAccent for this theme, and the button color then should fall into place.",
       "revId": "6cfd4547a70af1905ca0368934b5d931811ee9f3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "771319b7_1e0b5ccb",
+        "filename": "app/src/main/res/values/styles.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 19867
+      },
+      "writtenOn": "2022-07-25T09:15:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "217fe01f_1670ca50",
+      "revId": "6cfd4547a70af1905ca0368934b5d931811ee9f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
