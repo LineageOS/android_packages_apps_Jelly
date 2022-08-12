@@ -16,6 +16,23 @@
       "message": "merge this too, I plan on submitting this to all the maintained within a year branches.",
       "revId": "2ab50c65aae0ce416c8f20e8a217eda08ceaef9e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdc5569b_d3a38757",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-08-12T12:27:47Z",
+      "side": 1,
+      "message": "yeah no, I won\u0027t accept it here\nclone the 18.1 branch or newer.",
+      "revId": "2ab50c65aae0ce416c8f20e8a217eda08ceaef9e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
