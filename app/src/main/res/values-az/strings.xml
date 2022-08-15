@@ -80,7 +80,7 @@
     <string name="favorite_edit_url">URL</string>
     <string name="favorite_edit_positive">Düzəliş et</string>
     <string name="favorite_edit_delete">Sil</string>
-    <string name="favorite_edit_error">Etibarlı bir URL daxil et</string>
+    <string name="favorite_edit_error">Yararlı bir URL daxil et</string>
     <string name="error_no_activity_found">Bu əməliyyatı heç bir tətbiq icra edə bilməz</string>
     <string name="auth_dialog_title">Kimlik Təsdiqləmə Tələb Ediilir</string>
     <string name="auth_dialog_username">İstifadəçi adı:</string>
