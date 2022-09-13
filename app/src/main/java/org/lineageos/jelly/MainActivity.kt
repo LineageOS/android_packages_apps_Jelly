@@ -5,7 +5,6 @@
 
 package org.lineageos.jelly
 
-import android.Manifest
 import android.app.Activity
 import android.app.ActivityManager.TaskDescription
 import android.app.DownloadManager
@@ -15,7 +14,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
-import android.content.pm.PackageManager
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.graphics.Bitmap
@@ -40,6 +38,7 @@ import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.view.WindowManager
 import android.webkit.CookieManager
+import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.FrameLayout
@@ -64,6 +63,7 @@ import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
+import org.lineageos.jelly.utils.PermissionsUtils
 import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 import org.lineageos.jelly.utils.UiUtils
@@ -135,6 +135,20 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private lateinit var menuDialog: MenuDialog
 
     private val sharedPreferencesExt by lazy { SharedPreferencesExt(this) }
+
+    private val permissionsUtils by lazy { PermissionsUtils(this) }
+
+    private lateinit var locationDialogCallback: (() -> Unit)
+    private val locationPermissionRequest = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) {
+        if (it.isNotEmpty()) {
+            if (permissionsUtils.locationPermissionsGranted()) {
+                // Precise or approximate location access granted.
+                locationDialogCallback()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -282,18 +296,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             }
             else -> {
                 super.onBackPressed()
-            }
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>,
-        results: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, results)
-        when (requestCode) {
-            LOCATION_PERM_REQ -> if (hasLocationPermission()) {
-                webView.reload()
             }
         }
     }
@@ -456,16 +458,36 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         sheet.show()
     }
 
-    override fun requestLocationPermission() {
-        val permissionArray = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
-        requestPermissions(permissionArray, LOCATION_PERM_REQ)
-    }
+    /*
+     * This is called only if GeolocationPermissions doesn't have an explicit entry for @origin
+     */
+    override fun showLocationDialog(origin: String, callback: GeolocationPermissions.Callback) {
+        locationDialogCallback = {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.location_dialog_title)
+                .setMessage(getString(R.string.location_dialog_message, origin))
+                .setPositiveButton(R.string.location_dialog_allow) { _, _ ->
+                    callback(origin, true, true)
+                }
+                .setNegativeButton(R.string.location_dialog_block) { _, _ ->
+                    callback(origin, false, true)
+                }
+                .setNeutralButton(R.string.location_dialog_cancel) { _, _ ->
+                    callback(origin, false, false)
+                }
+                .setOnCancelListener {
+                    callback(origin, false, false)
+                }
+                .create()
+                .show()
+        }
 
-    override fun hasLocationPermission(): Boolean {
-        val result = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-        return result == PackageManager.PERMISSION_GRANTED
+        if (!permissionsUtils.locationPermissionsGranted()) {
+            locationPermissionRequest.launch(PermissionsUtils.locationPermissions)
+        } else {
+            locationDialogCallback()
+        }
     }
-
 
     override fun onFaviconLoaded(favicon: Bitmap?) {
         favicon?.let {
@@ -612,6 +634,5 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     companion object {
         private val TAG = MainActivity::class.java.simpleName
         private const val PROVIDER = "${BuildConfig.APPLICATION_ID}.fileprovider"
-        private const val LOCATION_PERM_REQ = 424
     }
 }
