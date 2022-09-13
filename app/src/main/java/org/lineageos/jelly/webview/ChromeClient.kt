@@ -69,11 +69,7 @@ internal class ChromeClient(
         origin: String,
         callback: GeolocationPermissions.Callback
     ) {
-        if (!activity.hasLocationPermission()) {
-            activity.requestLocationPermission()
-        } else {
-            callback.invoke(origin, true, false)
-        }
+        activity.showLocationDialog(origin, callback)
     }
 
     override fun onShowCustomView(view: View, callback: CustomViewCallback) {
