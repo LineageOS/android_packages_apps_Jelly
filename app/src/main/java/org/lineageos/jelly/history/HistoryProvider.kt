@@ -31,8 +31,10 @@ class HistoryProvider : ContentProvider() {
         private val sURIMatcher = UriMatcher(UriMatcher.NO_MATCH)
         fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String) {
             var existingId: Long = -1
-            val cursor = resolver.query(Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
-                    Columns.URL + "=?", arrayOf(url), null)
+            val cursor = resolver.query(
+                Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
+                Columns.URL + "=?", arrayOf(url), null
+            )
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
                     existingId = cursor.getLong(0)
@@ -42,8 +44,10 @@ class HistoryProvider : ContentProvider() {
             val values = ContentValues()
             values.put(Columns.TITLE, title)
             if (existingId >= 0) {
-                resolver.update(ContentUris.withAppendedId(Columns.CONTENT_URI, existingId),
-                        values, null, null)
+                resolver.update(
+                    ContentUris.withAppendedId(Columns.CONTENT_URI, existingId),
+                    values, null, null
+                )
             } else {
                 values.put(Columns.TIMESTAMP, System.currentTimeMillis())
                 values.put(Columns.URL, url)
@@ -63,9 +67,11 @@ class HistoryProvider : ContentProvider() {
         return true
     }
 
-    override fun query(uri: Uri, projection: Array<String>?,
-                       selection: String?, selectionArgs: Array<String>?,
-                       sortOrder: String?): Cursor? {
+    override fun query(
+        uri: Uri, projection: Array<String>?,
+        selection: String?, selectionArgs: Array<String>?,
+        sortOrder: String?
+    ): Cursor? {
         val qb = SQLiteQueryBuilder()
         val match = sURIMatcher.match(uri)
         qb.tables = HistoryDbHelper.DB_TABLE_HISTORY
@@ -101,21 +107,28 @@ class HistoryProvider : ContentProvider() {
         return ContentUris.withAppendedId(Columns.CONTENT_URI, rowID)
     }
 
-    override fun update(uri: Uri, values: ContentValues?,
-                        selection: String?, selectionArgs: Array<String>?): Int {
+    override fun update(
+        uri: Uri, values: ContentValues?,
+        selection: String?, selectionArgs: Array<String>?
+    ): Int {
         val count: Int
         val match = sURIMatcher.match(uri)
         val db = mDbHelper.writableDatabase
         count = when (match) {
-            MATCH_ALL -> db.update(HistoryDbHelper.DB_TABLE_HISTORY,
-                    values, selection, selectionArgs)
+            MATCH_ALL -> db.update(
+                HistoryDbHelper.DB_TABLE_HISTORY,
+                values, selection, selectionArgs
+            )
             MATCH_ID -> {
                 if (selection != null || selectionArgs != null) {
                     throw UnsupportedOperationException(
-                            "Cannot update URI $uri with a where clause")
+                        "Cannot update URI $uri with a where clause"
+                    )
                 }
-                db.update(HistoryDbHelper.DB_TABLE_HISTORY,
-                        values, BaseColumns._ID + " = ?", arrayOf(uri.lastPathSegment))
+                db.update(
+                    HistoryDbHelper.DB_TABLE_HISTORY,
+                    values, BaseColumns._ID + " = ?", arrayOf(uri.lastPathSegment)
+                )
             }
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
@@ -125,8 +138,10 @@ class HistoryProvider : ContentProvider() {
         return count
     }
 
-    override fun delete(uri: Uri, selection: String?,
-                        selectionArgs: Array<String>?): Int {
+    override fun delete(
+        uri: Uri, selection: String?,
+        selectionArgs: Array<String>?
+    ): Int {
         var localSelection = selection
         var localSelectionArgs = selectionArgs
         val match = sURIMatcher.match(uri)
@@ -137,7 +152,8 @@ class HistoryProvider : ContentProvider() {
             MATCH_ID -> {
                 if (localSelection != null || localSelectionArgs != null) {
                     throw UnsupportedOperationException(
-                            "Cannot delete URI $uri with a where clause")
+                        "Cannot delete URI $uri with a where clause"
+                    )
                 }
                 localSelection = BaseColumns._ID + " = ?"
                 uri.lastPathSegment?.let {
@@ -146,8 +162,10 @@ class HistoryProvider : ContentProvider() {
             }
             else -> throw UnsupportedOperationException("Cannot delete the URI $uri")
         }
-        val count = db.delete(HistoryDbHelper.DB_TABLE_HISTORY,
-                localSelection, localSelectionArgs)
+        val count = db.delete(
+            HistoryDbHelper.DB_TABLE_HISTORY,
+            localSelection, localSelectionArgs
+        )
         if (count > 0) {
             requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
@@ -165,31 +183,39 @@ class HistoryProvider : ContentProvider() {
     }
 
     private class HistoryDbHelper(context: Context?) :
-            SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+        SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
         override fun onCreate(db: SQLiteDatabase) {
-            db.execSQL("CREATE TABLE " + DB_TABLE_HISTORY + " (" +
-                    BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    Columns.TIMESTAMP + " INTEGER NOT NULL, " +
-                    Columns.TITLE + " TEXT, " +
-                    Columns.URL + " TEXT)")
+            db.execSQL(
+                "CREATE TABLE " + DB_TABLE_HISTORY + " (" +
+                        BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        Columns.TIMESTAMP + " INTEGER NOT NULL, " +
+                        Columns.TITLE + " TEXT, " +
+                        Columns.URL + " TEXT)"
+            )
         }
 
         override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
             if (oldVersion < 2) {
                 // Recreate table with now auto-incrementing id column,
                 // renaming the old id column to timestamp
-                db.execSQL("CREATE TABLE " + DB_TABLE_HISTORY + "_new (" +
-                        BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        Columns.TIMESTAMP + " INTEGER NOT NULL, " +
-                        Columns.TITLE + " TEXT, " +
-                        Columns.URL + " TEXT)")
-                db.execSQL("INSERT INTO " + DB_TABLE_HISTORY + "_new("
-                        + Columns.TITLE + ", " + Columns.URL + ", " + Columns.TIMESTAMP
-                        + ") SELECT " + Columns.TITLE + ", " + Columns.URL + ", id"
-                        + " FROM " + DB_TABLE_HISTORY)
+                db.execSQL(
+                    "CREATE TABLE " + DB_TABLE_HISTORY + "_new (" +
+                            BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                            Columns.TIMESTAMP + " INTEGER NOT NULL, " +
+                            Columns.TITLE + " TEXT, " +
+                            Columns.URL + " TEXT)"
+                )
+                db.execSQL(
+                    "INSERT INTO " + DB_TABLE_HISTORY + "_new("
+                            + Columns.TITLE + ", " + Columns.URL + ", " + Columns.TIMESTAMP
+                            + ") SELECT " + Columns.TITLE + ", " + Columns.URL + ", id"
+                            + " FROM " + DB_TABLE_HISTORY
+                )
                 db.execSQL("DROP TABLE $DB_TABLE_HISTORY")
-                db.execSQL("ALTER TABLE " + DB_TABLE_HISTORY
-                        + "_new RENAME TO " + DB_TABLE_HISTORY)
+                db.execSQL(
+                    "ALTER TABLE " + DB_TABLE_HISTORY
+                            + "_new RENAME TO " + DB_TABLE_HISTORY
+                )
             }
         }
 

@@ -46,8 +46,10 @@ object UiUtils {
     }
 
     fun getShortcutIcon(bitmap: Bitmap, themeColor: Int): Bitmap {
-        val out = Bitmap.createBitmap(bitmap.width, bitmap.width,
-                Bitmap.Config.ARGB_8888)
+        val out = Bitmap.createBitmap(
+            bitmap.width, bitmap.width,
+            Bitmap.Config.ARGB_8888
+        )
         val canvas = Canvas(out)
         val paint = Paint()
         val rect = Rect(0, 0, bitmap.width, bitmap.width)

@@ -18,12 +18,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:paddingBottom="4dp"
-    android:paddingEnd="16dp"
     android:paddingStart="16dp"
-    android:paddingTop="4dp">
+    android:paddingTop="4dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="4dp">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="2dp"
@@ -59,8 +60,8 @@
                 android:id="@id/search_status"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="16dp"
                 android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
                 android:layout_toStartOf="@+id/find_separator"
                 android:background="@null"
                 android:gravity="center_vertical"
@@ -72,8 +73,8 @@
                 android:id="@id/find_separator"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:layout_toStartOf="@+id/search_menu_prev"
                 android:alpha="0.1"
                 android:background="@color/inverted" />
@@ -109,5 +110,5 @@
                 android:src="@drawable/ic_cancel" />
 
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

@@ -40,7 +40,6 @@ import org.lineageos.jelly.ui.UrlBarController
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.net.URISyntaxException
-import java.util.*
 
 internal class WebClient(private val mUrlBarController: UrlBarController) : WebViewClient() {
     override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
@@ -60,9 +59,10 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
             val needsLookup = (request.hasGesture()
                     || !TextUtils.equals(url, webViewExt.lastLoadedUrl))
             if (!webViewExt.isIncognito
-                    && needsLookup
-                    && !request.isRedirect
-                    && startActivityForUrl(view, url)) {
+                && needsLookup
+                && !request.isRedirect
+                && startActivityForUrl(view, url)
+            ) {
                 return true
             } else if (webViewExt.requestHeaders.isNotEmpty()) {
                 webViewExt.followUrl(url)
@@ -72,8 +72,10 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
         return false
     }
 
-    override fun onReceivedHttpAuthRequest(view: WebView,
-                                           handler: HttpAuthHandler, host: String, realm: String) {
+    override fun onReceivedHttpAuthRequest(
+        view: WebView,
+        handler: HttpAuthHandler, host: String, realm: String
+    ) {
         val context = view.context
         val builder = AlertDialog.Builder(context)
         val layoutInflater = LayoutInflater.from(context)
@@ -84,18 +86,19 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
         val text = context.getString(R.string.auth_dialog_detail, view.url)
         authDetail.text = text
         builder.setView(dialogView)
-                .setTitle(R.string.auth_dialog_title)
-                .setPositiveButton(R.string.auth_dialog_login)
-                { _: DialogInterface?, _: Int ->
-                    handler.proceed(
-                            username.text.toString(), password.text.toString())
-                }
-                .setNegativeButton(android.R.string.cancel)
-                { _: DialogInterface?, _: Int ->
-                    handler.cancel()
-                }
-                .setOnDismissListener { handler.cancel() }
-                .show()
+            .setTitle(R.string.auth_dialog_title)
+            .setPositiveButton(R.string.auth_dialog_login)
+            { _: DialogInterface?, _: Int ->
+                handler.proceed(
+                    username.text.toString(), password.text.toString()
+                )
+            }
+            .setNegativeButton(android.R.string.cancel)
+            { _: DialogInterface?, _: Int ->
+                handler.cancel()
+            }
+            .setOnDismissListener { handler.cancel() }
+            .show()
     }
 
     private fun startActivityForUrl(view: WebView, url: String): Boolean {
@@ -116,27 +119,32 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
         } else {
             val packageName = intent.getPackage()
             if (packageName != null
-                    && context.packageManager.resolveActivity(intent, 0) == null) {
+                && context.packageManager.resolveActivity(intent, 0) == null
+            ) {
                 // Explicit intent, but app is not installed - try to redirect to Play Store
                 val storeUri = Uri.parse("market://search?q=pname:$packageName")
                 intent = Intent(Intent.ACTION_VIEW, storeUri)
-                        .addCategory(Intent.CATEGORY_BROWSABLE)
+                    .addCategory(Intent.CATEGORY_BROWSABLE)
             }
         }
         try {
             context.startActivity(intent)
             return true
         } catch (e: ActivityNotFoundException) {
-            Snackbar.make(view, context.getString(R.string.error_no_activity_found),
-                    Snackbar.LENGTH_LONG).show()
+            Snackbar.make(
+                view, context.getString(R.string.error_no_activity_found),
+                Snackbar.LENGTH_LONG
+            ).show()
         }
         return false
     }
 
     private fun makeHandlerChooserIntent(context: Context, intent: Intent, url: String): Intent? {
         val pm = context.packageManager
-        val activities = pm.queryIntentActivities(intent,
-                PackageManager.MATCH_DEFAULT_ONLY or PackageManager.GET_RESOLVED_FILTER)
+        val activities = pm.queryIntentActivities(
+            intent,
+            PackageManager.MATCH_DEFAULT_ONLY or PackageManager.GET_RESOLVED_FILTER
+        )
         if (activities.isEmpty()) {
             return null
         }
@@ -150,7 +158,8 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
                 continue
             }
             if (filter.countDataAuthorities() == 0
-                    && !TextUtils.equals(info.packageName, ourPackageName)) {
+                && !TextUtils.equals(info.packageName, ourPackageName)
+            ) {
                 continue
             }
             val targetIntent = Intent(intent)
@@ -166,13 +175,17 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
             return if (ourPackageName.equals(lastIntent.getPackage())) null else lastIntent
         }
         val changeIntent = Intent(IntentUtils.EVENT_URL_RESOLVED)
-                .addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
-                .putExtra(IntentUtils.EXTRA_URL, url)
-        val pi = PendingIntent.getBroadcast(context, 0, changeIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_ONE_SHOT)
+            .addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
+            .putExtra(IntentUtils.EXTRA_URL, url)
+        val pi = PendingIntent.getBroadcast(
+            context, 0, changeIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_ONE_SHOT
+        )
         val chooserIntent = Intent.createChooser(lastIntent, null)
-        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
-                chooserIntents.toTypedArray())
+        chooserIntent.putExtra(
+            Intent.EXTRA_INITIAL_INTENTS,
+            chooserIntents.toTypedArray()
+        )
         chooserIntent.putExtra(Intent.EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER, pi.intentSender)
         return chooserIntent
     }

@@ -72,11 +72,15 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
     }
 
     companion object {
-        private fun getGradient(widthEnd: Float, fadeStart: Float,
-                                stopStart: Float, stopEnd: Float, color: Int): LinearGradient {
-            return LinearGradient(0f, 0f, widthEnd, 0f,
-                    intArrayOf(color, Color.TRANSPARENT, color, color, Color.TRANSPARENT),
-                    floatArrayOf(0f, fadeStart, stopStart, stopEnd, 1f), Shader.TileMode.CLAMP)
+        private fun getGradient(
+            widthEnd: Float, fadeStart: Float,
+            stopStart: Float, stopEnd: Float, color: Int
+        ): LinearGradient {
+            return LinearGradient(
+                0f, 0f, widthEnd, 0f,
+                intArrayOf(color, Color.TRANSPARENT, color, color, Color.TRANSPARENT),
+                floatArrayOf(0f, fadeStart, stopStart, stopEnd, 1f), Shader.TileMode.CLAMP
+            )
         }
     }
 }

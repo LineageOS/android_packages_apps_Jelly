@@ -30,8 +30,9 @@ import org.lineageos.jelly.R
 import java.text.DateFormat
 
 class UrlBarController(
-        private val mEditor: EditText,
-        private val mSecureIcon: ImageView) : OnFocusChangeListener {
+    private val mEditor: EditText,
+    private val mSecureIcon: ImageView
+) : OnFocusChangeListener {
     private var mUrl: String? = null
     private var mTitle: String? = null
     private var mLoading = false
@@ -88,7 +89,7 @@ class UrlBarController(
         // Show the dialog if you tap the lock icon and the cert is valid
         mSecureIcon.setOnClickListener {
             val view = LayoutInflater.from(context)
-                    .inflate(R.layout.dialog_ssl_certificate_info, LinearLayout(context))
+                .inflate(R.layout.dialog_ssl_certificate_info, LinearLayout(context))
 
             // Get the text views
             val domainView: TextView = view.findViewById(R.id.domain)
@@ -110,30 +111,46 @@ class UrlBarController(
 
             // Update TextViews
             domainView.text = domainString
-            issuedToCNView.setText(R.string.ssl_cert_dialog_common_name,
-                    certificate.issuedTo.cName)
-            issuedToOView.setText(R.string.ssl_cert_dialog_organization,
-                    certificate.issuedTo.oName)
-            issuedToUNView.setText(R.string.ssl_cert_dialog_organizational_unit,
-                    certificate.issuedTo.uName)
-            issuedByCNView.setText(R.string.ssl_cert_dialog_common_name,
-                    certificate.issuedBy.cName)
-            issuedByOView.setText(R.string.ssl_cert_dialog_organization,
-                    certificate.issuedBy.oName)
-            issuedByUNView.setText(R.string.ssl_cert_dialog_organizational_unit,
-                    certificate.issuedBy.uName)
-            issuedOnView.setText(R.string.ssl_cert_dialog_issued_on,
-                    DateFormat.getDateTimeInstance().format(startDate))
-            expiresOnView.setText(R.string.ssl_cert_dialog_expires_on,
-                    DateFormat.getDateTimeInstance().format(endDate))
+            issuedToCNView.setText(
+                R.string.ssl_cert_dialog_common_name,
+                certificate.issuedTo.cName
+            )
+            issuedToOView.setText(
+                R.string.ssl_cert_dialog_organization,
+                certificate.issuedTo.oName
+            )
+            issuedToUNView.setText(
+                R.string.ssl_cert_dialog_organizational_unit,
+                certificate.issuedTo.uName
+            )
+            issuedByCNView.setText(
+                R.string.ssl_cert_dialog_common_name,
+                certificate.issuedBy.cName
+            )
+            issuedByOView.setText(
+                R.string.ssl_cert_dialog_organization,
+                certificate.issuedBy.oName
+            )
+            issuedByUNView.setText(
+                R.string.ssl_cert_dialog_organizational_unit,
+                certificate.issuedBy.uName
+            )
+            issuedOnView.setText(
+                R.string.ssl_cert_dialog_issued_on,
+                DateFormat.getDateTimeInstance().format(startDate)
+            )
+            expiresOnView.setText(
+                R.string.ssl_cert_dialog_expires_on,
+                DateFormat.getDateTimeInstance().format(endDate)
+            )
 
             // Build and show the dialog
             AlertDialog.Builder(context)
-                    .setTitle(R.string.ssl_cert_dialog_title)
-                    .setView(view)
-                    .setNegativeButton(R.string.ssl_cert_dialog_dismiss, null)
-                    .create()
-                    .show()
+                .setTitle(R.string.ssl_cert_dialog_title)
+                .setView(view)
+                .setNegativeButton(R.string.ssl_cert_dialog_dismiss, null)
+                .create()
+                .show()
         }
     }
 

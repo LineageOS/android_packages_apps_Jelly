@@ -23,12 +23,12 @@ import java.util.regex.Pattern
 
 object UrlUtils {
     val ACCEPTED_URI_SCHEMA: Pattern = Pattern.compile(
-            "(?i)" +  // switch on case insensitive matching
-                    "(" +  // begin group for schema
-                    "(?:http|https|content|file|chrome)://" +
-                    "|(?:inline|data|about|javascript):" +
-                    ")" +
-                    "(.*)"
+        "(?i)" +  // switch on case insensitive matching
+                "(" +  // begin group for schema
+                "(?:http|https|content|file|chrome)://" +
+                "|(?:inline|data|about|javascript):" +
+                ")" +
+                "(.*)"
     )
 
     /**
@@ -48,7 +48,7 @@ object UrlUtils {
         if (matcher.matches()) {
             // force scheme to lowercase
             val scheme = matcher.group(1)
-            val lcScheme = scheme!!.toLowerCase(Locale.getDefault())
+            val lcScheme = scheme!!.lowercase(Locale.getDefault())
             if (lcScheme != scheme) {
                 inUrl = lcScheme + matcher.group(2)
             }

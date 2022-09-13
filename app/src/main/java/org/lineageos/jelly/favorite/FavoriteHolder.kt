@@ -21,14 +21,14 @@ import android.graphics.Color
 import android.net.Uri
 import android.view.View
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import org.lineageos.jelly.MainActivity
 import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val mCard: CardView = view.findViewById(R.id.row_favorite_card)
+    private val mCard: MaterialCardView = view.findViewById(R.id.row_favorite_card)
     private val mTitle: TextView = view.findViewById(R.id.row_favorite_title)
     fun bind(context: Context, id: Long, title: String?, url: String, color: Int) {
         val adjustedTitle = if (title.isNullOrEmpty()) {

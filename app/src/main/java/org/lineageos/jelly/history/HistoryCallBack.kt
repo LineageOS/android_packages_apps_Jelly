@@ -29,7 +29,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
 
 class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
-        ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+    ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
     private val mResolver: ContentResolver = context.contentResolver
     private val mBackground: Drawable
     private val mDelete: Drawable?
@@ -43,15 +43,19 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
         mDeleteListener = deleteListener
     }
 
-    override fun onMove(recyclerView: RecyclerView,
-                        viewHolder: RecyclerView.ViewHolder,
-                        target: RecyclerView.ViewHolder): Boolean {
+    override fun onMove(
+        recyclerView: RecyclerView,
+        viewHolder: RecyclerView.ViewHolder,
+        target: RecyclerView.ViewHolder
+    ): Boolean {
         return false
     }
 
     override fun onSwiped(holder: RecyclerView.ViewHolder, swipeDir: Int) {
-        val uri = ContentUris.withAppendedId(HistoryProvider.Columns.CONTENT_URI,
-                holder.itemId)
+        val uri = ContentUris.withAppendedId(
+            HistoryProvider.Columns.CONTENT_URI,
+            holder.itemId
+        )
         var values: ContentValues? = null
         val cursor = mResolver.query(uri, null, null, null, null)
         if (cursor != null) {
@@ -67,15 +71,19 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
         }
     }
 
-    override fun onChildDraw(c: Canvas, recyclerView: RecyclerView,
-                             viewHolder: RecyclerView.ViewHolder,
-                             dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+    override fun onChildDraw(
+        c: Canvas, recyclerView: RecyclerView,
+        viewHolder: RecyclerView.ViewHolder,
+        dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean
+    ) {
         val view = viewHolder.itemView
         if (viewHolder.adapterPosition == -1) {
             return
         }
-        mBackground.setBounds(view.right + dX.toInt(), view.top, view.right,
-                view.bottom)
+        mBackground.setBounds(
+            view.right + dX.toInt(), view.top, view.right,
+            view.bottom
+        )
         mBackground.draw(c)
         val iconLeft = view.right - mMargin - mDelete!!.intrinsicWidth
         val iconTop = view.top +

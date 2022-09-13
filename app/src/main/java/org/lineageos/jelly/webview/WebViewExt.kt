@@ -30,9 +30,10 @@ import org.lineageos.jelly.utils.UrlUtils
 import java.util.regex.Pattern
 
 class WebViewExt @JvmOverloads constructor(
-        context: Context, // Note that this is never null, a View can't have a null Context
-        attrs: AttributeSet? = null,
-        defStyle: Int = 0) : WebView(context, attrs, defStyle) {
+    context: Context, // Note that this is never null, a View can't have a null Context
+    attrs: AttributeSet? = null,
+    defStyle: Int = 0
+) : WebView(context, attrs, defStyle) {
     private lateinit var mActivity: WebViewExtActivity
     private val mRequestHeaders: MutableMap<String?, String?> = HashMap()
     private var mMobileUserAgent: String? = null
@@ -107,7 +108,7 @@ class WebViewExt @JvmOverloads constructor(
             val mobileDevice = matcher.group(2)!!.replace("; wv", "")
             mMobileUserAgent = matcher.group(1)!! + mobileDevice + matcher.group(3)
             mDesktopUserAgent = matcher.group(1)!! + DESKTOP_DEVICE + matcher.group(3)!!
-                    .replace(" Mobile ", " ")
+                .replace(" Mobile ", " ")
             settings.userAgentString = mMobileUserAgent
         } else {
             Log.e(TAG, "Couldn't parse the user agent")
@@ -119,12 +120,16 @@ class WebViewExt @JvmOverloads constructor(
         }
     }
 
-    fun init(activity: WebViewExtActivity, urlBarController: UrlBarController,
-             progressBar: ProgressBar, incognito: Boolean) {
+    fun init(
+        activity: WebViewExtActivity, urlBarController: UrlBarController,
+        progressBar: ProgressBar, incognito: Boolean
+    ) {
         mActivity = activity
         isIncognito = incognito
-        val chromeClient = ChromeClient(activity, incognito,
-                urlBarController, progressBar)
+        val chromeClient = ChromeClient(
+            activity, incognito,
+            urlBarController, progressBar
+        )
         webChromeClient = chromeClient
         webViewClient = WebClient(urlBarController)
         setup()
@@ -132,8 +137,10 @@ class WebViewExt @JvmOverloads constructor(
 
     val snap: Bitmap
         get() {
-            measure(MeasureSpec.makeMeasureSpec(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED),
-                    MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
+            measure(
+                MeasureSpec.makeMeasureSpec(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED),
+                MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
+            )
             layout(0, 0, measuredWidth, measuredHeight)
             val size = if (measuredWidth > measuredHeight) measuredHeight else measuredWidth
             val bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
@@ -161,7 +168,8 @@ class WebViewExt @JvmOverloads constructor(
     companion object {
         private const val TAG = "WebViewExt"
         private const val DESKTOP_DEVICE = "X11; Linux x86_64"
-        private const val DESKTOP_USER_AGENT_FALLBACK = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36"
+        private const val DESKTOP_USER_AGENT_FALLBACK =
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36"
         private const val HEADER_DNT = "DNT"
     }
 }

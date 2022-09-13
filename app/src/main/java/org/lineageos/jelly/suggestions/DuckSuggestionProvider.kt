@@ -21,13 +21,17 @@ import org.json.JSONArray
  * The search suggestions provider for the DuckDuckGo search engine.
  */
 internal class DuckSuggestionProvider : SuggestionProvider("UTF-8") {
-    override fun createQueryUrl(query: String,
-                                language: String): String {
+    override fun createQueryUrl(
+        query: String,
+        language: String
+    ): String {
         return "https://duckduckgo.com/ac/?q=$query"
     }
 
-    override fun parseResults(content: String,
-                              callback: ResultCallback) {
+    override fun parseResults(
+        content: String,
+        callback: ResultCallback
+    ) {
         val jsonArray = JSONArray(content)
         var n = 0
         val size = jsonArray.length()

@@ -18,10 +18,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:paddingBottom="4dp"
-    android:paddingEnd="16dp"
     android:paddingStart="16dp"
-    android:paddingTop="4dp">
+    android:paddingTop="4dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="4dp">
 
     <!-- Dummy view to catch focus -->
     <View
@@ -30,7 +30,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true" />
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,8 +56,8 @@
                 android:id="@+id/secure"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_toEndOf="@id/incognito"
                 android:layout_alignWithParentIfMissing="true"
+                android:layout_toEndOf="@id/incognito"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_lock"
@@ -68,8 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignWithParentIfMissing="true"
-                android:layout_toEndOf="@id/secure"
                 android:layout_toStartOf="@+id/search_menu"
+                android:layout_toEndOf="@id/secure"
                 android:background="@null"
                 android:completionThreshold="1"
                 android:dropDownAnchor="@id/cardview"
@@ -81,8 +81,8 @@
                 android:nextFocusLeft="@id/url_bar"
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
-                android:popupElevation="2dp"
                 android:popupBackground="@color/primary"
+                android:popupElevation="2dp"
                 android:selectAllOnFocus="true"
                 android:textColor="@color/inverted"
                 tools:ignore="RtlSymmetry" />
@@ -97,5 +97,5 @@
                 android:padding="8dp"
                 android:src="@drawable/ic_menu" />
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

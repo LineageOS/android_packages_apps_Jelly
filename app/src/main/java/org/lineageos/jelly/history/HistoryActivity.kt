@@ -68,8 +68,10 @@ class HistoryActivity : AppCompatActivity() {
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
             override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
-                return CursorLoader(this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
-                        null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC")
+                return CursorLoader(
+                    this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
+                    null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC"
+                )
             }
 
             override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
@@ -87,12 +89,14 @@ class HistoryActivity : AppCompatActivity() {
         mAdapter.registerAdapterDataObserver(mAdapterDataObserver)
         val helper = ItemTouchHelper(HistoryCallBack(this, object : OnDeleteListener {
             override fun onItemDeleted(data: ContentValues?) {
-                Snackbar.make(findViewById(R.id.coordinator_layout),
-                        R.string.history_snackbar_item_deleted, Snackbar.LENGTH_LONG)
-                        .setAction(R.string.history_snackbar_item_deleted_message) {
-                            contentResolver.insert(HistoryProvider.Columns.CONTENT_URI, data)
-                        }
-                        .show()
+                Snackbar.make(
+                    findViewById(R.id.coordinator_layout),
+                    R.string.history_snackbar_item_deleted, Snackbar.LENGTH_LONG
+                )
+                    .setAction(R.string.history_snackbar_item_deleted_message) {
+                        contentResolver.insert(HistoryProvider.Columns.CONTENT_URI, data)
+                    }
+                    .show()
             }
         }))
         helper.attachToRecyclerView(list)
@@ -102,8 +106,10 @@ class HistoryActivity : AppCompatActivity() {
                 super.onScrolled(recyclerView, dx, dy)
                 val elevate = recyclerView.getChildAt(0) != null &&
                         recyclerView.getChildAt(0).top < listTop
-                toolbar.elevation = if (elevate) UiUtils.dpToPx(resources,
-                        resources.getDimension(R.dimen.toolbar_elevation)) else 0f
+                toolbar.elevation = if (elevate) UiUtils.dpToPx(
+                    resources,
+                    resources.getDimension(R.dimen.toolbar_elevation)
+                ) else 0f
             }
         })
     }
@@ -123,11 +129,11 @@ class HistoryActivity : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
         }
         AlertDialog.Builder(this)
-                .setTitle(R.string.history_delete_title)
-                .setMessage(R.string.history_delete_message)
-                .setPositiveButton(R.string.history_delete_positive) { _, _ -> deleteAll() }
-                .setNegativeButton(android.R.string.cancel) { d: DialogInterface, _ -> d.dismiss() }
-                .show()
+            .setTitle(R.string.history_delete_title)
+            .setMessage(R.string.history_delete_message)
+            .setPositiveButton(R.string.history_delete_positive) { _, _ -> deleteAll() }
+            .setNegativeButton(android.R.string.cancel) { d: DialogInterface, _ -> d.dismiss() }
+            .show()
         return true
     }
 
@@ -137,10 +143,10 @@ class HistoryActivity : AppCompatActivity() {
 
     private fun deleteAll() {
         val dialog = AlertDialog.Builder(this)
-                .setTitle(R.string.history_delete_title)
-                .setView(R.layout.history_deleting_dialog)
-                .setCancelable(false)
-                .create()
+            .setTitle(R.string.history_delete_title)
+            .setView(R.layout.history_deleting_dialog)
+            .setCancelable(false)
+            .create()
         dialog.show()
         uiScope.launch {
             deleteAllHistory(contentResolver, dialog)

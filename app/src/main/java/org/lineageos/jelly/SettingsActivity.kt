@@ -24,11 +24,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.preference.ListPreference
-import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceManager
-import androidx.preference.SwitchPreference
+import androidx.preference.*
 import org.lineageos.jelly.utils.PrefsUtils
 
 class SettingsActivity : AppCompatActivity() {
@@ -46,7 +42,7 @@ class SettingsActivity : AppCompatActivity() {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.settings, rootKey)
 
-            findPreference<Preference>("key_home_page")?.let{
+            findPreference<Preference>("key_home_page")?.let {
                 bindPreferenceSummaryToValue(it, getString(R.string.default_home_page))
             }
             if (resources.getBoolean(R.bool.is_tablet)) {
@@ -59,10 +55,12 @@ class SettingsActivity : AppCompatActivity() {
         private fun bindPreferenceSummaryToValue(preference: Preference, def: String) {
             preference.onPreferenceChangeListener = this
 
-            onPreferenceChange(preference,
-                    PreferenceManager
-                            .getDefaultSharedPreferences(preference.context)
-                            .getString(preference.key, def))
+            onPreferenceChange(
+                preference,
+                PreferenceManager
+                    .getDefaultSharedPreferences(preference.context)
+                    .getString(preference.key, def)
+            )
         }
 
         override fun onPreferenceChange(preference: Preference, value: Any?): Boolean {
@@ -87,8 +85,10 @@ class SettingsActivity : AppCompatActivity() {
                 }
                 "key_cookie_clear" -> {
                     CookieManager.getInstance().removeAllCookies(null)
-                    Toast.makeText(preference.context, getString(R.string.pref_cookie_clear_done),
-                            Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        preference.context, getString(R.string.pref_cookie_clear_done),
+                        Toast.LENGTH_LONG
+                    ).show()
                     true
                 }
                 else -> {
@@ -101,31 +101,35 @@ class SettingsActivity : AppCompatActivity() {
             val builder = AlertDialog.Builder(preference.context)
             val alertDialog = builder.create()
             val inflater = alertDialog.layoutInflater
-            val homepageView = inflater.inflate(R.layout.dialog_homepage_edit,
-                    LinearLayout(preference.context))
+            val homepageView = inflater.inflate(
+                R.layout.dialog_homepage_edit,
+                LinearLayout(preference.context)
+            )
             val editText = homepageView.findViewById<EditText>(R.id.homepage_edit_url)
             editText.setText(PrefsUtils.getHomePage(preference.context))
             builder.setTitle(R.string.pref_start_page_dialog_title)
-                    .setMessage(R.string.pref_start_page_dialog_message)
-                    .setView(homepageView)
-                    .setPositiveButton(android.R.string.ok
-                    ) { _: DialogInterface?, _: Int ->
-                        val url = if (editText.text.toString().isEmpty()) {
-                            getString(R.string.default_home_page)
-                        } else {
-                            editText.text.toString()
-                        }
-                        PrefsUtils.setHomePage(preference.context, url)
-                        preference.summary = url
+                .setMessage(R.string.pref_start_page_dialog_message)
+                .setView(homepageView)
+                .setPositiveButton(
+                    android.R.string.ok
+                ) { _: DialogInterface?, _: Int ->
+                    val url = if (editText.text.toString().isEmpty()) {
+                        getString(R.string.default_home_page)
+                    } else {
+                        editText.text.toString()
                     }
-                    .setNeutralButton(R.string.pref_start_page_dialog_reset
-                    ) { _: DialogInterface?, _: Int ->
-                        val url = getString(R.string.default_home_page)
-                        PrefsUtils.setHomePage(preference.context, url)
-                        preference.summary = url
-                    }
-                    .setNegativeButton(android.R.string.cancel, null)
-                    .show()
+                    PrefsUtils.setHomePage(preference.context, url)
+                    preference.summary = url
+                }
+                .setNeutralButton(
+                    R.string.pref_start_page_dialog_reset
+                ) { _: DialogInterface?, _: Int ->
+                    val url = getString(R.string.default_home_page)
+                    PrefsUtils.setHomePage(preference.context, url)
+                    preference.summary = url
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
         }
     }
 }

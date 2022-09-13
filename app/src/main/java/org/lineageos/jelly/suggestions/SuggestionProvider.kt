@@ -48,8 +48,10 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
      * @param language the locale of the user.
      * @return should return a URL that can be fetched using a GET.
      */
-    protected abstract fun createQueryUrl(query: String,
-                                          language: String): String
+    protected abstract fun createQueryUrl(
+        query: String,
+        language: String
+    ): String
 
     /**
      * Parse the results of an input stream into a list of [String].
@@ -58,8 +60,10 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
      * @param callback the callback to invoke for each received suggestion
      * @throws Exception throw an exception if anything goes wrong.
      */
-    open fun parseResults(content: String,
-                          callback: ResultCallback) {
+    open fun parseResults(
+        content: String,
+        callback: ResultCallback
+    ) {
         val respArray = JSONArray(content)
         val jsonArray = respArray.getJSONArray(1)
         var n = 0
@@ -89,8 +93,8 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
             return filter
         }
         val content = downloadSuggestionsForQuery(query, mLanguage)
-                ?: // There are no suggestions for this query, return an empty list.
-                return filter
+            ?: // There are no suggestions for this query, return an empty list.
+            return filter
         try {
             parseResults(content, object : ResultCallback {
                 override fun addResult(suggestion: String): Boolean {
@@ -111,13 +115,17 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
      * @param query the query to get suggestions for
      * @return the cache file containing the suggestions
      */
-    private fun downloadSuggestionsForQuery(query: String,
-                                            language: String): String? {
+    private fun downloadSuggestionsForQuery(
+        query: String,
+        language: String
+    ): String? {
         try {
             val url = URL(createQueryUrl(query, language))
             val urlConnection = url.openConnection() as HttpURLConnection
-            urlConnection.addRequestProperty("Cache-Control",
-                    "max-age=$INTERVAL_DAY, max-stale=$INTERVAL_DAY")
+            urlConnection.addRequestProperty(
+                "Cache-Control",
+                "max-age=$INTERVAL_DAY, max-stale=$INTERVAL_DAY"
+            )
             urlConnection.addRequestProperty("Accept-Charset", mEncoding)
             try {
                 BufferedInputStream(urlConnection.inputStream).use {
@@ -139,7 +147,7 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
         }
         val contentType = connection.contentType
         for (value in contentType.split(";").toTypedArray().map { str -> str.trim { it <= ' ' } }) {
-            if (value.toLowerCase(Locale.US).startsWith("charset=")) {
+            if (value.lowercase(Locale.US).startsWith("charset=")) {
                 return value.substring(8)
             }
         }

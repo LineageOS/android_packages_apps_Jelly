@@ -29,14 +29,14 @@ import android.widget.TextView.OnEditorActionListener
 import org.lineageos.jelly.utils.UiUtils
 
 class SearchBarController(
-        private val mWebView: WebView,
-        private val mEditor: EditText,
-        private val mStatus: TextView,
-        private val mPrevButton: ImageButton,
-        private val mNextButton: ImageButton,
-        private val mCancelButton: ImageButton,
-        private val mListener: OnCancelListener)
-    : TextWatcher, OnEditorActionListener, FindListener, View.OnClickListener {
+    private val mWebView: WebView,
+    private val mEditor: EditText,
+    private val mStatus: TextView,
+    private val mPrevButton: ImageButton,
+    private val mNextButton: ImageButton,
+    private val mCancelButton: ImageButton,
+    private val mListener: OnCancelListener
+) : TextWatcher, OnEditorActionListener, FindListener, View.OnClickListener {
     private var mHasStartedSearch = false
     private var mCurrentResultPosition = 0
     private var mTotalResultCount = 0
@@ -73,8 +73,10 @@ class SearchBarController(
         return false
     }
 
-    override fun onFindResultReceived(activeMatchOrdinal: Int, numberOfMatches: Int,
-                                      isDoneCounting: Boolean) {
+    override fun onFindResultReceived(
+        activeMatchOrdinal: Int, numberOfMatches: Int,
+        isDoneCounting: Boolean
+    ) {
         mCurrentResultPosition = activeMatchOrdinal
         mTotalResultCount = numberOfMatches
         updateNextAndPrevButtonEnabledState()
@@ -118,10 +120,14 @@ class SearchBarController(
 
     private fun updateNextAndPrevButtonEnabledState() {
         val hasText = !query.isNullOrEmpty()
-        UiUtils.setImageButtonEnabled(mPrevButton,
-                hasText && (!mHasStartedSearch || mCurrentResultPosition > 0))
-        UiUtils.setImageButtonEnabled(mNextButton,
-                hasText && (!mHasStartedSearch || mCurrentResultPosition < mTotalResultCount - 1))
+        UiUtils.setImageButtonEnabled(
+            mPrevButton,
+            hasText && (!mHasStartedSearch || mCurrentResultPosition > 0)
+        )
+        UiUtils.setImageButtonEnabled(
+            mNextButton,
+            hasText && (!mHasStartedSearch || mCurrentResultPosition < mTotalResultCount - 1)
+        )
     }
 
     private fun updateStatusText() {

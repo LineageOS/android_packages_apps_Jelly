@@ -50,8 +50,10 @@ class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<Favo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): FavoriteHolder {
-        return FavoriteHolder(LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_favorite, parent, false))
+        return FavoriteHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_favorite, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {
