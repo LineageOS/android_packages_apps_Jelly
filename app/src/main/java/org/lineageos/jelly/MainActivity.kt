@@ -42,6 +42,7 @@ import android.view.WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
 import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import android.view.inputmethod.EditorInfo
 import android.webkit.CookieManager
+import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
 import android.webkit.URLUtil
 import android.webkit.WebChromeClient.CustomViewCallback
@@ -58,6 +59,7 @@ import androidx.core.content.FileProvider
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -127,6 +129,29 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     private var mFullScreenCallback: CustomViewCallback? = null
     private var mSearchActive = false
     private val uiScope = CoroutineScope(Dispatchers.Main)
+
+    private lateinit var mOrigin: String
+    private lateinit var mCallback: GeolocationPermissions.Callback
+    private val mDialog: (origin: String, callback: GeolocationPermissions.Callback) -> Unit by lazy {
+        { origin, callback ->
+            MaterialAlertDialogBuilder(this).apply {
+                setTitle(R.string.location_dialog_title)
+                setMessage(R.string.location_dialog_message)
+                setPositiveButton(R.string.location_dialog_allow) { _, _ ->
+                    callback(origin, true, true)
+                }
+                setNegativeButton(R.string.location_dialog_block) { _, _ ->
+                    callback(origin, false, true)
+                }
+                setNeutralButton(R.string.location_dialog_cancel) { _, _ ->
+                    callback(origin, false, false)
+                }
+                setOnCancelListener {
+                    callback(origin, false, false)
+                }
+            }.show()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -275,7 +300,9 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         super.onRequestPermissionsResult(requestCode, permissions, results)
         when (requestCode) {
             LOCATION_PERM_REQ -> if (hasLocationPermission()) {
-                mWebView.reload()
+                mDialog(mOrigin, mCallback)
+                GeolocationPermissions.getInstance().clearAll()
+                mCallback(mOrigin, true, true)
             }
             STORAGE_PERM_REQ -> if (hasStoragePermission() && mWaitingDownloadUrl != null) {
                 downloadFileAsk(mWaitingDownloadUrl, null, null)
@@ -554,16 +581,27 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         return result == PackageManager.PERMISSION_GRANTED
     }
 
-    override fun requestLocationPermission() {
+    private fun requestLocationPermission() {
         val permissionArray = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
         requestPermissions(permissionArray, LOCATION_PERM_REQ)
     }
 
-    override fun hasLocationPermission(): Boolean {
+    private fun hasLocationPermission(): Boolean {
         val result = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
         return result == PackageManager.PERMISSION_GRANTED
     }
 
+    override fun showLocationDialog(origin: String, callback: GeolocationPermissions.Callback) {
+        mOrigin = origin
+        mCallback = callback
+
+        if (!hasLocationPermission()) {
+            mCallback(origin, false, false)
+            requestLocationPermission()
+        } else {
+            mDialog(origin, callback)
+        }
+    }
 
     override fun onFaviconLoaded(favicon: Bitmap?) {
         if (favicon == null || favicon.isRecycled) {
