@@ -29,8 +29,8 @@ class KeyValueView @JvmOverloads constructor(
     defStyle: Int = 0,
     defStyleRes: Int = 0
 ) : LinearLayout(context, attrs, defStyle, defStyleRes) {
-    private var mKeyView: TextView? = null
-    private var mValueView: TextView? = null
+    private var mKeyView: TextView
+    private var mValueView: TextView
 
     init {
         View.inflate(context, R.layout.key_value_view, this)
@@ -40,8 +40,8 @@ class KeyValueView @JvmOverloads constructor(
 
     fun setText(@StringRes attributeTextResId: Int, value: String) {
         if (value.isNotEmpty()) {
-            mKeyView!!.setText(attributeTextResId)
-            mValueView!!.text = value
+            mKeyView.setText(attributeTextResId)
+            mValueView.text = value
         } else {
             visibility = View.GONE
         }
