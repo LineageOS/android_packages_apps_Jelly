@@ -23,6 +23,8 @@ android_app {
 
     product_specific: true,
 
+    overrides: ["Browser2"],
+
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.appcompat_appcompat",
