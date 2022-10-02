@@ -16,6 +16,23 @@
       "message": "Verified building foster and foster_tab",
       "revId": "462837df937785e620541fe489ef35e776930307",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73df16e0_291c9322",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-02T15:15:51Z",
+      "side": 1,
+      "message": "This one if totally fine, even if the whole topic is not merged yet.",
+      "revId": "462837df937785e620541fe489ef35e776930307",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
