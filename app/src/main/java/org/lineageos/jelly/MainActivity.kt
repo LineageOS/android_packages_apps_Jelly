@@ -128,20 +128,11 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         val autoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.url_bar)
         autoCompleteTextView.setAdapter(SuggestionsAdapter(this))
         autoCompleteTextView.setOnEditorActionListener { _, actionId: Int, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == KeyEvent.ACTION_DOWN) {
                 UiUtils.hideKeyboard(autoCompleteTextView)
                 mWebView.loadUrl(autoCompleteTextView.text.toString())
                 autoCompleteTextView.clearFocus()
                 return@setOnEditorActionListener true
-            }
-            false
-        }
-        autoCompleteTextView.setOnKeyListener { _, keyCode: Int, _ ->
-            if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                UiUtils.hideKeyboard(autoCompleteTextView)
-                mWebView.loadUrl(autoCompleteTextView.text.toString())
-                autoCompleteTextView.clearFocus()
-                return@setOnKeyListener true
             }
             false
         }
