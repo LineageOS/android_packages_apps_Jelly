@@ -35,10 +35,6 @@
     <string name="download_title">Lawrlwytho ffeil</string>
     <string name="download_message">Wyt ti am lawrlwytho %1$s?</string>
     <string name="download_positive">Lawrlwytho</string>
-    <string name="permission_error_title">Gwall caniatâd</string>
-    <string name="permission_error_storage">Mae ar y porwr angen mynediad i\'r storfa er mwyn lawrlwytho ffeiliau. Rho ganiatâd iddo gadw ffeiliau o\'r we.</string>
-    <string name="permission_error_ask_again">Gofyn eto</string>
-    <string name="permission_error_forever">Gwrthodwyd caniatâd yn barhaol. Rhaid rhoi caniatâd yn y gosodiadau.</string>
     <string name="settings_title">Gosodiadau</string>
     <string name="pref_search_engine">Peiriant chwilio</string>
     <string name="pref_start_page">Tudalen gartref</string>

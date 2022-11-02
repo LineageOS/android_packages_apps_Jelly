@@ -35,10 +35,6 @@
     <string name="download_title">Изтегли файла</string>
     <string name="download_message">Искате ли да изтеглите %1$s?</string>
     <string name="download_positive">Изтегли</string>
-    <string name="permission_error_title">Грешка в Разрешенията</string>
-    <string name="permission_error_storage">Браузърът изисква достъп до хранилището за изтегляне на файлове. Моля разрешете запис на файлове от интернет</string>
-    <string name="permission_error_ask_again">Попитай отново</string>
-    <string name="permission_error_forever">Разрешението е отказано завинаги. Моля да го предоставите в настройките</string>
     <string name="settings_title">Настройки</string>
     <string name="pref_search_engine">Търсачка</string>
     <string name="pref_start_page">Начална страница</string>

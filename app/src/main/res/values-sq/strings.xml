@@ -35,10 +35,6 @@
     <string name="download_title">Shkarko skedarin</string>
     <string name="download_message">Dëshiron të shkarkosh %1$s?</string>
     <string name="download_positive">Shkarko</string>
-    <string name="permission_error_title">Gabim në të drejta</string>
-    <string name="permission_error_storage">Shfletuesi duhet të ketë të drejtë hyrje tek memorja për të shkarkuar skedarë. Ju lutem lejojeni për të ruajtur dokumenta nga web</string>
-    <string name="permission_error_ask_again">Pyet sërish</string>
-    <string name="permission_error_forever">Kjo e drejtë është e ndaluar. Të lutem ndryshoje tek Cilësimet</string>
     <string name="settings_title">Cilësimet</string>
     <string name="pref_search_engine">Motori i kërkimit</string>
     <string name="pref_start_page">Kryefaqja</string>

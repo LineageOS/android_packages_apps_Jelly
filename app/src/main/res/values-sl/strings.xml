@@ -35,10 +35,6 @@
     <string name="download_title">Prenesi datoteko</string>
     <string name="download_message">Ali želite prenesti %1$s?</string>
     <string name="download_positive">Prenesi</string>
-    <string name="permission_error_title">Napaka dovoljenja</string>
-    <string name="permission_error_storage">Brskalnik potrebuje dostop do pomnilniške naprave za prenos datotek. Odobrite ga za shranjevanje datotek iz spleta</string>
-    <string name="permission_error_ask_again">Ponovno vprašaj</string>
-    <string name="permission_error_forever">Dovoljenje zavrnjeno za vedno. Odobrite ga v nastavitvah</string>
     <string name="settings_title">Nastavitve</string>
     <string name="pref_search_engine">Iskalnik</string>
     <string name="pref_start_page">Domača stran</string>

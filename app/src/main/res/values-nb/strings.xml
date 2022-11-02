@@ -34,10 +34,6 @@
     <string name="download_title">Last ned fil</string>
     <string name="download_message">Vil du laste ned %1$s?</string>
     <string name="download_positive">Last ned</string>
-    <string name="permission_error_title">Tilgangsfeil</string>
-    <string name="permission_error_storage">Nettleseren trenger lagringstilgang for å laste ned sider. Tildel denne for å lagre filer fra nettet</string>
-    <string name="permission_error_ask_again">Spør igjen</string>
-    <string name="permission_error_forever">Tilgang nektet for godt. Tildel den i innstillingene</string>
     <string name="settings_title">Innstillinger</string>
     <string name="pref_search_engine">Søkemotor</string>
     <string name="pref_start_page">Hjemmeside</string>

@@ -35,10 +35,6 @@
     <string name="download_title">Stiahnuť súbor</string>
     <string name="download_message">Chcete sttiahnuť %1$s?</string>
     <string name="download_positive">Stiahnuť</string>
-    <string name="permission_error_title">Chýba oprávnenie</string>
-    <string name="permission_error_storage">Pre sťahovanie súborov potrebuje prehliadač prístup k úložisku. Prosím, udeľte mu toto oprávnenie, aby mohol ukladať súbory z webu</string>
-    <string name="permission_error_ask_again">Opýtať sa znovu</string>
-    <string name="permission_error_forever">Povolenie bolo navždy odmietnuté. Udeľte ho prosím v nastaveniach</string>
     <string name="settings_title">Nastavenia</string>
     <string name="pref_search_engine">Vyhľadávač</string>
     <string name="pref_start_page">Domovská stránka</string>

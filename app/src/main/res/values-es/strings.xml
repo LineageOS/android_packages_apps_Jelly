@@ -35,10 +35,6 @@
     <string name="download_title">Descargar archivo</string>
     <string name="download_message">¿Quiere descargar %1$s?</string>
     <string name="download_positive">Descargar</string>
-    <string name="permission_error_title">Error de permiso</string>
-    <string name="permission_error_storage">Navegador necesita acceder al almacenamiento para descargar archivos. Por favor conceda el permiso para guardar archivos de internet</string>
-    <string name="permission_error_ask_again">Preguntar de nuevo</string>
-    <string name="permission_error_forever">Permiso denegado permanentemente. Por favor, concédelo en los ajustes</string>
     <string name="settings_title">Ajustes</string>
     <string name="pref_search_engine">Motor de búsqueda</string>
     <string name="pref_start_page">Página de inicio</string>

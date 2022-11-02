@@ -35,10 +35,6 @@
     <string name="download_title">Tải về tập tin</string>
     <string name="download_message">Bạn có muốn tải về %1$s?</string>
     <string name="download_positive">Tải về</string>
-    <string name="permission_error_title">Lỗi quyền truy cập</string>
-    <string name="permission_error_storage">Trình duyệt cần truy cập lưu trữ để tải về tập tin. Hãy cho phép nó để lưu các tập tin từ trang web</string>
-    <string name="permission_error_ask_again">Hỏi lại</string>
-    <string name="permission_error_forever">Quyền truy cập bị từ chối vĩnh viễn. Hãy cho phép nó trong cài đặt</string>
     <string name="settings_title">Cài đặt</string>
     <string name="pref_search_engine">Công cụ tìm kiếm</string>
     <string name="pref_start_page">Trang chủ</string>

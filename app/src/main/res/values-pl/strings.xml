@@ -35,10 +35,6 @@
     <string name="download_title">Pobierz plik</string>
     <string name="download_message">Czy chcesz pobrać %1$s?</string>
     <string name="download_positive">Pobierz</string>
-    <string name="permission_error_title">Błąd uprawnień</string>
-    <string name="permission_error_storage">Przeglądarka potrzebuje dostępu do pamięci w celu pobierania plików. Proszę udzielić go, aby zapisywać pliki z internetu</string>
-    <string name="permission_error_ask_again">Zapytaj ponownie</string>
-    <string name="permission_error_forever">Odmówiono udzielenia uprawnień na stałe. Proszę udzielić je w ustawieniach</string>
     <string name="settings_title">Ustawienia</string>
     <string name="pref_search_engine">Wyszukiwarka</string>
     <string name="pref_start_page">Strona główna</string>

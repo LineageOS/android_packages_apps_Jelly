@@ -35,10 +35,6 @@
     <string name="download_title">Descargar ficheiro</string>
     <string name="download_message">Desexa descargar %1$s?</string>
     <string name="download_positive">Descargar</string>
-    <string name="permission_error_title">Erro do permiso</string>
-    <string name="permission_error_storage">O Navegador precisa de aceso ao almacenamento para transferir ficheiros. Por favor, concedalle o permiso para guardar ficheiros da web</string>
-    <string name="permission_error_ask_again">Preguntar de novo</string>
-    <string name="permission_error_forever">Permiso denegado permanentemente. Por favor, concédeo nos axustes</string>
     <string name="settings_title">Axustes</string>
     <string name="pref_search_engine">Motor de busca</string>
     <string name="pref_start_page">Páxina de Inicio</string>

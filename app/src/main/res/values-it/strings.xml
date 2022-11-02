@@ -35,10 +35,6 @@
     <string name="download_title">Scarica file</string>
     <string name="download_message">Vuoi scaricare %1$s?</string>
     <string name="download_positive">Scarica</string>
-    <string name="permission_error_title">Errore permessi</string>
-    <string name="permission_error_storage">Browser deve accedere alla memoria per scaricare i file. Autorizza l\'accesso per salvare i file dal web</string>
-    <string name="permission_error_ask_again">Chiedi di nuovo</string>
-    <string name="permission_error_forever">Permesso negato. Abilitalo dalle impostazioni</string>
     <string name="settings_title">Impostazioni</string>
     <string name="pref_search_engine">Motore di ricerca</string>
     <string name="pref_start_page">Pagina iniziale</string>

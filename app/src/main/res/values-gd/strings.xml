@@ -35,10 +35,6 @@
     <string name="download_title">Luchdaich am faidhle a-nuas</string>
     <string name="download_message">A bheil thu airson %1$s a luchdadh a-nuas?</string>
     <string name="download_positive">Luchdaich a-nuas</string>
-    <string name="permission_error_title">Mearachd le cead</string>
-    <string name="permission_error_storage">Feumaidh am brabhsair inntrigeadh dhan stòras airson faidhlichean a luchdadh a-nuas. Thoir cead dha airson faidhlichean on lìon a shàbhaladh</string>
-    <string name="permission_error_ask_again">Faighnich dhìom a-rithist</string>
-    <string name="permission_error_forever">Chaidh an cead a dhiùltadh gu buan. Thoir cead dha sna roghainnean</string>
     <string name="settings_title">Roghainnean</string>
     <string name="pref_search_engine">Einnsean-luirg</string>
     <string name="pref_start_page">An duilleag-dhachaigh</string>

@@ -35,7 +35,6 @@
     <string name="download_title">Ladda ner fil</string>
     <string name="download_message">Vill du ladda ner %1$s?</string>
     <string name="download_positive">Ladda ner</string>
-    <string name="permission_error_ask_again">Fråga igen</string>
     <string name="settings_title">Inställningar</string>
     <string name="pref_search_engine">Sökmotor</string>
     <string name="pref_start_page">Hemsida</string>

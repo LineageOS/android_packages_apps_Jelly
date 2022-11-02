@@ -35,10 +35,6 @@
     <string name="download_title">Lataa tiedosto</string>
     <string name="download_message">Haluatko ladata kohteen %1$s?</string>
     <string name="download_positive">Lataa</string>
-    <string name="permission_error_title">Käyttöoikeus-virhe</string>
-    <string name="permission_error_storage">Selain tarvitsee oikeudet ladatakseen tiedostoja. Ole ystävällinen ja myönnä oikeudet</string>
-    <string name="permission_error_ask_again">Kysy uudelleen</string>
-    <string name="permission_error_forever">Oikeudet estetty. Salli oikeudet asetuksista</string>
     <string name="settings_title">Asetukset</string>
     <string name="pref_search_engine">Hakukone</string>
     <string name="pref_start_page">Kotisivu</string>

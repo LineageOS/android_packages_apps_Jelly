@@ -34,10 +34,6 @@
     <string name="download_title">Deskargatu fitxategia</string>
     <string name="download_message">%1$s deskargatu nahi duzu?</string>
     <string name="download_positive">Deskargatu</string>
-    <string name="permission_error_title">Baimen errorea</string>
-    <string name="permission_error_storage">Nabigatzaileak biltegiratzera sarbidea behar du fitxategiak deskargatzeko. Emaiozu baimena webetik fitxategiak deskargatu ahal izateko</string>
-    <string name="permission_error_ask_again">Galdetu berriro</string>
-    <string name="permission_error_forever">Baimena behin betiko ukatu da. Mesedez baimendu ezarpenetan</string>
     <string name="settings_title">Ezarpenak</string>
     <string name="pref_search_engine">Bilatzailea</string>
     <string name="pref_start_page">Hasiera orria</string>

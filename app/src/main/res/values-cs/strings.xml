@@ -35,10 +35,6 @@
     <string name="download_title">Stáhnout soubor</string>
     <string name="download_message">Chcete stáhnout %1$s?</string>
     <string name="download_positive">Stáhnout</string>
-    <string name="permission_error_title">Chyba oprávnění</string>
-    <string name="permission_error_storage">Prohlížeč potřebuje přístup k úložišti ke stahování souborů. Prosím, udělte oprávnění k uložení souborů z webu</string>
-    <string name="permission_error_ask_again">Vždy se ptát</string>
-    <string name="permission_error_forever">Oprávnění byla natrvalo odepřena. Prosím, povolte je v nastavení</string>
     <string name="settings_title">Nastavení</string>
     <string name="pref_search_engine">Vyhledávač</string>
     <string name="pref_start_page">Domovská stránka</string>

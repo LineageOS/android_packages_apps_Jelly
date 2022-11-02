@@ -35,10 +35,6 @@
     <string name="download_title">Baixar arquivo</string>
     <string name="download_message">Deseja baixar %1$s?</string>
     <string name="download_positive">Baixar</string>
-    <string name="permission_error_title">Erro de permissão</string>
-    <string name="permission_error_storage">O Navegador requer a permissão de armazenamento para baixar arquivos. Autorize o aplicativo para salvar arquivos da web</string>
-    <string name="permission_error_ask_again">Perguntar novamente</string>
-    <string name="permission_error_forever">Permissão negada. Acesse as Configurações para autorizar o aplicativo.</string>
     <string name="settings_title">Configurações</string>
     <string name="pref_search_engine">Mecanismo de pesquisa</string>
     <string name="pref_start_page">Página Inicial</string>

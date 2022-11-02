@@ -35,10 +35,6 @@
     <string name="download_title">파일 다운로드</string>
     <string name="download_message">%1$s 파일을 다운로드하시겠습니까?</string>
     <string name="download_positive">다운로드</string>
-    <string name="permission_error_title">권한 오류</string>
-    <string name="permission_error_storage">브라우저에서 파일을 다운로드하기 위해서는 저장소 접근 권한이 필요합니다. 웹에서 파일을 저장할 수 있도록 권한을 허용해 주세요.</string>
-    <string name="permission_error_ask_again">다시 묻기</string>
-    <string name="permission_error_forever">권한이 영구적으로 거부되었습니다. 설정에서 권한을 허용해 주세요.</string>
     <string name="settings_title">설정</string>
     <string name="pref_search_engine">검색 엔진</string>
     <string name="pref_start_page">홈페이지</string>

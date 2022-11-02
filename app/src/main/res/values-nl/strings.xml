@@ -35,10 +35,6 @@
     <string name="download_title">Bestand downloaden</string>
     <string name="download_message">Wilt u %1$s downloaden?</string>
     <string name="download_positive">Downloaden</string>
-    <string name="permission_error_title">Toestemmingsprobleem</string>
-    <string name="permission_error_storage">Browser heeft toegang nodig tot de opslag om bestanden te kunnen downloaden. Verleen toegang om bestanden op te kunnen slaan vanaf het internet</string>
-    <string name="permission_error_ask_again">Opnieuw vragen</string>
-    <string name="permission_error_forever">Toestemming permanent geweigerd. Kan toegestaan worden in instellingen</string>
     <string name="settings_title">Instellingen</string>
     <string name="pref_search_engine">Zoekmachine</string>
     <string name="pref_start_page">Startpagina</string>

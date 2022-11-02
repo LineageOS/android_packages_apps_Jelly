@@ -35,10 +35,6 @@
     <string name="download_title">Descarga d\'un ficheru</string>
     <string name="download_message">¿Quies baxar «%1$s»?</string>
     <string name="download_positive">Baxar</string>
-    <string name="permission_error_title">Fallu d\'un permisu</string>
-    <string name="permission_error_storage">«Restolador» tien d\'acceder al almacenamientu pa baxar ficheros. Concede esti permisu pa guardar los ficheros de la web</string>
-    <string name="permission_error_ask_again">Volver pidir</string>
-    <string name="permission_error_forever">El permisu negóse pa siempres. Concédelu n\'«Axustes»</string>
     <string name="settings_title">Axustes</string>
     <string name="pref_search_engine">Motor de busca</string>
     <string name="pref_start_page">Páxina d\'aniciu</string>

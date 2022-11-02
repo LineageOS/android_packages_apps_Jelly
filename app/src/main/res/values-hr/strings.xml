@@ -34,10 +34,6 @@
     <string name="download_title">Preuzmi datoteku</string>
     <string name="download_message">Želite li preuzeti %1$s?</string>
     <string name="download_positive">Preuzmi</string>
-    <string name="permission_error_title">Pogreška dopuštenja</string>
-    <string name="permission_error_storage">Preglednik treba pristup prostoru za pohranu za preuzimanje datoteka. Dopustite da spremi datoteke s weba</string>
-    <string name="permission_error_ask_again">Pitaj ponovno</string>
-    <string name="permission_error_forever">Dopuštenje je odbijeno trajno. Omogućite ga u postavkama</string>
     <string name="settings_title">Postavke</string>
     <string name="pref_search_engine">Tražilica</string>
     <string name="pref_start_page">Početna stranica</string>

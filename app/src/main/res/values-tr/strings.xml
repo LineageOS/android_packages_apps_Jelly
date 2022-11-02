@@ -35,10 +35,6 @@
     <string name="download_title">Dosyayı indir</string>
     <string name="download_message">%1$s dosyasını indirmek istiyor musunuz?</string>
     <string name="download_positive">İndir</string>
-    <string name="permission_error_title">İzin hatası</string>
-    <string name="permission_error_storage">Tarayıcı, dosyaları indirmek için depolama erişimine ihtiyaç duyar. Lütfen web\'den dosya indirmek için izin verin</string>
-    <string name="permission_error_ask_again">Tekrar sor</string>
-    <string name="permission_error_forever">İzin kalıcı olarak reddedildi. Lütfen ayarlardan izin verin</string>
     <string name="settings_title">Ayarlar</string>
     <string name="pref_search_engine">Arama motoru</string>
     <string name="pref_start_page">Ana sayfa</string>

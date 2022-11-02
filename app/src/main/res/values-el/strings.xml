@@ -35,10 +35,6 @@
     <string name="download_title">Λήψη αρχείου</string>
     <string name="download_message">Θέλετε να κάνετε λήψη του %1$s;</string>
     <string name="download_positive">Λήψη</string>
-    <string name="permission_error_title">Σφάλμα δικαιωμάτων</string>
-    <string name="permission_error_storage">Το πρόγραμμα περιήγησης χρειάζεται πρόσβαση στο χώρο αποθήκευσης για τη λήψη αρχείων. Παρακαλούμε επιτρέψτε την για να αποθηκεύσετε αρχεία από το διαδίκτυο</string>
-    <string name="permission_error_ask_again">Ερώτηση ξανά</string>
-    <string name="permission_error_forever">Η άδεια αποκλείστηκε οριστικά. Παρακαλώ επιτρέψτε την στις ρυθμίσεις</string>
     <string name="settings_title">Ρυθμίσεις</string>
     <string name="pref_search_engine">Μηχανή αναζήτησης</string>
     <string name="pref_start_page">Αρχική σελίδα</string>

@@ -35,10 +35,6 @@
     <string name="download_title">Datei herunterladen</string>
     <string name="download_message">Möchtest du %1$s herunterladen?</string>
     <string name="download_positive">Herunterladen</string>
-    <string name="permission_error_title">Berechtigungsfehler</string>
-    <string name="permission_error_storage">Der Browser benötigt Zugriff auf den Speicher, um Dateien herunterladen zu können. Bitte erlauben, um Dateien aus dem Netz zu speichern</string>
-    <string name="permission_error_ask_again">Erneut fragen</string>
-    <string name="permission_error_forever">Berechtigung dauerhaft verweigert. Bitte in den Einstellungen erlauben</string>
     <string name="settings_title">Einstellungen</string>
     <string name="pref_search_engine">Suchmaschine</string>
     <string name="pref_start_page">Startseite</string>

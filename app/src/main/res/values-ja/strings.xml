@@ -35,10 +35,6 @@
     <string name="download_title">ファイルのダウンロード</string>
     <string name="download_message">%1$s をダウンロードしますか？</string>
     <string name="download_positive">ダウンロード</string>
-    <string name="permission_error_title">権限エラー</string>
-    <string name="permission_error_storage">ブラウザがファイルをダウンロードするためにストレージ権限が必要です。ファイルを保存するには許可してください。</string>
-    <string name="permission_error_ask_again">次回も確認する</string>
-    <string name="permission_error_forever">権限が拒否されました。設定から許可してください</string>
     <string name="settings_title">設定</string>
     <string name="pref_search_engine">検索エンジン</string>
     <string name="pref_start_page">ホームページ</string>

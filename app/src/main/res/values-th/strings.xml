@@ -35,10 +35,6 @@
     <string name="download_title">ดาวน์โหลดไฟล์</string>
     <string name="download_message">คุณต้องการดาวน์โหลด %1$s หรือไม่</string>
     <string name="download_positive">ดาวน์โหลด</string>
-    <string name="permission_error_title">เกิดข้อผิดพลาดในการอนุญาต</string>
-    <string name="permission_error_storage">เบราว์เซอร์ต้องการเก็บการเข้าถึงไฟล์ดาวน์โหลด โปรดอนุญาตเพื่อบันทึกไฟล์จากเว็บ</string>
-    <string name="permission_error_ask_again">ถามอีกครั้ง</string>
-    <string name="permission_error_forever">การให้สิทธิ์​ถูกปฏิเสธอย่างถาวร โปรดให้สิทธิ์ในการตั้งค่า</string>
     <string name="settings_title">การตั้งค่า</string>
     <string name="pref_search_engine">เครื่องมือค้นหา</string>
     <string name="pref_start_page">หน้าหลัก</string>

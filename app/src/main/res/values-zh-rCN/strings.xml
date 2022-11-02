@@ -35,10 +35,6 @@
     <string name="download_title">下载文件</string>
     <string name="download_message">您想要下载 %1$s 吗？</string>
     <string name="download_positive">下载</string>
-    <string name="permission_error_title">权限错误</string>
-    <string name="permission_error_storage">浏览器需要获取存储空间使用权限。请授予权限以便于从网页上下载文件</string>
-    <string name="permission_error_ask_again">再次询问</string>
-    <string name="permission_error_forever">权限请求被永久拒绝。请在系统设置中给予权限</string>
     <string name="settings_title">设置</string>
     <string name="pref_search_engine">搜索引擎</string>
     <string name="pref_start_page">主页</string>

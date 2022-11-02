@@ -35,10 +35,6 @@
     <string name="download_title">Descărcați fișierul</string>
     <string name="download_message">Doriţi să descărcați %1$s?</string>
     <string name="download_positive">Descărcați</string>
-    <string name="permission_error_title">Eroare permisiune</string>
-    <string name="permission_error_storage">Browser-ul are nevoie de acces de stocare pentru a descărca fişiere. Vă rugăm să o acordați pentru a salva fişiere de pe web</string>
-    <string name="permission_error_ask_again">Cere din nou</string>
-    <string name="permission_error_forever">Permisiune refuzată permanent. Vă rugăm să o acordați în setări</string>
     <string name="settings_title">Setări</string>
     <string name="pref_search_engine">Motor de căutare</string>
     <string name="pref_start_page">Pagina principală</string>

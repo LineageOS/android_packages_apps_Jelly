@@ -35,10 +35,6 @@
     <string name="download_title">下載檔案</string>
     <string name="download_message">您想下載「%1$s」嗎？</string>
     <string name="download_positive">下載</string>
-    <string name="permission_error_title">權限許可錯誤</string>
-    <string name="permission_error_storage">瀏覽器需要存取儲存空間的使用權限。請授予權限以便儲存網頁中的檔案。</string>
-    <string name="permission_error_ask_again">再次詢問</string>
-    <string name="permission_error_forever">權限被永久拒絕。請在設定中進行授予</string>
     <string name="settings_title">設定</string>
     <string name="pref_search_engine">搜尋引擎</string>
     <string name="pref_start_page">首頁</string>

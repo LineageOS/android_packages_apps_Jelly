@@ -34,10 +34,6 @@
     <string name="download_title">Laai lêer af</string>
     <string name="download_message">Wil jy %1$s aflaai?</string>
     <string name="download_positive">Laai af</string>
-    <string name="permission_error_title">Toestemmingsfout</string>
-    <string name="permission_error_storage">Blaaier benodig stoor spasie toegang om af te laai. Verleen asseblief toestemming om lêers te stoor van die web</string>
-    <string name="permission_error_ask_again">Vra weer</string>
-    <string name="permission_error_forever">Toestemming permanent geweier. Laat asseblief in instellings toe</string>
     <string name="settings_title">Instellings</string>
     <string name="pref_search_engine">Soekenjin</string>
     <string name="pref_start_page">Tuisblad</string>

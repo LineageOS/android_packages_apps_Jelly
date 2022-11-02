@@ -35,10 +35,6 @@
     <string name="download_title">Bestân downloade</string>
     <string name="download_message">Wolle jo %1$s downloade?</string>
     <string name="download_positive">Downloade</string>
-    <string name="permission_error_title">Machtigingsprobleem</string>
-    <string name="permission_error_storage">Browser hat tagong nedich ta it ûnthâld om bestannen downloade te kinnen. Ferlien tagong om bestannen fan it ynternet ôf te bewarjen</string>
-    <string name="permission_error_ask_again">Opnij freegje</string>
-    <string name="permission_error_forever">Tastimming permanint wegere. Kin tastien wurde yn ynstellingen</string>
     <string name="settings_title">Ynstellingen</string>
     <string name="pref_search_engine">Sykmasine</string>
     <string name="pref_start_page">Startside</string>

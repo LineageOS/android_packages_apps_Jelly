@@ -35,10 +35,6 @@
     <string name="download_title">Sider afaylu</string>
     <string name="download_message">Tebɣiḍ ad tessidreḍ %1$s?</string>
     <string name="download_positive">Sider</string>
-    <string name="permission_error_title">Tuccḍa n tasiregt</string>
-    <string name="permission_error_storage">Iminig iḥwej tasiregt unekcum ar usekles iw-sider n ifuyla. Ttxilek efkk-iṭ iwakken ad-isekles ifuyla seg l-Web</string>
-    <string name="permission_error_ask_again">Ssuter tikkelt-nniḍen</string>
-    <string name="permission_error_forever">Tasiregt tegdel i lebda. Ttxilek efkk-iṭ deg γewwaṛen</string>
     <string name="settings_title">Iɣewwaṛen</string>
     <string name="pref_search_engine">Amsedday n unadi</string>
     <string name="pref_start_page">Asebter agejdan</string>

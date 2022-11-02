@@ -35,10 +35,6 @@
     <string name="download_title">Download file</string>
     <string name="download_message">Do you want to download %1$s?</string>
     <string name="download_positive">Download</string>
-    <string name="permission_error_title">Permission error</string>
-    <string name="permission_error_storage">Browser needs storage access to download files. Please grant it to save files from the web</string>
-    <string name="permission_error_ask_again">Ask again</string>
-    <string name="permission_error_forever">Permission denied permanently. Please grant it in settings</string>
     <string name="settings_title">Settings</string>
     <string name="pref_search_engine">Search engine</string>
     <string name="pref_start_page">Home page</string>

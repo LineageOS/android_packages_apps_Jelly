@@ -35,10 +35,6 @@
     <string name="download_title">Преузимање датотеке</string>
     <string name="download_message">Желите ли да преузмете „%1$s“?</string>
     <string name="download_positive">Преузми</string>
-    <string name="permission_error_title">Грешка у дозволама</string>
-    <string name="permission_error_storage">Прегледач захтева приступ меморијском простору за преузимање датотека. Одобрите га да бисте чували датотеке са интернета.</string>
-    <string name="permission_error_ask_again">Питај поново</string>
-    <string name="permission_error_forever">Дозвола је одбијена. Доделите је у подешавањима.</string>
     <string name="settings_title">Подешавања</string>
     <string name="pref_search_engine">Претраживач</string>
     <string name="pref_start_page">Почетна страница</string>

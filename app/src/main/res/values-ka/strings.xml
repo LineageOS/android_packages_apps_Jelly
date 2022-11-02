@@ -35,10 +35,6 @@
     <string name="download_title">ფაილის ჩამოტვირთვა</string>
     <string name="download_message">ჩამოიტვირთოს %1$s?</string>
     <string name="download_positive">ჩამოტვირთვა</string>
-    <string name="permission_error_title">ნებართვის შეცდომა</string>
-    <string name="permission_error_storage">ბრაუზერი საჭიროებს მეხსიერებასთან წვდომას ფაილების ჩასაწერად. გთხოვთ, დართოთ ნება ინტერნეტიდან ფაილების შენახვის</string>
-    <string name="permission_error_ask_again">კვლავ შეკითხვა</string>
-    <string name="permission_error_forever">წვდომა სამუდამოდ აკრძალულია. გთხოვთ, დართოთ ნება პარამეტრებში</string>
     <string name="settings_title">პარამეტრები</string>
     <string name="pref_search_engine">საძიებო სისტემა</string>
     <string name="pref_start_page">საწყისი გვერდი</string>

@@ -14,7 +14,6 @@
      limitations under the License.
 -->
 <resources>
-    <string name="permission_error_forever">Heimild endanlega hafnað. Gefðu heimild í stillingunum</string>
     <string name="pref_start_page_dialog_message">Skrifa URL-slóð heimasíðu</string>
     <string name="pref_looklock_summary">Hindra önnur forrit í að lesa efni í vafranum</string>
     <string name="pref_cookie_summary">Leyfa vefsvæðum að vista og hlaða inn vefkökum</string>

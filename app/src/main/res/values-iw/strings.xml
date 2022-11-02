@@ -34,10 +34,6 @@
     <string name="download_title">הורד קובץ</string>
     <string name="download_message">האם להוריד את \"%1$s\"?</string>
     <string name="download_positive">הורד</string>
-    <string name="permission_error_title">שגיאת הרשאות</string>
-    <string name="permission_error_storage">הדפדפן צריך גישה לאחסון כדי להוריד קבצים. אנא אשר את את הבקשה כדי לשמור קבצים מהאינטרנט</string>
-    <string name="permission_error_ask_again">שאל שוב</string>
-    <string name="permission_error_forever">ההרשאות נדחות באופן קבוע. אנא אשר דרך ההגדרות</string>
     <string name="settings_title">הגדרות</string>
     <string name="pref_search_engine">מנוע חיפוש</string>
     <string name="pref_start_page">דף הבית</string>

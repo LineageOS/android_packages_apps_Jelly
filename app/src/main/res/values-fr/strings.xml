@@ -35,10 +35,6 @@
     <string name="download_title">Télécharger le fichier</string>
     <string name="download_message">Voulez-vous télécharger %1$s ?</string>
     <string name="download_positive">Télécharger</string>
-    <string name="permission_error_title">Erreur d\'autorisation</string>
-    <string name="permission_error_storage">Le navigateur a besoin d\'un accès au stockage pour télécharger des fichiers. Veuillez accorder cet accès pour enregistrer des fichiers depuis le web</string>
-    <string name="permission_error_ask_again">Demander à nouveau</string>
-    <string name="permission_error_forever">Autorisation refusée de façon permanente. Veuillez accorder l\'accès dans les paramètres</string>
     <string name="settings_title">Paramètres</string>
     <string name="pref_search_engine">Moteur de recherche</string>
     <string name="pref_start_page">Page d\'accueil</string>

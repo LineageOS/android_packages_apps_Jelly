@@ -35,10 +35,6 @@
     <string name="download_title">تنزيل الملف</string>
     <string name="download_message">هل تريد تنزيل %1$s؟</string>
     <string name="download_positive">تنزيل</string>
-    <string name="permission_error_title">خطأ في إذن الوصول</string>
-    <string name="permission_error_storage">يحتاج المتصفح الوصول إلى وحدة التخزين لتنزيل الملفات. الرجاء السماح له لحفظ الملفات من الويب</string>
-    <string name="permission_error_ask_again">السؤال مرة أخرى</string>
-    <string name="permission_error_forever">إذن مرفوض بشكل دائم. الرجاء السماح لذلك في الإعدادات</string>
     <string name="settings_title">الإعدادات</string>
     <string name="pref_search_engine">محرك البحث</string>
     <string name="pref_start_page">الصفحة الرئيسية</string>

@@ -35,10 +35,6 @@
     <string name="download_title">Faylı endir</string>
     <string name="download_message">%1$s faylını endirmək istəyirsiniz?</string>
     <string name="download_positive">Endir</string>
-    <string name="permission_error_title">İcazə xətası</string>
-    <string name="permission_error_storage">Səyyahın faylları endirmək üçün anbara müraciətə ehtiyacı var. Zəhmət olmasa vebdən fayl endirmək üçün icazə verin</string>
-    <string name="permission_error_ask_again">Təkrar soruş</string>
-    <string name="permission_error_forever">İcazə birdəfəlik rədd edildi. Zəhmət olmasa tənzimləmələrdən icazə verin</string>
     <string name="settings_title">Tənzimləmələr</string>
     <string name="pref_search_engine">Axtarış motoru</string>
     <string name="pref_start_page">Əsas səhifə</string>

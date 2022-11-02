@@ -35,10 +35,6 @@
     <string name="download_title">Baixa el fitxer</string>
     <string name="download_message">Vols baixar %1$s?</string>
     <string name="download_positive">Baixa</string>
-    <string name="permission_error_title">Error de permís</string>
-    <string name="permission_error_storage">El navegador necessita accés d\'emmagatzematge per baixar arxius. Permeteu-lo per baixar arxius des de la web</string>
-    <string name="permission_error_ask_again">Torna a preguntar</string>
-    <string name="permission_error_forever">Permís denegat permanentment. Permetre\'l a configuració</string>
     <string name="settings_title">Configuració</string>
     <string name="pref_search_engine">Motor de cerca</string>
     <string name="pref_start_page">Pàgina d\'inici</string>

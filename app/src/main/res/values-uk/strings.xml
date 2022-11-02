@@ -35,10 +35,6 @@
     <string name="download_title">Завантажити файл</string>
     <string name="download_message">Завантажити файл «%1$s»?</string>
     <string name="download_positive">Завантажити</string>
-    <string name="permission_error_title">Помилка дозволу</string>
-    <string name="permission_error_storage">Щоб завантажувати файли, браузер повинен мати доступ до сховища. Будь ласка, надайте доступ, щоб зберігати файли з Інтернету</string>
-    <string name="permission_error_ask_again">Запитати знову</string>
-    <string name="permission_error_forever">Відмовлено у дозволі. Будь ласка, надайте дозвіл у налаштуваннях</string>
     <string name="settings_title">Налаштування</string>
     <string name="pref_search_engine">Пошукова система</string>
     <string name="pref_start_page">Домашня сторінка</string>
