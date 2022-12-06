@@ -16,6 +16,24 @@
       "message": "uh weird, why are they null?",
       "revId": "cb3ab6edb491cc2164914d07697aa3b6c80f9fad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17822635_41774a89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2022-12-06T20:31:19Z",
+      "side": 1,
+      "message": "getMimeTypeFromExtension() is @Nullable and we can\u0027t pass nullable type to launch() since QPR1.\n\n```\npackages/apps/Jelly/app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt:63:31: error: type mismatch: inferred type is String? but String was expected\n            getContent.launch(params.acceptTypes.map {\n                              ^\n```",
+      "parentUuid": "73b9a43f_cf4d57af",
+      "revId": "cb3ab6edb491cc2164914d07697aa3b6c80f9fad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
