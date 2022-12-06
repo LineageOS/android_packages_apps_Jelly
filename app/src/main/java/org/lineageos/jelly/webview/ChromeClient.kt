@@ -60,7 +60,7 @@ internal class ChromeClient(
         }
 
         try {
-            getContent.launch(params.acceptTypes.map {
+            getContent.launch(params.acceptTypes.mapNotNull {
                 MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
             }.toTypedArray())
         } catch (e: ActivityNotFoundException) {
