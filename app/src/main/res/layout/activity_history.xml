@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
@@ -45,7 +46,7 @@
             <ImageView
                 style="@style/AppTheme.EmptyImage"
                 android:src="@drawable/ic_history"
-                android:tint="@color/empty_image" />
+                app:tint="@color/empty_image" />
 
             <TextView
                 style="@style/AppTheme.EmptyText"
