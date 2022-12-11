@@ -35,6 +35,7 @@ import android.net.http.HttpResponseCache
 import android.os.*
 import android.print.PrintAttributes
 import android.print.PrintManager
+import android.provider.Settings
 import android.text.TextUtils
 import android.util.Log
 import android.view.*
@@ -666,7 +667,10 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        setImmersiveMode(hasFocus && mCustomView != null)
+        if (Settings.Secure.getString(contentResolver,
+                "immersive_mode_confirmations")?.isNotEmpty() == true) {
+            setImmersiveMode(hasFocus && mCustomView != null)
+        }
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
