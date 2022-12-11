@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fa0722c_bb4ac985",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 17945
+      },
+      "writtenOn": "2022-12-11T21:45:55Z",
+      "side": 1,
+      "message": "While this is hidden in the SDK, I have added this since I wasn\u0027t sure of a reason why setImmersiveMode is called here.\n\nAlternatively, we can remove the call from the next line entirely.\n\nI tried that way and I couldn\u0027t find any regression when playing fullscreen videos.\n\nNeed others\u0027 thoughts on this.",
+      "range": {
+        "startLine": 706,
+        "startChar": 56,
+        "endLine": 706,
+        "endChar": 84
+      },
+      "revId": "5d701e86ab8c942f84a3a611c98bcdaa67d03cc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
