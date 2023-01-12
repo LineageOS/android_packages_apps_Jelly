@@ -16,6 +16,29 @@
       "message": "This bug is pretty easy to reproduce, tested all the way back to android 10 and we see the same behavior.\nHaven\u0027t noticed any regressions from this change either.",
       "revId": "b026c931637d5ba7bb8cd5d66993367a4f1f9816",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "633434ae_ac30b7a6",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-01-12T09:48:49Z",
+      "side": 1,
+      "message": "Doesn\u0027t it fit in a single line?",
+      "range": {
+        "startLine": 706,
+        "startChar": 0,
+        "endLine": 707,
+        "endChar": 20
+      },
+      "revId": "b026c931637d5ba7bb8cd5d66993367a4f1f9816",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
