@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94ab1dc3_c57b3b22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2023-02-12T17:08:54Z",
+      "side": 1,
+      "message": "confirmed that this fixes the dialog after a factory reset",
+      "revId": "eb25eb8f469148e7a9a8a0e87d5b2b1f1a23bf2b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
