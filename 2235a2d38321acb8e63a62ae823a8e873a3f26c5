@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67c3cf81_4dc3a314",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2023-02-13T10:53:10Z",
+      "side": 1,
+      "message": "Did you verify that the string is actually null after a factory reset?\nOn lineage-20 it wasn\u0027t for me, so without manually dropping the setting via `adb shell settings delete secure immersive_mode_confirmations` this change had no effect. The default value is an empty string. The lineage-20 pick replaced !\u003d null with TextUtils.isEmpty() to fix this.",
+      "revId": "2235a2d38321acb8e63a62ae823a8e873a3f26c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
