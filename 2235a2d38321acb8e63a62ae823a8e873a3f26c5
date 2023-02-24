@@ -34,6 +34,24 @@
       "parentUuid": "67c3cf81_4dc3a314",
       "revId": "2235a2d38321acb8e63a62ae823a8e873a3f26c5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60d63563_61ada4fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2023-02-24T22:42:47Z",
+      "side": 1,
+      "message": "it might be an empty string \"\" instead of null though",
+      "parentUuid": "949a5867_bb6f774e",
+      "revId": "2235a2d38321acb8e63a62ae823a8e873a3f26c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
