@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Kotlin Files" pattern="file[Jelly.app]:*/*.kt" />
+</component>
