@@ -16,6 +16,29 @@
       "message": "Would still prefer to just disable immersive mode prompts globally, since they are broken for other apps as well.",
       "revId": "2d711931595d3378060fdf6847018bde4cfb0aeb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a3dddc2_cd2e7c24",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2023-03-16T16:05:40Z",
+      "side": 1,
+      "message": "What\u0027s the point of this? :\u0027)",
+      "range": {
+        "startLine": 671,
+        "startChar": 61,
+        "endLine": 671,
+        "endChar": 69
+      },
+      "revId": "2d711931595d3378060fdf6847018bde4cfb0aeb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
