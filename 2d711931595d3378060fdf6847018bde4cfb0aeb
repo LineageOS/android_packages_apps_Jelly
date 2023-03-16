@@ -39,6 +39,24 @@
       },
       "revId": "2d711931595d3378060fdf6847018bde4cfb0aeb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec8cef5c_ba106a6d",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-03-16T16:06:26Z",
+      "side": 1,
+      "message": "that\u0027s how nullable works in kotlin.",
+      "parentUuid": "6a3dddc2_cd2e7c24",
+      "revId": "2d711931595d3378060fdf6847018bde4cfb0aeb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
