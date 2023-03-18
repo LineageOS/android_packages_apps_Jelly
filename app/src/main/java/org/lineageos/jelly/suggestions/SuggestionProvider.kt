@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,7 +139,7 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
         }
         val contentType = connection.contentType
         for (value in contentType.split(";").toTypedArray().map { str -> str.trim { it <= ' ' } }) {
-            if (value.toLowerCase(Locale.US).startsWith("charset=")) {
+            if (value.lowercase(Locale.US).startsWith("charset=")) {
                 return value.substring(8)
             }
         }

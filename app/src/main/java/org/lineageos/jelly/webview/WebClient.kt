@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,7 +116,11 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
         } else {
             val packageName = intent.getPackage()
             if (packageName != null
-                    && context.packageManager.resolveActivity(intent, 0) == null) {
+                && context.packageManager.resolveActivity(
+                    intent,
+                    PackageManager.ResolveInfoFlags.of(0)
+                ) == null
+            ) {
                 // Explicit intent, but app is not installed - try to redirect to Play Store
                 val storeUri = Uri.parse("market://search?q=pname:$packageName")
                 intent = Intent(Intent.ACTION_VIEW, storeUri)
@@ -135,8 +139,11 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
 
     private fun makeHandlerChooserIntent(context: Context, intent: Intent, url: String): Intent? {
         val pm = context.packageManager
-        val activities = pm.queryIntentActivities(intent,
-                PackageManager.MATCH_DEFAULT_ONLY or PackageManager.GET_RESOLVED_FILTER)
+        val activities = pm.queryIntentActivities(
+            intent, PackageManager.ResolveInfoFlags.of(
+                (PackageManager.MATCH_DEFAULT_ONLY or PackageManager.GET_RESOLVED_FILTER).toLong()
+            )
+        )
         if (activities.isEmpty()) {
             return null
         }
