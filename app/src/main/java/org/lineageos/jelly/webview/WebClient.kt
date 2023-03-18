@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,18 @@
  */
 package org.lineageos.jelly.webview
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.PackageManager.ResolveInfoFlags
 import android.content.pm.ResolveInfo
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.webkit.HttpAuthHandler
@@ -115,8 +118,13 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
             intent = makeHandlerChooserIntent(context, intent, url) ?: return false
         } else {
             val packageName = intent.getPackage()
-            if (packageName != null
-                    && context.packageManager.resolveActivity(intent, 0) == null) {
+            val resolveInfo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                context.packageManager.resolveActivity(intent, ResolveInfoFlags.of(0))
+            } else {
+                @Suppress("DEPRECATION")
+                context.packageManager.resolveActivity(intent, 0)
+            }
+            if (packageName != null && resolveInfo == null) {
                 // Explicit intent, but app is not installed - try to redirect to Play Store
                 val storeUri = Uri.parse("market://search?q=pname:$packageName")
                 intent = Intent(Intent.ACTION_VIEW, storeUri)
@@ -133,10 +141,16 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
         return false
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     private fun makeHandlerChooserIntent(context: Context, intent: Intent, url: String): Intent? {
         val pm = context.packageManager
-        val activities = pm.queryIntentActivities(intent,
-                PackageManager.MATCH_DEFAULT_ONLY or PackageManager.GET_RESOLVED_FILTER)
+        val flags = PackageManager.MATCH_DEFAULT_ONLY or PackageManager.GET_RESOLVED_FILTER
+        val activities = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            pm.queryIntentActivities(intent, ResolveInfoFlags.of(flags.toLong()))
+        } else {
+            @Suppress("Deprecation")
+            pm.queryIntentActivities(intent, flags)
+        }
         if (activities.isEmpty()) {
             return null
         }

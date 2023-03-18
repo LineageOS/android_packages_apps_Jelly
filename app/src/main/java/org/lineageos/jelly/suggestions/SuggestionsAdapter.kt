@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
         if (mQueryText != null) {
             val query = mQueryText!!
             val spannable = SpannableStringBuilder(suggestion)
-            val lcSuggestion = suggestion.toLowerCase(Locale.getDefault())
+            val lcSuggestion = suggestion.lowercase(Locale.getDefault())
             var queryTextPos = lcSuggestion.indexOf(query)
             while (queryTextPos >= 0) {
                 spannable.setSpan(StyleSpan(Typeface.BOLD),
@@ -82,7 +82,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
                 return results
             }
             val provider = provider
-            val query = constraint.toString().toLowerCase(Locale.getDefault()).trim { it <= ' ' }
+            val query = constraint.toString().lowercase(Locale.getDefault()).trim { it <= ' ' }
             if (provider != null) {
                 val items = provider.fetchResults(query)
                 results.count = items.size
@@ -97,7 +97,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
             if (values != null && values is List<*>) {
                 val items = values.filterIsInstance<String>()
                 mItems.addAll(items)
-                mQueryText = constraint.toString().toLowerCase(Locale.getDefault()).trim {
+                mQueryText = constraint.toString().lowercase(Locale.getDefault()).trim {
                     it <= ' '
                 }
             }

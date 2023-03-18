@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  * Copyright (C) 2010 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,7 +48,7 @@ object UrlUtils {
         if (matcher.matches()) {
             // force scheme to lowercase
             val scheme = matcher.group(1)
-            val lcScheme = scheme!!.toLowerCase(Locale.getDefault())
+            val lcScheme = scheme!!.lowercase(Locale.getDefault())
             if (lcScheme != scheme) {
                 inUrl = lcScheme + matcher.group(2)
             }
