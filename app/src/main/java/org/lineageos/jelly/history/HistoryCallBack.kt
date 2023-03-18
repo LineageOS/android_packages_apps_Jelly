@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +71,7 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
                              viewHolder: RecyclerView.ViewHolder,
                              dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
         val view = viewHolder.itemView
-        if (viewHolder.adapterPosition == -1) {
+        if (viewHolder.bindingAdapterPosition == -1) {
             return
         }
         mBackground.setBounds(view.right + dX.toInt(), view.top, view.right,

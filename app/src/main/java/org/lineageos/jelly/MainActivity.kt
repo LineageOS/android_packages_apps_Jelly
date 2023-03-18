@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,14 +91,27 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                     !intent.hasExtra(Intent.EXTRA_RESULT_RECEIVER)) {
                 return
             }
-            val resolvedIntent: Intent = intent.getParcelableExtra(Intent.EXTRA_INTENT)!!
+            val resolvedIntent: Intent =
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    intent.getParcelableExtra(Intent.EXTRA_INTENT, Intent::class.java)!!
+                } else {
+                    @Suppress("Deprecation")
+                    intent.getParcelableExtra(Intent.EXTRA_INTENT)!!
+                }
             if (TextUtils.equals(packageName, resolvedIntent.getPackage())) {
                 val url: String = intent.getStringExtra(IntentUtils.EXTRA_URL)!!
                 mWebView.loadUrl(url)
             } else {
                 startActivity(resolvedIntent)
             }
-            val receiver: ResultReceiver = intent.getParcelableExtra(Intent.EXTRA_RESULT_RECEIVER)!!
+            val receiver: ResultReceiver =
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    intent.getParcelableExtra(Intent.EXTRA_RESULT_RECEIVER,
+                        ResultReceiver::class.java)!!
+                } else {
+                    @Suppress("Deprecation")
+                    intent.getParcelableExtra(Intent.EXTRA_RESULT_RECEIVER)!!
+                }
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
