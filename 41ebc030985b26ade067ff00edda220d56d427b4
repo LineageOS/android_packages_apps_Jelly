@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c625c9_0d57f792",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-03-19T15:32:46Z",
+      "side": 1,
+      "message": "skip the type?",
+      "range": {
+        "startLine": 121,
+        "startChar": 29,
+        "endLine": 121,
+        "endChar": 40
+      },
+      "revId": "41ebc030985b26ade067ff00edda220d56d427b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "216f4494_7283067d",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-03-19T15:32:46Z",
+      "side": 1,
+      "message": "put `\u003d if (...)` here",
+      "revId": "41ebc030985b26ade067ff00edda220d56d427b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
