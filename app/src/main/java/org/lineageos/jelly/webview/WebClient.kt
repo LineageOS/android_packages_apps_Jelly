@@ -182,8 +182,12 @@ internal class WebClient(private val mUrlBarController: UrlBarController) : WebV
         val changeIntent = Intent(IntentUtils.EVENT_URL_RESOLVED)
                 .addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
                 .putExtra(IntentUtils.EXTRA_URL, url)
-        val pi = PendingIntent.getBroadcast(context, 0, changeIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_ONE_SHOT)
+        val pi = PendingIntent.getBroadcast(
+            context, 0, changeIntent,
+            PendingIntent.FLAG_IMMUTABLE
+                    or PendingIntent.FLAG_UPDATE_CURRENT
+                    or PendingIntent.FLAG_ONE_SHOT
+        )
         val chooserIntent = Intent.createChooser(lastIntent, null)
         chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
                 chooserIntents.toTypedArray())
