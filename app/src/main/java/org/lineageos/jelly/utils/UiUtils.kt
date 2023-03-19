@@ -117,10 +117,6 @@ object UiUtils {
         button.alpha = if (enabled) 1.0f else 0.4f
     }
 
-    fun isTablet(context: Context): Boolean {
-        return context.resources.getBoolean(R.bool.is_tablet)
-    }
-
     fun isReachModeEnabled(context: Context): Boolean {
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         return prefs.getBoolean("key_reach_mode", false)

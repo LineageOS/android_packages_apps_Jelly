@@ -19,6 +19,5 @@ object IntentUtils {
     const val EXTRA_DESKTOP_MODE = "extra_desktop_mode"
     const val EXTRA_INCOGNITO = "extra_incognito"
     const val EXTRA_URL = "extra_url"
-    const val EVENT_CHANGE_UI_MODE = "intent_change_ui_mode"
     const val EVENT_URL_RESOLVED = "intent_url_resolved"
 }
