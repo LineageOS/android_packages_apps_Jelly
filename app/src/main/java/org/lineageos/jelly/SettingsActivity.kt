@@ -110,10 +110,8 @@ class SettingsActivity : AppCompatActivity() {
                     .setView(homepageView)
                     .setPositiveButton(android.R.string.ok
                     ) { _: DialogInterface?, _: Int ->
-                        val url = if (editText.text.toString().isEmpty()) {
+                        val url = editText.text.toString().ifEmpty {
                             getString(R.string.default_home_page)
-                        } else {
-                            editText.text.toString()
                         }
                         PrefsUtils.setHomePage(preference.context, url)
                         preference.summary = url

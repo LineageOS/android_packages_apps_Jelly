@@ -34,12 +34,8 @@ import java.util.concurrent.TimeUnit
  * suggestions provider.
  */
 internal abstract class SuggestionProvider(private val mEncoding: String) {
-    private val mLanguage: String
+    private val mLanguage = language
 
-
-    init {
-        mLanguage = language
-    }
 
     /**
      * Create a URL for the given query in the given language.
@@ -80,9 +76,8 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
      * @return a list of history items for the query.
      */
     fun fetchResults(rawQuery: String): List<String> {
-        val filter: MutableList<String> = ArrayList(5)
-        val query: String
-        query = try {
+        val filter = mutableListOf<String>()
+        val query = try {
             URLEncoder.encode(rawQuery, mEncoding)
         } catch (e: UnsupportedEncodingException) {
             Log.e(TAG, "Unable to encode the URL", e)
