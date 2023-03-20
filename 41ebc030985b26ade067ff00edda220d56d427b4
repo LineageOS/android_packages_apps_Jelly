@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80f66735_70961714",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-03-20T23:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63dbd037_8a34f5ca",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 41
+      },
+      "revId": "41ebc030985b26ade067ff00edda220d56d427b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21c625c9_0d57f792",
@@ -71,6 +95,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d138d5b_a1dff137",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-03-20T23:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af68aeab_bebab836",
+      "range": {
+        "startLine": 121,
+        "startChar": 29,
+        "endLine": 121,
+        "endChar": 40
+      },
+      "revId": "41ebc030985b26ade067ff00edda220d56d427b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "216f4494_7283067d",
@@ -84,6 +132,24 @@
       "writtenOn": "2023-03-19T15:32:46Z",
       "side": 1,
       "message": "put `\u003d if (...)` here",
+      "revId": "41ebc030985b26ade067ff00edda220d56d427b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3901744b_ed7cab74",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-03-20T23:36:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "216f4494_7283067d",
       "revId": "41ebc030985b26ade067ff00edda220d56d427b4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
