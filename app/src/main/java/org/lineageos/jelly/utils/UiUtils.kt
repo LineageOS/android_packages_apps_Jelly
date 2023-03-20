@@ -13,11 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.utils
 
 import android.content.Context
 import android.content.res.Resources
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
+import android.graphics.Rect
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -27,7 +34,6 @@ import androidx.annotation.StyleRes
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
 import androidx.preference.PreferenceManager
-import org.lineageos.jelly.R
 
 object UiUtils {
     fun isColorLight(color: Int): Boolean {
@@ -46,8 +52,10 @@ object UiUtils {
     }
 
     fun getShortcutIcon(bitmap: Bitmap, themeColor: Int): Bitmap {
-        val out = Bitmap.createBitmap(bitmap.width, bitmap.width,
-                Bitmap.Config.ARGB_8888)
+        val out = Bitmap.createBitmap(
+            bitmap.width, bitmap.width,
+            Bitmap.Config.ARGB_8888
+        )
         val canvas = Canvas(out)
         val paint = Paint()
         val rect = Rect(0, 0, bitmap.width, bitmap.width)

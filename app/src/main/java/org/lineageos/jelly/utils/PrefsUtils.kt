@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.utils
 
 import android.content.Context
@@ -31,8 +32,10 @@ object PrefsUtils {
     private const val KEY_SUGGESTION_PROVIDER = "key_suggestion_provider"
     fun getSearchEngine(context: Context): String {
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        return prefs.getString(KEY_SEARCH_ENGINE,
-                context.getString(R.string.default_search_engine))!!
+        return prefs.getString(
+            KEY_SEARCH_ENGINE,
+            context.getString(R.string.default_search_engine)
+        )!!
     }
 
     fun getHomePage(context: Context): String {
@@ -73,8 +76,10 @@ object PrefsUtils {
     fun getSuggestionProvider(context: Context): SuggestionProviderType {
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         return try {
-            val value = prefs.getString(KEY_SUGGESTION_PROVIDER,
-                    context.getString(R.string.default_suggestion_provider))!!
+            val value = prefs.getString(
+                KEY_SUGGESTION_PROVIDER,
+                context.getString(R.string.default_suggestion_provider)
+            )!!
             SuggestionProviderType.valueOf(value)
         } catch (ignored: IllegalArgumentException) {
             SuggestionProviderType.NONE

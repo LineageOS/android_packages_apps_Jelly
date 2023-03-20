@@ -13,10 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.ui
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Rect
+import android.graphics.Shader
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView
 
@@ -72,11 +77,15 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
     }
 
     companion object {
-        private fun getGradient(widthEnd: Float, fadeStart: Float,
-                                stopStart: Float, stopEnd: Float, color: Int): LinearGradient {
-            return LinearGradient(0f, 0f, widthEnd, 0f,
-                    intArrayOf(color, Color.TRANSPARENT, color, color, Color.TRANSPARENT),
-                    floatArrayOf(0f, fadeStart, stopStart, stopEnd, 1f), Shader.TileMode.CLAMP)
+        private fun getGradient(
+            widthEnd: Float, fadeStart: Float,
+            stopStart: Float, stopEnd: Float, color: Int
+        ): LinearGradient {
+            return LinearGradient(
+                0f, 0f, widthEnd, 0f,
+                intArrayOf(color, Color.TRANSPARENT, color, color, Color.TRANSPARENT),
+                floatArrayOf(0f, fadeStart, stopStart, stopEnd, 1f), Shader.TileMode.CLAMP
+            )
         }
     }
 }

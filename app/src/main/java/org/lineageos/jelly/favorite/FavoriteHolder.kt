@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.favorite
 
 import android.content.Context
@@ -49,5 +50,4 @@ class FavoriteHolder(view: View) : RecyclerView.ViewHolder(view) {
             true
         }
     }
-
 }

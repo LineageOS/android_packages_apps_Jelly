@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.suggestions
 
 /**
  * Search suggestions provider for Yahoo search engine.
  */
 internal class YahooSuggestionProvider : SuggestionProvider("UTF-8") {
-    override fun createQueryUrl(query: String,
-                                language: String): String {
+    override fun createQueryUrl(
+        query: String,
+        language: String
+    ): String {
         return "https://search.yahoo.com/sugg/chrome?output=fxjson&command=$query"
     }
 }

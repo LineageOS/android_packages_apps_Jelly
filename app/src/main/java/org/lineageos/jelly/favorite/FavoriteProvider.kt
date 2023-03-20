@@ -13,9 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.favorite
 
-import android.content.*
+import android.content.ContentProvider
+import android.content.ContentResolver
+import android.content.ContentUris
+import android.content.ContentValues
+import android.content.Context
+import android.content.UriMatcher
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -29,11 +35,15 @@ class FavoriteProvider : ContentProvider() {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
         private val sURIMatcher = UriMatcher(UriMatcher.NO_MATCH)
-        fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String,
-                            color: Int) {
+        fun addOrUpdateItem(
+            resolver: ContentResolver, title: String?, url: String,
+            color: Int
+        ) {
             var existingId: Long = -1
-            val cursor = resolver.query(Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
-                    Columns.URL + "=?", arrayOf(url), null)
+            val cursor = resolver.query(
+                Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
+                Columns.URL + "=?", arrayOf(url), null
+            )
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
                     existingId = cursor.getLong(0)
@@ -44,8 +54,10 @@ class FavoriteProvider : ContentProvider() {
             values.put(Columns.TITLE, title)
             values.put(Columns.COLOR, color)
             if (existingId >= 0) {
-                resolver.update(ContentUris.withAppendedId(Columns.CONTENT_URI, existingId),
-                        values, null, null)
+                resolver.update(
+                    ContentUris.withAppendedId(Columns.CONTENT_URI, existingId),
+                    values, null, null
+                )
             } else {
                 values.put(Columns.URL, url)
                 resolver.insert(Columns.CONTENT_URI, values)
@@ -71,9 +83,11 @@ class FavoriteProvider : ContentProvider() {
         return true
     }
 
-    override fun query(uri: Uri, projection: Array<String>?,
-                       selection: String?, selectionArgs: Array<String>?,
-                       sortOrder: String?): Cursor? {
+    override fun query(
+        uri: Uri, projection: Array<String>?,
+        selection: String?, selectionArgs: Array<String>?,
+        sortOrder: String?
+    ): Cursor? {
         val qb = SQLiteQueryBuilder()
         val match = sURIMatcher.match(uri)
         qb.tables = FavoriteDbHelper.DB_TABLE_FAVORITES
@@ -106,21 +120,28 @@ class FavoriteProvider : ContentProvider() {
         return ContentUris.withAppendedId(Columns.CONTENT_URI, rowID)
     }
 
-    override fun update(uri: Uri, values: ContentValues?,
-                        selection: String?, selectionArgs: Array<String>?): Int {
+    override fun update(
+        uri: Uri, values: ContentValues?,
+        selection: String?, selectionArgs: Array<String>?
+    ): Int {
         val count: Int
         val match = sURIMatcher.match(uri)
         val db = mDbHelper.writableDatabase
         count = when (match) {
-            MATCH_ALL -> db.update(FavoriteDbHelper.DB_TABLE_FAVORITES,
-                    values, selection, selectionArgs)
+            MATCH_ALL -> db.update(
+                FavoriteDbHelper.DB_TABLE_FAVORITES,
+                values, selection, selectionArgs
+            )
             MATCH_ID -> {
                 if (selection != null || selectionArgs != null) {
                     throw UnsupportedOperationException(
-                            "Cannot update URI $uri with a where clause")
+                        "Cannot update URI $uri with a where clause"
+                    )
                 }
-                db.update(FavoriteDbHelper.DB_TABLE_FAVORITES,
-                        values, BaseColumns._ID + " = ?", arrayOf(uri.lastPathSegment))
+                db.update(
+                    FavoriteDbHelper.DB_TABLE_FAVORITES,
+                    values, BaseColumns._ID + " = ?", arrayOf(uri.lastPathSegment)
+                )
             }
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
@@ -130,8 +151,10 @@ class FavoriteProvider : ContentProvider() {
         return count
     }
 
-    override fun delete(uri: Uri, selection: String?,
-                        selectionArgs: Array<String>?): Int {
+    override fun delete(
+        uri: Uri, selection: String?,
+        selectionArgs: Array<String>?
+    ): Int {
         var localSelection = selection
         var localSelectionArgs = selectionArgs
         val match = sURIMatcher.match(uri)
@@ -142,7 +165,8 @@ class FavoriteProvider : ContentProvider() {
             MATCH_ID -> {
                 if (localSelection != null || localSelectionArgs != null) {
                     throw UnsupportedOperationException(
-                            "Cannot delete URI $uri with a where clause")
+                        "Cannot delete URI $uri with a where clause"
+                    )
                 }
                 localSelection = BaseColumns._ID + " = ?"
                 uri.lastPathSegment?.let {
@@ -151,8 +175,10 @@ class FavoriteProvider : ContentProvider() {
             }
             else -> throw UnsupportedOperationException("Cannot delete the URI $uri")
         }
-        val count = db.delete(FavoriteDbHelper.DB_TABLE_FAVORITES,
-                localSelection, localSelectionArgs)
+        val count = db.delete(
+            FavoriteDbHelper.DB_TABLE_FAVORITES,
+            localSelection, localSelectionArgs
+        )
         if (count > 0) {
             requireContextExt().contentResolver.notifyChange(Columns.CONTENT_URI, null)
         }
@@ -170,30 +196,38 @@ class FavoriteProvider : ContentProvider() {
     }
 
     private class FavoriteDbHelper constructor(context: Context?) :
-            SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+        SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
         override fun onCreate(db: SQLiteDatabase) {
-            db.execSQL("CREATE TABLE " + DB_TABLE_FAVORITES + " (" +
-                    BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    Columns.TITLE + " TEXT, " +
-                    Columns.URL + " TEXT, " +
-                    Columns.COLOR + " INTEGER)")
+            db.execSQL(
+                "CREATE TABLE " + DB_TABLE_FAVORITES + " (" +
+                        BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        Columns.TITLE + " TEXT, " +
+                        Columns.URL + " TEXT, " +
+                        Columns.COLOR + " INTEGER)"
+            )
         }
 
         override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
             if (oldVersion < 2) {
                 // Recreate table with auto incrementing id column.
-                db.execSQL("CREATE TABLE " + DB_TABLE_FAVORITES + "_new (" +
-                        BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        Columns.TITLE + " TEXT, " +
-                        Columns.URL + " TEXT, " +
-                        Columns.COLOR + " INTEGER)")
-                db.execSQL("INSERT INTO " + DB_TABLE_FAVORITES + "_new("
-                        + Columns.TITLE + ", " + Columns.URL + ", " + Columns.COLOR
-                        + ") SELECT " + Columns.TITLE + ", " + Columns.URL + ", " + Columns.COLOR
-                        + " FROM " + DB_TABLE_FAVORITES)
+                db.execSQL(
+                    "CREATE TABLE " + DB_TABLE_FAVORITES + "_new (" +
+                            BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                            Columns.TITLE + " TEXT, " +
+                            Columns.URL + " TEXT, " +
+                            Columns.COLOR + " INTEGER)"
+                )
+                db.execSQL(
+                    "INSERT INTO " + DB_TABLE_FAVORITES + "_new("
+                            + Columns.TITLE + ", " + Columns.URL + ", " + Columns.COLOR
+                            + ") SELECT " + Columns.TITLE + ", " + Columns.URL + ", " + Columns.COLOR
+                            + " FROM " + DB_TABLE_FAVORITES
+                )
                 db.execSQL("DROP TABLE $DB_TABLE_FAVORITES")
-                db.execSQL("ALTER TABLE " + DB_TABLE_FAVORITES
-                        + "_new RENAME TO " + DB_TABLE_FAVORITES)
+                db.execSQL(
+                    "ALTER TABLE " + DB_TABLE_FAVORITES
+                            + "_new RENAME TO " + DB_TABLE_FAVORITES
+                )
             }
         }
 

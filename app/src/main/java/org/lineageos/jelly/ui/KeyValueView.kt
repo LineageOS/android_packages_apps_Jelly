@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.ui
 
 import android.content.Context
@@ -24,10 +25,10 @@ import androidx.annotation.StringRes
 import org.lineageos.jelly.R
 
 class KeyValueView @JvmOverloads constructor(
-        context: Context,
-        attrs: AttributeSet? = null,
-        defStyle: Int = 0,
-        defStyleRes: Int = 0
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyle: Int = 0,
+    defStyleRes: Int = 0
 ) : LinearLayout(context, attrs, defStyle, defStyleRes) {
     private var mKeyView: TextView? = null
     private var mValueView: TextView? = null

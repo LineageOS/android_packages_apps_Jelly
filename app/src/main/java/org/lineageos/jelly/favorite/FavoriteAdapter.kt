@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.favorite
 
 import android.content.Context
@@ -50,8 +51,10 @@ class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<Favo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): FavoriteHolder {
-        return FavoriteHolder(LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_favorite, parent, false))
+        return FavoriteHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_favorite, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {

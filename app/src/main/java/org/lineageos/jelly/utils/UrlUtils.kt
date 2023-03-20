@@ -14,21 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.utils
 
 import android.util.Patterns
 import android.webkit.URLUtil
-import java.util.*
+import java.util.Locale
 import java.util.regex.Pattern
 
 object UrlUtils {
     val ACCEPTED_URI_SCHEMA: Pattern = Pattern.compile(
-            "(?i)" +  // switch on case insensitive matching
-                    "(" +  // begin group for schema
-                    "(?:http|https|content|file|chrome)://" +
-                    "|(?:inline|data|about|javascript):" +
-                    ")" +
-                    "(.*)"
+        "(?i)" +  // switch on case insensitive matching
+                "(" +  // begin group for schema
+                "(?:http|https|content|file|chrome)://" +
+                "|(?:inline|data|about|javascript):" +
+                ")" +
+                "(.*)"
     )
 
     /**

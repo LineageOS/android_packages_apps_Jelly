@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.utils
 
 import java.io.BufferedReader
@@ -20,8 +21,10 @@ import java.io.InputStream
 import java.io.InputStreamReader
 
 object FileUtils {
-    fun readStringFromStream(inputStream: InputStream,
-                             encoding: String): String {
+    fun readStringFromStream(
+        inputStream: InputStream,
+        encoding: String
+    ): String {
         val reader = BufferedReader(InputStreamReader(inputStream, encoding))
         val result = StringBuilder()
         var line: String?

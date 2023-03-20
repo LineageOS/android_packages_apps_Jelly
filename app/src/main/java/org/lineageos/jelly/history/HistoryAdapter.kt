@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.jelly.history
 
 import android.content.Context
@@ -24,7 +25,8 @@ import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
 import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 class HistoryAdapter(private val mContext: Context) : RecyclerView.Adapter<HistoryHolder>() {
     private val mHistoryDateFormat: DateFormat
@@ -35,8 +37,10 @@ class HistoryAdapter(private val mContext: Context) : RecyclerView.Adapter<Histo
     private var mTimestampColumnIndex = 0
 
     init {
-        mHistoryDateFormat = SimpleDateFormat(mContext.getString(R.string.history_date_format),
-                Locale.getDefault())
+        mHistoryDateFormat = SimpleDateFormat(
+            mContext.getString(R.string.history_date_format),
+            Locale.getDefault()
+        )
         setHasStableIds(true)
     }
 
@@ -56,8 +60,10 @@ class HistoryAdapter(private val mContext: Context) : RecyclerView.Adapter<Histo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): HistoryHolder {
-        return HistoryHolder(LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_history, parent, false))
+        return HistoryHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_history, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: HistoryHolder, position: Int) {

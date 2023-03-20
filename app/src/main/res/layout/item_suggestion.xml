@@ -20,8 +20,8 @@
     android:gravity="center_vertical"
     android:minHeight="60dp"
     android:orientation="horizontal"
-    android:paddingEnd="16dp"
-    android:paddingStart="16dp">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
     <ImageView
         android:id="@+id/suggestionIcon"
