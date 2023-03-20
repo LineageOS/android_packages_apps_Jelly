@@ -48,8 +48,6 @@ import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.view.menu.MenuBuilder
-import androidx.appcompat.view.menu.MenuPopupHelper
 import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -345,10 +343,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                 true
             }
 
-            val helper = MenuPopupHelper(wrapper,
-                    (popupMenu.menu as MenuBuilder), menu)
-            helper.setForceShowIcon(true)
-            helper.show()
+            popupMenu.setForceShowIcon(true)
+            popupMenu.show()
         }
     }
 
