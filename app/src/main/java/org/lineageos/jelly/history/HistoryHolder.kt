@@ -31,18 +31,19 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val mRootLayout: LinearLayout = view.findViewById(R.id.row_history_layout)
-    private val mTitle: TextView = view.findViewById(R.id.row_history_title)
-    private val mSummary: TextView = view.findViewById(R.id.row_history_summary)
+    private val rootLayout = view.findViewById<LinearLayout>(R.id.row_history_layout)
+    private val title = view.findViewById<TextView>(R.id.row_history_title)
+    private val summary = view.findViewById<TextView>(R.id.row_history_summary)
+
     fun bind(context: Context, title: String, url: String, summary: String?, timestamp: Long) {
         val historyTitle = if (TextUtils.isEmpty(title)) {
             url.split("/").toTypedArray()[2]
         } else {
             title
         }
-        mTitle.text = historyTitle
-        mSummary.text = summary
-        mRootLayout.setOnClickListener {
+        this.title.text = historyTitle
+        this.summary.text = summary
+        rootLayout.setOnClickListener {
             val intent = Intent(context, MainActivity::class.java)
             intent.data = Uri.parse(url)
             context.startActivity(intent)
@@ -54,6 +55,6 @@ class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {
             3 -> R.color.history_this_month
             else -> R.color.history_earlier
         }
-        mRootLayout.background = ColorDrawable(ContextCompat.getColor(context, background))
+        rootLayout.background = ColorDrawable(ContextCompat.getColor(context, background))
     }
 }

@@ -35,13 +35,13 @@ class WebViewExt @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : WebView(context, attrs, defStyle) {
-    private lateinit var mActivity: WebViewExtActivity
-    private val mRequestHeaders: MutableMap<String?, String?> = HashMap()
-    private var mMobileUserAgent: String? = null
-    private var mDesktopUserAgent: String? = null
+    private lateinit var activity: WebViewExtActivity
+    val requestHeaders: MutableMap<String?, String?> = HashMap()
+    private var mobileUserAgent: String? = null
+    private var desktopUserAgent: String? = null
     var isIncognito = false
         private set
-    private var mDesktopMode = false
+    private var desktopMode = false
     var lastLoadedUrl: String? = null
         private set
 
@@ -51,20 +51,18 @@ class WebViewExt @JvmOverloads constructor(
     }
 
     fun followUrl(url: String) {
-        var fixedUrl = UrlUtils.smartUrlFilter(url)
-        if (fixedUrl != null) {
-            super.loadUrl(fixedUrl, mRequestHeaders)
+        UrlUtils.smartUrlFilter(url)?.let {
+            super.loadUrl(it, requestHeaders)
             return
         }
-        val templateUri = PrefsUtils.getSearchEngine(mActivity)
-        fixedUrl = UrlUtils.getFormattedUri(templateUri, url)
-        super.loadUrl(fixedUrl, mRequestHeaders)
+        val templateUri = PrefsUtils.getSearchEngine(activity)
+        super.loadUrl(UrlUtils.getFormattedUri(templateUri, url), requestHeaders)
     }
 
     private fun setup() {
-        settings.javaScriptEnabled = PrefsUtils.getJavascript(mActivity)
-        settings.javaScriptCanOpenWindowsAutomatically = PrefsUtils.getJavascript(mActivity)
-        settings.setGeolocationEnabled(PrefsUtils.getLocation(mActivity))
+        settings.javaScriptEnabled = PrefsUtils.getJavascript(activity)
+        settings.javaScriptCanOpenWindowsAutomatically = PrefsUtils.getJavascript(activity)
+        settings.setGeolocationEnabled(PrefsUtils.getLocation(activity))
         settings.setSupportMultipleWindows(true)
         settings.builtInZoomControls = true
         settings.displayZoomControls = false
@@ -78,12 +76,12 @@ class WebViewExt @JvmOverloads constructor(
                     when (result.type) {
                         HitTestResult.IMAGE_TYPE, HitTestResult.SRC_IMAGE_ANCHOR_TYPE -> {
                             shouldAllowDownload = true
-                            mActivity.showSheetMenu(it, shouldAllowDownload)
+                            activity.showSheetMenu(it, shouldAllowDownload)
                             shouldAllowDownload = false
                             return true
                         }
                         HitTestResult.SRC_ANCHOR_TYPE -> {
-                            mActivity.showSheetMenu(it, shouldAllowDownload)
+                            activity.showSheetMenu(it, shouldAllowDownload)
                             shouldAllowDownload = false
                             return true
                         }
@@ -96,7 +94,7 @@ class WebViewExt @JvmOverloads constructor(
             }
         })
         setDownloadListener { url: String?, _, contentDisposition: String?, mimeType: String?, _ ->
-            mActivity.downloadFileAsk(url, contentDisposition, mimeType)
+            activity.downloadFileAsk(url, contentDisposition, mimeType)
         }
 
         // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
@@ -107,17 +105,17 @@ class WebViewExt @JvmOverloads constructor(
         val matcher = pattern.matcher(settings.userAgentString)
         if (matcher.matches()) {
             val mobileDevice = matcher.group(2)!!.replace("; wv", "")
-            mMobileUserAgent = matcher.group(1)!! + mobileDevice + matcher.group(3)
-            mDesktopUserAgent = matcher.group(1)!! + DESKTOP_DEVICE + matcher.group(3)!!
+            mobileUserAgent = matcher.group(1)!! + mobileDevice + matcher.group(3)
+            desktopUserAgent = matcher.group(1)!! + DESKTOP_DEVICE + matcher.group(3)!!
                 .replace(" Mobile ", " ")
-            settings.userAgentString = mMobileUserAgent
+            settings.userAgentString = mobileUserAgent
         } else {
             Log.e(TAG, "Couldn't parse the user agent")
-            mMobileUserAgent = settings.userAgentString
-            mDesktopUserAgent = DESKTOP_USER_AGENT_FALLBACK
+            mobileUserAgent = settings.userAgentString
+            desktopUserAgent = DESKTOP_USER_AGENT_FALLBACK
         }
-        if (PrefsUtils.getDoNotTrack(mActivity)) {
-            mRequestHeaders[HEADER_DNT] = "1"
+        if (PrefsUtils.getDoNotTrack(activity)) {
+            requestHeaders[HEADER_DNT] = "1"
         }
     }
 
@@ -125,7 +123,7 @@ class WebViewExt @JvmOverloads constructor(
         activity: WebViewExtActivity, urlBarController: UrlBarController,
         progressBar: ProgressBar, incognito: Boolean
     ) {
-        mActivity = activity
+        this.activity = activity
         isIncognito = incognito
         val chromeClient = ChromeClient(
             activity, incognito,
@@ -154,17 +152,15 @@ class WebViewExt @JvmOverloads constructor(
         }
 
     var isDesktopMode: Boolean
-        get() = mDesktopMode
+        get() = desktopMode
         set(desktopMode) {
-            mDesktopMode = desktopMode
+            this.desktopMode = desktopMode
             val settings = settings
-            settings.userAgentString = if (desktopMode) mDesktopUserAgent else mMobileUserAgent
+            settings.userAgentString = if (desktopMode) desktopUserAgent else mobileUserAgent
             settings.useWideViewPort = desktopMode
             settings.loadWithOverviewMode = desktopMode
             reload()
         }
-
-    val requestHeaders: Map<String?, String?> = mRequestHeaders
 
     companion object {
         private const val TAG = "WebViewExt"

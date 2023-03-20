@@ -30,32 +30,32 @@ import android.widget.TextView.OnEditorActionListener
 import org.lineageos.jelly.utils.UiUtils
 
 class SearchBarController(
-    private val mWebView: WebView,
-    private val mEditor: EditText,
-    private val mStatus: TextView,
-    private val mPrevButton: ImageButton,
-    private val mNextButton: ImageButton,
-    private val mCancelButton: ImageButton,
-    private val mListener: OnCancelListener
+    private val webView: WebView,
+    private val editor: EditText,
+    private val status: TextView,
+    private val prevButton: ImageButton,
+    private val nextButton: ImageButton,
+    private val cancelButton: ImageButton,
+    private val listener: OnCancelListener
 ) : TextWatcher, OnEditorActionListener, FindListener, View.OnClickListener {
-    private var mHasStartedSearch = false
-    private var mCurrentResultPosition = 0
-    private var mTotalResultCount = 0
+    private var hasStartedSearch = false
+    private var currentResultPosition = 0
+    private var totalResultCount = 0
     private val query: String?
-        get() = mEditor.text?.toString()
+        get() = editor.text?.toString()
 
     fun onShow() {
-        mEditor.requestFocus()
-        UiUtils.showKeyboard(mEditor)
+        editor.requestFocus()
+        UiUtils.showKeyboard(editor)
         clearSearchResults()
         updateNextAndPrevButtonEnabledState()
         updateStatusText()
     }
 
     fun onCancel() {
-        mStatus.text = null
-        mWebView.clearMatches()
-        mListener.onCancelSearch()
+        status.text = null
+        webView.clearMatches()
+        listener.onCancelSearch()
     }
 
     override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -78,23 +78,23 @@ class SearchBarController(
         activeMatchOrdinal: Int, numberOfMatches: Int,
         isDoneCounting: Boolean
     ) {
-        mCurrentResultPosition = activeMatchOrdinal
-        mTotalResultCount = numberOfMatches
+        currentResultPosition = activeMatchOrdinal
+        totalResultCount = numberOfMatches
         updateNextAndPrevButtonEnabledState()
         updateStatusText()
     }
 
     override fun onClick(view: View) {
-        UiUtils.hideKeyboard(mEditor)
+        UiUtils.hideKeyboard(editor)
         when {
-            view === mCancelButton -> {
+            view === cancelButton -> {
                 onCancel()
             }
-            !mHasStartedSearch -> {
+            !hasStartedSearch -> {
                 startSearch()
             }
             else -> {
-                mWebView.findNext(view === mNextButton)
+                webView.findNext(view === nextButton)
             }
         }
     }
@@ -103,39 +103,39 @@ class SearchBarController(
         query.let {
             if (it.isNullOrEmpty()) {
                 clearSearchResults()
-                mStatus.text = null
+                status.text = null
             } else {
-                mWebView.findAllAsync(it)
-                mHasStartedSearch = true
+                webView.findAllAsync(it)
+                hasStartedSearch = true
             }
         }
         updateStatusText()
     }
 
     private fun clearSearchResults() {
-        mCurrentResultPosition = -1
-        mTotalResultCount = -1
-        mWebView.clearMatches()
-        mHasStartedSearch = false
+        currentResultPosition = -1
+        totalResultCount = -1
+        webView.clearMatches()
+        hasStartedSearch = false
     }
 
     private fun updateNextAndPrevButtonEnabledState() {
         val hasText = !query.isNullOrEmpty()
         UiUtils.setImageButtonEnabled(
-            mPrevButton,
-            hasText && (!mHasStartedSearch || mCurrentResultPosition > 0)
+            prevButton,
+            hasText && (!hasStartedSearch || currentResultPosition > 0)
         )
         UiUtils.setImageButtonEnabled(
-            mNextButton,
-            hasText && (!mHasStartedSearch || mCurrentResultPosition < mTotalResultCount - 1)
+            nextButton,
+            hasText && (!hasStartedSearch || currentResultPosition < totalResultCount - 1)
         )
     }
 
     private fun updateStatusText() {
-        if (mTotalResultCount > 0) {
-            mStatus.text = (mCurrentResultPosition + 1).toString() + "/" + mTotalResultCount
+        if (totalResultCount > 0) {
+            status.text = (currentResultPosition + 1).toString() + "/" + totalResultCount
         } else {
-            mStatus.text = null
+            status.text = null
         }
     }
 
@@ -144,11 +144,11 @@ class SearchBarController(
     }
 
     init {
-        mEditor.addTextChangedListener(this)
-        mEditor.setOnEditorActionListener(this)
-        mWebView.setFindListener(this)
-        mPrevButton.setOnClickListener(this)
-        mNextButton.setOnClickListener(this)
-        mCancelButton.setOnClickListener(this)
+        editor.addTextChangedListener(this)
+        editor.setOnEditorActionListener(this)
+        webView.setFindListener(this)
+        prevButton.setOnClickListener(this)
+        nextButton.setOnClickListener(this)
+        cancelButton.setOnClickListener(this)
     }
 }

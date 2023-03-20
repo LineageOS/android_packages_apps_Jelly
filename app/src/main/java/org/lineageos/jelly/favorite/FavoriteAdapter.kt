@@ -25,27 +25,27 @@ import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
 
 class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<FavoriteHolder>() {
-    private var mCursor: Cursor? = null
-    private var mIdColumnIndex = 0
-    private var mTitleColumnIndex = 0
-    private var mUrlColumnIndex = 0
-    private var mColorColumnIndex = 0
+    private var cursor: Cursor? = null
+    private var idColumnIndex = 0
+    private var titleColumnIndex = 0
+    private var urlColumnIndex = 0
+    private var colorColumnIndex = 0
 
     init {
         setHasStableIds(true)
     }
 
     fun swapCursor(cursor: Cursor?) {
-        if (cursor === mCursor) {
+        if (cursor === this.cursor) {
             return
         }
-        mCursor?.close()
-        mCursor = cursor
-        mCursor?.let {
-            mIdColumnIndex = it.getColumnIndexOrThrow(BaseColumns._ID)
-            mTitleColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.TITLE)
-            mUrlColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.URL)
-            mColorColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.COLOR)
+        this.cursor?.close()
+        this.cursor = cursor
+        this.cursor?.let {
+            idColumnIndex = it.getColumnIndexOrThrow(BaseColumns._ID)
+            titleColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.TITLE)
+            urlColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.URL)
+            colorColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.COLOR)
         }
         notifyDataSetChanged()
     }
@@ -58,18 +58,18 @@ class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<Favo
     }
 
     override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {
-        val cursor = mCursor ?: return
-        val id = cursor.getLong(mIdColumnIndex)
-        val title = cursor.getString(mTitleColumnIndex)
-        val url = cursor.getString(mUrlColumnIndex)
-        val color = cursor.getInt(mColorColumnIndex)
+        val cursor = cursor ?: return
+        val id = cursor.getLong(idColumnIndex)
+        val title = cursor.getString(titleColumnIndex)
+        val url = cursor.getString(urlColumnIndex)
+        val color = cursor.getInt(colorColumnIndex)
         holder.bind(mContext, id, title, url, color)
     }
 
-    override fun getItemCount() = mCursor?.count ?: 0
+    override fun getItemCount() = cursor?.count ?: 0
 
     override fun getItemId(position: Int): Long {
-        val cursor = mCursor ?: return -1
-        return if (cursor.moveToPosition(position)) cursor.getLong(mIdColumnIndex) else -1
+        val cursor = cursor ?: return -1
+        return if (cursor.moveToPosition(position)) cursor.getLong(idColumnIndex) else -1
     }
 }

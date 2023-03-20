@@ -34,9 +34,8 @@ import java.util.concurrent.TimeUnit
  * fetching and caching functionality for each potential
  * suggestions provider.
  */
-internal abstract class SuggestionProvider(private val mEncoding: String) {
-    private val mLanguage = language
-
+internal abstract class SuggestionProvider(private val encoding: String) {
+    private val language = Companion.language
 
     /**
      * Create a URL for the given query in the given language.
@@ -83,12 +82,12 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
     fun fetchResults(rawQuery: String): List<String> {
         val filter = mutableListOf<String>()
         val query = try {
-            URLEncoder.encode(rawQuery, mEncoding)
+            URLEncoder.encode(rawQuery, encoding)
         } catch (e: UnsupportedEncodingException) {
             Log.e(TAG, "Unable to encode the URL", e)
             return filter
         }
-        val content = downloadSuggestionsForQuery(query, mLanguage)
+        val content = downloadSuggestionsForQuery(query, language)
             ?: // There are no suggestions for this query, return an empty list.
             return filter
         try {
@@ -122,7 +121,7 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
                 "Cache-Control",
                 "max-age=$INTERVAL_DAY, max-stale=$INTERVAL_DAY"
             )
-            urlConnection.addRequestProperty("Accept-Charset", mEncoding)
+            urlConnection.addRequestProperty("Accept-Charset", encoding)
             try {
                 BufferedInputStream(urlConnection.inputStream).use {
                     return FileUtils.readStringFromStream(it, getEncoding(urlConnection))
@@ -147,7 +146,7 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
                 return value.substring(8)
             }
         }
-        return mEncoding
+        return encoding
     }
 
     internal interface ResultCallback {

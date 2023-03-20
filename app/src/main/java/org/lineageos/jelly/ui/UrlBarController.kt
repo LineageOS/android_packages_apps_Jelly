@@ -31,25 +31,25 @@ import org.lineageos.jelly.R
 import java.text.DateFormat
 
 class UrlBarController(
-    private val mEditor: EditText,
-    private val mSecureIcon: ImageView
+    private val editor: EditText,
+    private val secureIcon: ImageView
 ) : OnFocusChangeListener {
-    private var mUrl: String? = null
-    private var mTitle: String? = null
-    private var mLoading = false
-    private var mUrlBarHasFocus = false
+    private var url: String? = null
+    private var title: String? = null
+    private var loading = false
+    private var urlBarHasFocus = false
     fun onPageLoadStarted(url: String?) {
-        mUrl = url
-        mLoading = true
-        if (!mUrlBarHasFocus) {
+        this.url = url
+        loading = true
+        if (!urlBarHasFocus) {
             updateUrlBarText()
         }
         updateSecureIconVisibility()
     }
 
     fun onPageLoadFinished(context: Context, certificate: SslCertificate?) {
-        mLoading = false
-        if (!mUrlBarHasFocus) {
+        loading = false
+        if (!urlBarHasFocus) {
             updateUrlBarText()
         }
         updateSecureIconVisibility()
@@ -57,20 +57,20 @@ class UrlBarController(
     }
 
     fun onTitleReceived(title: String?) {
-        mTitle = title
-        if (!mUrlBarHasFocus) {
+        this.title = title
+        if (!urlBarHasFocus) {
             updateUrlBarText()
         }
     }
 
     override fun onFocusChange(view: View, hasFocus: Boolean) {
-        mUrlBarHasFocus = hasFocus
+        urlBarHasFocus = hasFocus
         updateUrlBarText()
         updateSecureIconVisibility()
     }
 
     private fun updateSecureIconVisibility() {
-        mSecureIcon.visibility = if (!mLoading && !mUrlBarHasFocus && isSecure) {
+        secureIcon.visibility = if (!loading && !urlBarHasFocus && isSecure) {
             View.VISIBLE
         } else {
             View.GONE
@@ -78,85 +78,85 @@ class UrlBarController(
     }
 
     private fun updateUrlBarText() {
-        val text = if (!mUrlBarHasFocus && !mLoading && mTitle != null) mTitle else mUrl
-        mEditor.setTextKeepState(text ?: "")
+        val text = if (!urlBarHasFocus && !loading && title != null) title else url
+        editor.setTextKeepState(text ?: "")
     }
 
-    private val isSecure = mUrl != null && mUrl!!.startsWith("https")
+    private val isSecure = url?.startsWith("https") ?: false
 
     private fun updateSSLCertificateDialog(context: Context, certificate: SslCertificate?) {
-        if (certificate == null) return
+        certificate?.let { cert ->
+            // Show the dialog if you tap the lock icon and the cert is valid
+            secureIcon.setOnClickListener {
+                val view = LayoutInflater.from(context)
+                    .inflate(R.layout.dialog_ssl_certificate_info, LinearLayout(context))
 
-        // Show the dialog if you tap the lock icon and the cert is valid
-        mSecureIcon.setOnClickListener {
-            val view = LayoutInflater.from(context)
-                .inflate(R.layout.dialog_ssl_certificate_info, LinearLayout(context))
+                // Get the text views
+                val domainView: TextView = view.findViewById(R.id.domain)
+                val issuedToCNView: KeyValueView = view.findViewById(R.id.issued_to_cn)
+                val issuedToOView: KeyValueView = view.findViewById(R.id.issued_to_o)
+                val issuedToUNView: KeyValueView = view.findViewById(R.id.issued_to_un)
+                val issuedByCNView: KeyValueView = view.findViewById(R.id.issued_by_cn)
+                val issuedByOView: KeyValueView = view.findViewById(R.id.issued_by_o)
+                val issuedByUNView: KeyValueView = view.findViewById(R.id.issued_by_un)
+                val issuedOnView: KeyValueView = view.findViewById(R.id.issued_on)
+                val expiresOnView: KeyValueView = view.findViewById(R.id.expires_on)
 
-            // Get the text views
-            val domainView: TextView = view.findViewById(R.id.domain)
-            val issuedToCNView: KeyValueView = view.findViewById(R.id.issued_to_cn)
-            val issuedToOView: KeyValueView = view.findViewById(R.id.issued_to_o)
-            val issuedToUNView: KeyValueView = view.findViewById(R.id.issued_to_un)
-            val issuedByCNView: KeyValueView = view.findViewById(R.id.issued_by_cn)
-            val issuedByOView: KeyValueView = view.findViewById(R.id.issued_by_o)
-            val issuedByUNView: KeyValueView = view.findViewById(R.id.issued_by_un)
-            val issuedOnView: KeyValueView = view.findViewById(R.id.issued_on)
-            val expiresOnView: KeyValueView = view.findViewById(R.id.expires_on)
+                // Get the domain name
+                val domainString = Uri.parse(url).host
 
-            // Get the domain name
-            val domainString = Uri.parse(mUrl).host
+                // Get the validity dates
+                val startDate = cert.validNotBeforeDate
+                val endDate = cert.validNotAfterDate
 
-            // Get the validity dates
-            val startDate = certificate.validNotBeforeDate
-            val endDate = certificate.validNotAfterDate
+                // Update TextViews
+                domainView.text = domainString
+                issuedToCNView.setText(
+                    R.string.ssl_cert_dialog_common_name,
+                    cert.issuedTo.cName
+                )
+                issuedToOView.setText(
+                    R.string.ssl_cert_dialog_organization,
+                    cert.issuedTo.oName
+                )
+                issuedToUNView.setText(
+                    R.string.ssl_cert_dialog_organizational_unit,
+                    cert.issuedTo.uName
+                )
+                issuedByCNView.setText(
+                    R.string.ssl_cert_dialog_common_name,
+                    cert.issuedBy.cName
+                )
+                issuedByOView.setText(
+                    R.string.ssl_cert_dialog_organization,
+                    cert.issuedBy.oName
+                )
+                issuedByUNView.setText(
+                    R.string.ssl_cert_dialog_organizational_unit,
+                    cert.issuedBy.uName
+                )
+                issuedOnView.setText(
+                    R.string.ssl_cert_dialog_issued_on,
+                    DateFormat.getDateTimeInstance().format(startDate)
+                )
+                expiresOnView.setText(
+                    R.string.ssl_cert_dialog_expires_on,
+                    DateFormat.getDateTimeInstance().format(endDate)
+                )
 
-            // Update TextViews
-            domainView.text = domainString
-            issuedToCNView.setText(
-                R.string.ssl_cert_dialog_common_name,
-                certificate.issuedTo.cName
-            )
-            issuedToOView.setText(
-                R.string.ssl_cert_dialog_organization,
-                certificate.issuedTo.oName
-            )
-            issuedToUNView.setText(
-                R.string.ssl_cert_dialog_organizational_unit,
-                certificate.issuedTo.uName
-            )
-            issuedByCNView.setText(
-                R.string.ssl_cert_dialog_common_name,
-                certificate.issuedBy.cName
-            )
-            issuedByOView.setText(
-                R.string.ssl_cert_dialog_organization,
-                certificate.issuedBy.oName
-            )
-            issuedByUNView.setText(
-                R.string.ssl_cert_dialog_organizational_unit,
-                certificate.issuedBy.uName
-            )
-            issuedOnView.setText(
-                R.string.ssl_cert_dialog_issued_on,
-                DateFormat.getDateTimeInstance().format(startDate)
-            )
-            expiresOnView.setText(
-                R.string.ssl_cert_dialog_expires_on,
-                DateFormat.getDateTimeInstance().format(endDate)
-            )
-
-            // Build and show the dialog
-            AlertDialog.Builder(context)
-                .setTitle(R.string.ssl_cert_dialog_title)
-                .setView(view)
-                .setNegativeButton(R.string.ssl_cert_dialog_dismiss, null)
-                .create()
-                .show()
+                // Build and show the dialog
+                AlertDialog.Builder(context)
+                    .setTitle(R.string.ssl_cert_dialog_title)
+                    .setView(view)
+                    .setNegativeButton(R.string.ssl_cert_dialog_dismiss, null)
+                    .create()
+                    .show()
+            }
         }
     }
 
     init {
-        mEditor.onFocusChangeListener = this
-        mEditor.setSelectAllOnFocus(true)
+        editor.onFocusChangeListener = this
+        editor.setSelectAllOnFocus(true)
     }
 }

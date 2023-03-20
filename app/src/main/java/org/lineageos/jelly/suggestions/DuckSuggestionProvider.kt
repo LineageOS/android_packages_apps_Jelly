@@ -25,9 +25,7 @@ internal class DuckSuggestionProvider : SuggestionProvider("UTF-8") {
     override fun createQueryUrl(
         query: String,
         language: String
-    ): String {
-        return "https://duckduckgo.com/ac/?q=$query"
-    }
+    ) = "https://duckduckgo.com/ac/?q=$query"
 
     override fun parseResults(
         content: String,

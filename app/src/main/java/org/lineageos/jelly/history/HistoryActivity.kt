@@ -48,11 +48,11 @@ import org.lineageos.jelly.utils.UiUtils
 
 class HistoryActivity : AppCompatActivity() {
     private val uiScope = CoroutineScope(Dispatchers.Main)
-    private lateinit var mEmptyView: View
-    private lateinit var mAdapter: HistoryAdapter
-    private val mAdapterDataObserver: AdapterDataObserver = object : AdapterDataObserver() {
+    private lateinit var emptyView: View
+    private lateinit var adapter: HistoryAdapter
+    private val adapterDataObserver: AdapterDataObserver = object : AdapterDataObserver() {
         override fun onChanged() {
-            updateHistoryView(mAdapter.itemCount == 0)
+            updateHistoryView(adapter.itemCount == 0)
         }
     }
 
@@ -64,8 +64,8 @@ class HistoryActivity : AppCompatActivity() {
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener { finish() }
         val list = findViewById<RecyclerView>(R.id.history_list)
-        mEmptyView = findViewById(R.id.history_empty_layout)
-        mAdapter = HistoryAdapter(this)
+        emptyView = findViewById(R.id.history_empty_layout)
+        adapter = HistoryAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
             override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
@@ -76,18 +76,18 @@ class HistoryActivity : AppCompatActivity() {
             }
 
             override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-                mAdapter.swapCursor(data)
+                adapter.swapCursor(data)
             }
 
             override fun onLoaderReset(loader: Loader<Cursor>) {
-                mAdapter.swapCursor(null)
+                adapter.swapCursor(null)
             }
         })
         list.layoutManager = LinearLayoutManager(this)
         list.addItemDecoration(HistoryAnimationDecorator(this))
         list.itemAnimator = DefaultItemAnimator()
-        list.adapter = mAdapter
-        mAdapter.registerAdapterDataObserver(mAdapterDataObserver)
+        list.adapter = adapter
+        adapter.registerAdapterDataObserver(adapterDataObserver)
         val helper = ItemTouchHelper(HistoryCallBack(this, object : OnDeleteListener {
             override fun onItemDeleted(data: ContentValues?) {
                 Snackbar.make(
@@ -116,7 +116,7 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     public override fun onDestroy() {
-        mAdapter.unregisterAdapterDataObserver(mAdapterDataObserver)
+        adapter.unregisterAdapterDataObserver(adapterDataObserver)
         super.onDestroy()
     }
 
@@ -139,7 +139,7 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun updateHistoryView(empty: Boolean) {
-        mEmptyView.visibility = if (empty) View.VISIBLE else View.GONE
+        emptyView.visibility = if (empty) View.VISIBLE else View.GONE
     }
 
     private fun deleteAll() {
