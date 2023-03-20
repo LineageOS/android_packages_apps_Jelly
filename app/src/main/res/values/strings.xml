@@ -62,6 +62,8 @@
 
     <!-- Settings: title -->
     <string name="settings_title">Settings</string>
+    <!-- Settings: general category -->
+    <string name="pref_general">General</string>
     <!-- Settings: search engine preference title -->
     <string name="pref_search_engine">Search engine</string>
     <!-- Settings: home page preference title -->

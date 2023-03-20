@@ -35,7 +35,7 @@ import java.util.Locale
 import kotlin.reflect.safeCast
 
 class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterable {
-    private val inflator: LayoutInflater = LayoutInflater.from(context)
+    private val layoutInflater = LayoutInflater.from(context)
     private val items = mutableListOf<String>()
     private val filter = ItemFilter()
     private var queryText: String? = null
@@ -46,10 +46,10 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
     override fun getItemId(position: Int) = 0L
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: this.inflator.inflate(R.layout.item_suggestion, parent, false)!!
-        val title = view.findViewById<TextView>(R.id.title)
+        val view = convertView ?: this.layoutInflater.inflate(R.layout.item_suggestion, parent, false)!!
+        val titleTextView = view.findViewById<TextView>(R.id.titleTextView)
         val suggestion = items[position]
-        title.text = queryText?.let { query ->
+        titleTextView.text = queryText?.let { query ->
             val spannable = SpannableStringBuilder(suggestion)
             val lcSuggestion = suggestion.lowercase(Locale.getDefault())
             var queryTextPos = lcSuggestion.indexOf(query)
