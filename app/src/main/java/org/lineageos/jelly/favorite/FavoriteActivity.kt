@@ -25,12 +25,12 @@ import android.provider.BaseColumns
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.loader.app.LoaderManager
 import androidx.loader.app.LoaderManager.LoaderCallbacks
 import androidx.loader.content.CursorLoader
@@ -38,6 +38,7 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -46,21 +47,27 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteActivity : AppCompatActivity() {
+    // Views
+    private val favoriteEmptyLayout by lazy { findViewById<View>(R.id.favoriteEmptyLayout) }
+    private val favoriteList by lazy { findViewById<RecyclerView>(R.id.favoriteList) }
+    private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
+
     private val uiScope = CoroutineScope(Dispatchers.Main)
-    private lateinit var list: RecyclerView
-    private lateinit var emptyView: View
+
     private lateinit var adapter: FavoriteAdapter
 
     override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
         setContentView(R.layout.activity_favorites)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+
         setSupportActionBar(toolbar)
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setNavigationOnClickListener { finish() }
-        list = findViewById(R.id.favorite_list)
-        emptyView = findViewById(R.id.favorite_empty_layout)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+
         adapter = FavoriteAdapter(this)
+
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderCallbacks<Cursor> {
             override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
@@ -73,8 +80,8 @@ class FavoriteActivity : AppCompatActivity() {
             override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
                 adapter.swapCursor(data)
                 if (data != null && data.count == 0) {
-                    list.visibility = View.GONE
-                    emptyView.visibility = View.VISIBLE
+                    favoriteList.visibility = View.GONE
+                    favoriteEmptyLayout.visibility = View.VISIBLE
                 }
             }
 
@@ -82,11 +89,14 @@ class FavoriteActivity : AppCompatActivity() {
                 adapter.swapCursor(null)
             }
         })
-        list.layoutManager = GridLayoutManager(this, 2)
-        list.itemAnimator = DefaultItemAnimator()
-        list.adapter = adapter
-        val listTop = list.top
-        list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+        favoriteList.layoutManager = GridLayoutManager(this, 2)
+        favoriteList.itemAnimator = DefaultItemAnimator()
+        favoriteList.adapter = adapter
+
+        val listTop = favoriteList.top
+
+        favoriteList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 toolbar.elevation = if (recyclerView.getChildAt(0).top < listTop) {
@@ -96,6 +106,16 @@ class FavoriteActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     fun editItem(id: Long, title: String?, url: String) {
