@@ -13,32 +13,39 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:paddingStart="16dp"
-    android:paddingTop="4dp"
-    android:paddingEnd="16dp"
-    android:paddingBottom="4dp">
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="18dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="2dp"
-        app:cardBackgroundColor="@color/card_background"
-        app:cardElevation="2dp"
-        app:contentPadding="2dp">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:contentPaddingLeft="8dp"
+        app:contentPaddingRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/search_menu_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@+id/search_status"
                 android:background="@null"
@@ -51,63 +58,79 @@
                 android:nextFocusUp="@id/search_menu_edit"
                 android:paddingStart="4dp"
                 android:selectAllOnFocus="true"
-                android:textColor="@color/inverted"
+                android:textColor="?colorOnSurfaceVariant"
                 android:textColorHint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/search_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@id/search_status"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="12dp"
+                android:layout_height="0dp"
                 android:layout_marginEnd="16dp"
                 android:layout_toStartOf="@+id/find_separator"
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:maxLines="1"
-                android:textColor="@color/inverted"
-                android:textSize="12sp" />
+                android:textColor="?colorOnSurfaceVariant"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/find_separator"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@id/find_separator"
                 android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_height="0dp"
                 android:layout_toStartOf="@+id/search_menu_prev"
                 android:alpha="0.1"
-                android:background="@color/inverted" />
+                android:background="?colorOutline"
+                app:layout_constraintEnd_toStartOf="@+id/search_menu_prev"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageButton
                 android:id="@id/search_menu_prev"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_toStartOf="@+id/search_menu_next"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
-                android:src="@drawable/ic_prev" />
+                android:src="@drawable/ic_prev"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/search_menu_next"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@id/search_menu_next"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_toStartOf="@+id/search_menu_cancel"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
-                android:src="@drawable/ic_next" />
+                android:src="@drawable/ic_next"
+                app:layout_constraintEnd_toStartOf="@+id/search_menu_cancel"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageButton
                 android:id="@id/search_menu_cancel"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_alignParentEnd="true"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
-                android:src="@drawable/ic_cancel" />
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
