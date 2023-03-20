@@ -23,54 +23,54 @@
 
     <LinearLayout
         android:id="@+id/sheet_new_tab"
-        style="@style/AppTheme.BottomSheetLayout">
+        style="@style/Theme.Jelly.BottomSheetLayout">
 
         <ImageView
-            style="@style/AppTheme.BottomSheetIcon"
+            style="@style/Theme.Jelly.BottomSheetIcon"
             android:src="@drawable/ic_new_tab" />
 
         <TextView
-            style="@style/AppTheme.BottomSheetText"
+            style="@style/Theme.Jelly.BottomSheetText"
             android:text="@string/menu_in_new_tab" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/sheet_share"
-        style="@style/AppTheme.BottomSheetLayout">
+        style="@style/Theme.Jelly.BottomSheetLayout">
 
         <ImageView
-            style="@style/AppTheme.BottomSheetIcon"
+            style="@style/Theme.Jelly.BottomSheetIcon"
             android:src="@drawable/ic_share" />
 
         <TextView
-            style="@style/AppTheme.BottomSheetText"
+            style="@style/Theme.Jelly.BottomSheetText"
             android:text="@string/menu_share" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/sheet_favourite"
-        style="@style/AppTheme.BottomSheetLayout">
+        style="@style/Theme.Jelly.BottomSheetLayout">
 
         <ImageView
-            style="@style/AppTheme.BottomSheetIcon"
+            style="@style/Theme.Jelly.BottomSheetIcon"
             android:src="@drawable/ic_favorite_add" />
 
         <TextView
-            style="@style/AppTheme.BottomSheetText"
+            style="@style/Theme.Jelly.BottomSheetText"
             android:text="@string/menu_fav_add" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/sheet_download"
-        style="@style/AppTheme.BottomSheetLayout"
+        style="@style/Theme.Jelly.BottomSheetLayout"
         android:visibility="gone">
 
         <ImageView
-            style="@style/AppTheme.BottomSheetIcon"
+            style="@style/Theme.Jelly.BottomSheetIcon"
             android:src="@drawable/ic_download" />
 
         <TextView
-            style="@style/AppTheme.BottomSheetText"
+            style="@style/Theme.Jelly.BottomSheetText"
             android:text="@string/menu_download" />
     </LinearLayout>
 </LinearLayout>
