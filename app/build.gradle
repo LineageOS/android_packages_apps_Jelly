@@ -32,9 +32,6 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/java_studio'
     }
-    lint {
-        disable 'RestrictedApi'
-    }
 }
 
 dependencies {
