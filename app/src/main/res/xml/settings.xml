@@ -13,76 +13,93 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <ListPreference
-        android:defaultValue="@string/default_search_engine"
-        android:entries="@array/pref_search_engine_entries"
-        android:entryValues="@array/pref_search_engine_entryvalues"
-        android:key="key_search_engine"
-        android:summary="%s"
-        android:title="@string/pref_search_engine" />
-
-    <ListPreference
-        android:defaultValue="@string/default_suggestion_provider"
-        android:entries="@array/pref_suggestions_provider_entries"
-        android:entryValues="@array/pref_suggestions_provider_entryvalues"
-        android:key="key_suggestion_provider"
-        android:summary="%s"
-        android:title="@string/pref_suggestions_provider" />
-
-    <Preference
-        android:key="key_home_page"
-        android:title="@string/pref_start_page" />
-
-    <SwitchPreference
-        android:defaultValue="0"
-        android:key="key_advanced_share"
-        android:summary="@string/pref_screenshot_snap_summary"
-        android:title="@string/pref_screenshot_snap_title" />
-
-    <SwitchPreference
-        android:defaultValue="0"
-        android:key="key_reach_mode"
-        android:summary="@string/pref_reach_mode_summary"
-        android:title="@string/pref_reach_mode_title" />
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:key="category_security"
-        android:title="@string/pref_privacy_security">
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_general">
 
-        <SwitchPreference
-            android:defaultValue="0"
-            android:key="key_looklock"
-            android:summary="@string/pref_looklock_summary"
-            android:title="@string/pref_looklock_title" />
+        <ListPreference
+            app:defaultValue="@string/default_search_engine"
+            app:entries="@array/pref_search_engine_entries"
+            app:entryValues="@array/pref_search_engine_entryvalues"
+            app:iconSpaceReserved="false"
+            app:key="key_search_engine"
+            app:title="@string/pref_search_engine"
+            app:useSimpleSummaryProvider="true" />
 
-        <SwitchPreference
-            android:defaultValue="1"
-            android:key="key_javascript"
-            android:summary="@string/pref_js_summary"
-            android:title="@string/pref_js_title" />
-
-        <SwitchPreference
-            android:defaultValue="1"
-            android:key="key_location"
-            android:summary="@string/pref_location_summary"
-            android:title="@string/pref_location_title" />
-
-        <SwitchPreference
-            android:defaultValue="0"
-            android:key="key_do_not_track"
-            android:summary="@string/pref_do_not_track_summary"
-            android:title="@string/pref_do_not_track_title" />
-
-        <SwitchPreference
-            android:defaultValue="1"
-            android:key="key_cookie"
-            android:summary="@string/pref_cookie_summary"
-            android:title="@string/pref_cookie_title" />
+        <ListPreference
+            app:defaultValue="@string/default_suggestion_provider"
+            app:entries="@array/pref_suggestions_provider_entries"
+            app:entryValues="@array/pref_suggestions_provider_entryvalues"
+            app:iconSpaceReserved="false"
+            app:key="key_suggestion_provider"
+            app:title="@string/pref_suggestions_provider"
+            app:useSimpleSummaryProvider="true" />
 
         <Preference
-            android:key="key_cookie_clear"
-            android:title="@string/pref_cookie_clear" />
+            app:iconSpaceReserved="false"
+            app:key="key_home_page"
+            app:title="@string/pref_start_page" />
+
+        <SwitchPreference
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:key="key_advanced_share"
+            app:summary="@string/pref_screenshot_snap_summary"
+            app:title="@string/pref_screenshot_snap_title" />
+
+        <SwitchPreference
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:key="key_reach_mode"
+            app:summary="@string/pref_reach_mode_summary"
+            app:title="@string/pref_reach_mode_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="@string/pref_privacy_security">
+
+        <SwitchPreference
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:key="key_looklock"
+            app:summary="@string/pref_looklock_summary"
+            app:title="@string/pref_looklock_title" />
+
+        <SwitchPreference
+            app:defaultValue="1"
+            app:iconSpaceReserved="false"
+            app:key="key_javascript"
+            app:summary="@string/pref_js_summary"
+            app:title="@string/pref_js_title" />
+
+        <SwitchPreference
+            app:defaultValue="1"
+            app:iconSpaceReserved="false"
+            app:key="key_location"
+            app:summary="@string/pref_location_summary"
+            app:title="@string/pref_location_title" />
+
+        <SwitchPreference
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:key="key_do_not_track"
+            app:summary="@string/pref_do_not_track_summary"
+            app:title="@string/pref_do_not_track_title" />
+
+        <SwitchPreference
+            app:defaultValue="1"
+            app:iconSpaceReserved="false"
+            app:key="key_cookie"
+            app:summary="@string/pref_cookie_summary"
+            app:title="@string/pref_cookie_title" />
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="key_cookie_clear"
+            app:title="@string/pref_cookie_clear" />
     </PreferenceCategory>
 </PreferenceScreen>

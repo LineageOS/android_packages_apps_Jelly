@@ -16,61 +16,73 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_new"
         android:icon="@drawable/ic_new_tab"
         android:title="@string/menu_new_tab"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_incognito"
         android:icon="@drawable/ic_incognito"
         android:title="@string/menu_incognito"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_reload"
         android:icon="@drawable/ic_refresh"
         android:title="@string/menu_reload"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_add_favorite"
         android:icon="@drawable/ic_favorite_add"
         android:title="@string/menu_fav_add"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_share"
         android:title="@string/menu_share"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_search"
         android:icon="@drawable/ic_search"
         android:title="@string/menu_search"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_favorite"
         android:icon="@drawable/ic_favorite"
         android:title="@string/menu_favorites"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_history"
         android:icon="@drawable/ic_history"
         android:title="@string/menu_history"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_shortcut"
         android:icon="@drawable/ic_shortcut"
         android:title="@string/menu_shortcut"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_print"
         android:icon="@drawable/ic_print"
         android:title="@string/menu_print"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/desktop_mode"
         android:icon="@drawable/ic_desktop"
         android:title="@string/menu_desktop_mode"
         app:showAsAction="never" />
     <item
+        style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/menu_settings"

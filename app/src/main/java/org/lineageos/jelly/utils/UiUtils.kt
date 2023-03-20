@@ -69,26 +69,6 @@ object UiUtils {
         return Bitmap.createScaledBitmap(out, 192, 192, true)
     }
 
-    fun getPositionInTime(timeMilliSec: Long): Int {
-        val diff = System.currentTimeMillis() - timeMilliSec
-        val hour = 1000 * 60 * 60.toLong()
-        val day = hour * 24
-        val week = day * 7
-        val month = day * 30
-        return if (hour > diff) {
-            0
-        } else {
-            when {
-                day > diff -> {
-                    1
-                }
-                week > diff -> 2
-                month > diff -> 3
-                else -> 4
-            }
-        }
-    }
-
     fun dpToPx(res: Resources, dp: Float) =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, res.displayMetrics)
 

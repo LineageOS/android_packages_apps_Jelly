@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,16 @@
  * limitations under the License.
  */
 
-package org.lineageos.jelly.utils
+package org.lineageos.jelly
 
-import android.content.ContentProvider
+import android.app.Application
+import com.google.android.material.color.DynamicColors
 
-fun ContentProvider.requireContextExt() = context ?: throw IllegalStateException()
+class JellyApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+
+        // Observe dynamic colors changes
+        DynamicColors.applyToActivitiesIfAvailable(this)
+    }
+}
