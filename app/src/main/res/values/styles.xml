@@ -13,13 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-
-    <style name="Theme.Jelly" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Jelly" parent="Theme.Material3.DayNight">
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="Theme.Jelly.NoActionBar">
@@ -27,13 +27,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Jelly.ToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+    <style name="Theme.Jelly.ToolbarTheme" parent="Widget.Material3.Toolbar">
         <item name="contentInsetStart">0dp</item>
     </style>
-
-    <style name="Theme.Jelly.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-
-    <style name="Theme.Jelly.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
     <style name="Theme.Jelly.PopupMenuOverlapAnchor">
         <item name="android:overlapAnchor">true</item>
@@ -49,7 +45,7 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:padding">16dp</item>
-        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:background">?attr/colorPrimaryContainer</item>
     </style>
 
     <style name="Theme.Jelly.BottomSheetIcon">
@@ -77,9 +73,9 @@
     <style name="Theme.Jelly.EmptyImage">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">120dp</item>
-        <item name="android:background">@drawable/empty_background</item>
         <item name="android:padding">8dp</item>
         <item name="android:scaleType">fitXY</item>
+        <item name="tint">?attr/colorOnPrimarySurface</item>
     </style>
 
     <style name="Theme.Jelly.EmptyText">
@@ -89,7 +85,46 @@
         <item name="android:paddingStart">64dp</item>
         <item name="android:paddingTop">19dp</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/empty_text</item>
+        <item name="android:textColor">?attr/colorOnPrimarySurface</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="Theme.Jelly.Settings" parent="Theme.Jelly.NoActionBar">
+        <item name="android:switchStyle">@style/Theme.Jelly.Settings.Switch</item>
+        <item name="alertDialogTheme">@style/Theme.Jelly.Settings.AlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.Jelly.Settings.AlertDialog</item>
+    </style>
+
+    <!-- Settings alert dialog theme. -->
+    <style name="Theme.Jelly.Settings.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/Theme.Jelly.Settings.AlertDialogStyle</item>
+        <item name="dialogCornerRadius">28dp</item>
+        <item name="android:background">@drawable/dialog_preference_background</item>
+    </style>
+
+    <!-- Settings alert dialog style. -->
+    <style name="Theme.Jelly.Settings.AlertDialogStyle" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <!-- Settings switch theme. -->
+    <style name="Theme.Jelly.Settings.Switch" parent="@android:style/Widget.Material.CompoundButton.Switch">
+        <item name="android:switchMinWidth">52dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:track">@drawable/settingslib_switch_track</item>
+        <item name="android:thumb">@drawable/settingslib_switch_thumb</item>
+    </style>
+
+    <!-- Collapsing toolbar style -->
+    <style name="Theme.Jelly.Settings.ToolbarCollapsed" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Theme.Jelly.Settings.ToolbarExpanded" parent="Theme.Jelly.Settings.ToolbarCollapsed">
+        <item name="android:textSize">36sp</item>
+        <item name="android:drawablePadding">10dp</item>
     </style>
 </resources>

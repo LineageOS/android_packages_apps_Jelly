@@ -48,13 +48,5 @@ class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {
             intent.data = Uri.parse(url)
             context.startActivity(intent)
         }
-        val background = when (UiUtils.getPositionInTime(timestamp)) {
-            0 -> R.color.history_last_hour
-            1 -> R.color.history_today
-            2 -> R.color.history_this_week
-            3 -> R.color.history_this_month
-            else -> R.color.history_earlier
-        }
-        rootLayout.background = ColorDrawable(ContextCompat.getColor(context, background))
     }
 }

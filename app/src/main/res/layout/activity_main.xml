@@ -15,63 +15,55 @@
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinator_layout"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Theme.Jelly.ToolbarTheme"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Jelly.AppBarOverlay">
+        android:layout_height="?attr/actionBarSize">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            style="@style/Theme.Jelly.ToolbarTheme"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimaryDark"
-            app:popupTheme="@style/Theme.Jelly.PopupOverlay">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
+            <include
+                android:id="@+id/toolbarSearchPage"
+                layout="@layout/search_page"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="gone" />
 
-                <com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:id="@+id/load_progress"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_alignParentBottom="true"
-                    android:max="100"
-                    android:paddingTop="2dp"
-                    android:progress="54"
-                    app:indicatorColor="@color/colorAccent" />
+            <include
+                android:id="@+id/toolbarSearchBar"
+                layout="@layout/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <include
-                    android:id="@+id/toolbar_search_page"
-                    layout="@layout/search_page"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:visibility="gone" />
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/loadingProgress"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_alignParentBottom="true"
+                android:max="100"
+                android:paddingBottom="6dp"
+                android:progress="54"
+                app:indicatorColor="?attr/colorAccent" />
 
-                <include
-                    android:id="@+id/toolbar_search_bar"
-                    layout="@layout/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/load_progress" />
-
-            </RelativeLayout>
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+        </RelativeLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <FrameLayout
-        android:id="@+id/web_view_container"
+        android:id="@+id/webViewContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
         <org.lineageos.jelly.webview.WebViewExt
-            android:id="@+id/web_view"
+            android:id="@+id/webView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:focusable="true"
