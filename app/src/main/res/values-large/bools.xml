@@ -14,6 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <bool name="is_theme_light">true</bool>
     <bool name="is_tablet">true</bool>
 </resources>
