@@ -58,14 +58,12 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
                           callback: ResultCallback) {
         val respArray = JSONArray(content)
         val jsonArray = respArray.getJSONArray(1)
-        var n = 0
         val size = jsonArray.length()
-        while (n < size) {
+        for (n in 0 until size) {
             val suggestion = jsonArray.getString(n)
             if (!callback.addResult(suggestion)) {
                 break
             }
-            n++
         }
     }
 
