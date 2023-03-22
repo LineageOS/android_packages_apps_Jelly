@@ -73,7 +73,7 @@ internal abstract class SuggestionProvider(private val mEncoding: String) {
      * @param rawQuery the raw query to retrieve the results for.
      * @return a list of history items for the query.
      */
-    fun fetchResults(rawQuery: String): List<String> {
+    open fun fetchResults(rawQuery: String): List<String> {
         val filter = mutableListOf<String>()
         val query = try {
             URLEncoder.encode(rawQuery, mEncoding)

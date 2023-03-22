@@ -83,11 +83,9 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
             }
             val provider = provider
             val query = constraint.toString().lowercase(Locale.getDefault()).trim { it <= ' ' }
-            if (provider != null) {
-                val items = provider.fetchResults(query)
-                results.count = items.size
-                results.values = items
-            }
+            val items = provider.fetchResults(query)
+            results.count = items.size
+            results.values = items
             return results
         }
 
@@ -104,7 +102,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
             notifyDataSetChanged()
         }
 
-        private val provider: SuggestionProvider?
+        private val provider: SuggestionProvider
             get() {
                 return when (PrefsUtils.getSuggestionProvider(mContext)) {
                     SuggestionProviderType.BAIDU -> BaiduSuggestionProvider()
@@ -112,7 +110,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
                     SuggestionProviderType.DUCK -> DuckSuggestionProvider()
                     SuggestionProviderType.GOOGLE -> GoogleSuggestionProvider()
                     SuggestionProviderType.YAHOO -> YahooSuggestionProvider()
-                    else -> null
+                    else -> NoSuggestionProvider()
                 }
             }
     }
