@@ -24,10 +24,11 @@ import org.lineageos.jelly.ui.UrlBarController
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 
 internal class ChromeClient(
-        private val mActivity: WebViewExtActivity,
-        private val mIncognito: Boolean,
-        private val mUrlBarController: UrlBarController,
-        private val mProgressBar: ProgressBar) : WebChromeClient() {
+    private val mActivity: WebViewExtActivity,
+    private val mIncognito: Boolean,
+    private val mUrlBarController: UrlBarController,
+    private val mProgressBar: ProgressBar
+) : WebChromeClient() {
     override fun onProgressChanged(view: WebView, progress: Int) {
         mProgressBar.visibility = if (progress == 100) View.INVISIBLE else View.VISIBLE
         mProgressBar.progress = if (progress == 100) 0 else progress
@@ -47,8 +48,10 @@ internal class ChromeClient(
         mActivity.onFaviconLoaded(icon)
     }
 
-    override fun onShowFileChooser(view: WebView, path: ValueCallback<Array<Uri>>,
-                                   params: FileChooserParams): Boolean {
+    override fun onShowFileChooser(
+        view: WebView, path: ValueCallback<Array<Uri>>,
+        params: FileChooserParams
+    ): Boolean {
         val getContent = mActivity.registerForActivityResult(OpenMultipleDocuments()) {
             path.onReceiveValue(it.toTypedArray())
         }
@@ -58,15 +61,19 @@ internal class ChromeClient(
                 MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
             }.toTypedArray())
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(mActivity, mActivity.getString(R.string.error_no_activity_found),
-                    Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                mActivity, mActivity.getString(R.string.error_no_activity_found),
+                Toast.LENGTH_LONG
+            ).show()
             return false
         }
         return true
     }
 
-    override fun onGeolocationPermissionsShowPrompt(origin: String,
-                                                    callback: GeolocationPermissions.Callback) {
+    override fun onGeolocationPermissionsShowPrompt(
+        origin: String,
+        callback: GeolocationPermissions.Callback
+    ) {
         if (!mActivity.hasLocationPermission()) {
             mActivity.requestLocationPermission()
         } else {
@@ -82,8 +89,10 @@ internal class ChromeClient(
         mActivity.onHideCustomView()
     }
 
-    override fun onCreateWindow(view: WebView, isDialog: Boolean,
-                                isUserGesture: Boolean, resultMsg: Message): Boolean {
+    override fun onCreateWindow(
+        view: WebView, isDialog: Boolean,
+        isUserGesture: Boolean, resultMsg: Message
+    ): Boolean {
         val result = view.hitTestResult
         val url = result.extra
         openInNewTab(mActivity, url, mIncognito)
