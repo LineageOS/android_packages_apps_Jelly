@@ -39,16 +39,16 @@
 
         <LinearLayout
             android:id="@+id/history_empty_layout"
-            style="@style/AppTheme.EmptyLayout"
+            style="@style/Theme.Jelly.EmptyLayout"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                style="@style/AppTheme.EmptyImage"
+                style="@style/Theme.Jelly.EmptyImage"
                 android:src="@drawable/ic_history"
                 android:tint="@color/empty_image" />
 
             <TextView
-                style="@style/AppTheme.EmptyText"
+                style="@style/Theme.Jelly.EmptyText"
                 android:text="@string/history_empty" />
         </LinearLayout>
     </RelativeLayout>
