@@ -18,7 +18,7 @@ package org.lineageos.jelly.utils
 
 import android.util.Patterns
 import android.webkit.URLUtil
-import java.util.*
+import java.util.Locale
 import java.util.regex.Pattern
 
 object UrlUtils {
