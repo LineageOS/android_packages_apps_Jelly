@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import org.lineageos.jelly.R
 
 internal class HistoryAnimationDecorator(context: Context?) : ItemDecoration() {
-    private val mBackground: Drawable
+    private val background: Drawable
 
     init {
-        mBackground = ColorDrawable(ContextCompat.getColor(context!!, R.color.colorDelete))
+        background = ColorDrawable(ContextCompat.getColor(context!!, R.color.colorDelete))
     }
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
@@ -52,8 +52,8 @@ internal class HistoryAnimationDecorator(context: Context?) : ItemDecoration() {
             top = lastComingDown.bottom + lastComingDown.translationY.toInt()
             bottom = lastComingDown.bottom
         }
-        mBackground.setBounds(left, top, right, bottom)
-        mBackground.draw(c)
+        background.setBounds(left, top, right, bottom)
+        background.draw(c)
         super.onDraw(c, parent, state)
     }
 }

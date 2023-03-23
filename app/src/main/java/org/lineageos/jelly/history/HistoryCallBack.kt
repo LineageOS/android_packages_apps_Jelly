@@ -20,17 +20,17 @@ import org.lineageos.jelly.R
 
 class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
-    private val mResolver: ContentResolver = context.contentResolver
-    private val mBackground: Drawable
-    private val mDelete: Drawable?
-    private val mDeleteListener: OnDeleteListener?
-    private val mMargin: Int
+    private val resolver: ContentResolver = context.contentResolver
+    private val background: Drawable
+    private val delete: Drawable?
+    private val deleteListener: OnDeleteListener?
+    private val margin: Int
 
     init {
-        mBackground = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
-        mDelete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)
-        mMargin = context.resources.getDimension(R.dimen.delete_margin).toInt()
-        mDeleteListener = deleteListener
+        background = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
+        delete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)
+        margin = context.resources.getDimension(R.dimen.delete_margin).toInt()
+        this.deleteListener = deleteListener
     }
 
     override fun onMove(
@@ -47,7 +47,7 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
             holder.itemId
         )
         var values: ContentValues? = null
-        val cursor = mResolver.query(uri, null, null, null, null)
+        val cursor = resolver.query(uri, null, null, null, null)
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 values = ContentValues()
@@ -55,9 +55,9 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
             }
             cursor.close()
         }
-        mResolver.delete(uri, null, null)
-        if (values != null && mDeleteListener != null) {
-            mDeleteListener.onItemDeleted(values)
+        resolver.delete(uri, null, null)
+        if (values != null && deleteListener != null) {
+            deleteListener.onItemDeleted(values)
         }
     }
 
@@ -70,18 +70,18 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
         if (viewHolder.bindingAdapterPosition == -1) {
             return
         }
-        mBackground.setBounds(
+        background.setBounds(
             view.right + dX.toInt(), view.top, view.right,
             view.bottom
         )
-        mBackground.draw(c)
-        val iconLeft = view.right - mMargin - mDelete!!.intrinsicWidth
+        background.draw(c)
+        val iconLeft = view.right - margin - delete!!.intrinsicWidth
         val iconTop = view.top +
-                (view.bottom - view.top - mDelete.intrinsicHeight) / 2
-        val iconRight = view.right - mMargin
-        val iconBottom = iconTop + mDelete.intrinsicHeight
-        mDelete.setBounds(iconLeft, iconTop, iconRight, iconBottom)
-        mDelete.draw(c)
+                (view.bottom - view.top - delete.intrinsicHeight) / 2
+        val iconRight = view.right - margin
+        val iconBottom = iconTop + delete.intrinsicHeight
+        delete.setBounds(iconLeft, iconTop, iconRight, iconBottom)
+        delete.draw(c)
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
     }
 
