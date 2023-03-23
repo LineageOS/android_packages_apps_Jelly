@@ -26,8 +26,10 @@ class HistoryAdapter(private val mContext: Context) : RecyclerView.Adapter<Histo
     private var mTimestampColumnIndex = 0
 
     init {
-        mHistoryDateFormat = SimpleDateFormat(mContext.getString(R.string.history_date_format),
-                Locale.getDefault())
+        mHistoryDateFormat = SimpleDateFormat(
+            mContext.getString(R.string.history_date_format),
+            Locale.getDefault()
+        )
         setHasStableIds(true)
     }
 
@@ -47,8 +49,10 @@ class HistoryAdapter(private val mContext: Context) : RecyclerView.Adapter<Histo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): HistoryHolder {
-        return HistoryHolder(LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_history, parent, false))
+        return HistoryHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_history, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: HistoryHolder, position: Int) {

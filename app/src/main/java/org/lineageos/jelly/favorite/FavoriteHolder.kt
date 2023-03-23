@@ -39,5 +39,4 @@ class FavoriteHolder(view: View) : RecyclerView.ViewHolder(view) {
             true
         }
     }
-
 }
