@@ -33,7 +33,6 @@ import androidx.annotation.StyleRes
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
 import androidx.preference.PreferenceManager
-import org.lineageos.jelly.R
 
 object UiUtils {
     fun isColorLight(color: Int): Boolean {
