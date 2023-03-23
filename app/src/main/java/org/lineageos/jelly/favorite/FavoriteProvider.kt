@@ -23,7 +23,10 @@ class FavoriteProvider : ContentProvider() {
     companion object {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
-        private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH)
+        private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH).apply {
+            addURI(Columns.AUTHORITY, "favorite", MATCH_ALL)
+            addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID)
+        }
         fun addOrUpdateItem(
             resolver: ContentResolver, title: String?, url: String,
             color: Int
@@ -33,11 +36,11 @@ class FavoriteProvider : ContentProvider() {
                 Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
                 Columns.URL + "=?", arrayOf(url), null
             )
-            if (cursor != null) {
-                if (cursor.moveToFirst()) {
-                    existingId = cursor.getLong(0)
+            cursor?.let {
+                if (it.moveToFirst()) {
+                    existingId = it.getLong(0)
                 }
-                cursor.close()
+                it.close()
             }
             val values = ContentValues()
             values.put(Columns.TITLE, title)
@@ -58,11 +61,6 @@ class FavoriteProvider : ContentProvider() {
             values.put(Columns.TITLE, title)
             values.put(Columns.URL, url)
             resolver.update(ContentUris.withAppendedId(Columns.CONTENT_URI, id), values, null, null)
-        }
-
-        init {
-            URI_MATCHER.addURI(Columns.AUTHORITY, "favorite", MATCH_ALL)
-            URI_MATCHER.addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID)
         }
     }
 
@@ -92,9 +90,7 @@ class FavoriteProvider : ContentProvider() {
         return ret
     }
 
-    override fun getType(uri: Uri): String? {
-        return null
-    }
+    override fun getType(uri: Uri) = null
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         if (URI_MATCHER.match(uri) != MATCH_ALL) {
@@ -113,10 +109,9 @@ class FavoriteProvider : ContentProvider() {
         uri: Uri, values: ContentValues?,
         selection: String?, selectionArgs: Array<String>?
     ): Int {
-        val count: Int
         val match = URI_MATCHER.match(uri)
         val db = dbHelper.writableDatabase
-        count = when (match) {
+        val count = when (match) {
             MATCH_ALL -> db.update(
                 FavoriteDbHelper.DB_TABLE_FAVORITES,
                 values, selection, selectionArgs

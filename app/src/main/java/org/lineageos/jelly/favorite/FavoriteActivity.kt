@@ -52,18 +52,18 @@ class FavoriteActivity : AppCompatActivity() {
         adapter = FavoriteAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderCallbacks<Cursor> {
-            override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
-                return CursorLoader(
-                    this@FavoriteActivity, FavoriteProvider.Columns.CONTENT_URI,
-                    null, null, null, BaseColumns._ID + " DESC"
-                )
-            }
+            override fun onCreateLoader(id: Int, args: Bundle?) = CursorLoader(
+                this@FavoriteActivity, FavoriteProvider.Columns.CONTENT_URI,
+                null, null, null, BaseColumns._ID + " DESC"
+            )
 
             override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
                 adapter.swapCursor(data)
-                if (data != null && data.count == 0) {
-                    list.visibility = View.GONE
-                    emptyView.visibility = View.VISIBLE
+                data?.let {
+                    if (it.count == 0) {
+                        list.visibility = View.GONE
+                        emptyView.visibility = View.VISIBLE
+                    }
                 }
             }
 
