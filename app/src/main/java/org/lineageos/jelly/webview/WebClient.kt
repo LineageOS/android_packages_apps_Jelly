@@ -43,7 +43,6 @@ import org.lineageos.jelly.ui.UrlBarController
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.net.URISyntaxException
-import java.util.*
 
 internal class WebClient(private val mUrlBarController: UrlBarController) : WebViewClient() {
     override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
