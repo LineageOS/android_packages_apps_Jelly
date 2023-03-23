@@ -297,7 +297,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         menu.setOnClickListener {
             val isDesktop = mWebView.isDesktopMode
             val wrapper = ContextThemeWrapper(this,
-                    R.style.AppTheme_PopupMenuOverlapAnchor)
+                    R.style.Theme_Jelly_PopupMenuOverlapAnchor)
             val popupMenu = PopupMenu(wrapper, menu, Gravity.NO_GRAVITY,
                     R.attr.actionOverflowMenuStyle, 0)
             popupMenu.inflate(R.menu.menu_main)
@@ -711,7 +711,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         val containerParams = mWebViewContainer.layoutParams as CoordinatorLayout.LayoutParams
         val progressParams = mLoadingProgress.layoutParams as RelativeLayout.LayoutParams
         val searchBarParams = mToolbarSearchBar.layoutParams as RelativeLayout.LayoutParams
-        val margin = UiUtils.getDimenAttr(this, R.style.AppTheme,
+        val margin = UiUtils.getDimenAttr(this, R.style.Theme_Jelly,
                 android.R.attr.actionBarSize).toInt()
         if (isReachMode) {
             appBarParams.gravity = Gravity.BOTTOM
