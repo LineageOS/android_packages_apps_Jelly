@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingEnd="?dialogPreferredPadding"
-    android:paddingStart="?dialogPreferredPadding">
+    android:paddingStart="?dialogPreferredPadding"
+    android:paddingEnd="?dialogPreferredPadding">
 
     <EditText
         android:id="@+id/homepage_edit_url"

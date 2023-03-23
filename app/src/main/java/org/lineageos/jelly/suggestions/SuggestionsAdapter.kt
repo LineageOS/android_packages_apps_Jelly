@@ -49,9 +49,11 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
             val lcSuggestion = suggestion.lowercase(Locale.getDefault())
             var queryTextPos = lcSuggestion.indexOf(query)
             while (queryTextPos >= 0) {
-                spannable.setSpan(StyleSpan(Typeface.BOLD),
-                        queryTextPos, queryTextPos + query.length,
-                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannable.setSpan(
+                    StyleSpan(Typeface.BOLD),
+                    queryTextPos, queryTextPos + query.length,
+                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
                 queryTextPos = lcSuggestion.indexOf(query, queryTextPos + query.length)
             }
             title.text = spannable
