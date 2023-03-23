@@ -30,7 +30,7 @@ import android.widget.TextView
 import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.PrefsUtils
 import org.lineageos.jelly.utils.PrefsUtils.SuggestionProviderType
-import java.util.*
+import java.util.Locale
 
 class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filterable {
     private val mInflator: LayoutInflater = LayoutInflater.from(mContext)
