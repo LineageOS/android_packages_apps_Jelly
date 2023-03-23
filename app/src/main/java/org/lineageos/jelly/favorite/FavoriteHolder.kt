@@ -18,23 +18,23 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val mCard: CardView = view.findViewById(R.id.row_favorite_card)
-    private val mTitle: TextView = view.findViewById(R.id.row_favorite_title)
+    private val card: CardView = view.findViewById(R.id.row_favorite_card)
+    private val title: TextView = view.findViewById(R.id.row_favorite_title)
     fun bind(context: Context, id: Long, title: String?, url: String, color: Int) {
         val adjustedTitle = if (title.isNullOrEmpty()) {
             url.split("/").toTypedArray()[2]
         } else {
             title
         }
-        mTitle.text = adjustedTitle
-        mTitle.setTextColor(if (UiUtils.isColorLight(color)) Color.BLACK else Color.WHITE)
-        mCard.setCardBackgroundColor(color)
-        mCard.setOnClickListener {
+        this.title.text = adjustedTitle
+        this.title.setTextColor(if (UiUtils.isColorLight(color)) Color.BLACK else Color.WHITE)
+        card.setCardBackgroundColor(color)
+        card.setOnClickListener {
             val intent = Intent(context, MainActivity::class.java)
             intent.data = Uri.parse(url)
             context.startActivity(intent)
         }
-        mCard.setOnLongClickListener {
+        card.setOnLongClickListener {
             (context as FavoriteActivity).editItem(id, adjustedTitle, url)
             true
         }

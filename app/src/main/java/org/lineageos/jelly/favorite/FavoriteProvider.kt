@@ -23,7 +23,7 @@ class FavoriteProvider : ContentProvider() {
     companion object {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
-        private val sURIMatcher = UriMatcher(UriMatcher.NO_MATCH)
+        private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH)
         fun addOrUpdateItem(
             resolver: ContentResolver, title: String?, url: String,
             color: Int
@@ -61,14 +61,14 @@ class FavoriteProvider : ContentProvider() {
         }
 
         init {
-            sURIMatcher.addURI(Columns.AUTHORITY, "favorite", MATCH_ALL)
-            sURIMatcher.addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID)
+            URI_MATCHER.addURI(Columns.AUTHORITY, "favorite", MATCH_ALL)
+            URI_MATCHER.addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID)
         }
     }
 
-    private lateinit var mDbHelper: FavoriteDbHelper
+    private lateinit var dbHelper: FavoriteDbHelper
     override fun onCreate(): Boolean {
-        mDbHelper = FavoriteDbHelper(context)
+        dbHelper = FavoriteDbHelper(context)
         return true
     }
 
@@ -78,7 +78,7 @@ class FavoriteProvider : ContentProvider() {
         sortOrder: String?
     ): Cursor? {
         val qb = SQLiteQueryBuilder()
-        val match = sURIMatcher.match(uri)
+        val match = URI_MATCHER.match(uri)
         qb.tables = FavoriteDbHelper.DB_TABLE_FAVORITES
         when (match) {
             MATCH_ALL -> {
@@ -86,7 +86,7 @@ class FavoriteProvider : ContentProvider() {
             MATCH_ID -> qb.appendWhere(BaseColumns._ID + " = " + uri.lastPathSegment)
             else -> return null
         }
-        val db = mDbHelper.readableDatabase
+        val db = dbHelper.readableDatabase
         val ret = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder)
         ret.setNotificationUri(requireContextExt().contentResolver, uri)
         return ret
@@ -97,10 +97,10 @@ class FavoriteProvider : ContentProvider() {
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        if (sURIMatcher.match(uri) != MATCH_ALL) {
+        if (URI_MATCHER.match(uri) != MATCH_ALL) {
             return null
         }
-        val db = mDbHelper.writableDatabase
+        val db = dbHelper.writableDatabase
         val rowID = db.insert(FavoriteDbHelper.DB_TABLE_FAVORITES, null, values)
         if (rowID <= 0) {
             return null
@@ -114,8 +114,8 @@ class FavoriteProvider : ContentProvider() {
         selection: String?, selectionArgs: Array<String>?
     ): Int {
         val count: Int
-        val match = sURIMatcher.match(uri)
-        val db = mDbHelper.writableDatabase
+        val match = URI_MATCHER.match(uri)
+        val db = dbHelper.writableDatabase
         count = when (match) {
             MATCH_ALL -> db.update(
                 FavoriteDbHelper.DB_TABLE_FAVORITES,
@@ -146,8 +146,8 @@ class FavoriteProvider : ContentProvider() {
     ): Int {
         var localSelection = selection
         var localSelectionArgs = selectionArgs
-        val match = sURIMatcher.match(uri)
-        val db = mDbHelper.writableDatabase
+        val match = URI_MATCHER.match(uri)
+        val db = dbHelper.writableDatabase
         when (match) {
             MATCH_ALL -> {
             }
