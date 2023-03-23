@@ -12,26 +12,17 @@ import android.content.Context
 import android.database.DatabaseUtils
 import android.graphics.Canvas
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
 
-class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
+class HistoryCallBack(context: Context, private val deleteListener: OnDeleteListener?) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
-    private val mResolver: ContentResolver = context.contentResolver
-    private val mBackground: Drawable
-    private val mDelete: Drawable?
-    private val mDeleteListener: OnDeleteListener?
-    private val mMargin: Int
-
-    init {
-        mBackground = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
-        mDelete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)
-        mMargin = context.resources.getDimension(R.dimen.delete_margin).toInt()
-        mDeleteListener = deleteListener
-    }
+    private val resolver: ContentResolver = context.contentResolver
+    private val background = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
+    private val delete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)!!
+    private val margin = context.resources.getDimension(R.dimen.delete_margin).toInt()
 
     override fun onMove(
         recyclerView: RecyclerView,
@@ -47,17 +38,17 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
             holder.itemId
         )
         var values: ContentValues? = null
-        val cursor = mResolver.query(uri, null, null, null, null)
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
+        val cursor = resolver.query(uri, null, null, null, null)
+        cursor?.let {
+            if (it.moveToFirst()) {
                 values = ContentValues()
                 DatabaseUtils.cursorRowToContentValues(cursor, values)
             }
-            cursor.close()
+            it.close()
         }
-        mResolver.delete(uri, null, null)
-        if (values != null && mDeleteListener != null) {
-            mDeleteListener.onItemDeleted(values)
+        resolver.delete(uri, null, null)
+        values?.let {
+            deleteListener?.onItemDeleted(it)
         }
     }
 
@@ -70,18 +61,18 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
         if (viewHolder.bindingAdapterPosition == -1) {
             return
         }
-        mBackground.setBounds(
+        background.setBounds(
             view.right + dX.toInt(), view.top, view.right,
             view.bottom
         )
-        mBackground.draw(c)
-        val iconLeft = view.right - mMargin - mDelete!!.intrinsicWidth
+        background.draw(c)
+        val iconLeft = view.right - margin - delete.intrinsicWidth
         val iconTop = view.top +
-                (view.bottom - view.top - mDelete.intrinsicHeight) / 2
-        val iconRight = view.right - mMargin
-        val iconBottom = iconTop + mDelete.intrinsicHeight
-        mDelete.setBounds(iconLeft, iconTop, iconRight, iconBottom)
-        mDelete.draw(c)
+                (view.bottom - view.top - delete.intrinsicHeight) / 2
+        val iconRight = view.right - margin
+        val iconBottom = iconTop + delete.intrinsicHeight
+        delete.setBounds(iconLeft, iconTop, iconRight, iconBottom)
+        delete.draw(c)
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
     }
 
