@@ -23,7 +23,7 @@ class HistoryProvider : ContentProvider() {
     companion object {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
-        private val sURIMatcher = UriMatcher(UriMatcher.NO_MATCH)
+        private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH)
         fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String) {
             var existingId: Long = -1
             val cursor = resolver.query(
@@ -51,14 +51,14 @@ class HistoryProvider : ContentProvider() {
         }
 
         init {
-            sURIMatcher.addURI(Columns.AUTHORITY, "history", MATCH_ALL)
-            sURIMatcher.addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
+            URI_MATCHER.addURI(Columns.AUTHORITY, "history", MATCH_ALL)
+            URI_MATCHER.addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
         }
     }
 
-    private lateinit var mDbHelper: HistoryDbHelper
+    private lateinit var dbHelper: HistoryDbHelper
     override fun onCreate(): Boolean {
-        mDbHelper = HistoryDbHelper(context)
+        dbHelper = HistoryDbHelper(context)
         return true
     }
 
@@ -68,7 +68,7 @@ class HistoryProvider : ContentProvider() {
         sortOrder: String?
     ): Cursor? {
         val qb = SQLiteQueryBuilder()
-        val match = sURIMatcher.match(uri)
+        val match = URI_MATCHER.match(uri)
         qb.tables = HistoryDbHelper.DB_TABLE_HISTORY
         when (match) {
             MATCH_ALL -> {
@@ -76,7 +76,7 @@ class HistoryProvider : ContentProvider() {
             MATCH_ID -> qb.appendWhere(BaseColumns._ID + " = " + uri.lastPathSegment)
             else -> return null
         }
-        val db = mDbHelper.readableDatabase
+        val db = dbHelper.readableDatabase
         val ret = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder)
         ret.setNotificationUri(requireContextExt().contentResolver, uri)
         return ret
@@ -87,13 +87,13 @@ class HistoryProvider : ContentProvider() {
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        if (sURIMatcher.match(uri) != MATCH_ALL) {
+        if (URI_MATCHER.match(uri) != MATCH_ALL) {
             return null
         }
         if (values != null && !values.containsKey(Columns.TIMESTAMP)) {
             values.put(Columns.TIMESTAMP, System.currentTimeMillis() / 1000)
         }
-        val db = mDbHelper.writableDatabase
+        val db = dbHelper.writableDatabase
         val rowID = db.insert(HistoryDbHelper.DB_TABLE_HISTORY, null, values)
         if (rowID <= 0) {
             return null
@@ -107,8 +107,8 @@ class HistoryProvider : ContentProvider() {
         selection: String?, selectionArgs: Array<String>?
     ): Int {
         val count: Int
-        val match = sURIMatcher.match(uri)
-        val db = mDbHelper.writableDatabase
+        val match = URI_MATCHER.match(uri)
+        val db = dbHelper.writableDatabase
         count = when (match) {
             MATCH_ALL -> db.update(
                 HistoryDbHelper.DB_TABLE_HISTORY,
@@ -139,8 +139,8 @@ class HistoryProvider : ContentProvider() {
     ): Int {
         var localSelection = selection
         var localSelectionArgs = selectionArgs
-        val match = sURIMatcher.match(uri)
-        val db = mDbHelper.writableDatabase
+        val match = URI_MATCHER.match(uri)
+        val db = dbHelper.writableDatabase
         when (match) {
             MATCH_ALL -> {
             }
