@@ -45,5 +45,4 @@ class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
         mRootLayout.background = ColorDrawable(ContextCompat.getColor(context, background))
     }
-
 }
