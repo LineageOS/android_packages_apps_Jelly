@@ -23,7 +23,7 @@
     <string name="menu_favorites">Favoritos</string>
     <string name="menu_history">Historial</string>
     <string name="menu_shortcut">Amestar un atayu</string>
-    <string name="menu_settings">Axustes</string>
+    <string name="menu_settings">Configuración</string>
     <string name="menu_download">Baxar</string>
     <string name="menu_in_new_tab">Abrir nuna llingüeta nueva</string>
     <string name="menu_desktop_mode">Solicitar el sitiu pa ordenadores</string>
@@ -35,7 +35,7 @@
     <string name="download_title">Descarga d\'un ficheru</string>
     <string name="download_message">¿Quies baxar «%1$s»?</string>
     <string name="download_positive">Baxar</string>
-    <string name="settings_title">Axustes</string>
+    <string name="settings_title">Configuración</string>
     <string name="pref_search_engine">Motor de busca</string>
     <string name="pref_start_page">Páxina d\'aniciu</string>
     <string name="pref_start_page_dialog_title">Seleición d\'una páxina d\'aniciu</string>
