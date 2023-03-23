@@ -13,12 +13,12 @@ import java.util.regex.Pattern
 
 object UrlUtils {
     val ACCEPTED_URI_SCHEMA: Pattern = Pattern.compile(
-            "(?i)" +  // switch on case insensitive matching
-                    "(" +  // begin group for schema
-                    "(?:http|https|content|file|chrome)://" +
-                    "|(?:inline|data|about|javascript):" +
-                    ")" +
-                    "(.*)"
+        "(?i)" +  // switch on case insensitive matching
+                "(" +  // begin group for schema
+                "(?:http|https|content|file|chrome)://" +
+                "|(?:inline|data|about|javascript):" +
+                ")" +
+                "(.*)"
     )
 
     /**
