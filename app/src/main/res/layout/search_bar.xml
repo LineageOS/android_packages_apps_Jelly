@@ -3,89 +3,120 @@
   SPDX-FileCopyrightText: 2017 The LineageOS Project
   SPDX-License-Identifier: Apache-2.0
   -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:paddingStart="16dp"
-    android:paddingTop="4dp"
-    android:paddingEnd="16dp"
-    android:paddingBottom="4dp">
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
 
     <!-- Dummy view to catch focus -->
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/homeImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_home"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="?attr/colorOnSurface" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="2dp"
-        app:cardBackgroundColor="@color/card_background"
-        app:cardElevation="2dp"
-        app:contentPadding="2dp">
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="0dp"
+        app:contentPaddingLeft="8dp"
+        app:contentPaddingRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/searchMenuImageButton"
+        app:layout_constraintStart_toEndOf="@+id/homeImageButton"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/incognito"
+                android:id="@+id/incognitoImageView"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
+                android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:scaleType="center"
-                android:src="@drawable/ic_incognito" />
+                android:src="@drawable/ic_incognito"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="?attr/colorOnSurfaceVariant" />
 
             <ImageButton
-                android:id="@+id/secure"
+                android:id="@+id/secureImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignWithParentIfMissing="true"
-                android:layout_toEndOf="@id/incognito"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_lock"
-                android:visibility="gone" />
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/incognitoImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="?attr/colorOnSurfaceVariant" />
 
             <org.lineageos.jelly.ui.AutoCompleteTextViewExt
                 android:id="@+id/url_bar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignWithParentIfMissing="true"
-                android:layout_toStartOf="@+id/search_menu"
-                android:layout_toEndOf="@id/secure"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:background="@null"
                 android:completionThreshold="1"
-                android:dropDownAnchor="@id/cardview"
-                android:dropDownVerticalOffset="0dp"
-                android:fadingEdge="vertical"
                 android:imeOptions="actionSearch"
                 android:inputType="textUri"
                 android:maxLines="1"
                 android:nextFocusLeft="@id/url_bar"
                 android:nextFocusUp="@id/url_bar"
                 android:paddingStart="4dp"
-                android:popupBackground="@color/primary"
+                android:popupBackground="?colorSurface"
                 android:popupElevation="2dp"
                 android:selectAllOnFocus="true"
-                android:textColor="@color/inverted"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/secureImageButton"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlSymmetry" />
-
-            <ImageButton
-                android:id="@id/search_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:adjustViewBounds="true"
-                android:background="?selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:src="@drawable/ic_menu" />
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/searchMenuImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentEnd="true"
+        android:adjustViewBounds="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnSurface"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

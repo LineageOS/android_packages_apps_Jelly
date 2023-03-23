@@ -5,16 +5,15 @@
   -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinator_layout"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?colorPrimary" />
+        android:layout_height="?actionBarSize" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,8 +33,7 @@
 
             <ImageView
                 style="@style/Theme.Jelly.EmptyImage"
-                android:src="@drawable/ic_history"
-                android:tint="@color/empty_image" />
+                android:src="@drawable/ic_history" />
 
             <TextView
                 style="@style/Theme.Jelly.EmptyText"

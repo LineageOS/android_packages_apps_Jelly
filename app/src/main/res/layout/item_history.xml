@@ -7,6 +7,7 @@
     android:id="@+id/row_history_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?colorSurface"
     android:foreground="?selectableItemBackground"
     android:gravity="center_vertical"
     android:minHeight="60dp"
