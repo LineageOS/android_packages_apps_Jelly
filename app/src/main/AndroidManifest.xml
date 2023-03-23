@@ -21,7 +21,7 @@
         android:appCategory="productivity"
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.Jelly">
 
         <activity
             android:name="org.lineageos.jelly.MainActivity"
@@ -29,7 +29,7 @@
             android:documentLaunchMode="always"
             android:hardwareAccelerated="true"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/Theme.Jelly.NoActionBar"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,17 +68,17 @@
         <activity
             android:name="org.lineageos.jelly.history.HistoryActivity"
             android:label="@string/history_title"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.Jelly.NoActionBar" />
 
         <activity
             android:name="org.lineageos.jelly.favorite.FavoriteActivity"
             android:label="@string/favorite_title"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.Jelly.NoActionBar" />
 
         <activity
             android:name="org.lineageos.jelly.SettingsActivity"
             android:label="@string/settings_title"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.Jelly.NoActionBar" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
