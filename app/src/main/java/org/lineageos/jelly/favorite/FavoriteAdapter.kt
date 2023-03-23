@@ -39,12 +39,10 @@ class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<Favo
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, type: Int): FavoriteHolder {
-        return FavoriteHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_favorite, parent, false)
-        )
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, type: Int) = FavoriteHolder(
+        LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_favorite, parent, false)
+    )
 
     override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {
         val cursor = cursor ?: return
@@ -57,8 +55,7 @@ class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<Favo
 
     override fun getItemCount() = cursor?.count ?: 0
 
-    override fun getItemId(position: Int): Long {
-        val cursor = cursor ?: return -1
-        return if (cursor.moveToPosition(position)) cursor.getLong(idColumnIndex) else -1
-    }
+    override fun getItemId(position: Int) = cursor?.let {
+        if (it.moveToPosition(position)) it.getLong(idColumnIndex) else -1L
+    } ?: -1L
 }
