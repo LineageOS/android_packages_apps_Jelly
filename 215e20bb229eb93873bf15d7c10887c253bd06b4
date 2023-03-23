@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3aebdca8_e92d8e31",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/NoSuggestionProvider.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-03-23T13:12:40Z",
+      "side": 1,
+      "message": "\u003d emptyList() (listOf() can also do)",
+      "range": {
+        "startLine": 20,
+        "startChar": 47,
+        "endLine": 22,
+        "endChar": 5
+      },
+      "revId": "215e20bb229eb93873bf15d7c10887c253bd06b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e1be3b0_1e6c8528",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/NoSuggestionProvider.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-03-23T13:12:40Z",
+      "side": 1,
+      "message": "\u003d \"\"",
+      "range": {
+        "startLine": 25,
+        "startChar": 49,
+        "endLine": 27,
+        "endChar": 5
+      },
+      "revId": "215e20bb229eb93873bf15d7c10887c253bd06b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
