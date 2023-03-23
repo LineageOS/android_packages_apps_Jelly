@@ -36,9 +36,9 @@ import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteActivity : AppCompatActivity() {
     private val uiScope = CoroutineScope(Dispatchers.Main)
-    private lateinit var mList: RecyclerView
-    private lateinit var mEmptyView: View
-    private lateinit var mAdapter: FavoriteAdapter
+    private lateinit var list: RecyclerView
+    private lateinit var emptyView: View
+    private lateinit var adapter: FavoriteAdapter
 
     override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
@@ -47,9 +47,9 @@ class FavoriteActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener { finish() }
-        mList = findViewById(R.id.favorite_list)
-        mEmptyView = findViewById(R.id.favorite_empty_layout)
-        mAdapter = FavoriteAdapter(this)
+        list = findViewById(R.id.favorite_list)
+        emptyView = findViewById(R.id.favorite_empty_layout)
+        adapter = FavoriteAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderCallbacks<Cursor> {
             override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
@@ -60,22 +60,22 @@ class FavoriteActivity : AppCompatActivity() {
             }
 
             override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-                mAdapter.swapCursor(data)
+                adapter.swapCursor(data)
                 if (data != null && data.count == 0) {
-                    mList.visibility = View.GONE
-                    mEmptyView.visibility = View.VISIBLE
+                    list.visibility = View.GONE
+                    emptyView.visibility = View.VISIBLE
                 }
             }
 
             override fun onLoaderReset(loader: Loader<Cursor>) {
-                mAdapter.swapCursor(null)
+                adapter.swapCursor(null)
             }
         })
-        mList.layoutManager = GridLayoutManager(this, 2)
-        mList.itemAnimator = DefaultItemAnimator()
-        mList.adapter = mAdapter
-        val listTop = mList.top
-        mList.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        list.layoutManager = GridLayoutManager(this, 2)
+        list.itemAnimator = DefaultItemAnimator()
+        list.adapter = adapter
+        val listTop = list.top
+        list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 toolbar.elevation = if (recyclerView.getChildAt(0).top < listTop) {
