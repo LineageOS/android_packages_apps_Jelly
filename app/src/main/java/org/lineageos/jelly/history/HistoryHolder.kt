@@ -9,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
-import android.text.TextUtils
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -20,14 +19,12 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {
-    private val rootLayout: LinearLayout = view.findViewById(R.id.row_history_layout)
-    private val title: TextView = view.findViewById(R.id.row_history_title)
-    private val summary: TextView = view.findViewById(R.id.row_history_summary)
+    private val rootLayout = view.findViewById<LinearLayout>(R.id.row_history_layout)
+    private val title = view.findViewById<TextView>(R.id.row_history_title)
+    private val summary = view.findViewById<TextView>(R.id.row_history_summary)
     fun bind(context: Context, title: String, url: String, summary: String?, timestamp: Long) {
-        val historyTitle = if (TextUtils.isEmpty(title)) {
+        val historyTitle = title.ifEmpty {
             url.split("/").toTypedArray()[2]
-        } else {
-            title
         }
         this.title.text = historyTitle
         this.summary.text = summary

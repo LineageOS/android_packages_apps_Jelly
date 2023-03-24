@@ -8,19 +8,14 @@ package org.lineageos.jelly.history
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import org.lineageos.jelly.R
 
-internal class HistoryAnimationDecorator(context: Context?) : ItemDecoration() {
-    private val background: Drawable
-
-    init {
-        background = ColorDrawable(ContextCompat.getColor(context!!, R.color.colorDelete))
-    }
+internal class HistoryAnimationDecorator(context: Context) : ItemDecoration() {
+    private val background = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
 
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         if (!parent.itemAnimator!!.isRunning) {
@@ -33,10 +28,11 @@ internal class HistoryAnimationDecorator(context: Context?) : ItemDecoration() {
         var top = 0
         val right = parent.width
         var bottom = 0
-        val size = parent.layoutManager!!.childCount
+        val layoutManager = parent.layoutManager!!
+        val size = layoutManager.childCount
         for (i in 0 until size) {
-            val child = parent.layoutManager!!.getChildAt(i)
-            if (child!!.translationY < 0) {
+            val child = layoutManager.getChildAt(i)!!
+            if (child.translationY < 0) {
                 lastComingDown = child
             } else if (child.translationY > 0 && firstComingUp == null) {
                 firstComingUp = child
