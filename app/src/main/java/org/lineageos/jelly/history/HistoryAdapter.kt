@@ -18,7 +18,10 @@ import java.util.Date
 import java.util.Locale
 
 class HistoryAdapter(private val context: Context) : RecyclerView.Adapter<HistoryHolder>() {
-    private val historyDateFormat: DateFormat
+    private val historyDateFormat = SimpleDateFormat(
+        context.getString(R.string.history_date_format),
+        Locale.getDefault()
+    )
     private var cursor: Cursor? = null
     private var idColumnIndex = 0
     private var titleColumnIndex = 0
@@ -26,10 +29,6 @@ class HistoryAdapter(private val context: Context) : RecyclerView.Adapter<Histor
     private var timestampColumnIndex = 0
 
     init {
-        historyDateFormat = SimpleDateFormat(
-            context.getString(R.string.history_date_format),
-            Locale.getDefault()
-        )
         setHasStableIds(true)
     }
 
@@ -48,12 +47,10 @@ class HistoryAdapter(private val context: Context) : RecyclerView.Adapter<Histor
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, type: Int): HistoryHolder {
-        return HistoryHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_history, parent, false)
-        )
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, type: Int) = HistoryHolder(
+        LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_history, parent, false)
+    )
 
     override fun onBindViewHolder(holder: HistoryHolder, position: Int) {
         val cursor = cursor ?: return
@@ -69,8 +66,7 @@ class HistoryAdapter(private val context: Context) : RecyclerView.Adapter<Histor
 
     override fun getItemCount() = cursor?.count ?: 0
 
-    override fun getItemId(position: Int): Long {
-        val cursor = cursor ?: return -1
-        return if (cursor.moveToPosition(position)) cursor.getLong(idColumnIndex) else -1
-    }
+    override fun getItemId(position: Int) = cursor?.let {
+        if (it.moveToPosition(position)) it.getLong(idColumnIndex) else -1L
+    } ?: -1L
 }
