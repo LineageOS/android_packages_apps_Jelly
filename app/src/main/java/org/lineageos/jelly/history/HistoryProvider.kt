@@ -23,18 +23,21 @@ class HistoryProvider : ContentProvider() {
     companion object {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
-        private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH)
+        private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH).apply {
+            addURI(Columns.AUTHORITY, "history", MATCH_ALL)
+            addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
+        }
         fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String) {
             var existingId: Long = -1
             val cursor = resolver.query(
                 Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
                 Columns.URL + "=?", arrayOf(url), null
             )
-            if (cursor != null) {
-                if (cursor.moveToFirst()) {
+            cursor?.let {
+                if (it.moveToFirst()) {
                     existingId = cursor.getLong(0)
                 }
-                cursor.close()
+                it.close()
             }
             val values = ContentValues()
             values.put(Columns.TITLE, title)
@@ -48,11 +51,6 @@ class HistoryProvider : ContentProvider() {
                 values.put(Columns.URL, url)
                 resolver.insert(Columns.CONTENT_URI, values)
             }
-        }
-
-        init {
-            URI_MATCHER.addURI(Columns.AUTHORITY, "history", MATCH_ALL)
-            URI_MATCHER.addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
         }
     }
 
@@ -82,16 +80,16 @@ class HistoryProvider : ContentProvider() {
         return ret
     }
 
-    override fun getType(uri: Uri): String? {
-        return null
-    }
+    override fun getType(uri: Uri) = null
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         if (URI_MATCHER.match(uri) != MATCH_ALL) {
             return null
         }
-        if (values != null && !values.containsKey(Columns.TIMESTAMP)) {
-            values.put(Columns.TIMESTAMP, System.currentTimeMillis() / 1000)
+        values?.let {
+            if (!it.containsKey(Columns.TIMESTAMP)) {
+                it.put(Columns.TIMESTAMP, System.currentTimeMillis() / 1000)
+            }
         }
         val db = dbHelper.writableDatabase
         val rowID = db.insert(HistoryDbHelper.DB_TABLE_HISTORY, null, values)
@@ -106,10 +104,9 @@ class HistoryProvider : ContentProvider() {
         uri: Uri, values: ContentValues?,
         selection: String?, selectionArgs: Array<String>?
     ): Int {
-        val count: Int
         val match = URI_MATCHER.match(uri)
         val db = dbHelper.writableDatabase
-        count = when (match) {
+        val count = when (match) {
             MATCH_ALL -> db.update(
                 HistoryDbHelper.DB_TABLE_HISTORY,
                 values, selection, selectionArgs
