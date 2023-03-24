@@ -20,25 +20,25 @@ import org.lineageos.jelly.R
 import java.text.DateFormat
 
 class UrlBarController(
-    private val mEditor: EditText,
-    private val mSecureIcon: ImageView
+    private val editor: EditText,
+    private val secureIcon: ImageView
 ) : OnFocusChangeListener {
-    private var mUrl: String? = null
-    private var mTitle: String? = null
-    private var mLoading = false
-    private var mUrlBarHasFocus = false
+    private var url: String? = null
+    private var title: String? = null
+    private var loading = false
+    private var urlBarHasFocus = false
     fun onPageLoadStarted(url: String?) {
-        mUrl = url
-        mLoading = true
-        if (!mUrlBarHasFocus) {
+        this.url = url
+        loading = true
+        if (!urlBarHasFocus) {
             updateUrlBarText()
         }
         updateSecureIconVisibility()
     }
 
     fun onPageLoadFinished(context: Context, certificate: SslCertificate?) {
-        mLoading = false
-        if (!mUrlBarHasFocus) {
+        loading = false
+        if (!urlBarHasFocus) {
             updateUrlBarText()
         }
         updateSecureIconVisibility()
@@ -46,20 +46,20 @@ class UrlBarController(
     }
 
     fun onTitleReceived(title: String?) {
-        mTitle = title
-        if (!mUrlBarHasFocus) {
+        this.title = title
+        if (!urlBarHasFocus) {
             updateUrlBarText()
         }
     }
 
     override fun onFocusChange(view: View, hasFocus: Boolean) {
-        mUrlBarHasFocus = hasFocus
+        urlBarHasFocus = hasFocus
         updateUrlBarText()
         updateSecureIconVisibility()
     }
 
     private fun updateSecureIconVisibility() {
-        mSecureIcon.visibility = if (!mLoading && !mUrlBarHasFocus && isSecure) {
+        secureIcon.visibility = if (!loading && !urlBarHasFocus && isSecure) {
             View.VISIBLE
         } else {
             View.GONE
@@ -67,17 +67,17 @@ class UrlBarController(
     }
 
     private fun updateUrlBarText() {
-        val text = if (!mUrlBarHasFocus && !mLoading && mTitle != null) mTitle else mUrl
-        mEditor.setTextKeepState(text ?: "")
+        val text = if (!urlBarHasFocus && !loading && title != null) title else url
+        editor.setTextKeepState(text ?: "")
     }
 
-    private val isSecure = mUrl != null && mUrl!!.startsWith("https")
+    private val isSecure = url != null && url!!.startsWith("https")
 
     private fun updateSSLCertificateDialog(context: Context, certificate: SslCertificate?) {
         if (certificate == null) return
 
         // Show the dialog if you tap the lock icon and the cert is valid
-        mSecureIcon.setOnClickListener {
+        secureIcon.setOnClickListener {
             val view = LayoutInflater.from(context)
                 .inflate(R.layout.dialog_ssl_certificate_info, LinearLayout(context))
 
@@ -93,7 +93,7 @@ class UrlBarController(
             val expiresOnView: KeyValueView = view.findViewById(R.id.expires_on)
 
             // Get the domain name
-            val domainString = Uri.parse(mUrl).host
+            val domainString = Uri.parse(url).host
 
             // Get the validity dates
             val startDate = certificate.validNotBeforeDate
@@ -145,7 +145,7 @@ class UrlBarController(
     }
 
     init {
-        mEditor.onFocusChangeListener = this
-        mEditor.setSelectAllOnFocus(true)
+        editor.onFocusChangeListener = this
+        editor.setSelectAllOnFocus(true)
     }
 }

@@ -15,8 +15,8 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView
 
 class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
-    private var mFocusChangeListener: OnFocusChangeListener? = null
-    private var mPositionX = 0
+    private var focusChangeListener: OnFocusChangeListener? = null
+    private var positionX = 0
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
@@ -24,26 +24,26 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
             super(context, attrs, defStyle)
 
     override fun getOnFocusChangeListener(): OnFocusChangeListener {
-        return mFocusChangeListener!!
+        return focusChangeListener!!
     }
 
     // Override View's focus change listener handling so that we're able to
     // call it before the actual focus change handling, in particular before
     // the IME is fired up.
     override fun setOnFocusChangeListener(l: OnFocusChangeListener) {
-        mFocusChangeListener = l
+        focusChangeListener = l
     }
 
     override fun onFocusChanged(gainFocus: Boolean, direction: Int, previouslyFocusedRect: Rect?) {
-        if (mFocusChangeListener != null) {
-            mFocusChangeListener!!.onFocusChange(this, gainFocus)
+        if (focusChangeListener != null) {
+            focusChangeListener!!.onFocusChange(this, gainFocus)
         }
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect)
     }
 
     override fun onScrollChanged(x: Int, y: Int, oldX: Int, oldY: Int) {
         super.onScrollChanged(x, y, oldX, oldY)
-        mPositionX = x
+        positionX = x
         requestLayout()
     }
 
@@ -56,10 +56,10 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
             return
         }
         val textColor = currentTextColor
-        val widthEnd = width + mPositionX
+        val widthEnd = width + positionX
         val percent: Float = (width * 0.2).toFloat()
-        val fadeStart = mPositionX / widthEnd
-        val stopStart: Float = if (mPositionX > 0) (mPositionX + percent) / widthEnd else 0f
+        val fadeStart = positionX / widthEnd
+        val stopStart: Float = if (positionX > 0) (positionX + percent) / widthEnd else 0f
         val stopEnd: Float = (widthEnd - if (lineWidth > widthEnd) percent else 0f) / widthEnd
         paint.shader = getGradient(widthEnd, fadeStart, stopStart, stopEnd, textColor)
         super.onDraw(canvas)
