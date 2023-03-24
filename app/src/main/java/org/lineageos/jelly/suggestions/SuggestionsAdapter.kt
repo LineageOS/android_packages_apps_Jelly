@@ -22,17 +22,17 @@ import org.lineageos.jelly.utils.PrefsUtils
 import org.lineageos.jelly.utils.PrefsUtils.SuggestionProviderType
 import java.util.Locale
 
-class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filterable {
-    private val mInflator: LayoutInflater = LayoutInflater.from(mContext)
-    private val mItems = ArrayList<String>()
-    private val mFilter: ItemFilter
-    private var mQueryText: String? = null
+class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterable {
+    private val inflator: LayoutInflater = LayoutInflater.from(context)
+    private val items = ArrayList<String>()
+    private val filter: ItemFilter
+    private var queryText: String? = null
     override fun getCount(): Int {
-        return mItems.size
+        return items.size
     }
 
     override fun getItem(position: Int): Any {
-        return mItems[position]
+        return items[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -40,11 +40,11 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: this.mInflator.inflate(R.layout.item_suggestion, parent, false)!!
+        val view = convertView ?: this.inflator.inflate(R.layout.item_suggestion, parent, false)!!
         val title = view.findViewById<TextView>(R.id.title)
-        val suggestion = mItems[position]
-        if (mQueryText != null) {
-            val query = mQueryText!!
+        val suggestion = items[position]
+        if (queryText != null) {
+            val query = queryText!!
             val spannable = SpannableStringBuilder(suggestion)
             val lcSuggestion = suggestion.lowercase(Locale.getDefault())
             var queryTextPos = lcSuggestion.indexOf(query)
@@ -64,7 +64,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
     }
 
     override fun getFilter(): Filter {
-        return mFilter
+        return filter
     }
 
     private inner class ItemFilter : Filter() {
@@ -82,12 +82,12 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
         }
 
         override fun publishResults(constraint: CharSequence?, results: FilterResults) {
-            mItems.clear()
+            items.clear()
             val values = results.values
             if (values != null && values is List<*>) {
                 val items = values.filterIsInstance<String>()
-                mItems.addAll(items)
-                mQueryText = constraint.toString().lowercase(Locale.getDefault()).trim {
+                this@SuggestionsAdapter.items.addAll(items)
+                queryText = constraint.toString().lowercase(Locale.getDefault()).trim {
                     it <= ' '
                 }
             }
@@ -96,7 +96,7 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
 
         private val provider: SuggestionProvider
             get() {
-                return when (PrefsUtils.getSuggestionProvider(mContext)) {
+                return when (PrefsUtils.getSuggestionProvider(context)) {
                     SuggestionProviderType.BAIDU -> BaiduSuggestionProvider()
                     SuggestionProviderType.BING -> BingSuggestionProvider()
                     SuggestionProviderType.DUCK -> DuckSuggestionProvider()
@@ -108,6 +108,6 @@ class SuggestionsAdapter(private val mContext: Context) : BaseAdapter(), Filtera
     }
 
     init {
-        mFilter = ItemFilter()
+        filter = ItemFilter()
     }
 }
