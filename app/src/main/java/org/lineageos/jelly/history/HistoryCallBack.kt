@@ -18,28 +18,21 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
 
-class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
+class HistoryCallBack(
+    context: Context,
+    private val deleteListener: OnDeleteListener?
+) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
     private val resolver: ContentResolver = context.contentResolver
-    private val background: Drawable
-    private val delete: Drawable?
-    private val deleteListener: OnDeleteListener?
-    private val margin: Int
-
-    init {
-        background = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
-        delete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)
-        margin = context.resources.getDimension(R.dimen.delete_margin).toInt()
-        this.deleteListener = deleteListener
-    }
+    private val background = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
+    private val delete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)
+    private val margin = context.resources.getDimension(R.dimen.delete_margin).toInt()
 
     override fun onMove(
         recyclerView: RecyclerView,
         viewHolder: RecyclerView.ViewHolder,
         target: RecyclerView.ViewHolder
-    ): Boolean {
-        return false
-    }
+    ) = false
 
     override fun onSwiped(holder: RecyclerView.ViewHolder, swipeDir: Int) {
         val uri = ContentUris.withAppendedId(
@@ -48,16 +41,16 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
         )
         var values: ContentValues? = null
         val cursor = resolver.query(uri, null, null, null, null)
-        if (cursor != null) {
-            if (cursor.moveToFirst()) {
+        cursor?.let {
+            if (it.moveToFirst()) {
                 values = ContentValues()
                 DatabaseUtils.cursorRowToContentValues(cursor, values)
             }
-            cursor.close()
+            it.close()
         }
         resolver.delete(uri, null, null)
-        if (values != null && deleteListener != null) {
-            deleteListener.onItemDeleted(values)
+        if (values != null) {
+            deleteListener?.onItemDeleted(values)
         }
     }
 
@@ -75,7 +68,8 @@ class HistoryCallBack(context: Context, deleteListener: OnDeleteListener?) :
             view.bottom
         )
         background.draw(c)
-        val iconLeft = view.right - margin - delete!!.intrinsicWidth
+        val delete = delete!!
+        val iconLeft = view.right - margin - delete.intrinsicWidth
         val iconTop = view.top +
                 (view.bottom - view.top - delete.intrinsicHeight) / 2
         val iconRight = view.right - margin

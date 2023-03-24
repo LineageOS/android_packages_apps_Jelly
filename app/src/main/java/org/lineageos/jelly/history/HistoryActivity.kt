@@ -57,12 +57,10 @@ class HistoryActivity : AppCompatActivity() {
         adapter = HistoryAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
-            override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
-                return CursorLoader(
-                    this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
-                    null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC"
-                )
-            }
+            override fun onCreateLoader(id: Int, args: Bundle?) = CursorLoader(
+                this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
+                null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC"
+            )
 
             override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
                 adapter.swapCursor(data)
