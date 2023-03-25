@@ -7,7 +7,7 @@ package org.lineageos.jelly.suggestions
 
 import android.util.Log
 import org.json.JSONArray
-import org.lineageos.jelly.utils.FileUtils
+import org.lineageos.jelly.ext.readString
 import java.io.BufferedInputStream
 import java.io.IOException
 import java.io.UnsupportedEncodingException
@@ -110,7 +110,7 @@ internal abstract class SuggestionProvider(private val encoding: String) {
             urlConnection.addRequestProperty("Accept-Charset", encoding)
             try {
                 BufferedInputStream(urlConnection.inputStream).use {
-                    return FileUtils.readStringFromStream(it, getEncoding(urlConnection))
+                    return it.readString(getEncoding(urlConnection))
                 }
             } finally {
                 urlConnection.disconnect()
