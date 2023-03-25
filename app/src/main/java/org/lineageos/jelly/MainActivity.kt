@@ -94,11 +94,11 @@ import java.io.IOException
 
 class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     SharedPreferences.OnSharedPreferenceChangeListener {
-    private lateinit var mCoordinator: CoordinatorLayout
-    private lateinit var mAppBar: AppBarLayout
-    private lateinit var mWebViewContainer: FrameLayout
-    private lateinit var mWebView: WebViewExt
-    private val mUrlResolvedReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+    private lateinit var coordinator: CoordinatorLayout
+    private lateinit var appBar: AppBarLayout
+    private lateinit var webViewContainer: FrameLayout
+    private lateinit var webView: WebViewExt
+    private val urlResolvedReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             if (!intent.hasExtra(Intent.EXTRA_INTENT) ||
                 !intent.hasExtra(Intent.EXTRA_RESULT_RECEIVER)
@@ -113,7 +113,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             }
             if (TextUtils.equals(packageName, resolvedIntent.getPackage())) {
                 val url: String = intent.getStringExtra(IntentUtils.EXTRA_URL)!!
-                mWebView.loadUrl(url)
+                webView.loadUrl(url)
             } else {
                 startActivity(resolvedIntent)
             }
@@ -129,16 +129,16 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
-    private lateinit var mLoadingProgress: ProgressBar
-    private lateinit var mSearchController: SearchBarController
-    private lateinit var mToolbarSearchBar: RelativeLayout
-    private var mLastActionBarDrawable: Drawable? = null
-    private var mThemeColor = 0
-    private var mUrlIcon: Bitmap? = null
-    private var mIncognito = false
-    private var mCustomView: View? = null
-    private var mFullScreenCallback: CustomViewCallback? = null
-    private var mSearchActive = false
+    private lateinit var loadingProgress: ProgressBar
+    private lateinit var searchController: SearchBarController
+    private lateinit var toolbarSearchBar: RelativeLayout
+    private var lastActionBarDrawable: Drawable? = null
+    private var themeColor = 0
+    private var urlIcon: Bitmap? = null
+    private var incognito = false
+    private var customView: View? = null
+    private var fullScreenCallback: CustomViewCallback? = null
+    private var searchActive = false
     private val uiScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -146,17 +146,17 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        mCoordinator = findViewById(R.id.coordinator_layout)
-        mAppBar = findViewById(R.id.app_bar_layout)
-        mWebViewContainer = findViewById(R.id.web_view_container)
-        mLoadingProgress = findViewById(R.id.load_progress)
-        mToolbarSearchBar = findViewById(R.id.toolbar_search_bar)
+        coordinator = findViewById(R.id.coordinator_layout)
+        appBar = findViewById(R.id.app_bar_layout)
+        webViewContainer = findViewById(R.id.web_view_container)
+        loadingProgress = findViewById(R.id.load_progress)
+        toolbarSearchBar = findViewById(R.id.toolbar_search_bar)
         val autoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.url_bar)
         autoCompleteTextView.setAdapter(SuggestionsAdapter(this))
         autoCompleteTextView.setOnEditorActionListener { _, actionId: Int, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 UiUtils.hideKeyboard(autoCompleteTextView)
-                mWebView.loadUrl(autoCompleteTextView.text.toString())
+                webView.loadUrl(autoCompleteTextView.text.toString())
                 autoCompleteTextView.clearFocus()
                 return@setOnEditorActionListener true
             }
@@ -165,7 +165,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         autoCompleteTextView.setOnKeyListener { _, keyCode: Int, _ ->
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
                 UiUtils.hideKeyboard(autoCompleteTextView)
-                mWebView.loadUrl(autoCompleteTextView.text.toString())
+                webView.loadUrl(autoCompleteTextView.text.toString())
                 autoCompleteTextView.clearFocus()
                 return@setOnKeyListener true
             }
@@ -176,23 +176,23 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             val url = searchString.toString()
             UiUtils.hideKeyboard(autoCompleteTextView)
             autoCompleteTextView.clearFocus()
-            mWebView.loadUrl(url)
+            webView.loadUrl(url)
         }
         val intent = intent
         var url = intent.dataString
-        mIncognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
+        incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         var desktopMode = false
 
         // Restore from previous instance
         if (savedInstanceState != null) {
-            mIncognito = savedInstanceState.getBoolean(IntentUtils.EXTRA_INCOGNITO, mIncognito)
+            incognito = savedInstanceState.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
             if (url == null || url.isEmpty()) {
                 url = savedInstanceState.getString(IntentUtils.EXTRA_URL, null)
             }
             desktopMode = savedInstanceState.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
-            mThemeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0)
+            themeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0)
         }
-        if (mIncognito) {
+        if (incognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
                     EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
         }
@@ -203,18 +203,18 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
         val incognitoIcon = findViewById<ImageView>(R.id.incognito)
-        incognitoIcon.visibility = if (mIncognito) View.VISIBLE else View.GONE
+        incognitoIcon.visibility = if (incognito) View.VISIBLE else View.GONE
         setupMenu()
         val urlBarController = UrlBarController(
             autoCompleteTextView,
             findViewById(R.id.secure)
         )
-        mWebView = findViewById(R.id.web_view)
-        mWebView.init(this, urlBarController, mLoadingProgress, mIncognito)
-        mWebView.isDesktopMode = desktopMode
-        mWebView.loadUrl(url ?: PrefsUtils.getHomePage(this))
-        mSearchController = SearchBarController(
-            mWebView,
+        webView = findViewById(R.id.web_view)
+        webView.init(this, urlBarController, loadingProgress, incognito)
+        webView.isDesktopMode = desktopMode
+        webView.loadUrl(url ?: PrefsUtils.getHomePage(this))
+        searchController = SearchBarController(
+            webView,
             findViewById(R.id.search_menu_edit),
             findViewById(R.id.search_status),
             findViewById(R.id.search_menu_prev),
@@ -234,26 +234,26 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     override fun onStart() {
         super.onStart()
-        registerReceiver(mUrlResolvedReceiver, IntentFilter(IntentUtils.EVENT_URL_RESOLVED))
+        registerReceiver(urlResolvedReceiver, IntentFilter(IntentUtils.EVENT_URL_RESOLVED))
     }
 
     override fun onStop() {
         CookieManager.getInstance().flush()
-        unregisterReceiver(mUrlResolvedReceiver)
+        unregisterReceiver(urlResolvedReceiver)
         HttpResponseCache.getInstalled().flush()
         super.onStop()
     }
 
     public override fun onPause() {
-        mWebView.onPause()
+        webView.onPause()
         super.onPause()
     }
 
     override fun onResume() {
         super.onResume()
-        mWebView.onResume()
+        webView.onResume()
         CookieManager.getInstance()
-            .setAcceptCookie(!mWebView.isIncognito && PrefsUtils.getCookie(this))
+            .setAcceptCookie(!webView.isIncognito && PrefsUtils.getCookie(this))
         if (PrefsUtils.getLookLock(this)) {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
@@ -266,14 +266,14 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     override fun onBackPressed() {
         when {
-            mSearchActive -> {
-                mSearchController.onCancel()
+            searchActive -> {
+                searchController.onCancel()
             }
-            mCustomView != null -> {
+            customView != null -> {
                 onHideCustomView()
             }
-            mWebView.canGoBack() -> {
-                mWebView.goBack()
+            webView.canGoBack() -> {
+                webView.goBack()
             }
             else -> {
                 super.onBackPressed()
@@ -288,7 +288,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         super.onRequestPermissionsResult(requestCode, permissions, results)
         when (requestCode) {
             LOCATION_PERM_REQ -> if (hasLocationPermission()) {
-                mWebView.reload()
+                webView.reload()
             }
         }
     }
@@ -297,16 +297,16 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         super.onSaveInstanceState(outState)
 
         // Preserve webView status
-        outState.putString(IntentUtils.EXTRA_URL, mWebView.url)
-        outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, mWebView.isIncognito)
-        outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, mWebView.isDesktopMode)
-        outState.putInt(STATE_KEY_THEME_COLOR, mThemeColor)
+        outState.putString(IntentUtils.EXTRA_URL, webView.url)
+        outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
+        outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
+        outState.putInt(STATE_KEY_THEME_COLOR, themeColor)
     }
 
     private fun setupMenu() {
         val menu = findViewById<ImageButton>(R.id.search_menu)
         menu.setOnClickListener {
-            val isDesktop = mWebView.isDesktopMode
+            val isDesktop = webView.isDesktopMode
             val wrapper = ContextThemeWrapper(
                 this,
                 R.style.Theme_Jelly_PopupMenuOverlapAnchor
@@ -335,14 +335,14 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                 when (item.itemId) {
                     R.id.menu_new -> openInNewTab(this, null, false)
                     R.id.menu_incognito -> openInNewTab(this, null, true)
-                    R.id.menu_reload -> mWebView.reload()
+                    R.id.menu_reload -> webView.reload()
                     R.id.menu_add_favorite -> uiScope.launch {
-                        setAsFavorite(mWebView.title, mWebView.url)
+                        setAsFavorite(webView.title, webView.url)
                     }
                     R.id.menu_share ->
                         // Delay a bit to allow popup menu hide animation to play
                         Handler(Looper.getMainLooper()).postDelayed({
-                            shareUrl(mWebView.url)
+                            shareUrl(webView.url)
                         }, 300)
                     R.id.menu_search ->
                         // Run the search setup
@@ -353,14 +353,14 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                     R.id.menu_print -> {
                         val printManager = getSystemService(PrintManager::class.java)
                         val documentName = "Jelly document"
-                        val printAdapter = mWebView.createPrintDocumentAdapter(documentName)
+                        val printAdapter = webView.createPrintDocumentAdapter(documentName)
                         printManager.print(
                             documentName, printAdapter,
                             PrintAttributes.Builder().build()
                         )
                     }
                     R.id.desktop_mode -> {
-                        mWebView.isDesktopMode = !isDesktop
+                        webView.isDesktopMode = !isDesktop
                         desktopMode.title = getString(
                             if (isDesktop) {
                                 R.string.menu_desktop_mode
@@ -387,16 +387,16 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
     private fun showSearch() {
-        mToolbarSearchBar.visibility = View.GONE
+        toolbarSearchBar.visibility = View.GONE
         findViewById<View>(R.id.toolbar_search_page).visibility = View.VISIBLE
-        mSearchController.onShow()
-        mSearchActive = true
+        searchController.onShow()
+        searchActive = true
     }
 
     override fun onCancelSearch() {
         findViewById<View>(R.id.toolbar_search_page).visibility = View.GONE
-        mToolbarSearchBar.visibility = View.VISIBLE
-        mSearchActive = false
+        toolbarSearchBar.visibility = View.VISIBLE
+        searchActive = false
     }
 
     private fun shareUrl(url: String?) {
@@ -405,11 +405,11 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         }
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_TEXT, url)
-        if (PrefsUtils.getAdvancedShare(this) && url == mWebView.url) {
+        if (PrefsUtils.getAdvancedShare(this) && url == webView.url) {
             val file = File(cacheDir, System.currentTimeMillis().toString() + ".png")
             try {
                 FileOutputStream(file).use { out ->
-                    val bm = mWebView.snap
+                    val bm = webView.snap
                     bm.compress(Bitmap.CompressFormat.PNG, 70, out)
                     out.flush()
                     out.close()
@@ -434,8 +434,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         if (title == null || url == null) {
             return
         }
-        val hasValidIcon = mUrlIcon != null && !mUrlIcon!!.isRecycled
-        var color = if (hasValidIcon) UiUtils.getColor(mUrlIcon, false) else Color.TRANSPARENT
+        val hasValidIcon = urlIcon != null && !urlIcon!!.isRecycled
+        var color = if (hasValidIcon) UiUtils.getColor(urlIcon, false) else Color.TRANSPARENT
         if (color == Color.TRANSPARENT) {
             color = ContextCompat.getColor(this, R.color.colorAccent)
         }
@@ -443,7 +443,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
             withContext(Dispatchers.Main) {
                 Snackbar.make(
-                    mCoordinator, getString(R.string.favorite_added),
+                    coordinator, getString(R.string.favorite_added),
                     Snackbar.LENGTH_LONG
                 ).show()
             }
@@ -498,7 +498,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         val favouriteLayout = view.findViewById<View>(R.id.sheet_favourite)
         val downloadLayout = view.findViewById<View>(R.id.sheet_download)
         tabLayout.setOnClickListener {
-            openInNewTab(this, url, mIncognito)
+            openInNewTab(this, url, incognito)
             sheet.dismiss()
         }
         shareLayout.setOnClickListener {
@@ -537,8 +537,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         if (favicon == null || favicon.isRecycled) {
             return
         }
-        mUrlIcon = favicon.copy(favicon.config, true)
-        applyThemeColor(UiUtils.getColor(favicon, mWebView.isIncognito))
+        urlIcon = favicon.copy(favicon.config, true)
+        applyThemeColor(UiUtils.getColor(favicon, webView.isIncognito))
         if (!favicon.isRecycled) {
             favicon.recycle()
         }
@@ -548,13 +548,13 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     private fun applyThemeColor(color: Int) {
         var localColor = color
         val hasValidColor = localColor != Color.TRANSPARENT
-        mThemeColor = localColor
+        themeColor = localColor
         localColor = themeColorWithFallback
         val actionBar = supportActionBar
         if (actionBar != null) {
             val newDrawable = ColorDrawable(localColor)
-            if (mLastActionBarDrawable != null) {
-                val layers = arrayOf(mLastActionBarDrawable!!, newDrawable)
+            if (lastActionBarDrawable != null) {
+                val layers = arrayOf(lastActionBarDrawable!!, newDrawable)
                 val transition = TransitionDrawable(layers)
                 transition.isCrossFadeEnabled = true
                 transition.startTransition(200)
@@ -562,15 +562,15 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             } else {
                 actionBar.setBackgroundDrawable(newDrawable)
             }
-            mLastActionBarDrawable = newDrawable
+            lastActionBarDrawable = newDrawable
         }
         val progressColor = if (hasValidColor) {
             if (UiUtils.isColorLight(localColor)) Color.BLACK else Color.WHITE
         } else {
             ContextCompat.getColor(this, R.color.colorAccent)
         }
-        mLoadingProgress.progressTintList = ColorStateList.valueOf(progressColor)
-        mLoadingProgress.postInvalidate()
+        loadingProgress.progressTintList = ColorStateList.valueOf(progressColor)
+        loadingProgress.postInvalidate()
         val isReachMode = UiUtils.isReachModeEnabled(this)
         if (isReachMode) {
             window.navigationBarColor = localColor
@@ -618,8 +618,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         }
         setTaskDescription(
             TaskDescription(
-                mWebView.title,
-                mUrlIcon, localColor
+                webView.title,
+                urlIcon, localColor
             )
         )
     }
@@ -642,59 +642,59 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
     private val themeColorWithFallback: Int
-        get() = if (mThemeColor != Color.TRANSPARENT) {
-            mThemeColor
+        get() = if (themeColor != Color.TRANSPARENT) {
+            themeColor
         } else ContextCompat.getColor(
             this,
-            if (mWebView.isIncognito) R.color.colorIncognito else R.color.colorPrimary
+            if (webView.isIncognito) R.color.colorIncognito else R.color.colorPrimary
         )
 
     override fun onShowCustomView(view: View?, callback: CustomViewCallback) {
-        if (mCustomView != null) {
+        if (customView != null) {
             callback.onCustomViewHidden()
             return
         }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        mCustomView = view
-        mFullScreenCallback = callback
+        customView = view
+        fullScreenCallback = callback
         setImmersiveMode(true)
-        mCustomView!!.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black))
+        customView!!.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black))
         addContentView(
-            mCustomView, ViewGroup.LayoutParams(
+            customView, ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
             )
         )
-        mAppBar.visibility = View.GONE
-        mWebViewContainer.visibility = View.GONE
+        appBar.visibility = View.GONE
+        webViewContainer.visibility = View.GONE
     }
 
     override fun onHideCustomView() {
-        if (mCustomView == null) {
+        if (customView == null) {
             return
         }
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setImmersiveMode(false)
-        mAppBar.visibility = View.VISIBLE
-        mWebViewContainer.visibility = View.VISIBLE
-        val viewGroup = mCustomView!!.parent as ViewGroup
-        viewGroup.removeView(mCustomView)
-        mFullScreenCallback!!.onCustomViewHidden()
-        mFullScreenCallback = null
-        mCustomView = null
+        appBar.visibility = View.VISIBLE
+        webViewContainer.visibility = View.VISIBLE
+        val viewGroup = customView!!.parent as ViewGroup
+        viewGroup.removeView(customView)
+        fullScreenCallback!!.onCustomViewHidden()
+        fullScreenCallback = null
+        customView = null
     }
 
     private fun addShortcut() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.data = Uri.parse(mWebView.url)
+        intent.data = Uri.parse(webView.url)
         intent.action = Intent.ACTION_MAIN
-        val launcherIcon: Icon = if (mUrlIcon != null) {
+        val launcherIcon: Icon = if (urlIcon != null) {
             Icon.createWithBitmap(
-                UiUtils.getShortcutIcon(mUrlIcon!!, themeColorWithFallback)
+                UiUtils.getShortcutIcon(urlIcon!!, themeColorWithFallback)
             )
         } else {
             Icon.createWithResource(this, R.mipmap.ic_launcher)
         }
-        val title = mWebView.title.toString()
+        val title = webView.title.toString()
         val shortcutInfo = ShortcutInfo.Builder(this, title)
             .setShortLabel(title)
             .setIcon(launcherIcon)
@@ -737,7 +737,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
-        setImmersiveMode(hasFocus && mCustomView != null)
+        setImmersiveMode(hasFocus && customView != null)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
@@ -748,18 +748,18 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     private fun setUiMode() {
         // Now you don't see it
-        mCoordinator.alpha = 0f
+        coordinator.alpha = 0f
         // Magic happens
         changeUiMode(UiUtils.isReachModeEnabled(this))
         // Now you see it
-        mCoordinator.alpha = 1f
+        coordinator.alpha = 1f
     }
 
     private fun changeUiMode(isReachMode: Boolean) {
-        val appBarParams = mAppBar.layoutParams as CoordinatorLayout.LayoutParams
-        val containerParams = mWebViewContainer.layoutParams as CoordinatorLayout.LayoutParams
-        val progressParams = mLoadingProgress.layoutParams as RelativeLayout.LayoutParams
-        val searchBarParams = mToolbarSearchBar.layoutParams as RelativeLayout.LayoutParams
+        val appBarParams = appBar.layoutParams as CoordinatorLayout.LayoutParams
+        val containerParams = webViewContainer.layoutParams as CoordinatorLayout.LayoutParams
+        val progressParams = loadingProgress.layoutParams as RelativeLayout.LayoutParams
+        val searchBarParams = toolbarSearchBar.layoutParams as RelativeLayout.LayoutParams
         val margin = UiUtils.getDimenAttr(
             this, R.style.Theme_Jelly,
             android.R.attr.actionBarSize
@@ -779,17 +779,17 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             searchBarParams.removeRule(RelativeLayout.BELOW)
             searchBarParams.addRule(RelativeLayout.ABOVE, R.id.load_progress)
         }
-        mAppBar.layoutParams = appBarParams
-        mAppBar.invalidate()
-        mWebViewContainer.layoutParams = containerParams
-        mWebViewContainer.invalidate()
-        mLoadingProgress.layoutParams = progressParams
-        mLoadingProgress.invalidate()
-        mToolbarSearchBar.layoutParams = searchBarParams
-        mToolbarSearchBar.invalidate()
+        appBar.layoutParams = appBarParams
+        appBar.invalidate()
+        webViewContainer.layoutParams = containerParams
+        webViewContainer.invalidate()
+        loadingProgress.layoutParams = progressParams
+        loadingProgress.invalidate()
+        toolbarSearchBar.layoutParams = searchBarParams
+        toolbarSearchBar.invalidate()
         resetSystemUIColor()
-        if (mThemeColor != 0) {
-            applyThemeColor(mThemeColor)
+        if (themeColor != 0) {
+            applyThemeColor(themeColor)
         }
     }
 
