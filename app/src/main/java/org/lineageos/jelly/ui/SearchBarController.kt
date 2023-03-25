@@ -33,6 +33,15 @@ class SearchBarController(
     private val query: String?
         get() = editor.text?.toString()
 
+    init {
+        editor.addTextChangedListener(this)
+        editor.setOnEditorActionListener(this)
+        webView.setFindListener(this)
+        prevButton.setOnClickListener(this)
+        nextButton.setOnClickListener(this)
+        cancelButton.setOnClickListener(this)
+    }
+
     fun onShow() {
         editor.requestFocus()
         UiUtils.showKeyboard(editor)
@@ -89,14 +98,12 @@ class SearchBarController(
     }
 
     private fun startSearch() {
-        query.let {
-            if (it.isNullOrEmpty()) {
-                clearSearchResults()
-                status.text = null
-            } else {
-                webView.findAllAsync(it)
-                hasStartedSearch = true
-            }
+        query?.takeUnless { it.isEmpty() }?.also {
+            webView.findAllAsync(it)
+            hasStartedSearch = true
+        } ?: run {
+            clearSearchResults()
+            status.text = null
         }
         updateStatusText()
     }
@@ -130,14 +137,5 @@ class SearchBarController(
 
     interface OnCancelListener {
         fun onCancelSearch()
-    }
-
-    init {
-        editor.addTextChangedListener(this)
-        editor.setOnEditorActionListener(this)
-        webView.setFindListener(this)
-        prevButton.setOnClickListener(this)
-        nextButton.setOnClickListener(this)
-        cancelButton.setOnClickListener(this)
     }
 }
