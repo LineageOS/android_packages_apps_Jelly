@@ -34,15 +34,15 @@ import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.net.URISyntaxException
 
-internal class WebClient(private val mUrlBarController: UrlBarController) : WebViewClient() {
+internal class WebClient(private val urlBarController: UrlBarController) : WebViewClient() {
     override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
         super.onPageStarted(view, url, favicon)
-        mUrlBarController.onPageLoadStarted(url)
+        urlBarController.onPageLoadStarted(url)
     }
 
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
-        mUrlBarController.onPageLoadFinished(view.context, view.certificate)
+        urlBarController.onPageLoadFinished(view.context, view.certificate)
     }
 
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
