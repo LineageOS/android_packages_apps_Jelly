@@ -78,9 +78,8 @@ object UiUtils {
         }
     }
 
-    fun dpToPx(res: Resources, dp: Float): Float {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, res.displayMetrics)
-    }
+    fun dpToPx(res: Resources, dp: Float) =
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, res.displayMetrics)
 
     /**
      * Shows the software keyboard.
