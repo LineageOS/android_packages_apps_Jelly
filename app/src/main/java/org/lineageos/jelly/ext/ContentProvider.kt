@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.jelly.utils
+package org.lineageos.jelly.ext
 
 import android.content.ContentProvider
 

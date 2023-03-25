@@ -17,7 +17,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.provider.BaseColumns
-import org.lineageos.jelly.utils.requireContextExt
+import org.lineageos.jelly.ext.requireContextExt
 
 class HistoryProvider : ContentProvider() {
     companion object {
