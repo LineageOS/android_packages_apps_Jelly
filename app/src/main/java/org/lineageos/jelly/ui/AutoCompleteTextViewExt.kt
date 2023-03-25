@@ -23,9 +23,7 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) :
             super(context, attrs, defStyle)
 
-    override fun getOnFocusChangeListener(): OnFocusChangeListener {
-        return focusChangeListener!!
-    }
+    override fun getOnFocusChangeListener() = focusChangeListener!!
 
     // Override View's focus change listener handling so that we're able to
     // call it before the actual focus change handling, in particular before
@@ -35,9 +33,7 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
     }
 
     override fun onFocusChanged(gainFocus: Boolean, direction: Int, previouslyFocusedRect: Rect?) {
-        if (focusChangeListener != null) {
-            focusChangeListener!!.onFocusChange(this, gainFocus)
-        }
+        focusChangeListener?.onFocusChange(this, gainFocus)
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect)
     }
 
@@ -57,10 +53,10 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
         }
         val textColor = currentTextColor
         val widthEnd = width + positionX
-        val percent: Float = (width * 0.2).toFloat()
+        val percent = (width * 0.2).toFloat()
         val fadeStart = positionX / widthEnd
-        val stopStart: Float = if (positionX > 0) (positionX + percent) / widthEnd else 0f
-        val stopEnd: Float = (widthEnd - if (lineWidth > widthEnd) percent else 0f) / widthEnd
+        val stopStart = if (positionX > 0) (positionX + percent) / widthEnd else 0f
+        val stopEnd = (widthEnd - if (lineWidth > widthEnd) percent else 0f) / widthEnd
         paint.shader = getGradient(widthEnd, fadeStart, stopStart, stopEnd, textColor)
         super.onDraw(canvas)
     }
@@ -69,12 +65,10 @@ class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
         private fun getGradient(
             widthEnd: Float, fadeStart: Float,
             stopStart: Float, stopEnd: Float, color: Int
-        ): LinearGradient {
-            return LinearGradient(
-                0f, 0f, widthEnd, 0f,
-                intArrayOf(color, Color.TRANSPARENT, color, color, Color.TRANSPARENT),
-                floatArrayOf(0f, fadeStart, stopStart, stopEnd, 1f), Shader.TileMode.CLAMP
-            )
-        }
+        ) = LinearGradient(
+            0f, 0f, widthEnd, 0f,
+            intArrayOf(color, Color.TRANSPARENT, color, color, Color.TRANSPARENT),
+            floatArrayOf(0f, fadeStart, stopStart, stopEnd, 1f), Shader.TileMode.CLAMP
+        )
     }
 }
