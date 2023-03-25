@@ -95,9 +95,8 @@ internal class WebClient(private val urlBarController: UrlBarController) : WebVi
     }
 
     private fun startActivityForUrl(view: WebView, url: String): Boolean {
-        var intent: Intent
         val context = view.context
-        intent = try {
+        var intent = try {
             Intent.parseUri(url, Intent.URI_INTENT_SCHEME)
         } catch (ex: URISyntaxException) {
             return false

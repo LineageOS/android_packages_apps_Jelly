@@ -20,12 +20,12 @@ import org.lineageos.jelly.utils.UrlUtils
 import java.util.regex.Pattern
 
 class WebViewExt @JvmOverloads constructor(
-    context: Context, // Note that this is never null, a View can't have a null Context
+    context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : WebView(context, attrs, defStyle) {
     private lateinit var activity: WebViewExtActivity
-    val requestHeaders: MutableMap<String?, String?> = HashMap()
+    val requestHeaders = mutableMapOf<String?, String?>()
     private var mobileUserAgent: String? = null
     private var desktopUserAgent: String? = null
     var isIncognito = false
@@ -40,14 +40,12 @@ class WebViewExt @JvmOverloads constructor(
     }
 
     fun followUrl(url: String) {
-        var fixedUrl = UrlUtils.smartUrlFilter(url)
-        if (fixedUrl != null) {
-            super.loadUrl(fixedUrl, this.requestHeaders)
+        UrlUtils.smartUrlFilter(url)?.let {
+            super.loadUrl(it, this.requestHeaders)
             return
         }
         val templateUri = PrefsUtils.getSearchEngine(activity)
-        fixedUrl = UrlUtils.getFormattedUri(templateUri, url)
-        super.loadUrl(fixedUrl, this.requestHeaders)
+        super.loadUrl(UrlUtils.getFormattedUri(templateUri, url), this.requestHeaders)
     }
 
     private fun setup() {
