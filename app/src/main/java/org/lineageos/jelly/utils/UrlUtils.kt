@@ -56,7 +56,6 @@ object UrlUtils {
      * Formats a launch-able uri out of the template uri by replacing the template parameters with
      * actual values.
      */
-    fun getFormattedUri(templateUri: String?, query: String?): String {
-        return URLUtil.composeSearchUrl(query, templateUri, "{searchTerms}")
-    }
+    fun getFormattedUri(templateUri: String?, query: String?) =
+        URLUtil.composeSearchUrl(query, templateUri, "{searchTerms}")!!
 }
