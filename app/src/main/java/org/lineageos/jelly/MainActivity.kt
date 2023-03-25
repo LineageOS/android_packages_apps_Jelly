@@ -98,7 +98,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     private lateinit var appBar: AppBarLayout
     private lateinit var webViewContainer: FrameLayout
     private lateinit var webView: WebViewExt
-    private val urlResolvedReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+    private val urlResolvedReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             if (!intent.hasExtra(Intent.EXTRA_INTENT) ||
                 !intent.hasExtra(Intent.EXTRA_RESULT_RECEIVER)
@@ -184,13 +184,13 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         var desktopMode = false
 
         // Restore from previous instance
-        if (savedInstanceState != null) {
-            incognito = savedInstanceState.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
-            if (url == null || url.isEmpty()) {
-                url = savedInstanceState.getString(IntentUtils.EXTRA_URL, null)
-            }
-            desktopMode = savedInstanceState.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
-            themeColor = savedInstanceState.getInt(STATE_KEY_THEME_COLOR, 0)
+        savedInstanceState?.let {
+            incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
+            url = url?.takeIf {
+                    url -> url.isNotEmpty()
+            } ?: it.getString(IntentUtils.EXTRA_URL, null)
+            desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
+            themeColor = it.getInt(STATE_KEY_THEME_COLOR, 0)
         }
         if (incognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
@@ -337,12 +337,16 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                     R.id.menu_incognito -> openInNewTab(this, null, true)
                     R.id.menu_reload -> webView.reload()
                     R.id.menu_add_favorite -> uiScope.launch {
-                        setAsFavorite(webView.title, webView.url)
+                        webView.title?.let { title ->
+                            webView.url?.let { url ->
+                                setAsFavorite(title, url)
+                            }
+                        }
                     }
                     R.id.menu_share ->
                         // Delay a bit to allow popup menu hide animation to play
                         Handler(Looper.getMainLooper()).postDelayed({
-                            shareUrl(webView.url)
+                            webView.url?.let { url -> shareUrl(url) }
                         }, 300)
                     R.id.menu_search ->
                         // Run the search setup
@@ -399,10 +403,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         searchActive = false
     }
 
-    private fun shareUrl(url: String?) {
-        if (url == null) {
-            return
-        }
+    private fun shareUrl(url: String) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_TEXT, url)
         if (PrefsUtils.getAdvancedShare(this) && url == webView.url) {
@@ -430,11 +431,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
 
-    private suspend fun setAsFavorite(title: String?, url: String?) {
-        if (title == null || url == null) {
-            return
-        }
-        val hasValidIcon = urlIcon != null && !urlIcon!!.isRecycled
+    private suspend fun setAsFavorite(title: String, url: String) {
+        val hasValidIcon = urlIcon?.isRecycled == false
         var color = if (hasValidIcon) UiUtils.getColor(urlIcon, false) else Color.TRANSPARENT
         if (color == Color.TRANSPARENT) {
             color = ContextCompat.getColor(this, R.color.colorAccent)
@@ -465,7 +463,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
     private fun fetchFile(url: String?, fileName: String) {
-        val request: DownloadManager.Request = try {
+        val request = try {
             DownloadManager.Request(Uri.parse(url))
         } catch (e: IllegalArgumentException) {
             Log.e(TAG, "Cannot download non http or https scheme")
@@ -534,13 +532,15 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
 
     override fun onFaviconLoaded(favicon: Bitmap?) {
-        if (favicon == null || favicon.isRecycled) {
-            return
-        }
-        urlIcon = favicon.copy(favicon.config, true)
-        applyThemeColor(UiUtils.getColor(favicon, webView.isIncognito))
-        if (!favicon.isRecycled) {
-            favicon.recycle()
+        favicon?.let {
+            if (it.isRecycled) {
+                return
+            }
+            urlIcon = it.copy(it.config, true)
+            applyThemeColor(UiUtils.getColor(favicon, webView.isIncognito))
+            if (!it.isRecycled) {
+                it.recycle()
+            }
         }
     }
 
@@ -551,17 +551,15 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         themeColor = localColor
         localColor = themeColorWithFallback
         val actionBar = supportActionBar
-        if (actionBar != null) {
+        actionBar?.let {
             val newDrawable = ColorDrawable(localColor)
-            if (lastActionBarDrawable != null) {
-                val layers = arrayOf(lastActionBarDrawable!!, newDrawable)
+            lastActionBarDrawable?.let { lastActionBarDrawable ->
+                val layers = arrayOf(lastActionBarDrawable, newDrawable)
                 val transition = TransitionDrawable(layers)
                 transition.isCrossFadeEnabled = true
                 transition.startTransition(200)
-                actionBar.setBackgroundDrawable(transition)
-            } else {
-                actionBar.setBackgroundDrawable(newDrawable)
-            }
+                it.setBackgroundDrawable(transition)
+            } ?: it.setBackgroundDrawable(newDrawable)
             lastActionBarDrawable = newDrawable
         }
         val progressColor = if (hasValidColor) {
@@ -650,7 +648,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         )
 
     override fun onShowCustomView(view: View?, callback: CustomViewCallback) {
-        if (customView != null) {
+        customView?.let {
             callback.onCustomViewHidden()
             return
         }
@@ -658,7 +656,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         customView = view
         fullScreenCallback = callback
         setImmersiveMode(true)
-        customView!!.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black))
+        customView?.setBackgroundColor(ContextCompat.getColor(this, android.R.color.black))
         addContentView(
             customView, ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
@@ -669,31 +667,26 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
     override fun onHideCustomView() {
-        if (customView == null) {
-            return
-        }
+        val customView = customView ?: return
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setImmersiveMode(false)
         appBar.visibility = View.VISIBLE
         webViewContainer.visibility = View.VISIBLE
-        val viewGroup = customView!!.parent as ViewGroup
+        val viewGroup = customView.parent as ViewGroup
         viewGroup.removeView(customView)
-        fullScreenCallback!!.onCustomViewHidden()
+        fullScreenCallback?.onCustomViewHidden()
         fullScreenCallback = null
-        customView = null
+        this.customView = null
     }
 
     private fun addShortcut() {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.data = Uri.parse(webView.url)
-        intent.action = Intent.ACTION_MAIN
-        val launcherIcon: Icon = if (urlIcon != null) {
-            Icon.createWithBitmap(
-                UiUtils.getShortcutIcon(urlIcon!!, themeColorWithFallback)
-            )
-        } else {
-            Icon.createWithResource(this, R.mipmap.ic_launcher)
+        val intent = Intent(this, MainActivity::class.java).apply {
+            data = Uri.parse(webView.url)
+            action = Intent.ACTION_MAIN
         }
+        val launcherIcon = urlIcon?.let {
+            Icon.createWithBitmap(UiUtils.getShortcutIcon(it, themeColorWithFallback))
+        } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
         val title = webView.title.toString()
         val shortcutInfo = ShortcutInfo.Builder(this, title)
             .setShortLabel(title)
