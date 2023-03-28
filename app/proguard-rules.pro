@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2017 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
 # in /home/joey/android/android-sdk/tools/proguard/proguard-android.txt
