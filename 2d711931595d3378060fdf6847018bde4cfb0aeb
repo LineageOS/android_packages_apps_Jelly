@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87bd92fe_f44cf47e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17945
+      },
+      "writtenOn": "2023-03-28T15:03:55Z",
+      "side": 1,
+      "message": "I support this. I have already tried it and could not find any bugs removing the setImmersive mode prompt ( https://review.lineageos.org/c/LineageOS/android_packages_apps_Jelly/+/345878/comment/2fa0722c_bb4ac985/ ) in the original commit in the 19.1 branch",
+      "parentUuid": "ad021d52_0f985480",
+      "revId": "2d711931595d3378060fdf6847018bde4cfb0aeb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a3dddc2_cd2e7c24",
