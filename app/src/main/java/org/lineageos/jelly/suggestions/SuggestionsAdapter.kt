@@ -36,7 +36,7 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: this.inflater.inflate(R.layout.item_suggestion, parent, false)!!
-        val title = view.findViewById<TextView>(R.id.title)
+        val titleTextView = view.findViewById<TextView>(R.id.titleTextView)
         val suggestion = items[position]
         queryText?.also { query ->
             val spannable = SpannableStringBuilder(suggestion)
@@ -50,9 +50,9 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
                 )
                 queryTextPos = lcSuggestion.indexOf(query, queryTextPos + query.length)
             }
-            title.text = spannable
+            titleTextView.text = spannable
         } ?: run {
-            title.text = suggestion
+            titleTextView.text = suggestion
         }
         return view
     }

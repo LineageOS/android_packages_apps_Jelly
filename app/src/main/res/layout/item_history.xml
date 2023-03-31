@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/row_history_layout"
+    android:id="@+id/rowHistoryLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?selectableItemBackground"
@@ -25,7 +25,7 @@
     android:paddingEnd="16dp">
 
     <TextView
-        android:id="@+id/row_history_title"
+        android:id="@+id/rowHistoryTitleTextView"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:singleLine="true" />
 
     <TextView
-        android:id="@+id/row_history_summary"
+        android:id="@+id/rowHistorySummaryTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

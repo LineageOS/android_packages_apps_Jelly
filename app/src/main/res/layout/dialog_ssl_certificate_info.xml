@@ -51,19 +51,19 @@
             android:textStyle="bold" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_to_cn"
+            android:id="@+id/issuedToCnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_to_o"
+            android:id="@+id/issuedToOView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_to_un"
+            android:id="@+id/issuedToUnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
@@ -78,19 +78,19 @@
             android:textStyle="bold" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_by_cn"
+            android:id="@+id/issuedByCnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_by_o"
+            android:id="@+id/issuedByOView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_by_un"
+            android:id="@+id/issuedByUnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
@@ -105,13 +105,13 @@
             android:textStyle="bold" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/issued_on"
+            android:id="@+id/issuedOnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />
 
         <org.lineageos.jelly.ui.KeyValueView
-            android:id="@+id/expires_on"
+            android:id="@+id/expiresOnView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp" />

@@ -36,19 +36,19 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/search_menu_edit"
+                android:id="@+id/searchMenuEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/search_status"
+                android:layout_toStartOf="@+id/searchStatusTextView"
                 android:background="@null"
                 android:fadingEdge="vertical"
                 android:hint="@string/search_bar_hint"
                 android:imeOptions="actionSearch"
                 android:inputType="textUri"
                 android:maxLines="1"
-                android:nextFocusLeft="@id/search_menu_edit"
-                android:nextFocusUp="@id/search_menu_edit"
+                android:nextFocusLeft="@id/searchMenuEditText"
+                android:nextFocusUp="@id/searchMenuEditText"
                 android:paddingStart="4dp"
                 android:selectAllOnFocus="true"
                 android:textColor="@color/inverted"
@@ -56,12 +56,12 @@
                 tools:ignore="RtlSymmetry" />
 
             <TextView
-                android:id="@id/search_status"
+                android:id="@id/searchStatusTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="16dp"
-                android:layout_toStartOf="@+id/find_separator"
+                android:layout_toStartOf="@+id/findSeparator"
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:maxLines="1"
@@ -69,37 +69,37 @@
                 android:textSize="12sp" />
 
             <View
-                android:id="@id/find_separator"
+                android:id="@id/findSeparator"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_toStartOf="@+id/search_menu_prev"
+                android:layout_toStartOf="@+id/searchMenuPrevImageButton"
                 android:alpha="0.1"
                 android:background="@color/inverted" />
 
             <ImageButton
-                android:id="@id/search_menu_prev"
+                android:id="@id/searchMenuPrevImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_toStartOf="@+id/search_menu_next"
+                android:layout_toStartOf="@+id/searchMenuNextImageButton"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
                 android:src="@drawable/ic_prev" />
 
             <ImageButton
-                android:id="@id/search_menu_next"
+                android:id="@id/searchMenuNextImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_toStartOf="@+id/search_menu_cancel"
+                android:layout_toStartOf="@+id/searchMenuCancelImageButton"
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
                 android:src="@drawable/ic_next" />
 
             <ImageButton
-                android:id="@id/search_menu_cancel"
+                android:id="@id/searchMenuCancelImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"

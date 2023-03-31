@@ -29,7 +29,7 @@
         android:paddingBottom="8dp">
 
         <EditText
-            android:id="@+id/favorite_edit_title"
+            android:id="@+id/favoriteTitleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/favorite_edit_title" />
@@ -41,7 +41,7 @@
         app:errorTextAppearance="@string/favorite_edit_error">
 
         <EditText
-            android:id="@+id/favorite_edit_url"
+            android:id="@+id/favoriteUrlEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/favorite_edit_url"

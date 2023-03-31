@@ -15,7 +15,7 @@
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinator_layout"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -32,7 +32,7 @@
         android:paddingTop="?actionBarSize">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/favorite_list"
+            android:id="@+id/favoriteListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="12dp"
@@ -40,7 +40,7 @@
             android:scrollbars="vertical" />
 
         <LinearLayout
-            android:id="@+id/favorite_empty_layout"
+            android:id="@+id/favoriteEmptyLayout"
             style="@style/Theme.Jelly.EmptyLayout"
             tools:ignore="UseCompoundDrawables">
 

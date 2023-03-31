@@ -21,7 +21,7 @@
     android:paddingEnd="?dialogPreferredPadding">
 
     <EditText
-        android:id="@+id/homepage_edit_url"
+        android:id="@+id/homepageUrlEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/pref_start_page"

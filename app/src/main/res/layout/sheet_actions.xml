@@ -22,7 +22,7 @@
     tools:ignore="UseCompoundDrawables">
 
     <LinearLayout
-        android:id="@+id/sheet_new_tab"
+        android:id="@+id/sheetNewTabLayout"
         style="@style/Theme.Jelly.BottomSheetLayout">
 
         <ImageView
@@ -35,7 +35,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/sheet_share"
+        android:id="@+id/sheetShareLayout"
         style="@style/Theme.Jelly.BottomSheetLayout">
 
         <ImageView
@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/sheet_favourite"
+        android:id="@+id/sheetFavouriteLayout"
         style="@style/Theme.Jelly.BottomSheetLayout">
 
         <ImageView
@@ -61,7 +61,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/sheet_download"
+        android:id="@+id/sheetDownloadLayout"
         style="@style/Theme.Jelly.BottomSheetLayout"
         android:visibility="gone">
 
