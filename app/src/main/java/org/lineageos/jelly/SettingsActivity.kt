@@ -23,6 +23,9 @@ import org.lineageos.jelly.utils.PrefsUtils
 import kotlin.reflect.safeCast
 
 class SettingsActivity : AppCompatActivity() {
+    // Views
+    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -33,7 +36,6 @@ class SettingsActivity : AppCompatActivity() {
                 .commit()
         }
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener { finish() }
