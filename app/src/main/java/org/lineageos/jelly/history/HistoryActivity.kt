@@ -53,8 +53,10 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstance)
         setContentView(R.layout.activity_history)
         setSupportActionBar(toolbar)
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setNavigationOnClickListener { finish() }
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
         adapter = HistoryAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
@@ -113,17 +115,23 @@ class HistoryActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId != R.id.menu_history_delete) {
-            return super.onOptionsItemSelected(item)
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
         }
-        AlertDialog.Builder(this)
-            .setTitle(R.string.history_delete_title)
-            .setMessage(R.string.history_delete_message)
-            .setPositiveButton(R.string.history_delete_positive) { _, _ -> deleteAll() }
-            .setNegativeButton(android.R.string.cancel) { d: DialogInterface, _ -> d.dismiss() }
-            .show()
-        return true
+        R.id.menu_history_delete -> {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.history_delete_title)
+                .setMessage(R.string.history_delete_message)
+                .setPositiveButton(R.string.history_delete_positive) { _, _ -> deleteAll() }
+                .setNegativeButton(android.R.string.cancel) { d: DialogInterface, _ -> d.dismiss() }
+                .show()
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     private fun updateHistoryView(empty: Boolean) {
