@@ -49,13 +49,8 @@ import android.webkit.URLUtil
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.AutoCompleteTextView
-import android.widget.EditText
 import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.PopupMenu
@@ -75,8 +70,7 @@ import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.suggestions.SuggestionsAdapter
-import org.lineageos.jelly.ui.SearchBarController
-import org.lineageos.jelly.ui.UrlBarController
+import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.PrefsUtils
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
@@ -87,24 +81,12 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
-class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
-    SharedPreferences.OnSharedPreferenceChangeListener {
+class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
-    private val autoCompleteTextView by lazy { findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView) }
     private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinatorLayout) }
-    private val incognitoImageView by lazy { findViewById<ImageView>(R.id.incognitoImageView) }
-    private val loadingProgressIndicator by lazy { findViewById<ProgressBar>(R.id.loadingProgressIndicator) }
-    private val searchMenuImageButton by lazy { findViewById<ImageButton>(R.id.searchMenuImageButton) }
-    private val searchMenuCancelImageButton by lazy { findViewById<ImageButton>(R.id.searchMenuCancelImageButton) }
-    private val searchMenuEditText by lazy { findViewById<EditText>(R.id.searchMenuEditText) }
-    private val searchMenuNextImageButton by lazy { findViewById<ImageButton>(R.id.searchMenuNextImageButton) }
-    private val searchMenuPrevImageButton by lazy { findViewById<ImageButton>(R.id.searchMenuPrevImageButton) }
-    private val searchStatusTextView by lazy { findViewById<TextView>(R.id.searchStatusTextView) }
-    private val secureImageView by lazy { findViewById<ImageView>(R.id.secureImageButton) }
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
-    private val toolbarSearchBarView by lazy { findViewById<RelativeLayout>(R.id.toolbarSearchBarView) }
-    private val toolbarSearchPageView by lazy { findViewById<View>(R.id.toolbarSearchPageView) }
+    private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
     private val webViewContainerLayout by lazy { findViewById<FrameLayout>(R.id.webViewContainerLayout) }
 
@@ -139,44 +121,16 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
-    private lateinit var searchController: SearchBarController
     private var urlIcon: Bitmap? = null
     private var incognito = false
     private var customView: View? = null
     private var fullScreenCallback: CustomViewCallback? = null
-    private var searchActive = false
     private val uiScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        autoCompleteTextView.setAdapter(SuggestionsAdapter(this))
-        autoCompleteTextView.setOnEditorActionListener { _, actionId: Int, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                UiUtils.hideKeyboard(autoCompleteTextView)
-                webView.loadUrl(autoCompleteTextView.text.toString())
-                autoCompleteTextView.clearFocus()
-                return@setOnEditorActionListener true
-            }
-            false
-        }
-        autoCompleteTextView.setOnKeyListener { _, keyCode: Int, _ ->
-            if (keyCode == KeyEvent.KEYCODE_ENTER) {
-                UiUtils.hideKeyboard(autoCompleteTextView)
-                webView.loadUrl(autoCompleteTextView.text.toString())
-                autoCompleteTextView.clearFocus()
-                return@setOnKeyListener true
-            }
-            false
-        }
-        autoCompleteTextView.onItemClickListener = OnItemClickListener { _, view: View, _, _ ->
-            val titleTextView = (view.findViewById<View>(R.id.titleTextView) as TextView).text
-            val url = titleTextView.toString()
-            UiUtils.hideKeyboard(autoCompleteTextView)
-            autoCompleteTextView.clearFocus()
-            webView.loadUrl(url)
-        }
         val intent = intent
         var url = intent.dataString
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
@@ -190,34 +144,17 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
             desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
         }
-        if (incognito) {
-            autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
-                    EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
-        }
 
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false)
         val preferenceManager = PreferenceManager.getDefaultSharedPreferences(this)
         preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
-        incognitoImageView.visibility = if (incognito) View.VISIBLE else View.GONE
+        urlBarLayout.isIncognito = incognito
         setupMenu()
-        val urlBarController = UrlBarController(
-            autoCompleteTextView,
-            secureImageView
-        )
-        webView.init(this, urlBarController, loadingProgressIndicator, incognito)
+        webView.init(this, urlBarLayout, incognito)
         webView.isDesktopMode = desktopMode
         webView.loadUrl(url ?: PrefsUtils.getHomePage(this))
-        searchController = SearchBarController(
-            webView,
-            searchMenuEditText,
-            searchStatusTextView,
-            searchMenuPrevImageButton,
-            searchMenuNextImageButton,
-            searchMenuCancelImageButton,
-            this
-        )
         setUiMode()
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")
@@ -262,8 +199,8 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
 
     override fun onBackPressed() {
         when {
-            searchActive -> {
-                searchController.onCancel()
+            urlBarLayout.currentMode == UrlBarLayout.UrlBarMode.SEARCH -> {
+                urlBarLayout.currentMode = UrlBarLayout.UrlBarMode.URL
             }
             customView != null -> {
                 onHideCustomView()
@@ -299,14 +236,14 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
     private fun setupMenu() {
-        searchMenuImageButton.setOnClickListener {
+        urlBarLayout.onMoreButtonClickCallback = {
             val isDesktop = webView.isDesktopMode
             val wrapper = ContextThemeWrapper(
                 this,
                 R.style.Theme_Jelly_PopupMenuOverlapAnchor
             )
             val popupMenu = PopupMenu(
-                wrapper, searchMenuImageButton, Gravity.NO_GRAVITY,
+                wrapper, urlBarLayout, Gravity.END,
                 R.attr.actionOverflowMenuStyle, 0
             )
             popupMenu.inflate(R.menu.menu_main)
@@ -385,16 +322,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     }
 
     private fun showSearch() {
-        toolbarSearchBarView.visibility = View.GONE
-        toolbarSearchPageView.visibility = View.VISIBLE
-        searchController.onShow()
-        searchActive = true
-    }
-
-    override fun onCancelSearch() {
-        toolbarSearchPageView.visibility = View.GONE
-        toolbarSearchBarView.visibility = View.VISIBLE
-        searchActive = false
+        urlBarLayout.currentMode = UrlBarLayout.UrlBarMode.SEARCH
     }
 
     private fun shareUrl(url: String) {
@@ -651,8 +579,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
     private fun changeUiMode(isReachMode: Boolean) {
         val appBarParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         val containerParams = webViewContainerLayout.layoutParams as CoordinatorLayout.LayoutParams
-        val progressParams = loadingProgressIndicator.layoutParams as RelativeLayout.LayoutParams
-        val searchBarParams = toolbarSearchBarView.layoutParams as RelativeLayout.LayoutParams
+        val searchBarParams = urlBarLayout.layoutParams as Toolbar.LayoutParams
         val margin = UiUtils.getDimenAttr(
             this, R.style.Theme_Jelly,
             android.R.attr.actionBarSize
@@ -660,26 +587,16 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         if (isReachMode) {
             appBarParams.gravity = Gravity.BOTTOM
             containerParams.setMargins(0, 0, 0, margin)
-            progressParams.removeRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
-            progressParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE)
-            searchBarParams.removeRule(RelativeLayout.ABOVE)
-            searchBarParams.addRule(RelativeLayout.BELOW, R.id.loadingProgressIndicator)
         } else {
             appBarParams.gravity = Gravity.TOP
             containerParams.setMargins(0, margin, 0, 0)
-            progressParams.removeRule(RelativeLayout.ALIGN_PARENT_TOP)
-            progressParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE)
-            searchBarParams.removeRule(RelativeLayout.BELOW)
-            searchBarParams.addRule(RelativeLayout.ABOVE, R.id.loadingProgressIndicator)
         }
         appBarLayout.layoutParams = appBarParams
         appBarLayout.invalidate()
         webViewContainerLayout.layoutParams = containerParams
         webViewContainerLayout.invalidate()
-        loadingProgressIndicator.layoutParams = progressParams
-        loadingProgressIndicator.invalidate()
-        toolbarSearchBarView.layoutParams = searchBarParams
-        toolbarSearchBarView.invalidate()
+        urlBarLayout.layoutParams = searchBarParams
+        urlBarLayout.invalidate()
     }
 
     companion object {
