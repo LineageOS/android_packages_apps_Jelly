@@ -37,8 +37,8 @@ import org.lineageos.jelly.utils.UiUtils
 
 class HistoryActivity : AppCompatActivity() {
     // Views
-    private val emptyView by lazy { findViewById<View>(R.id.history_empty_layout) }
-    private val list by lazy { findViewById<RecyclerView>(R.id.history_list) }
+    private val historyEmptyLayout by lazy { findViewById<View>(R.id.historyEmptyLayout) }
+    private val historyListView by lazy { findViewById<RecyclerView>(R.id.historyListView) }
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
 
     private val uiScope = CoroutineScope(Dispatchers.Main)
@@ -73,15 +73,15 @@ class HistoryActivity : AppCompatActivity() {
                 adapter.swapCursor(null)
             }
         })
-        list.layoutManager = LinearLayoutManager(this)
-        list.addItemDecoration(HistoryAnimationDecorator(this))
-        list.itemAnimator = DefaultItemAnimator()
-        list.adapter = adapter
+        historyListView.layoutManager = LinearLayoutManager(this)
+        historyListView.addItemDecoration(HistoryAnimationDecorator(this))
+        historyListView.itemAnimator = DefaultItemAnimator()
+        historyListView.adapter = adapter
         adapter.registerAdapterDataObserver(adapterDataObserver)
         val helper = ItemTouchHelper(HistoryCallBack(this, object : OnDeleteListener {
             override fun onItemDeleted(data: ContentValues?) {
                 Snackbar.make(
-                    findViewById(R.id.coordinator_layout),
+                    findViewById(R.id.coordinatorLayout),
                     R.string.history_snackbar_item_deleted, Snackbar.LENGTH_LONG
                 )
                     .setAction(R.string.history_snackbar_item_deleted_message) {
@@ -90,9 +90,9 @@ class HistoryActivity : AppCompatActivity() {
                     .show()
             }
         }))
-        helper.attachToRecyclerView(list)
-        val listTop = list.top
-        list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        helper.attachToRecyclerView(historyListView)
+        val listTop = historyListView.top
+        historyListView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val elevate = recyclerView.getChildAt(0) != null &&
@@ -135,7 +135,7 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun updateHistoryView(empty: Boolean) {
-        emptyView.visibility = if (empty) View.VISIBLE else View.GONE
+        historyEmptyLayout.visibility = if (empty) View.VISIBLE else View.GONE
     }
 
     private fun deleteAll() {

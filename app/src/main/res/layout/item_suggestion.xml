@@ -14,13 +14,13 @@
     android:paddingEnd="16dp">
 
     <ImageView
-        android:id="@+id/suggestionIcon"
+        android:id="@+id/suggestionIconImageView"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/ic_search" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titleTextView"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

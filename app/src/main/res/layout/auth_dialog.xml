@@ -13,7 +13,7 @@
     android:paddingBottom="8dp">
 
     <TextView
-        android:id="@+id/auth_detail"
+        android:id="@+id/authDetailTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp" />
@@ -24,7 +24,7 @@
         android:paddingBottom="8dp">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/auth_dialog_username"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/auth_dialog_password"
