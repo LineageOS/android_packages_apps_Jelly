@@ -25,9 +25,9 @@
         android:background="?colorPrimary" />
 
     <fragment
-        android:name="org.lineageos.jelly.SettingsActivity$MyPreferenceFragment"
+        android:name="org.lineageos.jelly.SettingsActivity$SettingsFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:tag="org.lineageos.jelly.SettingsActivity$MyPreferenceFragment" />
+        android:tag="org.lineageos.jelly.SettingsActivity$SettingsFragment" />
 </RelativeLayout>
