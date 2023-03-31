@@ -46,8 +46,7 @@
 
             <ImageView
                 style="@style/Theme.Jelly.EmptyImage"
-                android:src="@drawable/ic_favorite"
-                android:tint="@color/empty_image" />
+                android:src="@drawable/ic_favorite" />
 
             <TextView
                 style="@style/Theme.Jelly.EmptyText"

@@ -80,6 +80,7 @@
         <item name="android:background">@drawable/empty_background</item>
         <item name="android:padding">8dp</item>
         <item name="android:scaleType">fitXY</item>
+        <item name="android:tint">@color/empty_image</item>
     </style>
 
     <style name="Theme.Jelly.EmptyText">
@@ -91,5 +92,9 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/empty_text</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.Jelly.MenuIcon">
+        <item name="iconTint">@color/menu_icon</item>
     </style>
 </resources>

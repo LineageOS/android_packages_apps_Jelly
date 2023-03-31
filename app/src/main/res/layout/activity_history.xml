@@ -44,8 +44,7 @@
 
             <ImageView
                 style="@style/Theme.Jelly.EmptyImage"
-                android:src="@drawable/ic_history"
-                android:tint="@color/empty_image" />
+                android:src="@drawable/ic_history" />
 
             <TextView
                 style="@style/Theme.Jelly.EmptyText"

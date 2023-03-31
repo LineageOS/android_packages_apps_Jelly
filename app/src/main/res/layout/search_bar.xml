@@ -50,7 +50,8 @@
                 android:layout_alignParentStart="true"
                 android:adjustViewBounds="true"
                 android:scaleType="center"
-                android:src="@drawable/ic_incognito" />
+                android:src="@drawable/ic_incognito"
+                app:tint="@color/menu_icon" />
 
             <ImageButton
                 android:id="@+id/secureImageButton"
@@ -61,7 +62,8 @@
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_lock"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:tint="@color/menu_icon" />
 
             <org.lineageos.jelly.ui.AutoCompleteTextViewExt
                 android:id="@+id/autoCompleteTextView"
@@ -95,7 +97,8 @@
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:padding="8dp"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_menu"
+                app:tint="@color/menu_icon" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
