@@ -37,8 +37,8 @@ import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteActivity : AppCompatActivity() {
     // Views
-    private val emptyView by lazy { findViewById<View>(R.id.favorite_empty_layout) }
-    private val list by lazy { findViewById<RecyclerView>(R.id.favorite_list) }
+    private val favoriteEmptyLayout by lazy { findViewById<View>(R.id.favoriteEmptyLayout) }
+    private val favoriteListView by lazy { findViewById<RecyclerView>(R.id.favoriteListView) }
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
 
     private val uiScope = CoroutineScope(Dispatchers.Main)
@@ -64,8 +64,8 @@ class FavoriteActivity : AppCompatActivity() {
                 adapter.swapCursor(data)
                 data?.let {
                     if (it.count == 0) {
-                        list.visibility = View.GONE
-                        emptyView.visibility = View.VISIBLE
+                        favoriteListView.visibility = View.GONE
+                        favoriteEmptyLayout.visibility = View.VISIBLE
                     }
                 }
             }
@@ -74,11 +74,11 @@ class FavoriteActivity : AppCompatActivity() {
                 adapter.swapCursor(null)
             }
         })
-        list.layoutManager = GridLayoutManager(this, 2)
-        list.itemAnimator = DefaultItemAnimator()
-        list.adapter = adapter
-        val listTop = list.top
-        list.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        favoriteListView.layoutManager = GridLayoutManager(this, 2)
+        favoriteListView.itemAnimator = DefaultItemAnimator()
+        favoriteListView.adapter = adapter
+        val listTop = favoriteListView.top
+        favoriteListView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 toolbar.elevation = if (recyclerView.getChildAt(0).top < listTop) {
@@ -103,8 +103,8 @@ class FavoriteActivity : AppCompatActivity() {
     fun editItem(id: Long, title: String?, url: String) {
         val view = LayoutInflater.from(this)
             .inflate(R.layout.dialog_favorite_edit, LinearLayout(this))
-        val titleEdit = view.findViewById<EditText>(R.id.favorite_edit_title)
-        val urlEdit = view.findViewById<EditText>(R.id.favorite_edit_url)
+        val titleEdit = view.findViewById<EditText>(R.id.favoriteTitleEditText)
+        val urlEdit = view.findViewById<EditText>(R.id.favoriteUrlEditText)
         titleEdit.setText(title)
         urlEdit.setText(url)
         val error = getString(R.string.favorite_edit_error)
