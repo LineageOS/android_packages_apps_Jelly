@@ -12,7 +12,5 @@ internal class BingSuggestionProvider : SuggestionProvider("UTF-8") {
     override fun createQueryUrl(
         query: String,
         language: String
-    ): String {
-        return "https://api.bing.com/osjson.aspx?query=$query&language=$language"
-    }
+    ) = "https://api.bing.com/osjson.aspx?query=$query&language=$language"
 }
