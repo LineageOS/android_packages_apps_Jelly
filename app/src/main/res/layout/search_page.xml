@@ -76,7 +76,8 @@
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
-                android:src="@drawable/ic_prev" />
+                android:src="@drawable/ic_prev"
+                app:tint="@color/menu_icon" />
 
             <ImageButton
                 android:id="@id/searchMenuNextImageButton"
@@ -86,7 +87,8 @@
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
-                android:src="@drawable/ic_next" />
+                android:src="@drawable/ic_next"
+                app:tint="@color/menu_icon" />
 
             <ImageButton
                 android:id="@id/searchMenuCancelImageButton"
@@ -96,7 +98,8 @@
                 android:adjustViewBounds="true"
                 android:background="?selectableItemBackgroundBorderless"
                 android:scaleType="center"
-                android:src="@drawable/ic_cancel" />
+                android:src="@drawable/ic_cancel"
+                app:tint="@color/menu_icon" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
