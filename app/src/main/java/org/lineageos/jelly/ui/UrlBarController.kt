@@ -71,7 +71,8 @@ class UrlBarController(
         editor.setTextKeepState(text ?: "")
     }
 
-    private val isSecure = url?.startsWith("https") == true
+    private val isSecure
+        get() = url?.startsWith("https://") == true
 
     private fun updateSSLCertificateDialog(context: Context, certificate: SslCertificate?) {
         certificate?.let { cert ->
