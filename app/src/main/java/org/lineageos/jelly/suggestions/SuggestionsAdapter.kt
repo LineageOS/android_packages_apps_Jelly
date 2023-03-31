@@ -24,7 +24,7 @@ import java.util.Locale
 import kotlin.reflect.safeCast
 
 class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterable {
-    private val inflator = LayoutInflater.from(context)
+    private val inflater = LayoutInflater.from(context)
     private val items = mutableListOf<String>()
     private val filter = ItemFilter()
     private var queryText: String? = null
@@ -35,7 +35,7 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
     override fun getItemId(position: Int) = 0L
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: this.inflator.inflate(R.layout.item_suggestion, parent, false)!!
+        val view = convertView ?: this.inflater.inflate(R.layout.item_suggestion, parent, false)!!
         val title = view.findViewById<TextView>(R.id.title)
         val suggestion = items[position]
         queryText?.also { query ->
