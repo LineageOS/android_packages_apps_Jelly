@@ -14,6 +14,7 @@ import android.provider.BaseColumns
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -47,8 +48,10 @@ class FavoriteActivity : AppCompatActivity() {
         super.onCreate(savedInstance)
         setContentView(R.layout.activity_favorites)
         setSupportActionBar(toolbar)
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setNavigationOnClickListener { finish() }
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
         adapter = FavoriteAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderCallbacks<Cursor> {
@@ -85,6 +88,16 @@ class FavoriteActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     fun editItem(id: Long, title: String?, url: String) {

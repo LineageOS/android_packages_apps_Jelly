@@ -7,6 +7,7 @@ package org.lineageos.jelly
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.view.MenuItem
 import android.webkit.CookieManager
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -37,8 +38,20 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         setSupportActionBar(toolbar)
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setNavigationOnClickListener { finish() }
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
