@@ -61,7 +61,7 @@ class HistoryAdapter(private val context: Context) : RecyclerView.Adapter<Histor
         val summary = historyDateFormat.format(Date(timestamp))
         val title = cursor.getString(titleColumnIndex)
         val url = cursor.getString(urlColumnIndex)
-        holder.bind(context, title, url, summary, timestamp)
+        holder.bind(context, title, url, summary)
     }
 
     override fun getItemCount() = cursor?.count ?: 0

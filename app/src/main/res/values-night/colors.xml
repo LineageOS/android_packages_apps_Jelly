@@ -16,11 +16,7 @@
     <color name="empty_background">#4e4e4e</color>
     <color name="empty_text">#8b8b8b</color>
 
-    <color name="history_last_hour">#303030</color>
-    <color name="history_today">#212121</color>
-    <color name="history_this_week">#111111</color>
-    <color name="history_this_month">#090909</color>
-    <color name="history_earlier">#050505</color>
+    <color name="item_history_background">#111111</color>
 
     <color name="card_background">@color/cardview_dark_background</color>
 
