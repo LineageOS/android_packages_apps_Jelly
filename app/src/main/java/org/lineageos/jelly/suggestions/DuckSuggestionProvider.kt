@@ -14,24 +14,20 @@ internal class DuckSuggestionProvider : SuggestionProvider("UTF-8") {
     override fun createQueryUrl(
         query: String,
         language: String
-    ): String {
-        return "https://duckduckgo.com/ac/?q=$query"
-    }
+    ) = "https://duckduckgo.com/ac/?q=$query"
 
     override fun parseResults(
         content: String,
         callback: ResultCallback
     ) {
         val jsonArray = JSONArray(content)
-        var n = 0
         val size = jsonArray.length()
-        while (n < size) {
+        for (n in 0 until size) {
             val obj = jsonArray.getJSONObject(n)
             val suggestion = obj.getString("phrase")
             if (!callback.addResult(suggestion)) {
                 break
             }
-            n++
         }
     }
 }
