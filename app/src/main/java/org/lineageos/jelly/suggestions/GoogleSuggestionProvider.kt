@@ -12,8 +12,6 @@ internal class GoogleSuggestionProvider : SuggestionProvider("UTF-8") {
     override fun createQueryUrl(
         query: String,
         language: String
-    ): String {
-        return ("https://www.google.com/complete/search?client=android&oe=utf8&ie=utf8"
-                + "&hl=" + language + "&q=" + query)
-    }
+    ) = "https://www.google.com/complete/search?client=android&oe=utf8&ie=utf8" +
+            "&hl=$language&q=$query"
 }
