@@ -5,12 +5,12 @@
 -->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/coordinator_layout"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.Jelly.AppBarOverlay">
@@ -28,7 +28,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:id="@+id/load_progress"
+                    android:id="@+id/loadingProgressIndicator"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_alignParentBottom="true"
@@ -38,30 +38,30 @@
                     app:indicatorColor="@color/colorAccent" />
 
                 <include
-                    android:id="@+id/toolbar_search_page"
+                    android:id="@+id/toolbarSearchPageView"
                     layout="@layout/search_page"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:visibility="gone" />
 
                 <include
-                    android:id="@+id/toolbar_search_bar"
+                    android:id="@+id/toolbarSearchBarView"
                     layout="@layout/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_above="@id/load_progress" />
+                    android:layout_above="@id/loadingProgressIndicator" />
 
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
-        android:id="@+id/web_view_container"
+        android:id="@+id/webViewContainerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <org.lineageos.jelly.webview.WebViewExt
-            android:id="@+id/web_view"
+            android:id="@+id/webView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:focusable="true"

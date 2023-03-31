@@ -122,15 +122,15 @@ class SettingsActivity : AppCompatActivity() {
                 R.layout.dialog_homepage_edit,
                 LinearLayout(preference.context)
             )
-            val editText = homepageView.findViewById<EditText>(R.id.homepage_edit_url)
-            editText.setText(PrefsUtils.getHomePage(preference.context))
+            val homepageUrlEditText = homepageView.findViewById<EditText>(R.id.homepageUrlEditText)
+            homepageUrlEditText.setText(PrefsUtils.getHomePage(preference.context))
             builder.setTitle(R.string.pref_start_page_dialog_title)
                 .setMessage(R.string.pref_start_page_dialog_message)
                 .setView(homepageView)
                 .setPositiveButton(
                     android.R.string.ok
                 ) { _: DialogInterface?, _: Int ->
-                    val url = editText.text.toString().ifEmpty {
+                    val url = homepageUrlEditText.text.toString().ifEmpty {
                         getString(R.string.default_home_page)
                     }
                     PrefsUtils.setHomePage(preference.context, url)
