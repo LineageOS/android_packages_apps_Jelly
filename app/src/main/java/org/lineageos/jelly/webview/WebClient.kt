@@ -73,17 +73,17 @@ internal class WebClient(private val urlBarController: UrlBarController) : WebVi
         val builder = AlertDialog.Builder(context)
         val layoutInflater = LayoutInflater.from(context)
         val dialogView = layoutInflater.inflate(R.layout.auth_dialog, LinearLayout(context))
-        val username = dialogView.findViewById<EditText>(R.id.username)
-        val password = dialogView.findViewById<EditText>(R.id.password)
-        val authDetail = dialogView.findViewById<TextView>(R.id.auth_detail)
+        val usernameEditText = dialogView.findViewById<EditText>(R.id.usernameEditText)
+        val passwordEditText = dialogView.findViewById<EditText>(R.id.passwordEditText)
+        val authDetailTextView = dialogView.findViewById<TextView>(R.id.authDetailTextView)
         val text = context.getString(R.string.auth_dialog_detail, view.url)
-        authDetail.text = text
+        authDetailTextView.text = text
         builder.setView(dialogView)
             .setTitle(R.string.auth_dialog_title)
             .setPositiveButton(R.string.auth_dialog_login)
             { _: DialogInterface?, _: Int ->
                 handler.proceed(
-                    username.text.toString(), password.text.toString()
+                    usernameEditText.text.toString(), passwordEditText.text.toString()
                 )
             }
             .setNegativeButton(android.R.string.cancel)
