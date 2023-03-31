@@ -5,7 +5,6 @@
 
 package org.lineageos.jelly.suggestions
 
-import android.text.TextUtils
 import android.util.Log
 import org.json.JSONArray
 import org.lineageos.jelly.utils.FileUtils
@@ -123,9 +122,8 @@ internal abstract class SuggestionProvider(private val encoding: String) {
     }
 
     private fun getEncoding(connection: HttpURLConnection): String {
-        val contentEncoding = connection.contentEncoding
-        if (contentEncoding != null) {
-            return contentEncoding
+        connection.contentEncoding?.let {
+            return it
         }
         val contentType = connection.contentType
         for (value in contentType.split(";").toTypedArray().map { str -> str.trim { it <= ' ' } }) {
@@ -145,12 +143,6 @@ internal abstract class SuggestionProvider(private val encoding: String) {
         private val INTERVAL_DAY = TimeUnit.DAYS.toSeconds(1)
         private const val DEFAULT_LANGUAGE = "en"
         private val language: String
-            get() {
-                var language = Locale.getDefault().language
-                if (TextUtils.isEmpty(language)) {
-                    language = DEFAULT_LANGUAGE
-                }
-                return language
-            }
+            get() = Locale.getDefault().language.ifEmpty { DEFAULT_LANGUAGE }
     }
 }
