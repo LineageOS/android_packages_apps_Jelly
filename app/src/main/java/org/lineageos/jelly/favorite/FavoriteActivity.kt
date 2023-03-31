@@ -35,20 +35,20 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
 
 class FavoriteActivity : AppCompatActivity() {
+    // Views
+    private val emptyView by lazy { findViewById<View>(R.id.favorite_empty_layout) }
+    private val list by lazy { findViewById<RecyclerView>(R.id.favorite_list) }
+    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
+
     private val uiScope = CoroutineScope(Dispatchers.Main)
-    private lateinit var list: RecyclerView
-    private lateinit var emptyView: View
     private lateinit var adapter: FavoriteAdapter
 
     override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
         setContentView(R.layout.activity_favorites)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener { finish() }
-        list = findViewById(R.id.favorite_list)
-        emptyView = findViewById(R.id.favorite_empty_layout)
         adapter = FavoriteAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderCallbacks<Cursor> {
