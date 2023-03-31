@@ -20,6 +20,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreference
 import org.lineageos.jelly.utils.PrefsUtils
+import kotlin.reflect.safeCast
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,12 +61,12 @@ class SettingsActivity : AppCompatActivity() {
         override fun onPreferenceChange(preference: Preference, value: Any?): Boolean {
             val stringValue = value.toString()
 
-            if (preference is ListPreference) {
-                val prefIndex = preference.findIndexOfValue(stringValue)
+            ListPreference::class.safeCast(preference)?.also {
+                val prefIndex = it.findIndexOfValue(stringValue)
                 if (prefIndex >= 0) {
-                    preference.setSummary(preference.entries[prefIndex])
+                    preference.summary = it.entries[prefIndex]
                 }
-            } else {
+            } ?: run {
                 preference.summary = stringValue
             }
             return true
