@@ -18,13 +18,9 @@ import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
-import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
 import android.graphics.drawable.Icon
-import android.graphics.drawable.TransitionDrawable
 import android.net.Uri
 import android.net.http.HttpResponseCache
 import android.os.Build
@@ -45,8 +41,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowInsetsController
-import android.view.WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.webkit.CookieManager
@@ -146,8 +140,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         }
     }
     private lateinit var searchController: SearchBarController
-    private var lastActionBarDrawable: Drawable? = null
-    private var themeColor = 0
     private var urlIcon: Bitmap? = null
     private var incognito = false
     private var customView: View? = null
@@ -197,7 +189,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                     url -> url.isNotEmpty()
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
             desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
-            themeColor = it.getInt(STATE_KEY_THEME_COLOR, 0)
         }
         if (incognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
@@ -305,7 +296,6 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         outState.putString(IntentUtils.EXTRA_URL, webView.url)
         outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
         outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
-        outState.putInt(STATE_KEY_THEME_COLOR, themeColor)
     }
 
     private fun setupMenu() {
@@ -541,115 +531,21 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
                 return
             }
             urlIcon = it.copy(it.config, true)
-            applyThemeColor(UiUtils.getColor(favicon, webView.isIncognito))
+            updateTaskDescription()
             if (!it.isRecycled) {
                 it.recycle()
             }
         }
     }
 
-    @Suppress("DEPRECATION")
-    private fun applyThemeColor(color: Int) {
-        var localColor = color
-        val hasValidColor = localColor != Color.TRANSPARENT
-        themeColor = localColor
-        localColor = themeColorWithFallback
-        val actionBar = supportActionBar
-        actionBar?.let {
-            val newDrawable = ColorDrawable(localColor)
-            lastActionBarDrawable?.let { lastActionBarDrawable ->
-                val layers = arrayOf(lastActionBarDrawable, newDrawable)
-                val transition = TransitionDrawable(layers)
-                transition.isCrossFadeEnabled = true
-                transition.startTransition(200)
-                it.setBackgroundDrawable(transition)
-            } ?: it.setBackgroundDrawable(newDrawable)
-            lastActionBarDrawable = newDrawable
-        }
-        val progressColor = if (hasValidColor) {
-            if (UiUtils.isColorLight(localColor)) Color.BLACK else Color.WHITE
-        } else {
-            ContextCompat.getColor(this, R.color.colorAccent)
-        }
-        loadingProgressIndicator.progressTintList = ColorStateList.valueOf(progressColor)
-        loadingProgressIndicator.postInvalidate()
-        val isReachMode = UiUtils.isReachModeEnabled(this)
-        if (isReachMode) {
-            window.navigationBarColor = localColor
-        } else {
-            window.statusBarColor = localColor
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.let {
-                if (UiUtils.isColorLight(localColor)) {
-                    if (isReachMode) {
-                        it.setSystemBarsAppearance(
-                            APPEARANCE_LIGHT_NAVIGATION_BARS,
-                            APPEARANCE_LIGHT_NAVIGATION_BARS
-                        )
-                    } else {
-                        it.setSystemBarsAppearance(
-                            APPEARANCE_LIGHT_STATUS_BARS,
-                            APPEARANCE_LIGHT_STATUS_BARS
-                        )
-                    }
-                } else {
-                    if (isReachMode) {
-                        it.setSystemBarsAppearance(0, APPEARANCE_LIGHT_NAVIGATION_BARS)
-                    } else {
-                        it.setSystemBarsAppearance(0, APPEARANCE_LIGHT_STATUS_BARS)
-                    }
-                }
-            }
-        } else {
-            var flags = window.decorView.systemUiVisibility
-            flags = if (UiUtils.isColorLight(localColor)) {
-                flags or if (isReachMode) {
-                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-                } else {
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                }
-            } else {
-                flags and if (isReachMode) {
-                    View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
-                } else {
-                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
-                }
-            }
-            window.decorView.systemUiVisibility = flags
-        }
+    private fun updateTaskDescription() {
         setTaskDescription(
             TaskDescription(
                 webView.title,
-                urlIcon, localColor
+                urlIcon, Color.WHITE
             )
         )
     }
-
-    @Suppress("DEPRECATION")
-    private fun resetSystemUIColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.let {
-                it.setSystemBarsAppearance(0, APPEARANCE_LIGHT_NAVIGATION_BARS)
-                it.setSystemBarsAppearance(0, APPEARANCE_LIGHT_STATUS_BARS)
-            }
-        } else {
-            var flags = window.decorView.systemUiVisibility
-            flags = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
-            flags = flags and View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv()
-            window.decorView.systemUiVisibility = flags
-        }
-        window.statusBarColor = Color.BLACK
-        window.navigationBarColor = Color.BLACK
-    }
-
-    private val themeColorWithFallback: Int
-        get() = if (themeColor != Color.TRANSPARENT) {
-            themeColor
-        } else ContextCompat.getColor(
-            this,
-            if (webView.isIncognito) R.color.colorIncognito else R.color.colorPrimary
-        )
 
     override fun onShowCustomView(view: View?, callback: CustomViewCallback) {
         customView?.let {
@@ -689,7 +585,7 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
             action = Intent.ACTION_MAIN
         }
         val launcherIcon = urlIcon?.let {
-            Icon.createWithBitmap(UiUtils.getShortcutIcon(it, themeColorWithFallback))
+            Icon.createWithBitmap(UiUtils.getShortcutIcon(it, Color.WHITE))
         } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
         val title = webView.title.toString()
         val shortcutInfo = ShortcutInfo.Builder(this, title)
@@ -784,16 +680,11 @@ class MainActivity : WebViewExtActivity(), SearchBarController.OnCancelListener,
         loadingProgressIndicator.invalidate()
         toolbarSearchBarView.layoutParams = searchBarParams
         toolbarSearchBarView.invalidate()
-        resetSystemUIColor()
-        if (themeColor != 0) {
-            applyThemeColor(themeColor)
-        }
     }
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
         private const val PROVIDER = "org.lineageos.jelly.fileprovider"
-        private const val STATE_KEY_THEME_COLOR = "theme_color"
         private const val LOCATION_PERM_REQ = 424
     }
 }
