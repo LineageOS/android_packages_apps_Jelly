@@ -36,8 +36,12 @@ import org.lineageos.jelly.history.HistoryCallBack.OnDeleteListener
 import org.lineageos.jelly.utils.UiUtils
 
 class HistoryActivity : AppCompatActivity() {
+    // Views
+    private val emptyView by lazy { findViewById<View>(R.id.history_empty_layout) }
+    private val list by lazy { findViewById<RecyclerView>(R.id.history_list) }
+    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
+
     private val uiScope = CoroutineScope(Dispatchers.Main)
-    private lateinit var emptyView: View
     private lateinit var adapter: HistoryAdapter
     private val adapterDataObserver: AdapterDataObserver = object : AdapterDataObserver() {
         override fun onChanged() {
@@ -48,12 +52,9 @@ class HistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
         setContentView(R.layout.activity_history)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener { finish() }
-        val list = findViewById<RecyclerView>(R.id.history_list)
-        emptyView = findViewById(R.id.history_empty_layout)
         adapter = HistoryAdapter(this)
         val loader = LoaderManager.getInstance(this)
         loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
