@@ -77,7 +77,6 @@
     <style name="Theme.Jelly.EmptyImage">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">120dp</item>
-        <item name="android:background">@drawable/empty_background</item>
         <item name="android:padding">8dp</item>
         <item name="android:scaleType">fitXY</item>
         <item name="android:tint">@color/empty_image</item>
