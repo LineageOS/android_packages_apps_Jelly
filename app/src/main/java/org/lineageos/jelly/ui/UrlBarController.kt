@@ -83,14 +83,14 @@ class UrlBarController(
 
                 // Get the text views
                 val domainView: TextView = view.findViewById(R.id.domain)
-                val issuedToCNView: KeyValueView = view.findViewById(R.id.issued_to_cn)
-                val issuedToOView: KeyValueView = view.findViewById(R.id.issued_to_o)
-                val issuedToUNView: KeyValueView = view.findViewById(R.id.issued_to_un)
-                val issuedByCNView: KeyValueView = view.findViewById(R.id.issued_by_cn)
-                val issuedByOView: KeyValueView = view.findViewById(R.id.issued_by_o)
-                val issuedByUNView: KeyValueView = view.findViewById(R.id.issued_by_un)
-                val issuedOnView: KeyValueView = view.findViewById(R.id.issued_on)
-                val expiresOnView: KeyValueView = view.findViewById(R.id.expires_on)
+                val issuedToCNView: KeyValueView = view.findViewById(R.id.issuedToCnView)
+                val issuedToOView: KeyValueView = view.findViewById(R.id.issuedToOView)
+                val issuedToUNView: KeyValueView = view.findViewById(R.id.issuedToUnView)
+                val issuedByCNView: KeyValueView = view.findViewById(R.id.issuedByCnView)
+                val issuedByOView: KeyValueView = view.findViewById(R.id.issuedByOView)
+                val issuedByUNView: KeyValueView = view.findViewById(R.id.issuedByUnView)
+                val issuedOnView: KeyValueView = view.findViewById(R.id.issuedOnView)
+                val expiresOnView: KeyValueView = view.findViewById(R.id.expiresOnView)
 
                 // Get the domain name
                 val domainString = Uri.parse(url).host
