@@ -17,7 +17,6 @@ import android.graphics.Rect
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageButton
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import androidx.core.graphics.ColorUtils
@@ -62,16 +61,6 @@ object UiUtils {
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, res.displayMetrics)
 
     /**
-     * Shows the software keyboard.
-     *
-     * @param view The currently focused [View], which would receive soft keyboard input.
-     */
-    fun showKeyboard(view: View) {
-        val imm = view.context.getSystemService(InputMethodManager::class.java)
-        imm.showSoftInput(view, 0)
-    }
-
-    /**
      * Hides the keyboard.
      *
      * @param view The [View] that is currently accepting input.
@@ -79,18 +68,6 @@ object UiUtils {
     fun hideKeyboard(view: View) {
         val imm = view.context.getSystemService(InputMethodManager::class.java)
         imm.hideSoftInputFromWindow(view.windowToken, 0)
-    }
-
-    /**
-     * Sets the specified image button to the given state, while modifying or
-     * "graying-out" the icon as well
-     *
-     * @param enabled The state of the menu item
-     * @param button  The menu item to modify
-     */
-    fun setImageButtonEnabled(button: ImageButton, enabled: Boolean) {
-        button.isEnabled = enabled
-        button.alpha = if (enabled) 1.0f else 0.4f
     }
 
     fun isReachModeEnabled(context: Context): Boolean {
