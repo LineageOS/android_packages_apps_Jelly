@@ -33,35 +33,11 @@
             android:background="?attr/colorPrimaryDark"
             app:popupTheme="@style/Theme.Jelly.PopupOverlay">
 
-            <RelativeLayout
+            <org.lineageos.jelly.ui.UrlBarLayout
+                android:id="@+id/urlBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent" />
 
-                <com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:id="@+id/loadingProgressIndicator"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_alignParentBottom="true"
-                    android:max="100"
-                    android:paddingTop="2dp"
-                    android:progress="54"
-                    app:indicatorColor="@color/colorAccent" />
-
-                <include
-                    android:id="@+id/toolbarSearchPageView"
-                    layout="@layout/search_page"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:visibility="gone" />
-
-                <include
-                    android:id="@+id/toolbarSearchBarView"
-                    layout="@layout/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/loadingProgressIndicator" />
-
-            </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
