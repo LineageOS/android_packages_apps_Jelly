@@ -20,23 +20,20 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts.OpenMultipleDocuments
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryProvider
-import org.lineageos.jelly.ui.UrlBarController
+import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 
 internal class ChromeClient(
     private val activity: WebViewExtActivity,
     private val incognito: Boolean,
-    private val urlBarController: UrlBarController,
-    private val progressBar: ProgressBar
+    private val urlBarLayout: UrlBarLayout
 ) : WebChromeClient() {
     override fun onProgressChanged(view: WebView, progress: Int) {
-        progressBar.visibility = if (progress == 100) View.INVISIBLE else View.VISIBLE
-        progressBar.progress = if (progress == 100) 0 else progress
+        urlBarLayout.loadingProgress = progress
         super.onProgressChanged(view, progress)
     }
 
     override fun onReceivedTitle(view: WebView, title: String) {
-        urlBarController.onTitleReceived(title)
         view.url?.let {
             if (!incognito) {
                 HistoryProvider.addOrUpdateItem(activity.contentResolver, title, it)

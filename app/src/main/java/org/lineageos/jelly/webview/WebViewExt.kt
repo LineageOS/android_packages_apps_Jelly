@@ -13,8 +13,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.webkit.WebView
-import android.widget.ProgressBar
-import org.lineageos.jelly.ui.UrlBarController
+import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.PrefsUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.util.regex.Pattern
@@ -109,17 +108,22 @@ class WebViewExt @JvmOverloads constructor(
     }
 
     fun init(
-        activity: WebViewExtActivity, urlBarController: UrlBarController,
-        progressBar: ProgressBar, incognito: Boolean
+        activity: WebViewExtActivity, urlBarLayout: UrlBarLayout, incognito: Boolean
     ) {
         this.activity = activity
         isIncognito = incognito
         val chromeClient = ChromeClient(
-            activity, incognito,
-            urlBarController, progressBar
+            activity, incognito, urlBarLayout
         )
         webChromeClient = chromeClient
-        webViewClient = WebClient(urlBarController)
+        webViewClient = WebClient(urlBarLayout)
+        setFindListener { activeMatchOrdinal, numberOfMatches, _ ->
+            urlBarLayout.searchPositionInfo = Pair(activeMatchOrdinal, numberOfMatches)
+        }
+        urlBarLayout.onLoadUrlCallback = { loadUrl(it) }
+        urlBarLayout.onStartSearchCallback = { findAllAsync(it) }
+        urlBarLayout.onClearSearchCallback = { clearMatches() }
+        urlBarLayout.onSearchPositionChangeCallback = { findNext(it) }
         setup()
     }
 
