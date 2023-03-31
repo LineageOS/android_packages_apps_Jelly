@@ -31,7 +31,7 @@ class SettingsActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { finish() }
     }
 
-    class MyPreferenceFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
+    class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
         override fun onCreatePreferences(savedInstance: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.settings, rootKey)
