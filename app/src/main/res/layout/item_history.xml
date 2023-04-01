@@ -17,7 +17,7 @@
     android:id="@+id/rowHistoryLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/item_history_background"
+    android:background="?attr/colorSurface"
     android:foreground="?selectableItemBackground"
     android:gravity="center_vertical"
     android:minHeight="60dp"
