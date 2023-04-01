@@ -9,6 +9,7 @@
         app:defaultValue="@string/default_search_engine"
         app:entries="@array/pref_search_engine_entries"
         app:entryValues="@array/pref_search_engine_entryvalues"
+        app:iconSpaceReserved="false"
         app:key="key_search_engine"
         app:title="@string/pref_search_engine"
         app:useSimpleSummaryProvider="true" />
@@ -17,60 +18,71 @@
         app:defaultValue="@string/default_suggestion_provider"
         app:entries="@array/pref_suggestions_provider_entries"
         app:entryValues="@array/pref_suggestions_provider_entryvalues"
+        app:iconSpaceReserved="false"
         app:key="key_suggestion_provider"
         app:title="@string/pref_suggestions_provider"
         app:useSimpleSummaryProvider="true" />
 
     <Preference
+        app:iconSpaceReserved="false"
         app:key="key_home_page"
         app:title="@string/pref_start_page" />
 
     <SwitchPreference
         app:defaultValue="0"
+        app:iconSpaceReserved="false"
         app:key="key_advanced_share"
         app:summary="@string/pref_screenshot_snap_summary"
         app:title="@string/pref_screenshot_snap_title" />
 
     <SwitchPreference
         app:defaultValue="0"
+        app:iconSpaceReserved="false"
         app:key="key_reach_mode"
         app:summary="@string/pref_reach_mode_summary"
         app:title="@string/pref_reach_mode_title" />
 
     <PreferenceCategory
+        app:iconSpaceReserved="false"
         app:title="@string/pref_privacy_security">
 
         <SwitchPreference
             app:defaultValue="0"
+            app:iconSpaceReserved="false"
             app:key="key_looklock"
             app:summary="@string/pref_looklock_summary"
             app:title="@string/pref_looklock_title" />
 
         <SwitchPreference
             app:defaultValue="1"
+            app:iconSpaceReserved="false"
             app:key="key_javascript"
             app:summary="@string/pref_js_summary"
             app:title="@string/pref_js_title" />
 
         <SwitchPreference
             app:defaultValue="1"
+            app:iconSpaceReserved="false"
             app:key="key_location"
             app:summary="@string/pref_location_summary"
             app:title="@string/pref_location_title" />
 
         <SwitchPreference
             app:defaultValue="0"
+            app:iconSpaceReserved="false"
             app:key="key_do_not_track"
             app:summary="@string/pref_do_not_track_summary"
             app:title="@string/pref_do_not_track_title" />
 
         <SwitchPreference
             app:defaultValue="1"
+            app:iconSpaceReserved="false"
             app:key="key_cookie"
             app:summary="@string/pref_cookie_summary"
             app:title="@string/pref_cookie_title" />
 
         <Preference
+            app:iconSpaceReserved="false"
             app:key="key_cookie_clear"
             app:title="@string/pref_cookie_clear" />
     </PreferenceCategory>

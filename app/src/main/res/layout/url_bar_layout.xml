@@ -25,12 +25,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="?attr/colorSurface"
+        android:backgroundTint="?attr/colorSurfaceVariant"
         app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/moreButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -81,7 +82,7 @@
                 android:maxLines="1"
                 android:nextFocusLeft="@id/autoCompleteTextView"
                 android:nextFocusUp="@id/autoCompleteTextView"
-                android:popupBackground="@color/primary"
+                android:popupBackground="?attr/colorSurface"
                 android:popupElevation="0dp"
                 android:selectAllOnFocus="true"
                 android:textColor="?attr/colorOnSurface"
@@ -104,7 +105,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="?attr/colorOnSurface" />
+        app:tint="?attr/colorOnSurfaceVariant" />
 
     <!-- Search group -->
     <androidx.constraintlayout.widget.Group
@@ -124,7 +125,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="?attr/colorOnSurface" />
+        app:tint="?attr/colorOnSurfaceVariant" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/searchCardView"
@@ -134,12 +135,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="?attr/colorSurface"
+        android:backgroundTint="?attr/colorSurfaceVariant"
         app:cardCornerRadius="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/searchPreviousButton"
         app:layout_constraintStart_toEndOf="@+id/searchCancelButton"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -199,7 +201,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/searchNextButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="?attr/colorOnSurface" />
+        app:tint="?attr/colorOnSurfaceVariant" />
 
     <ImageButton
         android:id="@+id/searchNextButton"
@@ -211,7 +213,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="?attr/colorOnSurface" />
+        app:tint="?attr/colorOnSurfaceVariant" />
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/loadingProgressIndicator"
@@ -219,7 +221,7 @@
         android:layout_height="2dp"
         android:max="100"
         android:progress="22"
-        app:indicatorColor="@color/colorAccent"
+        app:indicatorColor="?attr/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

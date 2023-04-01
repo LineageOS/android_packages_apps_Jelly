@@ -3,13 +3,15 @@
      SPDX-FileCopyrightText: 2017 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Jelly" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="Theme.Jelly" parent="Theme.Material3.DayNight">
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="alertDialogTheme">@style/Theme.Jelly.AlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.Jelly.AlertDialog</item>
     </style>
 
     <style name="Theme.Jelly.NoActionBar">
@@ -17,15 +19,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Jelly.ToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+    <style name="Theme.Jelly.ToolbarTheme" parent="Widget.Material3.Toolbar">
         <item name="contentInsetStart">0dp</item>
     </style>
 
-    <style name="Theme.Jelly.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-
-    <style name="Theme.Jelly.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
-
-    <style name="Theme.Jelly.PopupMenuOverlapAnchor">
+    <style name="Theme.Jelly.PopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:overlapAnchor">true</item>
         <item name="android:dropDownVerticalOffset">0dp</item>
         <item name="android:dropDownHorizontalOffset">0dp</item>
@@ -34,19 +32,19 @@
     <style name="Theme.Jelly.BottomSheetLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
+        <item name="android:background">?colorSurface</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:padding">16dp</item>
-        <item name="android:background">@color/colorPrimaryDark</item>
     </style>
 
     <style name="Theme.Jelly.BottomSheetIcon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:contentDescription">@null</item>
-        <item name="android:tint">@color/menu_icon</item>
+        <item name="android:tint">?colorOnSurface</item>
     </style>
 
     <style name="Theme.Jelly.BottomSheetText">
@@ -54,6 +52,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textColor">?colorOnSurface</item>
     </style>
 
     <style name="Theme.Jelly.EmptyLayout">
@@ -69,7 +68,7 @@
         <item name="android:layout_height">120dp</item>
         <item name="android:padding">8dp</item>
         <item name="android:scaleType">fitXY</item>
-        <item name="android:tint">@color/empty_image</item>
+        <item name="android:tint">?attr/colorOnSurface</item>
     </style>
 
     <style name="Theme.Jelly.EmptyText">
@@ -79,11 +78,48 @@
         <item name="android:paddingStart">64dp</item>
         <item name="android:paddingTop">19dp</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/empty_text</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:textSize">14sp</item>
     </style>
 
     <style name="Theme.Jelly.MenuIcon">
-        <item name="iconTint">@color/menu_icon</item>
+        <item name="iconTint">?colorOnSurface</item>
+    </style>
+
+    <!-- Settings activity theme. -->
+    <style name="Theme.Jelly.Settings" parent="Theme.Jelly.NoActionBar">
+        <item name="android:switchStyle">@style/Theme.Jelly.Settings.Switch</item>
+    </style>
+
+    <!-- Alert dialog theme. -->
+    <style name="Theme.Jelly.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/Theme.Jelly.AlertDialogStyle</item>
+        <item name="dialogCornerRadius">28dp</item>
+        <item name="android:background">@drawable/dialog_preference_background</item>
+    </style>
+
+    <!-- Alert dialog style. -->
+    <style name="Theme.Jelly.AlertDialogStyle" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <!-- Settings switch theme. -->
+    <style name="Theme.Jelly.Settings.Switch" parent="@android:style/Widget.Material.CompoundButton.Switch">
+        <item name="android:switchMinWidth">52dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:track">@drawable/settingslib_switch_track</item>
+        <item name="android:thumb">@drawable/settingslib_switch_thumb</item>
+    </style>
+
+    <!-- Collapsing toolbar style -->
+    <style name="Theme.Jelly.Settings.ToolbarCollapsed" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Theme.Jelly.Settings.ToolbarExpanded" parent="Theme.Jelly.Settings.ToolbarCollapsed">
+        <item name="android:textSize">36sp</item>
+        <item name="android:drawablePadding">10dp</item>
     </style>
 </resources>

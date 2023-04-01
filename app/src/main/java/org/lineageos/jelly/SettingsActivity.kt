@@ -6,8 +6,11 @@
 package org.lineageos.jelly
 
 import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.webkit.CookieManager
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -55,6 +58,13 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
+
+            setDivider(ColorDrawable(Color.TRANSPARENT))
+            setDividerHeight(0)
+        }
+
         override fun onCreatePreferences(savedInstance: Bundle?, rootKey: String?) {
             // Load the preferences from an XML resource
             setPreferencesFromResource(R.xml.settings, rootKey)
