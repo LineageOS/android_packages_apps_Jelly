@@ -49,12 +49,12 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.PopupMenu
-import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
@@ -79,7 +79,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
     private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinatorLayout) }
-    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
+    private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
     private val webViewContainerLayout by lazy { findViewById<FrameLayout>(R.id.webViewContainerLayout) }
@@ -234,7 +234,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             val isDesktop = webView.isDesktopMode
             val wrapper = ContextThemeWrapper(
                 this,
-                R.style.Theme_Jelly_PopupMenuOverlapAnchor
+                R.style.Theme_Jelly_PopupMenu
             )
             val popupMenu = PopupMenu(
                 wrapper, urlBarLayout, Gravity.END,
@@ -351,7 +351,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         val hasValidIcon = urlIcon?.isRecycled == false
         var color = if (hasValidIcon) UiUtils.getColor(urlIcon, false) else Color.TRANSPARENT
         if (color == Color.TRANSPARENT) {
-            color = ContextCompat.getColor(this, R.color.colorAccent)
+            color = ContextCompat.getColor(this, R.color.material_dynamic_primary50)
         }
         withContext(Dispatchers.Default) {
             FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
@@ -573,10 +573,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private fun changeUiMode(isReachMode: Boolean) {
         val appBarParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         val containerParams = webViewContainerLayout.layoutParams as CoordinatorLayout.LayoutParams
-        val margin = UiUtils.getDimenAttr(
-            this, R.style.Theme_Jelly,
-            android.R.attr.actionBarSize
-        ).toInt()
+        val margin = resources.getDimension(R.dimen.m3_appbar_size_compact).toInt()
         if (isReachMode) {
             appBarParams.gravity = Gravity.BOTTOM
             containerParams.setMargins(0, 0, 0, margin)
