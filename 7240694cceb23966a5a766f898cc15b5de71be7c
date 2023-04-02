@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f5d2700_92b47ccc",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-04-02T09:44:51Z",
+      "side": 1,
+      "message": "this is kind of awkward\nI\u0027d rather make the ctor accept the click listener, so we ensure there\u0027s always one.",
+      "revId": "7240694cceb23966a5a766f898cc15b5de71be7c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
