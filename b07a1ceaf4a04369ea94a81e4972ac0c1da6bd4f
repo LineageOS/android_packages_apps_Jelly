@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3bc27e3_e742eeff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-04-02T09:20:24Z",
+      "side": 1,
+      "message": "Controllers being the only pattern I was aware of by looking at SystemUI, was indeed a pretty bad choice.\nNew View looks much better.",
+      "revId": "b07a1ceaf4a04369ea94a81e4972ac0c1da6bd4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
