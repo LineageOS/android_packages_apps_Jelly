@@ -113,30 +113,12 @@ class UrlBarLayout @JvmOverloads constructor(
         }
 
     // Callbacks
+    var onSecureButtonClickCallback: ((url: String, certificate: SslCertificate) -> Unit)? = null
     var onMoreButtonClickCallback: (() -> Unit)? = null
     var onLoadUrlCallback: ((url: String) -> Unit)? = null
     var onStartSearchCallback: ((query: String) -> Unit)? = null
     var onSearchPositionChangeCallback: ((next: Boolean) -> Unit)? = null
     var onClearSearchCallback: (() -> Unit)? = null
-
-    // SSL dialog
-    private val sslDialogView = layoutInflater.inflate(
-        R.layout.dialog_ssl_certificate_info, LinearLayout(context)
-    )
-    private val domainView = sslDialogView.findViewById<TextView>(R.id.domain)
-    private val issuedToCNView = sslDialogView.findViewById<KeyValueView>(R.id.issuedToCnView)
-    private val issuedToOView = sslDialogView.findViewById<KeyValueView>(R.id.issuedToOView)
-    private val issuedToUNView = sslDialogView.findViewById<KeyValueView>(R.id.issuedToUnView)
-    private val issuedByCNView = sslDialogView.findViewById<KeyValueView>(R.id.issuedByCnView)
-    private val issuedByOView = sslDialogView.findViewById<KeyValueView>(R.id.issuedByOView)
-    private val issuedByUNView = sslDialogView.findViewById<KeyValueView>(R.id.issuedByUnView)
-    private val issuedOnView = sslDialogView.findViewById<KeyValueView>(R.id.issuedOnView)
-    private val expiresOnView = sslDialogView.findViewById<KeyValueView>(R.id.expiresOnView)
-    private val sslDialog = AlertDialog.Builder(context)
-        .setTitle(R.string.ssl_cert_dialog_title)
-        .setView(sslDialogView)
-        .setNegativeButton(R.string.ssl_cert_dialog_dismiss, null)
-        .create()
 
     init {
         inflate(context, R.layout.url_bar_layout, this)
@@ -189,50 +171,9 @@ class UrlBarLayout @JvmOverloads constructor(
         // Set secure button callback
         secureButton.setOnClickListener {
             certificate?.let { cert ->
-                // Get the domain name
-                val domainString = url?.let { Uri.parse(it).host }
-
-                // Get the validity dates
-                val startDate = cert.validNotBeforeDate
-                val endDate = cert.validNotAfterDate
-
-                // Update TextViews
-                domainView.text = domainString
-                issuedToCNView.setText(
-                    R.string.ssl_cert_dialog_common_name,
-                    cert.issuedTo.cName
-                )
-                issuedToOView.setText(
-                    R.string.ssl_cert_dialog_organization,
-                    cert.issuedTo.oName
-                )
-                issuedToUNView.setText(
-                    R.string.ssl_cert_dialog_organizational_unit,
-                    cert.issuedTo.uName
-                )
-                issuedByCNView.setText(
-                    R.string.ssl_cert_dialog_common_name,
-                    cert.issuedBy.cName
-                )
-                issuedByOView.setText(
-                    R.string.ssl_cert_dialog_organization,
-                    cert.issuedBy.oName
-                )
-                issuedByUNView.setText(
-                    R.string.ssl_cert_dialog_organizational_unit,
-                    cert.issuedBy.uName
-                )
-                issuedOnView.setText(
-                    R.string.ssl_cert_dialog_issued_on,
-                    DateFormat.getDateTimeInstance().format(startDate)
-                )
-                expiresOnView.setText(
-                    R.string.ssl_cert_dialog_expires_on,
-                    DateFormat.getDateTimeInstance().format(endDate)
-                )
-
-                // Show the dialog
-                sslDialog.show()
+                url?.let {
+                    onSecureButtonClickCallback?.invoke(it, cert)
+                }
             }
         }
 

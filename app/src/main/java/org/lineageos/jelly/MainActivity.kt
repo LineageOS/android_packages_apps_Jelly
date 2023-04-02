@@ -23,6 +23,7 @@ import android.graphics.Color
 import android.graphics.drawable.Icon
 import android.net.Uri
 import android.net.http.HttpResponseCache
+import android.net.http.SslCertificate
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -62,6 +63,7 @@ import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.ui.MenuDialog
+import org.lineageos.jelly.ui.SslCertificateInfoDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.PrefsUtils
@@ -144,6 +146,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
         urlBarLayout.isIncognito = incognito
+        urlBarLayout.onSecureButtonClickCallback = { url, certificate ->
+            SslCertificateInfoDialog(this, url, certificate).show()
+        }
 
         menuDialog = MenuDialog(this) { option: MenuDialog.Option ->
             val isDesktop = webView.isDesktopMode
