@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fefb76a_211ce56a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-04-02T09:15:29Z",
+      "side": 1,
+      "message": "iirc this was a semi wanted UI feature, weird way to implement it tho",
+      "revId": "ad4f61fe5f2a23a66f6b0b4c5b64b2d93ad76bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
