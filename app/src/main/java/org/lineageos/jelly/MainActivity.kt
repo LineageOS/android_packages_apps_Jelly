@@ -33,27 +33,19 @@ import android.print.PrintAttributes
 import android.print.PrintManager
 import android.text.TextUtils
 import android.util.Log
-import android.view.ContextThemeWrapper
 import android.view.Gravity
-import android.view.KeyEvent
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.view.WindowManager
-import android.view.inputmethod.EditorInfo
 import android.webkit.CookieManager
 import android.webkit.MimeTypeMap
 import android.webkit.URLUtil
 import android.webkit.WebChromeClient.CustomViewCallback
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.AutoCompleteTextView
 import android.widget.FrameLayout
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.PopupMenu
 import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
@@ -70,7 +62,7 @@ import kotlinx.coroutines.withContext
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
-import org.lineageos.jelly.suggestions.SuggestionsAdapter
+import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.PrefsUtils
@@ -127,6 +119,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private var customView: View? = null
     private var fullScreenCallback: CustomViewCallback? = null
     private val uiScope = CoroutineScope(Dispatchers.Main)
+    private lateinit var menuDialog: MenuDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -152,6 +145,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
         urlBarLayout.isIncognito = incognito
+        menuDialog = MenuDialog(this)
         setupMenu()
         webView.init(this, urlBarLayout, incognito)
         webView.isDesktopMode = desktopMode
@@ -237,88 +231,54 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     private fun setupMenu() {
-        urlBarLayout.onMoreButtonClickCallback = {
+        menuDialog.onClickListener = { option: MenuDialog.Option ->
             val isDesktop = webView.isDesktopMode
-            val wrapper = ContextThemeWrapper(
-                this,
-                R.style.Theme_Jelly_PopupMenu
-            )
-            val popupMenu = PopupMenu(
-                wrapper, urlBarLayout, Gravity.END,
-                R.attr.actionOverflowMenuStyle, 0
-            )
-            popupMenu.inflate(R.menu.menu_main)
-            val desktopMode = popupMenu.menu.findItem(R.id.desktop_mode)
-            desktopMode.title = getString(
-                if (isDesktop) {
-                    R.string.menu_mobile_mode
-                } else {
-                    R.string.menu_desktop_mode
-                }
-            )
-            desktopMode.icon = ContextCompat.getDrawable(
-                this, if (isDesktop) {
-                    R.drawable.ic_mobile
-                } else {
-                    R.drawable.ic_desktop
-                }
-            )
-            popupMenu.setOnMenuItemClickListener { item: MenuItem ->
-                when (item.itemId) {
-                    R.id.menu_new -> openInNewTab(this, null, false)
-                    R.id.menu_incognito -> openInNewTab(this, null, true)
-                    R.id.menu_reload -> webView.reload()
-                    R.id.menu_add_favorite -> uiScope.launch {
-                        webView.title?.let { title ->
-                            webView.url?.let { url ->
-                                setAsFavorite(title, url)
-                            }
+
+            when (option) {
+                MenuDialog.Option.BACK -> webView.goBack()
+                MenuDialog.Option.FORWARD -> webView.goForward()
+                MenuDialog.Option.NEW_TAB -> openInNewTab(this, null, false)
+                MenuDialog.Option.NEW_PRIVATE_TAB -> openInNewTab(this, null, true)
+                MenuDialog.Option.REFRESH -> webView.reload()
+                MenuDialog.Option.ADD_TO_FAVORITE -> uiScope.launch {
+                    webView.title?.let { title ->
+                        webView.url?.let { url ->
+                            setAsFavorite(title, url)
                         }
                     }
-                    R.id.menu_share ->
-                        // Delay a bit to allow popup menu hide animation to play
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            webView.url?.let { url -> shareUrl(url) }
-                        }, 300)
-                    R.id.menu_search ->
-                        // Run the search setup
-                        showSearch()
-                    R.id.menu_favorite -> startActivity(Intent(this, FavoriteActivity::class.java))
-                    R.id.menu_history -> startActivity(Intent(this, HistoryActivity::class.java))
-                    R.id.menu_shortcut -> addShortcut()
-                    R.id.menu_print -> {
-                        val printManager = getSystemService(PrintManager::class.java)
-                        val documentName = "Jelly document"
-                        val printAdapter = webView.createPrintDocumentAdapter(documentName)
-                        printManager.print(
-                            documentName, printAdapter,
-                            PrintAttributes.Builder().build()
-                        )
-                    }
-                    R.id.desktop_mode -> {
-                        webView.isDesktopMode = !isDesktop
-                        desktopMode.title = getString(
-                            if (isDesktop) {
-                                R.string.menu_desktop_mode
-                            } else {
-                                R.string.menu_mobile_mode
-                            }
-                        )
-                        desktopMode.icon = ContextCompat.getDrawable(
-                            this, if (isDesktop) {
-                                R.drawable.ic_desktop
-                            } else {
-                                R.drawable.ic_mobile
-                            }
-                        )
-                    }
-                    R.id.menu_settings -> startActivity(Intent(this, SettingsActivity::class.java))
                 }
-                true
+                MenuDialog.Option.SHARE -> {
+                    // Delay a bit to allow popup menu hide animation to play
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        webView.url?.let { url -> shareUrl(url) }
+                    }, 300)
+                }
+                MenuDialog.Option.FIND_ON_PAGE -> {
+                    // Run the search setup
+                    showSearch()
+                }
+                MenuDialog.Option.FAVORITES -> startActivity(Intent(this, FavoriteActivity::class.java))
+                MenuDialog.Option.HISTORY -> startActivity(Intent(this, HistoryActivity::class.java))
+                MenuDialog.Option.ADD_TO_HOME_SCREEN -> addShortcut()
+                MenuDialog.Option.PRINT -> {
+                    val printManager = getSystemService(PrintManager::class.java)
+                    val documentName = "Jelly document"
+                    val printAdapter = webView.createPrintDocumentAdapter(documentName)
+                    printManager.print(
+                        documentName, printAdapter,
+                        PrintAttributes.Builder().build()
+                    )
+                }
+                MenuDialog.Option.DESKTOP_VIEW -> {
+                    webView.isDesktopMode = !isDesktop
+                    menuDialog.isDesktopMode = !isDesktop
+                }
+                MenuDialog.Option.SETTINGS -> startActivity(Intent(this, SettingsActivity::class.java))
             }
-
-            popupMenu.setForceShowIcon(true)
-            popupMenu.show()
+            menuDialog.dismiss()
+        }
+        urlBarLayout.onMoreButtonClickCallback = {
+            menuDialog.showAsDropdownMenu(urlBarLayout, 0, 0, Gravity.END)
         }
     }
 
