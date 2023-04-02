@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant"
+        app:cardCornerRadius="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="12dp">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:src="@drawable/ic_back" />
+
+            <ImageButton
+                android:id="@+id/forwardButton"
+                style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:src="@drawable/ic_forward" />
+
+            <ImageButton
+                android:id="@+id/refreshButton"
+                style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:src="@drawable/ic_refresh" />
+
+            <ImageButton
+                android:id="@+id/addToFavoriteButton"
+                style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:src="@drawable/ic_favorite_add" />
+
+            <ImageButton
+                android:id="@+id/shareButton"
+                style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:src="@drawable/ic_share" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/newTabButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_new_tab"
+                    app:drawableStartCompat="@drawable/ic_new_tab" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/newPrivateTabButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_incognito"
+                    app:drawableStartCompat="@drawable/ic_incognito" />
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Theme.Jelly.MenuDivider" />
+
+            <LinearLayout
+                android:id="@+id/favoritesButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_favorites"
+                    app:drawableStartCompat="@drawable/ic_favorite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/historyButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_history"
+                    app:drawableStartCompat="@drawable/ic_history" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/downloadsButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_downloads"
+                    app:drawableStartCompat="@drawable/ic_file_download" />
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Theme.Jelly.MenuDivider" />
+
+            <LinearLayout
+                android:id="@+id/addToHomeScreenButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_shortcut"
+                    app:drawableStartCompat="@drawable/ic_shortcut" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/findInPageButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_search"
+                    app:drawableStartCompat="@drawable/ic_search" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/desktopViewButton"
+                style="@style/Theme.Jelly.MenuItem"
+                android:background="@null"
+                android:clickable="false">
+
+                <TextView
+                    android:id="@+id/desktopViewText"
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:layout_width="0dp"
+                    android:text="@string/menu_desktop_mode"
+                    app:drawableStartCompat="@drawable/ic_desktop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/desktopViewSwitch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/desktopViewSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="end"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/printButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_print"
+                    app:drawableStartCompat="@drawable/ic_print" />
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Theme.Jelly.MenuDivider" />
+
+            <LinearLayout
+                android:id="@+id/settingsButton"
+                style="@style/Theme.Jelly.MenuItem">
+
+                <TextView
+                    style="@style/Theme.Jelly.MenuItemTitle"
+                    android:text="@string/menu_settings"
+                    app:drawableStartCompat="@drawable/ic_settings" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
