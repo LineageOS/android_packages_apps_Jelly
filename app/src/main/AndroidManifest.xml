@@ -25,7 +25,7 @@
         android:theme="@style/Theme.Jelly">
 
         <activity
-            android:name="org.lineageos.jelly.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             android:documentLaunchMode="always"
             android:exported="true"
@@ -67,17 +67,17 @@
         </activity>
 
         <activity
-            android:name="org.lineageos.jelly.history.HistoryActivity"
+            android:name=".history.HistoryActivity"
             android:label="@string/history_title"
             android:theme="@style/Theme.Jelly.NoActionBar" />
 
         <activity
-            android:name="org.lineageos.jelly.favorite.FavoriteActivity"
+            android:name=".favorite.FavoriteActivity"
             android:label="@string/favorite_title"
             android:theme="@style/Theme.Jelly.NoActionBar" />
 
         <activity
-            android:name="org.lineageos.jelly.SettingsActivity"
+            android:name=".SettingsActivity"
             android:label="@string/settings_title"
             android:theme="@style/Theme.Jelly.Settings" />
 
