@@ -17,8 +17,6 @@ import android.graphics.Rect
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import androidx.annotation.AttrRes
-import androidx.annotation.StyleRes
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
 import androidx.preference.PreferenceManager
@@ -73,13 +71,5 @@ object UiUtils {
     fun isReachModeEnabled(context: Context): Boolean {
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         return prefs.getBoolean("key_reach_mode", false)
-    }
-
-    fun getDimenAttr(context: Context, @StyleRes style: Int, @AttrRes dimen: Int): Float {
-        val args = intArrayOf(dimen)
-        val array = context.obtainStyledAttributes(style, args)
-        val result = array.getDimension(0, 0f)
-        array.recycle()
-        return result
     }
 }
