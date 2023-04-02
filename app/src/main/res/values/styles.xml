@@ -122,4 +122,46 @@
         <item name="android:textSize">36sp</item>
         <item name="android:drawablePadding">10dp</item>
     </style>
+
+    <!-- Menu top bar icons style -->
+    <style name="Theme.Jelly.MenuTopBarIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginVertical">12dp</item>
+        <item name="android:layout_marginHorizontal">12dp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:tint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- Menu icons style -->
+    <style name="Theme.Jelly.MenuItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <!-- Menu item icon style -->
+    <style name="Theme.Jelly.MenuItemIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:tint">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Menu item title style -->
+    <style name="Theme.Jelly.MenuItemTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <!-- Menu divider style -->
+    <style name="Theme.Jelly.MenuDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
 </resources>
