@@ -30,8 +30,6 @@
     <string name="menu_in_new_tab">Open in new tab</string>
     <!-- Menu action: enable desktop mode -->
     <string name="menu_desktop_mode">Switch to desktop site</string>
-    <!-- Menu action: enable phone mode -->
-    <string name="menu_mobile_mode">Switch to mobile site</string>
     <!-- Menu action: search in page -->
     <string name="menu_search">Find in page</string>
     <!-- Menu action: print -->
