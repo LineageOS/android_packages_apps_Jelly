@@ -12,7 +12,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "org.lineageos.jelly"
+        applicationId "org.lineageos.jelly.dev"
         minSdkVersion 26
         targetSdkVersion 33
         versionCode 1
