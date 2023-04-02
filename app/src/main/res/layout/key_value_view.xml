@@ -11,12 +11,13 @@
     <TextView
         android:id="@+id/keyTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurface"/>
 
     <TextView
         android:id="@+id/valueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="?attr/colorAccent" />
+        android:textColor="?attr/colorOnSurfaceVariant" />
 
 </LinearLayout>
