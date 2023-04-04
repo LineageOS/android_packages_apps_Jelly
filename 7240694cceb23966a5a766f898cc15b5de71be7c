@@ -16,6 +16,24 @@
       "message": "this is kind of awkward\nI\u0027d rather make the ctor accept the click listener, so we ensure there\u0027s always one.",
       "revId": "7240694cceb23966a5a766f898cc15b5de71be7c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a31d2b8_e304cc4a",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-04-04T21:33:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f5d2700_92b47ccc",
+      "revId": "7240694cceb23966a5a766f898cc15b5de71be7c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
