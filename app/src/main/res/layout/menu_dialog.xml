@@ -43,7 +43,7 @@
             <ImageButton
                 android:id="@+id/addToFavoriteButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
-                android:src="@drawable/ic_favorite_add" />
+                android:src="@drawable/ic_heart_plus" />
 
             <ImageButton
                 android:id="@+id/shareButton"
@@ -86,7 +86,7 @@
                 <TextView
                     style="@style/Theme.Jelly.MenuItemTitle"
                     android:text="@string/menu_incognito"
-                    app:drawableStartCompat="@drawable/ic_incognito" />
+                    app:drawableStartCompat="@drawable/ic_new_private_tab" />
             </LinearLayout>
 
             <com.google.android.material.divider.MaterialDivider style="@style/Theme.Jelly.MenuDivider" />
@@ -130,7 +130,7 @@
                 <TextView
                     style="@style/Theme.Jelly.MenuItemTitle"
                     android:text="@string/menu_shortcut"
-                    app:drawableStartCompat="@drawable/ic_shortcut" />
+                    app:drawableStartCompat="@drawable/ic_apps" />
             </LinearLayout>
 
             <LinearLayout
@@ -140,7 +140,7 @@
                 <TextView
                     style="@style/Theme.Jelly.MenuItemTitle"
                     android:text="@string/menu_search"
-                    app:drawableStartCompat="@drawable/ic_search" />
+                    app:drawableStartCompat="@drawable/ic_find_in_page" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
