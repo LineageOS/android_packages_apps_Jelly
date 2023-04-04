@@ -43,7 +43,7 @@
             <ImageButton
                 android:id="@+id/addToFavoriteButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
-                android:src="@drawable/ic_favorite_add" />
+                android:src="@drawable/ic_heart_plus" />
 
             <ImageButton
                 android:id="@+id/shareButton"
@@ -87,7 +87,7 @@
 
                 <ImageView
                     style="@style/Theme.Jelly.MenuItemIcon"
-                    android:src="@drawable/ic_incognito" />
+                    android:src="@drawable/ic_new_private_tab" />
 
                 <TextView
                     style="@style/Theme.Jelly.MenuItemTitle"
@@ -129,7 +129,7 @@
 
                 <ImageView
                     style="@style/Theme.Jelly.MenuItemIcon"
-                    android:src="@drawable/ic_shortcut" />
+                    android:src="@drawable/ic_apps" />
 
                 <TextView
                     style="@style/Theme.Jelly.MenuItemTitle"
@@ -142,7 +142,7 @@
 
                 <ImageView
                     style="@style/Theme.Jelly.MenuItemIcon"
-                    android:src="@drawable/ic_search" />
+                    android:src="@drawable/ic_find_in_page" />
 
                 <TextView
                     style="@style/Theme.Jelly.MenuItemTitle"
