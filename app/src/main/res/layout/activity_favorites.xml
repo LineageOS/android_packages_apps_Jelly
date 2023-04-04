@@ -34,8 +34,10 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                style="@style/Theme.Jelly.EmptyImage"
-                android:src="@drawable/ic_favorite" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_favorite_empty" />
 
             <TextView
                 style="@style/Theme.Jelly.EmptyText"
