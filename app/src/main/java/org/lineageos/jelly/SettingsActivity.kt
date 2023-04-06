@@ -23,7 +23,8 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreference
-import org.lineageos.jelly.utils.PrefsUtils
+import org.lineageos.jelly.ext.HOME_PAGE_DEFAULT
+import org.lineageos.jelly.ext.homePage
 import kotlin.reflect.safeCast
 
 class SettingsActivity : AppCompatActivity() {
@@ -58,6 +59,10 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
+        private val sharedPreferences by lazy {
+            PreferenceManager.getDefaultSharedPreferences(requireContext())
+        }
+
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             super.onViewCreated(view, savedInstanceState)
 
@@ -70,7 +75,7 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.settings, rootKey)
 
             findPreference<Preference>("key_home_page")?.let {
-                bindPreferenceSummaryToValue(it, getString(R.string.default_home_page))
+                bindPreferenceSummaryToValue(it, HOME_PAGE_DEFAULT)
             }
             if (resources.getBoolean(R.bool.is_tablet)) {
                 findPreference<SwitchPreference>("key_reach_mode")?.let {
@@ -133,7 +138,7 @@ class SettingsActivity : AppCompatActivity() {
                 LinearLayout(preference.context)
             )
             val homepageUrlEditText = homepageView.findViewById<EditText>(R.id.homepageUrlEditText)
-            homepageUrlEditText.setText(PrefsUtils.getHomePage(preference.context))
+            homepageUrlEditText.setText(sharedPreferences.homePage)
             builder.setTitle(R.string.pref_start_page_dialog_title)
                 .setMessage(R.string.pref_start_page_dialog_message)
                 .setView(homepageView)
@@ -141,16 +146,16 @@ class SettingsActivity : AppCompatActivity() {
                     android.R.string.ok
                 ) { _: DialogInterface?, _: Int ->
                     val url = homepageUrlEditText.text.toString().ifEmpty {
-                        getString(R.string.default_home_page)
+                        HOME_PAGE_DEFAULT
                     }
-                    PrefsUtils.setHomePage(preference.context, url)
+                    sharedPreferences.homePage = url
                     preference.summary = url
                 }
                 .setNeutralButton(
                     R.string.pref_start_page_dialog_reset
                 ) { _: DialogInterface?, _: Int ->
-                    val url = getString(R.string.default_home_page)
-                    PrefsUtils.setHomePage(preference.context, url)
+                    val url = HOME_PAGE_DEFAULT
+                    sharedPreferences.homePage = url
                     preference.summary = url
                 }
                 .setNegativeButton(android.R.string.cancel, null)

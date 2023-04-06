@@ -143,10 +143,6 @@
     <!-- No activity found to open the given url error -->
     <string name="error_no_activity_found">No app can handle this link</string>
 
-    <string name="default_search_engine" translatable="false">https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</string>
-    <string name="default_home_page" translatable="false">https://google.com</string>
-    <string name="default_suggestion_provider" translatable="false">GOOGLE</string>
-
     <!-- Auth dialog: title -->
     <string name="auth_dialog_title">Authentication Required</string>
     <!-- Auth dialog: username field -->

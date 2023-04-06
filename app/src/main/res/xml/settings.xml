@@ -6,7 +6,7 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ListPreference
-        app:defaultValue="@string/default_search_engine"
+        app:defaultValue="https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}"
         app:entries="@array/pref_search_engine_entries"
         app:entryValues="@array/pref_search_engine_entryvalues"
         app:iconSpaceReserved="false"
@@ -15,7 +15,7 @@
         app:useSimpleSummaryProvider="true" />
 
     <ListPreference
-        app:defaultValue="@string/default_suggestion_provider"
+        app:defaultValue="GOOGLE"
         app:entries="@array/pref_suggestions_provider_entries"
         app:entryValues="@array/pref_suggestions_provider_entryvalues"
         app:iconSpaceReserved="false"
