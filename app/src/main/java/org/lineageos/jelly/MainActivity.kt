@@ -316,11 +316,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
 
     private suspend fun setAsFavorite(title: String, url: String) {
-        val hasValidIcon = urlIcon?.isRecycled == false
-        var color = if (hasValidIcon) UiUtils.getColor(urlIcon, false) else Color.TRANSPARENT
-        if (color == Color.TRANSPARENT) {
-            color = ContextCompat.getColor(this, R.color.material_dynamic_primary50)
-        }
+        val color = urlIcon?.takeUnless { it.isRecycled }?.let { bitmap ->
+            UiUtils.getColor(bitmap, false).takeUnless { it == Color.TRANSPARENT }
+        } ?: ContextCompat.getColor(this, R.color.material_dynamic_primary50)
         withContext(Dispatchers.Default) {
             FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
             withContext(Dispatchers.Main) {
