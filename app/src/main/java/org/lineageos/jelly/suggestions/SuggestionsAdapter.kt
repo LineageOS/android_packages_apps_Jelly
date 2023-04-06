@@ -17,9 +17,10 @@ import android.widget.BaseAdapter
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
+import androidx.preference.PreferenceManager
 import org.lineageos.jelly.R
-import org.lineageos.jelly.utils.PrefsUtils
-import org.lineageos.jelly.utils.PrefsUtils.SuggestionProviderType
+import org.lineageos.jelly.ext.SuggestionProviderType
+import org.lineageos.jelly.ext.suggestionProvider
 import java.util.Locale
 import kotlin.reflect.safeCast
 
@@ -28,6 +29,11 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
     private val items = mutableListOf<String>()
     private val filter = ItemFilter()
     private var queryText: String? = null
+
+    private val sharedPreferences by lazy {
+        PreferenceManager.getDefaultSharedPreferences(context)
+    }
+
     override fun getCount() = items.size
 
     override fun getItem(position: Int) = items[position]
@@ -85,7 +91,7 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
         }
 
         private val provider: SuggestionProvider
-            get() = when (PrefsUtils.getSuggestionProvider(context)) {
+            get() = when (sharedPreferences.suggestionProvider) {
                 SuggestionProviderType.BAIDU -> BaiduSuggestionProvider()
                 SuggestionProviderType.BING -> BingSuggestionProvider()
                 SuggestionProviderType.DUCK -> DuckSuggestionProvider()
