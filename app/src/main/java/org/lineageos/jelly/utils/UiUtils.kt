@@ -31,8 +31,8 @@ object UiUtils {
         return hsl[2] > 0.5f
     }
 
-    fun getColor(bitmap: Bitmap?, incognito: Boolean): Int {
-        val palette = Palette.from(bitmap!!).generate()
+    fun getColor(bitmap: Bitmap, incognito: Boolean): Int {
+        val palette = Palette.from(bitmap).generate()
         val fallback = Color.TRANSPARENT
         return if (incognito) palette.getMutedColor(fallback) else palette.getVibrantColor(fallback)
     }
