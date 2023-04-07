@@ -16,6 +16,24 @@
       "message": "I don\u0027t think you should split cleanup commits per-file. Make one for each \"use better kotlin syntax\" and \"use lazy getters for views\"",
       "revId": "10dcb8178806a533bca9c82c5a49a31a20f070e7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73e92123_506817e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-04-07T22:58:06Z",
+      "side": 1,
+      "message": "This isn\u0027t per file but rather per package, if I squash commits stuff gets messier",
+      "parentUuid": "811db85e_6d7d6c30",
+      "revId": "10dcb8178806a533bca9c82c5a49a31a20f070e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
