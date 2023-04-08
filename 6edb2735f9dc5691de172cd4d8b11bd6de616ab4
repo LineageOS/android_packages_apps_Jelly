@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44277e2c_b233edb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:44:59Z",
+      "side": 1,
+      "message": "Does this serve any purpose? I get that you usually do this initially, but renaming this now after the fact is introducing change for change\u0027s sake, isn\u0027t it?",
+      "revId": "6edb2735f9dc5691de172cd4d8b11bd6de616ab4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
