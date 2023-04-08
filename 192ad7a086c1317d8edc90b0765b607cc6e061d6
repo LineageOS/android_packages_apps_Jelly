@@ -1,0 +1,180 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d1d2573_33496370",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "I didn\u0027t go through all resource files nor any of the kotlin ones, but bottom up, this is what I found",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b678d9aa_383bf63e",
+        "filename": "app/src/main/res/layout/dialog_homepage_edit.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b242666_78c94599",
+        "filename": "app/src/main/res/layout/dialog_ssl_certificate_info.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2e0d8fb_a7dfad9f",
+        "filename": "app/src/main/res/layout/history_deleting_dialog.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af5dab39_1f36684e",
+        "filename": "app/src/main/res/layout/key_value_view.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c7cbfc5_18bf3e66",
+        "filename": "app/src/main/res/values-large/bools.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4a54b5a_7e11dda7",
+        "filename": "app/src/main/res/values-night/colors.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1348292a_9c59f4d5",
+        "filename": "app/src/main/res/values/bools.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cecbedda_5b65f42b",
+        "filename": "app/src/main/res/values/dimens.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff8ecc7e_a911100f",
+        "filename": "app/src/main/res/xml/network_security_config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T10:47:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
