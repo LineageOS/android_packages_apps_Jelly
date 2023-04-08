@@ -34,6 +34,23 @@
       "parentUuid": "811db85e_6d7d6c30",
       "revId": "10dcb8178806a533bca9c82c5a49a31a20f070e7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cb2a32f_44dc4185",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-04-08T09:26:22Z",
+      "side": 1,
+      "message": "I don\u0027t see where this is getting messier. You are basically doing the same thing on 3 files (no matter in which folder they are in) so they can go into one commit.",
+      "revId": "10dcb8178806a533bca9c82c5a49a31a20f070e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
