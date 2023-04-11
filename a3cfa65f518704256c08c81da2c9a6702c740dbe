@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9ed3d39_0bb11488",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-04-11T08:45:45Z",
+      "side": 1,
+      "message": "I forgot I did that thing... can you try reviving those for 20?",
+      "revId": "a3cfa65f518704256c08c81da2c9a6702c740dbe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
