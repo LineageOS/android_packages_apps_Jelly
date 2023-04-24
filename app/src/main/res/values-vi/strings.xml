@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Chuyển sang trang cho máy tính</string>
     <string name="menu_mobile_mode">Chuyển sang trang cho điện thoại</string>
     <string name="menu_search">Tìm trong trang</string>
+    <string name="menu_print">In</string>
     <string name="share_title">Gửi đến</string>
     <string name="dismiss">Loại bỏ</string>
     <string name="download_title">Tải về tập tin</string>

@@ -45,13 +45,13 @@
     <string name="pref_start_page_dialog_title">Əsas səhifəni seç</string>
     <string name="pref_start_page_dialog_message">Əsas səhifə URL-sini yaz</string>
     <string name="pref_start_page_dialog_reset">Sıfırla</string>
-    <string name="pref_privacy_security">Gizlilik &amp; təhlükəsizlik</string>
+    <string name="pref_privacy_security">Gizlilik &amp; güvənlik</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Digər tətbiqlərin Səyyahın məzmununu oxumağının qarşısını al</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">JavaScript-i fəallaşdır</string>
     <string name="pref_location_title">Yer</string>
-    <string name="pref_location_summary">Olduğunuz yerə müraciət sorğulayan vebsaytlara icazə ver</string>
+    <string name="pref_location_summary">Olduğunuz yerə müraciət tələb edən vebsaytlara icazə ver</string>
     <string name="pref_cookie_title">Çərəzlər</string>
     <string name="pref_cookie_summary">Vebsaytların çərəzləri saxlayıb baxmasına icazə ver</string>
     <string name="pref_screenshot_snap_title">Qabaqcıl paylaşma</string>
@@ -59,8 +59,8 @@
     <string name="pref_cookie_clear">Çərəzləri təmizlə</string>
     <string name="pref_cookie_clear_done">Bütün çərəzlər təmizləndi</string>
     <string name="pref_do_not_track_title">İzləmə</string>
-    <string name="pref_do_not_track_summary">Ziyarət etdiyin vebsaytlara İzləmə sorğusu göndər</string>
-    <string name="pref_suggestions_provider">Təklif təchizatçısı</string>
+    <string name="pref_do_not_track_summary">Ziyarət etdiyin vebsaytlara İzləmə tələbi göndər</string>
+    <string name="pref_suggestions_provider">Təklif provayderi</string>
     <string name="pref_reach_mode_title">Müraciət rejimi</string>
     <string name="pref_reach_mode_summary">Daha asan tək əlli istifadə üçün interfeys elementlərinin yerini dəyişdirin</string>
     <string name="history_title">Tarixçə</string>
@@ -80,17 +80,17 @@
     <string name="favorite_edit_url">URL</string>
     <string name="favorite_edit_positive">Düzəliş et</string>
     <string name="favorite_edit_delete">Sil</string>
-    <string name="favorite_edit_error">Etibarlı bir URL daxil et</string>
+    <string name="favorite_edit_error">Yararlı bir URL daxil et</string>
     <string name="error_no_activity_found">Bu əməliyyatı heç bir tətbiq icra edə bilməz</string>
     <string name="auth_dialog_title">Kimlik Təsdiqləmə Tələb Ediilir</string>
     <string name="auth_dialog_username">İstifadəçi adı:</string>
-    <string name="auth_dialog_password">Şifrə:</string>
-    <string name="auth_dialog_detail">%1$s, bir istifadəçi adı və şifrə tələb edir.</string>
+    <string name="auth_dialog_password">Parol:</string>
+    <string name="auth_dialog_detail">%1$s, bir istifadəçi adı və parol tələb edir.</string>
     <string name="auth_dialog_login">Giriş et</string>
     <string name="shortcut_new_incognito_tab">Yeni gizli vərəq</string>
     <string name="suggestions_provider_none">Heç biri</string>
     <string name="search_bar_hint">Axtar</string>
-    <string name="ssl_cert_dialog_title">SSL Sertifikat Təfsilatları</string>
+    <string name="ssl_cert_dialog_title">SSL Sertifikat Detalları</string>
     <string name="ssl_cert_dialog_domain">Domen</string>
     <string name="ssl_cert_dialog_issued_to">Verildi</string>
     <string name="ssl_cert_dialog_issued_by">Verən</string>
@@ -100,5 +100,5 @@
     <string name="ssl_cert_dialog_organizational_unit">Təşkilat Vahidi (UN)</string>
     <string name="ssl_cert_dialog_issued_on">Verilmə</string>
     <string name="ssl_cert_dialog_expires_on">Bitmə Vaxtı</string>
-    <string name="ssl_cert_dialog_dismiss">İmtina et</string>
+    <string name="ssl_cert_dialog_dismiss">Rədd et</string>
 </resources>

@@ -95,7 +95,7 @@
     <string name="ssl_cert_dialog_common_name">Ordinært Navn (CN)</string>
     <string name="ssl_cert_dialog_organization">Organisation (O)</string>
     <string name="ssl_cert_dialog_organizational_unit">Organisationsenhed (UN)</string>
-    <string name="ssl_cert_dialog_issued_on">Udstedt På</string>
-    <string name="ssl_cert_dialog_expires_on">Udløber På</string>
+    <string name="ssl_cert_dialog_issued_on">Udstedt d.</string>
+    <string name="ssl_cert_dialog_expires_on">Udløber d.</string>
     <string name="ssl_cert_dialog_dismiss">Afvis</string>
 </resources>
