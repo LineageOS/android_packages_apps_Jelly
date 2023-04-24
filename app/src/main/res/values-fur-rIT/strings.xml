@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Navigadôr</string>
+    <string name="menu_new_tab">Gnove schede</string>
+    <string name="menu_incognito">Schede segrete</string>
+    <string name="menu_reload">Torne cjame</string>
+    <string name="menu_fav_add">Zonte tai preferîts</string>
+    <string name="menu_share">Condivît</string>
+    <string name="menu_favorites">Preferîts</string>
+    <string name="menu_history">Cronologjie</string>
+    <string name="menu_shortcut">Zonte scurte</string>
+    <string name="menu_settings">Impostazions</string>
+    <string name="menu_download">Discjame</string>
+    <string name="menu_in_new_tab">Vierç intune gnove schede</string>
+    <string name="menu_desktop_mode">Passe al sît par scritori</string>
+    <string name="menu_mobile_mode">Passe al sît par disp. mobii</string>
+    <string name="menu_search">Cjate te pagjine</string>
+    <string name="menu_print">Stampe</string>
+    <string name="share_title">Invie a</string>
+    <string name="dismiss">Anule</string>
+    <string name="download_title">Discjame il file</string>
+    <string name="download_message">Desideristu discjariâ %1$s?</string>
+    <string name="download_positive">Discjame</string>
+    <string name="permission_error_title">Erôr permès</string>
+    <string name="permission_error_storage">Il navigadôr al à di acedi ae memorie par discjariâ i files. Autorize l\'acès par salvâ i files dal web</string>
+    <string name="permission_error_ask_again">Torne domande</string>
+    <string name="permission_error_forever">Permès dineât par simpri. Concedilu tes impostazions</string>
+    <string name="settings_title">Impostazions</string>
+    <string name="pref_search_engine">Motôr di ricercje</string>
+    <string name="pref_start_page">Pagjine iniziâl</string>
+    <string name="pref_start_page_dialog_title">Selezione la pagjine iniziâl</string>
+    <string name="pref_start_page_dialog_message">Scrîf l\'URL de pagjine iniziâl</string>
+    <string name="pref_start_page_dialog_reset">Ristabilìs</string>
+    <string name="pref_privacy_security">Riservatece e sigurece</string>
+    <string name="pref_looklock_title">LookLock</string>
+    <string name="pref_looklock_summary">Impedìs aes altris aplicazions di lei i contignûts dal navigadôr</string>
+    <string name="pref_js_title">JavaScript</string>
+    <string name="pref_js_summary">Ative JavaScript</string>
+    <string name="pref_location_title">Localizazion</string>
+    <string name="pref_location_summary">Permet ai sîts web di domandâ l\'acès ae tô posizion</string>
+    <string name="pref_cookie_title">Cookies</string>
+    <string name="pref_cookie_summary">Permet ai sîts web di salvâ e cjariâ i cookies</string>
+    <string name="pref_screenshot_snap_title">Condivision avanzade</string>
+    <string name="pref_screenshot_snap_summary">Condivît ancje la anteprime de pagjine web</string>
+    <string name="pref_cookie_clear">Nete vie i cookies</string>
+    <string name="pref_cookie_clear_done">Netât vie ducj i cookies</string>
+    <string name="pref_do_not_track_title">No sta monitorâ (Do Not Track)</string>
+    <string name="pref_do_not_track_summary">Mande une richieste di no monitora (Do Not Track) ai sîts web che tu visitis</string>
+    <string name="pref_suggestions_provider">Furnidôr di sugjeriments</string>
+    <string name="pref_reach_mode_title">Modalitât une man</string>
+    <string name="pref_reach_mode_summary">Place i elements de interface par facilitâ la utilizazion cuntune sole man</string>
+    <string name="history_title">Cronologjie</string>
+    <string name="history_empty">Nol è nuie achì, navighe su internet par viodi chi la tô cronologjie</string>
+    <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
+    <string name="history_delete_title">Nete la cronologjie</string>
+    <string name="history_delete_message">Tu stâs par eliminâ dute la cronologjie, nol è pussibil tornâ indaûr di cheste azion. Desideristu procedi?</string>
+    <string name="history_delete_positive">Nete</string>
+    <string name="history_deleting_message">Daûr a netâ la cronologjie\u2026</string>
+    <string name="history_snackbar_item_deleted">Vôs eliminade</string>
+    <string name="history_snackbar_item_deleted_message">Disfe</string>
+    <string name="favorite_title">Preferîts</string>
+    <string name="favorite_added">Zontât tai preferîts</string>
+    <string name="favorite_empty">Nol è nuie achì, zonte un colegament preferît par viodilu chi</string>
+    <string name="favorite_edit_dialog_title">Modifiche preferît</string>
+    <string name="favorite_edit_title">Titul</string>
+    <string name="favorite_edit_url">URL</string>
+    <string name="favorite_edit_positive">Modifiche</string>
+    <string name="favorite_edit_delete">Elimine</string>
+    <string name="favorite_edit_error">Inserìs un URL valit</string>
+    <string name="error_no_activity_found">Nissune aplicazion e rive a gjestî chest link</string>
+    <string name="auth_dialog_title">Autenticazion necessarie</string>
+    <string name="auth_dialog_username">Non utent:</string>
+    <string name="auth_dialog_password">Password:</string>
+    <string name="auth_dialog_detail">%1$s al domande un non utent e une password.</string>
+    <string name="auth_dialog_login">Jentre</string>
+    <string name="shortcut_new_incognito_tab">Gnove schede segrete</string>
+    <string name="suggestions_provider_none">Nissun</string>
+    <string name="search_bar_hint">Cîr</string>
+    <string name="ssl_cert_dialog_title">Detais certificât SSL</string>
+    <string name="ssl_cert_dialog_domain">Domini</string>
+    <string name="ssl_cert_dialog_issued_to">Dât fûr a</string>
+    <string name="ssl_cert_dialog_issued_by">Dât fûr di</string>
+    <string name="ssl_cert_dialog_validity">Periodi di validitât</string>
+    <string name="ssl_cert_dialog_common_name">Non comun (CN)</string>
+    <string name="ssl_cert_dialog_organization">Organizazion (O)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Unitât Organizative (UN)</string>
+    <string name="ssl_cert_dialog_issued_on">Dât fûr ai</string>
+    <string name="ssl_cert_dialog_expires_on">Al scjât ai</string>
+    <string name="ssl_cert_dialog_dismiss">Siere</string>
+</resources>
