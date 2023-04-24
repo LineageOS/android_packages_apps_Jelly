@@ -48,8 +48,8 @@
     <string name="pref_privacy_security">개인정보 보호 및 보안</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">다른 앱에서 브라우저의 내용을 읽을 수 없게 합니다.</string>
-    <string name="pref_js_title">자바스크립트</string>
-    <string name="pref_js_summary">자바스크립트 사용</string>
+    <string name="pref_js_title">JavaScript</string>
+    <string name="pref_js_summary">JavaScript 사용</string>
     <string name="pref_location_title">위치</string>
     <string name="pref_location_summary">웹사이트가 위치 정보 접근을 요구할 수 있게 합니다.</string>
     <string name="pref_cookie_title">쿠키</string>
@@ -61,7 +61,7 @@
     <string name="pref_do_not_track_title">추적 안 함 요청</string>
     <string name="pref_do_not_track_summary">방문하는 사이트에 추적 안 함 요청 보내기</string>
     <string name="pref_suggestions_provider">제안 공급자</string>
-    <string name="pref_reach_mode_title">한 손 모드</string>
+    <string name="pref_reach_mode_title">한 손 조작 모드</string>
     <string name="pref_reach_mode_summary">한 손으로 잡은 상태에서 편하게 사용할 수 있도록 인터페이스 재배치</string>
     <string name="history_title">방문 기록</string>
     <string name="history_empty">아무것도 없습니다. 방문 기록을 확인하려면 먼저 인터넷을 둘러보세요.</string>
@@ -84,7 +84,7 @@
     <string name="error_no_activity_found">이 링크를 열 수 있는 앱이 없습니다.</string>
     <string name="auth_dialog_title">인증 필요</string>
     <string name="auth_dialog_username">사용자 이름:</string>
-    <string name="auth_dialog_password">암호:</string>
+    <string name="auth_dialog_password">비밀번호:</string>
     <string name="auth_dialog_detail">%1$s에는 사용자 이름 및 암호가 필요합니다.</string>
     <string name="auth_dialog_login">로그인</string>
     <string name="shortcut_new_incognito_tab">새 시크릿 탭</string>
