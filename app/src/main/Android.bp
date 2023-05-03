@@ -27,7 +27,7 @@ android_app {
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
         "androidx.transition_transition",
-        "com.google.android.material_material",
+        "Aperture_com.google.android.material_material",
         "kotlinx-coroutines-android",
         "kotlinx-coroutines-core",
     ],
