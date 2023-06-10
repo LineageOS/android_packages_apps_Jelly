@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1eabbc91_ac34ca49",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 6
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-06-10T15:55:06Z",
+      "side": 0,
+      "message": "this whole set is kind of awkward",
+      "revId": "169a052462fc2a00f208703795094f1d8429e6f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
