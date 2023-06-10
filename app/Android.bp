@@ -16,14 +16,16 @@ android_app {
     overrides: ["Browser2"],
 
     static_libs: [
+        // DO NOT EDIT THIS SECTION MANUALLY
+        "androidx.core_core-ktx",
         "androidx.annotation_annotation",
-        "androidx.appcompat_appcompat",
+        "Jelly_androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.palette_palette",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
         "androidx.transition_transition",
-        "com.google.android.material_material",
+        "Jelly_com.google.android.material_material",
         "kotlinx-coroutines-android",
         "kotlinx-coroutines-core",
     ],
