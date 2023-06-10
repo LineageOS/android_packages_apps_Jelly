@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19327efc_c20e8453",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d1d2573_33496370",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b678d9aa_383bf63e",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-04-08T10:47:26Z",
       "side": 1,
       "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01635408_ecafb2ab",
+        "filename": "app/src/main/res/layout/dialog_homepage_edit.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b678d9aa_383bf63e",
       "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -52,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "394a2bfc_ea40abc1",
+        "filename": "app/src/main/res/layout/dialog_ssl_certificate_info.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b242666_78c94599",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2e0d8fb_a7dfad9f",
@@ -65,6 +119,24 @@
       "writtenOn": "2023-04-08T10:47:26Z",
       "side": 1,
       "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b461cdbb_1fc91bc0",
+        "filename": "app/src/main/res/layout/history_deleting_dialog.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2e0d8fb_a7dfad9f",
       "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -86,6 +158,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eff89620_9a18c2b8",
+        "filename": "app/src/main/res/layout/key_value_view.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af5dab39_1f36684e",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c7cbfc5_18bf3e66",
@@ -99,6 +189,24 @@
       "writtenOn": "2023-04-08T10:47:26Z",
       "side": 1,
       "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddec1039_45f47f8e",
+        "filename": "app/src/main/res/values-large/bools.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c7cbfc5_18bf3e66",
       "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -120,6 +228,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76237589_6b93697d",
+        "filename": "app/src/main/res/values-night/colors.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4a54b5a_7e11dda7",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1348292a_9c59f4d5",
@@ -133,6 +259,24 @@
       "writtenOn": "2023-04-08T10:47:26Z",
       "side": 1,
       "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc0bd1be_6a8936c0",
+        "filename": "app/src/main/res/values/bools.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1348292a_9c59f4d5",
       "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -154,6 +298,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58b19937_b4a20e58",
+        "filename": "app/src/main/res/values/dimens.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cecbedda_5b65f42b",
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff8ecc7e_a911100f",
@@ -167,6 +329,30 @@
       "writtenOn": "2023-04-08T10:47:26Z",
       "side": 1,
       "message": "shouldn\u0027t this be part of the \"add newlines\" change?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "192ad7a086c1317d8edc90b0765b607cc6e061d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d410d241_ba14d7fe",
+        "filename": "app/src/main/res/xml/network_security_config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-06-10T15:39:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff8ecc7e_a911100f",
       "range": {
         "startLine": 15,
         "startChar": 0,
