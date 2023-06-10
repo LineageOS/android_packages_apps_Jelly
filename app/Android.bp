@@ -7,9 +7,9 @@
 android_app {
     name: "Jelly",
 
-    resource_dirs: ["res"],
-
-    srcs: ["java/**/*.kt"],
+    srcs: ["src/main/java/**/*.kt"],
+    resource_dirs: ["src/main/res"],
+    manifest: "src/main/AndroidManifest.xml",
 
     product_specific: true,
 
