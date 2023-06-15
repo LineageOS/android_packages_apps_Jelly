@@ -45,7 +45,10 @@
     <string name="pref_js_summary">Aktivera JavaScript</string>
     <string name="pref_location_title">Plats</string>
     <string name="pref_location_summary">Tillåt hemsidor att begära åtkomst till din plats</string>
+    <string name="pref_cookie_title">Cookies</string>
+    <string name="pref_cookie_summary">Tillåt webbplatser att spara och ladda cookies</string>
     <string name="pref_screenshot_snap_title">Avancerad delning</string>
+    <string name="pref_screenshot_snap_summary">Dela förhandsvisning av den delade webbsidan</string>
     <string name="pref_reach_mode_summary">Flytta element i användargränssnittet för enklare enhandsanvändning</string>
     <string name="history_title">Historik</string>
     <string name="history_delete_title">Rensa historik</string>
