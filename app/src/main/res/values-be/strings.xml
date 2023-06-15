@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="app_name">Браўзер</string>
     <string name="menu_new_tab">Новая ўкладка</string>
     <string name="menu_incognito">Укладка ў рэжыме інкогніта</string>
     <string name="menu_reload">Перазагрузіць</string>
@@ -21,11 +22,13 @@
     <string name="menu_history">Гісторыя</string>
     <string name="menu_shortcut">Дадаць ярлык</string>
     <string name="menu_settings">Налады</string>
+    <string name="menu_download">Спампаваць</string>
+    <string name="menu_search">Знайсці на старонцы</string>
     <string name="share_title">Адправіць</string>
+    <string name="dismiss">Адхіліць</string>
+    <string name="download_title">Спампаваць файл</string>
     <string name="download_message">Вы сапраўды хочаце спампаваць %1$s?</string>
-    <string name="download_positive">Спампоўванне</string>
     <string name="permission_error_title">Памылка дазволу</string>
-    <string name="permission_error_storage">Браўзеру неабходны доступ да сховішча, каб спампаваць файлы. Дайце дазвол для захавання файлы з інтэрнэту.</string>
     <string name="permission_error_ask_again">Спытаць зноў</string>
     <string name="permission_error_forever">Адмоўлена ў дазволе. Калі ласка, ухваліце яго ў наладах</string>
     <string name="settings_title">Налады</string>
@@ -53,7 +56,6 @@
     <string name="pref_reach_mode_summary">Змена размяшчэння элементаў інтэрфейсу для зручнага кіравання адной рукой</string>
     <string name="history_title">Гісторыя</string>
     <string name="history_empty">Тут нічога няма. Гісторыя з\'явіцца пасля прагляду старонак у інтэрнэце</string>
-    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
     <string name="history_delete_title">Ачысціць гісторыю</string>
     <string name="history_delete_message">Вы збіраецеся выдаліць усю гісторыю, гэта дзеянне адмяніць нельга. Працягнуць?</string>
     <string name="history_delete_positive">Ачысціць</string>
@@ -69,8 +71,10 @@
     <string name="favorite_edit_positive">Рэдагаваць</string>
     <string name="favorite_edit_delete">Выдаліць</string>
     <string name="favorite_edit_error">Устаўце сапраўдны URL-адрас</string>
-    <string name="error_no_activity_found">Праграма не можа апрацоўваць гэтую спасылку</string>
-    <string name="auth_dialog_title">Патрабуецца аўтарызацыя</string>
+    <string name="auth_dialog_detail">%1$s патрабуе імя карыстальніка і пароль.</string>
+    <string name="auth_dialog_login">Увайсці</string>
+    <string name="ssl_cert_dialog_domain">Дамен</string>
     <string name="ssl_cert_dialog_issued_to">Выдадзена для</string>
-    <string name="ssl_cert_dialog_issued_on">Выдадзена на</string>
+    <string name="ssl_cert_dialog_issued_by">Выдадзена</string>
+    <string name="ssl_cert_dialog_dismiss">Адхіліць</string>
 </resources>
