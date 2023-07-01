@@ -60,6 +60,7 @@
     <string name="pref_do_not_track_title">Spor Mig Ikke</string>
     <string name="pref_do_not_track_summary">Send en Spor Mig Ikke-anmodning til de netsteder, du besøger</string>
     <string name="pref_suggestions_provider">Forslagsleverandør</string>
+    <string name="pref_reach_mode_summary">Relokér brugerflade for lettere brug med en hånd</string>
     <string name="history_title">Historik</string>
     <string name="history_empty">Der er intet her; surf på internettet, for at se din historik her</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
