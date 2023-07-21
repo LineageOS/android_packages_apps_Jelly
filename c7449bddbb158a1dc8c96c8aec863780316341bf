@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eefd425b_fd2c8561",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 11
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-21T16:35:11Z",
+      "side": 1,
+      "message": "isn\u0027t that a bit too many indirections?\nthe certificate is in the main activity, can\u0027t you set the button callback there? If you do that you can directly invoke the show instead of actually implementing this whole cb",
+      "range": {
+        "startLine": 148,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 9
+      },
+      "revId": "c7449bddbb158a1dc8c96c8aec863780316341bf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
