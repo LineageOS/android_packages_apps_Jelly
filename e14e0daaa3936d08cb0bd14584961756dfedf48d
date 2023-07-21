@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c0e6fe5_e2f85bab",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-21T16:37:00Z",
+      "side": 0,
+      "message": "that was made to be overlay-able, why did you remove it?",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 83
+      },
+      "revId": "e14e0daaa3936d08cb0bd14584961756dfedf48d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
