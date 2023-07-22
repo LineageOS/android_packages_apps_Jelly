@@ -34,6 +34,24 @@
       "parentUuid": "649f5377_32456a68",
       "revId": "5d3bba067ae51d09d68aa6f4ef8417aa3c7fbb6b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c60136a7_fb279ebe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-07-22T09:56:46Z",
+      "side": 1,
+      "message": "They should have the following license:\n\n\u003c!--\n  SPDX-FileCopyrightText: Material Design Authors / Google LLC\n  SPDX-License-Identifier: Apache-2.0\n  --\u003e\n\nAperture will also be fixed after the open commits are merged",
+      "parentUuid": "7482834d_8dd5429f",
+      "revId": "5d3bba067ae51d09d68aa6f4ef8417aa3c7fbb6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
