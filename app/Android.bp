@@ -1,6 +1,5 @@
 //
-// Copyright (C) 2017-2020 The LineageOS Project
-//
+// SPDX-FileCopyrightText: 2017-2020 The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -35,5 +34,4 @@ android_app {
     ],
 
     sdk_version: "current",
-
 }
