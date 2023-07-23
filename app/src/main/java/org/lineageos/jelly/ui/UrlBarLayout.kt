@@ -83,7 +83,6 @@ class UrlBarLayout @JvmOverloads constructor(
         set(value) {
             field = value
 
-            secureButton.isVisible = !value && url?.startsWith("https://") == true
             loadingProgressIndicator.isVisible = value
         }
 
@@ -92,7 +91,9 @@ class UrlBarLayout @JvmOverloads constructor(
             field = value
 
             autoCompleteTextView.setText(value)
+            secureButton.isVisible = value?.startsWith("https://") == true
         }
+
     private var certificate: SslCertificate? = null
 
     private var wasKeyboardVisible = false
