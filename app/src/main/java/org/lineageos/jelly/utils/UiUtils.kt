@@ -68,6 +68,16 @@ object UiUtils {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
+    /**
+     * Shows the keyboard.
+     *
+     * @param view The [View] that is currently accepting input.
+     */
+    fun showKeyboard(view: View) {
+        val imm = view.context.getSystemService(InputMethodManager::class.java)
+        imm.showSoftInput(view, 0)
+    }
+
     fun isReachModeEnabled(context: Context): Boolean {
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         return prefs.getBoolean("key_reach_mode", false)
