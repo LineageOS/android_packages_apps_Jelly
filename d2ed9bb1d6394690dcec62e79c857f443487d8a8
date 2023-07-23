@@ -16,6 +16,40 @@
       "message": "No more .bin files",
       "revId": "d2ed9bb1d6394690dcec62e79c857f443487d8a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a6afc9c_61de4867",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T23:47:36Z",
+      "side": 1,
+      "message": "itself equals to self?\nI don\u0027t get that bit\nshould it be typeFromExt.equals(type)?",
+      "revId": "d2ed9bb1d6394690dcec62e79c857f443487d8a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfa90003_5c4e0ab0",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T23:47:36Z",
+      "side": 1,
+      "message": "so\nin base it\u0027s test.mp3.zio we save it as test.zip?",
+      "revId": "d2ed9bb1d6394690dcec62e79c857f443487d8a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
