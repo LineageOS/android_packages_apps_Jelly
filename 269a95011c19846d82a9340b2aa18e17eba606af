@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04637c59_16e3fd12",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionsAdapter.kt",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T17:21:07Z",
+      "side": 1,
+      "message": "now that I think about it, this is highly inefficient as we\u0027re always creating the class each time we use the ItemFilter.\nWe should create it once and observe on the pref change",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 13
+      },
+      "revId": "269a95011c19846d82a9340b2aa18e17eba606af",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
