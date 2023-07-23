@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0392677_f0d40f46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T12:09:10Z",
+      "side": 1,
+      "message": "searching \"meteo\" ( weather ) in google, then clicking the search bar, keyboard opens and closes immediatly :/",
+      "revId": "6ca6a2a46133d092d6f34c35ceda3bc4d3ab2f94",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
