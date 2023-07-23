@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eb59658_59d5e362",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T12:41:24Z",
+      "side": 1,
+      "message": "I can\u0027t think of a way to avoid adding the origin/callback copies in the class, but what\u0027s left at the moment is a proper UI/UX of the dialog ( strings? )\nCurrently origin \u003d domain per spec",
+      "revId": "9a218debe11e06e7b7ad8d9df56d7d96451c8dc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
