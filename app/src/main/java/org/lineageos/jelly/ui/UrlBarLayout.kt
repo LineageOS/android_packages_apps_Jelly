@@ -11,6 +11,7 @@ import android.net.http.SslCertificate
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.AutoCompleteTextView
@@ -19,6 +20,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Group
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import org.lineageos.jelly.R
@@ -87,6 +90,8 @@ class UrlBarLayout @JvmOverloads constructor(
         }
     private var certificate: SslCertificate? = null
 
+    private var wasKeyboardVisible = false
+
     // Search
     var searchPositionInfo = Pair(0, 0)
         @SuppressLint("SetTextI18n")
@@ -118,8 +123,25 @@ class UrlBarLayout @JvmOverloads constructor(
         }
     }
 
+    // Listeners
+    private val keyboardListener = ViewTreeObserver.OnGlobalLayoutListener {
+        val isKeyboardOpen = ViewCompat.getRootWindowInsets(this)
+            ?.isVisible(WindowInsetsCompat.Type.ime()) ?: true
+
+        if (!isKeyboardOpen && wasKeyboardVisible && autoCompleteTextView.hasFocus()) {
+            autoCompleteTextView.clearFocus()
+        }
+
+        wasKeyboardVisible = isKeyboardOpen
+    }
+
     init {
         inflate(context, R.layout.url_bar_layout, this)
+        viewTreeObserver.addOnGlobalLayoutListener(keyboardListener)
+    }
+
+    override fun onViewRemoved(view: View?) {
+        viewTreeObserver.removeOnGlobalLayoutListener(keyboardListener)
     }
 
     private val suggestionsAdapter = SuggestionsAdapter(context)
