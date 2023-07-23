@@ -195,6 +195,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             menuDialog.dismiss()
         }
         urlBarLayout.onMoreButtonClickCallback = {
+            UiUtils.hideKeyboard(urlBarLayout)
             menuDialog.showAsDropdownMenu(urlBarLayout, UiUtils.isReachModeEnabled(this))
         }
 
