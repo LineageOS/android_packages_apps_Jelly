@@ -16,8 +16,10 @@ import android.graphics.PorterDuffXfermode
 import android.graphics.Rect
 import android.util.TypedValue
 import android.view.View
-import android.view.inputmethod.InputMethodManager
+import android.view.Window
 import androidx.core.graphics.ColorUtils
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.palette.graphics.Palette
 import androidx.preference.PreferenceManager
 
@@ -61,21 +63,21 @@ object UiUtils {
     /**
      * Hides the keyboard.
      *
+     * @param window the [Window] where the view is attached to.
      * @param view The [View] that is currently accepting input.
      */
-    fun hideKeyboard(view: View) {
-        val imm = view.context.getSystemService(InputMethodManager::class.java)
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    fun hideKeyboard(window: Window, view: View) {
+        WindowInsetsControllerCompat(window, view).hide(WindowInsetsCompat.Type.ime())
     }
 
     /**
      * Shows the keyboard.
      *
+     * @param window the [Window] where the view is attached to.
      * @param view The [View] that is currently accepting input.
      */
-    fun showKeyboard(view: View) {
-        val imm = view.context.getSystemService(InputMethodManager::class.java)
-        imm.showSoftInput(view, 0)
+    fun showKeyboard(window: Window, view: View) {
+        WindowInsetsControllerCompat(window, view).show(WindowInsetsCompat.Type.ime())
     }
 
     fun isReachModeEnabled(context: Context): Boolean {
