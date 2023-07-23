@@ -13,8 +13,12 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.webkit.WebView
+import androidx.preference.PreferenceManager
+import org.lineageos.jelly.ext.doNotTrackEnabled
+import org.lineageos.jelly.ext.javascriptEnabled
+import org.lineageos.jelly.ext.locationEnabled
+import org.lineageos.jelly.ext.searchEngine
 import org.lineageos.jelly.ui.UrlBarLayout
-import org.lineageos.jelly.utils.PrefsUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.util.regex.Pattern
 
@@ -33,6 +37,10 @@ class WebViewExt @JvmOverloads constructor(
     var lastLoadedUrl: String? = null
         private set
 
+    private val sharedPreferences by lazy {
+        PreferenceManager.getDefaultSharedPreferences(context)
+    }
+
     override fun loadUrl(url: String) {
         lastLoadedUrl = url
         followUrl(url)
@@ -43,14 +51,14 @@ class WebViewExt @JvmOverloads constructor(
             super.loadUrl(it, this.requestHeaders)
             return
         }
-        val templateUri = PrefsUtils.getSearchEngine(activity)
+        val templateUri = sharedPreferences.searchEngine
         super.loadUrl(UrlUtils.getFormattedUri(templateUri, url), this.requestHeaders)
     }
 
     private fun setup() {
-        settings.javaScriptEnabled = PrefsUtils.getJavascript(activity)
-        settings.javaScriptCanOpenWindowsAutomatically = PrefsUtils.getJavascript(activity)
-        settings.setGeolocationEnabled(PrefsUtils.getLocation(activity))
+        settings.javaScriptEnabled = sharedPreferences.javascriptEnabled
+        settings.javaScriptCanOpenWindowsAutomatically = sharedPreferences.javascriptEnabled
+        settings.setGeolocationEnabled(sharedPreferences.locationEnabled)
         settings.setSupportMultipleWindows(true)
         settings.builtInZoomControls = true
         settings.displayZoomControls = false
@@ -102,7 +110,7 @@ class WebViewExt @JvmOverloads constructor(
             mobileUserAgent = settings.userAgentString
             desktopUserAgent = DESKTOP_USER_AGENT_FALLBACK
         }
-        if (PrefsUtils.getDoNotTrack(activity)) {
+        if (sharedPreferences.doNotTrackEnabled) {
             this.requestHeaders[HEADER_DNT] = "1"
         }
     }
