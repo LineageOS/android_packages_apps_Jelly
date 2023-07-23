@@ -53,7 +53,9 @@ class MenuDialog(
         RelativeLayout.LayoutParams.WRAP_CONTENT,
         RelativeLayout.LayoutParams.WRAP_CONTENT,
         true
-    )
+    ).apply {
+        elevation = context.resources.getDimension(R.dimen.toolbar_elevation)
+    }
 
     var isDesktopMode = false
         set(value) {
@@ -102,11 +104,11 @@ class MenuDialog(
     }
 
     fun showAsDropdownMenu(anchor: View, isReachMode: Boolean = false, padding: Int = 16.toPx) {
-        val xOffset = anchor.width - view.measuredWidth - padding
+        val xOffset = anchor.width - view.measuredWidth
         val yOffset = if (isReachMode) {
-            -(anchor.height + view.measuredHeight + padding)
+            -(anchor.height + view.measuredHeight + (padding * 2))
         } else {
-            padding
+            0
         }
         popupWindow.showAsDropDown(anchor, xOffset, yOffset)
     }

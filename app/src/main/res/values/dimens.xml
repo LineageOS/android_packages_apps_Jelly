@@ -5,5 +5,5 @@
 -->
 <resources>
     <dimen name="delete_margin">12dp</dimen>
-    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="toolbar_elevation">6dp</dimen>
 </resources>
