@@ -11,9 +11,9 @@ import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatAutoCompleteTextView
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
-class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
+class AutoCompleteTextViewExt : MaterialAutoCompleteTextView {
     private var positionX = 0
 
     constructor(context: Context) : super(context)
