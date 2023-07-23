@@ -16,6 +16,29 @@
       "message": "As far as I can tell this works fine.\nUp to you for breaking it",
       "revId": "054ff399ab23a2d31532cac75a65001086db88f4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d5938f7_630f252a",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T22:15:20Z",
+      "side": 1,
+      "message": "ah derp",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 80
+      },
+      "revId": "054ff399ab23a2d31532cac75a65001086db88f4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
