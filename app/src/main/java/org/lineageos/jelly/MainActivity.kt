@@ -63,7 +63,7 @@ import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
-import org.lineageos.jelly.utils.PrefsUtils
+import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.utils.UrlUtils
@@ -119,6 +119,8 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private var fullScreenCallback: CustomViewCallback? = null
     private val uiScope = CoroutineScope(Dispatchers.Main)
     private lateinit var menuDialog: MenuDialog
+
+    private val sharedPreferencesExt by lazy { SharedPreferencesExt(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -194,12 +196,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
         urlBarLayout.onMoreButtonClickCallback = {
             UiUtils.hideKeyboard(window, urlBarLayout)
-            menuDialog.showAsDropdownMenu(urlBarLayout, UiUtils.isReachModeEnabled(this))
+            menuDialog.showAsDropdownMenu(urlBarLayout, sharedPreferencesExt.reachModeEnabled)
         }
 
         webView.init(this, urlBarLayout, incognito)
         webView.isDesktopMode = desktopMode
-        webView.loadUrl(url ?: PrefsUtils.getHomePage(this))
+        webView.loadUrl(url ?: sharedPreferencesExt.homePage)
         setUiMode()
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")
@@ -231,8 +233,8 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         super.onResume()
         webView.onResume()
         CookieManager.getInstance()
-            .setAcceptCookie(!webView.isIncognito && PrefsUtils.getCookie(this))
-        if (PrefsUtils.getLookLock(this)) {
+            .setAcceptCookie(!webView.isIncognito && sharedPreferencesExt.cookiesEnabled)
+        if (sharedPreferencesExt.lookLockEnabled) {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
                 WindowManager.LayoutParams.FLAG_SECURE
@@ -287,7 +289,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private fun shareUrl(url: String) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_TEXT, url)
-        if (PrefsUtils.getAdvancedShare(this) && url == webView.url) {
+        if (sharedPreferencesExt.advancedShareEnabled && url == webView.url) {
             val file = File(cacheDir, System.currentTimeMillis().toString() + ".png")
             try {
                 FileOutputStream(file).use { out ->
@@ -528,7 +530,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         // Now you don't see it
         coordinatorLayout.alpha = 0f
         // Magic happens
-        changeUiMode(UiUtils.isReachModeEnabled(this))
+        changeUiMode(sharedPreferencesExt.reachModeEnabled)
         // Now you see it
         coordinatorLayout.alpha = 1f
     }

@@ -5,7 +5,6 @@
 
 package org.lineageos.jelly.utils
 
-import android.content.Context
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -21,7 +20,6 @@ import androidx.core.graphics.ColorUtils
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.palette.graphics.Palette
-import androidx.preference.PreferenceManager
 
 object UiUtils {
     fun isColorLight(color: Int): Boolean {
@@ -78,10 +76,5 @@ object UiUtils {
      */
     fun showKeyboard(window: Window, view: View) {
         WindowInsetsControllerCompat(window, view).show(WindowInsetsCompat.Type.ime())
-    }
-
-    fun isReachModeEnabled(context: Context): Boolean {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        return prefs.getBoolean("key_reach_mode", false)
     }
 }
