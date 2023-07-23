@@ -11,6 +11,7 @@ import android.net.http.SslCertificate
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.AutoCompleteTextView
@@ -19,6 +20,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Group
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import org.lineageos.jelly.R
@@ -118,8 +121,22 @@ class UrlBarLayout @JvmOverloads constructor(
         }
     }
 
+    // Listeners
+    private val keyboardListener = ViewTreeObserver.OnGlobalLayoutListener {
+        val isKeyboardOpen = ViewCompat.getRootWindowInsets(this)
+            ?.isVisible(WindowInsetsCompat.Type.ime()) ?: true
+        if (!isKeyboardOpen && autoCompleteTextView.hasFocus()) {
+            autoCompleteTextView.clearFocus()
+        }
+    }
+
     init {
         inflate(context, R.layout.url_bar_layout, this)
+        viewTreeObserver.addOnGlobalLayoutListener(keyboardListener)
+    }
+
+    override fun onViewRemoved(view: View?) {
+        viewTreeObserver.removeOnGlobalLayoutListener(keyboardListener)
     }
 
     private val suggestionsAdapter = SuggestionsAdapter(context)
