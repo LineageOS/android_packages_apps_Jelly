@@ -6,7 +6,9 @@
 
 package org.lineageos.jelly.utils
 
+import android.net.Uri
 import android.util.Patterns
+import android.webkit.MimeTypeMap
 import android.webkit.URLUtil
 import java.util.Locale
 import java.util.regex.Pattern
@@ -58,4 +60,110 @@ object UrlUtils {
      */
     fun getFormattedUri(templateUri: String?, query: String?) =
         URLUtil.composeSearchUrl(query, templateUri, "{searchTerms}")!!
+
+    /** Regex used to parse content-disposition headers */
+    private val CONTENT_DISPOSITION_PATTERN = Pattern.compile(
+        "attachment;\\s*filename\\s*=\\s*(\"?)([^\"]*)\\1\\s*$",
+        Pattern.CASE_INSENSITIVE
+    )
+
+    /**
+     * Parse the Content-Disposition HTTP Header. The format of the header
+     * is defined here: http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html
+     * This header provides a filename for content that is going to be
+     * downloaded to the file system. We only support the attachment type.
+     * Note that RFC 2616 specifies the filename value must be double-quoted.
+     * Unfortunately some servers do not quote the value so to maintain
+     * consistent behaviour with other browsers, we allow unquoted values too.
+     */
+    private fun parseContentDisposition(contentDisposition: String) = runCatching {
+        val m = CONTENT_DISPOSITION_PATTERN.matcher(contentDisposition)
+        if (m.find()) {
+            return@runCatching m.group(2)
+        }
+
+        return@runCatching null
+    }.getOrNull()
+
+    /**
+     * Guesses canonical filename that a download would have, using
+     * the URL and contentDisposition. File extension, if not defined,
+     * is added based on the mimetype
+     * @param url Url to the content
+     * @param contentDisposition Content-Disposition HTTP header or {@code null}
+     * @param mimeType Mime-type of the content or {@code null}
+     *
+     * @return suggested filename
+     */
+    fun guessFileName(
+        url: String?,
+        contentDisposition: String?,
+        mimeType: String?
+    ): String {
+        var tempFilename: String? = null
+        var extension: String? = null
+
+        // If we couldn't do anything with the hint, move toward the content disposition
+        contentDisposition?.let { disposition ->
+            tempFilename = parseContentDisposition(disposition)
+            tempFilename?.let {
+                val index = it.lastIndexOf('/') + 1
+                if (index > 0) {
+                    tempFilename = it.substring(index)
+                }
+            }
+        }
+
+        // If all the other http-related approaches failed, use the plain uri
+        if (tempFilename == null) {
+            runCatching { Uri.parse(url) }.getOrNull()?.let {
+                tempFilename = it.lastPathSegment
+            }
+        }
+
+        // Finally, if couldn't get filename from URI, get a generic filename
+        var filename = tempFilename ?: "downloadfile"
+
+        // Split filename between base and extension
+        // Add an extension if filename does not have one
+        val dotIndex = filename.indexOf('.')
+        if (dotIndex < 0) {
+            mimeType?.let {
+                extension = MimeTypeMap.getSingleton().getExtensionFromMimeType(it)
+                extension?.let { e ->
+                    extension = ".$e"
+                }
+            }
+            extension = extension ?: mimeType?.let {
+                if (it.lowercase().startsWith("text/")) {
+                    if (it.equals("text/html", ignoreCase = true)) {
+                        ".html"
+                    } else {
+                        ".txt"
+                    }
+                } else {
+                    ".bin"
+                }
+            }
+        } else {
+            mimeType?.let { type ->
+                // Compare the last segment of the extension against the mime type.
+                // If there's a mismatch, discard the entire extension.
+                val lastDotIndex = filename.lastIndexOf('.')
+                val typeFromExt = MimeTypeMap.getSingleton().getMimeTypeFromExtension(
+                    filename.substring(lastDotIndex + 1)
+                )
+                typeFromExt?.takeIf { !typeFromExt.equals(it, ignoreCase = true) }?.let {
+                    extension = MimeTypeMap.getSingleton().getExtensionFromMimeType(type)
+                    extension?.let { e ->
+                        extension = ".$e"
+                    }
+                }
+            }
+            extension = extension ?: filename.substring(dotIndex)
+            filename = filename.substring(0, dotIndex)
+        }
+
+        return "${filename}${extension}"
+    }
 }
