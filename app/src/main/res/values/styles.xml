@@ -12,6 +12,7 @@
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
         <item name="alertDialogTheme">@style/Theme.Jelly.AlertDialog</item>
         <item name="materialAlertDialogTheme">@style/Theme.Jelly.AlertDialog</item>
+        <item name="autoCompleteTextViewStyle">@style/Theme.Jelly.AutoCompleteTextViewStyle</item>
     </style>
 
     <style name="Theme.Jelly.NoActionBar">
@@ -78,6 +79,11 @@
 
     <style name="Theme.Jelly.MenuIcon">
         <item name="iconTint">?colorOnSurface</item>
+    </style>
+
+    <!-- Search bar autocomplete text style -->
+    <style name="Theme.Jelly.AutoCompleteTextViewStyle" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textSize">16sp</item>
     </style>
 
     <!-- Settings activity theme. -->
