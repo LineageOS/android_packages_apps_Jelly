@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f19b40ef_acac3595",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T10:55:40Z",
+      "side": 1,
+      "message": "I couldn\u0027t come up with a better way to receive the event, but that fixed a long standing ui problem\nthere\u0027s one more focus related issue atm, search bar has focus, you click on menu, keyboard closes and then opens",
+      "revId": "e24002b43330a9484d45bf428ae9c0fd6a453b29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
