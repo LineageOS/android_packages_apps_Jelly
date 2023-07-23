@@ -61,6 +61,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.lineageos.jelly.ext.dimensionFromAttribute
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
@@ -563,7 +564,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private fun changeUiMode(isReachMode: Boolean) {
         val appBarParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         val containerParams = webViewContainerLayout.layoutParams as CoordinatorLayout.LayoutParams
-        val margin = resources.getDimension(R.dimen.m3_appbar_size_compact).toInt()
+        val margin = dimensionFromAttribute(android.R.attr.actionBarSize)
         if (isReachMode) {
             appBarParams.gravity = Gravity.BOTTOM
             containerParams.setMargins(0, 0, 0, margin)
