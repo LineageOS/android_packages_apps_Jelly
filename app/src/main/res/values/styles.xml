@@ -96,6 +96,13 @@
         <item name="alertDialogStyle">@style/Theme.Jelly.AlertDialogStyle</item>
         <item name="dialogCornerRadius">28dp</item>
         <item name="android:background">@drawable/dialog_preference_background</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Theme.Jelly.AlertDialog.NeutralButton</item>
+    </style>
+
+    <!-- Alert dialog neutral button style. -->
+    <style name="Theme.Jelly.AlertDialog.NeutralButton" parent="Widget.Material3.Button.TextButton.Dialog.Flush">
+        <item name="android:paddingLeft">0sp</item>
+        <item name="android:paddingStart">0sp</item>
     </style>
 
     <!-- Alert dialog style. -->
