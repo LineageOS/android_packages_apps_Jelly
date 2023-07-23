@@ -46,6 +46,8 @@ import android.webkit.URLUtil
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.window.OnBackInvokedCallback
+import androidx.activity.addCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -223,6 +225,25 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         } catch (e: IOException) {
             Log.i(TAG, "HTTP response cache installation failed:$e")
         }
+
+        onBackPressedDispatcher.addCallback(this, true) {
+            when {
+                urlBarLayout.currentMode == UrlBarLayout.UrlBarMode.SEARCH -> {
+                    urlBarLayout.currentMode = UrlBarLayout.UrlBarMode.URL
+                }
+                customView != null -> {
+                    onHideCustomView()
+                }
+                webView.canGoBack() -> {
+                    webView.goBack()
+                }
+                else -> {
+                    remove()
+                    onBackPressedDispatcher.onBackPressed()
+                    onBackPressedDispatcher.addCallback(this)
+                }
+            }
+        }
     }
 
     override fun onStart() {
@@ -254,23 +275,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             )
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
-        }
-    }
-
-    override fun onBackPressed() {
-        when {
-            urlBarLayout.currentMode == UrlBarLayout.UrlBarMode.SEARCH -> {
-                urlBarLayout.currentMode = UrlBarLayout.UrlBarMode.URL
-            }
-            customView != null -> {
-                onHideCustomView()
-            }
-            webView.canGoBack() -> {
-                webView.goBack()
-            }
-            else -> {
-                super.onBackPressed()
-            }
         }
     }
 
