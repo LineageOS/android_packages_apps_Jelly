@@ -22,6 +22,30 @@
       },
       "revId": "48c7d008fa564c399b9a6eafe72cba8e4e4f8ae2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcdf6cff_d04d120e",
+        "filename": "app/src/main/java/org/lineageos/jelly/ext/View.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-07-23T17:50:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e926f715_dec82b22",
+      "range": {
+        "startLine": 13,
+        "startChar": 18,
+        "endLine": 13,
+        "endChar": 26
+      },
+      "revId": "48c7d008fa564c399b9a6eafe72cba8e4e4f8ae2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
