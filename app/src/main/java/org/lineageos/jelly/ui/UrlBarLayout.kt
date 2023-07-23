@@ -59,6 +59,10 @@ class UrlBarLayout @JvmOverloads constructor(
 
             urlBarLayoutGroupUrl.isVisible = value == UrlBarMode.URL
             urlBarLayoutGroupSearch.isVisible = value == UrlBarMode.SEARCH
+
+            if (value == UrlBarMode.SEARCH) {
+                searchEditText.requestFocus()
+            }
         }
 
     var isIncognito = false
@@ -128,8 +132,9 @@ class UrlBarLayout @JvmOverloads constructor(
         val isKeyboardOpen = ViewCompat.getRootWindowInsets(this)
             ?.isVisible(WindowInsetsCompat.Type.ime()) ?: true
 
-        if (!isKeyboardOpen && wasKeyboardVisible && autoCompleteTextView.hasFocus()) {
+        if (!isKeyboardOpen && wasKeyboardVisible) {
             autoCompleteTextView.clearFocus()
+            searchEditText.clearFocus()
         }
 
         wasKeyboardVisible = isKeyboardOpen
@@ -247,7 +252,9 @@ class UrlBarLayout @JvmOverloads constructor(
     }
 
     private fun onFocusChange(view: View, hasFocus: Boolean) {
-        if (!hasFocus) {
+        if (hasFocus) {
+            UiUtils.showKeyboard(view)
+        } else {
             UiUtils.hideKeyboard(view)
         }
     }
