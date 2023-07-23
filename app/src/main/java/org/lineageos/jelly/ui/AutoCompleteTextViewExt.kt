@@ -12,9 +12,9 @@ import android.graphics.LinearGradient
 import android.graphics.Rect
 import android.graphics.Shader
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatAutoCompleteTextView
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
-class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
+class AutoCompleteTextViewExt : MaterialAutoCompleteTextView {
     private var focusChangeListener: OnFocusChangeListener? = null
     private var positionX = 0
 
