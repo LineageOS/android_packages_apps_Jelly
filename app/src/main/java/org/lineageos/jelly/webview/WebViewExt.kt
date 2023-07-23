@@ -14,7 +14,7 @@ import android.util.Log
 import android.view.View
 import android.webkit.WebView
 import org.lineageos.jelly.ui.UrlBarLayout
-import org.lineageos.jelly.utils.PrefsUtils
+import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.UrlUtils
 import java.util.regex.Pattern
 
@@ -33,6 +33,8 @@ class WebViewExt @JvmOverloads constructor(
     var lastLoadedUrl: String? = null
         private set
 
+    private val sharedPreferencesExt by lazy { SharedPreferencesExt(context) }
+
     override fun loadUrl(url: String) {
         lastLoadedUrl = url
         followUrl(url)
@@ -43,14 +45,14 @@ class WebViewExt @JvmOverloads constructor(
             super.loadUrl(it, this.requestHeaders)
             return
         }
-        val templateUri = PrefsUtils.getSearchEngine(activity)
+        val templateUri = sharedPreferencesExt.searchEngine
         super.loadUrl(UrlUtils.getFormattedUri(templateUri, url), this.requestHeaders)
     }
 
     private fun setup() {
-        settings.javaScriptEnabled = PrefsUtils.getJavascript(activity)
-        settings.javaScriptCanOpenWindowsAutomatically = PrefsUtils.getJavascript(activity)
-        settings.setGeolocationEnabled(PrefsUtils.getLocation(activity))
+        settings.javaScriptEnabled = sharedPreferencesExt.javascriptEnabled
+        settings.javaScriptCanOpenWindowsAutomatically = sharedPreferencesExt.javascriptEnabled
+        settings.setGeolocationEnabled(sharedPreferencesExt.locationEnabled)
         settings.setSupportMultipleWindows(true)
         settings.builtInZoomControls = true
         settings.displayZoomControls = false
@@ -102,7 +104,7 @@ class WebViewExt @JvmOverloads constructor(
             mobileUserAgent = settings.userAgentString
             desktopUserAgent = DESKTOP_USER_AGENT_FALLBACK
         }
-        if (PrefsUtils.getDoNotTrack(activity)) {
+        if (sharedPreferencesExt.doNotTrackEnabled) {
             this.requestHeaders[HEADER_DNT] = "1"
         }
     }
