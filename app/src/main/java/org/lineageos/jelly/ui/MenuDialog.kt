@@ -17,12 +17,12 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.ext.toPx
 
 class MenuDialog(
-    private val context: Context,
+    context: Context,
     private val onClickListener: (option: Option) -> Unit
 ) {
     private val layoutInflater = LayoutInflater.from(context)
 
-    private val view = layoutInflater.inflate(R.layout.menu_dialog, null).apply {
+    private val view = layoutInflater.inflate(R.layout.menu_dialog, LinearLayout(context)).apply {
         measure(
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
