@@ -41,7 +41,6 @@ import android.view.WindowInsetsController
 import android.view.WindowManager
 import android.webkit.CookieManager
 import android.webkit.MimeTypeMap
-import android.webkit.URLUtil
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -67,6 +66,7 @@ import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.PrefsUtils
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 import org.lineageos.jelly.utils.UiUtils
+import org.lineageos.jelly.utils.UrlUtils
 import org.lineageos.jelly.webview.WebViewExt
 import org.lineageos.jelly.webview.WebViewExtActivity
 import java.io.File
@@ -328,7 +328,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     override fun downloadFileAsk(url: String?, contentDisposition: String?, mimeType: String?) {
-        val fileName = URLUtil.guessFileName(url, contentDisposition, mimeType)
+        val fileName = UrlUtils.guessFileName(url, contentDisposition, mimeType)
         AlertDialog.Builder(this)
             .setTitle(R.string.download_title)
             .setMessage(getString(R.string.download_message, fileName))
