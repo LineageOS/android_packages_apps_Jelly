@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1cee1cb_42a8423d",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarLayout.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-23T17:14:27Z",
+      "side": 1,
+      "message": "flip the condition",
+      "revId": "19104e4e7e7f84b85131b45cd2fdf2dacd3ac944",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
