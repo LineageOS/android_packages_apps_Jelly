@@ -30,8 +30,8 @@
     <string name="menu_download">Download</string>
     <!-- Menu action: open selected link in a new tab -->
     <string name="menu_in_new_tab">Open in new tab</string>
-    <!-- Menu action: enable desktop mode -->
-    <string name="menu_desktop_mode">Switch to desktop site</string>
+    <!-- Menu action: desktop mode -->
+    <string name="menu_desktop_mode">Desktop site</string>
     <!-- Menu action: search in page -->
     <string name="menu_search">Find in page</string>
     <!-- Menu action: print -->
