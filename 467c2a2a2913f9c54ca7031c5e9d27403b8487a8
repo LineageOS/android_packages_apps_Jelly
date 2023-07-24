@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a9e4aee_1c584e04",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-24T23:41:50Z",
+      "side": 1,
+      "message": "remove .",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b210c359_091979f9",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-24T23:41:50Z",
+      "side": 1,
+      "message": "and those too",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7d94e60_62381e58",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-24T23:41:50Z",
+      "side": 1,
+      "message": "remove the . from here",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4450faa_ceb7ed22",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-24T23:41:50Z",
+      "side": 1,
+      "message": "dotIndex + 1",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5b192ce_c8515665",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-24T23:41:50Z",
+      "side": 1,
+      "message": "add the . here",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
