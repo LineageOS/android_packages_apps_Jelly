@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cb847f9_b286ae99",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-07-24T23:31:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6afc9c_61de4867",
+      "revId": "d2ed9bb1d6394690dcec62e79c857f443487d8a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cfa90003_5c4e0ab0",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-07-23T23:47:36Z",
       "side": 1,
       "message": "so\nin base it\u0027s test.mp3.zio we save it as test.zip?",
+      "revId": "d2ed9bb1d6394690dcec62e79c857f443487d8a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e92170a_290c36b9",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-07-24T23:31:39Z",
+      "side": 1,
+      "message": "This is there just to make sure the filename has an extension, but in the case it has one, `extension` would become `.mp3.zip` and filename would become `test`",
+      "parentUuid": "cfa90003_5c4e0ab0",
       "revId": "d2ed9bb1d6394690dcec62e79c857f443487d8a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
