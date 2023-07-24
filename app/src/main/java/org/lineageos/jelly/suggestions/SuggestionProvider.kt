@@ -72,9 +72,11 @@ internal abstract class SuggestionProvider(private val encoding: String) {
             Log.e(TAG, "Unable to encode the URL", e)
             return filter
         }
+
+        // There could be no suggestions for this query, return an empty list.
         val content = downloadSuggestionsForQuery(query, language)
-            ?: // There are no suggestions for this query, return an empty list.
-            return filter
+            ?.replaceFirst(")]}'", "")
+            ?: return filter
         try {
             parseResults(content, object : ResultCallback {
                 override fun addResult(suggestion: String): Boolean {
