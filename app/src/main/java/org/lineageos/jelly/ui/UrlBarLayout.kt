@@ -28,6 +28,7 @@ import org.lineageos.jelly.R
 import org.lineageos.jelly.ext.requireActivity
 import org.lineageos.jelly.suggestions.SuggestionsAdapter
 import org.lineageos.jelly.utils.UiUtils
+import kotlin.reflect.safeCast
 
 /**
  * App's main URL and search view.
@@ -182,12 +183,12 @@ class UrlBarLayout @JvmOverloads constructor(
             }
         }
         autoCompleteTextView.onItemClickListener =
-            AdapterView.OnItemClickListener { _, view: View, _, _ ->
-                val titleTextView = (view.findViewById<View>(R.id.titleTextView) as TextView).text
-                val url = titleTextView.toString()
+            AdapterView.OnItemClickListener { _, _, position: Int, _ ->
+                val text = String::class.safeCast(autoCompleteTextView.adapter.getItem(position))
+                    ?: return@OnItemClickListener
                 UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
                 autoCompleteTextView.clearFocus()
-                onLoadUrlCallback?.invoke(url)
+                onLoadUrlCallback?.invoke(text)
             }
         if (isIncognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
