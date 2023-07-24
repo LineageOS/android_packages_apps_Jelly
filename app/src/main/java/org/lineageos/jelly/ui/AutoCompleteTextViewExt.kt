@@ -9,33 +9,17 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.LinearGradient
-import android.graphics.Rect
 import android.graphics.Shader
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView
 
 class AutoCompleteTextViewExt : AppCompatAutoCompleteTextView {
-    private var focusChangeListener: OnFocusChangeListener? = null
     private var positionX = 0
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) :
             super(context, attrs, defStyle)
-
-    override fun getOnFocusChangeListener() = focusChangeListener!!
-
-    // Override View's focus change listener handling so that we're able to
-    // call it before the actual focus change handling, in particular before
-    // the IME is fired up.
-    override fun setOnFocusChangeListener(l: OnFocusChangeListener) {
-        focusChangeListener = l
-    }
-
-    override fun onFocusChanged(gainFocus: Boolean, direction: Int, previouslyFocusedRect: Rect?) {
-        focusChangeListener?.onFocusChange(this, gainFocus)
-        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect)
-    }
 
     override fun onScrollChanged(x: Int, y: Int, oldX: Int, oldY: Int) {
         super.onScrollChanged(x, y, oldX, oldY)
