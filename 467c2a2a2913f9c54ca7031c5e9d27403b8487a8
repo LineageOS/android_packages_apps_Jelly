@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64311271_274c0a6f",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-25T00:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a9e4aee_1c584e04",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b210c359_091979f9",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-07-24T23:41:50Z",
       "side": 1,
       "message": "and those too",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a38a30b_968d1ba4",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-25T00:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b210c359_091979f9",
       "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -52,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8787ea85_70f396f0",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-25T00:06:02Z",
+      "side": 1,
+      "message": "didn\u0027t occur to me this block was solely for adding the . lel",
+      "parentUuid": "d7d94e60_62381e58",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4450faa_ceb7ed22",
@@ -69,6 +123,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "298e159b_3bff2d4d",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-25T00:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4450faa_ceb7ed22",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5b192ce_c8515665",
@@ -82,6 +154,24 @@
       "writtenOn": "2023-07-24T23:41:50Z",
       "side": 1,
       "message": "add the . here",
+      "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f3d83f9_821272a0",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/UrlUtils.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-25T00:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5b192ce_c8515665",
       "revId": "467c2a2a2913f9c54ca7031c5e9d27403b8487a8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
