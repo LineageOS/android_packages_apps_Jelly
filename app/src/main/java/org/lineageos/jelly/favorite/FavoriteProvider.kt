@@ -179,7 +179,7 @@ class FavoriteProvider : ContentProvider() {
         }
     }
 
-    private class FavoriteDbHelper constructor(context: Context?) :
+    private class FavoriteDbHelper(context: Context?) :
         SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
         override fun onCreate(db: SQLiteDatabase) {
             db.execSQL(
