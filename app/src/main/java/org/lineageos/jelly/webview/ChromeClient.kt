@@ -15,9 +15,7 @@ import android.webkit.MimeTypeMap
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts.OpenMultipleDocuments
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.ui.UrlBarLayout
