@@ -345,20 +345,21 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         mimeType: String?,
         contentLength: Long
     ) {
+        println(contentDisposition)
         val fileName = UrlUtils.guessFileName(url, contentDisposition, mimeType)
         AlertDialog.Builder(this)
             .setTitle(R.string.download_title)
             .setMessage(getString(R.string.download_message, fileName))
             .setPositiveButton(
                 getString(R.string.download_positive)
-            ) { _: DialogInterface?, _: Int -> fetchFile(url, userAgent, fileName) }
+            ) { _: DialogInterface?, _: Int -> fetchFile(url, userAgent, mimeType, fileName) }
             .setNegativeButton(
                 getString(R.string.dismiss)
             ) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
             .show()
     }
 
-    private fun fetchFile(url: String?, userAgent: String?, fileName: String) {
+    private fun fetchFile(url: String?, userAgent: String?, mimeType: String?, fileName: String) {
         val request = try {
             DownloadManager.Request(Uri.parse(url))
         } catch (e: IllegalArgumentException) {
@@ -377,7 +378,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         )
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName)
         request.setMimeType(
-            MimeTypeMap.getSingleton().getMimeTypeFromExtension(
+            mimeType ?: MimeTypeMap.getSingleton().getMimeTypeFromExtension(
                 MimeTypeMap.getFileExtensionFromUrl(url)
             )
         )

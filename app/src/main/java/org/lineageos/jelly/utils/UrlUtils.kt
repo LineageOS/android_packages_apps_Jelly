@@ -143,7 +143,7 @@ object UrlUtils {
                 }
             }
         } else {
-            mimeType?.let { type ->
+            mimeType?.takeUnless { it == "application/octet-stream" }.let { type ->
                 // Compare the last segment of the extension against the mime type.
                 // If there's a mismatch, discard the entire extension.
                 val lastDotIndex = filename.lastIndexOf('.')
