@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8a76f2a_a78d42c4",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-07-31T14:43:02Z",
+      "side": 1,
+      "message": "welp this is even worse, maybe we should use fileName here?",
+      "range": {
+        "startLine": 380,
+        "startChar": 0,
+        "endLine": 382,
+        "endChar": 13
+      },
+      "revId": "afa4b5e17c2a116c62f3dcdc0992c7bcd35cb2ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
