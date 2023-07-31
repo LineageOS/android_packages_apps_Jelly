@@ -329,21 +329,27 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
-    override fun downloadFileAsk(url: String?, contentDisposition: String?, mimeType: String?) {
+    override fun downloadFileAsk(
+        url: String?,
+        userAgent: String?,
+        contentDisposition: String?,
+        mimeType: String?,
+        contentLength: Long
+    ) {
         val fileName = UrlUtils.guessFileName(url, contentDisposition, mimeType)
         AlertDialog.Builder(this)
             .setTitle(R.string.download_title)
             .setMessage(getString(R.string.download_message, fileName))
             .setPositiveButton(
                 getString(R.string.download_positive)
-            ) { _: DialogInterface?, _: Int -> fetchFile(url, fileName) }
+            ) { _: DialogInterface?, _: Int -> fetchFile(url, userAgent, fileName) }
             .setNegativeButton(
                 getString(R.string.dismiss)
             ) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
             .show()
     }
 
-    private fun fetchFile(url: String?, fileName: String) {
+    private fun fetchFile(url: String?, userAgent: String?, fileName: String) {
         val request = try {
             DownloadManager.Request(Uri.parse(url))
         } catch (e: IllegalArgumentException) {
@@ -366,6 +372,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 MimeTypeMap.getFileExtensionFromUrl(url)
             )
         )
+        userAgent?.let {
+            request.addRequestHeader("User-Agent", it)
+        }
+        CookieManager.getInstance().getCookie(url).takeUnless { it.isEmpty() }?.let {
+            request.addRequestHeader("Cookie", it)
+        }
         getSystemService(DownloadManager::class.java).enqueue(request)
     }
 
@@ -392,7 +404,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
         if (shouldAllowDownload) {
             downloadLayout.setOnClickListener {
-                downloadFileAsk(url, null, null)
+                downloadFileAsk(url, null, null, null, 0)
                 sheet.dismiss()
             }
             downloadLayout.visibility = View.VISIBLE

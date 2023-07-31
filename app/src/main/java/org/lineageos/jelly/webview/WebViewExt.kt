@@ -83,8 +83,8 @@ class WebViewExt @JvmOverloads constructor(
                 return false
             }
         })
-        setDownloadListener { url: String?, _, contentDisposition: String?, mimeType: String?, _ ->
-            activity.downloadFileAsk(url, contentDisposition, mimeType)
+        setDownloadListener { url: String?, userAgent: String?, contentDisposition: String?, mimeType: String?, contentLength: Long ->
+            activity.downloadFileAsk(url, userAgent, contentDisposition, mimeType, contentLength)
         }
 
         // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work

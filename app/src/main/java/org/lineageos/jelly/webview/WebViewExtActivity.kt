@@ -11,7 +11,14 @@ import android.webkit.WebChromeClient.CustomViewCallback
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class WebViewExtActivity : AppCompatActivity() {
-    abstract fun downloadFileAsk(url: String?, contentDisposition: String?, mimeType: String?)
+    abstract fun downloadFileAsk(
+        url: String?,
+        userAgent: String?,
+        contentDisposition: String?,
+        mimeType: String?,
+        contentLength: Long
+    )
+
     abstract fun hasLocationPermission(): Boolean
     abstract fun requestLocationPermission()
     abstract fun showSheetMenu(url: String, shouldAllowDownload: Boolean)
