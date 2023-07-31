@@ -56,7 +56,7 @@ internal class ChromeClient(
         try {
             activity.launchFileRequest(params.acceptTypes.mapNotNull {
                 MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
-            }.toTypedArray())
+            }.toTypedArray().takeIf { it.isNotEmpty() } ?: arrayOf("*/*"))
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(
                 activity, activity.getString(R.string.error_no_activity_found),
