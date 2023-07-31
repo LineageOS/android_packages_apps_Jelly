@@ -44,6 +44,7 @@ import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.FrameLayout
 import android.widget.LinearLayout
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
@@ -81,6 +82,18 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
     private val webViewContainerLayout by lazy { findViewById<FrameLayout>(R.id.webViewContainerLayout) }
+
+    private val fileRequest =
+        registerForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) {
+            fileRequestCallback.invoke(it)
+        }
+    private lateinit var fileRequestCallback: ((data: List<Uri>) -> Unit)
+    override fun launchFileRequest(input: Array<String>) {
+        fileRequest.launch(input)
+    }
+    override fun setFileRequestCallback(cb: (data: List<Uri>) -> Unit) {
+        fileRequestCallback = cb
+    }
 
     private val urlResolvedReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {

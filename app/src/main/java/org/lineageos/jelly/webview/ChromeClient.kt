@@ -49,12 +49,12 @@ internal class ChromeClient(
         view: WebView, path: ValueCallback<Array<Uri>>,
         params: FileChooserParams
     ): Boolean {
-        val getContent = activity.registerForActivityResult(OpenMultipleDocuments()) {
+        activity.setFileRequestCallback {
             path.onReceiveValue(it.toTypedArray())
         }
 
         try {
-            getContent.launch(params.acceptTypes.mapNotNull {
+            activity.launchFileRequest(params.acceptTypes.mapNotNull {
                 MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
             }.toTypedArray())
         } catch (e: ActivityNotFoundException) {
