@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87b48f94_d5fba7ca",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-07-31T14:17:44Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "4d730c653d6380cef71fffcd087bf6b94fa6a6e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
