@@ -182,14 +182,13 @@ class UrlBarLayout @JvmOverloads constructor(
                 else -> false
             }
         }
-        autoCompleteTextView.onItemClickListener =
-            AdapterView.OnItemClickListener { _, _, position: Int, _ ->
-                val text = String::class.safeCast(autoCompleteTextView.adapter.getItem(position))
-                    ?: return@OnItemClickListener
-                UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
-                autoCompleteTextView.clearFocus()
-                onLoadUrlCallback?.invoke(text)
-            }
+        autoCompleteTextView.setOnItemClickListener { _, _, position, _ ->
+            val text = String::class.safeCast(autoCompleteTextView.adapter.getItem(position))
+                ?: return@setOnItemClickListener
+            UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
+            autoCompleteTextView.clearFocus()
+            onLoadUrlCallback?.invoke(text)
+        }
         if (isIncognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
                     EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
