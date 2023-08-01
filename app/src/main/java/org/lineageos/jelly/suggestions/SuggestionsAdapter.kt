@@ -66,7 +66,7 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             val filterResults = FilterResults()
             constraint?.takeUnless { it.isBlank() }?.let {
-                val provider = provider
+                val provider = sharedPreferencesExt.suggestionProvider
                 val query = it.toString().lowercase(Locale.getDefault()).trim()
                 val results = provider.fetchResults(query)
                 if (results.isNotEmpty()) {
@@ -82,15 +82,5 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
         override fun publishResults(constraint: CharSequence?, results: FilterResults) {
             notifyDataSetChanged()
         }
-
-        private val provider: SuggestionProvider
-            get() = when (sharedPreferencesExt.suggestionProvider) {
-                SuggestionProviderType.BAIDU -> BaiduSuggestionProvider()
-                SuggestionProviderType.BING -> BingSuggestionProvider()
-                SuggestionProviderType.DUCK -> DuckSuggestionProvider()
-                SuggestionProviderType.GOOGLE -> GoogleSuggestionProvider()
-                SuggestionProviderType.YAHOO -> YahooSuggestionProvider()
-                else -> NoSuggestionProvider()
-            }
     }
 }

@@ -21,8 +21,44 @@ import java.util.concurrent.TimeUnit
  * fetching and caching functionality for each potential
  * suggestions provider.
  */
-internal abstract class SuggestionProvider(private val encoding: String) {
-    private val language = Companion.language
+enum class SuggestionProvider(private val encoding: String) {
+    BAIDU("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) =
+            "http://suggestion.baidu.com/su?ie=UTF-8&wd=$query&action=opensearch"
+    },
+    BING("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) =
+            "https://api.bing.com/osjson.aspx?query=$query&language=$language"
+    },
+    DUCK("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) =
+            "https://duckduckgo.com/ac/?q=$query"
+
+        override fun parseResults(content: String, callback: ResultCallback) {
+            val jsonArray = JSONArray(content)
+            val size = jsonArray.length()
+            for (n in 0 until size) {
+                val obj = jsonArray.getJSONObject(n)
+                val suggestion = obj.getString("phrase")
+                if (!callback.addResult(suggestion)) {
+                    break
+                }
+            }
+        }
+    },
+    GOOGLE("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) =
+            "https://www.google.com/complete/search?client=android&oe=utf8&ie=utf8&cp=4&xssi=t&gs_pcrt=undefined&hl=$language&q=$query"
+    },
+    YAHOO("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) =
+            "https://search.yahoo.com/sugg/chrome?output=fxjson&command=$query"
+    },
+    NONE("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) = ""
+
+        override fun fetchResults(rawQuery: String) = listOf<String>()
+    };
 
     /**
      * Create a URL for the given query in the given language.
@@ -31,10 +67,7 @@ internal abstract class SuggestionProvider(private val encoding: String) {
      * @param language the locale of the user.
      * @return should return a URL that can be fetched using a GET.
      */
-    protected abstract fun createQueryUrl(
-        query: String,
-        language: String
-    ): String
+    protected abstract fun createQueryUrl(query: String, language: String): String
 
     /**
      * Parse the results of an input stream into a list of [String].
@@ -134,15 +167,14 @@ internal abstract class SuggestionProvider(private val encoding: String) {
         return Charset.forName(encoding)
     }
 
-    internal interface ResultCallback {
-        fun addResult(suggestion: String): Boolean
-    }
-
     companion object {
         private const val TAG = "SuggestionProvider"
         private val INTERVAL_DAY = TimeUnit.DAYS.toSeconds(1)
         private const val DEFAULT_LANGUAGE = "en"
-        private val language: String
-            get() = Locale.getDefault().language.ifEmpty { DEFAULT_LANGUAGE }
+        private val language by lazy { Locale.getDefault().language.ifEmpty { DEFAULT_LANGUAGE } }
+
+        interface ResultCallback {
+            fun addResult(suggestion: String): Boolean
+        }
     }
 }

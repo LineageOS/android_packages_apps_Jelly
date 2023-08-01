@@ -9,7 +9,7 @@ import android.content.Context
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import org.lineageos.jelly.R
-import org.lineageos.jelly.suggestions.SuggestionProviderType
+import org.lineageos.jelly.suggestions.SuggestionProvider
 
 class SharedPreferencesExt(context: Context) {
     private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -55,14 +55,14 @@ class SharedPreferencesExt(context: Context) {
     val doNotTrackEnabled: Boolean
         get() = sharedPreferences.getBoolean(DO_NOT_TRACK_ENABLED_KEY, DO_NOT_TRACK_ENABLED_DEFAULT)
 
-    val suggestionProvider: SuggestionProviderType
+    val suggestionProvider: SuggestionProvider
         get() = runCatching {
-            SuggestionProviderType.valueOf(
+            SuggestionProvider.valueOf(
                 sharedPreferences.getString(
                     SUGGESTION_PROVIDER_KEY, defaultSuggestionProvider
                 ) ?: defaultSuggestionProvider
             )
-        }.getOrDefault(SuggestionProviderType.NONE)
+        }.getOrDefault(SuggestionProvider.NONE)
 
     val reachModeEnabled: Boolean
         get() = sharedPreferences.getBoolean(REACH_MODE_ENABLED_KEY, REACH_MODE_ENABLED_DEFAULT)
