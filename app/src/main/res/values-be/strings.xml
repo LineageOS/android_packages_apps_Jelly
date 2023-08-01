@@ -56,7 +56,6 @@
     <string name="history_title">Гісторыя</string>
     <string name="history_empty">Тут нічога няма. Гісторыя з\'явіцца пасля прагляду старонак у інтэрнэце</string>
     <string name="history_delete_title">Ачысціць гісторыю</string>
-    <string name="history_delete_message">Вы збіраецеся выдаліць усю гісторыю, гэта дзеянне адмяніць нельга. Працягнуць?</string>
     <string name="history_delete_positive">Ачысціць</string>
     <string name="history_deleting_message">Ачыстка гісторыі\u2026</string>
     <string name="history_snackbar_item_deleted">Запіс выдалены</string>
