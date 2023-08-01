@@ -10,8 +10,6 @@
     <string name="menu_new_tab">New tab</string>
     <!-- Menu action: create new incognito tab -->
     <string name="menu_incognito">Incognito tab</string>
-    <!-- Menu action: reload current page -->
-    <string name="menu_reload">Reload</string>
     <!-- Menu action: add current page to favorites -->
     <string name="menu_fav_add">Add to favorites</string>
     <!-- Menu action: share current page -->

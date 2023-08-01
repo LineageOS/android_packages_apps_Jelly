@@ -23,12 +23,6 @@
         <item name="contentInsetStart">0dp</item>
     </style>
 
-    <style name="Theme.Jelly.PopupMenu" parent="Widget.Material3.PopupMenu">
-        <item name="android:overlapAnchor">true</item>
-        <item name="android:dropDownVerticalOffset">0dp</item>
-        <item name="android:dropDownHorizontalOffset">0dp</item>
-    </style>
-
     <style name="Theme.Jelly.BottomSheetLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
