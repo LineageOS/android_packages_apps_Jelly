@@ -30,26 +30,31 @@
             <ImageButton
                 android:id="@+id/backButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:contentDescription="@string/menu_go_back"
                 android:src="@drawable/ic_back" />
 
             <ImageButton
                 android:id="@+id/forwardButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:contentDescription="@string/menu_go_forward"
                 android:src="@drawable/ic_forward" />
 
             <ImageButton
                 android:id="@+id/refreshButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:contentDescription="@string/menu_refresh"
                 android:src="@drawable/ic_refresh" />
 
             <ImageButton
                 android:id="@+id/addToFavoriteButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:contentDescription="@string/menu_fav_add"
                 android:src="@drawable/ic_heart_plus" />
 
             <ImageButton
                 android:id="@+id/shareButton"
                 style="@style/Theme.Jelly.MenuTopBarIcon"
+                android:contentDescription="@string/menu_share"
                 android:src="@drawable/ic_share" />
         </LinearLayout>
 

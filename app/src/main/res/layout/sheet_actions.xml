@@ -17,6 +17,7 @@
 
         <ImageView
             style="@style/Theme.Jelly.BottomSheetIcon"
+            android:contentDescription="@string/menu_in_new_tab"
             android:src="@drawable/ic_new_tab" />
 
         <TextView
@@ -30,6 +31,7 @@
 
         <ImageView
             style="@style/Theme.Jelly.BottomSheetIcon"
+            android:contentDescription="@string/menu_share"
             android:src="@drawable/ic_share" />
 
         <TextView
@@ -43,6 +45,7 @@
 
         <ImageView
             style="@style/Theme.Jelly.BottomSheetIcon"
+            android:contentDescription="@string/menu_fav_add"
             android:src="@drawable/ic_heart_plus" />
 
         <TextView
@@ -57,6 +60,7 @@
 
         <ImageView
             style="@style/Theme.Jelly.BottomSheetIcon"
+            android:contentDescription="@string/menu_download"
             android:src="@drawable/ic_download" />
 
         <TextView
