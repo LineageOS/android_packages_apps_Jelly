@@ -29,7 +29,6 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             android:documentLaunchMode="always"
             android:exported="true"
-            android:hardwareAccelerated="true"
             android:theme="@style/Theme.Jelly.NoActionBar"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
