@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/pref_start_page"
+        android:importantForAutofill="no"
         android:inputType="textUri"
         android:maxLines="1" />
 

@@ -27,6 +27,7 @@
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="username"
             android:hint="@string/auth_dialog_username"
             android:inputType="text"
             android:maxLines="1" />
@@ -40,6 +41,7 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="password"
             android:hint="@string/auth_dialog_password"
             android:inputType="textPassword"
             android:maxLines="1" />

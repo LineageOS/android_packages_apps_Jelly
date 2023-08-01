@@ -156,6 +156,7 @@
                 android:background="@android:color/transparent"
                 android:hint="@string/search_bar_hint"
                 android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
                 android:inputType="textUri"
                 android:maxLines="1"
                 android:selectAllOnFocus="true"

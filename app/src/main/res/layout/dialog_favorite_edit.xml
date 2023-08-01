@@ -22,7 +22,9 @@
             android:id="@+id/favoriteTitleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/favorite_edit_title" />
+            android:hint="@string/favorite_edit_title"
+            android:importantForAutofill="no"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -35,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/favorite_edit_url"
+            android:importantForAutofill="no"
             android:inputType="textUri" />
     </com.google.android.material.textfield.TextInputLayout>
 
