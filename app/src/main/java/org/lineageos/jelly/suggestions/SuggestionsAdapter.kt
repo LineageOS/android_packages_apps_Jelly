@@ -69,12 +69,10 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
                 val provider = sharedPreferencesExt.suggestionProvider
                 val query = it.toString().lowercase(Locale.getDefault()).trim()
                 val results = provider.fetchResults(query)
-                if (results.isNotEmpty()) {
-                    filterResults.count = results.size
-                    filterResults.values = results
-                    queryText = query
-                    items = results
-                }
+                filterResults.count = results.size
+                filterResults.values = results
+                queryText = query
+                items = results
             }
             return filterResults
         }
