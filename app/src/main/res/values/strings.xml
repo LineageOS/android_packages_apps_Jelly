@@ -35,7 +35,7 @@
     <string name="menu_favorites">Favorites</string>
     <!-- Menu action: show history list -->
     <string name="menu_history">History</string>
-    <!-- Menu action: show history list -->
+    <!-- Menu action: show downloads -->
     <string name="menu_downloads">Downloads</string>
     <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">Add shortcut</string>
