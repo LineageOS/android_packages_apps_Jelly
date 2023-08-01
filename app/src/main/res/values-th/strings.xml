@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">เบราว์เซอร์</string>
     <string name="menu_new_tab">แท็บใหม่</string>
     <string name="menu_incognito">แท็บใหม่ที่ไม่ระบุตัวตน</string>
-    <string name="menu_reload">โหลดใหม่</string>
     <string name="menu_fav_add">เพิ่มไปยังรายการโปรด</string>
     <string name="menu_share">แชร์</string>
     <string name="menu_favorites">รายการโปรด</string>
@@ -26,8 +15,6 @@
     <string name="menu_settings">การตั้งค่า</string>
     <string name="menu_download">ดาวน์โหลด</string>
     <string name="menu_in_new_tab">เปิดในแท็บใหม่</string>
-    <string name="menu_desktop_mode">สลับไปยังไซต์เวอร์ชัน​เดสก์ท็อป</string>
-    <string name="menu_mobile_mode">สลับไปยังไซต์เวอร์ชันมือถือ</string>
     <string name="menu_search">ค้นหาในหน้านี้</string>
     <string name="menu_print">พิมพ์</string>
     <string name="share_title">ส่งถึง</string>

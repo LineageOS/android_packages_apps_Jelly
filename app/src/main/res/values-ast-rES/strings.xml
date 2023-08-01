@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">Restolador</string>
     <string name="menu_new_tab">Llingüeta nueva</string>
     <string name="menu_incognito">Llingüeta d\'incógnitu</string>
-    <string name="menu_reload">Volver cargar</string>
     <string name="menu_fav_add">Amestar a Favoritos</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_favorites">Favoritos</string>
     <string name="menu_history">Historial</string>
+    <string name="menu_downloads">Descargues</string>
     <string name="menu_shortcut">Amestar un atayu</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_download">Baxar</string>
     <string name="menu_in_new_tab">Abrir nuna llingüeta nueva</string>
-    <string name="menu_desktop_mode">Solicitar el sitiu pa ordenadores</string>
-    <string name="menu_mobile_mode">Solicitar el sitiu pa móviles</string>
     <string name="menu_search">Atopar na páxina</string>
     <string name="menu_print">Imprentar</string>
     <string name="share_title">Unviar a</string>

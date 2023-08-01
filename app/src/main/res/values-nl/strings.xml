@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">Browser</string>
     <string name="menu_new_tab">Nieuw tabblad</string>
     <string name="menu_incognito">Incognitotabblad</string>
-    <string name="menu_reload">Opnieuw laden</string>
     <string name="menu_fav_add">Toevoegen aan bladwijzers</string>
     <string name="menu_share">Delen</string>
     <string name="menu_favorites">Bladwijzers</string>
     <string name="menu_history">Geschiedenis</string>
+    <string name="menu_downloads">Downloads</string>
     <string name="menu_shortcut">Snelkoppeling maken</string>
     <string name="menu_settings">Instellingen</string>
     <string name="menu_download">Downloaden</string>
     <string name="menu_in_new_tab">Openen in nieuw tabblad</string>
-    <string name="menu_desktop_mode">Omschakelen naar desktopversie</string>
-    <string name="menu_mobile_mode">Omschakelen naar mobiele versie</string>
+    <string name="menu_desktop_mode">Desktopversie</string>
     <string name="menu_search">Vinden op pagina</string>
     <string name="menu_print">Druk af</string>
     <string name="share_title">Verzenden naar</string>

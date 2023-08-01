@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">Browser</string>
     <string name="menu_new_tab">Nij ljepblêd</string>
     <string name="menu_incognito">Priveeljepblêd</string>
-    <string name="menu_reload">Opnij lade</string>
     <string name="menu_fav_add">Oan blêdwizers Tafoegje</string>
     <string name="menu_share">Diele</string>
     <string name="menu_favorites">Blêdwizers</string>
@@ -26,8 +15,6 @@
     <string name="menu_settings">Ynstellingen</string>
     <string name="menu_download">Downloade</string>
     <string name="menu_in_new_tab">Yn nij ljepblêd Iepenje</string>
-    <string name="menu_desktop_mode">Nei desktopwebsite wikselje</string>
-    <string name="menu_mobile_mode">Nei mobile website wikselje</string>
     <string name="menu_search">Sykje op side</string>
     <string name="menu_print">Ofdrukke</string>
     <string name="share_title">Ferstjoere nei</string>

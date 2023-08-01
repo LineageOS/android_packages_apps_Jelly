@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">Navegador</string>
     <string name="menu_new_tab">Nueva pestaña</string>
     <string name="menu_incognito">Pestaña de incógnito</string>
-    <string name="menu_reload">Recargar</string>
     <string name="menu_fav_add">Añadir a Favoritos</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_favorites">Favoritos</string>
@@ -26,8 +15,6 @@
     <string name="menu_settings">Ajustes</string>
     <string name="menu_download">Descargar</string>
     <string name="menu_in_new_tab">Abrir en una nueva pestaña</string>
-    <string name="menu_desktop_mode">Cambiar a la versión de escritorio</string>
-    <string name="menu_mobile_mode">Cambiar a la versión móvil</string>
     <string name="menu_search">Encontrar en la página</string>
     <string name="menu_print">Imprimir</string>
     <string name="share_title">Enviar a</string>

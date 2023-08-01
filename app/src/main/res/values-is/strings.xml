@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">Vafri</string>
     <string name="menu_new_tab">Nýr flipi</string>
     <string name="menu_incognito">Huliðsflipi</string>
-    <string name="menu_reload">Endurhlaða</string>
     <string name="menu_fav_add">Bæta í eftirlæti</string>
     <string name="menu_share">Deila</string>
     <string name="menu_favorites">Eftirlæti</string>
@@ -26,8 +15,7 @@
     <string name="menu_settings">Stillingar</string>
     <string name="menu_download">Sækja</string>
     <string name="menu_in_new_tab">Opna í nýjum flipa</string>
-    <string name="menu_desktop_mode">Skipta yfir í venjulegt vefsvæði</string>
-    <string name="menu_mobile_mode">Skipta yfir í farsímavef</string>
+    <string name="menu_desktop_mode">Borðtölvuvefur</string>
     <string name="menu_search">Finna á síðu</string>
     <string name="menu_print">Prenta</string>
     <string name="share_title">Senda til</string>

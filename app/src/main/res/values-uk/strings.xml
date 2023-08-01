@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2017-2019 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+<!--
+     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <string name="app_name">Браузер</string>
     <string name="menu_new_tab">Нова вкладка</string>
     <string name="menu_incognito">Анонімна вкладка</string>
-    <string name="menu_reload">Перезавантажити</string>
     <string name="menu_fav_add">Додати до улюблених</string>
     <string name="menu_share">Поділитися</string>
     <string name="menu_favorites">Обране</string>
@@ -26,8 +15,6 @@
     <string name="menu_settings">Налаштування</string>
     <string name="menu_download">Завантажити</string>
     <string name="menu_in_new_tab">Відкрити у новій вкладці</string>
-    <string name="menu_desktop_mode">Перейти до повної версії</string>
-    <string name="menu_mobile_mode">Перейти до мобільної версії</string>
     <string name="menu_search">Знайти на сторінці</string>
     <string name="menu_print">Друк</string>
     <string name="share_title">Надіслати до</string>
