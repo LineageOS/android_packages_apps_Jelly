@@ -8,6 +8,7 @@
     <string-array name="pref_search_engine_entries" translatable="false">
         <item>Baidu</item>
         <item>Bing</item>
+        <item>Brave</item>
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Google encrypted</item>
@@ -18,6 +19,7 @@
     <string-array name="pref_search_engine_entryvalues" translatable="false">
         <item>https://www.baidu.com/s?wd={searchTerms}</item>
         <item>https://www.bing.com/search?q={searchTerms}</item>
+        <item>https://search.brave.com/search?q={searchTerms}</item>
         <item>https://duckduckgo.com/?q={searchTerms}</item>
         <item>https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</item>
         <item>https://encrypted.google.com/search?q={searchTerms}</item>

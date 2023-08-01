@@ -30,6 +30,24 @@ enum class SuggestionProvider(private val encoding: String) {
         override fun createQueryUrl(query: String, language: String) =
             "https://api.bing.com/osjson.aspx?query=$query&language=$language"
     },
+    BRAVE("UTF-8") {
+        override fun createQueryUrl(query: String, language: String) =
+            "https://search.brave.com/api/suggest?q=$query"
+
+        override fun parseResults(content: String, callback: ResultCallback) {
+            val jsonArray = JSONArray(content)
+            if (jsonArray.length() != 2) {
+                return
+            }
+            val obj = jsonArray.getJSONArray(1)
+            for (n in 0 until obj.length()) {
+                val suggestion = obj.getString(n)
+                if (!callback.addResult(suggestion)) {
+                    break
+                }
+            }
+        }
+    },
     DUCK("UTF-8") {
         override fun createQueryUrl(query: String, language: String) =
             "https://duckduckgo.com/ac/?q=$query"
