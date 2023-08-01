@@ -142,6 +142,16 @@ class UrlBarLayout @JvmOverloads constructor(
         wasKeyboardVisible = isKeyboardOpen
     }
 
+    private val autoCompleteItemClickListener by lazy {
+        AdapterView.OnItemClickListener { _, _, position: Int, _ ->
+            val text = String::class.safeCast(autoCompleteTextView.adapter.getItem(position))
+                ?: return@OnItemClickListener
+            UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
+            autoCompleteTextView.clearFocus()
+            onLoadUrlCallback?.invoke(text)
+        }
+    }
+
     init {
         inflate(context, R.layout.url_bar_layout, this)
         viewTreeObserver.addOnGlobalLayoutListener(keyboardListener)
@@ -182,14 +192,7 @@ class UrlBarLayout @JvmOverloads constructor(
                 else -> false
             }
         }
-        autoCompleteTextView.onItemClickListener =
-            AdapterView.OnItemClickListener { _, _, position: Int, _ ->
-                val text = String::class.safeCast(autoCompleteTextView.adapter.getItem(position))
-                    ?: return@OnItemClickListener
-                UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
-                autoCompleteTextView.clearFocus()
-                onLoadUrlCallback?.invoke(text)
-            }
+        autoCompleteTextView.onItemClickListener = autoCompleteItemClickListener
         if (isIncognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
                     EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
