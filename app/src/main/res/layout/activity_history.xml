@@ -33,6 +33,7 @@
 
             <ImageView
                 style="@style/Theme.Jelly.EmptyImage"
+                android:contentDescription="@string/history_empty"
                 android:src="@drawable/ic_history" />
 
             <TextView

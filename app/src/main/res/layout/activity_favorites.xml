@@ -36,6 +36,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/favorite_empty"
                 android:padding="8dp"
                 android:src="@drawable/ic_favorite_empty" />
 
