@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@android:style/TextAppearance.Medium"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:drawablePadding="16dp"
+    android:ellipsize="marquee"
     android:foreground="?android:attr/selectableItemBackground"
     android:gravity="center_vertical"
+    android:maxLines="1"
     android:minHeight="60dp"
     android:orientation="horizontal"
     android:paddingStart="16dp"
-    android:paddingEnd="16dp">
-
-    <ImageView
-        android:id="@+id/suggestionIconImageView"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_search"
-        app:tint="?attr/colorOnSurface" />
-
-    <TextView
-        android:id="@+id/titleTextView"
-        style="@android:style/TextAppearance.Medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:maxLines="1"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp" />
-</LinearLayout>
+    android:paddingEnd="16dp"
+    app:drawableStartCompat="@drawable/ic_search"
+    app:drawableTint="?attr/colorOnSurface" />
