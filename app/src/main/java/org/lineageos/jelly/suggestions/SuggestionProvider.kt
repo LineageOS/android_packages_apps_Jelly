@@ -33,20 +33,6 @@ enum class SuggestionProvider(private val encoding: String) {
     BRAVE("UTF-8") {
         override fun createQueryUrl(query: String, language: String) =
             "https://search.brave.com/api/suggest?q=$query"
-
-        override fun parseResults(content: String, callback: ResultCallback) {
-            val jsonArray = JSONArray(content)
-            if (jsonArray.length() != 2) {
-                return
-            }
-            val obj = jsonArray.getJSONArray(1)
-            for (n in 0 until obj.length()) {
-                val suggestion = obj.getString(n)
-                if (!callback.addResult(suggestion)) {
-                    break
-                }
-            }
-        }
     },
     DUCK("UTF-8") {
         override fun createQueryUrl(query: String, language: String) =
