@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit
 enum class SuggestionProvider(private val encoding: String) {
     BAIDU("UTF-8") {
         override fun createQueryUrl(query: String, language: String) =
-            "http://suggestion.baidu.com/su?ie=UTF-8&wd=$query&action=opensearch"
+            "https://suggestion.baidu.com/su?ie=UTF-8&wd=$query&action=opensearch"
     },
     BING("UTF-8") {
         override fun createQueryUrl(query: String, language: String) =
