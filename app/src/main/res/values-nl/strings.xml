@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Browser</string>
+    <string name="url_bar_more">Meer</string>
+    <string name="url_bar_search_cancel">Annuleer zoeken</string>
+    <string name="url_bar_search_clear">Wis zoekopdracht</string>
+    <string name="url_bar_search_previous">Vorige</string>
+    <string name="url_bar_search_next">Volgende</string>
+    <string name="menu_go_back">Terug</string>
+    <string name="menu_go_forward">Volgende</string>
+    <string name="menu_refresh">Vernieuw pagina</string>
     <string name="menu_new_tab">Nieuw tabblad</string>
     <string name="menu_incognito">Incognitotabblad</string>
     <string name="menu_fav_add">Toevoegen aan bladwijzers</string>

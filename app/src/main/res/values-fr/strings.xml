@@ -5,16 +5,26 @@
 -->
 <resources>
     <string name="app_name">Navigateur</string>
+    <string name="url_bar_more">Plus</string>
+    <string name="url_bar_search_cancel">Annuler la recherche</string>
+    <string name="url_bar_search_clear">Effacer la recherche</string>
+    <string name="url_bar_search_previous">Précédent</string>
+    <string name="url_bar_search_next">Suivant</string>
+    <string name="menu_go_back">Retour</string>
+    <string name="menu_go_forward">Avancer</string>
+    <string name="menu_refresh">Actualiser la page</string>
     <string name="menu_new_tab">Nouvel onglet</string>
     <string name="menu_incognito">Onglet de navigation privée</string>
     <string name="menu_fav_add">Ajouter aux favoris</string>
     <string name="menu_share">Partager</string>
     <string name="menu_favorites">Favoris</string>
     <string name="menu_history">Historique</string>
+    <string name="menu_downloads">Téléchargements</string>
     <string name="menu_shortcut">Ajouter un raccourci</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_download">Télécharger</string>
     <string name="menu_in_new_tab">Ouvrir dans un nouvel onglet</string>
+    <string name="menu_desktop_mode">Version ordinateur</string>
     <string name="menu_search">Rechercher dans la page</string>
     <string name="menu_print">Imprimer</string>
     <string name="share_title">Envoyer à</string>

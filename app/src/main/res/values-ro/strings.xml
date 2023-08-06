@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Browser</string>
+    <string name="url_bar_more">Mai multe</string>
+    <string name="url_bar_search_cancel">Anulează căutarea</string>
+    <string name="url_bar_search_clear">Șterge căutarea</string>
+    <string name="url_bar_search_previous">Anterior</string>
+    <string name="url_bar_search_next">Înainte</string>
+    <string name="menu_go_back">Înapoi</string>
+    <string name="menu_go_forward">Înainte</string>
+    <string name="menu_refresh">Reîmprospătare pagină</string>
     <string name="menu_new_tab">Filă nouă</string>
     <string name="menu_incognito">Filă incognito</string>
     <string name="menu_fav_add">Adăugați la favorite</string>

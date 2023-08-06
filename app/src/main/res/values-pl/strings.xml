@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Przeglądarka</string>
+    <string name="url_bar_more">Więcej</string>
+    <string name="url_bar_search_cancel">Anuluj wyszukiwanie</string>
+    <string name="url_bar_search_clear">Wyczyść wyszukiwanie</string>
+    <string name="url_bar_search_previous">Poprzedni</string>
+    <string name="url_bar_search_next">Następny</string>
+    <string name="menu_go_back">Wstecz</string>
+    <string name="menu_go_forward">Dalej</string>
+    <string name="menu_refresh">Odśwież stronę</string>
     <string name="menu_new_tab">Nowa karta</string>
     <string name="menu_incognito">Karta incognito</string>
     <string name="menu_fav_add">Dodaj do ulubionych</string>

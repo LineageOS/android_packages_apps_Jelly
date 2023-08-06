@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Səyyah</string>
+    <string name="url_bar_more">Daha çox</string>
+    <string name="url_bar_search_cancel">Axtarışı ləğv et</string>
+    <string name="url_bar_search_clear">Axtarışı təmizlə</string>
+    <string name="url_bar_search_previous">Əvvəlki</string>
+    <string name="url_bar_search_next">Növbəti</string>
+    <string name="menu_go_back">Geri qayıt</string>
+    <string name="menu_go_forward">İrəli get</string>
+    <string name="menu_refresh">Səhifəni təzələ</string>
     <string name="menu_new_tab">Yeni vərəq</string>
     <string name="menu_incognito">Gizli vərəq</string>
     <string name="menu_fav_add">Sevimlilərə əlavə et</string>

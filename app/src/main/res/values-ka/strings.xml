@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">ბრაუზერი</string>
+    <string name="url_bar_more">სხვა</string>
+    <string name="url_bar_search_cancel">ძიების გაუქმება</string>
+    <string name="url_bar_search_clear">ძიების გასუფთავება</string>
+    <string name="url_bar_search_previous">წინა</string>
+    <string name="url_bar_search_next">შემდეგი</string>
+    <string name="menu_go_back">უკან დაბრუნება</string>
+    <string name="menu_go_forward">წინ გადასვლა</string>
+    <string name="menu_refresh">გვერდის გაახლება</string>
     <string name="menu_new_tab">ახალი ჩანართი</string>
     <string name="menu_incognito">ფარული ჩანართი</string>
     <string name="menu_fav_add">რჩეულებში დამატება</string>

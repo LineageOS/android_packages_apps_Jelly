@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">ブラウザ</string>
+    <string name="url_bar_more">その他</string>
+    <string name="url_bar_search_cancel">検索を終了</string>
+    <string name="url_bar_search_clear">検索を消去</string>
+    <string name="url_bar_search_previous">前へ</string>
+    <string name="url_bar_search_next">次へ</string>
+    <string name="menu_go_back">戻る</string>
+    <string name="menu_go_forward">進む</string>
+    <string name="menu_refresh">ページを更新</string>
     <string name="menu_new_tab">新しいタブ</string>
     <string name="menu_incognito">シークレットタブ</string>
     <string name="menu_fav_add">ブックマークに追加</string>

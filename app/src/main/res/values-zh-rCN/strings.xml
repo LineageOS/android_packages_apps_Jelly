@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">浏览器</string>
+    <string name="url_bar_more">更多</string>
+    <string name="url_bar_search_cancel">取消搜索</string>
+    <string name="url_bar_search_clear">清空搜索内容</string>
+    <string name="url_bar_search_previous">上一个</string>
+    <string name="url_bar_search_next">下一个</string>
+    <string name="menu_go_back">返回</string>
+    <string name="menu_go_forward">前进</string>
+    <string name="menu_refresh">刷新页面</string>
     <string name="menu_new_tab">新标签页</string>
     <string name="menu_incognito">隐身标签页</string>
     <string name="menu_fav_add">添加到收藏夹</string>

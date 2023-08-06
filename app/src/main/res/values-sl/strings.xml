@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Brskalnik</string>
+    <string name="url_bar_more">Več</string>
+    <string name="url_bar_search_cancel">Prekliči iskanje</string>
+    <string name="url_bar_search_clear">Počisti iskanje</string>
+    <string name="url_bar_search_previous">Prejšnji</string>
+    <string name="url_bar_search_next">Naslednji</string>
+    <string name="menu_go_back">Pojdi nazaj</string>
+    <string name="menu_go_forward">Pojdi naprej</string>
+    <string name="menu_refresh">Osveži stran</string>
     <string name="menu_new_tab">Nov zavihek</string>
     <string name="menu_incognito">Zavihek brez belež. zgod.</string>
     <string name="menu_fav_add">Dodaj med zaznamke</string>

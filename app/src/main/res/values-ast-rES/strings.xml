@@ -5,6 +5,8 @@
 -->
 <resources>
     <string name="app_name">Restolador</string>
+    <string name="url_bar_more">Más</string>
+    <string name="menu_refresh">Anovar la páxina</string>
     <string name="menu_new_tab">Llingüeta nueva</string>
     <string name="menu_incognito">Llingüeta d\'incógnitu</string>
     <string name="menu_fav_add">Amestar a Favoritos</string>
@@ -16,6 +18,7 @@
     <string name="menu_settings">Configuración</string>
     <string name="menu_download">Baxar</string>
     <string name="menu_in_new_tab">Abrir nuna llingüeta nueva</string>
+    <string name="menu_desktop_mode">Sitiu pa ordenadores</string>
     <string name="menu_search">Atopar na páxina</string>
     <string name="menu_print">Imprentar</string>
     <string name="share_title">Unviar a</string>

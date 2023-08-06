@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Браузер</string>
+    <string name="url_bar_more">Еще</string>
+    <string name="url_bar_search_cancel">Отменить поиск</string>
+    <string name="url_bar_search_clear">Очистить поиск</string>
+    <string name="url_bar_search_previous">Пред.</string>
+    <string name="url_bar_search_next">След.</string>
+    <string name="menu_go_back">Назад</string>
+    <string name="menu_go_forward">Вперед</string>
+    <string name="menu_refresh">Обновить страницу</string>
     <string name="menu_new_tab">Новая вкладка</string>
     <string name="menu_incognito">Новая вкладка инкогнито</string>
     <string name="menu_fav_add">Добавить в закладки</string>
