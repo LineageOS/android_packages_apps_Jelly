@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Selain</string>
+    <string name="url_bar_more">Lisää</string>
+    <string name="url_bar_search_cancel">Peruuta haku</string>
+    <string name="url_bar_search_clear">Tyhjennä haku</string>
+    <string name="url_bar_search_previous">Edellinen</string>
+    <string name="url_bar_search_next">Seuraava</string>
+    <string name="menu_go_back">Palaa takaisin</string>
+    <string name="menu_go_forward">Siirry eteenpäin</string>
+    <string name="menu_refresh">Päivitä sivu</string>
     <string name="menu_new_tab">Uusi välilehti</string>
     <string name="menu_incognito">Incognito-välilehti</string>
     <string name="menu_fav_add">Lisää sivu kirjanmerkkeihin</string>

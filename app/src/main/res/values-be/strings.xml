@@ -7,6 +7,7 @@
     <string name="app_name">Браўзер</string>
     <string name="menu_new_tab">Новая ўкладка</string>
     <string name="menu_incognito">Укладка ў рэжыме інкогніта</string>
+    <string name="menu_fav_add">Дадаць у абранае</string>
     <string name="menu_share">Абагуліць</string>
     <string name="menu_history">Гісторыя</string>
     <string name="menu_shortcut">Дадаць ярлык</string>

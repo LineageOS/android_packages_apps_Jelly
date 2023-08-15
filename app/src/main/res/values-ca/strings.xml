@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Navegador</string>
+    <string name="url_bar_more">Més</string>
+    <string name="url_bar_search_cancel">Cancel·la la cerca</string>
+    <string name="url_bar_search_clear">Neteja la cerca</string>
+    <string name="url_bar_search_previous">Anterior</string>
+    <string name="url_bar_search_next">Següent</string>
+    <string name="menu_go_back">Torna</string>
+    <string name="menu_go_forward">Avança</string>
+    <string name="menu_refresh">Actualitza la pàgina</string>
     <string name="menu_new_tab">Nova pestanya</string>
     <string name="menu_incognito">Pestanya d\'incògnit</string>
     <string name="menu_fav_add">Afegeix als preferits</string>

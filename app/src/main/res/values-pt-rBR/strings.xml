@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Navegador</string>
+    <string name="url_bar_more">Mais</string>
+    <string name="url_bar_search_cancel">Cancelar busca</string>
+    <string name="url_bar_search_clear">Limpar busca</string>
+    <string name="url_bar_search_previous">Anterior</string>
+    <string name="url_bar_search_next">Próximo</string>
+    <string name="menu_go_back">Voltar</string>
+    <string name="menu_go_forward">Avançar</string>
+    <string name="menu_refresh">Atualizar página</string>
     <string name="menu_new_tab">Nova aba</string>
     <string name="menu_incognito">Aba anônima</string>
     <string name="menu_fav_add">Adicionar aos favoritos</string>
