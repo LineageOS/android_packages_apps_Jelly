@@ -5,16 +5,24 @@
 -->
 <resources>
     <string name="app_name">브라우저</string>
+    <string name="url_bar_search_cancel">검색 취소</string>
+    <string name="url_bar_search_previous">이전</string>
+    <string name="url_bar_search_next">다음</string>
+    <string name="menu_go_back">뒤로 이동</string>
+    <string name="menu_go_forward">앞으로 이동</string>
+    <string name="menu_refresh">페이지 새로고침</string>
     <string name="menu_new_tab">새 탭</string>
     <string name="menu_incognito">시크릿 탭</string>
     <string name="menu_fav_add">즐겨찾기에 추가</string>
     <string name="menu_share">공유</string>
     <string name="menu_favorites">즐겨찾기</string>
     <string name="menu_history">방문 기록</string>
+    <string name="menu_downloads">다운로드</string>
     <string name="menu_shortcut">홈 화면에 바로가기 추가</string>
     <string name="menu_settings">설정</string>
     <string name="menu_download">다운로드</string>
     <string name="menu_in_new_tab">새 탭에서 열기</string>
+    <string name="menu_desktop_mode">데스크톱 버전으로 보기</string>
     <string name="menu_search">현재 페이지에서 찾기</string>
     <string name="menu_print">인쇄</string>
     <string name="share_title">보내기</string>

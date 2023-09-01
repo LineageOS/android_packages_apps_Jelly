@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Περιηγητής</string>
+    <string name="url_bar_more">Περισσότερα</string>
+    <string name="url_bar_search_cancel">Ακύρωση αναζήτησης</string>
+    <string name="url_bar_search_clear">Εκκαθάριση αναζήτησης</string>
+    <string name="url_bar_search_previous">Προηγούμενο</string>
+    <string name="url_bar_search_next">Επόμενο</string>
+    <string name="menu_go_back">Πίσω</string>
+    <string name="menu_go_forward">Εμπρός</string>
+    <string name="menu_refresh">Ανανέωση σελίδας</string>
     <string name="menu_new_tab">Νέα καρτέλα</string>
     <string name="menu_incognito">Καρτέλα ανώνυμης περιήγησης</string>
     <string name="menu_fav_add">Προσθήκη στα αγαπημένα</string>

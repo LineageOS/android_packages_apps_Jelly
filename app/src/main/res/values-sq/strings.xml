@@ -5,16 +5,26 @@
 -->
 <resources>
     <string name="app_name">Shfletuesi</string>
+    <string name="url_bar_more">Më shumë</string>
+    <string name="url_bar_search_cancel">Anulo kërkimin</string>
+    <string name="url_bar_search_clear">Pastro kërkimin</string>
+    <string name="url_bar_search_previous">Mbrapa</string>
+    <string name="url_bar_search_next">Tjetër</string>
+    <string name="menu_go_back">Kthehu prapa</string>
+    <string name="menu_go_forward">Shko përpara</string>
+    <string name="menu_refresh">Rifresko faqen</string>
     <string name="menu_new_tab">Tab i ri</string>
     <string name="menu_incognito">Tab të fshehtë</string>
     <string name="menu_fav_add">Shto tek të preferuarat</string>
     <string name="menu_share">Shpërndaje</string>
     <string name="menu_favorites">Të preferuarat</string>
     <string name="menu_history">Historiku</string>
+    <string name="menu_downloads">Shkarkimet</string>
     <string name="menu_shortcut">Shto nje shkurtëzim</string>
     <string name="menu_settings">Cilësimet</string>
     <string name="menu_download">Shkarko</string>
     <string name="menu_in_new_tab">Hap në një tab të ri</string>
+    <string name="menu_desktop_mode">Faqe desktop</string>
     <string name="menu_search">Kërko në faqe</string>
     <string name="menu_print">Printo</string>
     <string name="share_title">Dërgoje tek</string>
