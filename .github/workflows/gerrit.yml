@@ -1,0 +1,30 @@
+name: gerrit checks
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        type: string
+      gerrit-ref:
+        type: string
+      change:
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: lineageos-infra/fetch-gerrit-change@main
+      with:
+        gerrit-ref: ${{ inputs.gerrit-ref }}
+        ref: ${{ inputs.ref }}
+
+    - name: Build
+      uses: ./.github/workflows/build
+
+    - uses: lineageos-infra/gerrit-vote@main
+      if: always()
+      with:
+        auth: ${{ secrets.GERRIT_VOTE_CREDS }}
+        change: ${{ inputs.change }}
+        ref: ${{ inputs.ref }}
