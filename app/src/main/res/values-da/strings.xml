@@ -5,17 +5,28 @@
 -->
 <resources>
     <string name="app_name">Netlæser</string>
+    <string name="url_bar_more">Mere</string>
+    <string name="url_bar_search_cancel">Annullér søgning</string>
+    <string name="url_bar_search_clear">Ryd søgning</string>
+    <string name="url_bar_search_previous">Forrige</string>
+    <string name="url_bar_search_next">Næste</string>
+    <string name="menu_go_back">Gå tilbage</string>
+    <string name="menu_go_forward">Gå fremad</string>
+    <string name="menu_refresh">Opdatér side</string>
     <string name="menu_new_tab">Nyt faneblad</string>
     <string name="menu_incognito">Inkognito-faneblad</string>
     <string name="menu_fav_add">Føj til favoritter</string>
     <string name="menu_share">Del</string>
     <string name="menu_favorites">Favoritter</string>
     <string name="menu_history">Historik</string>
+    <string name="menu_downloads">Downloads</string>
     <string name="menu_shortcut">Tilføj genvej</string>
     <string name="menu_settings">Indstillinger</string>
     <string name="menu_download">Hent</string>
     <string name="menu_in_new_tab">Åbn i nyt faneblad</string>
+    <string name="menu_desktop_mode">Desktop hjemmeside</string>
     <string name="menu_search">Find på side</string>
+    <string name="menu_print">Udskriv</string>
     <string name="share_title">Send til</string>
     <string name="dismiss">Afvis</string>
     <string name="download_title">Hent fil</string>
@@ -43,6 +54,7 @@
     <string name="pref_do_not_track_title">Spor Mig Ikke</string>
     <string name="pref_do_not_track_summary">Send en Spor Mig Ikke-anmodning til de netsteder, du besøger</string>
     <string name="pref_suggestions_provider">Forslagsleverandør</string>
+    <string name="pref_reach_mode_title">Enhåndstilstand</string>
     <string name="pref_reach_mode_summary">Relokér brugerflade for lettere brug med en hånd</string>
     <string name="history_title">Historik</string>
     <string name="history_empty">Der er intet her; surf på internettet, for at se din historik her</string>

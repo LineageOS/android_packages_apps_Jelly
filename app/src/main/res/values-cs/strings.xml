@@ -5,16 +5,26 @@
 -->
 <resources>
     <string name="app_name">Prohlížeč</string>
+    <string name="url_bar_more">Více</string>
+    <string name="url_bar_search_cancel">Zrušit vyhledávání</string>
+    <string name="url_bar_search_clear">Vyčistit vyhledávání</string>
+    <string name="url_bar_search_previous">Předchozí</string>
+    <string name="url_bar_search_next">Další</string>
+    <string name="menu_go_back">Zpět</string>
+    <string name="menu_go_forward">Následující</string>
+    <string name="menu_refresh">Obnovit stránku</string>
     <string name="menu_new_tab">Nová karta</string>
     <string name="menu_incognito">Anonymní karta</string>
     <string name="menu_fav_add">Přidat k oblíbeným</string>
     <string name="menu_share">Sdílet</string>
     <string name="menu_favorites">Oblíbené</string>
     <string name="menu_history">Historie</string>
+    <string name="menu_downloads">Stažené</string>
     <string name="menu_shortcut">Přidat zástupce</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_download">Stáhnout</string>
     <string name="menu_in_new_tab">Otevřít na nové kartě</string>
+    <string name="menu_desktop_mode">Stránky pro počítač</string>
     <string name="menu_search">Najít na stránce</string>
     <string name="menu_print">Tisk</string>
     <string name="share_title">Odeslat</string>
