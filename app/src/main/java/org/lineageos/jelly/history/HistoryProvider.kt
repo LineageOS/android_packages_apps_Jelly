@@ -17,6 +17,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.provider.BaseColumns
+import org.lineageos.jelly.BuildConfig
 import org.lineageos.jelly.ext.requireContextExt
 
 class HistoryProvider : ContentProvider() {
@@ -166,7 +167,7 @@ class HistoryProvider : ContentProvider() {
 
     interface Columns : BaseColumns {
         companion object {
-            const val AUTHORITY = "org.lineageos.jelly.history"
+            const val AUTHORITY = "${BuildConfig.APPLICATION_ID}.history"
             val CONTENT_URI: Uri = Uri.parse("content://$AUTHORITY/history")
             const val TITLE = "title"
             const val URL = "url"

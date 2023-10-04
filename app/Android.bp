@@ -10,7 +10,10 @@ package {
 android_app {
     name: "Jelly",
 
-    srcs: ["src/main/java/**/*.kt"],
+    srcs: [
+        "src/main/java/**/*.kt",
+        "src_aosp/main/java/**/*.kt",
+    ],
     resource_dirs: ["src/main/res"],
     manifest: "src/main/AndroidManifest.xml",
 

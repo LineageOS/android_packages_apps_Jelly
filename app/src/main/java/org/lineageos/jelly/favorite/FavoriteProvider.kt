@@ -17,6 +17,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.provider.BaseColumns
+import org.lineageos.jelly.BuildConfig
 import org.lineageos.jelly.ext.requireContextExt
 
 class FavoriteProvider : ContentProvider() {
@@ -171,7 +172,7 @@ class FavoriteProvider : ContentProvider() {
 
     interface Columns : BaseColumns {
         companion object {
-            const val AUTHORITY = "org.lineageos.jelly.favorite"
+            const val AUTHORITY = "${BuildConfig.APPLICATION_ID}.favorite"
             val CONTENT_URI: Uri = Uri.parse("content://$AUTHORITY/favorite")
             const val TITLE = "title"
             const val URL = "url"

@@ -82,7 +82,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="org.lineageos.jelly.fileprovider"
+            android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -92,12 +92,12 @@
 
         <provider
             android:name=".favorite.FavoriteProvider"
-            android:authorities="org.lineageos.jelly.favorite"
+            android:authorities="${applicationId}.favorite"
             android:exported="false" />
 
         <provider
             android:name=".history.HistoryProvider"
-            android:authorities="org.lineageos.jelly.history"
+            android:authorities="${applicationId}.history"
             android:exported="false" />
 
         <meta-data

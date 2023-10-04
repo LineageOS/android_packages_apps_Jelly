@@ -588,7 +588,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
-        private const val PROVIDER = "org.lineageos.jelly.fileprovider"
+        private const val PROVIDER = "${BuildConfig.APPLICATION_ID}.fileprovider"
         private const val LOCATION_PERM_REQ = 424
     }
 }
