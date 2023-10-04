@@ -159,6 +159,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         val preferenceManager = PreferenceManager.getDefaultSharedPreferences(this)
         preferenceManager.registerOnSharedPreferenceChangeListener(this)
 
+        // Register app shortcuts
+        registerShortcuts()
+
         urlBarLayout.isIncognito = incognito
 
         menuDialog = MenuDialog(this) { option: MenuDialog.Option ->
@@ -302,6 +305,22 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         outState.putString(IntentUtils.EXTRA_URL, webView.url)
         outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
         outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
+    }
+
+    private fun registerShortcuts() {
+        val shortcutManager = getSystemService(ShortcutManager::class.java)
+        shortcutManager.dynamicShortcuts = listOf(
+            ShortcutInfo.Builder(this, "new_incognito_tab_shortcut")
+                .setShortLabel(getString(R.string.shortcut_new_incognito_tab))
+                .setLongLabel(getString(R.string.shortcut_new_incognito_tab))
+                .setIcon(Icon.createWithResource(this, R.drawable.shortcut_incognito))
+                .setIntent(
+                    Intent(this, MainActivity::class.java)
+                        .putExtra("extra_incognito", true)
+                        .setAction(Intent.ACTION_VIEW)
+                )
+                .build()
+        )
     }
 
     private fun showSearch() {
