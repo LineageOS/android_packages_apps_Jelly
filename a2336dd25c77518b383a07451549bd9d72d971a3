@@ -34,6 +34,24 @@
       "parentUuid": "ae9678ea_cd8e09c2",
       "revId": "a2336dd25c77518b383a07451549bd9d72d971a3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0923edf7_0ffa55e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-10-04T12:01:57Z",
+      "side": 1,
+      "message": "I think it\u0027s perfectly fine? I don\u0027t see what\u0027s so bad about it.",
+      "parentUuid": "a0842662_31fd4bac",
+      "revId": "a2336dd25c77518b383a07451549bd9d72d971a3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
