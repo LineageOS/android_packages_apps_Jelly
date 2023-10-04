@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59af3a69_289d80b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-04T11:16:21Z",
+      "side": 1,
+      "message": "This is _fine_ it\u0027ll allow server side redirects to start activities.",
+      "revId": "72890bc3f4340fdd71860bb5d88acb7576b99ff5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
