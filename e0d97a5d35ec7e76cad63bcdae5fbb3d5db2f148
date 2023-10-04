@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6c2cffc_452c6881",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-10-04T15:00:51Z",
+      "side": 1,
+      "message": "Not sure about this one, should work fine in China as well right?",
+      "revId": "e0d97a5d35ec7e76cad63bcdae5fbb3d5db2f148",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
