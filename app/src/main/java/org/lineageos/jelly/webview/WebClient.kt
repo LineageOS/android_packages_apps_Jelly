@@ -53,8 +53,8 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
                     || !TextUtils.equals(url, webViewExt.lastLoadedUrl))
             if (!webViewExt.isIncognito
                 && needsLookup
-                && !request.isRedirect
                 && startActivityForUrl(view, url)
+                && !request.isRedirect
             ) {
                 return true
             } else if (webViewExt.requestHeaders.isNotEmpty()) {
