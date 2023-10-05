@@ -34,6 +34,24 @@
       "parentUuid": "a069edc8_eb82fd3e",
       "revId": "96104ea63b9522656393fc6036ed12d87266feae",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1733582_e5a70611",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-05T17:18:23Z",
+      "side": 1,
+      "message": "yep, I had to deal with that again, and it seems to be the only way",
+      "parentUuid": "050dd588_2eb77654",
+      "revId": "96104ea63b9522656393fc6036ed12d87266feae",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
