@@ -7,12 +7,12 @@ package org.lineageos.jelly.suggestions
 
 import android.util.Log
 import org.json.JSONArray
+import org.lineageos.jelly.ext.*
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
-import java.nio.charset.Charset
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
@@ -144,7 +144,7 @@ enum class SuggestionProvider(private val encoding: String) {
         )
         urlConnection.addRequestProperty("Accept-Charset", encoding)
         try {
-            val charset = getCharset(urlConnection)
+            val charset = urlConnection.getCharset(encoding)
             urlConnection.inputStream.bufferedReader(charset).use {
                 return it.readText()
             }
@@ -154,19 +154,6 @@ enum class SuggestionProvider(private val encoding: String) {
             urlConnection.disconnect()
         }
         return null
-    }
-
-    private fun getCharset(connection: HttpURLConnection): Charset {
-        connection.contentEncoding?.let {
-            return Charset.forName(it)
-        }
-        val contentType = connection.contentType
-        for (value in contentType.split(";").toTypedArray().map { str -> str.trim { it <= ' ' } }) {
-            if (value.lowercase(Locale.US).startsWith("charset=")) {
-                return Charset.forName(value.substring(8))
-            }
-        }
-        return Charset.forName(encoding)
     }
 
     companion object {
