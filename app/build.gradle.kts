@@ -28,6 +28,7 @@ buildscript {
 
 android {
     compileSdk = 33
+    namespace = "org.lineageos.jelly"
 
     defaultConfig {
         applicationId = "org.lineageos.jelly"
