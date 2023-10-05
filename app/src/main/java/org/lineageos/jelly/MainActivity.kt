@@ -358,7 +358,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private suspend fun setAsFavorite(title: String, url: String) {
         val color = urlIcon?.takeUnless { it.isRecycled }?.let { bitmap ->
             UiUtils.getColor(bitmap, false).takeUnless { it == Color.TRANSPARENT }
-        } ?: ContextCompat.getColor(this, R.color.material_dynamic_primary50)
+        } ?: ContextCompat.getColor(
+            this, com.google.android.material.R.color.material_dynamic_primary50
+        )
         withContext(Dispatchers.Default) {
             FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
             withContext(Dispatchers.Main) {
@@ -591,7 +593,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private fun changeUiMode(isReachMode: Boolean) {
         val appBarParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         val containerParams = webViewContainerLayout.layoutParams as CoordinatorLayout.LayoutParams
-        val margin = resources.getDimension(R.dimen.m3_appbar_size_compact).toInt()
+        val margin = resources.getDimension(
+            com.google.android.material.R.dimen.m3_appbar_size_compact
+        ).toInt()
         if (isReachMode) {
             appBarParams.gravity = Gravity.BOTTOM
             containerParams.setMargins(0, 0, 0, margin)

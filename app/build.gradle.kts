@@ -28,6 +28,7 @@ buildscript {
 
 android {
     compileSdk = 33
+    namespace = "org.lineageos.jelly"
 
     defaultConfig {
         applicationId = "org.lineageos.jelly"
@@ -57,6 +58,10 @@ android {
             // Append .dev to package name so we won't conflict with AOSP build.
             applicationIdSuffix = ".dev"
         }
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     compileOptions {
