@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54fe6519_d76ddbb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-10-05T17:07:36Z",
+      "side": 1,
+      "message": "Would be nice checking the SSL certificate as well, can be done later",
+      "revId": "eb8c1b4bac384b4635fe7f44a0790e6924544dd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
