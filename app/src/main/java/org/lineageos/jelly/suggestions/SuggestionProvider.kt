@@ -115,12 +115,10 @@ enum class SuggestionProvider(private val encoding: String) {
             ?.replaceFirst(")]}'", "")
             ?: return filter
         try {
-            parseResults(content, object : ResultCallback {
-                override fun addResult(suggestion: String): Boolean {
-                    filter.add(suggestion)
-                    return filter.size < 5
-                }
-            })
+            parseResults(content) {
+                filter.add(it)
+                filter.size < 5
+            }
         } catch (e: Exception) {
             Log.e(TAG, "Unable to parse results", e)
         }
@@ -177,7 +175,7 @@ enum class SuggestionProvider(private val encoding: String) {
         private const val DEFAULT_LANGUAGE = "en"
         private val language by lazy { Locale.getDefault().language.ifEmpty { DEFAULT_LANGUAGE } }
 
-        interface ResultCallback {
+        fun interface ResultCallback {
             fun addResult(suggestion: String): Boolean
         }
     }
