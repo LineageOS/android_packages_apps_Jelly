@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9eacf2e6_6048d9bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-05T17:25:15Z",
+      "side": 1,
+      "message": "That\u0027s a bit too much, but why not",
+      "revId": "fa9eb22aee6d10d0a91b9971f04249373b5b49a3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
