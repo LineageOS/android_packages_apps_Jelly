@@ -14,7 +14,6 @@ import android.widget.PopupWindow
 import android.widget.RelativeLayout
 import com.google.android.material.materialswitch.MaterialSwitch
 import org.lineageos.jelly.R
-import org.lineageos.jelly.ext.toPx
 
 class MenuDialog(
     context: Context,
@@ -103,10 +102,10 @@ class MenuDialog(
         settingsButton.setOnClickListener { triggerOption(Option.SETTINGS) }
     }
 
-    fun showAsDropdownMenu(anchor: View, isReachMode: Boolean = false, padding: Int = 16.toPx) {
+    fun showAsDropdownMenu(anchor: View, isReachMode: Boolean = false) {
         val xOffset = anchor.width - view.measuredWidth
         val yOffset = if (isReachMode) {
-            -(anchor.height + view.measuredHeight + (padding * 2))
+            -(anchor.height + view.measuredHeight)
         } else {
             0
         }

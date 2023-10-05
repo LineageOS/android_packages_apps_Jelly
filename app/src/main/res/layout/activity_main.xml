@@ -3,15 +3,19 @@
      SPDX-FileCopyrightText: 2017 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/coordinatorLayout"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -27,16 +31,15 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/webViewContainerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <org.lineageos.jelly.webview.WebViewExt
+        android:id="@+id/webView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-        <org.lineageos.jelly.webview.WebViewExt
-            android:id="@+id/webView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:focusable="true"
-            android:focusableInTouchMode="true" />
-    </FrameLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,6 @@ import android.print.PrintAttributes
 import android.print.PrintManager
 import android.text.TextUtils
 import android.util.Log
-import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
@@ -41,14 +40,14 @@ import android.webkit.CookieManager
 import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
-import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.activity.addCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.core.view.updateLayoutParams
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -78,11 +77,10 @@ import java.io.IOException
 class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
-    private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinatorLayout) }
+    private val constraintLayout by lazy { findViewById<ConstraintLayout>(R.id.constraintLayout) }
     private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
-    private val webViewContainerLayout by lazy { findViewById<FrameLayout>(R.id.webViewContainerLayout) }
 
     private val fileRequest =
         registerForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) {
@@ -370,7 +368,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
             withContext(Dispatchers.Main) {
                 Snackbar.make(
-                    coordinatorLayout, getString(R.string.favorite_added),
+                    constraintLayout, getString(R.string.favorite_added),
                     Snackbar.LENGTH_LONG
                 ).show()
             }
@@ -530,7 +528,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             )
         )
         appBarLayout.visibility = View.GONE
-        webViewContainerLayout.visibility = View.GONE
+        webView.visibility = View.GONE
     }
 
     override fun onHideCustomView() {
@@ -538,7 +536,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setImmersiveMode(false)
         appBarLayout.visibility = View.VISIBLE
-        webViewContainerLayout.visibility = View.VISIBLE
+        webView.visibility = View.VISIBLE
         val viewGroup = customView.parent as ViewGroup
         viewGroup.removeView(customView)
         fullScreenCallback?.onCustomViewHidden()
@@ -608,30 +606,43 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     private fun setUiMode() {
         // Now you don't see it
-        coordinatorLayout.alpha = 0f
+        constraintLayout.alpha = 0f
         // Magic happens
         changeUiMode(sharedPreferencesExt.reachModeEnabled)
         // Now you see it
-        coordinatorLayout.alpha = 1f
+        constraintLayout.alpha = 1f
     }
 
     private fun changeUiMode(isReachMode: Boolean) {
-        val appBarParams = appBarLayout.layoutParams as CoordinatorLayout.LayoutParams
-        val containerParams = webViewContainerLayout.layoutParams as CoordinatorLayout.LayoutParams
-        val margin = resources.getDimension(
-            com.google.android.material.R.dimen.m3_appbar_size_compact
-        ).toInt()
-        if (isReachMode) {
-            appBarParams.gravity = Gravity.BOTTOM
-            containerParams.setMargins(0, 0, 0, margin)
-        } else {
-            appBarParams.gravity = Gravity.TOP
-            containerParams.setMargins(0, margin, 0, 0)
+        appBarLayout.updateLayoutParams<ConstraintLayout.LayoutParams> {
+            topToTop = when (isReachMode) {
+                true -> ConstraintLayout.LayoutParams.UNSET
+                false -> ConstraintLayout.LayoutParams.PARENT_ID
+            }
+            bottomToBottom = when (isReachMode) {
+                true -> ConstraintLayout.LayoutParams.PARENT_ID
+                false -> ConstraintLayout.LayoutParams.UNSET
+            }
         }
-        appBarLayout.layoutParams = appBarParams
-        appBarLayout.invalidate()
-        webViewContainerLayout.layoutParams = containerParams
-        webViewContainerLayout.invalidate()
+
+        webView.updateLayoutParams<ConstraintLayout.LayoutParams> {
+            bottomToBottom = when (isReachMode) {
+                true -> ConstraintLayout.LayoutParams.UNSET
+                false -> ConstraintLayout.LayoutParams.PARENT_ID
+            }
+            bottomToTop = when (isReachMode) {
+                true -> R.id.appBarLayout
+                false -> ConstraintLayout.LayoutParams.UNSET
+            }
+            topToBottom = when (isReachMode) {
+                true -> ConstraintLayout.LayoutParams.UNSET
+                false -> R.id.appBarLayout
+            }
+            topToTop = when (isReachMode) {
+                true -> ConstraintLayout.LayoutParams.PARENT_ID
+                false -> ConstraintLayout.LayoutParams.UNSET
+            }
+        }
     }
 
     companion object {
