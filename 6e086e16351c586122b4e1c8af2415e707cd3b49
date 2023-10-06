@@ -22,6 +22,30 @@
       },
       "revId": "6e086e16351c586122b4e1c8af2415e707cd3b49",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a05c92d3_fa489182",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-06T11:29:32Z",
+      "side": 1,
+      "message": "hmm that looks something for akin to build gradle?",
+      "parentUuid": "eb293fda_9f699f6b",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 5
+      },
+      "revId": "6e086e16351c586122b4e1c8af2415e707cd3b49",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
