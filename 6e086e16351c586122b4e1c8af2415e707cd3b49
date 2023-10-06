@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb293fda_9f699f6b",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-10-06T08:22:47Z",
+      "side": 1,
+      "message": "in other project, we just put `android.defaults.buildfeatures.buildconfig\u003dtrue` in gradle.properties.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 5
+      },
+      "revId": "6e086e16351c586122b4e1c8af2415e707cd3b49",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
