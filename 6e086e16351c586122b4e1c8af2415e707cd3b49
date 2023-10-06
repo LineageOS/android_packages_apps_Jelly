@@ -46,6 +46,30 @@
       },
       "revId": "6e086e16351c586122b4e1c8af2415e707cd3b49",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cf32815_91b95e0d",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2023-10-06T11:43:20Z",
+      "side": 1,
+      "message": "well, it does essentially the same thing.",
+      "parentUuid": "a05c92d3_fa489182",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 5
+      },
+      "revId": "6e086e16351c586122b4e1c8af2415e707cd3b49",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
