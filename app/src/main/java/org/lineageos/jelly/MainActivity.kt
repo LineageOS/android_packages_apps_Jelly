@@ -41,7 +41,7 @@ import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.LinearLayout
-import androidx.activity.addCallback
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -241,24 +241,29 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             Log.i(TAG, "HTTP response cache installation failed:$e")
         }
 
-        onBackPressedDispatcher.addCallback {
-            when {
-                urlBarLayout.currentMode == UrlBarLayout.UrlBarMode.SEARCH -> {
-                    urlBarLayout.currentMode = UrlBarLayout.UrlBarMode.URL
-                }
-                customView != null -> {
-                    onHideCustomView()
-                }
-                webView.canGoBack() -> {
-                    webView.goBack()
-                }
-                else -> {
-                    isEnabled = false
-                    onBackPressedDispatcher.onBackPressed()
-                    isEnabled = true
+        onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                when {
+                    urlBarLayout.currentMode == UrlBarLayout.UrlBarMode.SEARCH -> {
+                        urlBarLayout.currentMode = UrlBarLayout.UrlBarMode.URL
+                    }
+
+                    customView != null -> {
+                        onHideCustomView()
+                    }
+
+                    webView.canGoBack() -> {
+                        webView.goBack()
+                    }
+
+                    else -> {
+                        isEnabled = false
+                        onBackPressedDispatcher.onBackPressed()
+                        isEnabled = true
+                    }
                 }
             }
-        }
+        })
     }
 
     override fun onStart() {
