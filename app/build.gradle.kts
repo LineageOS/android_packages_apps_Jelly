@@ -75,6 +75,7 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
     implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.activity:activity-ktx:1.8.0")
     implementation("androidx.annotation:annotation:1.6.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.cardview:cardview:1.0.0")
@@ -92,8 +93,9 @@ configure<GenerateBpPluginExtension> {
     availableInAOSP.set { module: Module ->
         when {
             module.group.startsWith("androidx") -> {
-                // We provide our own androidx.appcompat
-                !module.group.startsWith("androidx.appcompat")
+                // We provide our own androidx.{activity,appcompat}
+                !module.group.startsWith("androidx.activity") &&
+                        !module.group.startsWith("androidx.appcompat")
             }
             module.group.startsWith("org.jetbrains") -> true
             module.group == "com.google.auto.value" -> true

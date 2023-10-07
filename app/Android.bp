@@ -24,6 +24,7 @@ android_app {
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.core_core-ktx",
+        "Jelly_androidx.activity_activity-ktx",
         "androidx.annotation_annotation",
         "Jelly_androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
