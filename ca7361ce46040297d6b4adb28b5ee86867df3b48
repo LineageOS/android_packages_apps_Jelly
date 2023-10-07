@@ -34,6 +34,24 @@
       "parentUuid": "5235d1cb_939fdc80",
       "revId": "ca7361ce46040297d6b4adb28b5ee86867df3b48",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "578e8fd3_fb5f7658",
+        "filename": "app/src/main/java/org/lineageos/jelly/ext/HttpURLConnection.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2023-10-07T21:55:15Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "18217d22_6994f848",
+      "revId": "ca7361ce46040297d6b4adb28b5ee86867df3b48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
