@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Porwr</string>
+    <string name="url_bar_more">Rhagor</string>
+    <string name="url_bar_search_cancel">Diddymu chwiliad</string>
+    <string name="url_bar_search_clear">Clirio\'r chwiliad</string>
+    <string name="url_bar_search_previous">Blaenorol</string>
+    <string name="url_bar_search_next">Nesaf</string>
+    <string name="menu_go_back">Mynd nôl</string>
+    <string name="menu_go_forward">Mynd ymlaen</string>
+    <string name="menu_refresh">Ail-lwytho\'r dudalen</string>
     <string name="menu_new_tab">Tab newydd</string>
     <string name="menu_incognito">Tab cyfrinachol</string>
     <string name="menu_fav_add">Ychwanegu at ffefrynnau</string>

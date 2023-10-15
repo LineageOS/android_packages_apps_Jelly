@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Дата выдачи</string>
     <string name="ssl_cert_dialog_expires_on">Срок действия</string>
     <string name="ssl_cert_dialog_dismiss">Закрыть</string>
+    <string name="location_dialog_title">Указать местоположение?</string>
+    <string name="location_dialog_message">%1$s хочет использовать вашу геолокацию.</string>
+    <string name="location_dialog_allow">Разрешить</string>
+    <string name="location_dialog_block">Блокировать</string>
+    <string name="location_dialog_cancel">Пока отказать</string>
 </resources>

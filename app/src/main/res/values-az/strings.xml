@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <string name="app_name">Səyyah</string>
+    <string name="app_name">Brauzer</string>
     <string name="url_bar_more">Daha çox</string>
     <string name="url_bar_search_cancel">Axtarışı ləğv et</string>
     <string name="url_bar_search_clear">Axtarışı təmizlə</string>
@@ -21,7 +21,7 @@
     <string name="menu_history">Tarixçə</string>
     <string name="menu_downloads">Endirilənlər</string>
     <string name="menu_shortcut">Qısayol əlavə et</string>
-    <string name="menu_settings">Tənzimləmələr</string>
+    <string name="menu_settings">Ayarlar</string>
     <string name="menu_download">Endir</string>
     <string name="menu_in_new_tab">Yeni vərəqdə aç</string>
     <string name="menu_desktop_mode">Masaüstü saytı</string>
@@ -32,7 +32,7 @@
     <string name="download_title">Faylı endir</string>
     <string name="download_message">%1$s faylını endirmək istəyirsiniz?</string>
     <string name="download_positive">Endir</string>
-    <string name="settings_title">Tənzimləmələr</string>
+    <string name="settings_title">Ayarlar</string>
     <string name="pref_search_engine">Axtarış motoru</string>
     <string name="pref_start_page">Əsas səhifə</string>
     <string name="pref_start_page_dialog_title">Əsas səhifəni seç</string>
@@ -40,7 +40,7 @@
     <string name="pref_start_page_dialog_reset">Sıfırla</string>
     <string name="pref_privacy_security">Gizlilik &amp; güvənlik</string>
     <string name="pref_looklock_title">LookLock</string>
-    <string name="pref_looklock_summary">Digər tətbiqlərin Səyyahın məzmununu oxumağının qarşısını al</string>
+    <string name="pref_looklock_summary">Digər tətbiqlərin Brauzer məzmununu oxumasını əngəlləyin</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">JavaScript-i fəallaşdır</string>
     <string name="pref_location_title">Yer</string>
@@ -75,7 +75,7 @@
     <string name="favorite_edit_delete">Sil</string>
     <string name="favorite_edit_error">Yararlı bir URL daxil et</string>
     <string name="error_no_activity_found">Bu əməliyyatı heç bir tətbiq icra edə bilməz</string>
-    <string name="auth_dialog_title">Kimlik Təsdiqləmə Tələb Ediilir</string>
+    <string name="auth_dialog_title">Kimlik doğrulama tələb olunur</string>
     <string name="auth_dialog_username">İstifadəçi adı:</string>
     <string name="auth_dialog_password">Parol:</string>
     <string name="auth_dialog_detail">%1$s, bir istifadəçi adı və parol tələb edir.</string>
@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Verilmə</string>
     <string name="ssl_cert_dialog_expires_on">Bitmə Vaxtı</string>
     <string name="ssl_cert_dialog_dismiss">Rədd et</string>
+    <string name="location_dialog_title">Yerləşmə təqdim edilsin?</string>
+    <string name="location_dialog_message">%1$s coğrafi yerinizi istifadə etmək istəyir.</string>
+    <string name="location_dialog_allow">İcazə ver</string>
+    <string name="location_dialog_block">Əngəllə</string>
+    <string name="location_dialog_cancel">İndilik rədd et</string>
 </resources>

@@ -5,16 +5,26 @@
 -->
 <resources>
     <string name="app_name">Browser</string>
+    <string name="url_bar_more">Mehr</string>
+    <string name="url_bar_search_cancel">Suche abbrechen</string>
+    <string name="url_bar_search_clear">Suche löschen</string>
+    <string name="url_bar_search_previous">Zurück</string>
+    <string name="url_bar_search_next">Weiter</string>
+    <string name="menu_go_back">Zurück</string>
+    <string name="menu_go_forward">Weiter</string>
+    <string name="menu_refresh">Seite neu laden</string>
     <string name="menu_new_tab">Neuer Tab</string>
     <string name="menu_incognito">Privater Tab</string>
     <string name="menu_fav_add">Seite als Lesezeichen speichern</string>
     <string name="menu_share">Teilen</string>
     <string name="menu_favorites">Lesezeichen</string>
     <string name="menu_history">Verlauf</string>
+    <string name="menu_downloads">Downloads</string>
     <string name="menu_shortcut">Verknüpfung hinzufügen</string>
     <string name="menu_settings">Einstellungen</string>
     <string name="menu_download">Herunterladen</string>
     <string name="menu_in_new_tab">In neuem Tab öffnen</string>
+    <string name="menu_desktop_mode">Desktopwebsite</string>
     <string name="menu_search">Seite durchsuchen</string>
     <string name="menu_print">Drucken</string>
     <string name="share_title">Senden an</string>
@@ -84,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Ausgestellt am</string>
     <string name="ssl_cert_dialog_expires_on">Gültig bis</string>
     <string name="ssl_cert_dialog_dismiss">Verwerfen</string>
+    <string name="location_dialog_title">Standort freigeben?</string>
+    <string name="location_dialog_message">%1$s möchte Zugriff auf deine Standortdaten.</string>
+    <string name="location_dialog_allow">Erlauben</string>
+    <string name="location_dialog_block">Blockieren</string>
+    <string name="location_dialog_cancel">Vorerst verweigern</string>
 </resources>

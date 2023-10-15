@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Izdano</string>
     <string name="ssl_cert_dialog_expires_on">Poteče</string>
     <string name="ssl_cert_dialog_dismiss">Opusti</string>
+    <string name="location_dialog_title">Posreduj lokacijo?</string>
+    <string name="location_dialog_message">%1$s želi uporabiti vašo geolokacijo.</string>
+    <string name="location_dialog_allow">Dovoli</string>
+    <string name="location_dialog_block">Blokiraj</string>
+    <string name="location_dialog_cancel">Zavrni za zdaj</string>
 </resources>

@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Emis pe</string>
     <string name="ssl_cert_dialog_expires_on">Expiră pe</string>
     <string name="ssl_cert_dialog_dismiss">Închideți</string>
+    <string name="location_dialog_title">Furnizați locația?</string>
+    <string name="location_dialog_message">%1$s vrea să folosească geolocalizarea dvs.</string>
+    <string name="location_dialog_allow">Permite</string>
+    <string name="location_dialog_block">Blochează</string>
+    <string name="location_dialog_cancel">Refuză deocamdată</string>
 </resources>

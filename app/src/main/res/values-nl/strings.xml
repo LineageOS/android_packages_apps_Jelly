@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Verleend op</string>
     <string name="ssl_cert_dialog_expires_on">Verloopt op</string>
     <string name="ssl_cert_dialog_dismiss">Sluiten</string>
+    <string name="location_dialog_title">Locatie aanbieden?</string>
+    <string name="location_dialog_message">%1$s wil je geolocatie gebruiken.</string>
+    <string name="location_dialog_allow">Sta toe</string>
+    <string name="location_dialog_block">Blokkeer</string>
+    <string name="location_dialog_cancel">Nu weigeren</string>
 </resources>

@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Emesso il</string>
     <string name="ssl_cert_dialog_expires_on">Scade il</string>
     <string name="ssl_cert_dialog_dismiss">Chiudi</string>
+    <string name="location_dialog_title">Fornire la posizione?</string>
+    <string name="location_dialog_message">%1$s vuole utilizzare la tua posizione.</string>
+    <string name="location_dialog_allow">Consenti</string>
+    <string name="location_dialog_block">Blocca</string>
+    <string name="location_dialog_cancel">Nega per ora</string>
 </resources>

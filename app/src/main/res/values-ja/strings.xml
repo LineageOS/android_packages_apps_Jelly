@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">発行元</string>
     <string name="ssl_cert_dialog_expires_on">有効期限</string>
     <string name="ssl_cert_dialog_dismiss">閉じる</string>
+    <string name="location_dialog_title">位置情報を提供しますか？</string>
+    <string name="location_dialog_message">%1$s が位置情報を使用しようとしています。</string>
+    <string name="location_dialog_allow">許可</string>
+    <string name="location_dialog_block">ブロック</string>
+    <string name="location_dialog_cancel">今回は拒否</string>
 </resources>

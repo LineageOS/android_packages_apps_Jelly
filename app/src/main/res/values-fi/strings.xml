@@ -93,4 +93,9 @@
     <string name="ssl_cert_dialog_issued_on">Myönnetty</string>
     <string name="ssl_cert_dialog_expires_on">Vanhenee</string>
     <string name="ssl_cert_dialog_dismiss">Hylkää</string>
+    <string name="location_dialog_title">Luovutetaanko sijainti?</string>
+    <string name="location_dialog_message">%1$s haluaa käyttää sijaintiasi.</string>
+    <string name="location_dialog_allow">Salli</string>
+    <string name="location_dialog_block">Estä</string>
+    <string name="location_dialog_cancel">Estä tällä toistaiseksi</string>
 </resources>

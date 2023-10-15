@@ -44,7 +44,7 @@
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">JavaScript-ის ჩართვა</string>
     <string name="pref_location_title">მდებარეობა</string>
-    <string name="pref_location_summary">ნებართვა, რომ საიტებს ექნება წვდომა თქვენს მდებარეობასთან</string>
+    <string name="pref_location_summary">ნებართვა საიტებს თქვენს მდებარეობასთან წვდომისთვის</string>
     <string name="pref_cookie_title">ფუნთუშები</string>
     <string name="pref_cookie_summary">ნებართვა, რომ საიტებს შეეძლება ფუნთუშების შენახვა და ჩატვირთვა</string>
     <string name="pref_screenshot_snap_title">გაფართოებული გაზიარება</string>
@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">გაცემის თარიღი</string>
     <string name="ssl_cert_dialog_expires_on">ვადის გასვლის თარიღი</string>
     <string name="ssl_cert_dialog_dismiss">დახურვა</string>
+    <string name="location_dialog_title">ეცნობოს ადგილმდებარეობა?</string>
+    <string name="location_dialog_message">%1$s ითხოვს ადგილმდებარეობასთან წვდომას.</string>
+    <string name="location_dialog_allow">ნებართვა</string>
+    <string name="location_dialog_block">აკრძალვა</string>
+    <string name="location_dialog_cancel">აკრძალვა ამჯერად</string>
 </resources>

@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Emès el</string>
     <string name="ssl_cert_dialog_expires_on">Caduca el</string>
     <string name="ssl_cert_dialog_dismiss">Descarta</string>
+    <string name="location_dialog_title">Voleu proporcionar la ubicació?</string>
+    <string name="location_dialog_message">%1$s vol utilitzar la vostra posició geogràfica</string>
+    <string name="location_dialog_allow">Permet</string>
+    <string name="location_dialog_block">Bloca</string>
+    <string name="location_dialog_cancel">Denega de moment</string>
 </resources>

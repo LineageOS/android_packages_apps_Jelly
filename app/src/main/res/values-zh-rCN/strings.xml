@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">颁发时间：</string>
     <string name="ssl_cert_dialog_expires_on">到期日期：</string>
     <string name="ssl_cert_dialog_dismiss">忽略</string>
+    <string name="location_dialog_title">提供位置？</string>
+    <string name="location_dialog_message">%1$s 想要使用您的地理位置。</string>
+    <string name="location_dialog_allow">允许</string>
+    <string name="location_dialog_block">阻止</string>
+    <string name="location_dialog_cancel">本次拒绝</string>
 </resources>

@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Lëshuar më</string>
     <string name="ssl_cert_dialog_expires_on">Skadon më</string>
     <string name="ssl_cert_dialog_dismiss">Anashkalo</string>
+    <string name="location_dialog_title">Jep vendndodhjen?</string>
+    <string name="location_dialog_message">%1$s dëshiron të përdorë vendndodhjen tuaj gjeografike.</string>
+    <string name="location_dialog_allow">Lejo</string>
+    <string name="location_dialog_block">Blloko</string>
+    <string name="location_dialog_cancel">Mohojeni tani për tani</string>
 </resources>

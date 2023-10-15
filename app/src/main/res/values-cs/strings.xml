@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Vydáno</string>
     <string name="ssl_cert_dialog_expires_on">Platnost končí</string>
     <string name="ssl_cert_dialog_dismiss">Zamítnout</string>
+    <string name="location_dialog_title">Poskytnout polohu?</string>
+    <string name="location_dialog_message">Aplikace %1$s chce použít vaši geolokaci.</string>
+    <string name="location_dialog_allow">Povolit</string>
+    <string name="location_dialog_block">Blokovat</string>
+    <string name="location_dialog_cancel">Prozatím odmítnout</string>
 </resources>

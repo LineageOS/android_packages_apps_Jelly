@@ -94,4 +94,7 @@
     <string name="ssl_cert_dialog_issued_on">Délivré le</string>
     <string name="ssl_cert_dialog_expires_on">Expire le</string>
     <string name="ssl_cert_dialog_dismiss">Rejeter</string>
+    <string name="location_dialog_message">%1$s veut utiliser votre géolocalisation.</string>
+    <string name="location_dialog_allow">Autoriser</string>
+    <string name="location_dialog_block">Bloquer</string>
 </resources>
