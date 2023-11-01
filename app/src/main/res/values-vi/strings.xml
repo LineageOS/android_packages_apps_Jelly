@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Trình duyệt</string>
+    <string name="url_bar_more">Thêm</string>
+    <string name="url_bar_search_cancel">Hủy tìm kiếm</string>
+    <string name="url_bar_search_clear">Xóa tìm kiếm</string>
+    <string name="url_bar_search_previous">Trước</string>
+    <string name="url_bar_search_next">Tiếp</string>
+    <string name="menu_go_back">Quay lại</string>
+    <string name="menu_go_forward">Tiếp theo</string>
+    <string name="menu_refresh">Làm mới trang</string>
     <string name="menu_new_tab">Tab mới</string>
     <string name="menu_incognito">Tab ẩn danh</string>
     <string name="menu_fav_add">Thêm vào yêu thích</string>
@@ -16,6 +24,7 @@
     <string name="menu_settings">Cài đặt</string>
     <string name="menu_download">Tải về</string>
     <string name="menu_in_new_tab">Mở trong tab mới</string>
+    <string name="menu_desktop_mode">Trang web cho máy tính</string>
     <string name="menu_search">Tìm trong trang</string>
     <string name="menu_print">In</string>
     <string name="share_title">Gửi đến</string>
@@ -85,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Cấp vào</string>
     <string name="ssl_cert_dialog_expires_on">Hết hạn vào</string>
     <string name="ssl_cert_dialog_dismiss">Bỏ qua</string>
+    <string name="location_dialog_title">Cung cấp vị trí?</string>
+    <string name="location_dialog_message">%1$s muốn sử dụng vị trí địa lý của bạn.</string>
+    <string name="location_dialog_allow">Cho phép</string>
+    <string name="location_dialog_block">Chặn</string>
+    <string name="location_dialog_cancel">Từ chối bây giờ</string>
 </resources>

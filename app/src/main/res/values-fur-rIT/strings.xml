@@ -5,6 +5,14 @@
 -->
 <resources>
     <string name="app_name">Navigadôr</string>
+    <string name="url_bar_more">Altri</string>
+    <string name="url_bar_search_cancel">Anule ricercje</string>
+    <string name="url_bar_search_clear">Nete ricercje</string>
+    <string name="url_bar_search_previous">Precedent</string>
+    <string name="url_bar_search_next">Sucessîf</string>
+    <string name="menu_go_back">Tone indaûr</string>
+    <string name="menu_go_forward">Va indevant</string>
+    <string name="menu_refresh">Inzorne pagjine</string>
     <string name="menu_new_tab">Gnove schede</string>
     <string name="menu_incognito">Schede segrete</string>
     <string name="menu_fav_add">Zonte tai preferîts</string>
@@ -86,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Dât fûr ai</string>
     <string name="ssl_cert_dialog_expires_on">Al scjât ai</string>
     <string name="ssl_cert_dialog_dismiss">Siere</string>
+    <string name="location_dialog_title">Furnî la posizion?</string>
+    <string name="location_dialog_message">%1$s al vûl doprâ la tô posizion gjeografiche.</string>
+    <string name="location_dialog_allow">Permet</string>
+    <string name="location_dialog_block">Bloche</string>
+    <string name="location_dialog_cancel">Dinee par cumò</string>
 </resources>
