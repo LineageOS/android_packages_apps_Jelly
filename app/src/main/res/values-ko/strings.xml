@@ -5,6 +5,7 @@
 -->
 <resources>
     <string name="app_name">브라우저</string>
+    <string name="url_bar_more">더 보기</string>
     <string name="url_bar_search_cancel">검색 취소</string>
     <string name="url_bar_search_previous">이전</string>
     <string name="url_bar_search_next">다음</string>
@@ -92,4 +93,6 @@
     <string name="ssl_cert_dialog_issued_on">발급 날짜</string>
     <string name="ssl_cert_dialog_expires_on">만료 날짜</string>
     <string name="ssl_cert_dialog_dismiss">닫기</string>
+    <string name="location_dialog_allow">허용</string>
+    <string name="location_dialog_block">차단</string>
 </resources>
