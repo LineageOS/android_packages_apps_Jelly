@@ -48,7 +48,7 @@
     <string name="pref_cookie_title">Çərəzlər</string>
     <string name="pref_cookie_summary">Vebsaytların çərəzləri saxlayıb baxmasına icazə ver</string>
     <string name="pref_screenshot_snap_title">Qabaqcıl paylaşma</string>
-    <string name="pref_screenshot_snap_summary">Paylaşılan səhifənin önbaxışını paylaş</string>
+    <string name="pref_screenshot_snap_summary">Paylaşılan səhifənin önizləməsini paylaş</string>
     <string name="pref_cookie_clear">Çərəzləri təmizlə</string>
     <string name="pref_cookie_clear_done">Bütün çərəzlər təmizləndi</string>
     <string name="pref_do_not_track_title">İzləmə</string>

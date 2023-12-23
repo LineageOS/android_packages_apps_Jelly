@@ -5,16 +5,26 @@
 -->
 <resources>
     <string name="app_name">Tarayıcı</string>
+    <string name="url_bar_more">Daha fazla</string>
+    <string name="url_bar_search_cancel">Aramayı iptal et</string>
+    <string name="url_bar_search_clear">Aramayı temizle</string>
+    <string name="url_bar_search_previous">Geri</string>
+    <string name="url_bar_search_next">İleri</string>
+    <string name="menu_go_back">Geri git</string>
+    <string name="menu_go_forward">İleri git</string>
+    <string name="menu_refresh">Sayfayı yenile</string>
     <string name="menu_new_tab">Yeni sekme</string>
     <string name="menu_incognito">Gizli sekme</string>
     <string name="menu_fav_add">Sık kullanılanlara ekle</string>
     <string name="menu_share">Sayfayı paylaş</string>
     <string name="menu_favorites">Sık kullanılanlar</string>
     <string name="menu_history">Geçmiş</string>
+    <string name="menu_downloads">İndirmeler</string>
     <string name="menu_shortcut">Kısayol ekle</string>
     <string name="menu_settings">Ayarlar</string>
     <string name="menu_download">İndir</string>
     <string name="menu_in_new_tab">Yeni sekmede aç</string>
+    <string name="menu_desktop_mode">Masaüstü sitesi</string>
     <string name="menu_search">Sayfada bul</string>
     <string name="menu_print">Yazdır</string>
     <string name="share_title">Şuraya gönder</string>
@@ -84,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Verilme</string>
     <string name="ssl_cert_dialog_expires_on">Sona Erme</string>
     <string name="ssl_cert_dialog_dismiss">Reddet</string>
+    <string name="location_dialog_title">Konumunuz sağlansın mı? </string>
+    <string name="location_dialog_message">%1$s sizin jeokonumunuzu kullanmak istiyor. </string>
+    <string name="location_dialog_allow">İzin ver</string>
+    <string name="location_dialog_block">Engelle</string>
+    <string name="location_dialog_cancel">Geçici olarak reddet</string>
 </resources>
