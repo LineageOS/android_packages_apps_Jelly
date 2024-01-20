@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df66325d_9ea12218",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-01-20T10:58:41Z",
+      "side": 1,
+      "message": "Is the PDF mime type needed in the manifest to handle the view intent?",
+      "revId": "5c775b74fe97b73d83bf60d07e87025f1029f090",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
