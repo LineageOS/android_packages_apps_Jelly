@@ -16,6 +16,24 @@
       "message": "Is the PDF mime type needed in the manifest to handle the view intent?",
       "revId": "5c775b74fe97b73d83bf60d07e87025f1029f090",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cb9e943_0fe625f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-01-20T11:35:32Z",
+      "side": 1,
+      "message": "CarHTMLViewer can handle those mimes\n                \u003cdata android:mimeType\u003d\"text/html\"/\u003e\n                \u003cdata android:mimeType\u003d\"text/plain\"/\u003e\n                \u003cdata android:mimeType\u003d\"application/xhtml+xml\"/\u003e\n                \u003cdata android:mimeType\u003d\"application/vnd.wap.xhtml+xml\"/\u003e\n                \n              no PDF?",
+      "parentUuid": "df66325d_9ea12218",
+      "revId": "5c775b74fe97b73d83bf60d07e87025f1029f090",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
