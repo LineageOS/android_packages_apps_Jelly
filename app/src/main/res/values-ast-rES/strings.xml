@@ -6,6 +6,10 @@
 <resources>
     <string name="app_name">Restolador</string>
     <string name="url_bar_more">Más</string>
+    <string name="url_bar_search_previous">Anterior</string>
+    <string name="url_bar_search_next">Siguiente</string>
+    <string name="menu_go_back">Dir p\'atrás</string>
+    <string name="menu_go_forward">Avanzar</string>
     <string name="menu_refresh">Anovar la páxina</string>
     <string name="menu_new_tab">Llingüeta nueva</string>
     <string name="menu_incognito">Llingüeta d\'incógnitu</string>
@@ -88,4 +92,9 @@
     <string name="ssl_cert_dialog_issued_on">Data d\'emisión</string>
     <string name="ssl_cert_dialog_expires_on">Data de caducidá</string>
     <string name="ssl_cert_dialog_dismiss">Escartar</string>
+    <string name="location_dialog_title">¿Quies fornir la llocalización?</string>
+    <string name="location_dialog_message">«%1$s» quies usar la to llocalización xeográfica.</string>
+    <string name="location_dialog_allow">Permitir</string>
+    <string name="location_dialog_block">Bloquiar</string>
+    <string name="location_dialog_cancel">Negar pel momentu</string>
 </resources>
