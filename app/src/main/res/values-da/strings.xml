@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Skift til skrivebords-netsted</string>
     <string name="menu_mobile_mode">Skift til mobil-netsted</string>
     <string name="menu_search">Find på side</string>
+    <string name="menu_print">Udskriv</string>
     <string name="share_title">Send til</string>
     <string name="dismiss">Afvis</string>
     <string name="download_title">Hent fil</string>
@@ -60,6 +61,8 @@
     <string name="pref_do_not_track_title">Spor Mig Ikke</string>
     <string name="pref_do_not_track_summary">Send en Spor Mig Ikke-anmodning til de netsteder, du besøger</string>
     <string name="pref_suggestions_provider">Forslagsleverandør</string>
+    <string name="pref_reach_mode_title">Enhåndstilstand</string>
+    <string name="pref_reach_mode_summary">Relokér brugerflade for lettere brug med en hånd</string>
     <string name="history_title">Historik</string>
     <string name="history_empty">Der er intet her; surf på internettet, for at se din historik her</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
@@ -95,7 +98,7 @@
     <string name="ssl_cert_dialog_common_name">Ordinært Navn (CN)</string>
     <string name="ssl_cert_dialog_organization">Organisation (O)</string>
     <string name="ssl_cert_dialog_organizational_unit">Organisationsenhed (UN)</string>
-    <string name="ssl_cert_dialog_issued_on">Udstedt På</string>
-    <string name="ssl_cert_dialog_expires_on">Udløber På</string>
+    <string name="ssl_cert_dialog_issued_on">Udstedt d.</string>
+    <string name="ssl_cert_dialog_expires_on">Udløber d.</string>
     <string name="ssl_cert_dialog_dismiss">Afvis</string>
 </resources>

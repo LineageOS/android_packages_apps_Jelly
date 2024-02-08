@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Перейти до повної версії</string>
     <string name="menu_mobile_mode">Перейти до мобільної версії</string>
     <string name="menu_search">Знайти на сторінці</string>
+    <string name="menu_print">Друк</string>
     <string name="share_title">Надіслати до</string>
     <string name="dismiss">Відхилити</string>
     <string name="download_title">Завантажити файл</string>
@@ -67,6 +68,7 @@
     <string name="history_delete_message">Ви збираєтеся видалити всю історію. Цю дію скасувати не можна. Бажаєте продовжити?</string>
     <string name="history_delete_positive">Очистити</string>
     <string name="history_deleting_message">Очищення історії\u2026</string>
+    <string name="history_snackbar_item_deleted_message">Скасувати</string>
     <string name="favorite_title">Улюблене</string>
     <string name="favorite_added">Додано в улюблені</string>
     <string name="favorite_empty">Тут нічого нема. Додайте улюблені посилання, щоб побачити тут</string>
@@ -95,4 +97,5 @@
     <string name="ssl_cert_dialog_organizational_unit">Організаційний підрозділ (UN)</string>
     <string name="ssl_cert_dialog_issued_on">Дата видачі</string>
     <string name="ssl_cert_dialog_expires_on">Діє до</string>
+    <string name="ssl_cert_dialog_dismiss">Відхилити</string>
 </resources>

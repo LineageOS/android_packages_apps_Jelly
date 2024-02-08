@@ -29,6 +29,7 @@
     <string name="menu_desktop_mode">Cambiar a la versión de escritorio</string>
     <string name="menu_mobile_mode">Cambiar a la versión móvil</string>
     <string name="menu_search">Encontrar en la página</string>
+    <string name="menu_print">Imprimir</string>
     <string name="share_title">Enviar a</string>
     <string name="dismiss">Descartar</string>
     <string name="download_title">Descargar archivo</string>
