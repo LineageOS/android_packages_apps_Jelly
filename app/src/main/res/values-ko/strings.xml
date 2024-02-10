@@ -94,6 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">발급 날짜</string>
     <string name="ssl_cert_dialog_expires_on">만료 날짜</string>
     <string name="ssl_cert_dialog_dismiss">닫기</string>
+    <string name="location_dialog_title">위치 정보를 허용하시겠습니까?</string>
+    <string name="location_dialog_message">%1$s에서 사용자의 위치를 사용하려고 합니다.</string>
     <string name="location_dialog_allow">허용</string>
     <string name="location_dialog_block">차단</string>
+    <string name="location_dialog_cancel">지금은 거부</string>
 </resources>
