@@ -80,7 +80,7 @@
     <string name="auth_dialog_password">პაროლი:</string>
     <string name="auth_dialog_detail">%1$s ითხოვს მომხმარებლის სახელსა და პაროლს.</string>
     <string name="auth_dialog_login">შესვლა</string>
-    <string name="shortcut_new_incognito_tab">ახალ ფარული ჩანართი</string>
+    <string name="shortcut_new_incognito_tab">ახალი ფარული ჩანართი</string>
     <string name="suggestions_provider_none">არცერთი</string>
     <string name="search_bar_hint">ძიება</string>
     <string name="ssl_cert_dialog_title">SSL-სერტიფიკატის შესახებ</string>
