@@ -94,4 +94,9 @@
     <string name="ssl_cert_dialog_issued_on">Εκδόθηκε στις</string>
     <string name="ssl_cert_dialog_expires_on">Λήγει στις</string>
     <string name="ssl_cert_dialog_dismiss">Παράβλεψη</string>
+    <string name="location_dialog_title">Παροχή τοποθεσίας;</string>
+    <string name="location_dialog_message">Το %1$s θέλει να χρησιμοποιήσει την τοποθεσία σας.</string>
+    <string name="location_dialog_allow">Αποδοχή</string>
+    <string name="location_dialog_block">Αποκλεισμός</string>
+    <string name="location_dialog_cancel">Άρνηση για την ώρα</string>
 </resources>
