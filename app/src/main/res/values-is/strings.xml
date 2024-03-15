@@ -85,4 +85,6 @@
     <string name="ssl_cert_dialog_issued_on">Gefið út þann</string>
     <string name="ssl_cert_dialog_expires_on">Rennur út</string>
     <string name="ssl_cert_dialog_dismiss">Hafna</string>
+    <string name="location_dialog_title">Gefa staðsetningu?</string>
+    <string name="location_dialog_message">%1$s vill fá að nota hnattstaðsetningu þína.</string>
 </resources>
