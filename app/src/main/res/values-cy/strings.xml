@@ -23,6 +23,7 @@
     <string name="menu_settings">Gosodiadau</string>
     <string name="menu_download">Lawrlwytho</string>
     <string name="menu_in_new_tab">Agor mewn tab newydd</string>
+    <string name="menu_desktop_mode">Gwefan bwrdd gwaith</string>
     <string name="menu_search">Canfod yn y dudalen</string>
     <string name="menu_print">Argraffu</string>
     <string name="share_title">Anfon at</string>
@@ -92,4 +93,8 @@
     <string name="ssl_cert_dialog_issued_on">Rhoddwyd ar</string>
     <string name="ssl_cert_dialog_expires_on">Yn Dod i Ben ar</string>
     <string name="ssl_cert_dialog_dismiss">Diystyru</string>
+    <string name="location_dialog_message">Hoffai %1$s ddefnyddio dy geoleoliad.</string>
+    <string name="location_dialog_allow">Caniatáu</string>
+    <string name="location_dialog_block">Rhwystro</string>
+    <string name="location_dialog_cancel">Gwrthod am y tro</string>
 </resources>
