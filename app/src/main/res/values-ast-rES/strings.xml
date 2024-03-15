@@ -6,6 +6,7 @@
 <resources>
     <string name="app_name">Restolador</string>
     <string name="url_bar_more">Más</string>
+    <string name="url_bar_search_cancel">Encaboxar la busca</string>
     <string name="url_bar_search_previous">Anterior</string>
     <string name="url_bar_search_next">Siguiente</string>
     <string name="menu_go_back">Dir p\'atrás</string>

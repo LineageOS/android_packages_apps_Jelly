@@ -58,7 +58,7 @@
     <string name="pref_reach_mode_summary">Zhvendos elementët e ndërfaqes për përdorim të lehtë me një dorë</string>
     <string name="history_title">Historiku</string>
     <string name="history_empty">Këtu nuk ka asnjë gjë, lundroni në internet për të parë historikun këtu</string>
-    <string name="history_date_format">EEEE MMMM dd vvvv, HH:mm</string>
+    <string name="history_date_format">EEEE dd MMMM vvvv, HH:mm</string>
     <string name="history_delete_title">Fshij historikun</string>
     <string name="history_delete_message">Ju po fshini të gjithë historikun, ky veprim nuk mund të zhbëhet. Doni të vazhdoni?</string>
     <string name="history_delete_positive">Pastro</string>
