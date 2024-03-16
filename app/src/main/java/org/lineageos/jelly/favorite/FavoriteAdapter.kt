@@ -1,43 +1,26 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
 package org.lineageos.jelly.favorite
 
-import android.content.Context
-import android.database.Cursor
-import android.provider.BaseColumns
+import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import org.lineageos.jelly.R
+import org.lineageos.jelly.model.Favorite
+import org.lineageos.jelly.utils.UiUtils
 
-class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<FavoriteHolder>() {
-    private var cursor: Cursor? = null
-    private var idColumnIndex = 0
-    private var titleColumnIndex = 0
-    private var urlColumnIndex = 0
-    private var colorColumnIndex = 0
-
-    init {
-        setHasStableIds(true)
-    }
-
-    fun swapCursor(cursor: Cursor?) {
-        if (cursor === this.cursor) {
-            return
-        }
-        this.cursor?.close()
-        this.cursor = cursor
-        this.cursor?.let {
-            idColumnIndex = it.getColumnIndexOrThrow(BaseColumns._ID)
-            titleColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.TITLE)
-            urlColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.URL)
-            colorColumnIndex = it.getColumnIndexOrThrow(FavoriteProvider.Columns.COLOR)
-        }
-        notifyDataSetChanged()
-    }
+class FavoriteAdapter : ListAdapter<Favorite, FavoriteAdapter.FavoriteHolder>(diffCallback) {
+    var onCardClick: ((Favorite) -> Unit) = { }
+    var onCardLongClick: ((Favorite) -> Unit) = { }
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int) = FavoriteHolder(
         LayoutInflater.from(parent.context)
@@ -45,17 +28,39 @@ class FavoriteAdapter(private val mContext: Context) : RecyclerView.Adapter<Favo
     )
 
     override fun onBindViewHolder(holder: FavoriteHolder, position: Int) {
-        val cursor = cursor ?: return
-        val id = cursor.getLong(idColumnIndex)
-        val title = cursor.getString(titleColumnIndex)
-        val url = cursor.getString(urlColumnIndex)
-        val color = cursor.getInt(colorColumnIndex)
-        holder.bind(mContext, id, title, url, color)
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount() = cursor?.count ?: 0
+    inner class FavoriteHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val card = view.findViewById<CardView>(R.id.rowFavoriteCard)
+        private val title = view.findViewById<TextView>(R.id.rowFavoriteTitle)
 
-    override fun getItemId(position: Int) = cursor?.let {
-        if (it.moveToPosition(position)) it.getLong(idColumnIndex) else -1L
-    } ?: -1L
+        fun bind(favorite: Favorite) {
+            title.text = favorite.title.takeUnless {
+                it.isEmpty()
+            } ?: favorite.url.split("/").toTypedArray()[2]
+            when (UiUtils.isColorLight(favorite.color)) {
+                true -> title.setTextColor(Color.BLACK)
+                false -> title.setTextColor(Color.WHITE)
+            }
+            card.setCardBackgroundColor(favorite.color)
+            card.setOnClickListener {
+                onCardClick(favorite)
+            }
+            card.setOnLongClickListener {
+                onCardLongClick(favorite)
+                true
+            }
+        }
+    }
+
+    companion object {
+        private val diffCallback = object : DiffUtil.ItemCallback<Favorite>() {
+            override fun areItemsTheSame(oldItem: Favorite, newItem: Favorite) =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Favorite, newItem: Favorite) =
+                oldItem == newItem
+        }
+    }
 }
