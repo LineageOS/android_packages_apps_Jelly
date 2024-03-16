@@ -36,6 +36,8 @@ import kotlinx.coroutines.withContext
 import org.lineageos.jelly.MainActivity
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryCallBack.OnDeleteListener
+import org.lineageos.jelly.model.History
+import org.lineageos.jelly.ui.CSVFragment
 import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.viewmodels.HistoryViewModel
 
@@ -136,6 +138,17 @@ class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
                 .setPositiveButton(R.string.history_delete_positive) { _, _ -> deleteAll() }
                 .setNegativeButton(android.R.string.cancel) { d: DialogInterface, _ -> d.dismiss() }
                 .show()
+            true
+        }
+        R.id.menu_csv -> {
+            val dialog = CSVFragment.create(
+                "history",
+                HistoryProvider,
+                adapter.currentList,
+                { data -> listOf(data.title, data.url, data.timestamp) },
+                History::class
+            )
+            dialog.show(supportFragmentManager, "history_csv")
             true
         }
         else -> {

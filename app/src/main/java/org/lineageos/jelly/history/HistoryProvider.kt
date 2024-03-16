@@ -19,16 +19,28 @@ import android.net.Uri
 import android.provider.BaseColumns
 import org.lineageos.jelly.BuildConfig
 import org.lineageos.jelly.ext.requireContextExt
+import org.lineageos.jelly.utils.AddOrUpdate
 
 class HistoryProvider : ContentProvider() {
-    companion object {
+    companion object : AddOrUpdate {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
         private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH).apply {
             addURI(Columns.AUTHORITY, "history", MATCH_ALL)
             addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
         }
-        fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String) {
+
+        override fun addOrUpdateItem(
+            resolver: ContentResolver, d1: String, d2: String, d3: String
+        ) {
+            addOrUpdateItem(resolver, d1, d2, d3.toLong())
+        }
+        fun addOrUpdateItem(
+            resolver: ContentResolver,
+            title: String?,
+            url: String,
+            timestamp: Long? = null
+        ) {
             var existingId: Long = -1
             val cursor = resolver.query(
                 Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
@@ -48,7 +60,7 @@ class HistoryProvider : ContentProvider() {
                     values, null, null
                 )
             } else {
-                values.put(Columns.TIMESTAMP, System.currentTimeMillis())
+                values.put(Columns.TIMESTAMP, timestamp ?: System.currentTimeMillis())
                 values.put(Columns.URL, url)
                 resolver.insert(Columns.CONTENT_URI, values)
             }
