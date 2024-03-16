@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dccadcf7_fe0fae33",
+        "filename": "app/src/main/java/org/lineageos/jelly/flow/HistoryFlow.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-03-16T09:46:08Z",
+      "side": 1,
+      "message": "needs to be rebased.",
+      "revId": "86196f11668b8e6d6faefb3be75a9e8415767f64",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
