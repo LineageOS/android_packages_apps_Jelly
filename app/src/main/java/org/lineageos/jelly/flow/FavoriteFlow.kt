@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 package org.lineageos.jelly.flow
 
 import android.content.ContentResolver
@@ -32,7 +37,7 @@ class FavoriteFlow(private val context: Context) : QueryFlow<Favorite> {
     ) { it, indexCache ->
         var i = 0
         Favorite(
-            it.getInt(indexCache[i++]),
+            it.getLong(indexCache[i++]),
             it.getString(indexCache[i++]),
             it.getString(indexCache[i++]),
             it.getInt(indexCache[i++])
