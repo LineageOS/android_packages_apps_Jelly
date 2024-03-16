@@ -28,7 +28,13 @@ class HistoryProvider : ContentProvider() {
             addURI(Columns.AUTHORITY, "history", MATCH_ALL)
             addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
         }
-        fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String) {
+
+        fun addOrUpdateItem(
+            resolver: ContentResolver,
+            title: String?,
+            url: String,
+            timestamp: Long? = null
+        ) {
             var existingId: Long = -1
             val cursor = resolver.query(
                 Columns.CONTENT_URI, arrayOf(BaseColumns._ID),
@@ -48,7 +54,7 @@ class HistoryProvider : ContentProvider() {
                     values, null, null
                 )
             } else {
-                values.put(Columns.TIMESTAMP, System.currentTimeMillis())
+                values.put(Columns.TIMESTAMP, timestamp ?: System.currentTimeMillis())
                 values.put(Columns.URL, url)
                 resolver.insert(Columns.CONTENT_URI, values)
             }

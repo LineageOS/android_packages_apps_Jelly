@@ -201,4 +201,10 @@
     <string name="location_dialog_allow">Allow</string>
     <string name="location_dialog_block">Block</string>
     <string name="location_dialog_cancel">Deny for now</string>
+
+    <!-- CSV Dialog -->
+    <string name="csv_dialog_title">CSV</string>
+    <string name="csv_dialog_message">Export or import data to/from CSV</string>
+    <string name="csv_dialog_import">Import from CSV</string>
+    <string name="csv_dialog_export">Export to CSV</string>
 </resources>

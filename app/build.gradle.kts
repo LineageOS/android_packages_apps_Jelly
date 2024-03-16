@@ -79,12 +79,14 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.palette:palette:1.0.0")
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.preference:preference:1.2.0")
     implementation("androidx.recyclerview:recyclerview:1.3.0")
     implementation("androidx.transition:transition:1.4.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
+    implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.3")
 }
 
 configure<GenerateBpPluginExtension> {

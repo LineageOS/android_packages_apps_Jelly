@@ -138,6 +138,11 @@ class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
                 .show()
             true
         }
+        R.id.menu_csv -> {
+            val dialog = HistoryCSVFragment.create(adapter.currentList.toTypedArray())
+            dialog.show(supportFragmentManager, "history_csv")
+            true
+        }
         else -> {
             super.onOptionsItemSelected(item)
         }

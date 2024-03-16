@@ -13,6 +13,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
@@ -35,6 +36,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.lineageos.jelly.MainActivity
 import org.lineageos.jelly.R
+import org.lineageos.jelly.history.HistoryCSVFragment
 import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.viewmodels.FavoriteViewModel
 
@@ -95,9 +97,19 @@ class FavoriteActivity : AppCompatActivity(R.layout.activity_favorites) {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_favorite, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         android.R.id.home -> {
             finish()
+            true
+        }
+        R.id.menu_csv -> {
+            val dialog = FavoriteCSVFragment.create(adapter.currentList.toTypedArray())
+            dialog.show(supportFragmentManager, "favorite_csv")
             true
         }
         else -> {
