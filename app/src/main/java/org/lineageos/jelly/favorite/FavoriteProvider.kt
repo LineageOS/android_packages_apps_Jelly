@@ -19,15 +19,23 @@ import android.net.Uri
 import android.provider.BaseColumns
 import org.lineageos.jelly.BuildConfig
 import org.lineageos.jelly.ext.requireContextExt
+import org.lineageos.jelly.utils.AddOrUpdateItem
 
 class FavoriteProvider : ContentProvider() {
-    companion object {
+    companion object : AddOrUpdateItem {
         private const val MATCH_ALL = 0
         private const val MATCH_ID = 1
         private val URI_MATCHER = UriMatcher(UriMatcher.NO_MATCH).apply {
             addURI(Columns.AUTHORITY, "favorite", MATCH_ALL)
             addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID)
         }
+
+        override fun addOrUpdateItem(
+            resolver: ContentResolver, d1: String, d2: String, d3: String
+        ) {
+            addOrUpdateItem(resolver, d1, d2, d3.toInt())
+        }
+
         fun addOrUpdateItem(
             resolver: ContentResolver, title: String?, url: String,
             color: Int
