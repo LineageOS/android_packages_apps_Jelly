@@ -12,13 +12,12 @@ import android.provider.BaseColumns
 import androidx.core.os.bundleOf
 import org.lineageos.jelly.ext.mapEachRow
 import org.lineageos.jelly.ext.queryFlow
-import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.model.History
 
 class HistoryFlow(private val context: Context) : QueryFlow<History> {
     override fun flowCursor() = context.contentResolver.queryFlow(
-        FavoriteProvider.Columns.CONTENT_URI,
+        HistoryProvider.Columns.CONTENT_URI,
         null,
         Bundle().apply {
             putAll(
