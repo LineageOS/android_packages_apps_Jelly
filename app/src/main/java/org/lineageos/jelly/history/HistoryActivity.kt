@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,41 +8,48 @@ package org.lineageos.jelly.history
 import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.DialogInterface
-import android.database.Cursor
+import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.loader.app.LoaderManager
-import androidx.loader.content.CursorLoader
-import androidx.loader.content.Loader
+import androidx.core.net.toUri
+import androidx.core.view.isVisible
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.lineageos.jelly.MainActivity
 import org.lineageos.jelly.R
 import org.lineageos.jelly.history.HistoryCallBack.OnDeleteListener
 import org.lineageos.jelly.utils.UiUtils
+import org.lineageos.jelly.viewmodels.HistoryViewModel
 
-class HistoryActivity : AppCompatActivity() {
+class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
+    // View models
+    private val model: HistoryViewModel by viewModels()
+
     // Views
     private val historyEmptyLayout by lazy { findViewById<View>(R.id.historyEmptyLayout) }
     private val historyListView by lazy { findViewById<RecyclerView>(R.id.historyListView) }
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
 
-    private val uiScope = CoroutineScope(Dispatchers.Main)
-    private lateinit var adapter: HistoryAdapter
+    private val adapter by lazy { HistoryAdapter(this) }
+
     private val adapterDataObserver: AdapterDataObserver = object : AdapterDataObserver() {
         override fun onChanged() {
             updateHistoryView(adapter.itemCount == 0)
@@ -51,33 +58,17 @@ class HistoryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstance: Bundle?) {
         super.onCreate(savedInstance)
-        setContentView(R.layout.activity_history)
+
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
-        adapter = HistoryAdapter(this)
-        val loader = LoaderManager.getInstance(this)
-        loader.initLoader(0, null, object : LoaderManager.LoaderCallbacks<Cursor> {
-            override fun onCreateLoader(id: Int, args: Bundle?) = CursorLoader(
-                this@HistoryActivity, HistoryProvider.Columns.CONTENT_URI,
-                null, null, null, HistoryProvider.Columns.TIMESTAMP + " DESC"
-            )
 
-            override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-                adapter.swapCursor(data)
-            }
-
-            override fun onLoaderReset(loader: Loader<Cursor>) {
-                adapter.swapCursor(null)
-            }
-        })
         historyListView.layoutManager = LinearLayoutManager(this)
         historyListView.addItemDecoration(HistoryAnimationDecorator(this))
         historyListView.itemAnimator = DefaultItemAnimator()
         historyListView.adapter = adapter
-        adapter.registerAdapterDataObserver(adapterDataObserver)
         val helper = ItemTouchHelper(HistoryCallBack(this, object : OnDeleteListener {
             override fun onItemDeleted(data: ContentValues?) {
                 Snackbar.make(
@@ -103,6 +94,24 @@ class HistoryActivity : AppCompatActivity() {
                 ) else 0f
             }
         })
+
+        adapter.registerAdapterDataObserver(adapterDataObserver)
+        adapter.onRowClick = {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                data = it.url.toUri()
+            }
+            startActivity(intent)
+        }
+
+        lifecycleScope.launch {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                model.history.collectLatest {
+                    historyListView.isVisible = it.isNotEmpty()
+                    historyEmptyLayout.isVisible = it.isEmpty()
+                    adapter.submitList(it)
+                }
+            }
+        }
     }
 
     public override fun onDestroy() {
@@ -145,16 +154,17 @@ class HistoryActivity : AppCompatActivity() {
             .setCancelable(false)
             .create()
         dialog.show()
-        uiScope.launch {
+        lifecycleScope.launch {
             deleteAllHistory(contentResolver, dialog)
         }
     }
 
     private suspend fun deleteAllHistory(contentResolver: ContentResolver, dialog: AlertDialog) {
-        withContext(Dispatchers.Default) {
+        withContext(Dispatchers.IO) {
             contentResolver.delete(HistoryProvider.Columns.CONTENT_URI, null, null)
             withContext(Dispatchers.Main) {
-                Handler(Looper.getMainLooper()).postDelayed({ dialog.dismiss() }, 1000)
+                delay(200)
+                dialog.dismiss()
             }
         }
     }
