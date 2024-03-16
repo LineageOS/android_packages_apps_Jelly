@@ -6,8 +6,8 @@
 package org.lineageos.jelly.model
 
 data class History(
-    val id: Int,
+    val id: Long,
     val title: String,
     val url: String,
-    val timestamp: Int
+    val timestamp: Long
 )
