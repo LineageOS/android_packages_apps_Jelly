@@ -64,6 +64,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "24a652e7_bf0a9141",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-03-16T15:42:46Z",
+      "side": 1,
+      "message": "running an handler within the corutine isn\u0027t smart, or correct, and 1s was too long, now I just made it shorter.",
+      "parentUuid": "edeb01c9_260dcd32",
+      "range": {
+        "startLine": 166,
+        "startChar": 16,
+        "endLine": 166,
+        "endChar": 26
+      },
+      "revId": "eeaf5fa1e400c8773a301d605a67cd25dfb13e9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9454bbea_e850c6f5",
