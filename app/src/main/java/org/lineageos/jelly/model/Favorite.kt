@@ -6,7 +6,7 @@
 package org.lineageos.jelly.model
 
 data class Favorite(
-    val id: Int,
+    val id: Long,
     val title: String,
     val url: String,
     val color: Int

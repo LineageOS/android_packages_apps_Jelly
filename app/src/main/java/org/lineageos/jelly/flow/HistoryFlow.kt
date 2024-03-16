@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 package org.lineageos.jelly.flow
 
 import android.content.ContentResolver
@@ -7,13 +12,12 @@ import android.provider.BaseColumns
 import androidx.core.os.bundleOf
 import org.lineageos.jelly.ext.mapEachRow
 import org.lineageos.jelly.ext.queryFlow
-import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.model.History
 
 class HistoryFlow(private val context: Context) : QueryFlow<History> {
     override fun flowCursor() = context.contentResolver.queryFlow(
-        FavoriteProvider.Columns.CONTENT_URI,
+        HistoryProvider.Columns.CONTENT_URI,
         null,
         Bundle().apply {
             putAll(
@@ -33,10 +37,10 @@ class HistoryFlow(private val context: Context) : QueryFlow<History> {
     ) { it, indexCache ->
         var i = 0
         History(
-            it.getInt(indexCache[i++]),
+            it.getLong(indexCache[i++]),
             it.getString(indexCache[i++]),
             it.getString(indexCache[i++]),
-            it.getInt(indexCache[i++])
+            it.getLong(indexCache[i++])
         )
     }
 }
