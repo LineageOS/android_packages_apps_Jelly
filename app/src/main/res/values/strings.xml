@@ -201,4 +201,10 @@
     <string name="location_dialog_allow">Allow</string>
     <string name="location_dialog_block">Block</string>
     <string name="location_dialog_cancel">Deny for now</string>
+
+    <!-- History CSV -->
+    <string name="history_csv_title">History</string>
+    <string name="history_csv_message">Export or import history to/from CSV</string>
+    <string name="history_csv_import">Import CSV</string>
+    <string name="history_csv_export">Export CSV</string>
 </resources>

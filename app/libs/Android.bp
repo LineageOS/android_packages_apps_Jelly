@@ -99,6 +99,33 @@ android_library {
     java_version: "1.7",
 }
 
+java_import {
+    name: "Jelly_com.github.doyaaaaaken_kotlin-csv-jvm-nodeps",
+    jars: ["com/github/doyaaaaaken/kotlin-csv-jvm/1.9.3/kotlin-csv-jvm-1.9.3.jar"],
+    sdk_version: "33",
+    min_sdk_version: "14",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+}
+
+java_library_static {
+    name: "Jelly_com.github.doyaaaaaken_kotlin-csv-jvm",
+    sdk_version: "33",
+    min_sdk_version: "14",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    static_libs: [
+        "Jelly_com.github.doyaaaaaken_kotlin-csv-jvm-nodeps",
+        "kotlin-stdlib-jdk8",
+        "kotlinx-coroutines-core-jvm",
+    ],
+    java_version: "1.7",
+}
+
 android_library_import {
     name: "Jelly_com.google.android.material_material-nodeps",
     aars: ["com/google/android/material/material/1.9.0/material-1.9.0.aar"],

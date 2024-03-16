@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,6 +10,13 @@
         style="@style/Theme.Jelly.MenuIcon"
         android:id="@+id/menu_history_delete"
         android:icon="@drawable/ic_delete"
+        android:title="@string/history_delete_title"
+        app:showAsAction="ifRoom" />
+
+    <item
+        style="@style/Theme.Jelly.MenuIcon"
+        android:id="@+id/menu_csv"
+        android:icon="@drawable/ic_csv"
         android:title="@string/history_delete_title"
         app:showAsAction="ifRoom" />
 </menu>
