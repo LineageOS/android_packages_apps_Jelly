@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f556756_dd2fb15e",
+        "filename": "app/src/main/java/org/lineageos/jelly/favorite/FavoriteAdapter.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-03-16T15:41:16Z",
+      "side": 1,
+      "message": "100 chars, you can probably use `when (UiUtils.isColorLight(favorite.color)) {}` to make it look cleaner",
+      "revId": "eeaf5fa1e400c8773a301d605a67cd25dfb13e9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46be08a0_f130d317",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-03-16T15:41:16Z",
+      "side": 1,
+      "message": "nit: save `it.isNotEmpty()` result in a variable and use it for both views, will waste less resources\n\nPlus run `submitList` first, so the adapter can compute the changes right away",
+      "range": {
+        "startLine": 109,
+        "startChar": 48,
+        "endLine": 109,
+        "endChar": 63
+      },
+      "revId": "eeaf5fa1e400c8773a301d605a67cd25dfb13e9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edeb01c9_260dcd32",
+        "filename": "app/src/main/java/org/lineageos/jelly/history/HistoryActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-03-16T15:41:16Z",
+      "side": 1,
+      "message": "mh?",
+      "range": {
+        "startLine": 166,
+        "startChar": 16,
+        "endLine": 166,
+        "endChar": 26
+      },
+      "revId": "eeaf5fa1e400c8773a301d605a67cd25dfb13e9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9454bbea_e850c6f5",
+        "filename": "app/src/main/java/org/lineageos/jelly/viewmodels/FavoriteViewModel.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-03-16T15:41:16Z",
+      "side": 1,
+      "message": "```\nval favorites \u003d JellyRepository.favorites(application)\n    .flowOn(Dispatchers.IO)\n    .stateIn(\n        viewModelScope,\n        SharingStarted.WhileSubscribed(),\n        initialValue \u003d listOf()\n    )\n```",
+      "revId": "eeaf5fa1e400c8773a301d605a67cd25dfb13e9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56ee45b2_ffcb86c6",
+        "filename": "app/src/main/java/org/lineageos/jelly/viewmodels/HistoryViewModel.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-03-16T15:41:16Z",
+      "side": 1,
+      "message": "```\nval history \u003d JellyRepository.history(application)\n    .flowOn(Dispatchers.IO)\n    .stateIn(\n        viewModelScope,\n        SharingStarted.WhileSubscribed(),\n        initialValue \u003d listOf()\n    )\n```",
+      "revId": "eeaf5fa1e400c8773a301d605a67cd25dfb13e9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
