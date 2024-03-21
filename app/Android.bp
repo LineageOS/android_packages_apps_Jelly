@@ -39,5 +39,5 @@ android_app {
         "kotlinx-coroutines-core",
     ],
 
-    sdk_version: "33",
+    sdk_version: "34",
 }
