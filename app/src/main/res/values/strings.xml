@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -184,6 +184,8 @@
 
     <!-- SSL Certificate Details dialog -->
     <string name="ssl_cert_dialog_title">SSL Certificate Details</string>
+    <string name="ssl_cert_dialog_trust">Trust</string>
+    <string name="ssl_cert_dialog_trusted">Connection is secure</string>
     <string name="ssl_cert_dialog_domain">Domain</string>
     <string name="ssl_cert_dialog_issued_to">Issued to</string>
     <string name="ssl_cert_dialog_issued_by">Issued by</string>
@@ -194,6 +196,15 @@
     <string name="ssl_cert_dialog_issued_on">Issued On</string>
     <string name="ssl_cert_dialog_expires_on">Expires On</string>
     <string name="ssl_cert_dialog_dismiss">Dismiss</string>
+
+    <!-- SSL errors -->
+    <string name="ssl_error_untrusted">This certificate isn\'t from a trusted authority.</string>
+    <string name="ssl_error_mismatch">The name of the site doesn\'t match the name on the certificate.</string>
+    <string name="ssl_error_expired">This certificate has expired.</string>
+    <string name="ssl_error_not_yet_valid">This certificate isn\'t valid yet.</string>
+    <string name="ssl_error_date_invalid">This certificate has an invalid date.</string>
+    <string name="ssl_error_invalid">This certificate is invalid.</string>
+    <string name="ssl_error_unknown">Unknown certificate error.</string>
 
     <!-- Location dialog -->
     <string name="location_dialog_title">Provide location?</string>

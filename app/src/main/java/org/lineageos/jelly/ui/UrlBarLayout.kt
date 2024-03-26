@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,6 +8,7 @@ package org.lineageos.jelly.ui
 import android.annotation.SuppressLint
 import android.content.Context
 import android.net.http.SslCertificate
+import android.net.http.SslError
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.View
@@ -96,6 +97,7 @@ class UrlBarLayout @JvmOverloads constructor(
         }
 
     private var certificate: SslCertificate? = null
+    private var sslError: SslError? = null
 
     private var wasKeyboardVisible = false
 
@@ -202,6 +204,7 @@ class UrlBarLayout @JvmOverloads constructor(
             certificate?.let { cert ->
                 url?.let {url ->
                     sslCertificateInfoDialog.setUrlAndCertificate(url, cert)
+                    sslCertificateInfoDialog.onSslError(sslError)
                     sslCertificateInfoDialog.show()
                 }
             }
@@ -240,11 +243,18 @@ class UrlBarLayout @JvmOverloads constructor(
         this.url = url
         certificate = null
         isLoading = true
+        sslError = null
+        secureButton.setImageResource(R.drawable.ic_lock)
     }
 
     fun onPageLoadFinished(certificate: SslCertificate?) {
         this.certificate = certificate
         isLoading = false
+    }
+
+    fun onSslError(error: SslError?) {
+        sslError = error
+        secureButton.setImageResource(R.drawable.ic_caution)
     }
 
     private fun clearSearch() {
