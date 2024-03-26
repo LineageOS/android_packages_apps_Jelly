@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5105f5f_46b6aa0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29415
+      },
+      "writtenOn": "2024-03-26T20:29:00Z",
+      "side": 1,
+      "message": "This just adds a caution icon to the URL bar and adds the error to the SSL certificate dialog, still need to add a page to prompt user to go back to previous page or proceed unsafely.",
+      "revId": "8b85afa294d8648c34fe27e5bb7d6ee76edae23a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
