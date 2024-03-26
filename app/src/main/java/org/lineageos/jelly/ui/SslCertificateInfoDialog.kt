@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,6 +11,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.net.http.SslCertificate
+import android.net.http.SslError
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -21,6 +22,7 @@ import java.text.DateFormat
 class SslCertificateInfoDialog(
     @UiContext context: Context,
 ) : Dialog(context) {
+    private val trustedView by lazy { findViewById<TextView>(R.id.trusted) }
     private val domainView by lazy { findViewById<TextView>(R.id.domain) }
     private val issuedToCNView by lazy { findViewById<KeyValueView>(R.id.issuedToCnView) }
     private val issuedToOView by lazy { findViewById<KeyValueView>(R.id.issuedToOView) }
@@ -88,5 +90,19 @@ class SslCertificateInfoDialog(
             R.string.ssl_cert_dialog_expires_on,
             DateFormat.getDateTimeInstance().format(endDate)
         )
+    }
+
+    fun onSslError(error: SslError?) {
+        trustedView.setText(R.string.ssl_cert_dialog_trusted)
+        error?.let { sslError ->
+            when (sslError.primaryError) {
+                SslError.SSL_DATE_INVALID -> trustedView.setText(R.string.ssl_error_date_invalid)
+                SslError.SSL_EXPIRED -> trustedView.setText(R.string.ssl_error_expired)
+                SslError.SSL_IDMISMATCH -> trustedView.setText(R.string.ssl_error_mismatch)
+                SslError.SSL_INVALID -> trustedView.setText(R.string.ssl_error_invalid)
+                SslError.SSL_NOTYETVALID -> trustedView.setText(R.string.ssl_error_not_yet_valid)
+                SslError.SSL_UNTRUSTED -> trustedView.setText(R.string.ssl_error_untrusted)
+            }
+        }
     }
 }
