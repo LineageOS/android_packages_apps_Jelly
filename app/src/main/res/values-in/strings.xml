@@ -5,16 +5,25 @@
 -->
 <resources>
     <string name="app_name">Browser</string>
+    <string name="url_bar_more">Lainnya</string>
+    <string name="url_bar_search_cancel">Batalkan pencarian</string>
+    <string name="url_bar_search_clear">Hapus pencarian</string>
+    <string name="url_bar_search_previous">Sebelumnya</string>
+    <string name="url_bar_search_next">Berikutnya</string>
+    <string name="menu_go_back">Kembali</string>
+    <string name="menu_refresh">Segarkan halaman</string>
     <string name="menu_new_tab">Tab baru</string>
     <string name="menu_incognito">Tab penyamaran</string>
     <string name="menu_fav_add">Tambahkan ke favorit</string>
     <string name="menu_share">Bagikan</string>
     <string name="menu_favorites">Favorit</string>
     <string name="menu_history">Riwayat</string>
+    <string name="menu_downloads">Unduhan</string>
     <string name="menu_shortcut">Tambahkan pintasan</string>
     <string name="menu_settings">Setelan</string>
     <string name="menu_download">Unduh</string>
     <string name="menu_in_new_tab">Buka di tab baru</string>
+    <string name="menu_desktop_mode">Situs destop</string>
     <string name="menu_search">Temukan di laman</string>
     <string name="menu_print">Cetak</string>
     <string name="share_title">Kirim ke</string>
@@ -84,4 +93,6 @@
     <string name="ssl_cert_dialog_issued_on">Diterbitkan Pada</string>
     <string name="ssl_cert_dialog_expires_on">Kadaluarsa Pada</string>
     <string name="ssl_cert_dialog_dismiss">Tutup</string>
+    <string name="location_dialog_allow">Izinkan</string>
+    <string name="location_dialog_block">Blokir</string>
 </resources>
