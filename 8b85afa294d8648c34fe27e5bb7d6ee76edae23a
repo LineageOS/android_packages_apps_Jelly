@@ -16,6 +16,23 @@
       "message": "This just adds a caution icon to the URL bar and adds the error to the SSL certificate dialog, still need to add a page to prompt user to go back to previous page or proceed unsafely.",
       "revId": "8b85afa294d8648c34fe27e5bb7d6ee76edae23a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35b049a9_baee3ca0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29415
+      },
+      "writtenOn": "2024-03-28T20:22:32Z",
+      "side": 1,
+      "message": "Dedicated page for warning the user will be done in a different commit.",
+      "revId": "8b85afa294d8648c34fe27e5bb7d6ee76edae23a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
