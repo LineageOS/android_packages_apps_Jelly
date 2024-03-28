@@ -16,6 +16,24 @@
       "message": "i think this should be an else block of sort?",
       "revId": "e9d5769175f9843d6511b79fbf27b33f376f5a57",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "064b2915_a87f98fb",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/SslCertificateInfoDialog.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 29415
+      },
+      "writtenOn": "2024-03-28T22:54:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3cf86ba5_f00f99b4",
+      "revId": "e9d5769175f9843d6511b79fbf27b33f376f5a57",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
