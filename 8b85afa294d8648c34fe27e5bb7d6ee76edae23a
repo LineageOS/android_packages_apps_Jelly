@@ -33,6 +33,23 @@
       "message": "Dedicated page for warning the user will be done in a different commit.",
       "revId": "8b85afa294d8648c34fe27e5bb7d6ee76edae23a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbee55f5_4ed419f2",
+        "filename": "app/src/main/java/org/lineageos/jelly/ui/UrlBarLayout.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-03-28T20:42:43Z",
+      "side": 1,
+      "message": "since you now set the drawable dynamically you can likely remove android:src from the layout xml?",
+      "revId": "8b85afa294d8648c34fe27e5bb7d6ee76edae23a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
