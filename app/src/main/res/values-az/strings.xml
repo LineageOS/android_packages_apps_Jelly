@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -84,6 +84,8 @@
     <string name="suggestions_provider_none">Heç biri</string>
     <string name="search_bar_hint">Axtar</string>
     <string name="ssl_cert_dialog_title">SSL Sertifikat Detalları</string>
+    <string name="ssl_cert_dialog_trust">Trust</string>
+    <string name="ssl_cert_dialog_trusted">Bağlantı güvənlidir</string>
     <string name="ssl_cert_dialog_domain">Domen</string>
     <string name="ssl_cert_dialog_issued_to">Verildi</string>
     <string name="ssl_cert_dialog_issued_by">Verən</string>
@@ -94,6 +96,13 @@
     <string name="ssl_cert_dialog_issued_on">Verilmə</string>
     <string name="ssl_cert_dialog_expires_on">Bitmə Vaxtı</string>
     <string name="ssl_cert_dialog_dismiss">Rədd et</string>
+    <string name="ssl_error_untrusted">Bu sertifikat güvənli bir səlahiyyətlidən deyil.</string>
+    <string name="ssl_error_mismatch">Saytın adı, sertifikatdakı adla uyuşmur.</string>
+    <string name="ssl_error_expired">Bu sertifikatın müddəti bitib.</string>
+    <string name="ssl_error_not_yet_valid">Bu sertifikat hələ yararlı deyil.</string>
+    <string name="ssl_error_date_invalid">Bu sertifikat yararsız tarixə sahibdir.</string>
+    <string name="ssl_error_invalid">Bu sertifikat yararsızdır.</string>
+    <string name="ssl_error_unknown">Bilinməyən sertifikat xətası.</string>
     <string name="location_dialog_title">Yerləşmə təqdim edilsin?</string>
     <string name="location_dialog_message">%1$s coğrafi yerinizi istifadə etmək istəyir.</string>
     <string name="location_dialog_allow">İcazə ver</string>

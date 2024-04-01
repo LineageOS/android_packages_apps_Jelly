@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -84,6 +84,8 @@
     <string name="suggestions_provider_none">Niciunul</string>
     <string name="search_bar_hint">Căutați</string>
     <string name="ssl_cert_dialog_title">Detalii Certificat SSL</string>
+    <string name="ssl_cert_dialog_trust">Trust</string>
+    <string name="ssl_cert_dialog_trusted">Conexiunea este securizată</string>
     <string name="ssl_cert_dialog_domain">Domeniu</string>
     <string name="ssl_cert_dialog_issued_to">Emis către</string>
     <string name="ssl_cert_dialog_issued_by">Emis de</string>
@@ -94,6 +96,13 @@
     <string name="ssl_cert_dialog_issued_on">Emis pe</string>
     <string name="ssl_cert_dialog_expires_on">Expiră pe</string>
     <string name="ssl_cert_dialog_dismiss">Închideți</string>
+    <string name="ssl_error_untrusted">Acest certificat nu provine de la o autoritate de încredere.</string>
+    <string name="ssl_error_mismatch">Numele acestui site nu se potriveşte cu numele de pe certificat.</string>
+    <string name="ssl_error_expired">Acest certificat a expirat.</string>
+    <string name="ssl_error_not_yet_valid">Acest certificat încă nu este valabil.</string>
+    <string name="ssl_error_date_invalid">Acest certificat are o dată nevalidă.</string>
+    <string name="ssl_error_invalid">Certificatul nu este valabil.</string>
+    <string name="ssl_error_unknown">Eroare de certificat necunoscută.</string>
     <string name="location_dialog_title">Furnizați locația?</string>
     <string name="location_dialog_message">%1$s vrea să folosească geolocalizarea dvs.</string>
     <string name="location_dialog_allow">Permite</string>
