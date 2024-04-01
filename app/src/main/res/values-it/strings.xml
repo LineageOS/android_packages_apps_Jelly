@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -84,6 +84,8 @@
     <string name="suggestions_provider_none">Nessuno</string>
     <string name="search_bar_hint">Cerca</string>
     <string name="ssl_cert_dialog_title">Dettagli Certificato SSL</string>
+    <string name="ssl_cert_dialog_trust">Affidabilità</string>
+    <string name="ssl_cert_dialog_trusted">La connessione è sicura</string>
     <string name="ssl_cert_dialog_domain">Dominio</string>
     <string name="ssl_cert_dialog_issued_to">Rilasciato a</string>
     <string name="ssl_cert_dialog_issued_by">Rilasciato da</string>
@@ -94,6 +96,13 @@
     <string name="ssl_cert_dialog_issued_on">Emesso il</string>
     <string name="ssl_cert_dialog_expires_on">Scade il</string>
     <string name="ssl_cert_dialog_dismiss">Chiudi</string>
+    <string name="ssl_error_untrusted">Questo certificato non proviene da un\'autorità di fiducia.</string>
+    <string name="ssl_error_mismatch">Il nome del sito non corrisponde al nome sul certificato.</string>
+    <string name="ssl_error_expired">Questo certificato è scaduto.</string>
+    <string name="ssl_error_not_yet_valid">Questo certificato non è ancora valido.</string>
+    <string name="ssl_error_date_invalid">Questo certificato presenta una data non valida.</string>
+    <string name="ssl_error_invalid">Questo certificato non è valido.</string>
+    <string name="ssl_error_unknown">Errore sconosciuto di certificato.</string>
     <string name="location_dialog_title">Fornire la posizione?</string>
     <string name="location_dialog_message">%1$s vuole utilizzare la tua posizione.</string>
     <string name="location_dialog_allow">Consenti</string>

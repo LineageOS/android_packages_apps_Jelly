@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2019 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -84,6 +84,8 @@
     <string name="suggestions_provider_none">Κανένας</string>
     <string name="search_bar_hint">Αναζήτηση</string>
     <string name="ssl_cert_dialog_title">Λεπτομέρειες πιστοποιητικού SSL</string>
+    <string name="ssl_cert_dialog_trust">Εμπιστοσύνη</string>
+    <string name="ssl_cert_dialog_trusted">Η σύνδεση είναι ασφαλής</string>
     <string name="ssl_cert_dialog_domain">Τομέας</string>
     <string name="ssl_cert_dialog_issued_to">Παραχωρήθηκε σε</string>
     <string name="ssl_cert_dialog_issued_by">Παραχωρήθηκε από</string>
@@ -94,6 +96,13 @@
     <string name="ssl_cert_dialog_issued_on">Εκδόθηκε στις</string>
     <string name="ssl_cert_dialog_expires_on">Λήγει στις</string>
     <string name="ssl_cert_dialog_dismiss">Παράβλεψη</string>
+    <string name="ssl_error_untrusted">Αυτό το πιστοποιητικό δεν προέρχεται από αξιόπιστη αρχή.</string>
+    <string name="ssl_error_mismatch">Το όνομα του ιστότοπου δεν αντιστοιχεί με το όνομα στο πιστοποιητικό.</string>
+    <string name="ssl_error_expired">Αυτό το πιστοποιητικό έχει λήξει.</string>
+    <string name="ssl_error_not_yet_valid">Αυτό το πιστοποιητικό δεν είναι έγκυρο ακόμη.</string>
+    <string name="ssl_error_date_invalid">Αυτό το πιστοποιητικό δεν έχει έγκυρη ημερομηνία.</string>
+    <string name="ssl_error_invalid">Αυτό το πιστοποιητικό δεν είναι έγκυρο.</string>
+    <string name="ssl_error_unknown">Άγνωστο σφάλμα πιστοποιητικού.</string>
     <string name="location_dialog_title">Παροχή τοποθεσίας;</string>
     <string name="location_dialog_message">Το %1$s θέλει να χρησιμοποιήσει την τοποθεσία σας.</string>
     <string name="location_dialog_allow">Αποδοχή</string>
