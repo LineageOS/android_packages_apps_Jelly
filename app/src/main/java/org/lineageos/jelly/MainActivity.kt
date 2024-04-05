@@ -41,10 +41,11 @@ import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.updateLayoutParams
@@ -77,7 +78,7 @@ import java.io.IOException
 class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
-    private val constraintLayout by lazy { findViewById<ConstraintLayout>(R.id.constraintLayout) }
+    private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinatorLayout) }
     private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
@@ -373,7 +374,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
             withContext(Dispatchers.Main) {
                 Snackbar.make(
-                    constraintLayout, getString(R.string.favorite_added),
+                    coordinatorLayout, getString(R.string.favorite_added),
                     Snackbar.LENGTH_LONG
                 ).show()
             }
@@ -611,42 +612,43 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     private fun setUiMode() {
         // Now you don't see it
-        constraintLayout.alpha = 0f
+        coordinatorLayout.alpha = 0f
         // Magic happens
         changeUiMode(sharedPreferencesExt.reachModeEnabled)
         // Now you see it
-        constraintLayout.alpha = 1f
+        coordinatorLayout.alpha = 1f
     }
 
     private fun changeUiMode(isReachMode: Boolean) {
-        appBarLayout.updateLayoutParams<ConstraintLayout.LayoutParams> {
-            topToTop = when (isReachMode) {
-                true -> ConstraintLayout.LayoutParams.UNSET
-                false -> ConstraintLayout.LayoutParams.PARENT_ID
-            }
-            bottomToBottom = when (isReachMode) {
-                true -> ConstraintLayout.LayoutParams.PARENT_ID
-                false -> ConstraintLayout.LayoutParams.UNSET
-            }
+        appBarLayout.updateLayoutParams<RelativeLayout.LayoutParams> {
+            removeRule(
+                when (isReachMode) {
+                    true -> RelativeLayout.ALIGN_PARENT_TOP
+                    false -> RelativeLayout.ALIGN_PARENT_BOTTOM
+                }
+            )
+            addRule(
+                when (isReachMode) {
+                    true -> RelativeLayout.ALIGN_PARENT_BOTTOM
+                    false -> RelativeLayout.ALIGN_PARENT_TOP
+                }
+            )
         }
 
-        webView.updateLayoutParams<ConstraintLayout.LayoutParams> {
-            bottomToBottom = when (isReachMode) {
-                true -> ConstraintLayout.LayoutParams.UNSET
-                false -> ConstraintLayout.LayoutParams.PARENT_ID
-            }
-            bottomToTop = when (isReachMode) {
-                true -> R.id.appBarLayout
-                false -> ConstraintLayout.LayoutParams.UNSET
-            }
-            topToBottom = when (isReachMode) {
-                true -> ConstraintLayout.LayoutParams.UNSET
-                false -> R.id.appBarLayout
-            }
-            topToTop = when (isReachMode) {
-                true -> ConstraintLayout.LayoutParams.PARENT_ID
-                false -> ConstraintLayout.LayoutParams.UNSET
-            }
+        webView.updateLayoutParams<RelativeLayout.LayoutParams> {
+            removeRule(
+                when (isReachMode) {
+                    true -> RelativeLayout.BELOW
+                    false -> RelativeLayout.ABOVE
+                }
+            )
+            addRule(
+                when (isReachMode) {
+                    true -> RelativeLayout.ABOVE
+                    false -> RelativeLayout.BELOW
+                },
+                R.id.appBarLayout
+            )
         }
     }
 
