@@ -34,7 +34,7 @@ import kotlin.reflect.safeCast
  * App's main URL and search view.
  */
 class UrlBarLayout @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet?, defStyleAttr: Int = 0
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     // Views
     private val autoCompleteTextView by lazy { findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView) }
