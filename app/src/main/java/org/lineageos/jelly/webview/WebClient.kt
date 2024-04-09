@@ -29,27 +29,35 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.MutableLiveData
 import com.google.android.material.snackbar.Snackbar
 import org.lineageos.jelly.R
-import org.lineageos.jelly.ui.UrlBarLayout
+import org.lineageos.jelly.model.LoadingStatus
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.net.URISyntaxException
 
-internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient() {
+class WebClient : WebViewClient() {
+    val loadingStatus = MutableLiveData<LoadingStatus>()
+    val sslError = MutableLiveData<SslError?>(null)
+
     override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
         super.onPageStarted(view, url, favicon)
-        urlBarLayout.onPageLoadStarted(url)
+
+        loadingStatus.value = LoadingStatus.Loading(url)
+        sslError.value = null
     }
 
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
-        urlBarLayout.onPageLoadFinished(view.certificate)
+
+        loadingStatus.value = LoadingStatus.Success(url, view.certificate)
     }
 
     override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
         super.onReceivedSslError(view, handler, error)
-        urlBarLayout.onSslError(error)
+
+        sslError.value = error
     }
 
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {

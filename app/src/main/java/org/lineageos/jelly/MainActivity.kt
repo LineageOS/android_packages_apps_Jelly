@@ -8,6 +8,7 @@ package org.lineageos.jelly
 import android.app.Activity
 import android.app.ActivityManager.TaskDescription
 import android.app.DownloadManager
+import android.content.ActivityNotFoundException
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.DialogInterface
@@ -42,9 +43,12 @@ import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -61,6 +65,7 @@ import kotlinx.coroutines.withContext
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
+import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
@@ -69,13 +74,16 @@ import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.utils.UrlUtils
+import org.lineageos.jelly.viewmodels.WebViewModel
 import org.lineageos.jelly.webview.WebViewExt
-import org.lineageos.jelly.webview.WebViewExtActivity
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
-class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+    // View models
+    private val model: WebViewModel by viewModels()
+
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
     private val coordinatorLayout by lazy { findViewById<CoordinatorLayout>(R.id.coordinatorLayout) }
@@ -83,18 +91,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
 
+    // System services
+    private val downloadManager by lazy { getSystemService(DownloadManager::class.java) }
+    private val printManager by lazy { getSystemService(PrintManager::class.java) }
+    private val shortcutManager by lazy { getSystemService(ShortcutManager::class.java) }
+
+    // File chooser
     private val fileRequest =
         registerForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) {
             fileRequestCallback.invoke(it)
         }
-    private lateinit var fileRequestCallback: ((data: List<Uri>) -> Unit)
-    override fun launchFileRequest(input: Array<String>) {
-        fileRequest.launch(input)
-    }
-
-    override fun setFileRequestCallback(cb: (data: List<Uri>) -> Unit) {
-        fileRequestCallback = cb
-    }
+    private lateinit var fileRequestCallback: ((data: List<Uri>?) -> Unit)
 
     private val urlResolvedReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -128,8 +135,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
-    private var urlIcon: Bitmap? = null
-    private var incognito = false
     private var customView: View? = null
     private var fullScreenCallback: CustomViewCallback? = null
     private val uiScope = CoroutineScope(Dispatchers.Main)
@@ -156,17 +161,16 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val intent = intent
-        var url = intent.dataString
-        incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
-        var desktopMode = false
 
-        // Restore from previous instance
-        savedInstanceState?.let {
-            incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
-            url = url?.takeIf { url ->
-                url.isNotEmpty()
-            } ?: it.getString(IntentUtils.EXTRA_URL, null)
-            desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
+        model.setIncognitoMode(
+            intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
+        )
+
+        // Set the initial URL
+        intent.dataString?.takeIf {
+            it.isNotEmpty()
+        }?.let {
+            model.setInitialUrl(it)
         }
 
         // Make sure prefs are set before loading them
@@ -177,11 +181,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         // Register app shortcuts
         registerShortcuts()
 
-        urlBarLayout.isIncognito = incognito
-
         menuDialog = MenuDialog(this) { option: MenuDialog.Option ->
-            val isDesktop = webView.isDesktopMode
-
             when (option) {
                 MenuDialog.Option.BACK -> webView.goBack()
                 MenuDialog.Option.FORWARD -> webView.goForward()
@@ -225,7 +225,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 MenuDialog.Option.DOWNLOADS -> startActivity(Intent(DownloadManager.ACTION_VIEW_DOWNLOADS))
                 MenuDialog.Option.ADD_TO_HOME_SCREEN -> addShortcut()
                 MenuDialog.Option.PRINT -> {
-                    val printManager = getSystemService(PrintManager::class.java)
                     val documentName = "Jelly document"
                     val printAdapter = webView.createPrintDocumentAdapter(documentName)
                     printManager.print(
@@ -235,8 +234,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 }
 
                 MenuDialog.Option.DESKTOP_VIEW -> {
-                    webView.isDesktopMode = !isDesktop
-                    menuDialog.isDesktopMode = !isDesktop
+                    model.setDesktopMode(model.desktopMode.value != true)
                 }
 
                 MenuDialog.Option.SETTINGS -> startActivity(
@@ -252,17 +250,111 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             UiUtils.hideKeyboard(window, urlBarLayout)
             menuDialog.showAsDropdownMenu(urlBarLayout, sharedPreferencesExt.reachModeEnabled)
         }
+        urlBarLayout.onLoadUrlCallback = { webView.loadUrl(it) }
+        urlBarLayout.onStartSearchCallback = { webView.findAllAsync(it) }
+        urlBarLayout.onClearSearchCallback = { webView.clearMatches() }
+        urlBarLayout.onSearchPositionChangeCallback = { webView.findNext(it) }
 
-        webView.init(this, urlBarLayout, incognito)
-        webView.isDesktopMode = desktopMode
-        webView.loadUrl(url ?: sharedPreferencesExt.homePage)
+        webView.init()
+
+        // Load the initial URL
+        webView.loadUrl(model.url.value ?: sharedPreferencesExt.homePage)
+
         setUiMode()
+
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")
             val httpCacheSize = 1024 * 1024.toLong() // 1 MiB
             HttpResponseCache.install(httpCacheDir, httpCacheSize)
         } catch (e: IOException) {
             Log.i(TAG, "HTTP response cache installation failed:$e")
+        }
+
+        // Observe favicon
+        model.favicon.observe(this) { favicon ->
+            updateTaskDescription(favicon)
+        }
+
+        // Observe title
+        model.title.observe(this) { title ->
+            webView.url?.let { url ->
+                if (model.isIncognito.value != true) {
+                    HistoryProvider.addOrUpdateItem(contentResolver, title, url)
+                }
+            }
+        }
+
+        // Observe show sheet menu requests
+        model.onShowSheetMenu.observe(this) { onShowSheetMenu ->
+            onShowSheetMenu.handle {
+                showSheetMenu(it.url, it.shouldAllowDownload)
+            }
+        }
+
+        // Observe download requests
+        model.onDownloadStart.observe(this) { onDownloadStart ->
+            onDownloadStart.handle {
+                downloadFileAsk(
+                    it.url, it.userAgent, it.contentDisposition, it.mimeType
+                )
+            }
+        }
+
+        // Observe file chooser requests
+        model.onShowFileChooser.observe(this) { onShowFileChooser ->
+            onShowFileChooser.handle {
+                fileRequestCallback = { uris: List<Uri>? ->
+                    it.path.onReceiveValue(uris?.toTypedArray())
+                }
+
+                try {
+                    fileRequest.launch(
+                        it.params.acceptTypes.mapNotNull { type ->
+                            MimeTypeMap.getSingleton().getMimeTypeFromExtension(type)
+                        }.toTypedArray().takeIf { mimeType ->
+                            mimeType.isNotEmpty()
+                        } ?: arrayOf("*/*")
+                    )
+                } catch (_: ActivityNotFoundException) {
+                    Toast.makeText(
+                        this, R.string.error_no_activity_found, Toast.LENGTH_LONG
+                    ).show()
+
+                    it.path.onReceiveValue(null)
+                }
+            }
+        }
+
+        // Observe geolocation permissions requests
+        model.onGeolocationPermissionsShowPrompt.observe(
+            this
+        ) { onGeolocationPermissionsShowPrompt ->
+            onGeolocationPermissionsShowPrompt.handle {
+                showLocationDialog(it.origin, it.callback)
+            }
+        }
+
+        // Observe show custom view requests
+        model.onShowCustomView.observe(this) { onShowCustomView ->
+            onShowCustomView.handle {
+                onShowCustomView(it.view, it.callback)
+            }
+        }
+
+        // Observe hide custom view requests
+        model.onHideCustomView.observe(this) { onHideCustomView ->
+            onHideCustomView.handle {
+                onHideCustomView()
+            }
+        }
+
+        // Observe open in new window requests
+        model.onCreateWindow.observe(this) { onCreateWindow ->
+            onCreateWindow.handle {
+                val result = it.view.hitTestResult
+
+                openInNewTab(this, result.extra, model.isIncognito.value == true)
+            }
         }
 
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
@@ -319,7 +411,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         super.onResume()
         webView.onResume()
         CookieManager.getInstance()
-            .setAcceptCookie(!webView.isIncognito && sharedPreferencesExt.cookiesEnabled)
+            .setAcceptCookie(model.isIncognito.value != true && sharedPreferencesExt.cookiesEnabled)
         if (sharedPreferencesExt.lookLockEnabled) {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
@@ -330,17 +422,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
-    public override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-
-        // Preserve webView status
-        outState.putString(IntentUtils.EXTRA_URL, webView.url)
-        outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
-        outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
-    }
-
     private fun registerShortcuts() {
-        val shortcutManager = getSystemService(ShortcutManager::class.java)
         shortcutManager.dynamicShortcuts = listOf(
             ShortcutInfo.Builder(this, "new_incognito_tab_shortcut")
                 .setShortLabel(getString(R.string.shortcut_new_incognito_tab))
@@ -388,7 +470,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
 
     private suspend fun setAsFavorite(title: String, url: String) {
-        val color = urlIcon?.takeUnless { it.isRecycled }?.let { bitmap ->
+        val color = model.favicon.value?.takeUnless { it.isRecycled }?.let { bitmap ->
             UiUtils.getColor(bitmap, false).takeUnless { it == Color.TRANSPARENT }
         } ?: ContextCompat.getColor(
             this, com.google.android.material.R.color.material_dynamic_primary50
@@ -404,12 +486,11 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
-    override fun downloadFileAsk(
+    private fun downloadFileAsk(
         url: String?,
         userAgent: String?,
         contentDisposition: String?,
         mimeType: String?,
-        contentLength: Long
     ) {
         val fileName = UrlUtils.guessFileName(url, contentDisposition, mimeType)
         AlertDialog.Builder(this)
@@ -453,10 +534,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         CookieManager.getInstance().getCookie(url)?.takeUnless { it.isEmpty() }?.let {
             request.addRequestHeader("Cookie", it)
         }
-        getSystemService(DownloadManager::class.java).enqueue(request)
+        downloadManager.enqueue(request)
     }
 
-    override fun showSheetMenu(url: String, shouldAllowDownload: Boolean) {
+    private fun showSheetMenu(url: String, shouldAllowDownload: Boolean) {
         val sheet = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.sheet_actions, LinearLayout(this))
         val tabLayout = view.findViewById<View>(R.id.sheetNewTabLayout)
@@ -464,7 +545,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         val favouriteLayout = view.findViewById<View>(R.id.sheetFavouriteLayout)
         val downloadLayout = view.findViewById<View>(R.id.sheetDownloadLayout)
         tabLayout.setOnClickListener {
-            openInNewTab(this, url, incognito)
+            openInNewTab(this, url, model.isIncognito.value == true)
             sheet.dismiss()
         }
         shareLayout.setOnClickListener {
@@ -479,7 +560,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
         if (shouldAllowDownload) {
             downloadLayout.setOnClickListener {
-                downloadFileAsk(url, webView.settings.userAgentString, null, null, 0)
+                downloadFileAsk(url, webView.settings.userAgentString, null, null)
                 sheet.dismiss()
             }
             downloadLayout.visibility = View.VISIBLE
@@ -491,7 +572,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     /*
      * This is called only if GeolocationPermissions doesn't have an explicit entry for @origin
      */
-    override fun showLocationDialog(origin: String, callback: GeolocationPermissions.Callback) {
+    private fun showLocationDialog(origin: String, callback: GeolocationPermissions.Callback) {
         locationDialogCallback = {
             AlertDialog.Builder(this)
                 .setTitle(R.string.location_dialog_title)
@@ -519,29 +600,16 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
-    override fun onFaviconLoaded(favicon: Bitmap?) {
-        favicon?.let {
-            if (it.isRecycled) {
-                return
-            }
-            urlIcon = it.copy(it.config, true)
-            updateTaskDescription()
-            if (!it.isRecycled) {
-                it.recycle()
-            }
-        }
-    }
-
-    private fun updateTaskDescription() {
+    private fun updateTaskDescription(favicon: Bitmap?) {
         setTaskDescription(
             TaskDescription(
                 webView.title,
-                urlIcon, Color.WHITE
+                favicon, Color.WHITE
             )
         )
     }
 
-    override fun onShowCustomView(view: View?, callback: CustomViewCallback) {
+    private fun onShowCustomView(view: View?, callback: CustomViewCallback) {
         customView?.let {
             callback.onCustomViewHidden()
             return
@@ -560,7 +628,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         webView.visibility = View.GONE
     }
 
-    override fun onHideCustomView() {
+    private fun onHideCustomView() {
         val customView = customView ?: return
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setImmersiveMode(false)
@@ -578,7 +646,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             data = Uri.parse(webView.url)
             action = Intent.ACTION_MAIN
         }
-        val launcherIcon = urlIcon?.let {
+        val launcherIcon = model.favicon.value?.let {
             Icon.createWithBitmap(UiUtils.getShortcutIcon(it, Color.WHITE))
         } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
         val title = webView.title.toString()
@@ -587,7 +655,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             .setIcon(launcherIcon)
             .setIntent(intent)
             .build()
-        getSystemService(ShortcutManager::class.java).requestPinShortcut(shortcutInfo, null)
+        shortcutManager.requestPinShortcut(shortcutInfo, null)
     }
 
     @Suppress("DEPRECATION")

@@ -5,63 +5,55 @@
 
 package org.lineageos.jelly.webview
 
-import android.content.ActivityNotFoundException
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Message
 import android.view.View
 import android.webkit.GeolocationPermissions
-import android.webkit.MimeTypeMap
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
-import android.widget.Toast
-import org.lineageos.jelly.R
-import org.lineageos.jelly.history.HistoryProvider
-import org.lineageos.jelly.ui.UrlBarLayout
-import org.lineageos.jelly.utils.TabUtils.openInNewTab
+import androidx.lifecycle.MutableLiveData
+import org.lineageos.jelly.model.Event
 
-internal class ChromeClient(
-    private val activity: WebViewExtActivity,
-    private val incognito: Boolean,
-    private val urlBarLayout: UrlBarLayout
-) : WebChromeClient() {
+class ChromeClient : WebChromeClient() {
+    // Values
+    val loadingProgress = MutableLiveData<Int>()
+    val title = MutableLiveData<String>()
+    val favicon = MutableLiveData<Bitmap?>(null)
+
+    // Callbacks
+    val onShowFileChooser = MutableLiveData<OnShowFileChooserData>()
+    val onGeolocationPermissionsShowPrompt =
+        MutableLiveData<OnGeolocationPermissionsShowPromptData>()
+    val onShowCustomView = MutableLiveData<OnShowCustomViewData>()
+    val onHideCustomView = MutableLiveData<OnHideCustomViewData>()
+    val onCreateWindow = MutableLiveData<OnCreateWindowData>()
+
     override fun onProgressChanged(view: WebView, progress: Int) {
-        urlBarLayout.loadingProgress = progress
-        super.onProgressChanged(view, progress)
+        loadingProgress.value = progress
     }
 
     override fun onReceivedTitle(view: WebView, title: String) {
-        view.url?.let {
-            if (!incognito) {
-                HistoryProvider.addOrUpdateItem(activity.contentResolver, title, it)
-            }
-        }
+        this.title.value = title
     }
 
     override fun onReceivedIcon(view: WebView, icon: Bitmap) {
-        activity.onFaviconLoaded(icon)
+        if (icon.isRecycled) {
+            return
+        }
+
+        favicon.value = icon.copy(icon.config, true)
+
+        icon.recycle()
     }
 
     override fun onShowFileChooser(
         view: WebView, path: ValueCallback<Array<Uri>>,
         params: FileChooserParams
     ): Boolean {
-        activity.setFileRequestCallback {
-            path.onReceiveValue(it.toTypedArray())
-        }
+        onShowFileChooser.value = OnShowFileChooserData(view, path, params)
 
-        try {
-            activity.launchFileRequest(params.acceptTypes.mapNotNull {
-                MimeTypeMap.getSingleton().getMimeTypeFromExtension(it)
-            }.toTypedArray().takeIf { it.isNotEmpty() } ?: arrayOf("*/*"))
-        } catch (e: ActivityNotFoundException) {
-            Toast.makeText(
-                activity, activity.getString(R.string.error_no_activity_found),
-                Toast.LENGTH_LONG
-            ).show()
-            return false
-        }
         return true
     }
 
@@ -69,24 +61,50 @@ internal class ChromeClient(
         origin: String,
         callback: GeolocationPermissions.Callback
     ) {
-        activity.showLocationDialog(origin, callback)
+        onGeolocationPermissionsShowPrompt.value = OnGeolocationPermissionsShowPromptData(
+            origin, callback
+        )
     }
 
     override fun onShowCustomView(view: View, callback: CustomViewCallback) {
-        activity.onShowCustomView(view, callback)
+        onShowCustomView.value = OnShowCustomViewData(view, callback)
     }
 
     override fun onHideCustomView() {
-        activity.onHideCustomView()
+        onHideCustomView.value = OnHideCustomViewData()
     }
 
     override fun onCreateWindow(
         view: WebView, isDialog: Boolean,
         isUserGesture: Boolean, resultMsg: Message
     ): Boolean {
-        val result = view.hitTestResult
-        val url = result.extra
-        openInNewTab(activity, url, incognito)
+        onCreateWindow.value = OnCreateWindowData(view, isDialog, isUserGesture, resultMsg)
+
         return true
     }
+
+    data class OnShowFileChooserData(
+        val view: WebView,
+        val path: ValueCallback<Array<Uri>>,
+        val params: FileChooserParams,
+    ) : Event<OnShowFileChooserData>()
+
+    data class OnGeolocationPermissionsShowPromptData(
+        val origin: String,
+        val callback: GeolocationPermissions.Callback,
+    ) : Event<OnGeolocationPermissionsShowPromptData>()
+
+    data class OnShowCustomViewData(
+        val view: View,
+        val callback: CustomViewCallback,
+    ) : Event<OnShowCustomViewData>()
+
+    class OnHideCustomViewData : Event<OnHideCustomViewData>()
+
+    data class OnCreateWindowData(
+        val view: WebView,
+        val isDialog: Boolean,
+        val isUserGesture: Boolean,
+        val resultMsg: Message,
+    ) : Event<OnCreateWindowData>()
 }
