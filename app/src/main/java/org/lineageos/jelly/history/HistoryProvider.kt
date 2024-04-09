@@ -28,6 +28,7 @@ class HistoryProvider : ContentProvider() {
             addURI(Columns.AUTHORITY, "history", MATCH_ALL)
             addURI(Columns.AUTHORITY, "history/#", MATCH_ID)
         }
+
         fun addOrUpdateItem(resolver: ContentResolver, title: String?, url: String) {
             var existingId: Long = -1
             val cursor = resolver.query(
@@ -72,6 +73,7 @@ class HistoryProvider : ContentProvider() {
         when (match) {
             MATCH_ALL -> {
             }
+
             MATCH_ID -> qb.appendWhere(BaseColumns._ID + " = " + uri.lastPathSegment)
             else -> return null
         }
@@ -112,6 +114,7 @@ class HistoryProvider : ContentProvider() {
                 HistoryDbHelper.DB_TABLE_HISTORY,
                 values, selection, selectionArgs
             )
+
             MATCH_ID -> {
                 if (selection != null || selectionArgs != null) {
                     throw UnsupportedOperationException(
@@ -123,6 +126,7 @@ class HistoryProvider : ContentProvider() {
                     values, BaseColumns._ID + " = ?", arrayOf(uri.lastPathSegment)
                 )
             }
+
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
         if (count > 0) {
@@ -142,6 +146,7 @@ class HistoryProvider : ContentProvider() {
         when (match) {
             MATCH_ALL -> {
             }
+
             MATCH_ID -> {
                 if (localSelection != null || localSelectionArgs != null) {
                     throw UnsupportedOperationException(
@@ -153,6 +158,7 @@ class HistoryProvider : ContentProvider() {
                     localSelectionArgs = arrayOf(it)
                 }
             }
+
             else -> throw UnsupportedOperationException("Cannot delete the URI $uri")
         }
         val count = db.delete(

@@ -91,6 +91,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     override fun launchFileRequest(input: Array<String>) {
         fileRequest.launch(input)
     }
+
     override fun setFileRequestCallback(cb: (data: List<Uri>) -> Unit) {
         fileRequestCallback = cb
     }
@@ -162,8 +163,8 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         // Restore from previous instance
         savedInstanceState?.let {
             incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
-            url = url?.takeIf {
-                    url -> url.isNotEmpty()
+            url = url?.takeIf { url ->
+                url.isNotEmpty()
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
             desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
         }
@@ -194,18 +195,33 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                         }
                     }
                 }
+
                 MenuDialog.Option.SHARE -> {
                     // Delay a bit to allow popup menu hide animation to play
                     Handler(Looper.getMainLooper()).postDelayed({
                         webView.url?.let { url -> shareUrl(url) }
                     }, 300)
                 }
+
                 MenuDialog.Option.FIND_IN_PAGE -> {
                     // Run the search setup
                     showSearch()
                 }
-                MenuDialog.Option.FAVORITES -> startActivity(Intent(this, FavoriteActivity::class.java))
-                MenuDialog.Option.HISTORY -> startActivity(Intent(this, HistoryActivity::class.java))
+
+                MenuDialog.Option.FAVORITES -> startActivity(
+                    Intent(
+                        this,
+                        FavoriteActivity::class.java
+                    )
+                )
+
+                MenuDialog.Option.HISTORY -> startActivity(
+                    Intent(
+                        this,
+                        HistoryActivity::class.java
+                    )
+                )
+
                 MenuDialog.Option.DOWNLOADS -> startActivity(Intent(DownloadManager.ACTION_VIEW_DOWNLOADS))
                 MenuDialog.Option.ADD_TO_HOME_SCREEN -> addShortcut()
                 MenuDialog.Option.PRINT -> {
@@ -217,11 +233,18 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                         PrintAttributes.Builder().build()
                     )
                 }
+
                 MenuDialog.Option.DESKTOP_VIEW -> {
                     webView.isDesktopMode = !isDesktop
                     menuDialog.isDesktopMode = !isDesktop
                 }
-                MenuDialog.Option.SETTINGS -> startActivity(Intent(this, SettingsActivity::class.java))
+
+                MenuDialog.Option.SETTINGS -> startActivity(
+                    Intent(
+                        this,
+                        SettingsActivity::class.java
+                    )
+                )
             }
             menuDialog.dismiss()
         }

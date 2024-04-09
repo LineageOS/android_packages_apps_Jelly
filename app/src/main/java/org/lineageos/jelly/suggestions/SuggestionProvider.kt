@@ -7,7 +7,7 @@ package org.lineageos.jelly.suggestions
 
 import android.util.Log
 import org.json.JSONArray
-import org.lineageos.jelly.ext.*
+import org.lineageos.jelly.ext.getCharset
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import java.net.HttpURLConnection

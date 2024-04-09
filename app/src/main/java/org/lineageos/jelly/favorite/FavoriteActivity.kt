@@ -101,6 +101,7 @@ class FavoriteActivity : AppCompatActivity(R.layout.activity_favorites) {
             finish()
             true
         }
+
         else -> {
             super.onOptionsItemSelected(item)
         }

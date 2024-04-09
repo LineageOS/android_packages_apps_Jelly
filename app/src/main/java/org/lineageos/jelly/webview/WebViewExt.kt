@@ -70,11 +70,13 @@ class WebViewExt @JvmOverloads constructor(
                             shouldAllowDownload = false
                             return true
                         }
+
                         HitTestResult.SRC_ANCHOR_TYPE -> {
                             activity.showSheetMenu(it, shouldAllowDownload)
                             shouldAllowDownload = false
                             return true
                         }
+
                         else -> {
                             return false
                         }
