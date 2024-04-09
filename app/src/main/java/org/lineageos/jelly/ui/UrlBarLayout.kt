@@ -10,7 +10,6 @@ import android.content.Context
 import android.net.http.SslCertificate
 import android.net.http.SslError
 import android.util.AttributeSet
-import android.view.KeyEvent
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.inputmethod.EditorInfo
@@ -164,18 +163,8 @@ class UrlBarLayout @JvmOverloads constructor(
         autoCompleteTextView.setAdapter(suggestionsAdapter)
         autoCompleteTextView.setOnEditorActionListener { _, actionId: Int, _ ->
             when (actionId) {
+                EditorInfo.IME_ACTION_UNSPECIFIED,
                 EditorInfo.IME_ACTION_SEARCH -> {
-                    UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
-                    onLoadUrlCallback?.invoke(autoCompleteTextView.text.toString())
-                    autoCompleteTextView.clearFocus()
-                    true
-                }
-                else -> false
-            }
-        }
-        autoCompleteTextView.setOnKeyListener { _, keyCode: Int, _ ->
-            when (keyCode) {
-                KeyEvent.KEYCODE_ENTER -> {
                     UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
                     onLoadUrlCallback?.invoke(autoCompleteTextView.text.toString())
                     autoCompleteTextView.clearFocus()
@@ -215,6 +204,7 @@ class UrlBarLayout @JvmOverloads constructor(
         }
         searchEditText.setOnEditorActionListener { view, actionId, _ ->
             return@setOnEditorActionListener when(actionId) {
+                EditorInfo.IME_ACTION_UNSPECIFIED,
                 EditorInfo.IME_ACTION_SEARCH -> {
                     UiUtils.hideKeyboard(requireActivity().window, view)
                     searchEditText.text?.toString()?.takeUnless { it.isEmpty() }?.also {
