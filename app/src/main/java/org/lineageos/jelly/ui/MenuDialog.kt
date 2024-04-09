@@ -8,60 +8,72 @@ package org.lineageos.jelly.ui
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.RelativeLayout
+import androidx.lifecycle.Observer
+import androidx.lifecycle.findViewTreeLifecycleOwner
 import com.google.android.material.materialswitch.MaterialSwitch
 import org.lineageos.jelly.R
+import org.lineageos.jelly.ext.viewModels
+import org.lineageos.jelly.viewmodels.WebViewModel
 
 class MenuDialog(
     context: Context,
     private val onClickListener: (option: Option) -> Unit
-) {
-    private val layoutInflater = LayoutInflater.from(context)
-
-    private val view = layoutInflater.inflate(R.layout.menu_dialog, LinearLayout(context)).apply {
+) : PopupWindow(
+    LayoutInflater.from(context).inflate(R.layout.menu_dialog, FrameLayout(context)).apply {
         measure(
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
             View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
         )
-    }
+    },
+    RelativeLayout.LayoutParams.WRAP_CONTENT,
+    RelativeLayout.LayoutParams.WRAP_CONTENT,
+    true
+) {
+    // Views
+    private val backButton by lazy { contentView.findViewById<ImageButton>(R.id.backButton) }
+    private val forwardButton by lazy { contentView.findViewById<ImageButton>(R.id.forwardButton) }
+    private val refreshButton by lazy { contentView.findViewById<ImageButton>(R.id.refreshButton) }
+    private val addToFavoriteButton by lazy { contentView.findViewById<ImageButton>(R.id.addToFavoriteButton) }
+    private val shareButton by lazy { contentView.findViewById<ImageButton>(R.id.shareButton) }
 
-    private val backButton by lazy { view.findViewById<ImageButton>(R.id.backButton) }
-    private val forwardButton by lazy { view.findViewById<ImageButton>(R.id.forwardButton) }
-    private val refreshButton by lazy { view.findViewById<ImageButton>(R.id.refreshButton) }
-    private val addToFavoriteButton by lazy { view.findViewById<ImageButton>(R.id.addToFavoriteButton) }
-    private val shareButton by lazy { view.findViewById<ImageButton>(R.id.shareButton) }
+    private val newTabButton by lazy { contentView.findViewById<LinearLayout>(R.id.newTabButton) }
+    private val newPrivateTabButton by lazy { contentView.findViewById<LinearLayout>(R.id.newPrivateTabButton) }
 
-    private val newTabButton by lazy { view.findViewById<LinearLayout>(R.id.newTabButton) }
-    private val newPrivateTabButton by lazy { view.findViewById<LinearLayout>(R.id.newPrivateTabButton) }
+    private val favoritesButton by lazy { contentView.findViewById<LinearLayout>(R.id.favoritesButton) }
+    private val historyButton by lazy { contentView.findViewById<LinearLayout>(R.id.historyButton) }
+    private val downloadsButton by lazy { contentView.findViewById<LinearLayout>(R.id.downloadsButton) }
 
-    private val favoritesButton by lazy { view.findViewById<LinearLayout>(R.id.favoritesButton) }
-    private val historyButton by lazy { view.findViewById<LinearLayout>(R.id.historyButton) }
-    private val downloadsButton by lazy { view.findViewById<LinearLayout>(R.id.downloadsButton) }
+    private val addToHomeScreenButton by lazy { contentView.findViewById<LinearLayout>(R.id.addToHomeScreenButton) }
+    private val findInPageButton by lazy { contentView.findViewById<LinearLayout>(R.id.findInPageButton) }
+    private val desktopViewSwitch by lazy { contentView.findViewById<MaterialSwitch>(R.id.desktopViewSwitch) }
+    private val printButton by lazy { contentView.findViewById<LinearLayout>(R.id.printButton) }
+    private val settingsButton by lazy { contentView.findViewById<LinearLayout>(R.id.settingsButton) }
 
-    private val addToHomeScreenButton by lazy { view.findViewById<LinearLayout>(R.id.addToHomeScreenButton) }
-    private val findInPageButton by lazy { view.findViewById<LinearLayout>(R.id.findInPageButton) }
-    private val desktopViewSwitch by lazy { view.findViewById<MaterialSwitch>(R.id.desktopViewSwitch) }
-    private val printButton by lazy { view.findViewById<LinearLayout>(R.id.printButton) }
-    private val settingsButton by lazy { view.findViewById<LinearLayout>(R.id.settingsButton) }
-
-    private val popupWindow = PopupWindow(
-        view,
-        RelativeLayout.LayoutParams.WRAP_CONTENT,
-        RelativeLayout.LayoutParams.WRAP_CONTENT,
-        true
-    ).apply {
-        elevation = context.resources.getDimension(R.dimen.toolbar_elevation)
-    }
-
-    var isDesktopMode = false
+    private var currentAnchor: View? = null
         set(value) {
+            if (value === field) {
+                return
+            }
+
+            field?.let {
+                onDetachedFromWindow(it)
+            }
+
             field = value
 
-            desktopViewSwitch.isChecked = value
+            value?.let {
+                onAttachedToWindow(it)
+            }
         }
+
+    private val desktopModeObserver = Observer { desktopMode: Boolean ->
+        desktopViewSwitch.isChecked = desktopMode
+    }
 
     enum class Option {
         BACK,
@@ -82,6 +94,12 @@ class MenuDialog(
     }
 
     init {
+        elevation = context.resources.getDimension(R.dimen.toolbar_elevation)
+
+        setOnDismissListener {
+            currentAnchor = null
+        }
+
         backButton.setOnClickListener { triggerOption(Option.BACK) }
         forwardButton.setOnClickListener { triggerOption(Option.FORWARD) }
         refreshButton.setOnClickListener { triggerOption(Option.REFRESH) }
@@ -103,20 +121,31 @@ class MenuDialog(
     }
 
     fun showAsDropdownMenu(anchor: View, isReachMode: Boolean = false) {
-        val xOffset = anchor.width - view.measuredWidth
+        currentAnchor = anchor
+
+        val xOffset = anchor.width - contentView.measuredWidth
         val yOffset = if (isReachMode) {
-            -(anchor.height + view.measuredHeight)
+            -(anchor.height + contentView.measuredHeight)
         } else {
             0
         }
-        popupWindow.showAsDropDown(anchor, xOffset, yOffset)
-    }
 
-    fun dismiss() {
-        popupWindow.dismiss()
+        showAsDropDown(anchor, xOffset, yOffset)
     }
 
     private fun triggerOption(option: Option) {
         onClickListener(option)
+    }
+
+    private fun onAttachedToWindow(anchor: View) {
+        val model by anchor.viewModels<WebViewModel>()
+
+        model.desktopMode.observe(anchor.findViewTreeLifecycleOwner()!!, desktopModeObserver)
+    }
+
+    private fun onDetachedFromWindow(anchor: View) {
+        val model by anchor.viewModels<WebViewModel>()
+
+        model.desktopMode.removeObserver(desktopModeObserver)
     }
 }

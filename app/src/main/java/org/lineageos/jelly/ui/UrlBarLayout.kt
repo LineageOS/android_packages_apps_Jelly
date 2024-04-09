@@ -5,10 +5,7 @@
 
 package org.lineageos.jelly.ui
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.net.http.SslCertificate
-import android.net.http.SslError
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewTreeObserver
@@ -22,11 +19,15 @@ import androidx.constraintlayout.widget.Group
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import androidx.lifecycle.findViewTreeLifecycleOwner
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import org.lineageos.jelly.R
 import org.lineageos.jelly.ext.requireActivity
+import org.lineageos.jelly.ext.viewModels
+import org.lineageos.jelly.model.LoadingStatus
 import org.lineageos.jelly.suggestions.SuggestionsAdapter
 import org.lineageos.jelly.utils.UiUtils
+import org.lineageos.jelly.viewmodels.WebViewModel
 import kotlin.reflect.safeCast
 
 /**
@@ -35,6 +36,9 @@ import kotlin.reflect.safeCast
 class UrlBarLayout @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
+    // View models
+    private val model: WebViewModel by viewModels<WebViewModel>()
+
     // Views
     private val autoCompleteTextView by lazy { findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView) }
     private val incognitoIcon by lazy { findViewById<ImageButton>(R.id.incognitoIcon) }
@@ -67,55 +71,7 @@ class UrlBarLayout @JvmOverloads constructor(
             }
         }
 
-    var isIncognito = false
-        set(value) {
-            field = value
-
-            incognitoIcon.isVisible = value
-        }
-
-    var loadingProgress: Int = 100
-        set(value) {
-            field = value
-
-            loadingProgressIndicator.progress = value
-        }
-    private var isLoading = false
-        set(value) {
-            field = value
-
-            loadingProgressIndicator.isVisible = value
-        }
-
-    var url: String? = null
-        set(value) {
-            field = value
-
-            autoCompleteTextView.setText(value)
-            secureButton.isVisible = value?.startsWith("https://") == true
-        }
-
-    private var certificate: SslCertificate? = null
-    private var sslError: SslError? = null
-
     private var wasKeyboardVisible = false
-
-    // Search
-    var searchPositionInfo = Pair(0, 0)
-        @SuppressLint("SetTextI18n")
-        set(value) {
-            field = value
-
-            val hasResults = value.second > 0
-            searchPreviousButton.isEnabled = hasResults && value.first > 0
-            searchNextButton.isEnabled = hasResults && value.first + 1 < value.second
-            searchResultCountTextView.text =
-                "${if (hasResults) value.first + 1 else 0}/${value.second}"
-
-            val hasInput = searchEditText.text.isNotEmpty()
-            searchResultCountTextView.isVisible = hasInput
-            searchClearButton.isVisible = hasInput
-        }
 
     // Callbacks
     var onMoreButtonClickCallback: (() -> Unit)? = null
@@ -144,19 +100,11 @@ class UrlBarLayout @JvmOverloads constructor(
         wasKeyboardVisible = isKeyboardOpen
     }
 
-    init {
-        inflate(context, R.layout.url_bar_layout, this)
-        viewTreeObserver.addOnGlobalLayoutListener(keyboardListener)
-    }
-
-    override fun onViewRemoved(view: View?) {
-        viewTreeObserver.removeOnGlobalLayoutListener(keyboardListener)
-    }
-
+    // Adapters
     private val suggestionsAdapter = SuggestionsAdapter(context)
 
-    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-        super.onLayout(changed, left, top, right, bottom)
+    init {
+        inflate(context, R.layout.url_bar_layout, this)
 
         autoCompleteTextView.setOnFocusChangeListener { view, hasFocus ->
             onFocusChange(view, hasFocus)
@@ -182,19 +130,15 @@ class UrlBarLayout @JvmOverloads constructor(
             autoCompleteTextView.clearFocus()
             onLoadUrlCallback?.invoke(text)
         }
-        if (isIncognito) {
-            autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
-                    EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
-        }
 
         moreButton.setOnClickListener { onMoreButtonClickCallback?.invoke() }
 
         // Set secure button callback
         secureButton.setOnClickListener {
-            certificate?.let { cert ->
-                url?.let { url ->
-                    sslCertificateInfoDialog.setUrlAndCertificate(url, cert)
-                    sslCertificateInfoDialog.onSslError(sslError)
+            model.loadingStatus.value?.let { loadingStatus ->
+                LoadingStatus.Success::class.safeCast(loadingStatus)?.let {
+                    sslCertificateInfoDialog.setLoadingStatus(it)
+                    sslCertificateInfoDialog.onSslError(model.sslError.value)
                     sslCertificateInfoDialog.show()
                 }
             }
@@ -214,6 +158,7 @@ class UrlBarLayout @JvmOverloads constructor(
                     } ?: run {
                         clearSearch()
                     }
+                    searchEditText.clearFocus()
                     true
                 }
 
@@ -231,27 +176,69 @@ class UrlBarLayout @JvmOverloads constructor(
         searchNextButton.setOnClickListener { onSearchPositionChangeCallback?.invoke(true) }
     }
 
-    fun onPageLoadStarted(url: String?) {
-        this.url = url
-        certificate = null
-        isLoading = true
-        sslError = null
-        secureButton.setImageResource(R.drawable.ic_lock)
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+
+        viewTreeObserver.addOnGlobalLayoutListener(keyboardListener)
+
+        val viewTreeLifecycleOwner = findViewTreeLifecycleOwner()!!
+
+        model.isIncognito.observe(viewTreeLifecycleOwner) {
+            incognitoIcon.isVisible = it
+
+            autoCompleteTextView.imeOptions = when (it) {
+                true -> autoCompleteTextView.imeOptions or
+                        EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
+
+                false -> autoCompleteTextView.imeOptions and
+                        EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING.inv()
+            }
+        }
+
+        model.loadingProgress.observe(viewTreeLifecycleOwner) { loadingProgress ->
+            loadingProgressIndicator.progress = loadingProgress
+        }
+
+        model.loadingStatus.observe(viewTreeLifecycleOwner) { loadingStatus ->
+            loadingProgressIndicator.isVisible = loadingStatus is LoadingStatus.Loading
+
+            autoCompleteTextView.setText(loadingStatus.url)
+            secureButton.isVisible = loadingStatus.url.startsWith("https://") == true
+        }
+
+        model.sslError.observe(viewTreeLifecycleOwner) { sslError ->
+            secureButton.setImageResource(
+                sslError?.let {
+                    R.drawable.ic_warning
+                } ?: R.drawable.ic_lock
+            )
+        }
+
+        model.searchPosition.observe(viewTreeLifecycleOwner) { searchPosition ->
+            val hasInput = searchPosition != null
+
+            searchResultCountTextView.isVisible = hasInput
+            searchClearButton.isVisible = hasInput
+
+            searchPosition?.let {
+                val hasResults = it.second > 0
+                searchPreviousButton.isEnabled = hasResults && it.first > 0
+                searchNextButton.isEnabled = hasResults && it.first + 1 < it.second
+                @Suppress("SetTextI18n")
+                searchResultCountTextView.text =
+                    "${if (hasResults) it.first + 1 else 0}/${it.second}"
+            }
+        }
     }
 
-    fun onPageLoadFinished(certificate: SslCertificate?) {
-        this.certificate = certificate
-        isLoading = false
-    }
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
 
-    fun onSslError(error: SslError?) {
-        sslError = error
-        secureButton.setImageResource(R.drawable.ic_warning)
+        viewTreeObserver.removeOnGlobalLayoutListener(keyboardListener)
     }
 
     private fun clearSearch() {
         searchEditText.setText("")
-        searchPositionInfo = EMPTY_SEARCH_RESULT
         onClearSearchCallback?.invoke()
     }
 
@@ -261,9 +248,5 @@ class UrlBarLayout @JvmOverloads constructor(
         } else {
             UiUtils.hideKeyboard(requireActivity().window, view)
         }
-    }
-
-    companion object {
-        private val EMPTY_SEARCH_RESULT = Pair(0, 0)
     }
 }

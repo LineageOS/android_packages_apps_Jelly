@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,9 +13,10 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.webkit.WebView
-import org.lineageos.jelly.ui.UrlBarLayout
+import org.lineageos.jelly.ext.viewModels
 import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.UrlUtils
+import org.lineageos.jelly.viewmodels.WebViewModel
 import java.util.regex.Pattern
 
 class WebViewExt @JvmOverloads constructor(
@@ -23,13 +24,39 @@ class WebViewExt @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : WebView(context, attrs, defStyle) {
-    private lateinit var activity: WebViewExtActivity
+    // View models
+    private val model by viewModels<WebViewModel>()
+
     val requestHeaders = mutableMapOf<String?, String?>()
     private var mobileUserAgent: String? = null
     private var desktopUserAgent: String? = null
     var isIncognito = false
-        private set
-    private var desktopMode = false
+        private set(value) {
+            field = value
+
+            model.isIncognito.value = value
+        }
+    var desktopMode = false
+        set(value) {
+            if (field == value) {
+                return
+            }
+
+            field = value
+
+            model.desktopMode.value = value
+
+            val settings = settings
+
+            settings.userAgentString = when (value) {
+                true -> desktopUserAgent
+                false -> mobileUserAgent
+            }
+            settings.useWideViewPort = value
+            settings.loadWithOverviewMode = value
+
+            reload()
+        }
     var lastLoadedUrl: String? = null
         private set
 
@@ -38,6 +65,12 @@ class WebViewExt @JvmOverloads constructor(
     override fun loadUrl(url: String) {
         lastLoadedUrl = url
         followUrl(url)
+    }
+
+    override fun clearMatches() {
+        super.clearMatches()
+
+        model.searchPosition.value = null
     }
 
     fun followUrl(url: String) {
@@ -66,13 +99,13 @@ class WebViewExt @JvmOverloads constructor(
                     when (result.type) {
                         HitTestResult.IMAGE_TYPE, HitTestResult.SRC_IMAGE_ANCHOR_TYPE -> {
                             shouldAllowDownload = true
-                            activity.showSheetMenu(it, shouldAllowDownload)
+                            model.onShowSheetMenu.value = ShowSheetMenuData(it, shouldAllowDownload)
                             shouldAllowDownload = false
                             return true
                         }
 
                         HitTestResult.SRC_ANCHOR_TYPE -> {
-                            activity.showSheetMenu(it, shouldAllowDownload)
+                            model.onShowSheetMenu.value = ShowSheetMenuData(it, shouldAllowDownload)
                             shouldAllowDownload = false
                             return true
                         }
@@ -87,7 +120,9 @@ class WebViewExt @JvmOverloads constructor(
         })
         setDownloadListener { url: String?, userAgent: String?, contentDisposition: String?,
                               mimeType: String?, contentLength: Long ->
-            activity.downloadFileAsk(url, userAgent, contentDisposition, mimeType, contentLength)
+            model.onDownloadStart.value = OnDownloadStartData(
+                url, userAgent, contentDisposition, mimeType, contentLength
+            )
         }
 
         // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
@@ -112,23 +147,16 @@ class WebViewExt @JvmOverloads constructor(
         }
     }
 
-    fun init(
-        activity: WebViewExtActivity, urlBarLayout: UrlBarLayout, incognito: Boolean
-    ) {
-        this.activity = activity
+    fun init(incognito: Boolean) {
         isIncognito = incognito
-        val chromeClient = ChromeClient(
-            activity, incognito, urlBarLayout
-        )
-        webChromeClient = chromeClient
-        webViewClient = WebClient(urlBarLayout)
+
+        webChromeClient = model.chromeClient
+        webViewClient = model.webClient
+
         setFindListener { activeMatchOrdinal, numberOfMatches, _ ->
-            urlBarLayout.searchPositionInfo = Pair(activeMatchOrdinal, numberOfMatches)
+            model.searchPosition.value = Pair(activeMatchOrdinal, numberOfMatches)
         }
-        urlBarLayout.onLoadUrlCallback = { loadUrl(it) }
-        urlBarLayout.onStartSearchCallback = { findAllAsync(it) }
-        urlBarLayout.onClearSearchCallback = { clearMatches() }
-        urlBarLayout.onSearchPositionChangeCallback = { findNext(it) }
+
         setup()
     }
 
@@ -149,16 +177,18 @@ class WebViewExt @JvmOverloads constructor(
             return bitmap
         }
 
-    var isDesktopMode: Boolean
-        get() = desktopMode
-        set(desktopMode) {
-            this.desktopMode = desktopMode
-            val settings = settings
-            settings.userAgentString = if (desktopMode) desktopUserAgent else mobileUserAgent
-            settings.useWideViewPort = desktopMode
-            settings.loadWithOverviewMode = desktopMode
-            reload()
-        }
+    data class ShowSheetMenuData(
+        val url: String,
+        val shouldAllowDownload: Boolean,
+    )
+
+    data class OnDownloadStartData(
+        val url: String?,
+        val userAgent: String?,
+        val contentDisposition: String?,
+        val mimeType: String?,
+        val contentLength: Long,
+    )
 
     companion object {
         private const val TAG = "WebViewExt"

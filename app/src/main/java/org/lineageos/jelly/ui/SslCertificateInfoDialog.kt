@@ -15,6 +15,7 @@ import android.widget.TextView
 import androidx.annotation.UiContext
 import androidx.appcompat.app.AlertDialog
 import org.lineageos.jelly.R
+import org.lineageos.jelly.model.LoadingStatus
 import java.text.DateFormat
 
 class SslCertificateInfoDialog(
@@ -42,7 +43,13 @@ class SslCertificateInfoDialog(
         }
     }
 
-    fun setUrlAndCertificate(
+    fun setLoadingStatus(loadingStatus: LoadingStatus.Success) {
+        loadingStatus.sslCertificate?.let {
+            setUrlAndCertificate(loadingStatus.url, it)
+        }
+    }
+
+    private fun setUrlAndCertificate(
         url: String, certificate: SslCertificate
     ) {
         // Get the domain name
