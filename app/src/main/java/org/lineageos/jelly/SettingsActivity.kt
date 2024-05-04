@@ -52,6 +52,7 @@ class SettingsActivity : AppCompatActivity() {
             finish()
             true
         }
+
         else -> {
             super.onOptionsItemSelected(item)
         }
@@ -112,6 +113,7 @@ class SettingsActivity : AppCompatActivity() {
                     editHomePage(preference)
                     true
                 }
+
                 "key_cookie_clear" -> {
                     CookieManager.getInstance().removeAllCookies(null)
                     Toast.makeText(
@@ -120,6 +122,7 @@ class SettingsActivity : AppCompatActivity() {
                     ).show()
                     true
                 }
+
                 else -> {
                     super.onPreferenceTreeClick(preference)
                 }

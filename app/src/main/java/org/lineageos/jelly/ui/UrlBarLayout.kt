@@ -14,7 +14,6 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.inputmethod.EditorInfo
-import android.widget.AdapterView
 import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.ImageButton
@@ -56,6 +55,7 @@ class UrlBarLayout @JvmOverloads constructor(
         URL,
         SEARCH,
     }
+
     var currentMode = UrlBarMode.URL
         set(value) {
             field = value
@@ -171,6 +171,7 @@ class UrlBarLayout @JvmOverloads constructor(
                     autoCompleteTextView.clearFocus()
                     true
                 }
+
                 else -> false
             }
         }
@@ -182,6 +183,7 @@ class UrlBarLayout @JvmOverloads constructor(
                     autoCompleteTextView.clearFocus()
                     true
                 }
+
                 else -> false
             }
         }
@@ -202,7 +204,7 @@ class UrlBarLayout @JvmOverloads constructor(
         // Set secure button callback
         secureButton.setOnClickListener {
             certificate?.let { cert ->
-                url?.let {url ->
+                url?.let { url ->
                     sslCertificateInfoDialog.setUrlAndCertificate(url, cert)
                     sslCertificateInfoDialog.onSslError(sslError)
                     sslCertificateInfoDialog.show()
@@ -215,7 +217,7 @@ class UrlBarLayout @JvmOverloads constructor(
             onFocusChange(view, hasFocus)
         }
         searchEditText.setOnEditorActionListener { view, actionId, _ ->
-            return@setOnEditorActionListener when(actionId) {
+            return@setOnEditorActionListener when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
                     UiUtils.hideKeyboard(requireActivity().window, view)
                     searchEditText.text?.toString()?.takeUnless { it.isEmpty() }?.also {
@@ -225,6 +227,7 @@ class UrlBarLayout @JvmOverloads constructor(
                     }
                     true
                 }
+
                 else -> {
                     false
                 }

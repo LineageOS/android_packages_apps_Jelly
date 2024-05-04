@@ -20,6 +20,7 @@ abstract class WebViewExtActivity : AppCompatActivity() {
         mimeType: String?,
         contentLength: Long
     )
+
     abstract fun showSheetMenu(url: String, shouldAllowDownload: Boolean)
     abstract fun onFaviconLoaded(favicon: Bitmap?)
     abstract fun onShowCustomView(view: View?, callback: CustomViewCallback)

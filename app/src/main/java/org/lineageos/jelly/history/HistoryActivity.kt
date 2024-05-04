@@ -130,6 +130,7 @@ class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
             finish()
             true
         }
+
         R.id.menu_history_delete -> {
             AlertDialog.Builder(this)
                 .setTitle(R.string.history_delete_title)
@@ -139,6 +140,7 @@ class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
                 .show()
             true
         }
+
         else -> {
             super.onOptionsItemSelected(item)
         }

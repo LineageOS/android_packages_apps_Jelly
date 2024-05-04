@@ -28,6 +28,7 @@ class FavoriteProvider : ContentProvider() {
             addURI(Columns.AUTHORITY, "favorite", MATCH_ALL)
             addURI(Columns.AUTHORITY, "favorite/#", MATCH_ID)
         }
+
         fun addOrUpdateItem(
             resolver: ContentResolver, title: String?, url: String,
             color: Int
@@ -82,6 +83,7 @@ class FavoriteProvider : ContentProvider() {
         when (match) {
             MATCH_ALL -> {
             }
+
             MATCH_ID -> qb.appendWhere(BaseColumns._ID + " = " + uri.lastPathSegment)
             else -> return null
         }
@@ -117,6 +119,7 @@ class FavoriteProvider : ContentProvider() {
                 FavoriteDbHelper.DB_TABLE_FAVORITES,
                 values, selection, selectionArgs
             )
+
             MATCH_ID -> {
                 if (selection != null || selectionArgs != null) {
                     throw UnsupportedOperationException(
@@ -128,6 +131,7 @@ class FavoriteProvider : ContentProvider() {
                     values, BaseColumns._ID + " = ?", arrayOf(uri.lastPathSegment)
                 )
             }
+
             else -> throw UnsupportedOperationException("Cannot update that URI: $uri")
         }
         if (count > 0) {
@@ -147,6 +151,7 @@ class FavoriteProvider : ContentProvider() {
         when (match) {
             MATCH_ALL -> {
             }
+
             MATCH_ID -> {
                 if (localSelection != null || localSelectionArgs != null) {
                     throw UnsupportedOperationException(
@@ -158,6 +163,7 @@ class FavoriteProvider : ContentProvider() {
                     localSelectionArgs = arrayOf(it)
                 }
             }
+
             else -> throw UnsupportedOperationException("Cannot delete the URI $uri")
         }
         val count = db.delete(
