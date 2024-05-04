@@ -126,6 +126,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
+    private var url: String? = null
     private var urlIcon: Bitmap? = null
     private var incognito = false
     private var customView: View? = null
@@ -154,7 +155,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val intent = intent
-        var url = intent.dataString
+        url = intent.dataString
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         var desktopMode = false
 
@@ -166,6 +167,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
             desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
         }
+
+        // If no URL was provided, load the homepage
+        url = url ?: sharedPreferencesExt.homePage
 
         // Make sure prefs are set before loading them
         PreferenceManager.setDefaultValues(this, R.xml.settings, false)
@@ -231,7 +235,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
         webView.init(this, urlBarLayout, incognito)
         webView.isDesktopMode = desktopMode
-        webView.loadUrl(url ?: sharedPreferencesExt.homePage)
         setUiMode()
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")
@@ -293,9 +296,14 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     override fun onResume() {
         super.onResume()
-        webView.onResume()
         CookieManager.getInstance()
             .setAcceptCookie(!webView.isIncognito && sharedPreferencesExt.cookiesEnabled)
+        url?.let {
+            webView.loadUrl(it)
+            // Set it to null to avoid unwanted reloads
+            url = null
+        }
+        webView.onResume()
         if (sharedPreferencesExt.lookLockEnabled) {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
