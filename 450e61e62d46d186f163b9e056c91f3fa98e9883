@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a24a88b_b561f67a",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-05-04T16:39:28Z",
+      "side": 1,
+      "message": "would expect \\n here too",
+      "revId": "450e61e62d46d186f163b9e056c91f3fa98e9883",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
