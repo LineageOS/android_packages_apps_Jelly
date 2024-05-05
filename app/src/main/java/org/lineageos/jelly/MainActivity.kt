@@ -254,7 +254,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
 
         CookieManager.getInstance()
-            .setAcceptCookie(incognito && sharedPreferencesExt.cookiesEnabled)
+            .setAcceptCookie(!incognito && sharedPreferencesExt.cookiesEnabled)
 
         webView.init(this, urlBarLayout, incognito)
         webView.isDesktopMode = desktopMode
