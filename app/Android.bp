@@ -24,6 +24,10 @@ android_app {
         "CarHTMLViewer",
     ],
 
+    required: [
+        "preinstalled-packages-org.lineageos.jelly",
+    ],
+
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.core_core-ktx",
@@ -40,4 +44,12 @@ android_app {
     ],
 
     sdk_version: "34",
+}
+
+prebuilt_etc {
+    name: "preinstalled-packages-org.lineageos.jelly",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "preinstalled-packages-org.lineageos.jelly.xml",
+    filename_from_src: true,
 }
