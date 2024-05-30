@@ -25,6 +25,7 @@ android_app {
     ],
 
     required: [
+        "initial-package-stopped-states-org.lineageos.jelly",
         "preinstalled-packages-org.lineageos.jelly",
     ],
 
@@ -44,6 +45,14 @@ android_app {
     ],
 
     sdk_version: "34",
+}
+
+prebuilt_etc {
+    name: "initial-package-stopped-states-org.lineageos.jelly",
+    product_specific: true,
+    sub_dir: "sysconfig",
+    src: "initial-package-stopped-states-org.lineageos.jelly.xml",
+    filename_from_src: true,
 }
 
 prebuilt_etc {
