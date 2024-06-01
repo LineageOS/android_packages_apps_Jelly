@@ -83,6 +83,8 @@
     <string name="suggestions_provider_none">Tidak ada</string>
     <string name="search_bar_hint">Telusuri</string>
     <string name="ssl_cert_dialog_title">Rincian Sertifikat SSL</string>
+    <string name="ssl_cert_dialog_trust">Trust</string>
+    <string name="ssl_cert_dialog_trusted">Koneksi aman</string>
     <string name="ssl_cert_dialog_domain">Domain</string>
     <string name="ssl_cert_dialog_issued_to">Diterbitkan untuk</string>
     <string name="ssl_cert_dialog_issued_by">Diterbitkan oleh</string>
@@ -93,6 +95,12 @@
     <string name="ssl_cert_dialog_issued_on">Diterbitkan Pada</string>
     <string name="ssl_cert_dialog_expires_on">Kadaluarsa Pada</string>
     <string name="ssl_cert_dialog_dismiss">Tutup</string>
+    <string name="ssl_error_untrusted">Sertifikat ini tidak berasal dari otoritas terpercaya.</string>
+    <string name="ssl_error_mismatch">Nama situs tidak cocok dengan nama pada sertifikat.</string>
+    <string name="ssl_error_not_yet_valid">Sertifikat ini belum valid.</string>
+    <string name="ssl_error_date_invalid">Sertifikat ini memiliki tanggal yang tidak valid.</string>
+    <string name="location_dialog_message">%1$s ingin menggunakan geolokasi Anda.</string>
     <string name="location_dialog_allow">Izinkan</string>
     <string name="location_dialog_block">Blokir</string>
+    <string name="location_dialog_cancel">Tolak untuk saat ini</string>
 </resources>
