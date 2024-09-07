@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -28,13 +28,13 @@ buildscript {
 }
 
 android {
-    compileSdk = 34
+    compileSdk = 35
     namespace = "org.lineageos.jelly"
 
     defaultConfig {
         applicationId = "org.lineageos.jelly"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 

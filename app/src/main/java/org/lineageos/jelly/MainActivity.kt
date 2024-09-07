@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020-2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2024 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -528,7 +528,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             if (it.isRecycled) {
                 return
             }
-            urlIcon = it.copy(it.config, true)
+            urlIcon = it.copy(it.config!!, true)
             updateTaskDescription()
             if (!it.isRecycled) {
                 it.recycle()
