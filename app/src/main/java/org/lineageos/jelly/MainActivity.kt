@@ -529,7 +529,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             if (it.isRecycled) {
                 return
             }
-            urlIcon = it.copy(it.config, true)
+            urlIcon = it.copy(it.config!!, true)
             updateTaskDescription()
             if (!it.isRecycled) {
                 it.recycle()
