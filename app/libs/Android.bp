@@ -8,7 +8,7 @@
 android_library_import {
     name: "Jelly_androidx.appcompat_appcompat-nodeps",
     aars: ["androidx/appcompat/appcompat/1.6.1/appcompat-1.6.1.aar"],
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
@@ -36,7 +36,7 @@ android_library_import {
 
 android_library {
     name: "Jelly_androidx.appcompat_appcompat",
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
@@ -68,7 +68,7 @@ android_library {
 android_library_import {
     name: "Jelly_androidx.appcompat_appcompat-resources-nodeps",
     aars: ["androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.aar"],
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
@@ -85,7 +85,7 @@ android_library_import {
 
 android_library {
     name: "Jelly_androidx.appcompat_appcompat-resources",
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
@@ -106,7 +106,7 @@ android_library {
 android_library_import {
     name: "Jelly_com.google.android.material_material-nodeps",
     aars: ["com/google/android/material/material/1.9.0/material-1.9.0.aar"],
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
@@ -134,7 +134,7 @@ android_library_import {
 
 android_library {
     name: "Jelly_com.google.android.material_material",
-    sdk_version: "34",
+    sdk_version: "35",
     min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
