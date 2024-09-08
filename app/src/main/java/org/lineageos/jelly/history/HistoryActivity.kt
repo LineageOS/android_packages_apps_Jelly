@@ -5,8 +5,6 @@
 
 package org.lineageos.jelly.history
 
-import android.content.ContentResolver
-import android.content.ContentValues
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
@@ -35,20 +33,26 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.lineageos.jelly.MainActivity
 import org.lineageos.jelly.R
-import org.lineageos.jelly.history.HistoryCallBack.OnDeleteListener
 import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.viewmodels.HistoryViewModel
+import org.lineageos.jelly.viewmodels.ViewModelFactory
 
 class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
     // View models
-    private val model: HistoryViewModel by viewModels()
+    private val model: HistoryViewModel by viewModels {
+        ViewModelFactory(application)
+    }
 
     // Views
     private val historyEmptyLayout by lazy { findViewById<View>(R.id.historyEmptyLayout) }
     private val historyListView by lazy { findViewById<RecyclerView>(R.id.historyListView) }
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolbar) }
 
-    private val adapter by lazy { HistoryAdapter(this) }
+    private val adapter by lazy {
+        HistoryAdapter(this).apply {
+            setHasStableIds(true)
+        }
+    }
 
     private val adapterDataObserver: AdapterDataObserver = object : AdapterDataObserver() {
         override fun onChanged() {
@@ -69,18 +73,22 @@ class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
         historyListView.addItemDecoration(HistoryAnimationDecorator(this))
         historyListView.itemAnimator = DefaultItemAnimator()
         historyListView.adapter = adapter
-        val helper = ItemTouchHelper(HistoryCallBack(this, object : OnDeleteListener {
-            override fun onItemDeleted(data: ContentValues?) {
-                Snackbar.make(
-                    findViewById(R.id.coordinatorLayout),
-                    R.string.history_snackbar_item_deleted, Snackbar.LENGTH_LONG
-                )
-                    .setAction(R.string.history_snackbar_item_deleted_message) {
-                        contentResolver.insert(HistoryProvider.Columns.CONTENT_URI, data)
+        val helper =
+            ItemTouchHelper(HistoryCallBack(this, object : HistoryCallBack.OnSwipeListener {
+                override fun onItemSwiped(id: Long) {
+                    lifecycleScope.launch {
+                        val entry = model.get(id)
+                        model.delete(id)
+                        Snackbar.make(
+                            findViewById(R.id.coordinatorLayout),
+                            R.string.history_snackbar_item_deleted,
+                            Snackbar.LENGTH_LONG
+                        ).setAction(R.string.history_snackbar_item_deleted_message) {
+                            model.insert(entry)
+                        }.show()
                     }
-                    .show()
-            }
-        }))
+                }
+            }))
         helper.attachToRecyclerView(historyListView)
         val listTop = historyListView.top
         historyListView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -158,17 +166,15 @@ class HistoryActivity : AppCompatActivity(R.layout.activity_history) {
             .create()
         dialog.show()
         lifecycleScope.launch {
-            deleteAllHistory(contentResolver, dialog)
+            deleteAllHistory(dialog)
         }
     }
 
-    private suspend fun deleteAllHistory(contentResolver: ContentResolver, dialog: AlertDialog) {
-        withContext(Dispatchers.IO) {
-            contentResolver.delete(HistoryProvider.Columns.CONTENT_URI, null, null)
-            withContext(Dispatchers.Main) {
-                delay(200)
-                dialog.dismiss()
-            }
+    private suspend fun deleteAllHistory(dialog: AlertDialog) {
+        model.deleteAll()
+        withContext(Dispatchers.Main) {
+            delay(200)
+            dialog.dismiss()
         }
     }
 }

@@ -85,16 +85,6 @@
                 android:resource="@xml/file_provider" />
         </provider>
 
-        <provider
-            android:name=".favorite.FavoriteProvider"
-            android:authorities="${applicationId}.favorite"
-            android:exported="false" />
-
-        <provider
-            android:name=".history.HistoryProvider"
-            android:authorities="${applicationId}.history"
-            android:exported="false" />
-
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="true" />
