@@ -12,7 +12,6 @@ android_app {
 
     srcs: [
         "src/main/java/**/*.kt",
-        "src_aosp/main/java/**/*.kt",
     ],
     resource_dirs: ["src/main/res"],
     manifest: "src/main/AndroidManifest.xml",
@@ -29,6 +28,10 @@ android_app {
         "preinstalled-packages-org.lineageos.jelly",
     ],
 
+    plugins: [
+        "androidx.room_room-compiler-plugin",
+    ],
+
     static_libs: [
         // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.core_core-ktx",
@@ -40,6 +43,8 @@ android_app {
         "androidx.recyclerview_recyclerview",
         "androidx.transition_transition",
         "Jelly_com.google.android.material_material",
+        "androidx.room_room-runtime",
+        "androidx.room_room-ktx",
         "kotlinx-coroutines-android",
         "kotlinx-coroutines-core",
     ],
