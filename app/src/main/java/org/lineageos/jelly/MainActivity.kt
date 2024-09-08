@@ -43,6 +43,7 @@ import android.webkit.WebChromeClient.CustomViewCallback
 import android.widget.LinearLayout
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -55,10 +56,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.lineageos.jelly.favorite.FavoriteActivity
-import org.lineageos.jelly.favorite.FavoriteProvider
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
@@ -68,6 +66,8 @@ import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.utils.UrlUtils
+import org.lineageos.jelly.viewmodels.FavoriteViewModel
+import org.lineageos.jelly.viewmodels.HistoryViewModel
 import org.lineageos.jelly.webview.WebViewExt
 import org.lineageos.jelly.webview.WebViewExtActivity
 import java.io.File
@@ -75,6 +75,10 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+    // View model
+    private val historyViewModel: HistoryViewModel by viewModels()
+    private val favoritesViewModel: FavoriteViewModel by viewModels()
+
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
     private val constraintLayout by lazy { findViewById<ConstraintLayout>(R.id.constraintLayout) }
@@ -188,13 +192,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 MenuDialog.Option.NEW_TAB -> openInNewTab(this, null, false)
                 MenuDialog.Option.NEW_PRIVATE_TAB -> openInNewTab(this, null, true)
                 MenuDialog.Option.REFRESH -> webView.reload()
-                MenuDialog.Option.ADD_TO_FAVORITE -> uiScope.launch {
+                MenuDialog.Option.ADD_TO_FAVORITE ->
                     webView.title?.let { title ->
                         webView.url?.let { url ->
                             setAsFavorite(title, url)
                         }
                     }
-                }
 
                 MenuDialog.Option.SHARE -> {
                     // Delay a bit to allow popup menu hide animation to play
@@ -375,7 +378,11 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                     out.close()
                     intent.putExtra(
                         Intent.EXTRA_STREAM,
-                        FileProvider.getUriForFile(this, PROVIDER, file)
+                        FileProvider.getUriForFile(
+                            this,
+                            "${application.packageName}.fileprovider",
+                            file
+                        )
                     )
                     intent.type = "image/png"
                     intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
@@ -390,21 +397,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
 
-    private suspend fun setAsFavorite(title: String, url: String) {
+    private fun setAsFavorite(title: String, url: String) {
         val color = urlIcon?.takeUnless { it.isRecycled }?.let { bitmap ->
             UiUtils.getColor(bitmap, false).takeUnless { it == Color.TRANSPARENT }
         } ?: ContextCompat.getColor(
             this, com.google.android.material.R.color.material_dynamic_primary50
         )
-        withContext(Dispatchers.Default) {
-            FavoriteProvider.addOrUpdateItem(contentResolver, title, url, color)
-            withContext(Dispatchers.Main) {
-                Snackbar.make(
-                    constraintLayout, getString(R.string.favorite_added),
-                    Snackbar.LENGTH_LONG
-                ).show()
-            }
-        }
+        favoritesViewModel.insert(title, url, color)
+        Snackbar.make(
+            constraintLayout, getString(R.string.favorite_added),
+            Snackbar.LENGTH_LONG
+        ).show()
     }
 
     override fun downloadFileAsk(
@@ -475,9 +478,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             sheet.dismiss()
         }
         favouriteLayout.setOnClickListener {
-            uiScope.launch {
-                setAsFavorite(url, url)
-            }
+            setAsFavorite(url, url)
             sheet.dismiss()
         }
         if (shouldAllowDownload) {
@@ -593,6 +594,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         getSystemService(ShortcutManager::class.java).requestPinShortcut(shortcutInfo, null)
     }
 
+    override fun updateHistory(title: String, url: String) {
+        historyViewModel.insertOrUpdate(title, url)
+    }
+
     @Suppress("DEPRECATION")
     private fun setImmersiveMode(enable: Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -679,6 +684,5 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
-        private const val PROVIDER = "${BuildConfig.APPLICATION_ID}.fileprovider"
     }
 }

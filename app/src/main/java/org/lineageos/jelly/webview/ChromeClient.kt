@@ -17,7 +17,6 @@ import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.widget.Toast
 import org.lineageos.jelly.R
-import org.lineageos.jelly.history.HistoryProvider
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 
@@ -34,7 +33,7 @@ internal class ChromeClient(
     override fun onReceivedTitle(view: WebView, title: String) {
         view.url?.let {
             if (!incognito) {
-                HistoryProvider.addOrUpdateItem(activity.contentResolver, title, it)
+                activity.updateHistory(title, url = it)
             }
         }
     }

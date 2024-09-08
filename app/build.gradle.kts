@@ -10,6 +10,7 @@ import org.lineageos.generatebp.models.Module
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 apply {
@@ -36,6 +37,12 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -85,6 +92,15 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
+
+    val roomVersion = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$roomVersion")
 }
 
 configure<GenerateBpPluginExtension> {
@@ -95,6 +111,7 @@ configure<GenerateBpPluginExtension> {
                 // We provide our own androidx.appcompat
                 !module.group.startsWith("androidx.appcompat")
             }
+
             module.group.startsWith("org.jetbrains") -> true
             module.group == "com.google.auto.value" -> true
             module.group == "com.google.errorprone" -> true

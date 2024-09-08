@@ -5,11 +5,7 @@
 
 package org.lineageos.jelly.history
 
-import android.content.ContentResolver
-import android.content.ContentUris
-import android.content.ContentValues
 import android.content.Context
-import android.database.DatabaseUtils
 import android.graphics.Canvas
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
@@ -19,10 +15,9 @@ import org.lineageos.jelly.R
 
 class HistoryCallBack(
     context: Context,
-    private val deleteListener: OnDeleteListener?
+    private val onSwipeListener: OnSwipeListener?,
 ) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
-    private val resolver: ContentResolver = context.contentResolver
     private val background = ColorDrawable(ContextCompat.getColor(context, R.color.colorDelete))
     private val delete = ContextCompat.getDrawable(context, R.drawable.ic_delete_action)
     private val margin = context.resources.getDimension(R.dimen.delete_margin).toInt()
@@ -34,23 +29,7 @@ class HistoryCallBack(
     ) = false
 
     override fun onSwiped(holder: RecyclerView.ViewHolder, swipeDir: Int) {
-        val uri = ContentUris.withAppendedId(
-            HistoryProvider.Columns.CONTENT_URI,
-            holder.itemId
-        )
-        var values: ContentValues? = null
-        val cursor = resolver.query(uri, null, null, null, null)
-        cursor?.let {
-            if (it.moveToFirst()) {
-                values = ContentValues()
-                DatabaseUtils.cursorRowToContentValues(cursor, values)
-            }
-            it.close()
-        }
-        resolver.delete(uri, null, null)
-        if (values != null) {
-            deleteListener?.onItemDeleted(values)
-        }
+        onSwipeListener?.onItemSwiped(holder.itemId)
     }
 
     override fun onChildDraw(
@@ -78,7 +57,7 @@ class HistoryCallBack(
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
     }
 
-    interface OnDeleteListener {
-        fun onItemDeleted(data: ContentValues?)
+    interface OnSwipeListener {
+        fun onItemSwiped(id: Long)
     }
 }

@@ -5,8 +5,6 @@
 
 package org.lineageos.jelly.favorite
 
-import android.content.ContentResolver
-import android.content.ContentUris
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
@@ -29,10 +27,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.lineageos.jelly.MainActivity
 import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.UiUtils
@@ -141,20 +137,15 @@ class FavoriteActivity : AppCompatActivity(R.layout.activity_favorites) {
                     urlEdit.error = error
                     urlEdit.requestFocus()
                 }
-                lifecycleScope.launch {
-                    updateFavorite(
-                        contentResolver, id, updatedTitle,
-                        updatedUrl
-                    )
-                }
+                updateFavorite(
+                    id, updatedTitle, updatedUrl
+                )
                 dialog.dismiss()
             }
             .setNeutralButton(
                 R.string.favorite_edit_delete
             ) { dialog: DialogInterface, _: Int ->
-                lifecycleScope.launch {
-                    deleteFavorite(contentResolver, id)
-                }
+                deleteFavorite(id)
                 dialog.dismiss()
             }
             .setNegativeButton(
@@ -163,19 +154,14 @@ class FavoriteActivity : AppCompatActivity(R.layout.activity_favorites) {
             .show()
     }
 
-    private suspend fun updateFavorite(
-        contentResolver: ContentResolver, id: Long,
-        title: String, url: String
+    private fun updateFavorite(
+        id: Long, title: String,
+        url: String
     ) {
-        withContext(Dispatchers.IO) {
-            FavoriteProvider.updateItem(contentResolver, id, title, url)
-        }
+        model.update(id, title, url)
     }
 
-    private suspend fun deleteFavorite(contentResolver: ContentResolver, id: Long) {
-        withContext(Dispatchers.IO) {
-            val uri = ContentUris.withAppendedId(FavoriteProvider.Columns.CONTENT_URI, id)
-            contentResolver.delete(uri, null, null)
-        }
+    private fun deleteFavorite(id: Long) {
+        model.delete(id)
     }
 }
