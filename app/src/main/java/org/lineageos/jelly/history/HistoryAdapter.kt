@@ -38,6 +38,8 @@ class HistoryAdapter(context: Context) :
         holder.bind(getItem(position))
     }
 
+    override fun getItemId(position: Int) = getItem(position).id
+
     inner class HistoryHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val layout = view.findViewById<LinearLayout>(R.id.rowHistoryLayout)
         private val summary = view.findViewById<TextView>(R.id.rowHistorySummaryTextView)
