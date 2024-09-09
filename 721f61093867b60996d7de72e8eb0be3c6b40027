@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "184f37b5_27b2ab9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-09-09T16:15:27Z",
+      "side": 1,
+      "message": "I\u0027m sorry but I scrapped away that ViewModelFactory Google snippet, it\u0027s ugly\n\n`AndroidViewModel` ftw",
+      "revId": "721f61093867b60996d7de72e8eb0be3c6b40027",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
