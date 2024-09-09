@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b728bd70_999e887c",
+        "filename": "app/src/main/java/org/lineageos/jelly/viewmodels/FavoriteViewModel.kt",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-09-09T16:31:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f59e633_e8e0ee88",
+      "revId": "721f61093867b60996d7de72e8eb0be3c6b40027",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "277d64ec_a8a1cb76",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-09-09T16:18:38Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 88
+      },
+      "revId": "721f61093867b60996d7de72e8eb0be3c6b40027",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f05aa9ae_bf601f19",
+        "filename": "app/src/main/java/org/lineageos/jelly/viewmodels/HistoryViewModel.kt",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-09-09T16:31:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "277d64ec_a8a1cb76",
       "range": {
         "startLine": 20,
         "startChar": 0,
