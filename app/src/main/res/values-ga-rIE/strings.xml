@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="url_bar_more">Tuilleadh</string>
+    <string name="url_bar_search_cancel">Cealaigh an cuardach</string>
+    <string name="url_bar_search_clear">Glan cuardach</string>
+    <string name="url_bar_search_previous">Roimhe Seo</string>
+    <string name="url_bar_search_next">Ar aghaidh</string>
+    <string name="menu_go_back">Dul ar ais</string>
+    <string name="menu_go_forward">Dul ar aghaidh</string>
+    <string name="menu_refresh">Athnuaigh leathanach</string>
+    <string name="menu_downloads">Íoslódálacha</string>
+    <string name="menu_desktop_mode">Suíomh deisce</string>
+    <string name="location_dialog_title">Suíomh a sholáthar?</string>
+    <string name="location_dialog_message">Tá %1$s ag iarraidh do gheoshuíomh a úsáid.</string>
+    <string name="location_dialog_allow">Ceadaigh</string>
+    <string name="location_dialog_block">Bloc</string>
+    <string name="location_dialog_cancel">Diúltaigh faoi láthair</string>
+</resources>
