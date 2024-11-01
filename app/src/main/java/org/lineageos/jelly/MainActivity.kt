@@ -48,7 +48,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -598,35 +601,42 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         historyViewModel.insertOrUpdate(title, url)
     }
 
-    @Suppress("DEPRECATION")
     private fun setImmersiveMode(enable: Boolean) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setDecorFitsSystemWindows(!enable)
-            window.insetsController?.let {
-                val flags = WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
-                val behavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-                if (enable) {
-                    it.hide(flags)
-                    it.systemBarsBehavior = behavior
-                } else {
-                    it.show(flags)
-                    it.systemBarsBehavior = behavior.inv()
+        val decorView = window.decorView
+
+        if (enable) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                window.insetsController?.let { controller ->
+                    controller.hide(WindowInsets.Type.systemBars())
+                    controller.systemBarsBehavior =
+                        WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
                 }
+            } else {
+                @Suppress("DEPRECATION")
+                decorView.systemUiVisibility = (
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                                or View.SYSTEM_UI_FLAG_FULLSCREEN
+                                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        )
             }
         } else {
-            var flags = window.decorView.systemUiVisibility
-            val immersiveModeFlags = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    or View.SYSTEM_UI_FLAG_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
-            flags = if (enable) {
-                flags or immersiveModeFlags
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                window.insetsController?.show(WindowInsets.Type.systemBars())
             } else {
-                flags and immersiveModeFlags.inv()
+                @Suppress("DEPRECATION")
+                decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
             }
-            window.decorView.systemUiVisibility = flags
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(decorView) { v, insets ->
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.updatePadding(
+                top = if (enable) systemBarsInsets.top else 0,
+                bottom = if (enable) systemBarsInsets.bottom else 0,
+                left = if (enable) systemBarsInsets.left else 0,
+                right = if (enable) systemBarsInsets.right else 0
+            )
+            insets
         }
     }
 
