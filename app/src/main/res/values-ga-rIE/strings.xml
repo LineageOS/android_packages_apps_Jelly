@@ -4,6 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <string name="app_name">Brabhsálaí</string>
     <string name="url_bar_more">Tuilleadh</string>
     <string name="url_bar_search_cancel">Cealaigh an cuardach</string>
     <string name="url_bar_search_clear">Glan cuardach</string>
@@ -12,6 +13,8 @@
     <string name="menu_go_back">Dul ar ais</string>
     <string name="menu_go_forward">Dul ar aghaidh</string>
     <string name="menu_refresh">Athnuaigh leathanach</string>
+    <string name="menu_new_tab">Cluaisín nua</string>
+    <string name="menu_fav_add">Cuir le ceanáin</string>
     <string name="menu_downloads">Íoslódálacha</string>
     <string name="menu_desktop_mode">Suíomh deisce</string>
     <string name="location_dialog_title">Suíomh a sholáthar?</string>

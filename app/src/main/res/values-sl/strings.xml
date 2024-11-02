@@ -39,7 +39,7 @@
     <string name="pref_start_page_dialog_message">Napišite URL domače strani</string>
     <string name="pref_start_page_dialog_reset">Ponastavi</string>
     <string name="pref_privacy_security">Zasebnost in varnost</string>
-    <string name="pref_looklock_title">Zaklepanje videza</string>
+    <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Prepreči ostalim aplikacijam branje vsebine Brskalnika</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Omogoči JavaScript</string>
