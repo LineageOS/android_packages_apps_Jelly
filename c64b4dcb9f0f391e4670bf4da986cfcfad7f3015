@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fbb3b8c_6c927b08",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-11-02T09:10:20Z",
+      "side": 1,
+      "message": "probably safer to do let instead of !! here",
+      "range": {
+        "startLine": 531,
+        "startChar": 12,
+        "endLine": 533,
+        "endChar": 13
+      },
+      "revId": "c64b4dcb9f0f391e4670bf4da986cfcfad7f3015",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
