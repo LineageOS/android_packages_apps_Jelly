@@ -17,6 +17,7 @@
     <string name="menu_fav_add">Cuir le ceanáin</string>
     <string name="menu_downloads">Íoslódálacha</string>
     <string name="menu_desktop_mode">Suíomh deisce</string>
+    <string name="share_title">Seol chuig</string>
     <string name="location_dialog_title">Suíomh a sholáthar?</string>
     <string name="location_dialog_message">Tá %1$s ag iarraidh do gheoshuíomh a úsáid.</string>
     <string name="location_dialog_allow">Ceadaigh</string>
