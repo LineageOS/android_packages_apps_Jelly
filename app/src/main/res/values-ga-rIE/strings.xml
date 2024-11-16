@@ -18,6 +18,7 @@
     <string name="menu_fav_add">Cuir le ceanáin</string>
     <string name="menu_downloads">Íoslódálacha</string>
     <string name="menu_desktop_mode">Suíomh deisce</string>
+    <string name="share_title">Seol chuig</string>
     <string name="ssl_cert_dialog_trust">Muinín</string>
     <string name="ssl_cert_dialog_trusted">Tá an nasc slán</string>
     <string name="ssl_error_untrusted">Ní ó údarás iontaofa é an teastas seo.</string>
