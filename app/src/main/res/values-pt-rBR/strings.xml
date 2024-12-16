@@ -42,7 +42,7 @@
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Impedir que outros apps leiam o conteúdo do navegador</string>
     <string name="pref_js_title">JavaScript</string>
-    <string name="pref_js_summary">Habilitar JavaScript</string>
+    <string name="pref_js_summary">Ativar JavaScript</string>
     <string name="pref_location_title">Localização</string>
     <string name="pref_location_summary">Permitir que sites solicitem acesso à sua localização</string>
     <string name="pref_cookie_title">Cookies</string>

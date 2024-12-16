@@ -36,7 +36,7 @@
     <string name="pref_search_engine">தேடற்பொறி</string>
     <string name="pref_start_page">முகப்புப் பக்கம்</string>
     <string name="pref_start_page_dialog_title">முகப்புப் பக்கத்தைத் தேர்க</string>
-    <string name="pref_start_page_dialog_message">முகப்புப் பக்கம் உரலியை எழுதுக</string>
+    <string name="pref_start_page_dialog_message">முகப்புப் பக்க உரலியை எழுதுக</string>
     <string name="pref_start_page_dialog_reset">மீளமைக்க</string>
     <string name="pref_privacy_security">தனியுரிமையும் பாதுகாப்பும்</string>
     <string name="pref_looklock_title">காணற்பூட்டு</string>
