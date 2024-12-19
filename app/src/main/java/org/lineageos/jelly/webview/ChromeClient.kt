@@ -15,6 +15,7 @@ import android.webkit.MimeTypeMap
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Toast
 import org.lineageos.jelly.R
 import org.lineageos.jelly.ui.UrlBarLayout
@@ -85,7 +86,22 @@ internal class ChromeClient(
     ): Boolean {
         val result = view.hitTestResult
         val url = result.extra
-        openInNewTab(activity, url, incognito)
+
+        if (url == null) {
+            val transport = resultMsg.obj as WebView.WebViewTransport
+            val tempWebView = WebView(view.context)
+            tempWebView.webViewClient = object : WebViewClient() {
+                override fun onLoadResource(view: WebView, url: String) {
+                    tempWebView.destroy()
+                    openInNewTab(activity, url, incognito)
+                }
+            }
+            transport.webView = tempWebView
+            resultMsg.sendToTarget()
+        } else {
+            openInNewTab(activity, url, incognito)
+        }
+
         return true
     }
 }
