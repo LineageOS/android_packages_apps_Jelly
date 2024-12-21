@@ -29,7 +29,7 @@
             android:documentLaunchMode="always"
             android:exported="true"
             android:theme="@style/Theme.Jelly.NoActionBar"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
