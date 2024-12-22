@@ -90,6 +90,15 @@ class WebViewExt @JvmOverloads constructor(
             activity.downloadFileAsk(url, userAgent, contentDisposition, mimeType, contentLength)
         }
 
+        // The UserAgent contains " Version/x.x "
+        // Some websites take it as browser version and think the user is using an old version
+        // As result those may prevent user from actions like login
+        // We should remove it from both Mobile and Desktop
+        if (settings.userAgentString.contains("Version")) {
+            val regex = Regex("\\s*Version/\\S+\\s*")
+            settings.userAgentString = settings.userAgentString.replace(regex, " ")
+        }
+
         // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
         // properly if the browser reports itself as a simple WebView.
         // Desktop: Generate the desktop user agent starting from the mobile one so that
