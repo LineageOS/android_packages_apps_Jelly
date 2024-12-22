@@ -16,6 +16,24 @@
       "message": "line length",
       "revId": "941ea7636cdf57288ec61af4d99e619cd717599a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2daac048_b1eb3994",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExt.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-22T17:05:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7fbdf53_36a7c901",
+      "revId": "941ea7636cdf57288ec61af4d99e619cd717599a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
