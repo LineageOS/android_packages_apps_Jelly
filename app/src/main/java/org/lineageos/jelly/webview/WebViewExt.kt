@@ -90,17 +90,19 @@ class WebViewExt @JvmOverloads constructor(
             activity.downloadFileAsk(url, userAgent, contentDisposition, mimeType, contentLength)
         }
 
-        // Mobile: Remove "wv" from the WebView's user agent. Some websites don't work
-        // properly if the browser reports itself as a simple WebView.
+        // Mobile: Remove "wv" and "Version/4.0" from the WebView's user agent.
+        // Some websites don't work properly if the browser reports itself as a simple WebView.
         // Desktop: Generate the desktop user agent starting from the mobile one so that
         // we always report the current engine version.
         val pattern = Pattern.compile("([^)]+ \\()([^)]+)(\\) .*)")
         val matcher = pattern.matcher(settings.userAgentString)
         if (matcher.matches()) {
             val mobileDevice = matcher.group(2)!!.replace("; wv", "")
-            mobileUserAgent = matcher.group(1)!! + mobileDevice + matcher.group(3)
+            mobileUserAgent = matcher.group(1)!! + mobileDevice + matcher.group(3)!!
+                .replace(" Version/4.0 ", " ")
             desktopUserAgent = matcher.group(1)!! + DESKTOP_DEVICE + matcher.group(3)!!
                 .replace(" Mobile ", " ")
+                .replace(" Version/4.0 ", " ")
             settings.userAgentString = mobileUserAgent
         } else {
             Log.e(TAG, "Couldn't parse the user agent")
