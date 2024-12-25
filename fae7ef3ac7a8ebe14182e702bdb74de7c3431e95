@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "100573d0_98c5aeb3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-25T09:07:33Z",
+      "side": 1,
+      "message": "@luca.stefani.ge1@gmail.com\nI created a live example for this issue:\nhttps://saeeddev94.github.io/jelly-js-redirect-issue\nJelly can not handle such a basic JS redirect",
+      "revId": "fae7ef3ac7a8ebe14182e702bdb74de7c3431e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

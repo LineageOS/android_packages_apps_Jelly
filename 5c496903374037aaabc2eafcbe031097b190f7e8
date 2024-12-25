@@ -16,6 +16,23 @@
       "message": "Thanks for the change, I\u0027ll be checking it out later :)",
       "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9b44c3e_564f467c",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-25T09:07:33Z",
+      "side": 1,
+      "message": "@luca.stefani.ge1@gmail.com can you review my change please?\nWithout this we can not open any popup (null url issue)",
+      "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
