@@ -16,6 +16,23 @@
       "message": "@luca.stefani.ge1@gmail.com\nI created a live example for this issue:\nhttps://saeeddev94.github.io/jelly-js-redirect-issue\nJelly can not handle such a basic JS redirect",
       "revId": "fae7ef3ac7a8ebe14182e702bdb74de7c3431e95",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "775f5991_40624be5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-25T19:48:58Z",
+      "side": 1,
+      "message": "@luca.stefani.ge1@gmail.com\nisUserGesture is only true if user clicked on something\nIf you are concern about automatic opening ad popup then we can add a global setting like \"Allow popup\" later\nThis is a critical issue for me as many web apps that I use, their payment process won\u0027t work without this",
+      "revId": "fae7ef3ac7a8ebe14182e702bdb74de7c3431e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

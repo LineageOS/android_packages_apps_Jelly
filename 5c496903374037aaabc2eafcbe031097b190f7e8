@@ -69,6 +69,24 @@
       "parentUuid": "effdd33c_916cef54",
       "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88f85923_b8c38e7d",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-25T19:48:58Z",
+      "side": 1,
+      "message": "@luca.stefani.ge1@gmail.com\nisUserGesture is only true if user clicked on something\nIf you are concern about automatic opening ad popup then we can add a global setting like \"Allow popup\" later\nThis is a critical issue for me as many web apps that I use, their payment process won\u0027t work without this",
+      "parentUuid": "beff04c8_f7e8aed1",
+      "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
