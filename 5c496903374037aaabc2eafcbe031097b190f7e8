@@ -51,6 +51,24 @@
       "parentUuid": "c9b44c3e_564f467c",
       "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "beff04c8_f7e8aed1",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T19:05:09Z",
+      "side": 1,
+      "message": "A safe way to add somewhat better popups is checking if the isUserGesture flag is true and only then follow with the request.\nThe more I\u0027m reading the documentation the more I think this whole logic is wrong (before and after)",
+      "parentUuid": "effdd33c_916cef54",
+      "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
