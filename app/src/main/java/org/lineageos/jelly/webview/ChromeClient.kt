@@ -83,6 +83,10 @@ internal class ChromeClient(
         view: WebView, isDialog: Boolean,
         isUserGesture: Boolean, resultMsg: Message
     ): Boolean {
+        if (!isUserGesture) {
+            return false
+        }
+
         val result = view.hitTestResult
         val url = result.extra
         openInNewTab(activity, url, incognito)
