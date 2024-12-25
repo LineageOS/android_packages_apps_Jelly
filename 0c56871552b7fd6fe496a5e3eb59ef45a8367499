@@ -41,6 +41,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c639e8f0_5f3abe54",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/JavaScriptInterface.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T19:32:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4f1b68c_34ac9825",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 59
+      },
+      "revId": "0c56871552b7fd6fe496a5e3eb59ef45a8367499",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9d862ab_1ffb3c4b",
@@ -64,6 +88,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "41276169_1cb728d8",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/JavaScriptInterface.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T19:32:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9d862ab_1ffb3c4b",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 62
+      },
+      "revId": "0c56871552b7fd6fe496a5e3eb59ef45a8367499",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6436bed_d31ba247",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-12-25T18:59:50Z",
       "side": 1,
       "message": "do you need to do this every time?\nI think this should be done once everytime we create a new webview, maybe in WebViewExt.setup()?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 9
+      },
+      "revId": "0c56871552b7fd6fe496a5e3eb59ef45a8367499",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04270591_3f748538",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T19:32:51Z",
+      "side": 1,
+      "message": "nvm I keep forgetting we\u0027re a browser and not a single page",
+      "parentUuid": "c6436bed_d31ba247",
       "range": {
         "startLine": 48,
         "startChar": 0,
