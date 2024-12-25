@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "296e985a_54f76d2d",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T18:34:42Z",
+      "side": 0,
+      "message": "7 years ago we manually set this, even if it was the default lol",
+      "revId": "2723b5e588aac9ffb9eb220f84f2124dd0a024de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
