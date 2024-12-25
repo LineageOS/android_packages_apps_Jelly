@@ -90,6 +90,7 @@ internal class ChromeClient(
         val result = view.hitTestResult
         val url = result.extra
         openInNewTab(activity, url, incognito)
-        return true
+
+        return false
     }
 }
