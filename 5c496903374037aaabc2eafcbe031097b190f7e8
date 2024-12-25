@@ -33,6 +33,24 @@
       "message": "@luca.stefani.ge1@gmail.com can you review my change please?\nWithout this we can not open any popup (null url issue)",
       "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "effdd33c_916cef54",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T19:01:42Z",
+      "side": 1,
+      "message": "Thanks for this contribution, I agree dynamic popups are currently broken but this may open a can of worms, I hope onLoadResource is called before the webview does anything else otherwise we ignore the user settings",
+      "parentUuid": "c9b44c3e_564f467c",
+      "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
