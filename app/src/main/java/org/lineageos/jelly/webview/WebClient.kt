@@ -45,6 +45,9 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
         urlBarLayout.onPageLoadFinished(view.certificate)
+        if (view.settings.javaScriptEnabled) {
+            view.evaluateJavascript(syncUrlState(), null)
+        }
     }
 
     override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
@@ -197,5 +200,26 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
         )
         chooserIntent.putExtra(Intent.EXTRA_CHOOSER_REFINEMENT_INTENT_SENDER, pi.intentSender)
         return chooserIntent
+    }
+
+    private fun syncUrlState(): String {
+        return """
+            (() => {
+                if (!window.originalPushState) {
+                    window.originalPushState = window.history.pushState;
+                }
+                if (!window.originalReplaceState) {
+                    window.originalReplaceState = window.history.replaceState;
+                }
+                window.history.pushState = function (state, title, url) {
+                    window.originalPushState.apply(this, arguments);
+                    ${WebViewExt.JS_INTERFACE}.onPushState(window.location.href);
+                };
+                window.history.replaceState = function (state, title, url) {
+                    window.originalReplaceState.apply(this, arguments);
+                    ${WebViewExt.JS_INTERFACE}.onReplaceState(window.location.href);
+                };
+            })();
+        """.trimIndent()
     }
 }
