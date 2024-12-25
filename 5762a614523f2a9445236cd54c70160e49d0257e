@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f8454d6_2d57aa52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34580
+      },
+      "writtenOn": "2024-12-25T13:45:38Z",
+      "side": 1,
+      "message": "407428: Jelly: Update AGP to 8.7.2 | https://review.lineageos.org/c/LineageOS/android_packages_apps_Jelly/+/407428",
+      "revId": "5762a614523f2a9445236cd54c70160e49d0257e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
