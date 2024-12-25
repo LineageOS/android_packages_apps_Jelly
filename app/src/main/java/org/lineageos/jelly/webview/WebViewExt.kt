@@ -49,7 +49,7 @@ class WebViewExt @JvmOverloads constructor(
         super.loadUrl(UrlUtils.getFormattedUri(templateUri, url), this.requestHeaders)
     }
 
-    private fun setup() {
+    private fun setup(urlBarLayout: UrlBarLayout) {
         settings.javaScriptEnabled = sharedPreferencesExt.javascriptEnabled
         settings.javaScriptCanOpenWindowsAutomatically = sharedPreferencesExt.javascriptEnabled
         settings.setGeolocationEnabled(sharedPreferencesExt.locationEnabled)
@@ -112,6 +112,13 @@ class WebViewExt @JvmOverloads constructor(
         if (sharedPreferencesExt.doNotTrackEnabled) {
             this.requestHeaders[HEADER_DNT] = "1"
         }
+
+        if (settings.javaScriptEnabled) {
+            addJavascriptInterface(
+                JavaScriptInterface(urlBarLayout, activity),
+                JavaScriptInterface.JS_INTERFACE
+            )
+        }
     }
 
     fun init(
@@ -131,7 +138,7 @@ class WebViewExt @JvmOverloads constructor(
         urlBarLayout.onStartSearchCallback = { findAllAsync(it) }
         urlBarLayout.onClearSearchCallback = { clearMatches() }
         urlBarLayout.onSearchPositionChangeCallback = { findNext(it) }
-        setup()
+        setup(urlBarLayout)
     }
 
     val snap: Bitmap
