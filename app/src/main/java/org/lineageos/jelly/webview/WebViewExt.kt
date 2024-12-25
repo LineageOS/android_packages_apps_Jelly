@@ -124,6 +124,7 @@ class WebViewExt @JvmOverloads constructor(
         )
         webChromeClient = chromeClient
         webViewClient = WebClient(urlBarLayout)
+        addJavascriptInterface(JavaScriptInterface(urlBarLayout), JS_INTERFACE)
         setFindListener { activeMatchOrdinal, numberOfMatches, _ ->
             urlBarLayout.searchPositionInfo = Pair(activeMatchOrdinal, numberOfMatches)
         }
@@ -168,5 +169,6 @@ class WebViewExt @JvmOverloads constructor(
         private const val DESKTOP_USER_AGENT_FALLBACK =
             "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
         private const val HEADER_DNT = "DNT"
+        const val JS_INTERFACE = "Jelly"
     }
 }
