@@ -87,6 +87,24 @@
       "parentUuid": "beff04c8_f7e8aed1",
       "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3799ca4c_aa6575b8",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-25T19:52:41Z",
+      "side": 1,
+      "message": "yes I\u0027m concerned about it, feel free to add a toggle for it later on the 22.1 chain to allow non user gesture new window\nI\u0027ll be away till the new year, so all I can offer is some bare advice here or via Luk 😊",
+      "parentUuid": "88f85923_b8c38e7d",
+      "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
