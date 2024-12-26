@@ -105,6 +105,24 @@
       "parentUuid": "88f85923_b8c38e7d",
       "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "431c57c2_135afd79",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T11:38:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3799ca4c_aa6575b8",
+      "revId": "5c496903374037aaabc2eafcbe031097b190f7e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

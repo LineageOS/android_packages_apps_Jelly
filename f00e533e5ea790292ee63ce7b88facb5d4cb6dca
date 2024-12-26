@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a62e2270_b054d4bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T11:38:21Z",
+      "side": 1,
+      "message": "@luca.stefani.ge1@gmail.com\n@priv.luk@gmail.com\nI added a new setting: \"Dynamic Popup\" with false default value\nIf it\u0027s disabled the popup will block to respect user privacy",
+      "revId": "f00e533e5ea790292ee63ce7b88facb5d4cb6dca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -33,6 +33,42 @@
       "message": "@luca.stefani.ge1@gmail.com\nisUserGesture is only true if user clicked on something\nIf you are concern about automatic opening ad popup then we can add a global setting like \"Allow popup\" later\nThis is a critical issue for me as many web apps that I use, their payment process won\u0027t work without this",
       "revId": "fae7ef3ac7a8ebe14182e702bdb74de7c3431e95",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9147dc9d_dc5a7614",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T11:38:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "100573d0_98c5aeb3",
+      "revId": "fae7ef3ac7a8ebe14182e702bdb74de7c3431e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fda268a_42e13ed7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T11:38:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "775f5991_40624be5",
+      "revId": "fae7ef3ac7a8ebe14182e702bdb74de7c3431e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
