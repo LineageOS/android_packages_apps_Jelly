@@ -34,6 +34,24 @@
       "parentUuid": "d7854518_08d92997",
       "revId": "243304f2f355afd47b34069b5a0a03c862703ef2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffee0506_53c3c19e",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/JavaScriptInterface.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T16:06:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1294786d_51122e04",
+      "revId": "243304f2f355afd47b34069b5a0a03c862703ef2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
