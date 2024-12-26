@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7854518_08d92997",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/JavaScriptInterface.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T14:27:02Z",
+      "side": 1,
+      "message": "These conditions are important:\n```\nif (!window.originalPushState) {\n    window.originalPushState \u003d window.history.pushState;\n}\nif (!window.originalReplaceState) {\n    window.originalReplaceState \u003d window.history.replaceState;\n}\n```\nWhy? because in some cases `WebClient#onPageFinished()` runs more than once for a same window context !!\nSo `window.originalPushState` is not the original one anymore!\nThose conditions guarantees that original instances won\u0027t modify in any situations",
+      "revId": "243304f2f355afd47b34069b5a0a03c862703ef2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
