@@ -15,10 +15,12 @@ import android.webkit.MimeTypeMap
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Toast
 import org.lineageos.jelly.R
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
+import kotlin.reflect.cast
 
 internal class ChromeClient(
     private val activity: WebViewExtActivity,
@@ -85,7 +87,22 @@ internal class ChromeClient(
     ): Boolean {
         val result = view.hitTestResult
         val url = result.extra
+
+        if (url == null) {
+            val transport = WebView.WebViewTransport::class.cast(resultMsg.obj)
+            val tempWebView = WebView(view.context)
+            tempWebView.webViewClient = object : WebViewClient() {
+                override fun onLoadResource(view: WebView, url: String) {
+                    tempWebView.destroy()
+                    openInNewTab(activity, url, incognito)
+                }
+            }
+            transport.webView = tempWebView
+            resultMsg.sendToTarget()
+            return true
+        }
+
         openInNewTab(activity, url, incognito)
-        return true
+        return false
     }
 }
