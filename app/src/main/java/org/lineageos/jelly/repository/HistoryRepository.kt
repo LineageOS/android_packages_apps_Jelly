@@ -21,6 +21,10 @@ class HistoryRepository(private val historyDao: HistoryDao) {
         historyDao.insertOrUpdate(title, url)
     }
 
+    suspend fun replace(title: String, url: String, newUrl: String) {
+        historyDao.replace(title, url, newUrl)
+    }
+
     suspend fun delete(id: Long) {
         historyDao.delete(id)
     }
