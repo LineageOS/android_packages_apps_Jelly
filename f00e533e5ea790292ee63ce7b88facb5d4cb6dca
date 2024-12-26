@@ -68,6 +68,24 @@
       "message": "line length",
       "revId": "f00e533e5ea790292ee63ce7b88facb5d4cb6dca",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e27241b0_d9e81279",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/SharedPreferencesExt.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T13:10:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b9b84bf_b7056cda",
+      "revId": "f00e533e5ea790292ee63ce7b88facb5d4cb6dca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
