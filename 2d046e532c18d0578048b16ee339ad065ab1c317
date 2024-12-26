@@ -33,6 +33,24 @@
       "message": "@luca.stefani.ge1@gmail.com\nThis will totally block popup\nI\u0027m not agree with this patch",
       "revId": "2d046e532c18d0578048b16ee339ad065ab1c317",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4bd7d41_a48f7b50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T16:56:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ceb2e03b_e1ccc314",
+      "revId": "2d046e532c18d0578048b16ee339ad065ab1c317",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
