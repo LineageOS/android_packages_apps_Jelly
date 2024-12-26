@@ -16,6 +16,40 @@
       "message": "@luca.stefani.ge1@gmail.com\n@priv.luk@gmail.com\nI added a new setting: \"Dynamic Popup\" with false default value\nIf it\u0027s disabled the popup will block to respect user privacy",
       "revId": "f00e533e5ea790292ee63ce7b88facb5d4cb6dca",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01d9aec0_dc9ba5b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-12-26T12:12:11Z",
+      "side": 1,
+      "message": "The toggle addition is not part of the general \"handle javascript popups\" patch. It should either be a separate patch OR be included in the one where luca introduced the check in the first place",
+      "revId": "f00e533e5ea790292ee63ce7b88facb5d4cb6dca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b9b84bf_b7056cda",
+        "filename": "app/src/main/java/org/lineageos/jelly/utils/SharedPreferencesExt.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2024-12-26T12:12:11Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "f00e533e5ea790292ee63ce7b88facb5d4cb6dca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
