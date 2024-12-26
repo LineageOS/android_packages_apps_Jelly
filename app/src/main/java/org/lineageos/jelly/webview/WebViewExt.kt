@@ -120,7 +120,7 @@ class WebViewExt @JvmOverloads constructor(
         this.activity = activity
         isIncognito = incognito
         val chromeClient = ChromeClient(
-            activity, incognito, urlBarLayout
+            activity, incognito, urlBarLayout, sharedPreferencesExt
         )
         webChromeClient = chromeClient
         webViewClient = WebClient(urlBarLayout)

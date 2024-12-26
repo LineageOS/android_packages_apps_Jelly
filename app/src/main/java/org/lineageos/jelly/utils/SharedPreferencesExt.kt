@@ -43,6 +43,11 @@ class SharedPreferencesExt(context: Context) {
     val lookLockEnabled: Boolean
         get() = sharedPreferences.getBoolean(LOOK_LOCK_ENABLED_KEY, LOOK_LOCK_ENABLED_DEFAULT)
 
+    val dynamicPopupEnabled: Boolean
+        get() = sharedPreferences.getBoolean(
+            DYNAMIC_POPUP_ENABLED_KEY, DYNAMIC_POPUP_ENABLED_DEFAULT
+        )
+
     val javascriptEnabled: Boolean
         get() = sharedPreferences.getBoolean(JAVASCRIPT_ENABLED_KEY, JAVASCRIPT_ENABLED_DEFAULT)
 
@@ -77,6 +82,9 @@ class SharedPreferencesExt(context: Context) {
 
         private const val LOOK_LOCK_ENABLED_KEY = "key_looklock"
         private const val LOOK_LOCK_ENABLED_DEFAULT = false
+
+        private const val DYNAMIC_POPUP_ENABLED_KEY = "key_dynamic_popup"
+        private const val DYNAMIC_POPUP_ENABLED_DEFAULT = false
 
         private const val JAVASCRIPT_ENABLED_KEY = "key_javascript"
         private const val JAVASCRIPT_ENABLED_DEFAULT = true

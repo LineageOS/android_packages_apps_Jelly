@@ -54,6 +54,13 @@
             app:title="@string/pref_looklock_title" />
 
         <SwitchPreference
+            app:defaultValue="0"
+            app:iconSpaceReserved="false"
+            app:key="key_dynamic_popup"
+            app:summary="@string/pref_dynamic_popup_summary"
+            app:title="@string/pref_dynamic_popup_title" />
+
+        <SwitchPreference
             app:defaultValue="1"
             app:iconSpaceReserved="false"
             app:key="key_javascript"
