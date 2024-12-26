@@ -19,13 +19,15 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import org.lineageos.jelly.R
 import org.lineageos.jelly.ui.UrlBarLayout
+import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
 import kotlin.reflect.cast
 
 internal class ChromeClient(
     private val activity: WebViewExtActivity,
     private val incognito: Boolean,
-    private val urlBarLayout: UrlBarLayout
+    private val urlBarLayout: UrlBarLayout,
+    private val sharedPreferencesExt: SharedPreferencesExt,
 ) : WebChromeClient() {
     override fun onProgressChanged(view: WebView, progress: Int) {
         urlBarLayout.loadingProgress = progress
@@ -85,6 +87,10 @@ internal class ChromeClient(
         view: WebView, isDialog: Boolean,
         isUserGesture: Boolean, resultMsg: Message
     ): Boolean {
+        if (!sharedPreferencesExt.dynamicPopupEnabled && !isUserGesture) {
+            return false
+        }
+
         val result = view.hitTestResult
         val url = result.extra
 
