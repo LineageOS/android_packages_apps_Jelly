@@ -16,6 +16,23 @@
       "message": "This will break everything!",
       "revId": "01ecb96d282cff18eeba055c6bf070f52446d4dd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe0322dd_0bbd80ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-26T14:34:16Z",
+      "side": 1,
+      "message": "You don\u0027t return true in any cases !!\nThis will also breaks normal links (No JS) with `target\u003d\"_blank\"` !!",
+      "revId": "01ecb96d282cff18eeba055c6bf070f52446d4dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
