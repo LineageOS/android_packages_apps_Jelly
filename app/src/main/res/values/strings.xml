@@ -83,6 +83,10 @@
     <string name="pref_looklock_title">LookLock</string>
     <!-- Settings: lookLock summary -->
     <string name="pref_looklock_summary">Prevent other apps from reading Browser\'s content</string>
+    <!-- Settings: dynamic popup title -->
+    <string name="pref_dynamic_popup_title">Dynamic Popup</string>
+    <!-- Settings: dynamic popup summary -->
+    <string name="pref_dynamic_popup_summary">Allow JavaScript to open popup automatically</string>
     <!-- Settings: javascript preference title -->
     <string name="pref_js_title">JavaScript</string>
     <!-- Settings: javascript preference summary -->
