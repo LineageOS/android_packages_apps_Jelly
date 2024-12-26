@@ -603,6 +603,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         historyViewModel.insertOrUpdate(title, url)
     }
 
+    override fun replaceHistory(title: String, url: String, newUrl: String) {
+        historyViewModel.replace(title, url, newUrl)
+    }
+
     private fun setImmersiveMode(enable: Boolean) {
         val decorView = window.decorView
 
