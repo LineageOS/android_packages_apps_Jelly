@@ -35,6 +35,10 @@ class HistoryViewModel(application: Application) : AndroidViewModel(application)
         historyRepository.insertOrUpdate(title, url)
     }
 
+    fun replace(title: String, url: String, newUrl: String) = viewModelScope.launch {
+        historyRepository.replace(title, url, newUrl)
+    }
+
     fun delete(id: Long) = viewModelScope.launch {
         historyRepository.delete(id)
     }
