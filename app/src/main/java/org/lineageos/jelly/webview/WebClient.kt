@@ -45,6 +45,9 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
         urlBarLayout.onPageLoadFinished(view.certificate)
+        if (view.settings.javaScriptEnabled) {
+            view.evaluateJavascript(JavaScriptInterface.SYNC_URL_JS, null)
+        }
     }
 
     override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
