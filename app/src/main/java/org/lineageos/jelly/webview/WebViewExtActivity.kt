@@ -29,4 +29,5 @@ abstract class WebViewExtActivity : AppCompatActivity() {
     abstract fun setFileRequestCallback(cb: ((data: List<Uri>) -> Unit))
     abstract fun showLocationDialog(origin: String, callback: GeolocationPermissions.Callback)
     abstract fun updateHistory(title: String, url: String)
+    abstract fun replaceHistory(title: String, url: String, newUrl: String)
 }

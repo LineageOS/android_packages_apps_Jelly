@@ -31,6 +31,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import org.lineageos.jelly.R
+import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.UrlUtils
@@ -45,6 +46,9 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
         urlBarLayout.onPageLoadFinished(view.certificate)
+        if (view.settings.javaScriptEnabled) {
+            view.evaluateJavascript(JsSyncUrl.SCRIPT, null)
+        }
     }
 
     override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
