@@ -34,6 +34,24 @@
       "parentUuid": "e5a75bdd_6fc05d2c",
       "revId": "199a72964f671d5904a47d65e1cfce39d1581a02",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7969183a_3f00d04d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-12-29T08:47:50Z",
+      "side": 1,
+      "message": "Yes I think now I\u0027m quite happy overall, we just don\u0027t have much time to actually verify everything works as expected. At least here I\u0027m not at home till the new year\nIt\u0027ll wait a bit more before actually getting merged but either Luk or me will do it",
+      "parentUuid": "bd4865f5_01cb6a42",
+      "revId": "199a72964f671d5904a47d65e1cfce39d1581a02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
