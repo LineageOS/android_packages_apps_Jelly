@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5a75bdd_6fc05d2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-29T07:21:23Z",
+      "side": 1,
+      "message": "Can someone says that after all this will accept or not ?\nFor the privacy concern I already added a new user setting (Dynamic Popup) with default value set to false (412787)\nI also send these for lineage-22.1 (412742 and 412855)\nAs other users mentioned this is known issue that exists in Jelly for years\nSo it would be nice if users finally get this fix\nThanks",
+      "revId": "199a72964f671d5904a47d65e1cfce39d1581a02",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
