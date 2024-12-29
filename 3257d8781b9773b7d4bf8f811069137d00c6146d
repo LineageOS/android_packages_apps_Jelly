@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8ee7e51_c565271e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-29T17:05:56Z",
+      "side": 1,
+      "message": "In future, I want to add more JS interfaces, Like MediaSession support\nSo I created `js` package and renamed the interface to `JsSyncUrl`",
+      "revId": "3257d8781b9773b7d4bf8f811069137d00c6146d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
