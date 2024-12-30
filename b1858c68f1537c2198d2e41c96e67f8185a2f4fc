@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d782220_dc3c0d23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2024-12-30T15:50:46Z",
+      "side": 1,
+      "message": "less conditions,\nusing `_Js` as prefix for safety.",
+      "revId": "b1858c68f1537c2198d2e41c96e67f8185a2f4fc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
