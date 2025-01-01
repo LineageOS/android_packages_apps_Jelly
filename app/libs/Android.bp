@@ -1,5 +1,5 @@
 //
-// SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+// SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -9,7 +9,7 @@ android_library_import {
     name: "Jelly_androidx.appcompat_appcompat-nodeps",
     aars: ["androidx/appcompat/appcompat/1.6.1/appcompat-1.6.1.aar"],
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "26",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -37,7 +37,7 @@ android_library_import {
 android_library {
     name: "Jelly_androidx.appcompat_appcompat",
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "26",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -62,14 +62,13 @@ android_library {
         "androidx.savedstate_savedstate",
         "kotlin-stdlib",
     ],
-    java_version: "1.7",
 }
 
 android_library_import {
     name: "Jelly_androidx.appcompat_appcompat-resources-nodeps",
     aars: ["androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.aar"],
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "26",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -86,7 +85,7 @@ android_library_import {
 android_library {
     name: "Jelly_androidx.appcompat_appcompat-resources",
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "26",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -100,14 +99,13 @@ android_library {
         "androidx.vectordrawable_vectordrawable",
         "androidx.vectordrawable_vectordrawable-animated",
     ],
-    java_version: "1.7",
 }
 
 android_library_import {
     name: "Jelly_com.google.android.material_material-nodeps",
     aars: ["com/google/android/material/material/1.9.0/material-1.9.0.aar"],
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "26",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -135,7 +133,7 @@ android_library_import {
 android_library {
     name: "Jelly_com.google.android.material_material",
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "26",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -160,5 +158,4 @@ android_library {
         "androidx.viewpager2_viewpager2",
         "error_prone_annotations",
     ],
-    java_version: "1.7",
 }
