@@ -41,6 +41,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ee1209e_f10b9ca2",
+        "filename": "app/src/main/java/org/lineageos/jelly/dao/HistoryDao.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-02T17:12:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4806e602_bfc2efa9",
+      "range": {
+        "startLine": 2,
+        "startChar": 27,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c5d97c5_235d10a5",
