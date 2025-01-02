@@ -16,6 +16,24 @@
       "message": "Sorry I didn\u0027t understand this change, can you explain more about it ?\nTBH I\u0027m not familiar with \"flow\" at all",
       "revId": "71ec3a1caa9f2d8b84a13fd5d0b2a3b0c28747c9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2e715de_043b4ecd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T17:43:30Z",
+      "side": 1,
+      "message": "Can you join lineage discord? If so give me your nick/ping me in any channel",
+      "parentUuid": "98524cf9_3dfb4cbf",
+      "revId": "71ec3a1caa9f2d8b84a13fd5d0b2a3b0c28747c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
