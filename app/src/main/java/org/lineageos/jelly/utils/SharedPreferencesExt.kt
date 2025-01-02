@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -9,7 +9,6 @@ import android.content.Context
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 import org.lineageos.jelly.R
-import org.lineageos.jelly.suggestions.SuggestionProvider
 
 class SharedPreferencesExt(context: Context) {
     private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -60,15 +59,6 @@ class SharedPreferencesExt(context: Context) {
     val doNotTrackEnabled: Boolean
         get() = sharedPreferences.getBoolean(DO_NOT_TRACK_ENABLED_KEY, DO_NOT_TRACK_ENABLED_DEFAULT)
 
-    val suggestionProvider: SuggestionProvider
-        get() = runCatching {
-            SuggestionProvider.valueOf(
-                sharedPreferences.getString(
-                    SUGGESTION_PROVIDER_KEY, defaultSuggestionProvider
-                ) ?: defaultSuggestionProvider
-            )
-        }.getOrDefault(SuggestionProvider.NONE)
-
     val reachModeEnabled: Boolean
         get() = sharedPreferences.getBoolean(REACH_MODE_ENABLED_KEY, REACH_MODE_ENABLED_DEFAULT)
 
@@ -97,8 +87,6 @@ class SharedPreferencesExt(context: Context) {
 
         private const val DO_NOT_TRACK_ENABLED_KEY = "key_do_not_track"
         private const val DO_NOT_TRACK_ENABLED_DEFAULT = false
-
-        private const val SUGGESTION_PROVIDER_KEY = "key_suggestion_provider"
 
         private const val REACH_MODE_ENABLED_KEY = "key_reach_mode"
         private const val REACH_MODE_ENABLED_DEFAULT = false

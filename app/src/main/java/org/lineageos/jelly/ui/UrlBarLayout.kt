@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -26,6 +26,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import org.lineageos.jelly.R
 import org.lineageos.jelly.ext.requireActivity
+import org.lineageos.jelly.suggestions.SuggestionProvider
 import org.lineageos.jelly.suggestions.SuggestionsAdapter
 import org.lineageos.jelly.utils.UiUtils
 import kotlin.reflect.safeCast
@@ -258,6 +259,10 @@ class UrlBarLayout @JvmOverloads constructor(
     fun onSslError(error: SslError?) {
         sslError = error
         secureButton.setImageResource(R.drawable.ic_warning)
+    }
+
+    fun setSuggestionsProvider(provider: SuggestionProvider) {
+        suggestionsAdapter.suggestionProvider = provider
     }
 
     private fun clearSearch() {
