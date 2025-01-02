@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98524cf9_3dfb4cbf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-02T17:37:32Z",
+      "side": 1,
+      "message": "Sorry I didn\u0027t understand this change, can you explain more about it ?\nTBH I\u0027m not familiar with \"flow\" at all",
+      "revId": "71ec3a1caa9f2d8b84a13fd5d0b2a3b0c28747c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
