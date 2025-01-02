@@ -182,6 +182,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7418eaf_83764a16",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionProvider.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-02T17:17:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75e78394_45202092",
+      "range": {
+        "startLine": 27,
+        "startChar": 11,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "725bd1cc_2c4a6379",
