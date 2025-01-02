@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.LinearLayout
 import android.widget.TextView
 import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.SharedPreferencesExt
@@ -23,7 +24,7 @@ import java.util.Locale
 
 class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterable {
     private val inflater = LayoutInflater.from(context)
-    private var items = listOf<String>()
+    private var items = listOf<SuggestItem>()
     private val filter = ItemFilter()
     private var queryText: String? = null
 
@@ -36,28 +37,37 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
     override fun getItemId(position: Int) = 0L
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = (convertView ?: inflater.inflate(
+        val layout = (convertView ?: inflater.inflate(
             R.layout.item_suggestion, parent, false
-        )) as TextView
+        )) as LinearLayout
         val suggestion = items[position]
+        val title = layout.findViewById<TextView>(R.id.suggest_title)
+        val url = layout.findViewById<TextView>(R.id.suggest_url)
+        url.visibility = if (suggestion.url == null) View.GONE else View.VISIBLE
         queryText?.also { query ->
-            val spannable = SpannableStringBuilder(suggestion)
-            val lcSuggestion = suggestion.lowercase(Locale.getDefault())
-            var queryTextPos = lcSuggestion.indexOf(query)
-            while (queryTextPos >= 0) {
-                spannable.setSpan(
-                    StyleSpan(Typeface.BOLD),
-                    queryTextPos,
-                    queryTextPos + query.length,
-                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-                )
-                queryTextPos = lcSuggestion.indexOf(query, queryTextPos + query.length)
-            }
-            view.text = spannable
+            title.text = getSpannable(query, suggestion.title)
+            url.text = getSpannable(query, suggestion.url ?: "")
         } ?: run {
-            view.text = suggestion
+            title.text = suggestion.title
+            url.text = suggestion.url
         }
-        return view
+        return layout
+    }
+
+    private fun getSpannable(query: String, text: String): SpannableStringBuilder {
+        val spannable = SpannableStringBuilder(text)
+        val lcSuggestion = text.lowercase(Locale.getDefault())
+        var queryTextPos = lcSuggestion.indexOf(query)
+        while (queryTextPos >= 0) {
+            spannable.setSpan(
+                StyleSpan(Typeface.BOLD),
+                queryTextPos,
+                queryTextPos + query.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            queryTextPos = lcSuggestion.indexOf(query, queryTextPos + query.length)
+        }
+        return spannable
     }
 
     override fun getFilter(): Filter = filter
@@ -68,7 +78,7 @@ class SuggestionsAdapter(private val context: Context) : BaseAdapter(), Filterab
             constraint?.takeUnless { it.isBlank() }?.let {
                 val provider = sharedPreferencesExt.suggestionProvider
                 val query = it.toString().lowercase(Locale.getDefault()).trim()
-                val results = provider.fetchResults(query)
+                val results = provider.fetchResults(context, query)
                 filterResults.count = results.size
                 filterResults.values = results
                 queryText = query

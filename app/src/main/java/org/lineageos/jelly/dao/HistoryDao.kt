@@ -18,6 +18,14 @@ interface HistoryDao {
     @Query("SELECT * FROM history ORDER BY timestamp DESC")
     fun getAll(): Flow<List<History>>
 
+    @Query(
+        "SELECT * FROM history" +
+        "  WHERE title LIKE :keyword OR url LIKE :keyword" +
+        "  ORDER BY timestamp DESC" +
+        "  LIMIT :limit"
+    )
+    fun search(keyword: String, limit: Int): List<History>
+
     @Query("SELECT * FROM history WHERE _id = :id")
     suspend fun get(id: Long): History
 
