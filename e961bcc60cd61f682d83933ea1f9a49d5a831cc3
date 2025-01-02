@@ -205,6 +205,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be6bfb16_eb382906",
+        "filename": "app/src/main/res/layout/item_suggestion.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-02T17:13:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "725bd1cc_2c4a6379",
+      "range": {
+        "startLine": 3,
+        "startChar": 34,
+        "endLine": 3,
+        "endChar": 38
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f7bdad1_90114e29",
