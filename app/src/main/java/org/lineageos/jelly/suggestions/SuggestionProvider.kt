@@ -5,9 +5,12 @@
 
 package org.lineageos.jelly.suggestions
 
+import android.content.Context
 import android.util.Log
 import org.json.JSONArray
+import org.lineageos.jelly.JellyApplication
 import org.lineageos.jelly.ext.*
+import org.lineageos.jelly.repository.HistoryRepository
 import java.io.IOException
 import java.io.UnsupportedEncodingException
 import java.net.HttpURLConnection
@@ -15,54 +18,71 @@ import java.net.URL
 import java.net.URLEncoder
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+import kotlin.reflect.cast
 
 /**
  * The base search suggestions API. Provides common
  * fetching and caching functionality for each potential
  * suggestions provider.
  */
-enum class SuggestionProvider(private val encoding: String) {
-    BAIDU("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) =
+sealed class SuggestionProvider(private val encoding: String) {
+    data object Baidu : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String =
             "https://suggestion.baidu.com/su?ie=UTF-8&wd=$query&action=opensearch"
-    },
-    BING("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) =
+    }
+
+    data object Bing : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String =
             "https://api.bing.com/osjson.aspx?query=$query&language=$language"
-    },
-    BRAVE("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) =
+    }
+
+    data object Brave : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String =
             "https://search.brave.com/api/suggest?q=$query"
-    },
-    DUCK("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) =
+    }
+
+    data object Duck : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String =
             "https://duckduckgo.com/ac/?q=$query"
 
         override fun parseResults(content: String, callback: ResultCallback) {
             val jsonArray = JSONArray(content)
-            val size = jsonArray.length()
-            for (n in 0 until size) {
+            for (n in 0 until jsonArray.length()) {
                 val obj = jsonArray.getJSONObject(n)
                 val suggestion = obj.getString("phrase")
-                if (!callback.addResult(suggestion)) {
+                val item = SuggestItem(suggestion)
+                if (!callback.addResult(item)) {
                     break
                 }
             }
         }
-    },
-    GOOGLE("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) =
-            "https://www.google.com/complete/search?client=android&oe=utf8&ie=utf8&cp=4&xssi=t&gs_pcrt=undefined&hl=$language&q=$query"
-    },
-    YAHOO("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) =
-            "https://search.yahoo.com/sugg/chrome?output=fxjson&command=$query"
-    },
-    NONE("UTF-8") {
-        override fun createQueryUrl(query: String, language: String) = ""
+    }
 
-        override fun fetchResults(rawQuery: String) = listOf<String>()
-    };
+    data object Google : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String =
+            "https://www.google.com/complete/search?client=android&oe=utf8&ie=utf8&cp=4&xssi=t&gs_pcrt=undefined&hl=$language&q=$query"
+    }
+
+    data object Yahoo : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String =
+            "https://search.yahoo.com/sugg/chrome?output=fxjson&command=$query"
+    }
+
+    data class History(private val historyRepository: HistoryRepository) :
+        SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String = ""
+
+        override fun fetchResults(rawQuery: String): List<SuggestItem> {
+            val list = historyRepository.search(rawQuery, LIMIT)
+            return list.map { SuggestItem(it.title, it.url) }
+        }
+    }
+
+    data object None : SuggestionProvider("UTF-8") {
+        override fun createQueryUrl(query: String, language: String): String = ""
+
+        override fun fetchResults(rawQuery: String): List<SuggestItem> = emptyList()
+    }
 
     /**
      * Create a URL for the given query in the given language.
@@ -89,7 +109,8 @@ enum class SuggestionProvider(private val encoding: String) {
         val size = jsonArray.length()
         for (n in 0 until size) {
             val suggestion = jsonArray.getString(n)
-            if (!callback.addResult(suggestion)) {
+            val item = SuggestItem(suggestion)
+            if (!callback.addResult(item)) {
                 break
             }
         }
@@ -101,8 +122,8 @@ enum class SuggestionProvider(private val encoding: String) {
      * @param rawQuery the raw query to retrieve the results for.
      * @return a list of history items for the query.
      */
-    open fun fetchResults(rawQuery: String): List<String> {
-        val filter = mutableListOf<String>()
+    open fun fetchResults(rawQuery: String): List<SuggestItem> {
+        val filter = mutableListOf<SuggestItem>()
         val query = try {
             URLEncoder.encode(rawQuery, encoding)
         } catch (e: UnsupportedEncodingException) {
@@ -117,7 +138,7 @@ enum class SuggestionProvider(private val encoding: String) {
         try {
             parseResults(content) {
                 filter.add(it)
-                filter.size < 5
+                filter.size < LIMIT
             }
         } catch (e: Exception) {
             Log.e(TAG, "Unable to parse results", e)
@@ -158,12 +179,13 @@ enum class SuggestionProvider(private val encoding: String) {
 
     companion object {
         private const val TAG = "SuggestionProvider"
+        private const val LIMIT = 5
         private val INTERVAL_DAY = TimeUnit.DAYS.toSeconds(1)
         private const val DEFAULT_LANGUAGE = "en"
         private val language by lazy { Locale.getDefault().language.ifEmpty { DEFAULT_LANGUAGE } }
 
         fun interface ResultCallback {
-            fun addResult(suggestion: String): Boolean
+            fun addResult(suggestion: SuggestItem): Boolean
         }
     }
 }
