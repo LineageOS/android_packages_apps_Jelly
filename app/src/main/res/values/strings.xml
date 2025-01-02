@@ -180,6 +180,8 @@
     <!-- Launcher shortcut: new incognito tab -->
     <string name="shortcut_new_incognito_tab">New incognito tab</string>
 
+    <!-- Suggestions provider: history provider -->
+    <string name="suggestions_provider_history">History</string>
     <!-- Suggestions provider: no suggestions provider -->
     <string name="suggestions_provider_none">None</string>
 
