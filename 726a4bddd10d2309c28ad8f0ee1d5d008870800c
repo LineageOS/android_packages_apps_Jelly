@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1be6f74a_7e208a4d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-02T20:14:09Z",
+      "side": 1,
+      "message": "Please check the Patchset 7\nIt should be OK now\nThanks",
+      "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
