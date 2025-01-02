@@ -10,6 +10,7 @@ import android.content.Context
 import android.net.http.SslCertificate
 import android.net.http.SslError
 import android.util.AttributeSet
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewTreeObserver
@@ -26,10 +27,11 @@ import androidx.core.view.isVisible
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import org.lineageos.jelly.R
 import org.lineageos.jelly.ext.requireActivity
+import org.lineageos.jelly.suggestions.SuggestItem
 import org.lineageos.jelly.suggestions.SuggestionProvider
 import org.lineageos.jelly.suggestions.SuggestionsAdapter
 import org.lineageos.jelly.utils.UiUtils
-import kotlin.reflect.safeCast
+import kotlin.reflect.cast
 
 /**
  * App's main URL and search view.
@@ -168,6 +170,7 @@ class UrlBarLayout @JvmOverloads constructor(
             when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
                     UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
+                    Log.e("INJA", autoCompleteTextView.text.toString())
                     onLoadUrlCallback?.invoke(autoCompleteTextView.text.toString())
                     autoCompleteTextView.clearFocus()
                     true
@@ -189,11 +192,10 @@ class UrlBarLayout @JvmOverloads constructor(
             }
         }
         autoCompleteTextView.setOnItemClickListener { _, _, position, _ ->
-            val text = String::class.safeCast(autoCompleteTextView.adapter.getItem(position))
-                ?: return@setOnItemClickListener
+            val item = SuggestItem::class.cast(autoCompleteTextView.adapter.getItem(position))
             UiUtils.hideKeyboard(requireActivity().window, autoCompleteTextView)
             autoCompleteTextView.clearFocus()
-            onLoadUrlCallback?.invoke(text)
+            onLoadUrlCallback?.invoke(item.toString())
         }
         if (isIncognito) {
             autoCompleteTextView.imeOptions = autoCompleteTextView.imeOptions or
