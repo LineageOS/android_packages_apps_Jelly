@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -52,6 +52,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
+import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -59,6 +60,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.ui.MenuDialog
@@ -71,6 +73,7 @@ import org.lineageos.jelly.utils.UiUtils
 import org.lineageos.jelly.utils.UrlUtils
 import org.lineageos.jelly.viewmodels.FavoriteViewModel
 import org.lineageos.jelly.viewmodels.HistoryViewModel
+import org.lineageos.jelly.viewmodels.SuggestionProviderViewModel
 import org.lineageos.jelly.webview.WebViewExt
 import org.lineageos.jelly.webview.WebViewExtActivity
 import java.io.File
@@ -81,6 +84,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     // View model
     private val historyViewModel: HistoryViewModel by viewModels()
     private val favoritesViewModel: FavoriteViewModel by viewModels()
+    private val suggestionProviderViewModel: SuggestionProviderViewModel by viewModels()
 
     // Views
     private val appBarLayout by lazy { findViewById<AppBarLayout>(R.id.appBarLayout) }
@@ -297,6 +301,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 }
             }
         })
+
+        lifecycleScope.launch {
+            suggestionProviderViewModel.suggestionProvider().collect {
+                urlBarLayout.setSuggestionsProvider(it)
+            }
+        }
     }
 
     override fun onStart() {
