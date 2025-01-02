@@ -11,6 +11,7 @@
         <item>DuckDuckGo</item>
         <item>Google</item>
         <item>Yahoo</item>
+        <item>@string/suggestions_provider_history</item>
         <item>@string/suggestions_provider_none</item>
     </string-array>
 
@@ -21,6 +22,7 @@
         <item>DUCK</item>
         <item>GOOGLE</item>
         <item>YAHOO</item>
+        <item>HISTORY</item>
         <item>NONE</item>
     </string-array>
 </resources>

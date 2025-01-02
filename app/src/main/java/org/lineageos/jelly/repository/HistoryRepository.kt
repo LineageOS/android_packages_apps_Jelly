@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,6 +10,8 @@ import org.lineageos.jelly.model.History
 
 class HistoryRepository(private val historyDao: HistoryDao) {
     val all = historyDao.getAll()
+
+    fun search(keyword: String, limit: Int) = historyDao.search("%$keyword%", limit)
 
     suspend fun get(id: Long) = historyDao.get(id)
 

@@ -8,6 +8,7 @@ package org.lineageos.jelly.ext
 import android.content.SharedPreferences
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
+import org.lineageos.jelly.repository.HistoryRepository
 import org.lineageos.jelly.suggestions.SuggestionProvider
 
 fun <T> SharedPreferences.preferenceFlow(
@@ -34,8 +35,14 @@ fun <T> SharedPreferences.preferenceFlow(
 }
 
 const val SUGGESTION_PROVIDER_KEY = "key_suggestion_provider"
-val SharedPreferences.suggestionProvider: SuggestionProvider
-    get() = when (val name = getString(SUGGESTION_PROVIDER_KEY, null)) {
-        null -> SuggestionProvider.GOOGLE
-        else -> SuggestionProvider.valueOf(name)
+fun SharedPreferences.suggestionProvider(historyRepository: HistoryRepository) =
+    when (getString(SUGGESTION_PROVIDER_KEY, null)) {
+        "BAIDU" -> SuggestionProvider.Baidu
+        "BING" -> SuggestionProvider.Bing
+        "BRAVE" -> SuggestionProvider.Brave
+        "DUCK" -> SuggestionProvider.Duck
+        "GOOGLE" -> SuggestionProvider.Google
+        "YAHOO" -> SuggestionProvider.Yahoo
+        "HISTORY" -> SuggestionProvider.History(historyRepository)
+        else -> SuggestionProvider.None
     }
