@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4806e602_bfc2efa9",
+        "filename": "app/src/main/java/org/lineageos/jelly/dao/HistoryDao.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T16:52:27Z",
+      "side": 1,
+      "message": "```suggestion\n * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project\n```",
+      "range": {
+        "startLine": 2,
+        "startChar": 27,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c5d97c5_235d10a5",
+        "filename": "app/src/main/java/org/lineageos/jelly/repository/HistoryRepository.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T16:52:27Z",
+      "side": 1,
+      "message": "```suggestion\n * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project\n```",
+      "range": {
+        "startLine": 2,
+        "startChar": 27,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fce893f_b55dbfc0",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestItem.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T16:52:27Z",
+      "side": 1,
+      "message": "```suggestion\ndata class SuggestItem(val title: String, val url: String? \u003d null)\n```",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 5
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75e78394_45202092",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionProvider.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T16:52:27Z",
+      "side": 1,
+      "message": "You probably want to pass the historyRepository as a parameter here and create it elsewhere, this is fine for now.\n\nThe whole suggestion thing should be re-written as follows:\nCurrently the ItemFilter creates/gets the suggestion provider every time, that\u0027s expansive\nIt should instead be updated only when required, you can do it via a ViewModel that generates flows of SuggestionProvider (in the viewmodel you can easily get JellyApplication to use)\nTo be notified about the shared pref updates you can use a callbackFlow that registers for updates\n\nIf you want some more pointers let me know, but that\u0027s not required (just bad architecture on my part, I was young and naive)\n\nYou can `resolve` it immediately when you fix the other occurrences",
+      "range": {
+        "startLine": 27,
+        "startChar": 11,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "725bd1cc_2c4a6379",
+        "filename": "app/src/main/res/layout/item_suggestion.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T16:52:27Z",
+      "side": 1,
+      "message": "```suggestion\n     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project\n```",
+      "range": {
+        "startLine": 3,
+        "startChar": 34,
+        "endLine": 3,
+        "endChar": 38
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f7bdad1_90114e29",
+        "filename": "app/src/main/res/values/suggestion_providers.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-02T16:52:27Z",
+      "side": 1,
+      "message": "```suggestion\n        \u003citem\u003e@string/suggestions_provider_history\u003c/item\u003e\n```",
+      "range": {
+        "startLine": 14,
+        "startChar": 14,
+        "endLine": 14,
+        "endChar": 21
+      },
+      "revId": "e961bcc60cd61f682d83933ea1f9a49d5a831cc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
