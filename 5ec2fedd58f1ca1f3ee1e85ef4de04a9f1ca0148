@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b42a0c8_bb5cbe70",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-02T19:36:52Z",
+      "side": 1,
+      "message": "We forgot to handle on item click, I fixed it",
+      "revId": "5ec2fedd58f1ca1f3ee1e85ef4de04a9f1ca0148",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
