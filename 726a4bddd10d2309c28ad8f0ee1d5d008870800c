@@ -16,6 +16,23 @@
       "message": "Please check the Patchset 7\nIt should be OK now\nThanks",
       "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9f63522_c1c42568",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-04T14:15:20Z",
+      "side": 1,
+      "message": "Can someone merge this please?\nSo we can have it in the next new build, Thanks.",
+      "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
