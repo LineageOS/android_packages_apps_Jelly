@@ -154,7 +154,13 @@ sealed class SuggestionProvider(private val encoding: String) {
         query: String,
         language: String
     ): String? {
-        val url = URL(createQueryUrl(query, language))
+        val urlEncoded = runCatching {
+            URLEncoder.encode(createQueryUrl(query, language), encoding)
+        }.getOrNull() ?: run {
+            Log.e(TAG, "Unable to encode the URL")
+            return null
+        }
+        val url = URL(urlEncoded)
         val urlConnection = url.openConnection() as HttpURLConnection
         urlConnection.addRequestProperty(
             "Cache-Control",
