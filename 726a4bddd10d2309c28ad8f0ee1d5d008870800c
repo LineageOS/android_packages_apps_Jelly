@@ -33,6 +33,80 @@
       "message": "Can someone merge this please?\nSo we can have it in the next new build, Thanks.",
       "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a12efb98_64bae729",
+        "filename": "app/src/main/java/org/lineageos/jelly/repository/HistoryRepository.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-01-04T20:32:44Z",
+      "side": 1,
+      "message": "this probably lets one inject wildcards etc via keyword",
+      "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bce617c_e16ffc16",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestItem.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-01-04T20:32:44Z",
+      "side": 1,
+      "message": "```suggestion\n    override fun toString() \u003d url ?: title\n```",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d1135c7_0e520c81",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionProvider.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-01-04T20:32:44Z",
+      "side": 1,
+      "message": "```suggestion\n * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project\n```",
+      "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "112f8a29_fed7a59f",
+        "filename": "app/src/main/java/org/lineageos/jelly/suggestions/SuggestionsAdapter.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-01-04T20:32:44Z",
+      "side": 1,
+      "message": "```suggestion\n        url.isVisible \u003d suggestion.url !\u003d null\n```",
+      "revId": "726a4bddd10d2309c28ad8f0ee1d5d008870800c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
