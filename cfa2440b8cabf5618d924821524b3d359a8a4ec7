@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74f8d8c1_7e5ca484",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-05T20:08:57Z",
+      "side": 1,
+      "message": "Please review my changes again, Just closed the deps, Thanks",
+      "revId": "cfa2440b8cabf5618d924821524b3d359a8a4ec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
