@@ -34,6 +34,24 @@
       "parentUuid": "9c1fa868_b17b504e",
       "revId": "863fa097a99c77756966210ab561bcf8786c549c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0846592d_d3d5efeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-05T19:24:55Z",
+      "side": 1,
+      "message": "move it out of chain then.\nusually an harsh review on the last commit means that the whole set of commits is bad, not that the specific change in question is 😊",
+      "parentUuid": "a6ddb295_efb5a85e",
+      "revId": "863fa097a99c77756966210ab561bcf8786c549c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
