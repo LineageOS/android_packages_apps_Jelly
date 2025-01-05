@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c1fa868_b17b504e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-05T19:18:27Z",
+      "side": 1,
+      "message": "generally, -2 for the whole serie, the deps aren\u0027t randomly picked and matched what at the time was found in AOSP.\nif they didn\u0027t get updated that\u0027s fine as that means we don\u0027t require anything new.",
+      "revId": "863fa097a99c77756966210ab561bcf8786c549c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
