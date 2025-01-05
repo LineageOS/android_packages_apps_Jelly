@@ -16,6 +16,23 @@
       "message": "What about Migrate from kapt to KSP ?",
       "revId": "a7a3adec9b3bfcd50d355367a6f53357630a05c7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db56e62a_24fc4cd8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-05T19:49:39Z",
+      "side": 1,
+      "message": "What about Migrate from kapt to KSP ?",
+      "revId": "a7a3adec9b3bfcd50d355367a6f53357630a05c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
