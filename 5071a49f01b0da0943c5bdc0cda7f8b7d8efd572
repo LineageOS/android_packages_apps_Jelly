@@ -52,6 +52,23 @@
       "parentUuid": "291217fa_38f78708",
       "revId": "5071a49f01b0da0943c5bdc0cda7f8b7d8efd572",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cf39acf_50351bc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-05T19:51:52Z",
+      "side": 1,
+      "message": "So if I don\u0027t update other deps and only update JDK to 17, this is ok for you ?",
+      "revId": "5071a49f01b0da0943c5bdc0cda7f8b7d8efd572",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
