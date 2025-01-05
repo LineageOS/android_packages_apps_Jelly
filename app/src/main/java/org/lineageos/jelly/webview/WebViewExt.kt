@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -57,7 +57,6 @@ class WebViewExt @JvmOverloads constructor(
         settings.setSupportMultipleWindows(true)
         settings.builtInZoomControls = true
         settings.displayZoomControls = false
-        settings.databaseEnabled = !isIncognito
         settings.domStorageEnabled = !isIncognito
         setOnLongClickListener(object : OnLongClickListener {
             var shouldAllowDownload = false
