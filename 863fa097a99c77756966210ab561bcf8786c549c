@@ -16,6 +16,24 @@
       "message": "generally, -2 for the whole serie, the deps aren\u0027t randomly picked and matched what at the time was found in AOSP.\nif they didn\u0027t get updated that\u0027s fine as that means we don\u0027t require anything new.",
       "revId": "863fa097a99c77756966210ab561bcf8786c549c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6ddb295_efb5a85e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-05T19:20:58Z",
+      "side": 1,
+      "message": "This wasn\u0027t for dep BTW",
+      "parentUuid": "9c1fa868_b17b504e",
+      "revId": "863fa097a99c77756966210ab561bcf8786c549c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
