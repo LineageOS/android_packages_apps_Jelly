@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be63c05d_f964acb5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-01-05T20:42:49Z",
+      "side": 1,
+      "message": "It\u0027s enough to say \"Removed from webkit in 2019\" with a link\nAlso, look at the line numbers here - every time you see a new line without a new number, your line length is too long",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 424
+      },
+      "revId": "fcec86be8e6b5f88a2d905c3ae8d1ef58b68fa20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
