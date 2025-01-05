@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f08ac0f_4c328513",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-05T20:30:34Z",
+      "side": 1,
+      "message": "When JDK is 1.8 I\u0027m getting these warnings with red text:\n```\nwarning: [options] source value 8 is obsolete and will be removed in a future release\nwarning: [options] target value 8 is obsolete and will be removed in a future release\nwarning: [options] To suppress warnings about obsolete options, use -Xlint:-options.\n3 warnings\n```\nIf JDK 17 is standard for AOSP 15 I prefer to upgrade as I don\u0027t get these warning with it anymore",
+      "revId": "2bd25a20844682a990631c2a45f7622dcf917ef6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
