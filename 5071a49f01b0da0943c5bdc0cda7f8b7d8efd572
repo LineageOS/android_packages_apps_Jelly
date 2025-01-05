@@ -16,6 +16,24 @@
       "message": "What about JDK 17?",
       "revId": "5071a49f01b0da0943c5bdc0cda7f8b7d8efd572",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "291217fa_38f78708",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-05T19:30:13Z",
+      "side": 1,
+      "message": "by itself this change should be fine, AOSP as of 15 uses jdk 17 so it would match.\n\nbut there really isn\u0027t any real improvement by changing the stuff in the gradle side, we do that only of required, or if the library is vendored (you can see them under app/libs), in jelly\u0027s case none.\n\nwe usually bring up the app in a specific android version and use the libs found in that release for the whole cycle if possible.\n\nif you really want to update those libs",
+      "parentUuid": "c9479bee_bc980d95",
+      "revId": "5071a49f01b0da0943c5bdc0cda7f8b7d8efd572",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
