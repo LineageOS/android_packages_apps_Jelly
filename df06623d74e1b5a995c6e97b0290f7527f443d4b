@@ -16,6 +16,69 @@
       "message": "Now when autoload is false home page pref summery value is \"Disabled\" instead of the url",
       "revId": "df06623d74e1b5a995c6e97b0290f7527f443d4b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c01bdd1_82718126",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T14:54:36Z",
+      "side": 1,
+      "message": "I\u0027m still not sure if I want this without a \"blank\" page that informs the user about their choice, but that\u0027ll do for now\n\nSomething like that for blank would work I guess?\n```html\n\u003c!DOCTYPE html\u003e\n\u003chtml lang\u003d\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset\u003d\"UTF-8\"\u003e\n    \u003cmeta name\u003d\"viewport\" content\u003d\"width\u003ddevice-width, initial-scale\u003d1.0\"\u003e\n    \u003ctitle\u003eBlank Page\u003c/title\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv\u003e\n        \u003cp\u003eWelcome to Jelly.\u003c/p\u003e\n    \u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```",
+      "revId": "df06623d74e1b5a995c6e97b0290f7527f443d4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc1ef911_ca083c3f",
+        "filename": "app/src/main/java/org/lineageos/jelly/SettingsActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T14:54:36Z",
+      "side": 1,
+      "message": "```suggestion\n        private fun homePagePrefSummery() \u003d\n            if (sharedPreferencesExt.homePageAutoload) {\n                sharedPreferencesExt.homePage\n            } else {\n                getString(R.string.pref_start_page_autoload_disabled)\n            }\n```\n\nLooks a bit better, I think",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 9
+      },
+      "revId": "df06623d74e1b5a995c6e97b0290f7527f443d4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "879f8ad1_c9d796a8",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T14:54:36Z",
+      "side": 1,
+      "message": "```suggestion\n    \u003c!-- Settings: home page autoload enable --\u003e\n    \u003cstring name\u003d\"pref_start_page_autoload_enabled\"\u003eEnabled\u003c/string\u003e\n    \u003c!-- Settings: home page autoload disabled --\u003e\n    \u003cstring name\u003d\"pref_start_page_autoload_disabled\"\u003eDisabled\u003c/string\u003e\n    \u003c!-- Settings: select home page dialog title --\u003e\n```",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 0
+      },
+      "revId": "df06623d74e1b5a995c6e97b0290f7527f443d4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
