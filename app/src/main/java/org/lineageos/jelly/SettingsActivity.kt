@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,6 +23,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreference
+import com.google.android.material.checkbox.MaterialCheckBox
 import org.lineageos.jelly.utils.SharedPreferencesExt
 import kotlin.reflect.safeCast
 
@@ -139,6 +140,15 @@ class SettingsActivity : AppCompatActivity() {
             )
             val homepageUrlEditText = homepageView.findViewById<EditText>(R.id.homepageUrlEditText)
             homepageUrlEditText.setText(sharedPreferencesExt.homePage)
+            val homepageAutoload = homepageView.findViewById<MaterialCheckBox>(
+                R.id.homePageAutoloadCheckBox
+            )
+            homepageAutoload.isChecked = sharedPreferencesExt.homePageAutoload
+            homepageAutoload.setOnCheckedChangeListener { _, checked ->
+                homepageUrlEditText.setText(sharedPreferencesExt.homePage)
+                homepageUrlEditText.isEnabled = checked
+            }
+            homepageUrlEditText.isEnabled = homepageAutoload.isChecked
             builder.setTitle(R.string.pref_start_page_dialog_title)
                 .setMessage(R.string.pref_start_page_dialog_message)
                 .setView(homepageView)
@@ -149,6 +159,7 @@ class SettingsActivity : AppCompatActivity() {
                         sharedPreferencesExt.defaultHomePage
                     }
                     sharedPreferencesExt.homePage = url
+                    sharedPreferencesExt.homePageAutoload = homepageAutoload.isChecked
                     preference.summary = url
                 }
                 .setNeutralButton(
