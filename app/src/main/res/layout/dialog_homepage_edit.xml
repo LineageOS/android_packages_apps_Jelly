@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,5 +18,10 @@
         android:importantForAutofill="no"
         android:inputType="textUri"
         android:maxLines="1" />
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/homePageAutoloadCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pref_home_page_autoload" />
 
 </LinearLayout>
