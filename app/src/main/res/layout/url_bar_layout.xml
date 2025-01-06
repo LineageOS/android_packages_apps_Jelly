@@ -87,6 +87,7 @@
                 android:popupElevation="0dp"
                 android:selectAllOnFocus="true"
                 android:textColor="?attr/colorOnSurface"
+                android:hint="@string/url_bar_auto_complete_hint"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/secureButton"
