@@ -58,6 +58,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "480199f2_f6f29968",
+        "filename": "app/src/main/java/org/lineageos/jelly/SettingsActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T15:01:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc1ef911_ca083c3f",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 9
+      },
+      "revId": "df06623d74e1b5a995c6e97b0290f7527f443d4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "879f8ad1_c9d796a8",
@@ -71,6 +95,30 @@
       "writtenOn": "2025-01-06T14:54:36Z",
       "side": 1,
       "message": "```suggestion\n    \u003c!-- Settings: home page autoload enable --\u003e\n    \u003cstring name\u003d\"pref_start_page_autoload_enabled\"\u003eEnabled\u003c/string\u003e\n    \u003c!-- Settings: home page autoload disabled --\u003e\n    \u003cstring name\u003d\"pref_start_page_autoload_disabled\"\u003eDisabled\u003c/string\u003e\n    \u003c!-- Settings: select home page dialog title --\u003e\n```",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 0
+      },
+      "revId": "df06623d74e1b5a995c6e97b0290f7527f443d4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f1d99f3_6a48734c",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T15:01:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "879f8ad1_c9d796a8",
       "range": {
         "startLine": 76,
         "startChar": 0,
