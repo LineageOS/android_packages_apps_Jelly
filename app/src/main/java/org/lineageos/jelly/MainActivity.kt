@@ -271,7 +271,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
         webView.init(this, urlBarLayout, incognito)
         webView.isDesktopMode = desktopMode
-        webView.loadUrl(url ?: sharedPreferencesExt.homePage)
+        if (url != null || sharedPreferencesExt.homePageAutoload) {
+            webView.loadUrl(url ?: sharedPreferencesExt.homePage)
+        }
         setUiMode()
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")

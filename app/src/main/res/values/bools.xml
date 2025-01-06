@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2018 The LineageOS Project
+     SPDX-FileCopyrightText: 2018-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
     <bool name="is_tablet">false</bool>
+    <bool name="default_home_page_autoload">true</bool>
 </resources>

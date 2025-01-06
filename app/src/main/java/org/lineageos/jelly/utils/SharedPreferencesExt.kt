@@ -15,12 +15,14 @@ class SharedPreferencesExt(context: Context) {
 
     private val defaultSearchEngine: String
     val defaultHomePage: String
+    val defaultHomePageAutoload: Boolean
     private val defaultSuggestionProvider: String
 
     init {
         context.resources.let {
             defaultSearchEngine = it.getString(R.string.default_search_engine)
             defaultHomePage = it.getString(R.string.default_home_page)
+            defaultHomePageAutoload = it.getBoolean(R.bool.default_home_page_autoload)
             defaultSuggestionProvider = it.getString(R.string.default_suggestion_provider)
         }
     }
@@ -33,6 +35,10 @@ class SharedPreferencesExt(context: Context) {
     var homePage: String
         get() = sharedPreferences.getString(HOME_PAGE_KEY, defaultHomePage) ?: defaultHomePage
         set(value) = sharedPreferences.edit { putString(HOME_PAGE_KEY, value) }
+
+    var homePageAutoload: Boolean
+        get() = sharedPreferences.getBoolean(HOME_PAGE_AUTOLOAD_KEY, defaultHomePageAutoload)
+        set(value) = sharedPreferences.edit { putBoolean(HOME_PAGE_AUTOLOAD_KEY, value) }
 
     val advancedShareEnabled: Boolean
         get() = sharedPreferences.getBoolean(
@@ -66,6 +72,7 @@ class SharedPreferencesExt(context: Context) {
         private const val SEARCH_ENGINE_KEY = "key_search_engine"
 
         private const val HOME_PAGE_KEY = "key_home_page"
+        private const val HOME_PAGE_AUTOLOAD_KEY = "key_home_page_autoload"
 
         private const val ADVANCED_SHARE_ENABLED_KEY = "key_advanced_share"
         private const val ADVANCED_SHARE_ENABLED_DEFAULT = false
