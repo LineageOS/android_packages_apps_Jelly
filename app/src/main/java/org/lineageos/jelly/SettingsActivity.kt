@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -23,6 +23,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreference
+import com.google.android.material.checkbox.MaterialCheckBox
 import org.lineageos.jelly.utils.SharedPreferencesExt
 import kotlin.reflect.safeCast
 
@@ -73,24 +74,14 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.settings, rootKey)
 
             findPreference<Preference>("key_home_page")?.let {
-                bindPreferenceSummaryToValue(it, sharedPreferencesExt.defaultHomePage)
+                it.onPreferenceChangeListener = this
+                it.summary = homePagePrefSummary()
             }
             if (resources.getBoolean(R.bool.is_tablet)) {
                 findPreference<SwitchPreference>("key_reach_mode")?.let {
                     preferenceScreen.removePreference(it)
                 }
             }
-        }
-
-        private fun bindPreferenceSummaryToValue(preference: Preference, def: String) {
-            preference.onPreferenceChangeListener = this
-
-            onPreferenceChange(
-                preference,
-                PreferenceManager
-                    .getDefaultSharedPreferences(preference.context)
-                    .getString(preference.key, def)
-            )
         }
 
         override fun onPreferenceChange(preference: Preference, value: Any?): Boolean {
@@ -139,6 +130,14 @@ class SettingsActivity : AppCompatActivity() {
             )
             val homepageUrlEditText = homepageView.findViewById<EditText>(R.id.homepageUrlEditText)
             homepageUrlEditText.setText(sharedPreferencesExt.homePage)
+            val homepageAutoload = homepageView.findViewById<MaterialCheckBox>(
+                R.id.homePageAutoloadCheckBox
+            )
+            homepageAutoload.isChecked = sharedPreferencesExt.homePageAutoload
+            homepageAutoload.setOnCheckedChangeListener { _, checked ->
+                homepageUrlEditText.isEnabled = checked
+            }
+            homepageUrlEditText.isEnabled = homepageAutoload.isChecked
             builder.setTitle(R.string.pref_start_page_dialog_title)
                 .setMessage(R.string.pref_start_page_dialog_message)
                 .setView(homepageView)
@@ -149,17 +148,27 @@ class SettingsActivity : AppCompatActivity() {
                         sharedPreferencesExt.defaultHomePage
                     }
                     sharedPreferencesExt.homePage = url
-                    preference.summary = url
+                    sharedPreferencesExt.homePageAutoload = homepageAutoload.isChecked
+                    preference.summary = homePagePrefSummary()
                 }
                 .setNeutralButton(
                     R.string.pref_start_page_dialog_reset
                 ) { _: DialogInterface?, _: Int ->
                     val url = sharedPreferencesExt.defaultHomePage
+                    val autoload = sharedPreferencesExt.defaultHomePageAutoload
                     sharedPreferencesExt.homePage = url
-                    preference.summary = url
+                    sharedPreferencesExt.homePageAutoload = autoload
+                    preference.summary = homePagePrefSummary()
                 }
                 .setNegativeButton(android.R.string.cancel, null)
                 .show()
         }
+
+        private fun homePagePrefSummary() =
+            if (sharedPreferencesExt.homePageAutoload) {
+                sharedPreferencesExt.homePage
+            } else {
+                getString(R.string.pref_start_page_autoload_disabled)
+            }
     }
 }

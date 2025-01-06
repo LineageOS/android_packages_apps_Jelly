@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
@@ -73,6 +73,10 @@
     <string name="pref_search_engine">Search engine</string>
     <!-- Settings: home page preference title -->
     <string name="pref_start_page">Home page</string>
+    <!-- Settings: home page autoload enable -->
+    <string name="pref_start_page_autoload_enabled">Enabled</string>
+    <!-- Settings: home page autoload disabled -->
+    <string name="pref_start_page_autoload_disabled">Disabled</string>
     <!-- Settings: select home page dialog title -->
     <string name="pref_start_page_dialog_title">Select home page</string>
     <!-- Settings: select home page dialog message -->

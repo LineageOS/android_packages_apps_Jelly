@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2017 The LineageOS Project
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,6 +9,12 @@
     android:orientation="vertical"
     android:paddingStart="?dialogPreferredPadding"
     android:paddingEnd="?dialogPreferredPadding">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/homePageAutoloadCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pref_start_page_autoload_enabled" />
 
     <EditText
         android:id="@+id/homepageUrlEditText"
