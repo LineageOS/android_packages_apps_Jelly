@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9500155_06361e2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T12:42:45Z",
+      "side": 1,
+      "message": "This is better, here some other changes that are probably worth doing\n1) Autoload isn\u0027t explicative to the user, probably using on/off works better\n2) When disabled the summary of the pref should say \"Disabled\", not the URL.",
+      "revId": "f54a2e3f1e94377aff84ad2fa5e3d90d86ec5114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
