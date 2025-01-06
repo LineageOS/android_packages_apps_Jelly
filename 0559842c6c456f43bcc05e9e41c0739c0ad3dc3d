@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d01ebd65_e81d463e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T15:05:36Z",
+      "side": 1,
+      "message": "Also the default preferences is same as before\nIt just an extra option",
+      "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
