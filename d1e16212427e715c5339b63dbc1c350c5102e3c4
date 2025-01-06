@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ac29a8f_4e892710",
+        "filename": "app/src/main/res/layout/dialog_homepage_edit.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T11:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "610de75d_ec8ff8f9",
+      "revId": "d1e16212427e715c5339b63dbc1c350c5102e3c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a84f18f8_36227b4f",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-01-06T11:05:17Z",
       "side": 1,
       "message": "add an extra space",
+      "revId": "d1e16212427e715c5339b63dbc1c350c5102e3c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c846e69_0db31606",
+        "filename": "app/src/main/res/layout/dialog_homepage_edit.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T11:30:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a84f18f8_36227b4f",
       "revId": "d1e16212427e715c5339b63dbc1c350c5102e3c4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
