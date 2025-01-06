@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "610de75d_ec8ff8f9",
+        "filename": "app/src/main/res/layout/dialog_homepage_edit.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T11:05:17Z",
+      "side": 1,
+      "message": "I\u0027d move the checkbox above the edittest, and ensure if it\u0027s toggled the edittext is disable",
+      "revId": "d1e16212427e715c5339b63dbc1c350c5102e3c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a84f18f8_36227b4f",
+        "filename": "app/src/main/res/layout/dialog_homepage_edit.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T11:05:17Z",
+      "side": 1,
+      "message": "add an extra space",
+      "revId": "d1e16212427e715c5339b63dbc1c350c5102e3c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
