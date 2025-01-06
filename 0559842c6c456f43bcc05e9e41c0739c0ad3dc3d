@@ -134,6 +134,30 @@
       },
       "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bb458dd_860ee41c",
+        "filename": "app/src/main/java/org/lineageos/jelly/SettingsActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T15:25:48Z",
+      "side": 1,
+      "message": "that\u0027d be their problem?\n\ncurrently entering invalid Uri isn\u0027t handled at all, so that would need to be handled in another commit.",
+      "parentUuid": "9dad3580_f3c0021a",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 74
+      },
+      "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
