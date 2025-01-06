@@ -16,6 +16,52 @@
       "message": "Also the default preferences is same as before\nIt just an extra option",
       "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a834cac8_8bcd1771",
+        "filename": "app/src/main/java/org/lineageos/jelly/SettingsActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T15:10:51Z",
+      "side": 1,
+      "message": "this is kinda duplicated now... this should work\n\n```suggestion\n                onPreferenceChangeListener \u003d this\n```\n\nand you can remove bindPreferenceSummaryToValue",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 86
+      },
+      "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7153ced_02529bf8",
+        "filename": "app/src/main/java/org/lineageos/jelly/SettingsActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-06T15:10:51Z",
+      "side": 1,
+      "message": "this isn\u0027t needed? the url shouldn\u0027t change",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 74
+      },
+      "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
