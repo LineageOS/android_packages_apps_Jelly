@@ -16,6 +16,24 @@
       "message": "merge with the settings addition",
       "revId": "3cb2dc2e962201c611711a22d1c35822c1fd389a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d971fe9_30b9462f",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T11:30:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "095f20c8_7a49b42c",
+      "revId": "3cb2dc2e962201c611711a22d1c35822c1fd389a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
