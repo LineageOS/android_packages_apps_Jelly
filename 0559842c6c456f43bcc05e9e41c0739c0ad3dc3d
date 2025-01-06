@@ -86,6 +86,30 @@
       },
       "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dad3580_f3c0021a",
+        "filename": "app/src/main/java/org/lineageos/jelly/SettingsActivity.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-06T15:22:33Z",
+      "side": 1,
+      "message": "what if user edited the url to an invalid one then unchecked the autoload ?",
+      "parentUuid": "a7153ced_02529bf8",
+      "range": {
+        "startLine": 149,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 74
+      },
+      "revId": "0559842c6c456f43bcc05e9e41c0739c0ad3dc3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
