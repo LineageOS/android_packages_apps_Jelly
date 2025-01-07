@@ -124,7 +124,6 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
             val resolveInfo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 context.packageManager.resolveActivity(intent, ResolveInfoFlags.of(0))
             } else {
-                @Suppress("DEPRECATION")
                 context.packageManager.resolveActivity(intent, 0)
             }
             if (packageName != null && resolveInfo == null) {
@@ -153,7 +152,6 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
         val activities = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             pm.queryIntentActivities(intent, ResolveInfoFlags.of(flags.toLong()))
         } else {
-            @Suppress("Deprecation")
             pm.queryIntentActivities(intent, flags)
         }
         if (activities.isEmpty()) {
