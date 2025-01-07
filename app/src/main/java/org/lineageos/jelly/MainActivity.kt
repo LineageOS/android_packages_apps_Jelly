@@ -557,6 +557,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     private fun updateTaskDescription() {
         setTaskDescription(
+            @Suppress("DEPRECATION")
             TaskDescription(
                 webView.title,
                 urlIcon, Color.WHITE
