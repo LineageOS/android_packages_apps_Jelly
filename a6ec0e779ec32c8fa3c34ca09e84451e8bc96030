@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0811e8f_9c7c93c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T14:56:24Z",
+      "side": 1,
+      "message": "Can you split this into 2 changes?\none that handles the manifest and one with the icon?\n\ntbh I don\u0027t think there\u0027s any real improvement using the icon this way, we just waste bandwidth downloading it again... I feel current one works just fine",
+      "revId": "a6ec0e779ec32c8fa3c34ca09e84451e8bc96030",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
