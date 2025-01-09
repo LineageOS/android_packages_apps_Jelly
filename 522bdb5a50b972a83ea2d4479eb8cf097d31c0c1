@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "229cdf5c_7fa78615",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "not needed, pass those as arguments to getIconUrl(...)",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 0
+      },
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73df01c6_25d1d80f",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "this is kinda scary, you probably want to create a local scope\n\n\n    private val scope \u003d CoroutineScope(SupervisorJob() + Dispatchers.IO)\n\n    fun onResolved(...) {\n        scope.launch {\n            val bitmap \u003d getIconBitmap(iconUrl)\n            if (bitmap !\u003d null) {\n                // Switch to the Main thread for UI updates\n                withContext(Dispatchers.Main) {\n                    activity.onFaviconLoaded(bitmap)\n                }\n            }\n        }\n    }",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 13
+      },
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6cb6b17_9ac1bdbe",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "is it possible to write this using a plain for loop?\nfor (var iconObj in icons) {\n    val icon \u003d JSONObject::class.cast(iconObj)\n}",
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3306448_df1d929f",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "continue?",
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1c8e161_8a63bfb0",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "^",
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0218d3ab_a8d59af4",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "break?",
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f28b1fcf_ca3f6e32",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "try to use .use {} on the streams to automatically close them",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 9
+      },
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a412b46_c8ed00fd",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:23:08Z",
+      "side": 1,
+      "message": "can\u0027t you move all the login from getIconUrl in here?\n\nhandling raw json objects is much nicer in js compared to java, and probably faster\n\nIt would only then return the proper url, rather then a set of possible url icons",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 0
+      },
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
