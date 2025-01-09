@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020-2021 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,6 +18,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import org.lineageos.jelly.R
+import org.lineageos.jelly.js.JsManifest
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.SharedPreferencesExt
 import org.lineageos.jelly.utils.TabUtils.openInNewTab
@@ -43,7 +44,16 @@ internal class ChromeClient(
     }
 
     override fun onReceivedIcon(view: WebView, icon: Bitmap) {
-        activity.onFaviconLoaded(icon)
+        if (!view.settings.javaScriptEnabled) {
+            activity.onFaviconLoaded(icon)
+            return
+        }
+
+        view.evaluateJavascript("${JsManifest.URL}()") { manifestUrl ->
+            if (manifestUrl.isBlank() || manifestUrl == "\"\"") {
+                activity.onFaviconLoaded(icon)
+            }
+        }
     }
 
     override fun onShowFileChooser(
