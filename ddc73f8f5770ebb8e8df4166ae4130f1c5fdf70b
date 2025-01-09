@@ -1,6 +1,103 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "03338784_1fd5ef7f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-01-09T20:24:29Z",
+      "side": 1,
+      "message": "that \u003d than? or \"that is\" \u003d \"that\u0027s\"",
+      "revId": "ddc73f8f5770ebb8e8df4166ae4130f1c5fdf70b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41b8151b_1580ffab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-01-09T20:24:29Z",
+      "side": 1,
+      "message": "if manifest defined... what?",
+      "revId": "ddc73f8f5770ebb8e8df4166ae4130f1c5fdf70b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7db4b7c_562b7c55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-01-09T20:24:29Z",
+      "side": 1,
+      "message": "continues previous sentence -\u003e lower case A in \"And\"",
+      "revId": "ddc73f8f5770ebb8e8df4166ae4130f1c5fdf70b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a251afb4_c42f10ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-01-09T20:24:29Z",
+      "side": 1,
+      "message": "this once again details stuff readable in the code",
+      "range": {
+        "startLine": 11,
+        "startChar": 39,
+        "endLine": 11,
+        "endChar": 57
+      },
+      "revId": "ddc73f8f5770ebb8e8df4166ae4130f1c5fdf70b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bf2e9a1_e3b90736",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2025-01-09T20:24:29Z",
+      "side": 1,
+      "message": "should be detailed or skipped, otherwise it serves no purpose",
+      "range": {
+        "startLine": 12,
+        "startChar": 48,
+        "endLine": 12,
+        "endChar": 71
+      },
+      "revId": "ddc73f8f5770ebb8e8df4166ae4130f1c5fdf70b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e28119f6_ad7e065f",
