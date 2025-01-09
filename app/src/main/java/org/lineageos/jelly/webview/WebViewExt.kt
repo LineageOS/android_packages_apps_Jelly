@@ -13,6 +13,7 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.webkit.WebView
+import org.lineageos.jelly.js.JsManifest
 import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.SharedPreferencesExt
@@ -113,6 +114,10 @@ class WebViewExt @JvmOverloads constructor(
             addJavascriptInterface(
                 JsSyncUrl(urlBarLayout, activity),
                 JsSyncUrl.INTERFACE
+            )
+            addJavascriptInterface(
+                JsManifest(activity),
+                JsManifest.INTERFACE
             )
         }
     }
