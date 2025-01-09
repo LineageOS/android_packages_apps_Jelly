@@ -327,6 +327,30 @@
       },
       "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e745143_d44a1d23",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-09T21:50:50Z",
+      "side": 1,
+      "message": "you don\u0027t want the whole manifest, you want specific items of such manifest.\n\nimagine in the future you want to to use the xyz element of the manifest, you simply do .then((manifest) \u003d\u003e \u003cold stuff\u003e; $INTERFACE.otherMethod(manifest[\"xyz\"])\n\nI don\u0027t really want to store the json object in java land, please make sure it\u0027s only the specific required fields end up there",
+      "parentUuid": "f05e93c4_54f45bb9",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 0
+      },
+      "revId": "522bdb5a50b972a83ea2d4479eb8cf097d31c0c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
