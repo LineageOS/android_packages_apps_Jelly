@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "befda95e_5db499b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-09T21:55:20Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll do it on js side",
+      "revId": "fcfe2fedb6a2eff99bdd6a2adc0f754da8501d43",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
