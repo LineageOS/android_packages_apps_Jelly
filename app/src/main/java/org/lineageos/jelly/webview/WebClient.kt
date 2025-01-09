@@ -31,6 +31,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import org.lineageos.jelly.R
+import org.lineageos.jelly.js.JsManifest
 import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
@@ -48,6 +49,7 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
         urlBarLayout.onPageLoadFinished(view.certificate)
         if (view.settings.javaScriptEnabled) {
             view.evaluateJavascript(JsSyncUrl.SCRIPT, null)
+            view.evaluateJavascript(JsManifest.SCRIPT, null)
         }
     }
 
