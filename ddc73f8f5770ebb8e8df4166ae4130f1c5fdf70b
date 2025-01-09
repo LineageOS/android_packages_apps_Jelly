@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e28119f6_ad7e065f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-09T15:09:22Z",
+      "side": 1,
+      "message": "Emmm, for now all these logic is for the icon so I have no idea how should I split it :)\nThis patch is useful, example:\n- some websites uses a really low resolution favicon but they have higher quality icons in the manifest, as result when we add it to home screen it doesn\u0027t look so good\n- Also some websites like GitHub, uses a transparent background with white color\nAs result when you add it to home screen, you can\u0027t see anything!\nBut loading GitHub icon from manifest fixes this issue.",
+      "revId": "ddc73f8f5770ebb8e8df4166ae4130f1c5fdf70b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
