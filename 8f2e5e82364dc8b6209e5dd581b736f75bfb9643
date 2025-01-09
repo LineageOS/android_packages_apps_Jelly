@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "547d5cb5_c644a6e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-09T22:41:39Z",
+      "side": 1,
+      "message": "I moved the icon url logic on JS side but I don\u0027t like it because debugging become harder!",
+      "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
