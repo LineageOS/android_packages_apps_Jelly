@@ -68,6 +68,47 @@
       "message": "As you said, I implemented `getIconUrl` logic in JS (patchset 7)\nBut personally I prefer patchset 6 (Less JS and handling stuff with kotlin)\nBTW both methods are just working fine :)\nSo now it\u0027s up to you to choose between 6 and 7",
       "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8cb91e2_e565c7db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-10T11:10:10Z",
+      "side": 1,
+      "message": "I agree JS is annoying, but I feel much safer having JS fail vs java failing :)",
+      "parentUuid": "23dc2057_55903015",
+      "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61195154_06082606",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-10T11:10:10Z",
+      "side": 1,
+      "message": "runCatching { ... }.getOrNull()",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
