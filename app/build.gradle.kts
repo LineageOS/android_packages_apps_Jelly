@@ -1,9 +1,8 @@
 /*
- * SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import org.lineageos.generatebp.GenerateBpPlugin
 import org.lineageos.generatebp.GenerateBpPluginExtension
 import org.lineageos.generatebp.models.Module
 
@@ -11,20 +10,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("org.jetbrains.kotlin.kapt")
-}
-
-apply {
-    plugin<GenerateBpPlugin>()
-}
-
-buildscript {
-    repositories {
-        maven("https://raw.githubusercontent.com/lineage-next/gradle-generatebp/v1.17/.m2")
-    }
-
-    dependencies {
-        classpath("org.lineageos:gradle-generatebp:+")
-    }
+    id("org.lineageos.generatebp")
 }
 
 android {
