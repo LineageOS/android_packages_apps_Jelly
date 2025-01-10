@@ -109,6 +109,30 @@
       },
       "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d05a0c8_0e684c09",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-10T11:22:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61195154_06082606",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
