@@ -51,6 +51,23 @@
       "message": "I think it isn\u0027t necessary.\nI was meaning it\u0027s hard to debug JS code at WebView run time (the JS variables values)\nWriting only required (and less) JS is better and kotlin should handle the all things including the icon url extraction like patchset 6.\nThis is just my own opinion BTW.",
       "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23dc2057_55903015",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-10T11:05:38Z",
+      "side": 1,
+      "message": "As you said, I implemented `getIconUrl` logic in JS (patchset 7)\nBut personally I prefer patchset 6 (Less JS and handling stuff with kotlin)\nBTW both methods are just working fine :)\nSo now it\u0027s up to you to choose between 6 and 7",
+      "revId": "8f2e5e82364dc8b6209e5dd581b736f75bfb9643",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
