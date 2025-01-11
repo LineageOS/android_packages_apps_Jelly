@@ -50,6 +50,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.lifecycle.Lifecycle
@@ -64,6 +65,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.history.HistoryActivity
+import org.lineageos.jelly.models.PwaManifest
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
@@ -94,11 +96,15 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
     private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
 
+    private val shortcutManager by lazy { getSystemService(ShortcutManager::class.java) }
+
     private val fileRequest =
         registerForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) {
             fileRequestCallback.invoke(it)
         }
     private lateinit var fileRequestCallback: ((data: List<Uri>) -> Unit)
+
+    private var pwaManifest: PwaManifest? = null
 
     override fun launchFileRequest(input: Array<String>) {
         fileRequest.launch(input)
@@ -311,6 +317,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 }
             }
         }
+
+        intent.extras?.let {
+            it.getString(MANIFEST_DISPLAY)?.let { display ->
+                if (display == "fullscreen" || display == "standalone") {
+                    appBarLayout.isVisible = false
+                }
+            }
+            it.getString(MANIFEST_THEME_COLOR)?.let { themeColor ->
+                setStatusBarColor(themeColor)
+            }
+        }
     }
 
     override fun onStart() {
@@ -363,7 +380,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     private fun registerShortcuts() {
-        val shortcutManager = getSystemService(ShortcutManager::class.java)
         shortcutManager.dynamicShortcuts = listOf(
             ShortcutInfo.Builder(this, "new_incognito_tab_shortcut")
                 .setShortLabel(getString(R.string.shortcut_new_incognito_tab))
@@ -598,20 +614,32 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     private fun addShortcut() {
+        val shortcutInfo = buildShortcutInfo()
+        shortcutManager.requestPinShortcut(shortcutInfo, null)
+    }
+
+    private fun buildShortcutInfo(): ShortcutInfo {
         val intent = Intent(this, MainActivity::class.java).apply {
-            data = Uri.parse(webView.url)
+            data = Uri.parse(pwaManifest?.startUrl ?: webView.url)
             action = Intent.ACTION_MAIN
+            pwaManifest?.let {
+                putExtra(MANIFEST_DISPLAY, it.display)
+                putExtra(MANIFEST_THEME_COLOR, it.themeColor)
+            }
         }
         val launcherIcon = urlIcon?.let {
             Icon.createWithBitmap(UiUtils.getShortcutIcon(it, Color.WHITE))
         } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
-        val title = webView.title.toString()
-        val shortcutInfo = ShortcutInfo.Builder(this, title)
-            .setShortLabel(title)
-            .setIcon(launcherIcon)
-            .setIntent(intent)
-            .build()
-        getSystemService(ShortcutManager::class.java).requestPinShortcut(shortcutInfo, null)
+        val shortName = pwaManifest?.shortName ?: webView.title.toString()
+        val id = pwaManifest?.id ?: shortName
+        return ShortcutInfo.Builder(this, id).apply {
+            setShortLabel(shortName)
+            setIcon(launcherIcon)
+            setIntent(intent)
+            pwaManifest?.let {
+                setLongLabel(it.name)
+            }
+        }.build()
     }
 
     override fun updateHistory(title: String, url: String) {
@@ -620,6 +648,19 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     override fun replaceHistory(title: String, url: String, newUrl: String) {
         historyViewModel.replace(title, url, newUrl)
+    }
+
+    override fun setPwaManifest(manifest: PwaManifest?) {
+        pwaManifest = manifest
+        if (manifest == null) return
+        // find and update pwa shortcut
+        lifecycleScope.launch {
+            val pinnedShortcuts = shortcutManager.pinnedShortcuts
+            val index = pinnedShortcuts.indexOfFirst { it.id == manifest.id }
+            if (index == -1) return@launch
+            pinnedShortcuts[index] = buildShortcutInfo()
+            shortcutManager.updateShortcuts(pinnedShortcuts)
+        }
     }
 
     private fun setImmersiveMode(enable: Boolean) {
@@ -708,7 +749,27 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
+    private fun setStatusBarColor(hex: String) {
+        runCatching {
+            val color = Color.parseColor(hex)
+            if (UiUtils.isColorLight(color)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    window.insetsController?.setSystemBarsAppearance(
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                    )
+                } else {
+                    @Suppress("Deprecation")
+                    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                }
+            }
+            window.decorView.setBackgroundColor(color)
+        }
+    }
+
     companion object {
         private val TAG = MainActivity::class.java.simpleName
+        private const val MANIFEST_DISPLAY = "manifest_display"
+        private const val MANIFEST_THEME_COLOR = "manifest_theme_color"
     }
 }
