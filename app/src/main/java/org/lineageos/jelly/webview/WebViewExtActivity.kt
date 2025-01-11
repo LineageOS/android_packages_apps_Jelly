@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -11,6 +11,7 @@ import android.view.View
 import android.webkit.GeolocationPermissions
 import android.webkit.WebChromeClient.CustomViewCallback
 import androidx.appcompat.app.AppCompatActivity
+import org.lineageos.jelly.models.PwaManifest
 
 abstract class WebViewExtActivity : AppCompatActivity() {
     abstract fun downloadFileAsk(
@@ -30,4 +31,5 @@ abstract class WebViewExtActivity : AppCompatActivity() {
     abstract fun showLocationDialog(origin: String, callback: GeolocationPermissions.Callback)
     abstract fun updateHistory(title: String, url: String)
     abstract fun replaceHistory(title: String, url: String, newUrl: String)
+    abstract fun setPwaManifest(manifest: PwaManifest?)
 }
