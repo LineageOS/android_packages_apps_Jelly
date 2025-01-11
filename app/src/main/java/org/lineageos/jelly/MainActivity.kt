@@ -50,6 +50,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.core.view.updatePadding
 import androidx.lifecycle.Lifecycle
@@ -99,6 +100,8 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             fileRequestCallback.invoke(it)
         }
     private lateinit var fileRequestCallback: ((data: List<Uri>) -> Unit)
+
+    private var pwaManifest: PwaManifest? = null
 
     override fun launchFileRequest(input: Array<String>) {
         fileRequest.launch(input)
@@ -309,6 +312,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 suggestionProviderViewModel.suggestionProvider().collectLatest {
                     urlBarLayout.setSuggestionsProvider(it)
                 }
+            }
+        }
+
+        intent.extras?.let {
+            it.getString("display")?.let { display ->
+                if (display == "fullscreen" || display == "standalone") {
+                    appBarLayout.isVisible = false
+                }
+            }
+            it.getString("theme_color")?.let { themeColor ->
+                setStatusBarColor(themeColor)
             }
         }
     }
@@ -599,18 +613,25 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     private fun addShortcut() {
         val intent = Intent(this, MainActivity::class.java).apply {
-            data = Uri.parse(webView.url)
+            data = Uri.parse(pwaManifest?.startUrl ?: webView.url)
             action = Intent.ACTION_MAIN
+            pwaManifest?.let {
+                putExtra("display", it.display)
+                putExtra("theme_color", it.themeColor)
+            }
         }
         val launcherIcon = urlIcon?.let {
             Icon.createWithBitmap(UiUtils.getShortcutIcon(it, Color.WHITE))
         } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
-        val title = webView.title.toString()
-        val shortcutInfo = ShortcutInfo.Builder(this, title)
-            .setShortLabel(title)
-            .setIcon(launcherIcon)
-            .setIntent(intent)
-            .build()
+        val shortName = pwaManifest?.shortName ?: webView.title.toString()
+        val shortcutInfo = ShortcutInfo.Builder(this, shortName).apply {
+            setShortLabel(shortName)
+            setIcon(launcherIcon)
+            setIntent(intent)
+            pwaManifest?.let {
+                setLongLabel(it.name)
+            }
+        }.build()
         getSystemService(ShortcutManager::class.java).requestPinShortcut(shortcutInfo, null)
     }
 
@@ -620,6 +641,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     override fun replaceHistory(title: String, url: String, newUrl: String) {
         historyViewModel.replace(title, url, newUrl)
+    }
+
+    override fun setPwaManifest(manifest: PwaManifest?) {
+        pwaManifest = manifest
     }
 
     private fun setImmersiveMode(enable: Boolean) {
@@ -705,6 +730,24 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 true -> ConstraintLayout.LayoutParams.PARENT_ID
                 false -> ConstraintLayout.LayoutParams.UNSET
             }
+        }
+    }
+
+    private fun setStatusBarColor(hex: String) {
+        runCatching {
+            val color = Color.parseColor(hex)
+            if (UiUtils.isColorLight(color)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    window.insetsController?.setSystemBarsAppearance(
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
+                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+                    )
+                } else {
+                    @Suppress("Deprecation")
+                    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                }
+            }
+            window.decorView.setBackgroundColor(color)
         }
     }
 
