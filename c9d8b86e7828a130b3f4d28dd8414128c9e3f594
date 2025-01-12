@@ -117,6 +117,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2db92fe_452c8dc9",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-12T18:22:31Z",
+      "side": 1,
+      "message": "We add some extra info inside the intent only if we had `PwaManifest`\nAnd we apply these for the pwa on opening.",
+      "parentUuid": "5c9e456d_dbc979f1",
+      "range": {
+        "startLine": 318,
+        "startChar": 0,
+        "endLine": 327,
+        "endChar": 9
+      },
+      "revId": "c9d8b86e7828a130b3f4d28dd8414128c9e3f594",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08f64c87_96334c60",
