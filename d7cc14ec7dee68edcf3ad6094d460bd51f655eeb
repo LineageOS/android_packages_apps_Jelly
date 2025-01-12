@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa11573a_009d5e68",
+        "filename": "app/src/main/java/org/lineageos/jelly/PwaManifest.kt",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-01-12T22:04:02Z",
+      "side": 1,
+      "message": "Move to `org.lineageos.jelly.models`",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 27
+      },
+      "revId": "d7cc14ec7dee68edcf3ad6094d460bd51f655eeb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
