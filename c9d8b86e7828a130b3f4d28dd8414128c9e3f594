@@ -70,6 +70,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6537453_61d98867",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-12T18:18:57Z",
+      "side": 1,
+      "message": "It\u0027s the PWA standard:\nhttps://developer.mozilla.org/en-US/docs/Web/Manifest/display#standalone",
+      "parentUuid": "2ecd16ae_7b389b43",
+      "range": {
+        "startLine": 321,
+        "startChar": 0,
+        "endLine": 321,
+        "endChar": 50
+      },
+      "revId": "c9d8b86e7828a130b3f4d28dd8414128c9e3f594",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c9e456d_dbc979f1",
