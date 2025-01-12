@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41a7c3df_cf441e26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-12T18:12:42Z",
+      "side": 1,
+      "message": "This breaks opening a new web page by clicking the icon?\nThis is wanted behavior",
+      "revId": "94df3b24d51b155c196a1aac84121889534911be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
