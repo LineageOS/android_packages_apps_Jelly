@@ -16,6 +16,24 @@
       "message": "This breaks opening a new web page by clicking the icon?\nThis is wanted behavior",
       "revId": "94df3b24d51b155c196a1aac84121889534911be",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3254e0f8_550ce18a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-12T19:37:18Z",
+      "side": 1,
+      "message": "With singleTask launchMode we prevent creating new windows\n(Just like the screen record that I sent in the discord)\n`singleTask` will break openInNewTab but with new flags `Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP` it works again like before\nwithout singleTask, each time user clicks on a shortcut, a new window will open which is not good\nIf a window is open (like youtube webapp) and it\u0027s in the background then expected behavior is that the old window opens on the shortcut click, not a new window again and again ...",
+      "parentUuid": "41a7c3df_cf441e26",
+      "revId": "94df3b24d51b155c196a1aac84121889534911be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
