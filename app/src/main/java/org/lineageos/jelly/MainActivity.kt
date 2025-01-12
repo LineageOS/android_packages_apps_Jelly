@@ -155,6 +155,14 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
+    private val getIntentUrl = {
+        if (!intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
+            intent.dataString
+        } else {
+            intent.getStringExtra(IntentUtils.EXTRA_PAGE_URL)
+        }
+    }
+    private val setIntentUrl = { url: String -> intent.data = Uri.parse(url) }
     private var urlIcon: Bitmap? = null
     private var incognito = false
     private var customView: View? = null
@@ -182,7 +190,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val intent = intent
-        var url = intent.dataString
+        var url = getIntentUrl()
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         var desktopMode = false
 
@@ -377,6 +385,14 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        if (intent.dataString != this.intent.dataString) {
+            intent.dataString?.let { webView.loadUrl(it) }
+        }
+        this.intent = intent
     }
 
     public override fun onSaveInstanceState(outState: Bundle) {
@@ -652,10 +668,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     override fun updateHistory(title: String, url: String) {
+        setIntentUrl(url)
         historyViewModel.insertOrUpdate(title, url)
     }
 
     override fun replaceHistory(title: String, url: String, newUrl: String) {
+        setIntentUrl(newUrl)
         historyViewModel.replace(title, url, newUrl)
     }
 
