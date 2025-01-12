@@ -182,7 +182,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val intent = intent
-        var url = intent.dataString
+        var url = when (intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
+            true -> intent.getStringExtra(IntentUtils.EXTRA_PAGE_URL)
+            false -> intent.dataString
+        }
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         var desktopMode = false
 
@@ -653,10 +656,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     override fun updateHistory(title: String, url: String) {
         historyViewModel.insertOrUpdate(title, url)
+        intent.data = Uri.parse(url)
     }
 
     override fun replaceHistory(title: String, url: String, newUrl: String) {
         historyViewModel.replace(title, url, newUrl)
+        intent.data = Uri.parse(newUrl)
     }
 
     override fun setPwaManifest(manifest: PwaManifest?) {
