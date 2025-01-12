@@ -185,6 +185,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         var url = intent.dataString
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         var desktopMode = false
+        intent.extras?.let {
+            if (!it.getBoolean(IntentUtils.EXTRA_IGNORE_DATA, false)) return@let
+            url = it.getString(IntentUtils.EXTRA_PAGE_URL)
+        }
 
         // Restore from previous instance
         savedInstanceState?.let {
