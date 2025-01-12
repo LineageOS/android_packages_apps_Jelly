@@ -183,6 +183,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9ca0e0ca_161bcf46",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 7
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-12T18:25:42Z",
+      "side": 1,
+      "message": "here we can not set it\nWe only apply the color after shortcut create.\n(also setStatusBarColor is a deprecated method)",
+      "parentUuid": "268dd8ea_54eb51a2",
+      "revId": "c9d8b86e7828a130b3f4d28dd8414128c9e3f594",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5e76d978_502c7b3c",
         "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
         "patchSetId": 7
