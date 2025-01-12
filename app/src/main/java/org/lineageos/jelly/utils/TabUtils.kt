@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -16,7 +16,7 @@ object TabUtils {
             url?.takeIf { it.isNotEmpty() }?.let {
                 data = Uri.parse(it)
             }
-            flags = Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
             putExtra(IntentUtils.EXTRA_INCOGNITO, incognito)
         }
         context.startActivity(intent)
