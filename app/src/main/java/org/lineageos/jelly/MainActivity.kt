@@ -155,6 +155,13 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             receiver.send(Activity.RESULT_CANCELED, Bundle())
         }
     }
+    private val getIntentUrl = {
+        if (!intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
+            intent.dataString
+        } else {
+            intent.getStringExtra(IntentUtils.EXTRA_PAGE_URL)
+        }
+    }
     private var urlIcon: Bitmap? = null
     private var incognito = false
     private var customView: View? = null
@@ -182,7 +189,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val intent = intent
-        var url = intent.dataString
+        var url = getIntentUrl()
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         var desktopMode = false
 
