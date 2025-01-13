@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -22,14 +22,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.palette.graphics.Palette
 
 object UiUtils {
-    fun isColorLight(color: Int): Boolean {
-        val red = Color.red(color)
-        val green = Color.green(color)
-        val blue = Color.blue(color)
-        val hsl = FloatArray(3)
-        ColorUtils.RGBToHSL(red, green, blue, hsl)
-        return hsl[2] > 0.5f
-    }
+    fun isColorLight(color: Int) = ColorUtils.calculateLuminance(color) > 0.5f
 
     fun getColor(bitmap: Bitmap, incognito: Boolean): Int {
         val palette = Palette.from(bitmap).generate()
