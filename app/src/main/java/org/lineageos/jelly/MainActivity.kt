@@ -14,6 +14,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.graphics.Bitmap
@@ -103,6 +104,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private lateinit var fileRequestCallback: ((data: List<Uri>) -> Unit)
 
     private var pwaManifest: PwaManifest? = null
+    private var webRequestPermissions: WebRequestPermissions? = null
 
     override fun launchFileRequest(input: Array<String>) {
         fileRequest.launch(input)
@@ -375,6 +377,22 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         outState.putString(IntentUtils.EXTRA_URL, webView.url)
         outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
         outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode != WEB_REQUEST_PERMISSIONS) return
+        val granted = ArrayList<String>()
+        permissions.forEachIndexed { index, permission ->
+            if (grantResults[index] == PackageManager.PERMISSION_GRANTED) {
+                granted.add(permission)
+            }
+        }
+        webRequestPermissions?.onResult(granted.toTypedArray())
     }
 
     private fun registerShortcuts() {
@@ -664,6 +682,14 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
+    override fun webRequestPermissions(
+        permissions: Array<String>,
+        callback: WebRequestPermissions
+    ) {
+        webRequestPermissions = callback
+        requestPermissions(permissions, WEB_REQUEST_PERMISSIONS)
+    }
+
     private fun setImmersiveMode(enable: Boolean) {
         val decorView = window.decorView
 
@@ -772,5 +798,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         private val TAG = MainActivity::class.java.simpleName
         private const val MANIFEST_DISPLAY = "manifest_display"
         private const val MANIFEST_THEME_COLOR = "manifest_theme_color"
+        private const val WEB_REQUEST_PERMISSIONS = 1
     }
 }

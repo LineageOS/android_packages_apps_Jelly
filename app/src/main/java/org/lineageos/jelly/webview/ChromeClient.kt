@@ -12,6 +12,7 @@ import android.os.Message
 import android.view.View
 import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
+import android.webkit.PermissionRequest
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -53,6 +54,36 @@ internal class ChromeClient(
             if (manifestUrl.isBlank() || manifestUrl == "\"\"") {
                 activity.onFaviconLoaded(icon)
             }
+        }
+    }
+
+    override fun onPermissionRequest(request: PermissionRequest) {
+        val resources = request.resources
+        val permissions = ArrayList<String>()
+        if (resources.contains(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) {
+            permissions.add(android.Manifest.permission.CAMERA)
+        }
+        if (resources.contains(PermissionRequest.RESOURCE_AUDIO_CAPTURE)) {
+            permissions.add(android.Manifest.permission.RECORD_AUDIO)
+        }
+        if (permissions.isNotEmpty()) {
+            activity.webRequestPermissions(
+                permissions.toTypedArray(),
+                object : WebViewExtActivity.WebRequestPermissions {
+                    override fun onResult(granted: Array<String>) {
+                        val grantedResources = ArrayList<String>()
+                        if (granted.contains(android.Manifest.permission.CAMERA)) {
+                            grantedResources.add(PermissionRequest.RESOURCE_VIDEO_CAPTURE)
+                        }
+                        if (granted.contains(android.Manifest.permission.RECORD_AUDIO)) {
+                            grantedResources.add(PermissionRequest.RESOURCE_AUDIO_CAPTURE)
+                        }
+                        if (grantedResources.isNotEmpty()) {
+                            request.grant(grantedResources.toTypedArray())
+                        }
+                    }
+                }
+            )
         }
     }
 
