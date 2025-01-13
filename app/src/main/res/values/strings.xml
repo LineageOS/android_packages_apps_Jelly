@@ -224,4 +224,9 @@
     <string name="location_dialog_allow">Allow</string>
     <string name="location_dialog_block">Block</string>
     <string name="location_dialog_cancel">Deny for now</string>
+
+    <!-- Protected media dialog -->
+    <string name="protected_media_dialog_message">Allow protected media?</string>
+    <string name="protected_media_dialog_grant">Grant</string>
+    <string name="protected_media_dialog_deny">Deny</string>
 </resources>
