@@ -59,6 +59,14 @@ internal class ChromeClient(
 
     override fun onPermissionRequest(request: PermissionRequest) {
         val resources = request.resources
+        if (resources.contains(PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID)) {
+            activity.webProtectedMedia(request.origin.toString()) { granted ->
+                if (!granted) return@webProtectedMedia
+                val permission = arrayOf(PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID)
+                request.grant(permission)
+            }
+            return
+        }
         val permissions = buildList {
             if (resources.contains(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) {
                 add(android.Manifest.permission.CAMERA)

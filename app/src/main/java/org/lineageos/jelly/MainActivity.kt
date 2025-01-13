@@ -672,6 +672,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
+    override fun webProtectedMedia(origin: String, cb: ((granted: Boolean) -> Unit)) {
+        AlertDialog.Builder(this)
+            .setTitle(origin)
+            .setMessage(R.string.protected_media_dialog_message)
+            .setPositiveButton(R.string.protected_media_dialog_grant) { _, _ ->
+                cb(true)
+            }.setNegativeButton(R.string.protected_media_dialog_deny) { _, _ ->
+                cb(false)
+            }.show()
+    }
+
     override fun webRequestPermissions(
         permissions: Array<String>,
         cb: ((granted: Array<String>) -> Unit)

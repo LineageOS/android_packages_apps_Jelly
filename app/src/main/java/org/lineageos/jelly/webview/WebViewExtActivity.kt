@@ -36,4 +36,5 @@ abstract class WebViewExtActivity : AppCompatActivity() {
         permissions: Array<String>,
         cb: ((granted: Array<String>) -> Unit)
     )
+    abstract fun webProtectedMedia(origin: String, cb: ((granted: Boolean) -> Unit))
 }
