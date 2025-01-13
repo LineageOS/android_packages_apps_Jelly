@@ -60,6 +60,7 @@ import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -671,6 +672,22 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             pinnedShortcuts[index] = buildShortcutInfo()
             shortcutManager.updateShortcuts(pinnedShortcuts)
         }
+    }
+
+    override fun webProtectedMedia(origin: String, callback: WebProtectedMedia) {
+        val dialog = MaterialAlertDialogBuilder(this).apply {
+            setTitle(origin)
+            setMessage(R.string.protected_media_dialog_message)
+            setPositiveButton(R.string.protected_media_dialog_grant) { dialog, _ ->
+                dialog.dismiss()
+                callback.onResult(true)
+            }
+            setNegativeButton(R.string.protected_media_dialog_deny) { dialog, _ ->
+                dialog.dismiss()
+                callback.onResult(false)
+            }
+        }.create()
+        dialog.show()
     }
 
     override fun webRequestPermissions(
