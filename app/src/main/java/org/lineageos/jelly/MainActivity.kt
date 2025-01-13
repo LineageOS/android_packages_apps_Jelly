@@ -680,6 +680,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         webRequestPermissionsLauncher.launch(permissions)
     }
 
+    override fun webProtectedMedia(origin: String, cb: ((granted: Boolean) -> Unit)) {
+        AlertDialog.Builder(this)
+            .setTitle(origin)
+            .setMessage(R.string.protected_media_dialog_message)
+            .setPositiveButton(R.string.protected_media_dialog_grant) { _, _ ->
+                cb(true)
+            }.setNegativeButton(R.string.protected_media_dialog_deny) { _, _ ->
+                cb(false)
+            }.show()
+    }
+
     private fun setImmersiveMode(enable: Boolean) {
         val decorView = window.decorView
 
