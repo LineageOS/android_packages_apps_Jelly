@@ -12,6 +12,7 @@ import android.os.Message
 import android.view.View
 import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
+import android.webkit.PermissionRequest
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -53,6 +54,31 @@ internal class ChromeClient(
             if (manifestUrl.isBlank() || manifestUrl == "\"\"") {
                 activity.onFaviconLoaded(icon)
             }
+        }
+    }
+
+    override fun onPermissionRequest(request: PermissionRequest) {
+        val resources = request.resources
+        val permissions = buildList {
+            if (resources.contains(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) {
+                add(android.Manifest.permission.CAMERA)
+            }
+            if (resources.contains(PermissionRequest.RESOURCE_AUDIO_CAPTURE)) {
+                add(android.Manifest.permission.RECORD_AUDIO)
+            }
+        }
+        if (permissions.isEmpty()) return
+        activity.webRequestPermissions(permissions.toTypedArray()) { granted ->
+            val grantedResources = buildList {
+                if (granted.contains(android.Manifest.permission.CAMERA)) {
+                    add(PermissionRequest.RESOURCE_VIDEO_CAPTURE)
+                }
+                if (granted.contains(android.Manifest.permission.RECORD_AUDIO)) {
+                    add(PermissionRequest.RESOURCE_AUDIO_CAPTURE)
+                }
+            }
+            if (grantedResources.isEmpty()) return@webRequestPermissions
+            request.grant(grantedResources.toTypedArray())
         }
     }
 

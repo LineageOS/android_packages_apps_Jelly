@@ -105,6 +105,15 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private lateinit var fileRequestCallback: ((data: List<Uri>) -> Unit)
 
     private var pwaManifest: PwaManifest? = null
+    private var webRequestPermissions: ((granted: Array<String>) -> Unit)? = null
+    private var webRequestPermissionsLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            val granted = ArrayList<String>()
+            it.entries.forEach { permission ->
+                if (permission.value) granted.add(permission.key)
+            }
+            webRequestPermissions?.invoke(granted.toTypedArray())
+        }
 
     override fun launchFileRequest(input: Array<String>) {
         fileRequest.launch(input)
@@ -661,6 +670,14 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             pinnedShortcuts[index] = buildShortcutInfo()
             shortcutManager.updateShortcuts(pinnedShortcuts)
         }
+    }
+
+    override fun webRequestPermissions(
+        permissions: Array<String>,
+        cb: ((granted: Array<String>) -> Unit)
+    ) {
+        webRequestPermissions = cb
+        webRequestPermissionsLauncher.launch(permissions)
     }
 
     private fun setImmersiveMode(enable: Boolean) {
