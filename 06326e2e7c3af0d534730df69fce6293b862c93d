@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17d1d234_6cd949d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-13T14:18:04Z",
+      "side": 1,
+      "message": "Please use registerForActivityResult to handle the result\n\nOr even better registerForActivityResult(RequestMultiplePermissions()) for the permissions directly",
+      "revId": "06326e2e7c3af0d534730df69fce6293b862c93d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
