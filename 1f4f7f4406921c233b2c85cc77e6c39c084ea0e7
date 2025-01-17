@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6ed86e5_ab376017",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-17T13:24:28Z",
+      "side": 1,
+      "message": "breaks creating new tabs as expected... I agree current behavior isn\u0027t the best, it should be more similar to chrome but that\u0027s harder to implement",
+      "revId": "1f4f7f4406921c233b2c85cc77e6c39c084ea0e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
