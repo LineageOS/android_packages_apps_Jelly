@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f256395_c916f9a8",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsManifest.kt",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-17T15:18:39Z",
+      "side": 1,
+      "message": "actually, now that I look at this that\u0027s \"wrong\"\n\nyou should do something like\nresolveManifest(...args...) {\n    val pwaManifest \u003d PwaManifest(...)\n    resolveIcon(...args...)\n}\n\nremoves the need of the weird looking callback, you always want to set the manifest, so let\u0027s do it properly",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 9
+      },
+      "revId": "c4e0115628cd78a69584e11796b14d0ed0952b8d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
