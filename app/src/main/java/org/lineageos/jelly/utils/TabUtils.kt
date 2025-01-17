@@ -13,6 +13,7 @@ import org.lineageos.jelly.MainActivity
 object TabUtils {
     fun openInNewTab(context: Context, url: String?, incognito: Boolean) {
         val intent = Intent(context, MainActivity::class.java).apply {
+            action = Intent.ACTION_VIEW
             url?.takeIf { it.isNotEmpty() }?.let {
                 data = Uri.parse(it)
             }
