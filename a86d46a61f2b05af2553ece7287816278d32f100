@@ -45,6 +45,29 @@
       },
       "revId": "a86d46a61f2b05af2553ece7287816278d32f100",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ae9fab7_e3ec5e91",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExtActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-17T13:30:53Z",
+      "side": 1,
+      "message": "don\u0027t create those interfaces, please use kotlin Unit\n\n    abstract fun webRequestPermissions(permissions: Array\u003cString\u003e, cb: ((granted: Array\u003cString\u003e) -\u003e Unit))",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "a86d46a61f2b05af2553ece7287816278d32f100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
