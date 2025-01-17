@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4bc2cf0_81ceb456",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-17T16:48:15Z",
+      "side": 1,
+      "message": "super small nitpick, if you want to do it, otherwise +v when you tested all common usecases",
+      "revId": "6f229839787b722f53540f3b4f7b8b919a5e8169",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dbfc178_f3fb4a36",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-01-17T16:48:15Z",
+      "side": 1,
+      "message": "```suggestion\n            }.show()\n```",
+      "range": {
+        "startLine": 683,
+        "startChar": 0,
+        "endLine": 683,
+        "endChar": 29
+      },
+      "revId": "6f229839787b722f53540f3b4f7b8b919a5e8169",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
