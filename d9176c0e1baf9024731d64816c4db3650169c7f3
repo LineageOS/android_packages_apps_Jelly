@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05e5a7b6_f44c69a1",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T16:44:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe427acb_010114ec",
+      "range": {
+        "startLine": 677,
+        "startChar": 8,
+        "endLine": 677,
+        "endChar": 34
+      },
+      "revId": "d9176c0e1baf9024731d64816c4db3650169c7f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a25b0955_b6cd03b1",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-01-17T16:36:25Z",
       "side": 1,
       "message": "not needed",
+      "range": {
+        "startLine": 681,
+        "startChar": 0,
+        "endLine": 681,
+        "endChar": 32
+      },
+      "revId": "d9176c0e1baf9024731d64816c4db3650169c7f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d60fb8c4_3e354830",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T16:44:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a25b0955_b6cd03b1",
       "range": {
         "startLine": 681,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7dd5a064_11d6aeb4",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T16:44:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c479a60_cb8761ac",
+      "range": {
+        "startLine": 685,
+        "startChar": 0,
+        "endLine": 685,
+        "endChar": 32
+      },
+      "revId": "d9176c0e1baf9024731d64816c4db3650169c7f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e38a107b_206f46fb",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-01-17T16:36:25Z",
       "side": 1,
       "message": "Builder doesn\u0027t need .apply you can call .setTitle directly on it",
+      "range": {
+        "startLine": 677,
+        "startChar": 0,
+        "endLine": 688,
+        "endChar": 25
+      },
+      "revId": "d9176c0e1baf9024731d64816c4db3650169c7f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8cc51b6_e7f4b57b",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T16:44:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e38a107b_206f46fb",
       "range": {
         "startLine": 677,
         "startChar": 0,
