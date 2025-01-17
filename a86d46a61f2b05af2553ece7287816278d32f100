@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6336d01b_08fd3e45",
+        "filename": "app/src/main/AndroidManifest.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T15:59:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "395aba47_1cefc526",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "a86d46a61f2b05af2553ece7287816278d32f100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00272a46_393a771f",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-01-17T13:28:29Z",
       "side": 1,
       "message": "```suggestion\n    val permissions \u003d buildList {\n        if (resources.contains(PermissionRequest.RESOURCE_VIDEO_CAPTURE)) {\n            add(android.Manifest.permission.CAMERA)\n        }\n        if (resources.contains(PermissionRequest.RESOURCE_AUDIO_CAPTURE)) {\n            add(android.Manifest.permission.RECORD_AUDIO)\n        }\n    }\n```",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 9
+      },
+      "revId": "a86d46a61f2b05af2553ece7287816278d32f100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3563d3c7_cbdf7027",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T15:59:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00272a46_393a771f",
       "range": {
         "startLine": 62,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f83cd4d_a9fb7106",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/ChromeClient.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T15:59:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91caeaee_d92610af",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 39
+      },
+      "revId": "a86d46a61f2b05af2553ece7287816278d32f100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ae9fab7_e3ec5e91",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-01-17T13:30:53Z",
       "side": 1,
       "message": "don\u0027t create those interfaces, please use kotlin Unit\n\n    abstract fun webRequestPermissions(permissions: Array\u003cString\u003e, cb: ((granted: Array\u003cString\u003e) -\u003e Unit))",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "a86d46a61f2b05af2553ece7287816278d32f100",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "758ebc1e_648782b4",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebViewExtActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T15:59:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae9fab7_e3ec5e91",
       "range": {
         "startLine": 37,
         "startChar": 0,
