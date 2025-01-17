@@ -16,6 +16,24 @@
       "message": "breaks creating new tabs as expected... I agree current behavior isn\u0027t the best, it should be more similar to chrome but that\u0027s harder to implement",
       "revId": "1f4f7f4406921c233b2c85cc77e6c39c084ea0e7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4febcf56_76c692b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-01-17T14:05:21Z",
+      "side": 1,
+      "message": "Did you test it with new flags ? (`Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP`)\nCan you please explain in which case it breaks opening new tab?\nBecause openInNewTab just works fine for me with this patch.",
+      "parentUuid": "a6ed86e5_ab376017",
+      "revId": "1f4f7f4406921c233b2c85cc77e6c39c084ea0e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
