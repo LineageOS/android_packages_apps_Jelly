@@ -9,10 +9,12 @@ import android.app.Activity
 import android.app.ActivityManager.TaskDescription
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.ServiceConnection
 import android.content.SharedPreferences
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
@@ -25,6 +27,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
+import android.os.IBinder
 import android.os.Looper
 import android.os.ResultReceiver
 import android.print.PrintAttributes
@@ -66,6 +69,8 @@ import kotlinx.coroutines.launch
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.models.PwaManifest
+import org.lineageos.jelly.shortcut.BackgroundShortcut
+import org.lineageos.jelly.shortcut.BackgroundShortcutActivity
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
@@ -79,9 +84,11 @@ import org.lineageos.jelly.viewmodels.HistoryViewModel
 import org.lineageos.jelly.viewmodels.SuggestionProviderViewModel
 import org.lineageos.jelly.webview.WebViewExt
 import org.lineageos.jelly.webview.WebViewExtActivity
+import org.lineageos.jelly.shortcut.BackgroundShortcutService
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import kotlin.reflect.cast
 
 class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     // View model
@@ -94,7 +101,36 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private val constraintLayout by lazy { findViewById<ConstraintLayout>(R.id.constraintLayout) }
     private val toolbar by lazy { findViewById<MaterialToolbar>(R.id.toolbar) }
     private val urlBarLayout by lazy { findViewById<UrlBarLayout>(R.id.urlBarLayout) }
-    private val webView by lazy { findViewById<WebViewExt>(R.id.webView) }
+
+    private lateinit var webView: WebViewExt
+    private var shortcutId: String? = null
+    private var shortcutName: String? = null
+    private var backgroundShortcutId: String? = null
+    private var backgroundShortcutServiceConnected: Boolean = false
+    private val serviceConnection = object : ServiceConnection {
+        override fun onServiceConnected(className: ComponentName, service: IBinder) {
+            backgroundShortcutServiceConnected = true
+            val binder = BackgroundShortcutService.ServiceBinder::class.cast(service)
+            val id = backgroundShortcutId!!
+            val name = shortcutName ?: id
+            val backgroundShortcut = BackgroundShortcut(id, name, true)
+            val backgroundShortcutService = binder.getService()
+            webView = backgroundShortcutService.getWebView(backgroundShortcut)
+            onWebViewResolved()
+        }
+
+        override fun onServiceDisconnected(className: ComponentName) {
+            backgroundShortcutServiceConnected = false
+        }
+    }
+
+    private var backgroundShortcutResultFinished: Boolean = true
+    private val backgroundShortcutLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            backgroundShortcutResultFinished = true
+            if (it.resultCode == RESULT_OK) finish()
+            else prepareWebView()
+        }
 
     private val shortcutManager by lazy { getSystemService(ShortcutManager::class.java) }
 
@@ -156,7 +192,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
     private var urlIcon: Bitmap? = null
+    private var url: String? = null
     private var incognito = false
+    private var desktopMode = false
     private var customView: View? = null
     private var fullScreenCallback: CustomViewCallback? = null
     private lateinit var menuDialog: MenuDialog
@@ -182,19 +220,21 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val intent = intent
-        var url = when (intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
+        shortcutId = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_ID)
+        shortcutName = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_NAME)
+        url = when (intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
             true -> intent.getStringExtra(IntentUtils.EXTRA_PAGE_URL)
             false -> intent.dataString
         }
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
-        var desktopMode = false
+        desktopMode = false
 
         // Restore from previous instance
         savedInstanceState?.let {
-            incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
             url = url?.takeIf { url ->
                 url.isNotEmpty()
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
+            incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
             desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
         }
 
@@ -209,8 +249,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         urlBarLayout.isIncognito = incognito
 
         menuDialog = MenuDialog(this) { option: MenuDialog.Option ->
-            val isDesktop = webView.isDesktopMode
-
             when (option) {
                 MenuDialog.Option.BACK -> webView.goBack()
                 MenuDialog.Option.FORWARD -> webView.goForward()
@@ -263,9 +301,20 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 }
 
                 MenuDialog.Option.DESKTOP_VIEW -> {
-                    webView.isDesktopMode = !isDesktop
-                    menuDialog.isDesktopMode = !isDesktop
+                    desktopMode = !desktopMode
+                    webView.isDesktopMode = desktopMode
+                    menuDialog.isDesktopMode = desktopMode
                 }
+
+                MenuDialog.Option.BACKGROUND_SHORTCUTS -> backgroundShortcutLauncher.launch(
+                    Intent(
+                        this,
+                        BackgroundShortcutActivity::class.java
+                    ).apply {
+                        backgroundShortcutResultFinished = false
+                        putExtra(IntentUtils.EXTRA_SHORTCUT_ID, shortcutId)
+                    }
+                )
 
                 MenuDialog.Option.SETTINGS -> startActivity(
                     Intent(
@@ -284,12 +333,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         CookieManager.getInstance()
             .setAcceptCookie(!incognito && sharedPreferencesExt.cookiesEnabled)
 
-        webView.init(this, urlBarLayout, incognito)
-        webView.isDesktopMode = desktopMode
-        if (url != null || sharedPreferencesExt.homePageAutoload) {
-            webView.loadUrl(url ?: sharedPreferencesExt.homePage)
-        }
-        setUiMode()
         try {
             val httpCacheDir = File(cacheDir, "suggestion_responses")
             val httpCacheSize = 1024 * 1024.toLong() // 1 MiB
@@ -353,25 +396,27 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             @Suppress("UnspecifiedRegisterReceiverFlag")
             registerReceiver(urlResolvedReceiver, IntentFilter(IntentUtils.EVENT_URL_RESOLVED))
         }
+        if (backgroundShortcutResultFinished) prepareWebView()
     }
 
     override fun onStop() {
         CookieManager.getInstance().flush()
+        if (backgroundShortcutServiceConnected) unbindService(serviceConnection)
         unregisterReceiver(urlResolvedReceiver)
         HttpResponseCache.getInstalled().flush()
         super.onStop()
     }
 
     public override fun onPause() {
-        webView.onPause()
+        if (backgroundShortcutId == null) webView.onPause()
         super.onPause()
     }
 
     override fun onResume() {
         super.onResume()
-        webView.onResume()
+        if (backgroundShortcutId == null) webView.onResume()
         CookieManager.getInstance()
-            .setAcceptCookie(!webView.isIncognito && sharedPreferencesExt.cookiesEnabled)
+            .setAcceptCookie(!incognito && sharedPreferencesExt.cookiesEnabled)
         if (sharedPreferencesExt.lookLockEnabled) {
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_SECURE,
@@ -389,6 +434,35 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         outState.putString(IntentUtils.EXTRA_URL, webView.url)
         outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
         outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
+    }
+
+    private fun prepareWebView() {
+        val backgroundShortcuts = sharedPreferencesExt.backgroundShortcuts
+        val isBackgroundShortcut = backgroundShortcuts.contains(shortcutId)
+        backgroundShortcutId = if (isBackgroundShortcut) shortcutId else null
+        if (backgroundShortcutId == null) {
+            if (::webView.isInitialized) return
+            webView = WebViewExt.newInstance(this)
+            onWebViewResolved()
+        } else {
+            Intent(this, BackgroundShortcutService::class.java).let {
+                it.action = BackgroundShortcutService.START_FOREGROUND_ACTION
+                startForegroundService(it)
+                bindService(it, serviceConnection, Context.BIND_AUTO_CREATE)
+            }
+        }
+    }
+
+    private fun onWebViewResolved() {
+        if (urlBarLayout.url == null) urlBarLayout.url = webView.url
+        webView.parent?.let { ViewGroup::class.cast(it).removeView(webView) }
+        constraintLayout.addView(webView)
+        setUiMode()
+        if (webView.initialized) return
+        webView.init(this, urlBarLayout, incognito)
+        if (url != null || sharedPreferencesExt.homePageAutoload) {
+            webView.loadUrl(url ?: sharedPreferencesExt.homePage)
+        }
     }
 
     private fun registerShortcuts() {
@@ -631,9 +705,13 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
 
     private fun buildShortcutInfo(): ShortcutInfo {
+        val id = pwaManifest?.id ?: System.currentTimeMillis().toString()
+        val shortName = pwaManifest?.shortName ?: webView.title.toString()
         val intent = Intent(this, MainActivity::class.java).apply {
             data = Uri.parse(pwaManifest?.startUrl ?: webView.url)
             action = Intent.ACTION_MAIN
+            putExtra(IntentUtils.EXTRA_SHORTCUT_ID, id)
+            putExtra(IntentUtils.EXTRA_SHORTCUT_NAME, shortName)
             pwaManifest?.let {
                 putExtra(MANIFEST_DISPLAY, it.display)
                 putExtra(MANIFEST_THEME_COLOR, it.themeColor)
@@ -642,8 +720,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         val launcherIcon = urlIcon?.let {
             Icon.createWithBitmap(UiUtils.getShortcutIcon(it, Color.WHITE))
         } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
-        val shortName = pwaManifest?.shortName ?: webView.title.toString()
-        val id = pwaManifest?.id ?: shortName
         return ShortcutInfo.Builder(this, id).apply {
             setShortLabel(shortName)
             setIcon(launcherIcon)
