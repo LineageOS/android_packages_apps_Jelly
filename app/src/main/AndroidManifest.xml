@@ -22,6 +22,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+        android:minSdkVersion="34" />
 
     <application
         android:allowBackup="true"
@@ -85,6 +89,19 @@
             android:name=".SettingsActivity"
             android:label="@string/settings_title"
             android:theme="@style/Theme.Jelly.Settings" />
+
+        <activity
+            android:name=".shortcut.BackgroundShortcutActivity"
+            android:label="@string/background_shortcuts_title"
+            android:theme="@style/Theme.Jelly.NoActionBar" />
+
+        <service
+            android:name=".shortcut.BackgroundShortcutService"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="WebView Service" />
+        </service>
 
         <provider
             android:name="androidx.core.content.FileProvider"

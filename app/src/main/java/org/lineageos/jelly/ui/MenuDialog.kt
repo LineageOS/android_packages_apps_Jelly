@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020-2023 The LineageOS Project
+ * SPDX-FileCopyrightText: 2020-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -45,6 +45,9 @@ class MenuDialog(
     private val findInPageButton by lazy { view.findViewById<LinearLayout>(R.id.findInPageButton) }
     private val desktopViewSwitch by lazy { view.findViewById<MaterialSwitch>(R.id.desktopViewSwitch) }
     private val printButton by lazy { view.findViewById<LinearLayout>(R.id.printButton) }
+    private val backgroundShortcutsButton by lazy {
+        view.findViewById<LinearLayout>(R.id.backgroundShortcutsButton)
+    }
     private val settingsButton by lazy { view.findViewById<LinearLayout>(R.id.settingsButton) }
 
     private val popupWindow = PopupWindow(
@@ -78,6 +81,7 @@ class MenuDialog(
         FIND_IN_PAGE,
         DESKTOP_VIEW,
         PRINT,
+        BACKGROUND_SHORTCUTS,
         SETTINGS,
     }
 
@@ -99,6 +103,7 @@ class MenuDialog(
         findInPageButton.setOnClickListener { triggerOption(Option.FIND_IN_PAGE) }
         desktopViewSwitch.setOnCheckedChangeListener { _, _ -> triggerOption(Option.DESKTOP_VIEW) }
         printButton.setOnClickListener { triggerOption(Option.PRINT) }
+        backgroundShortcutsButton.setOnClickListener { triggerOption(Option.BACKGROUND_SHORTCUTS) }
         settingsButton.setOnClickListener { triggerOption(Option.SETTINGS) }
     }
 

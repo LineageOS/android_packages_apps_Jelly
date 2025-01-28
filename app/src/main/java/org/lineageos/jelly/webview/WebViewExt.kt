@@ -13,6 +13,8 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.webkit.WebView
+import androidx.constraintlayout.widget.ConstraintLayout
+import org.lineageos.jelly.R
 import org.lineageos.jelly.js.JsManifest
 import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.ui.UrlBarLayout
@@ -34,12 +36,21 @@ class WebViewExt @JvmOverloads constructor(
     private var desktopMode = false
     var lastLoadedUrl: String? = null
         private set
+    var backgroundMode: Boolean = false
+    var initialized: Boolean = false
+        private set
 
     private val sharedPreferencesExt by lazy { SharedPreferencesExt(context) }
 
     override fun loadUrl(url: String) {
         lastLoadedUrl = url
         followUrl(url)
+    }
+
+    override fun onWindowVisibilityChanged(visibility: Int) {
+        super.onWindowVisibilityChanged(
+            if (backgroundMode) View.VISIBLE else visibility
+        )
     }
 
     fun followUrl(url: String) {
@@ -125,6 +136,7 @@ class WebViewExt @JvmOverloads constructor(
     fun init(
         activity: WebViewExtActivity, urlBarLayout: UrlBarLayout, incognito: Boolean
     ) {
+        if (initialized) return
         this.activity = activity
         isIncognito = incognito
         val chromeClient = ChromeClient(
@@ -140,6 +152,7 @@ class WebViewExt @JvmOverloads constructor(
         urlBarLayout.onClearSearchCallback = { clearMatches() }
         urlBarLayout.onSearchPositionChangeCallback = { findNext(it) }
         setup(urlBarLayout)
+        initialized = true
     }
 
     val snap: Bitmap
@@ -176,5 +189,17 @@ class WebViewExt @JvmOverloads constructor(
         private const val DESKTOP_USER_AGENT_FALLBACK =
             "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
         private const val HEADER_DNT = "DNT"
+
+        fun newInstance(context: Context) = WebViewExt(context).apply {
+            id = R.id.webView
+            isFocusable = true
+            isFocusableInTouchMode = true
+            layoutParams = ConstraintLayout.LayoutParams(0, 0).apply {
+                startToStart = ConstraintLayout.LayoutParams.PARENT_ID
+                endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
+                topToBottom = R.id.appBarLayout
+                bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID
+            }
+        }
     }
 }

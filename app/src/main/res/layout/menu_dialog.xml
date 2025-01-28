@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -183,6 +183,16 @@
                 </LinearLayout>
 
                 <com.google.android.material.divider.MaterialDivider style="@style/Theme.Jelly.MenuDivider" />
+
+                <LinearLayout
+                    android:id="@+id/backgroundShortcutsButton"
+                    style="@style/Theme.Jelly.MenuItem">
+
+                    <TextView
+                        style="@style/Theme.Jelly.MenuItemTitle"
+                        android:text="@string/menu_background_shortcuts"
+                        app:drawableStartCompat="@drawable/ic_external" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/settingsButton"
