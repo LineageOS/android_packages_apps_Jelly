@@ -27,6 +27,10 @@ class SharedPreferencesExt(context: Context) {
         }
     }
 
+    var backgroundShortcuts: Set<String>
+        get() = sharedPreferences.getStringSet(BACKGROUND_SHORTCUTS_KEY, setOf<String>())!!
+        set(value) = sharedPreferences.edit { putStringSet(BACKGROUND_SHORTCUTS_KEY, value) }
+
     val searchEngine: String
         get() = sharedPreferences.getString(
             SEARCH_ENGINE_KEY, defaultSearchEngine
@@ -69,6 +73,8 @@ class SharedPreferencesExt(context: Context) {
         get() = sharedPreferences.getBoolean(REACH_MODE_ENABLED_KEY, REACH_MODE_ENABLED_DEFAULT)
 
     companion object {
+        private const val BACKGROUND_SHORTCUTS_KEY = "background_shortcuts"
+
         private const val SEARCH_ENGINE_KEY = "key_search_engine"
 
         private const val HOME_PAGE_KEY = "key_home_page"
