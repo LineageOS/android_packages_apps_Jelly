@@ -47,15 +47,15 @@
     <string name="pref_location_summary">Permitir a los sitios web acceder a tu ubicación</string>
     <string name="pref_cookie_title">Cookies</string>
     <string name="pref_cookie_summary">Permitir a los sitios web guardar y cargar cookies</string>
-    <string name="pref_screenshot_snap_title">Acciones avanzadas</string>
+    <string name="pref_screenshot_snap_title">Preferencias avanzadas</string>
     <string name="pref_screenshot_snap_summary">Compartir vista previa de la página web compartida</string>
     <string name="pref_cookie_clear">Borrar cookies</string>
     <string name="pref_cookie_clear_done">Se han eliminado todas las cookies</string>
     <string name="pref_do_not_track_title">No rastrear</string>
-    <string name="pref_do_not_track_summary">Envía una solicitud para evitar el rastreo en los sitios web que visite</string>
+    <string name="pref_do_not_track_summary">Envía una solicitud para evitar el rastreo en los sitios web que visites</string>
     <string name="pref_suggestions_provider">Proveedor de sugerencias</string>
     <string name="pref_reach_mode_title">Modo simplificado</string>
-    <string name="pref_reach_mode_summary">Cambiar los elementos de la interfaz para un uso más fácil con una sola mano</string>
+    <string name="pref_reach_mode_summary">Reubica los elementos de la interfaz para facilitar su uso con una sola mano.</string>
     <string name="history_title">Historial</string>
     <string name="history_empty">Aquí no hay nada, navega por internet para ver tu historial aquí</string>
     <string name="history_date_format">EEEE dd MMMM yyyy, HH:mm</string>
@@ -67,7 +67,7 @@
     <string name="history_snackbar_item_deleted_message">Deshacer</string>
     <string name="favorite_title">Favoritos</string>
     <string name="favorite_added">Añadido a favoritos</string>
-    <string name="favorite_empty">Nada por aquí, añada un enlace a favoritos para visualizarlo en esta pestaña</string>
+    <string name="favorite_empty">Aquí no hay nada, añade un enlace favorito para verlo aquí</string>
     <string name="favorite_edit_dialog_title">Editar favorito</string>
     <string name="favorite_edit_title">Título</string>
     <string name="favorite_edit_url">URL</string>

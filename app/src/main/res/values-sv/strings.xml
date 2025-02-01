@@ -5,16 +5,23 @@
 -->
 <resources>
     <string name="app_name">Webbläsare</string>
+    <string name="url_bar_search_previous">Tillbaka</string>
+    <string name="url_bar_search_next">Nästa</string>
+    <string name="menu_go_back">Tillbaka</string>
+    <string name="menu_go_forward">Framåt</string>
+    <string name="menu_refresh">Uppdatera sida</string>
     <string name="menu_new_tab">Ny flik</string>
     <string name="menu_incognito">Inkognito-flik</string>
     <string name="menu_fav_add">Lägg till i favoriter</string>
     <string name="menu_share">Dela</string>
     <string name="menu_favorites">Favoriter</string>
     <string name="menu_history">Historik</string>
+    <string name="menu_downloads">Hämtningar</string>
     <string name="menu_shortcut">Lägg till genväg</string>
     <string name="menu_settings">Inställningar</string>
     <string name="menu_download">Ladda ner</string>
     <string name="menu_in_new_tab">Öppna i en ny flik</string>
+    <string name="menu_desktop_mode">Skrivbordsanpassad sida</string>
     <string name="menu_search">Hitta på sidan</string>
     <string name="menu_print">Skriv ut</string>
     <string name="share_title">Skicka till</string>
@@ -74,6 +81,7 @@
     <string name="suggestions_provider_none">Ingen</string>
     <string name="search_bar_hint">Sök</string>
     <string name="ssl_cert_dialog_title">SSL Certifikatdetaljer</string>
+    <string name="ssl_cert_dialog_trusted">Anslutningen är säker</string>
     <string name="ssl_cert_dialog_domain">Domän</string>
     <string name="ssl_cert_dialog_issued_to">Utfärdat den</string>
     <string name="ssl_cert_dialog_issued_by">Utfärdad av</string>

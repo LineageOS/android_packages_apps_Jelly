@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">مرورگر</string>
+    <string name="menu_new_tab">برگه جدید</string>
+    <string name="menu_incognito">برگه ناشناس</string>
+    <string name="menu_fav_add">افزودن به محبوب‌ها</string>
+    <string name="menu_share">هم‌رسانی</string>
+    <string name="menu_favorites">محبوب‌ها</string>
+    <string name="menu_history">تاریخچه</string>
+    <string name="menu_shortcut">افزودن میان‌بر</string>
+    <string name="menu_settings">تنظیمات</string>
+    <string name="menu_download">بارگیری</string>
+    <string name="menu_in_new_tab">باز کردن در برگه جدید</string>
+    <string name="menu_search">یافتن در صفحه</string>
+    <string name="menu_print">چاپ</string>
+    <string name="share_title">فرستادن به</string>
+    <string name="dismiss">دور انداختن</string>
+    <string name="download_title">بارگیری پرونده</string>
+    <string name="download_message">می‌خواهید %1$s را بارگیری کنید؟</string>
+    <string name="download_positive">بارگیری</string>
+    <string name="settings_title">تنظیمات</string>
+    <string name="pref_search_engine">موتور جستجو</string>
+    <string name="pref_start_page">صفحهٔ خانه</string>
+    <string name="pref_start_page_dialog_title">گزینش صفحهٔ خانه</string>
+    <string name="pref_start_page_dialog_message">نوشتن نشانی صفحهٔ خانه</string>
+    <string name="pref_start_page_dialog_reset">بازنشانی</string>
+    <string name="pref_privacy_security">محرمانگی &amp; امنیت</string>
+    <string name="pref_looklock_title">لوک‌لاک</string>
+    <string name="pref_looklock_summary">جلوگیری از خواندن محتوای مرورگر توسط دیگر برنامه‌ها</string>
+    <string name="pref_js_title">جاوااسکریپت</string>
+    <string name="pref_js_summary">فعَال کردن جاوااسکریپت</string>
+    <string name="pref_location_title">موقعیت</string>
+    <string name="pref_location_summary">اجازه به پایگاه‌های وب برای درخواست دسترسی به موقعیت شما</string>
+    <string name="pref_cookie_title">کوکی‌ها</string>
+    <string name="pref_cookie_summary">اجازه به پایگاه‌های وب برای ذخیره و بار کردن کوکی‌ها</string>
+    <string name="pref_screenshot_snap_title">هم‌رسانی پیشرفته</string>
+    <string name="pref_screenshot_snap_summary">هم‌رسانی پیش‌نمایش صفحهٔ وب هم‌رسانی شده</string>
+    <string name="pref_cookie_clear">پاکسازی کوکی‌ها</string>
+    <string name="pref_cookie_clear_done">تمام کوکی‌ها پاک‌سازی شدند</string>
+    <string name="pref_do_not_track_title">ردیابی نکن</string>
+    <string name="pref_do_not_track_summary">فرستادن درخواست ردیابی نکن به پایگاه‌های وبی که می‌بینید</string>
+    <string name="pref_suggestions_provider">فراهم‌کنندهٔ پیشنهاد</string>
+    <string name="pref_reach_mode_title">حالت رسیدن</string>
+    <string name="pref_reach_mode_summary">جابجایی عناصر رابط کاربری برای استفاده راحت تر با یک دست</string>
+    <string name="history_title">تاریخچه</string>
+    <string name="history_empty">هیچ چیز در این‌جا نیست. برای دیدن تاریخچه‌تان در این‌جا، اینترنت را مرورکنید</string>
+    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+    <string name="history_delete_title">پاکسازی تاریخچه</string>
+    <string name="history_delete_message">در حال حذف تمام تاریخچه‌اید. این عمل قابل بازگشت نیست. می‌خواهید ادامه دهید؟</string>
+    <string name="shortcut_new_incognito_tab">برگه ناشناس جدید</string>
+</resources>
