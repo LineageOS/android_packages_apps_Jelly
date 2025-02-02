@@ -32,6 +32,7 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 import org.lineageos.jelly.R
 import org.lineageos.jelly.js.JsManifest
+import org.lineageos.jelly.js.JsMediaSession
 import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.IntentUtils
@@ -42,6 +43,12 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
     override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
         super.onPageStarted(view, url, favicon)
         urlBarLayout.onPageLoadStarted(url)
+        if (view.settings.javaScriptEnabled) {
+            val mediaSession = view.context.resources.assets
+                .open("MediaSessionAPI.js").bufferedReader().use { it.readText() }
+            view.evaluateJavascript(mediaSession, null)
+            view.evaluateJavascript(JsMediaSession.SCRIPT, null)
+        }
     }
 
     override fun onPageFinished(view: WebView, url: String) {
