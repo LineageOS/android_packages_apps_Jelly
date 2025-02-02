@@ -238,4 +238,7 @@
     <string name="protected_media_dialog_message">Allow protected media?</string>
     <string name="protected_media_dialog_grant">Grant</string>
     <string name="protected_media_dialog_deny">Deny</string>
+
+    <!-- Media session -->
+    <string name="media_session_destroy_action">Destroy</string>
 </resources>

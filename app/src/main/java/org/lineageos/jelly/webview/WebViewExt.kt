@@ -16,6 +16,7 @@ import android.webkit.WebView
 import androidx.constraintlayout.widget.ConstraintLayout
 import org.lineageos.jelly.R
 import org.lineageos.jelly.js.JsManifest
+import org.lineageos.jelly.js.JsMediaSession
 import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.shortcut.BackgroundShortcut
 import org.lineageos.jelly.shortcut.BackgroundShortcutService
@@ -137,6 +138,10 @@ class WebViewExt @JvmOverloads constructor(
             addJavascriptInterface(
                 JsManifest(activity),
                 JsManifest.INTERFACE
+            )
+            addJavascriptInterface(
+                JsMediaSession(this),
+                JsMediaSession.INTERFACE
             )
         }
     }
