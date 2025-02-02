@@ -69,6 +69,7 @@ import kotlinx.coroutines.launch
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.models.PwaManifest
+import org.lineageos.jelly.shortcut.BackgroundShortcut
 import org.lineageos.jelly.shortcut.BackgroundShortcutActivity
 import org.lineageos.jelly.ui.MenuDialog
 import org.lineageos.jelly.ui.UrlBarLayout
@@ -103,14 +104,18 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     private lateinit var webView: WebViewExt
     private var shortcutId: String? = null
+    private var shortcutName: String? = null
     private var backgroundShortcutId: String? = null
     private var backgroundShortcutServiceConnected: Boolean = false
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(className: ComponentName, service: IBinder) {
             backgroundShortcutServiceConnected = true
             val binder = BackgroundShortcutService.ServiceBinder::class.cast(service)
+            val id = backgroundShortcutId!!
+            val name = shortcutName ?: id
+            val backgroundShortcut = BackgroundShortcut(id, name, true)
             val backgroundShortcutService = binder.getService()
-            webView = backgroundShortcutService.getWebView(backgroundShortcutId!!)
+            webView = backgroundShortcutService.getWebView(backgroundShortcut)
             onWebViewResolved()
         }
 
@@ -216,6 +221,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         setSupportActionBar(toolbar)
         val intent = intent
         shortcutId = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_ID)
+        shortcutName = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_NAME)
         url = when (intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
             true -> intent.getStringExtra(IntentUtils.EXTRA_PAGE_URL)
             false -> intent.dataString
@@ -700,16 +706,17 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     private fun buildShortcutInfo(): ShortcutInfo {
         val id = pwaManifest?.id ?: System.currentTimeMillis().toString()
+        val shortName = pwaManifest?.shortName ?: webView.title.toString()
         val intent = Intent(this, MainActivity::class.java).apply {
             data = Uri.parse(pwaManifest?.startUrl ?: webView.url)
             action = Intent.ACTION_MAIN
             putExtra(IntentUtils.EXTRA_SHORTCUT_ID, id)
+            putExtra(IntentUtils.EXTRA_SHORTCUT_NAME, shortName)
             pwaManifest?.let {
                 putExtra(MANIFEST_DISPLAY, it.display)
                 putExtra(MANIFEST_THEME_COLOR, it.themeColor)
             }
         }
-        val shortName = pwaManifest?.shortName ?: webView.title.toString()
         val launcherIcon = urlIcon?.let {
             Icon.createWithBitmap(UiUtils.getShortcutIcon(it, Color.WHITE))
         } ?: Icon.createWithResource(this, R.mipmap.ic_launcher)
