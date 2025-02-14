@@ -222,6 +222,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cee8053_ba8d8ca3",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:10:48Z",
+      "side": 1,
+      "message": "I think We can\u0027t use when here because of size \u003e 1",
+      "parentUuid": "7c83487b_14295fdf",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 5
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b3769cd_d0898fe9",
