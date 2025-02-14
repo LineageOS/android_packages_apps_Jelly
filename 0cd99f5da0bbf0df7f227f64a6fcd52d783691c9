@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41449a32_0dfaca65",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T16:45:08Z",
+      "side": 1,
+      "message": "when (shortcuts.size.let) directly?",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 68
+      },
+      "revId": "0cd99f5da0bbf0df7f227f64a6fcd52d783691c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
