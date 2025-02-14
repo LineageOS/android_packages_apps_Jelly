@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c96ec9f_da5a34fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:50:50Z",
+      "side": 1,
+      "message": "And don\u0027t do that _now_, maybe later if you have time, it\u0027s quite a bit of code churn",
+      "parentUuid": "9c7b0786_d07d8788",
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b67fc874_96d09833",
@@ -55,6 +73,30 @@
       "side": 1,
       "message": "Because the first emit is always an empty list.",
       "parentUuid": "b67fc874_96d09833",
+      "range": {
+        "startLine": 100,
+        "startChar": 32,
+        "endLine": 100,
+        "endChar": 39
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14d6f916_4f99b127",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:50:50Z",
+      "side": 1,
+      "message": "See the comment in the ViewModel on how you _should_ handle this case",
+      "parentUuid": "60e2d2f4_3aa40ac7",
       "range": {
         "startLine": 100,
         "startChar": 32,
