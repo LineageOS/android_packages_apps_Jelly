@@ -130,6 +130,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63807b0f_b3c44bec",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9592af0b_d4568a59",
+      "range": {
+        "startLine": 35,
+        "startChar": 20,
+        "endLine": 35,
+        "endChar": 28
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dd0a6195_48408dd8",
@@ -143,6 +167,30 @@
       "writtenOn": "2025-02-14T15:33:42Z",
       "side": 1,
       "message": "```suggestion\n        fun bind(shortcut: BackgroundShortcut) {\n            selected.isChecked \u003d getSelected(shortcut.id)\n```",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 0
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ba96181_659ae0a9",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd0a6195_48408dd8",
       "range": {
         "startLine": 47,
         "startChar": 0,
@@ -176,6 +224,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b55cc3d9_52d6e2f1",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8d5e290_66f3f24b",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 60
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a14929c_906a40d5",
@@ -189,6 +261,30 @@
       "writtenOn": "2025-02-14T15:33:42Z",
       "side": 1,
       "message": "```suggestion\n    fun getWebView(backgroundShortcut: BackgroundShortcut) \u003d shortcuts.getOrPut(\n        backgroundShortcut.id\n    ) {\n        val themeContext \u003d ContextThemeWrapper(this, R.style.Theme_Jelly)\n        WebViewExt.newInstance(\n            themeContext,\n            backgroundShortcut,\n            this\n        ).also {\n            updateNotification()\n        }\n    }```",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 5
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b839d8ac_fb10f520",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a14929c_906a40d5",
       "range": {
         "startLine": 43,
         "startChar": 0,
@@ -269,6 +365,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5db8e5f7_f9df70a9",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutViewModel.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b3769cd_d0898fe9",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 5
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31b52fb8_c67c5088",
@@ -282,6 +402,30 @@
       "writtenOn": "2025-02-14T15:33:42Z",
       "side": 1,
       "message": "This doesn\u0027t provide anything to the user, please remove",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 0
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc3cd189_e306a20a",
+        "filename": "app/src/main/res/layout/item_background_shortcut.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T16:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31b52fb8_c67c5088",
       "range": {
         "startLine": 39,
         "startChar": 0,
