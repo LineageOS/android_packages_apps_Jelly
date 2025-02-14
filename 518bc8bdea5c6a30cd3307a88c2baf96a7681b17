@@ -166,6 +166,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e26b43f9_957df5b0",
+        "filename": "app/src/main/java/org/lineageos/jelly/models/MediaSessionMetadata.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75be1b2e_41d9dce8",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d51fe084_288e69b3",
@@ -179,6 +203,30 @@
       "writtenOn": "2025-02-14T15:49:48Z",
       "side": 1,
       "message": "you have a builder, use the builder pattern\n\n```\nval builder \u003d MediaMetadata.Builder()\n    .putString()\n    .etc\n    .apply {\n        metadata.cover?.let {\n            putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART, it)\n        }\n    }\n    .build()\n```",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 17
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbddb7e0_a23f98cb",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d51fe084_288e69b3",
       "range": {
         "startLine": 167,
         "startChar": 0,
@@ -206,6 +254,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd962c7c_ab00f602",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff7ab835_28a4e01b",
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2eeab59_e8723036",
@@ -219,6 +285,24 @@
       "writtenOn": "2025-02-14T15:49:48Z",
       "side": 1,
       "message": "this is a bit weird\n\nmaybe\n\n```\n        return (this.mediaSession ?: MediaSession(this, MEDIA_SESSION_TAG)).apply {\n            isActive \u003d true\n            setMetadata(metadata)\n            setPlaybackState(playbackState)\n            setCallback(mediaSessionCallback)\n        }.also {\n            this.mediaSession \u003d it\n        }\n        ```\n        \nlooks better?",
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "222c0191_6c93291e",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2eeab59_e8723036",
       "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -246,6 +330,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5473e698_78836449",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc0406ee_a9f76a8a",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 9
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56444208_f49f66d9",
@@ -259,6 +367,24 @@
       "writtenOn": "2025-02-14T15:49:48Z",
       "side": 1,
       "message": "I just noticed the same _wrong_ pattern here, please use the builder 😊",
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "830c92fc_ea389c7e",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56444208_f49f66d9",
       "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
