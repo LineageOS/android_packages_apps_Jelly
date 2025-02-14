@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c63406e9_2d9d6918",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsMediaSession.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "can metadata be null when you call onPlay/onBuffering etc?\nif it can\u0027t be null, why not make it lateinit var?\nwould avoid the let {}\n\nlooking at the JS hooks it seems to be the case, but I wouldn\u0027t know",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 54
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d16541dc_bd233b11",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsMediaSession.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "I think you\u0027re leaking the connection?",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 17
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75be1b2e_41d9dce8",
+        "filename": "app/src/main/java/org/lineageos/jelly/models/MediaSessionMetadata.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "make those nullable and handle the null string in the view.\nthe model should represent the data, not how you\u0027ll be using it",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 27
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51fe084_288e69b3",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "you have a builder, use the builder pattern\n\n```\nval builder \u003d MediaMetadata.Builder()\n    .putString()\n    .etc\n    .apply {\n        metadata.cover?.let {\n            putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART, it)\n        }\n    }\n    .build()\n```",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 17
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff7ab835_28a4e01b",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "here it\u0027s too nested\nmove\n```\nval state \u003d\nval actions \u003d\n```\netc\n\noutside the builder creation\nthen use them with the builder pattern\n```\nPlaybackState.Builder()\n    .SetState(...)\n    .setActions(...)\n    .etc\n    .build()\n```",
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2eeab59_e8723036",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "this is a bit weird\n\nmaybe\n\n```\n        return (this.mediaSession ?: MediaSession(this, MEDIA_SESSION_TAG)).apply {\n            isActive \u003d true\n            setMetadata(metadata)\n            setPlaybackState(playbackState)\n            setCallback(mediaSessionCallback)\n        }.also {\n            this.mediaSession \u003d it\n        }\n        ```\n        \nlooks better?",
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc0406ee_a9f76a8a",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "```suggestion\n        val mediaStyle \u003d mediaSession?.let {\n            Notification.MediaStyle().setMediaSession(it.sessionToken)\n        }\n        ```",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 9
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56444208_f49f66d9",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "I just noticed the same _wrong_ pattern here, please use the builder 😊",
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19a4b286_45f30c93",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:49:48Z",
+      "side": 1,
+      "message": "cache the string somewhere, you don\u0027t want to open/read the file on every onPagestarted()",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 0
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
