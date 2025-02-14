@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c7b0786_d07d8788",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "Just some misc changes\n\nAlso please take a look at https://github.com/lineage-next/android_packages_apps_Catapult/commit/5f226f8d6148a6c0e7d225a81981b4396837ed0f\nI think moving away the logic of the service connection elsewhere would make everything more clean and can probably get rid of next(running) stuff as you\u0027d make a flow out of it :)",
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b67fc874_96d09833",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "why drop?",
+      "range": {
+        "startLine": 100,
+        "startChar": 32,
+        "endLine": 100,
+        "endChar": 39
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9592af0b_d4568a59",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "```suggestion\n        holder.bind(getItem(position))\n```",
+      "range": {
+        "startLine": 35,
+        "startChar": 20,
+        "endLine": 35,
+        "endChar": 28
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd0a6195_48408dd8",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutAdapter.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "```suggestion\n        fun bind(shortcut: BackgroundShortcut) {\n            selected.isChecked \u003d getSelected(shortcut.id)\n```",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 0
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8d5e290_66f3f24b",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "```suggestion\n        shortcuts.values.forEach { it.destroy() }\n```",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 60
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a14929c_906a40d5",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "```suggestion\n    fun getWebView(backgroundShortcut: BackgroundShortcut) \u003d shortcuts.getOrPut(\n        backgroundShortcut.id\n    ) {\n        val themeContext \u003d ContextThemeWrapper(this, R.style.Theme_Jelly)\n        WebViewExt.newInstance(\n            themeContext,\n            backgroundShortcut,\n            this\n        ).also {\n            updateNotification()\n        }\n    }```",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 5
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c83487b_14295fdf",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutService.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "use when?",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 5
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b3769cd_d0898fe9",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutViewModel.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "if you always drop(1) then you skip the \"empty\" list.\nensure you handle no shortcuts (so real empty list) vs default list.\n\nmaybe create a simple\n```\nsealed interface UiData {\n    data class Data(...) : UiData\n    object Empty() : UiData\n}\n```\n\n(didn\u0027t test but syntax is close enough)",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 5
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31b52fb8_c67c5088",
+        "filename": "app/src/main/res/layout/item_background_shortcut.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T15:33:42Z",
+      "side": 1,
+      "message": "This doesn\u0027t provide anything to the user, please remove",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 0
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
