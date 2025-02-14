@@ -48,6 +48,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99ab1e79_deadd30f",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsMediaSession.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T17:27:02Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "336dbba8_9fa59f15",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 54
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d16541dc_bd233b11",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Can you explain why? we used this logic for pwa icon too",
       "parentUuid": "d16541dc_bd233b11",
+      "range": {
+        "startLine": 160,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 17
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "daed3379_bf57628d",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsMediaSession.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T17:27:02Z",
+      "side": 1,
+      "message": "```\nval bitmap \u003d runCatching {\n    val connection \u003d HttpURLConnection::class.cast(\n        URL(artwork).openConnection()\n    )\n    try {\n        connection.connect()\n        if (connection.responseCode !\u003d HttpURLConnection.HTTP_OK) null\n        else connection.inputStream.buffered().use {\n            BitmapFactory.decodeStream(it)\n        }\n    } finally {        \n        connection.disconnect()\n    }\n}.getOrNull()\n```\nI guess?\nThe GC should be able to work even if we don\u0027t all .disconnect, maybe do it later in another change where you check other usages (that I may have got wrong myself)",
+      "parentUuid": "9b9f2c45_2a0eefd1",
       "range": {
         "startLine": 160,
         "startChar": 0,
@@ -252,6 +300,30 @@
       "side": 1,
       "message": "Can I save it in SharedPreferencesExt ?",
       "parentUuid": "19a4b286_45f30c93",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 0
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a0a2899_9b05f16e",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-14T17:27:02Z",
+      "side": 1,
+      "message": "make something like\n\n```\nobject AssetLoader {\n    private val cache \u003d mutableMapOf\u003cString, String\u003e()\n\n    fun loadAsset(resources: Resources, fileName: String): String \u003d\n        cache.getOrPut(fileName) {\n            resources.assets.open(fileName).bufferedReader().use { it.readText() }\n        }\n}\n```",
+      "parentUuid": "2dbc96df_3c61f44b",
       "range": {
         "startLine": 47,
         "startChar": 0,
