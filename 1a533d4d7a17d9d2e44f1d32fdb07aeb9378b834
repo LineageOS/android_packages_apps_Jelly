@@ -41,6 +41,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60e2d2f4_3aa40ac7",
+        "filename": "app/src/main/java/org/lineageos/jelly/shortcut/BackgroundShortcutActivity.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T15:39:32Z",
+      "side": 1,
+      "message": "Because the first emit is always an empty list.",
+      "parentUuid": "b67fc874_96d09833",
+      "range": {
+        "startLine": 100,
+        "startChar": 32,
+        "endLine": 100,
+        "endChar": 39
+      },
+      "revId": "1a533d4d7a17d9d2e44f1d32fdb07aeb9378b834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9592af0b_d4568a59",
