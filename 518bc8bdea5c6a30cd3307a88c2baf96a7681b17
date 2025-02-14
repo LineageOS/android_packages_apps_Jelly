@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "336dbba8_9fa59f15",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsMediaSession.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:03:54Z",
+      "side": 1,
+      "message": "It can be lateinit var but null is better as we can set it to null when we don\u0027t need it anymore (onDestroy)\nAlso imagine it\u0027s not a null var then we have to use apply to update props",
+      "parentUuid": "c63406e9_2d9d6918",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 54
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d16541dc_bd233b11",
@@ -204,6 +228,30 @@
       "writtenOn": "2025-02-14T15:49:48Z",
       "side": 1,
       "message": "cache the string somewhere, you don\u0027t want to open/read the file on every onPagestarted()",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 0
+      },
+      "revId": "518bc8bdea5c6a30cd3307a88c2baf96a7681b17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dbc96df_3c61f44b",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-14T17:03:54Z",
+      "side": 1,
+      "message": "Can I save it in SharedPreferencesExt ?",
+      "parentUuid": "19a4b286_45f30c93",
       "range": {
         "startLine": 47,
         "startChar": 0,
