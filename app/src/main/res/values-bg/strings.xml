@@ -5,6 +5,7 @@
 -->
 <resources>
     <string name="app_name">Браузър</string>
+    <string name="url_bar_more">Още</string>
     <string name="menu_new_tab">Нов раздел</string>
     <string name="menu_incognito">Раздел в режим „Инкогнито“</string>
     <string name="menu_fav_add">Добави към Любими</string>
@@ -84,4 +85,7 @@
     <string name="ssl_cert_dialog_issued_on">Издадена на</string>
     <string name="ssl_cert_dialog_expires_on">Изтича на</string>
     <string name="ssl_cert_dialog_dismiss">Отхвърли</string>
+    <string name="location_dialog_allow">Разрешаване</string>
+    <string name="location_dialog_block">Блокиране</string>
+    <string name="location_dialog_cancel">Откажи за сега</string>
 </resources>
