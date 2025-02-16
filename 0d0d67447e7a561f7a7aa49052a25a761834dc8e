@@ -1,4 +1,97 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b1d16a9_472ec037",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-16T23:48:10Z",
+      "side": 1,
+      "message": "```suggestion\n    \u003cstring name\u003d\"menu_background_shortcuts\"\u003eBackground shortcuts\u003c/string\u003e\n```",
+      "range": {
+        "startLine": 45,
+        "startChar": 45,
+        "endLine": 45,
+        "endChar": 65
+      },
+      "revId": "0d0d67447e7a561f7a7aa49052a25a761834dc8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b155935_9fc22093",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-16T23:48:10Z",
+      "side": 1,
+      "message": "```suggestion\n    \u003cstring name\u003d\"background_shortcuts_title\"\u003eBackground shortcuts\u003c/string\u003e\n```",
+      "range": {
+        "startLine": 73,
+        "startChar": 46,
+        "endLine": 73,
+        "endChar": 66
+      },
+      "revId": "0d0d67447e7a561f7a7aa49052a25a761834dc8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a4e7650_156b874a",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-16T23:48:10Z",
+      "side": 1,
+      "message": "```suggestion\n    \u003cstring name\u003d\"background_shortcuts_notification_channel\"\u003eManage background shortcuts\u003c/string\u003e\n```",
+      "range": {
+        "startLine": 75,
+        "startChar": 61,
+        "endLine": 75,
+        "endChar": 88
+      },
+      "revId": "0d0d67447e7a561f7a7aa49052a25a761834dc8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c47c340_d71e6f93",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-02-16T23:48:10Z",
+      "side": 1,
+      "message": "This should be a plural string, including %1$d in the actual string instead of combining the number + string in code",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 100
+      },
+      "revId": "0d0d67447e7a561f7a7aa49052a25a761834dc8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
