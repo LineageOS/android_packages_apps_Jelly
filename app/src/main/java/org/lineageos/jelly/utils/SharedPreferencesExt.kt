@@ -31,6 +31,10 @@ class SharedPreferencesExt(context: Context) {
         get() = sharedPreferences.getStringSet(BACKGROUND_SHORTCUTS_KEY, setOf<String>())!!
         set(value) = sharedPreferences.edit { putStringSet(BACKGROUND_SHORTCUTS_KEY, value) }
 
+    var protectedMediaWhitelist: Set<String>
+        get() = sharedPreferences.getStringSet(PROTECTED_MEDIA_WHITELIST_KEY, setOf<String>())!!
+        set(value) = sharedPreferences.edit { putStringSet(PROTECTED_MEDIA_WHITELIST_KEY, value) }
+
     val searchEngine: String
         get() = sharedPreferences.getString(
             SEARCH_ENGINE_KEY, defaultSearchEngine
@@ -74,6 +78,8 @@ class SharedPreferencesExt(context: Context) {
 
     companion object {
         private const val BACKGROUND_SHORTCUTS_KEY = "background_shortcuts"
+
+        private const val PROTECTED_MEDIA_WHITELIST_KEY = "protected_media_whitelist"
 
         private const val SEARCH_ENGINE_KEY = "key_search_engine"
 

@@ -60,10 +60,19 @@ internal class ChromeClient(
     override fun onPermissionRequest(request: PermissionRequest) {
         val resources = request.resources
         if (resources.contains(PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID)) {
-            activity.webProtectedMedia(request.origin.toString()) { granted ->
-                if (!granted) return@webProtectedMedia
-                val permission = arrayOf(PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID)
-                request.grant(permission)
+            val origin = request.origin.toString()
+            val permission = arrayOf(PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID)
+            val whitelist = sharedPreferencesExt.protectedMediaWhitelist.toMutableSet()
+            when (whitelist.contains(origin)) {
+                true -> request.grant(permission)
+                false -> {
+                    activity.webProtectedMedia(origin) { granted ->
+                        if (!granted) return@webProtectedMedia
+                        request.grant(permission)
+                        whitelist.add(origin)
+                        sharedPreferencesExt.protectedMediaWhitelist = whitelist.toSet()
+                    }
+                }
             }
             return
         }
