@@ -42,7 +42,7 @@
     <!-- Menu action: add shortcut of the current page to the launcher -->
     <string name="menu_shortcut">Add shortcut</string>
     <!-- Menu action: manage background shortcuts -->
-    <string name="menu_background_shortcuts">Background Shortcuts</string>
+    <string name="menu_background_shortcuts">Background shortcuts</string>
     <!-- Menu action: show settings -->
     <string name="menu_settings">Settings</string>
     <!-- Menu action: download selected file / image -->
@@ -70,11 +70,11 @@
     <string name="download_positive">Download</string>
 
     <!-- Background shortcuts -->
-    <string name="background_shortcuts_title">Background Shortcuts</string>
+    <string name="background_shortcuts_title">Background shortcuts</string>
     <string name="background_shortcuts_save_action">Save</string>
-    <string name="background_shortcuts_notification_channel">Manage Background Shortcuts</string>
-    <string name="background_shortcuts_notification_content_single">instance is running</string>
-    <string name="background_shortcuts_notification_content_multiple">instances are running</string>
+    <string name="background_shortcuts_notification_channel">Manage background shortcuts</string>
+    <string name="background_shortcuts_notification_content_single">1 instance is running</string>
+    <string name="background_shortcuts_notification_content_multiple">%1$d instances are running</string>
 
     <!-- Settings: title -->
     <string name="settings_title">Settings</string>
@@ -240,5 +240,5 @@
     <string name="protected_media_dialog_deny">Deny</string>
 
     <!-- Media session -->
-    <string name="media_session_destroy_action">Destroy</string>
+    <string name="media_session_destroy_action">Stop</string>
 </resources>

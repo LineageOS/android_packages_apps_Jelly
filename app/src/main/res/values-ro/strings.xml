@@ -37,8 +37,6 @@
     <string name="background_shortcuts_title">Background Shortcuts</string>
     <string name="background_shortcuts_save_action">Salvați</string>
     <string name="background_shortcuts_notification_channel">Gestionează Background Shortcuts-urile</string>
-    <string name="background_shortcuts_notification_content_single">instanța rulează</string>
-    <string name="background_shortcuts_notification_content_multiple">instanțele rulează</string>
     <string name="settings_title">Setări</string>
     <string name="pref_search_engine">Motor de căutare</string>
     <string name="pref_start_page">Pagina principală</string>
@@ -123,5 +121,4 @@
     <string name="protected_media_dialog_message">Permiteți media protejat?</string>
     <string name="protected_media_dialog_grant">Permite</string>
     <string name="protected_media_dialog_deny">Refuză</string>
-    <string name="media_session_destroy_action">Distruge</string>
 </resources>
