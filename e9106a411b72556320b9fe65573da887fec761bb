@@ -69,6 +69,24 @@
       "parentUuid": "2b04cfcf_f7e55156",
       "revId": "e9106a411b72556320b9fe65573da887fec761bb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f0e1272_4cea7b2c",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-17T09:07:34Z",
+      "side": 1,
+      "message": "I\u0027m going on a trip with my family. Can I kindly ask you to handle it by yourself if you have time? Thanks.",
+      "parentUuid": "54d74d45_814d7d83",
+      "revId": "e9106a411b72556320b9fe65573da887fec761bb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
