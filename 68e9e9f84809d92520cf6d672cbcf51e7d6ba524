@@ -16,6 +16,24 @@
       "message": "This doesn\u0027t sound like a proper user facing string, I don\u0027t think there\u0027s a \"destroy\" button anywhere else in android. Also, there is no context provided so it makes it hard to translate",
       "revId": "68e9e9f84809d92520cf6d672cbcf51e7d6ba524",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41c84db1_6b4c091d",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-17T07:57:43Z",
+      "side": 1,
+      "message": "So, you are saying that this doesn\u0027t require translation? OK, BTW, I have to provide a name for the action.\nI can remove it here and type it directly into the service.",
+      "parentUuid": "9488f987_45c9618b",
+      "revId": "68e9e9f84809d92520cf6d672cbcf51e7d6ba524",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
