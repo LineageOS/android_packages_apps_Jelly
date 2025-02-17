@@ -51,6 +51,24 @@
       "parentUuid": "9488f987_45c9618b",
       "revId": "68e9e9f84809d92520cf6d672cbcf51e7d6ba524",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6f24e04_84f84c60",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-17T08:02:01Z",
+      "side": 1,
+      "message": "Nah, leave the string alone, it\u0027s probably better to use \"Stop\" as that\u0027s the action in the notification, and it\u0027s more use friendly",
+      "parentUuid": "41c84db1_6b4c091d",
+      "revId": "68e9e9f84809d92520cf6d672cbcf51e7d6ba524",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
