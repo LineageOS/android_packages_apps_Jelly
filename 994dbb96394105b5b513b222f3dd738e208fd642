@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54ddfa87_fe15b989",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-02-17T09:12:30Z",
+      "side": 1,
+      "message": "@mkbestas@lineageos.org better?",
+      "revId": "994dbb96394105b5b513b222f3dd738e208fd642",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
