@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "177f7510_38acf5d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-02-17T08:01:04Z",
+      "side": 1,
+      "message": "I just noticed there is a translation for `media_session_destroy_action`\nShould I remove it ?",
+      "revId": "68e9e9f84809d92520cf6d672cbcf51e7d6ba524",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9488f987_45c9618b",
