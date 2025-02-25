@@ -5,20 +5,16 @@
 
 package org.lineageos.jelly.js
 
-import android.graphics.BitmapFactory
 import android.webkit.JavascriptInterface
 import androidx.annotation.Keep
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.lineageos.jelly.models.PwaManifest
+import org.lineageos.jelly.utils.HttpUtils
 import org.lineageos.jelly.webview.WebViewExtActivity
-import java.net.HttpURLConnection
 import java.net.URI
-import java.net.URL
-import kotlin.reflect.cast
 
 @Keep
 class JsManifest(
@@ -50,26 +46,12 @@ class JsManifest(
     private fun resolveIcon(baseUrl: String, iconUrl: String, callback: () -> Unit) {
         val url = URI(baseUrl).resolve(iconUrl).toString()
         scope.launch {
-            val bitmap = getIconBitmap(url)
-            withContext(Dispatchers.Main) {
-                if (bitmap != null) {
-                    activity.onFaviconLoaded(bitmap)
-                }
+            HttpUtils.bitmap(url) {
+                if (it != null) activity.onFaviconLoaded(it)
                 callback()
             }
         }
     }
-
-    private fun getIconBitmap(url: String) = runCatching {
-        val connection = HttpURLConnection::class.cast(
-            URL(url).openConnection()
-        )
-        connection.connect()
-        if (connection.responseCode != HttpURLConnection.HTTP_OK) return null
-        connection.inputStream.buffered().use {
-            BitmapFactory.decodeStream(it)
-        }
-    }.getOrNull()
 
     companion object {
         const val INTERFACE = "JsManifest"

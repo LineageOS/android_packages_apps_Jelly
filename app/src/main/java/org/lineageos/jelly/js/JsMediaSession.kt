@@ -6,7 +6,6 @@
 package org.lineageos.jelly.js
 
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.webkit.JavascriptInterface
 import androidx.annotation.Keep
 import kotlinx.coroutines.CoroutineScope
@@ -14,12 +13,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.lineageos.jelly.models.MediaSessionMetadata
+import org.lineageos.jelly.utils.HttpUtils
 import org.lineageos.jelly.webview.WebViewExt
-import java.net.HttpURLConnection
-import java.net.URL
-import kotlin.reflect.cast
 
 @Keep
 class JsMediaSession(private val webView: WebViewExt) {
@@ -156,19 +152,7 @@ class JsMediaSession(private val webView: WebViewExt) {
             return
         }
         artworkJob = scope.launch {
-            val bitmap = runCatching {
-                val connection = HttpURLConnection::class.cast(
-                    URL(artwork).openConnection()
-                )
-                connection.connect()
-                if (connection.responseCode != HttpURLConnection.HTTP_OK) null
-                else connection.inputStream.buffered().use {
-                    BitmapFactory.decodeStream(it)
-                }
-            }.getOrNull()
-            withContext(Dispatchers.Main) {
-                callback(bitmap)
-            }
+            HttpUtils.bitmap(artwork) { callback(it) }
         }
     }
 
