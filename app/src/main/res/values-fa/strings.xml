@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">مرورگر</string>
+    <string name="menu_new_tab">برگه جدید</string>
+    <string name="menu_incognito">برگه ناشناس</string>
+    <string name="menu_reload">ﻧﻮﺳﺎﺯﯼ</string>
+    <string name="menu_fav_add">افزودن به محبوب‌ها</string>
+    <string name="menu_share">هم‌رسانی</string>
+    <string name="menu_favorites">محبوب‌ها</string>
+    <string name="menu_history">تاریخچه</string>
+    <string name="menu_shortcut">افزودن میان‌بر</string>
+    <string name="menu_settings">تنظیمات</string>
+    <string name="menu_download">بارگیری</string>
+    <string name="menu_in_new_tab">باز کردن در برگه جدید</string>
+    <string name="menu_desktop_mode">رفتن به پایگاه میزکار</string>
+    <string name="menu_mobile_mode">رفتن به پایگاه همراه</string>
+    <string name="menu_search">یافتن در صفحه</string>
+    <string name="menu_print">چاپ</string>
+    <string name="share_title">فرستادن به</string>
+    <string name="dismiss">دور انداختن</string>
+    <string name="download_title">بارگیری پرونده</string>
+    <string name="download_message">می‌خواهید %1$s را بارگیری کنید؟</string>
+    <string name="download_positive">بارگیری</string>
+    <string name="permission_error_title">خطای دسترسی</string>
+    <string name="permission_error_storage">مرورگر برای بارگیری پرونده نیاز به دسترسی ذخیره دارد. لطفاً برای ذخیرهٔ پرونده‌ها از وب، اجازه بدهید</string>
+    <string name="permission_error_ask_again">دوباره بپرس</string>
+    <string name="permission_error_forever">اجازه لغو شده است. لطفاً در تنظیمات اجازه‌اش را بدهید</string>
+    <string name="settings_title">تنظیمات</string>
+    <string name="pref_search_engine">موتور جستجو</string>
+    <string name="pref_start_page">صفحهٔ خانه</string>
+    <string name="pref_start_page_dialog_title">گزینش صفحهٔ خانه</string>
+    <string name="pref_start_page_dialog_message">نوشتن نشانی صفحهٔ خانه</string>
+    <string name="pref_start_page_dialog_reset">بازنشانی</string>
+    <string name="pref_privacy_security">محرمانگی &amp; امنیت</string>
+    <string name="pref_looklock_title">لوک‌لاک</string>
+    <string name="pref_looklock_summary">جلوگیری از خواندن محتوای مرورگر توسط دیگر برنامه‌ها</string>
+    <string name="pref_js_title">جاوااسکریپت</string>
+    <string name="pref_js_summary">فعَال کردن جاوااسکریپت</string>
+    <string name="pref_location_title">موقعیت</string>
+    <string name="pref_location_summary">اجازه به پایگاه‌های وب برای درخواست دسترسی به موقعیت شما</string>
+    <string name="pref_cookie_title">کوکی‌ها</string>
+    <string name="pref_cookie_summary">اجازه به پایگاه‌های وب برای ذخیره و بار کردن کوکی‌ها</string>
+    <string name="pref_screenshot_snap_title">هم‌رسانی پیشرفته</string>
+    <string name="pref_screenshot_snap_summary">هم‌رسانی پیش‌نمایش صفحهٔ وب هم‌رسانی شده</string>
+    <string name="pref_cookie_clear">پاکسازی کوکی‌ها</string>
+    <string name="pref_cookie_clear_done">تمام کوکی‌ها پاک‌سازی شدند</string>
+    <string name="pref_do_not_track_title">ردیابی نکن</string>
+    <string name="pref_do_not_track_summary">فرستادن درخواست ردیابی نکن به پایگاه‌های وبی که می‌بینید</string>
+    <string name="pref_suggestions_provider">فراهم‌کنندهٔ پیشنهاد</string>
+    <string name="pref_reach_mode_title">حالت رسیدن</string>
+    <string name="pref_reach_mode_summary">جابجایی عناصر رابط کاربری برای استفاده راحت تر با یک دست</string>
+    <string name="history_title">تاریخچه</string>
+    <string name="history_empty">هیچ چیز در این‌جا نیست. برای دیدن تاریخچه‌تان در این‌جا، اینترنت را مرورکنید</string>
+    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+    <string name="history_delete_title">پاکسازی تاریخچه</string>
+    <string name="history_delete_message">در حال حذف تمام تاریخچه‌اید. این عمل قابل بازگشت نیست. می‌خواهید ادامه دهید؟</string>
+    <string name="history_delete_positive">پاکسازی</string>
+    <string name="history_deleting_message">پاک کردن تاریخچه\u2026</string>
+    <string name="history_snackbar_item_deleted">حذف رخداد</string>
+    <string name="history_snackbar_item_deleted_message">برگردان</string>
+    <string name="favorite_title">محبوب‌ها</string>
+    <string name="favorite_added">به محبوب‌ها افزوده شد</string>
+    <string name="favorite_empty">هیچ چیز در این‌جا نیست. برای دیدن پیوندی محبوب در این‌جا، اضافه کنید</string>
+    <string name="favorite_edit_dialog_title">ویرایش محبوب</string>
+    <string name="favorite_edit_title">عنوان</string>
+    <string name="favorite_edit_url">نشانی</string>
+    <string name="favorite_edit_positive">ویرایش</string>
+    <string name="favorite_edit_delete">حذف</string>
+    <string name="favorite_edit_error">درج یک نشانی معتبر</string>
+    <string name="error_no_activity_found">هیچ برنامه‌ای این پیوند را مدیریت نمی‌کند</string>
+    <string name="auth_dialog_title">نیاز به تایید هویت</string>
+    <string name="auth_dialog_username">نام کاربری:</string>
+    <string name="auth_dialog_password">گذرواژه:</string>
+    <string name="auth_dialog_detail">%1$s نیاز به یک نام کاربری و گذرواژه دارد.</string>
+    <string name="auth_dialog_login">ورود</string>
+    <string name="shortcut_new_incognito_tab">برگه ناشناس جدید</string>
+    <string name="suggestions_provider_none">هیچ</string>
+    <string name="search_bar_hint">جست‌وجو</string>
+    <string name="ssl_cert_dialog_title">جزئیات گواهی SSL</string>
+    <string name="ssl_cert_dialog_domain">دامنه</string>
+    <string name="ssl_cert_dialog_issued_to">صادر شده به</string>
+    <string name="ssl_cert_dialog_issued_by">صادرشده توسط</string>
+    <string name="ssl_cert_dialog_validity">مدت اعتبار</string>
+    <string name="ssl_cert_dialog_common_name">نام اصلی (ن ا)</string>
+    <string name="ssl_cert_dialog_organization">سازمان (س)</string>
+    <string name="ssl_cert_dialog_organizational_unit">واحد سازمانی (و س)</string>
+    <string name="ssl_cert_dialog_issued_on">صادر شده در</string>
+    <string name="ssl_cert_dialog_expires_on">انقضا در</string>
+    <string name="ssl_cert_dialog_dismiss">رد شدن</string>
+</resources>
