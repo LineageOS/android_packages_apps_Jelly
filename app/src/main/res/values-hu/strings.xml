@@ -22,6 +22,7 @@
     <string name="menu_history">Előzmények</string>
     <string name="menu_downloads">Letöltések</string>
     <string name="menu_shortcut">Parancsikon létrehozása</string>
+    <string name="menu_background_shortcuts">Háttérbéli parancsikonok</string>
     <string name="menu_settings">Beállítások</string>
     <string name="menu_download">Letöltés</string>
     <string name="menu_in_new_tab">Megnyitás új lapon</string>
@@ -33,6 +34,13 @@
     <string name="download_title">Fájl letöltése</string>
     <string name="download_message">Szeretné letölteni: %1$s?</string>
     <string name="download_positive">Letöltés</string>
+    <string name="background_shortcuts_title">Háttérbéli parancsikonok</string>
+    <string name="background_shortcuts_save_action">Mentés</string>
+    <string name="background_shortcuts_notification_channel">A \'Háttérbéli parancsikonok\' kezelése</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d példány fut</item>
+        <item quantity="other">%1$d példány fut</item>
+    </plurals>
     <string name="settings_title">Beállítások</string>
     <string name="pref_search_engine">Keresőmotor</string>
     <string name="pref_start_page">Kezdőoldal</string>
@@ -117,4 +125,5 @@
     <string name="protected_media_dialog_message">Engedélyezi a védett médiafájlt?</string>
     <string name="protected_media_dialog_grant">Engedélyezés</string>
     <string name="protected_media_dialog_deny">Tiltás</string>
+    <string name="media_session_destroy_action">Leállítás</string>
 </resources>

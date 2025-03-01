@@ -33,6 +33,7 @@
     <string name="download_title">파일 다운로드</string>
     <string name="download_message">%1$s 파일을 다운로드하시겠습니까?</string>
     <string name="download_positive">다운로드</string>
+    <string name="background_shortcuts_save_action">저장</string>
     <string name="settings_title">설정</string>
     <string name="pref_search_engine">검색 엔진</string>
     <string name="pref_start_page">홈페이지</string>

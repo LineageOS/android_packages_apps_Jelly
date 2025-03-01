@@ -22,6 +22,7 @@
     <string name="menu_history">Histórico</string>
     <string name="menu_downloads">Transferências</string>
     <string name="menu_shortcut">Adicionar atalho</string>
+    <string name="menu_background_shortcuts">Atalhos de fundo</string>
     <string name="menu_settings">Definições</string>
     <string name="menu_download">Transferir</string>
     <string name="menu_in_new_tab">Abrir num novo separador</string>
@@ -33,6 +34,13 @@
     <string name="download_title">Transferir ficheiro</string>
     <string name="download_message">Deseja transferir %1$s?</string>
     <string name="download_positive">Transferir</string>
+    <string name="background_shortcuts_title">Atalhos de fundo</string>
+    <string name="background_shortcuts_save_action">Guardar</string>
+    <string name="background_shortcuts_notification_channel">Gerir atalhos de fundo</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instância em execução</item>
+        <item quantity="other">%1$d instâncias em execução</item>
+    </plurals>
     <string name="settings_title">Definições</string>
     <string name="pref_search_engine">Motor de pesquisa</string>
     <string name="pref_start_page">Página Inicial</string>
@@ -117,4 +125,5 @@
     <string name="protected_media_dialog_message">Permitir multimédia protegida?</string>
     <string name="protected_media_dialog_grant">Permitir</string>
     <string name="protected_media_dialog_deny">Negar</string>
+    <string name="media_session_destroy_action">Parar</string>
 </resources>

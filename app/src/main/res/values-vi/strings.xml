@@ -22,6 +22,7 @@
     <string name="menu_history">Lịch sử</string>
     <string name="menu_downloads">Tải xuống</string>
     <string name="menu_shortcut">Thêm lối tắt</string>
+    <string name="menu_background_shortcuts">Phím tắt nền</string>
     <string name="menu_settings">Cài đặt</string>
     <string name="menu_download">Tải về</string>
     <string name="menu_in_new_tab">Mở trong tab mới</string>
@@ -33,6 +34,12 @@
     <string name="download_title">Tải về tập tin</string>
     <string name="download_message">Bạn có muốn tải về %1$s?</string>
     <string name="download_positive">Tải về</string>
+    <string name="background_shortcuts_title">Phím tắt nền</string>
+    <string name="background_shortcuts_save_action">Lưu</string>
+    <string name="background_shortcuts_notification_channel">Quản lý các phím tắt nền</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="other">%1$d biến thể đang chạy</item>
+    </plurals>
     <string name="settings_title">Cài đặt</string>
     <string name="pref_search_engine">Công cụ tìm kiếm</string>
     <string name="pref_start_page">Trang chủ</string>
@@ -117,4 +124,5 @@
     <string name="protected_media_dialog_message">Cho phép phương tiện được bảo vệ?</string>
     <string name="protected_media_dialog_grant">Cấp phép</string>
     <string name="protected_media_dialog_deny">Từ chối</string>
+    <string name="media_session_destroy_action">Dừng lại</string>
 </resources>

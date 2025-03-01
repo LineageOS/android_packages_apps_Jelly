@@ -37,8 +37,10 @@
     <string name="background_shortcuts_title">Dreceres de fons</string>
     <string name="background_shortcuts_save_action">Desa</string>
     <string name="background_shortcuts_notification_channel">Gestiona les dreceres de fons</string>
-    <string name="background_shortcuts_notification_content_single">la instància s\'està executant</string>
-    <string name="background_shortcuts_notification_content_multiple">les instàncies s\'estan executant</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instància s\'està executant</item>
+        <item quantity="other">S\'estan executant %1$d instàncies</item>
+    </plurals>
     <string name="settings_title">Configuració</string>
     <string name="pref_search_engine">Motor de cerca</string>
     <string name="pref_start_page">Pàgina d\'inici</string>
@@ -123,5 +125,5 @@
     <string name="protected_media_dialog_message">Voleu permetre els mitjans protegits?</string>
     <string name="protected_media_dialog_grant">Permet</string>
     <string name="protected_media_dialog_deny">Denega</string>
-    <string name="media_session_destroy_action">Destrueix</string>
+    <string name="media_session_destroy_action">Atura</string>
 </resources>

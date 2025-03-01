@@ -15,13 +15,14 @@
     <string name="menu_go_forward">Dul ar aghaidh</string>
     <string name="menu_refresh">Athnuaigh leathanach</string>
     <string name="menu_new_tab">Cluaisín nua</string>
-    <string name="menu_incognito">Cluaisín incognito</string>
+    <string name="menu_incognito">Cluaisín anaithnid</string>
     <string name="menu_fav_add">Cuir le ceanáin</string>
     <string name="menu_share">Comhroinn</string>
     <string name="menu_favorites">Ceanáin</string>
     <string name="menu_history">Stair</string>
     <string name="menu_downloads">Íoslódálacha</string>
     <string name="menu_shortcut">Cuir aicearra leis</string>
+    <string name="menu_background_shortcuts">Aicearraí cúlra</string>
     <string name="menu_settings">Socruithe</string>
     <string name="menu_download">Íoslódáil</string>
     <string name="menu_in_new_tab">Oscail i gcluaisín nua</string>
@@ -33,6 +34,16 @@
     <string name="download_title">Íoslódáil an comhad</string>
     <string name="download_message">An bhfuil fonn ort %1$s a íoslódáil?</string>
     <string name="download_positive">Íoslódáil</string>
+    <string name="background_shortcuts_title">Aicearraí cúlra</string>
+    <string name="background_shortcuts_save_action">Sábháil</string>
+    <string name="background_shortcuts_notification_channel">Bainistigh aicearraí cúlra</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">Tá %1$d ásc ag rith</item>
+        <item quantity="two">Tá %1$d áisc ag rith</item>
+        <item quantity="few">Tá %1$d áisc ag rith</item>
+        <item quantity="many">Tá %1$d áisc ag rith</item>
+        <item quantity="other">Tá %1$d áisc ag rith</item>
+    </plurals>
     <string name="settings_title">Socruithe</string>
     <string name="pref_search_engine">Inneall cuardaigh</string>
     <string name="pref_start_page">Leathanach baile</string>
@@ -117,4 +128,5 @@
     <string name="protected_media_dialog_message">Ceadaigh meáin chosanta?</string>
     <string name="protected_media_dialog_grant">Deontas</string>
     <string name="protected_media_dialog_deny">Diúltú</string>
+    <string name="media_session_destroy_action">Stad</string>
 </resources>

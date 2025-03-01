@@ -22,7 +22,7 @@
     <string name="menu_history">Istoric</string>
     <string name="menu_downloads">Descărcări</string>
     <string name="menu_shortcut">Adăugare comandă rapidă</string>
-    <string name="menu_background_shortcuts">Background Shortcuts</string>
+    <string name="menu_background_shortcuts">Comenzi rapide de fundal</string>
     <string name="menu_settings">Setări</string>
     <string name="menu_download">Descărcați</string>
     <string name="menu_in_new_tab">Deschideți în filă nouă</string>
@@ -34,11 +34,14 @@
     <string name="download_title">Descărcați fișierul</string>
     <string name="download_message">Doriţi să descărcați %1$s?</string>
     <string name="download_positive">Descărcați</string>
-    <string name="background_shortcuts_title">Background Shortcuts</string>
+    <string name="background_shortcuts_title">Comenzi rapide de fundal</string>
     <string name="background_shortcuts_save_action">Salvați</string>
-    <string name="background_shortcuts_notification_channel">Gestionează Background Shortcuts-urile</string>
-    <string name="background_shortcuts_notification_content_single">instanța rulează</string>
-    <string name="background_shortcuts_notification_content_multiple">instanțele rulează</string>
+    <string name="background_shortcuts_notification_channel">Gestionează comenzile rapide de fundal</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instanță rulează</item>
+        <item quantity="few">%1$d instanțe rulează</item>
+        <item quantity="other">%1$d instanțe rulează</item>
+    </plurals>
     <string name="settings_title">Setări</string>
     <string name="pref_search_engine">Motor de căutare</string>
     <string name="pref_start_page">Pagina principală</string>
@@ -123,5 +126,5 @@
     <string name="protected_media_dialog_message">Permiteți media protejat?</string>
     <string name="protected_media_dialog_grant">Permite</string>
     <string name="protected_media_dialog_deny">Refuză</string>
-    <string name="media_session_destroy_action">Distruge</string>
+    <string name="media_session_destroy_action">Stop</string>
 </resources>

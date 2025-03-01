@@ -22,6 +22,7 @@
     <string name="menu_history">Zgodovina</string>
     <string name="menu_downloads">Prenosi</string>
     <string name="menu_shortcut">Dodaj bližnjico</string>
+    <string name="menu_background_shortcuts">Bližnjice v ozadju</string>
     <string name="menu_settings">Nastavitve</string>
     <string name="menu_download">Prenesi</string>
     <string name="menu_in_new_tab">Odpri v novem zavihku</string>
@@ -33,6 +34,15 @@
     <string name="download_title">Prenesi datoteko</string>
     <string name="download_message">Ali želite prenesti %1$s?</string>
     <string name="download_positive">Prenesi</string>
+    <string name="background_shortcuts_title">Bližnjice v ozadju</string>
+    <string name="background_shortcuts_save_action">Shrani</string>
+    <string name="background_shortcuts_notification_channel">Upravljaj bližnjice v ozadju</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instanca se izvaja</item>
+        <item quantity="two">%1$d instanci se izvajata</item>
+        <item quantity="few">%1$d instance se izvajajo</item>
+        <item quantity="other">%1$d instanc se izvaja</item>
+    </plurals>
     <string name="settings_title">Nastavitve</string>
     <string name="pref_search_engine">Iskalnik</string>
     <string name="pref_start_page">Domača stran</string>
@@ -117,4 +127,5 @@
     <string name="protected_media_dialog_message">Dovoli zaščiteno predstavnost?</string>
     <string name="protected_media_dialog_grant">Odobri</string>
     <string name="protected_media_dialog_deny">Zavrni</string>
+    <string name="media_session_destroy_action">Ustavi</string>
 </resources>

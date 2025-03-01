@@ -22,6 +22,7 @@
     <string name="menu_history">历史记录</string>
     <string name="menu_downloads">下载</string>
     <string name="menu_shortcut">添加快捷方式</string>
+    <string name="menu_background_shortcuts">后台快捷方式</string>
     <string name="menu_settings">设置</string>
     <string name="menu_download">下载</string>
     <string name="menu_in_new_tab">在新标签页中打开</string>
@@ -33,6 +34,12 @@
     <string name="download_title">下载文件</string>
     <string name="download_message">您想要下载 %1$s 吗？</string>
     <string name="download_positive">下载</string>
+    <string name="background_shortcuts_title">后台快捷方式</string>
+    <string name="background_shortcuts_save_action">保存</string>
+    <string name="background_shortcuts_notification_channel">管理后台快捷方式</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="other">%1$d 个实例正在运行</item>
+    </plurals>
     <string name="settings_title">设置</string>
     <string name="pref_search_engine">搜索引擎</string>
     <string name="pref_start_page">主页</string>
@@ -117,4 +124,5 @@
     <string name="protected_media_dialog_message">是否允许受保护的媒体？</string>
     <string name="protected_media_dialog_grant">授权</string>
     <string name="protected_media_dialog_deny">拒绝</string>
+    <string name="media_session_destroy_action">停止</string>
 </resources>

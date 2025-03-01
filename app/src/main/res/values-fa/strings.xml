@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">پاک کردن جستجو</string>
     <string name="url_bar_search_previous">قبلی</string>
     <string name="url_bar_search_next">بعدی</string>
+    <string name="url_bar_auto_complete_hint">جستجو یا وارد کردن نشانی</string>
     <string name="menu_go_back">برگرد</string>
     <string name="menu_go_forward">برو به جلو</string>
     <string name="menu_refresh">تازه‌سازی صفحه</string>
@@ -21,6 +22,7 @@
     <string name="menu_history">تاریخچه</string>
     <string name="menu_downloads">بارگیری‌ها</string>
     <string name="menu_shortcut">افزودن میان‌بر</string>
+    <string name="menu_background_shortcuts">میانبرهای پس زمینه</string>
     <string name="menu_settings">تنظیمات</string>
     <string name="menu_download">بارگیری</string>
     <string name="menu_in_new_tab">باز کردن در برگه جدید</string>
@@ -32,15 +34,26 @@
     <string name="download_title">بارگیری پرونده</string>
     <string name="download_message">می‌خواهید %1$s را بارگیری کنید؟</string>
     <string name="download_positive">بارگیری</string>
+    <string name="background_shortcuts_title">میانبرهای پس زمینه</string>
+    <string name="background_shortcuts_save_action">ذخیره‌</string>
+    <string name="background_shortcuts_notification_channel">مدیریت میانبرهای پس زمینه</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d نمونه در حال اجرا است</item>
+        <item quantity="other">%1$d نمونه در حال اجرا است</item>
+    </plurals>
     <string name="settings_title">تنظیمات</string>
     <string name="pref_search_engine">موتور جستجو</string>
     <string name="pref_start_page">صفحهٔ خانه</string>
+    <string name="pref_start_page_autoload_enabled">فعال</string>
+    <string name="pref_start_page_autoload_disabled">غیرفعال</string>
     <string name="pref_start_page_dialog_title">گزینش صفحهٔ خانه</string>
     <string name="pref_start_page_dialog_message">نوشتن نشانی صفحهٔ خانه</string>
     <string name="pref_start_page_dialog_reset">بازنشانی</string>
     <string name="pref_privacy_security">محرمانگی &amp; امنیت</string>
     <string name="pref_looklock_title">لوک‌لاک</string>
     <string name="pref_looklock_summary">جلوگیری از خواندن محتوای مرورگر توسط دیگر برنامه‌ها</string>
+    <string name="pref_dynamic_popup_title">پنجره های پویا</string>
+    <string name="pref_dynamic_popup_summary">به جاوا اسکریپت اجازه دهید تا پنجره های بازشو بدون تعامل کاربر باز شود</string>
     <string name="pref_js_title">جاوااسکریپت</string>
     <string name="pref_js_summary">فعَال کردن جاوااسکریپت</string>
     <string name="pref_location_title">موقعیت</string>
@@ -112,4 +125,5 @@
     <string name="protected_media_dialog_message">به رسانه محافظت شده اجازه داده شود؟</string>
     <string name="protected_media_dialog_grant">اجازه دادن</string>
     <string name="protected_media_dialog_deny">رد کردن</string>
+    <string name="media_session_destroy_action">توقف</string>
 </resources>
