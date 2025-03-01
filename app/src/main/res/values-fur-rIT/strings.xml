@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">Nete ricercje</string>
     <string name="url_bar_search_previous">Precedent</string>
     <string name="url_bar_search_next">Sucessîf</string>
+    <string name="url_bar_auto_complete_hint">Cîr o scrîf un URL</string>
     <string name="menu_go_back">Tone indaûr</string>
     <string name="menu_go_forward">Va indevant</string>
     <string name="menu_refresh">Inzorne pagjine</string>
@@ -32,15 +33,20 @@
     <string name="download_title">Discjame il file</string>
     <string name="download_message">Desideristu discjariâ %1$s?</string>
     <string name="download_positive">Discjame</string>
+    <string name="background_shortcuts_save_action">Salve</string>
     <string name="settings_title">Impostazions</string>
     <string name="pref_search_engine">Motôr di ricercje</string>
     <string name="pref_start_page">Pagjine iniziâl</string>
+    <string name="pref_start_page_autoload_enabled">Ativât</string>
+    <string name="pref_start_page_autoload_disabled">Disativât</string>
     <string name="pref_start_page_dialog_title">Selezione la pagjine iniziâl</string>
     <string name="pref_start_page_dialog_message">Scrîf l\'URL de pagjine iniziâl</string>
     <string name="pref_start_page_dialog_reset">Ristabilìs</string>
     <string name="pref_privacy_security">Riservatece e sigurece</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Impedìs aes altris aplicazions di lei i contignûts dal navigadôr</string>
+    <string name="pref_dynamic_popup_title">Barcons a comparse dinamics</string>
+    <string name="pref_dynamic_popup_summary">Permet a JavaScript di vierzi barcons a comparse cence l\'intervent dal utent</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Ative JavaScript</string>
     <string name="pref_location_title">Localizazion</string>
@@ -109,4 +115,7 @@
     <string name="location_dialog_allow">Permet</string>
     <string name="location_dialog_block">Bloche</string>
     <string name="location_dialog_cancel">Dinee par cumò</string>
+    <string name="protected_media_dialog_message">Permeti contignûts multimediâi protets?</string>
+    <string name="protected_media_dialog_grant">Permet</string>
+    <string name="protected_media_dialog_deny">Dinee</string>
 </resources>

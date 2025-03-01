@@ -22,6 +22,7 @@
     <string name="menu_history">Cronologia</string>
     <string name="menu_downloads">Download</string>
     <string name="menu_shortcut">Aggiungi collegamento</string>
+    <string name="menu_background_shortcuts">Scorciatoie sullo sfondo</string>
     <string name="menu_settings">Impostazioni</string>
     <string name="menu_download">Scarica</string>
     <string name="menu_in_new_tab">Apri in una nuova scheda</string>
@@ -33,6 +34,13 @@
     <string name="download_title">Scarica file</string>
     <string name="download_message">Vuoi scaricare %1$s?</string>
     <string name="download_positive">Scarica</string>
+    <string name="background_shortcuts_title">Scorciatoie sullo sfondo</string>
+    <string name="background_shortcuts_save_action">Salva</string>
+    <string name="background_shortcuts_notification_channel">Gestisci scorciatoie sullo sfondo</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">istanza è in esecuzione</item>
+        <item quantity="other">istanze sono in esecuzione</item>
+    </plurals>
     <string name="settings_title">Impostazioni</string>
     <string name="pref_search_engine">Motore di ricerca</string>
     <string name="pref_start_page">Pagina iniziale</string>

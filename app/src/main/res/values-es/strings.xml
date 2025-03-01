@@ -22,6 +22,7 @@
     <string name="menu_history">Historial</string>
     <string name="menu_downloads">Descargas</string>
     <string name="menu_shortcut">Crear un acceso directo</string>
+    <string name="menu_background_shortcuts">Accesos directos en segundo plano</string>
     <string name="menu_settings">Ajustes</string>
     <string name="menu_download">Descargar</string>
     <string name="menu_in_new_tab">Abrir en una nueva pestaña</string>
@@ -33,6 +34,13 @@
     <string name="download_title">Descargar archivo</string>
     <string name="download_message">¿Quieres descargar %1$s?</string>
     <string name="download_positive">Descargar</string>
+    <string name="background_shortcuts_title">Accesos directos en segundo plano</string>
+    <string name="background_shortcuts_save_action">Guardar</string>
+    <string name="background_shortcuts_notification_channel">Administrar accesos directos en segundo plano</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instancia en ejecución</item>
+        <item quantity="other">%1$d instancias en ejecución</item>
+    </plurals>
     <string name="settings_title">Ajustes</string>
     <string name="pref_search_engine">Motor de búsqueda</string>
     <string name="pref_start_page">Página de inicio</string>
@@ -117,4 +125,5 @@
     <string name="protected_media_dialog_message">¿Permitir medios protegidos?</string>
     <string name="protected_media_dialog_grant">Permitir</string>
     <string name="protected_media_dialog_deny">Denegar</string>
+    <string name="media_session_destroy_action">Detener</string>
 </resources>

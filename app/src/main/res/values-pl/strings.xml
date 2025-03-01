@@ -22,6 +22,7 @@
     <string name="menu_history">Historia</string>
     <string name="menu_downloads">Pobrane</string>
     <string name="menu_shortcut">Dodaj skrót</string>
+    <string name="menu_background_shortcuts">Skróty tła</string>
     <string name="menu_settings">Ustawienia</string>
     <string name="menu_download">Pobierz</string>
     <string name="menu_in_new_tab">Otwórz w nowej karcie</string>
@@ -33,6 +34,15 @@
     <string name="download_title">Pobierz plik</string>
     <string name="download_message">Czy chcesz pobrać %1$s?</string>
     <string name="download_positive">Pobierz</string>
+    <string name="background_shortcuts_title">Skróty tła</string>
+    <string name="background_shortcuts_save_action">Zapisz</string>
+    <string name="background_shortcuts_notification_channel">Zarządzaj skrótami tła</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d wystąpienie jest uruchomione</item>
+        <item quantity="few">%1$d wystąpienia są uruchomione</item>
+        <item quantity="many">%1$d wystąpień jest uruchomionych</item>
+        <item quantity="other">%1$d wystąpień jest uruchomionych</item>
+    </plurals>
     <string name="settings_title">Ustawienia</string>
     <string name="pref_search_engine">Wyszukiwarka</string>
     <string name="pref_start_page">Strona główna</string>
@@ -117,4 +127,5 @@
     <string name="protected_media_dialog_message">Zezwalać na chronione multimedia?</string>
     <string name="protected_media_dialog_grant">Zezwól</string>
     <string name="protected_media_dialog_deny">Odmów</string>
+    <string name="media_session_destroy_action">Zatrzymaj</string>
 </resources>
