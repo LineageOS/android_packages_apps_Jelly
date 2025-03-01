@@ -22,6 +22,7 @@
     <string name="menu_history">Tarixçə</string>
     <string name="menu_downloads">Endirilənlər</string>
     <string name="menu_shortcut">Qısayol əlavə et</string>
+    <string name="menu_background_shortcuts">Arxaplan qısayolları</string>
     <string name="menu_settings">Ayarlar</string>
     <string name="menu_download">Endir</string>
     <string name="menu_in_new_tab">Yeni vərəqdə aç</string>
@@ -33,6 +34,13 @@
     <string name="download_title">Faylı endir</string>
     <string name="download_message">%1$s faylını endirmək istəyirsiniz?</string>
     <string name="download_positive">Endir</string>
+    <string name="background_shortcuts_title">Arxaplan qısayolları</string>
+    <string name="background_shortcuts_save_action">Saxla</string>
+    <string name="background_shortcuts_notification_channel">Arxaplan qısayollarını idarə et</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d nümunə çalışır</item>
+        <item quantity="other">%1$d nümunə çalışır</item>
+    </plurals>
     <string name="settings_title">Ayarlar</string>
     <string name="pref_search_engine">Axtarış motoru</string>
     <string name="pref_start_page">Əsas səhifə</string>
@@ -117,4 +125,5 @@
     <string name="protected_media_dialog_message">Qorunan mediaya icazə verilsin?</string>
     <string name="protected_media_dialog_grant">İcazə ver</string>
     <string name="protected_media_dialog_deny">Rədd et</string>
+    <string name="media_session_destroy_action">Dayandır</string>
 </resources>

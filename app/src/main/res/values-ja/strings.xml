@@ -22,6 +22,7 @@
     <string name="menu_history">履歴</string>
     <string name="menu_downloads">ダウンロード</string>
     <string name="menu_shortcut">ショートカットを追加</string>
+    <string name="menu_background_shortcuts">バックグラウンドショートカット</string>
     <string name="menu_settings">設定</string>
     <string name="menu_download">ダウンロード</string>
     <string name="menu_in_new_tab">新しいタブで開く</string>
@@ -33,6 +34,12 @@
     <string name="download_title">ファイルのダウンロード</string>
     <string name="download_message">%1$s をダウンロードしますか？</string>
     <string name="download_positive">ダウンロード</string>
+    <string name="background_shortcuts_title">バックグラウンドショートカット</string>
+    <string name="background_shortcuts_save_action">保存</string>
+    <string name="background_shortcuts_notification_channel">バックグラウンドショートカットの管理</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="other">%1$d インスタンスを実行中</item>
+    </plurals>
     <string name="settings_title">設定</string>
     <string name="pref_search_engine">検索エンジン</string>
     <string name="pref_start_page">ホームページ</string>
@@ -117,4 +124,5 @@
     <string name="protected_media_dialog_message">保護されたメディアを許可しますか？</string>
     <string name="protected_media_dialog_grant">許可</string>
     <string name="protected_media_dialog_deny">拒否</string>
+    <string name="media_session_destroy_action">停止</string>
 </resources>
