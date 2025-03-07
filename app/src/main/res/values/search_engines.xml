@@ -28,7 +28,7 @@
         <item>https://good-search.org/search/?q={searchTerms}</item>
         <item>https://google.com/search?ie=UTF-8&amp;source=android-browser&amp;q={searchTerms}</item>
         <item>https://www.startpage.com/sp/search?q={searchTerms}</item>
-        <item>https://search.yahoo.com/p={searchTerms}</item>
+        <item>https://search.yahoo.com/search?p={searchTerms}</item>
         <item>https://yandex.com/?q={searchTerms}</item>
         <item>https://www.qwant.com/?l=en&amp;q={searchTerms}</item>
     </string-array>
