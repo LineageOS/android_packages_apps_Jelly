@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "daad22b8_d8372973",
+        "filename": "app/src/main/res/values/search_engines.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 34984
+      },
+      "writtenOn": "2025-03-07T22:09:27Z",
+      "side": 1,
+      "message": "yes, please see cf80a73c8ad2e34f8ffab3bdafeeba05cb079248",
+      "parentUuid": "738c2ab4_f5859b3c",
+      "range": {
+        "startLine": 3,
+        "startChar": 29,
+        "endLine": 3,
+        "endChar": 33
+      },
+      "revId": "8a197ddc12266b7d3212a8c918d97f908821fb3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a33d6b5a_53cd912a",
         "filename": "app/src/main/res/values/search_engines.xml",
         "patchSetId": 1
@@ -84,6 +108,30 @@
       "writtenOn": "2025-03-07T21:51:26Z",
       "side": 1,
       "message": "Acknowledged",
+      "parentUuid": "a33d6b5a_53cd912a",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 68
+      },
+      "revId": "8a197ddc12266b7d3212a8c918d97f908821fb3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa603cf2_242cf8d5",
+        "filename": "app/src/main/res/values/search_engines.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 34984
+      },
+      "writtenOn": "2025-03-07T22:09:27Z",
+      "side": 1,
+      "message": "np, i have removed it in cf80a73c8ad2e34f8ffab3bdafeeba05cb079248 , will make another isolated change with the yahoo fix after this is merged",
       "parentUuid": "a33d6b5a_53cd912a",
       "range": {
         "startLine": 31,
