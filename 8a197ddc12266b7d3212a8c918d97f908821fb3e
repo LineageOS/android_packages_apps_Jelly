@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7986d3ee_ba093397",
+        "filename": "app/src/main/res/values/search_engines.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-03-07T21:51:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "738c2ab4_f5859b3c",
+      "range": {
+        "startLine": 3,
+        "startChar": 29,
+        "endLine": 3,
+        "endChar": 33
+      },
+      "revId": "8a197ddc12266b7d3212a8c918d97f908821fb3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a33d6b5a_53cd912a",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-03-07T21:29:59Z",
       "side": 1,
       "message": "can you make this a standalone change, this is indeed broken! ty",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 68
+      },
+      "revId": "8a197ddc12266b7d3212a8c918d97f908821fb3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddd06b34_36d213e9",
+        "filename": "app/src/main/res/values/search_engines.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-03-07T21:51:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a33d6b5a_53cd912a",
       "range": {
         "startLine": 31,
         "startChar": 0,
