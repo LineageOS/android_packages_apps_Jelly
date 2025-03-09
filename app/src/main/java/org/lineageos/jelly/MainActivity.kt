@@ -373,12 +373,8 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             }
         }
 
+        appBarLayout.isVisible = !isFullscreenPwa()
         intent.extras?.let {
-            it.getString(MANIFEST_DISPLAY)?.let { display ->
-                if (display == "fullscreen" || display == "standalone") {
-                    appBarLayout.isVisible = false
-                }
-            }
             it.getString(MANIFEST_THEME_COLOR)?.let { themeColor ->
                 setStatusBarColor(themeColor)
             }
@@ -435,6 +431,10 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
         outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
     }
+
+    private fun isFullscreenPwa(): Boolean = intent.getStringExtra(MANIFEST_DISPLAY)?.let {
+        it == "fullscreen" || it == "standalone"
+    } ?: false
 
     private fun prepareWebView() {
         val backgroundShortcuts = sharedPreferencesExt.backgroundShortcuts
@@ -690,7 +690,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         val customView = customView ?: return
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setImmersiveMode(false)
-        appBarLayout.visibility = View.VISIBLE
+        appBarLayout.isVisible = !isFullscreenPwa()
         webView.visibility = View.VISIBLE
         val viewGroup = customView.parent as ViewGroup
         viewGroup.removeView(customView)
