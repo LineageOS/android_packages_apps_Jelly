@@ -8,6 +8,7 @@ package org.lineageos.jelly.utils
 object IntentUtils {
     const val EXTRA_DESKTOP_MODE = "extra_desktop_mode"
     const val EXTRA_INCOGNITO = "extra_incognito"
+    const val EXTRA_FULLSCREEN_PWA = "extra_fullscreen_pwa"
     const val EXTRA_URL = "extra_url"
     const val EXTRA_IGNORE_DATA = "extra_ignore_data"
     const val EXTRA_PAGE_URL = "extra_page_url"

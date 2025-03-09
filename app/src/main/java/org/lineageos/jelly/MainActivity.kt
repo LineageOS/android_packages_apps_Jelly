@@ -194,6 +194,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     private var urlIcon: Bitmap? = null
     private var url: String? = null
     private var incognito = false
+    private var isFullscreenPwa = false
     private var desktopMode = false
     private var customView: View? = null
     private var fullScreenCallback: CustomViewCallback? = null
@@ -227,6 +228,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             false -> intent.dataString
         }
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
+        isFullscreenPwa = arrayOf("fullscreen", "standalone").contains(
+            intent.getStringExtra(MANIFEST_DISPLAY) ?: ""
+        )
         desktopMode = false
 
         // Restore from previous instance
@@ -235,6 +239,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 url.isNotEmpty()
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
             incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
+            isFullscreenPwa = it.getBoolean(IntentUtils.EXTRA_FULLSCREEN_PWA, isFullscreenPwa)
             desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
         }
 
@@ -373,12 +378,8 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             }
         }
 
+        appBarLayout.isVisible = !isFullscreenPwa
         intent.extras?.let {
-            it.getString(MANIFEST_DISPLAY)?.let { display ->
-                if (display == "fullscreen" || display == "standalone") {
-                    appBarLayout.isVisible = false
-                }
-            }
             it.getString(MANIFEST_THEME_COLOR)?.let { themeColor ->
                 setStatusBarColor(themeColor)
             }
@@ -434,6 +435,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         outState.putString(IntentUtils.EXTRA_URL, webView.url)
         outState.putBoolean(IntentUtils.EXTRA_INCOGNITO, webView.isIncognito)
         outState.putBoolean(IntentUtils.EXTRA_DESKTOP_MODE, webView.isDesktopMode)
+
+        // Pwa fullscreen status
+        outState.putBoolean(IntentUtils.EXTRA_FULLSCREEN_PWA, isFullscreenPwa)
     }
 
     private fun prepareWebView() {
@@ -690,7 +694,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         val customView = customView ?: return
         window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         setImmersiveMode(false)
-        appBarLayout.visibility = View.VISIBLE
+        appBarLayout.isVisible = !isFullscreenPwa
         webView.visibility = View.VISIBLE
         val viewGroup = customView.parent as ViewGroup
         viewGroup.removeView(customView)
