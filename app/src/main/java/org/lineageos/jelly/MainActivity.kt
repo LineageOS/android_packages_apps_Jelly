@@ -220,7 +220,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        val intent = intent
         shortcutId = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_ID)
         shortcutName = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_NAME)
         url = when (intent.getBooleanExtra(IntentUtils.EXTRA_IGNORE_DATA, false)) {
