@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74ae7dba_7e98a732",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-03-19T16:07:43Z",
+      "side": 1,
+      "message": "```suggestion\nJelly: Always use a temporary WebView to new page URL\n\nSometimes the HitTestResult provides the image source instead\nof the correct page link.\n\nThis seems to happen especially when the link tag has target\u003d\"_blank\"\nattribute and contains an image inside of itself.\n```",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "ac25bc72c9849c1d967bfd18f0f7da6a440ba96f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54f84386_f275d68e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-03-19T16:07:43Z",
+      "side": 1,
+      "message": "I remember trying different target\u003d\"...\" use cases and they all worked, but this should be fine, sad.",
+      "revId": "ac25bc72c9849c1d967bfd18f0f7da6a440ba96f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
