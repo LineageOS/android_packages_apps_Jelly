@@ -144,24 +144,18 @@ internal class ChromeClient(
             return false
         }
 
-        val result = view.hitTestResult
-        val url = result.extra
+        val transport = WebView.WebViewTransport::class.cast(resultMsg.obj)
+        val tempWebView = WebView(view.context)
 
-        if (url == null) {
-            val transport = WebView.WebViewTransport::class.cast(resultMsg.obj)
-            val tempWebView = WebView(view.context)
-            tempWebView.webViewClient = object : WebViewClient() {
-                override fun onLoadResource(view: WebView, url: String) {
-                    tempWebView.destroy()
-                    openInNewTab(activity, url, incognito)
-                }
+        tempWebView.webViewClient = object : WebViewClient() {
+            override fun onLoadResource(view: WebView, url: String) {
+                tempWebView.destroy()
+                openInNewTab(activity, url, incognito)
             }
-            transport.webView = tempWebView
-            resultMsg.sendToTarget()
-            return true
         }
 
-        openInNewTab(activity, url, incognito)
-        return false
+        transport.webView = tempWebView
+        resultMsg.sendToTarget()
+        return true
     }
 }
