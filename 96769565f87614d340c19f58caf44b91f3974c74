@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89f478f2_d3b1d362",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-03-19T16:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61ddbab8_a6c3ea07",
+      "range": {
+        "startLine": 231,
+        "startChar": 26,
+        "endLine": 231,
+        "endChar": 61
+      },
+      "revId": "96769565f87614d340c19f58caf44b91f3974c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a05859d7_8f2b5724",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-03-19T15:59:04Z",
       "side": 1,
       "message": "maybe do\nisFullscreenPwa \u003d intent.getStringExtra(MANIFEST_DISPLAY)?.let {\n        ALLOWED_FULLSCREEN_PWA_VALUES\n    } ?: false",
+      "range": {
+        "startLine": 232,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 57
+      },
+      "revId": "96769565f87614d340c19f58caf44b91f3974c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1c72665_ff049646",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-03-19T16:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a05859d7_8f2b5724",
       "range": {
         "startLine": 232,
         "startChar": 0,
