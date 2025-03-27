@@ -66,9 +66,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.lineageos.jelly.ext.buildShareIntent
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.models.PwaManifest
+import org.lineageos.jelly.models.WebShare
 import org.lineageos.jelly.shortcut.BackgroundShortcut
 import org.lineageos.jelly.shortcut.BackgroundShortcutActivity
 import org.lineageos.jelly.ui.MenuDialog
@@ -771,6 +773,20 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             }.setNegativeButton(R.string.protected_media_dialog_deny) { _, _ ->
                 cb(false)
             }.show()
+    }
+
+    override fun onWebShare(value: WebShare) {
+        val intent = buildShareIntent(*value.files.toTypedArray())
+        intent.putExtra(Intent.EXTRA_TITLE, value.title)
+
+        buildString {
+            value.text?.let { appendLine(it) }
+            value.url?.let { appendLine(it) }
+        }.trimEnd().takeUnless { it.isEmpty() }?.let {
+            intent.putExtra(Intent.EXTRA_TEXT, it)
+        }
+
+        startActivity(Intent.createChooser(intent, getString(R.string.share_title)))
     }
 
     private fun setImmersiveMode(enable: Boolean) {
