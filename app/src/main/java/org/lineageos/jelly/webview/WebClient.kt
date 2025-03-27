@@ -33,6 +33,7 @@ import com.google.android.material.snackbar.Snackbar
 import org.lineageos.jelly.R
 import org.lineageos.jelly.js.JsManifest
 import org.lineageos.jelly.js.JsMediaSession
+import org.lineageos.jelly.js.JsShare
 import org.lineageos.jelly.js.JsSyncUrl
 import org.lineageos.jelly.ui.UrlBarLayout
 import org.lineageos.jelly.utils.AssetLoader
@@ -49,8 +50,12 @@ internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient
                 view.context.resources,
                 "MediaSessionAPI.js"
             )
-            view.evaluateJavascript(mediaSessionAPI, null)
-            view.evaluateJavascript(JsMediaSession.SCRIPT, null)
+            val scripts = listOf(
+                mediaSessionAPI,
+                JsMediaSession.SCRIPT,
+                JsShare.SCRIPT
+            ).joinToString("\n")
+            view.evaluateJavascript(scripts, null)
         }
     }
 
