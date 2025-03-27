@@ -12,6 +12,7 @@ import android.webkit.GeolocationPermissions
 import android.webkit.WebChromeClient.CustomViewCallback
 import androidx.appcompat.app.AppCompatActivity
 import org.lineageos.jelly.models.PwaManifest
+import org.lineageos.jelly.models.WebShare
 
 abstract class WebViewExtActivity : AppCompatActivity() {
     abstract fun downloadFileAsk(
@@ -37,4 +38,5 @@ abstract class WebViewExtActivity : AppCompatActivity() {
         cb: ((granted: Array<String>) -> Unit)
     )
     abstract fun webProtectedMedia(origin: String, cb: ((granted: Boolean) -> Unit))
+    abstract fun onWebShare(value: WebShare)
 }
