@@ -69,6 +69,7 @@ import kotlinx.coroutines.launch
 import org.lineageos.jelly.favorite.FavoriteActivity
 import org.lineageos.jelly.history.HistoryActivity
 import org.lineageos.jelly.models.PwaManifest
+import org.lineageos.jelly.models.WebShare
 import org.lineageos.jelly.shortcut.BackgroundShortcut
 import org.lineageos.jelly.shortcut.BackgroundShortcutActivity
 import org.lineageos.jelly.ui.MenuDialog
@@ -771,6 +772,30 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             }.setNegativeButton(R.string.protected_media_dialog_deny) { _, _ ->
                 cb(false)
             }.show()
+    }
+
+    override fun onWebShare(value: WebShare) {
+        val description = buildList {
+            if (value.text != null) add(value.text)
+            if (value.url != null) add(value.url)
+        }.joinToString("\n")
+        val shareIntent = if (value.files.isNotEmpty()) {
+            Intent(Intent.ACTION_SEND_MULTIPLE).apply {
+                type = "*/*"
+                putParcelableArrayListExtra(
+                    Intent.EXTRA_STREAM,
+                    value.files.toCollection(ArrayList())
+                )
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+        } else {
+            Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+            }
+        }
+        shareIntent.putExtra(Intent.EXTRA_TITLE, value.title)
+        shareIntent.putExtra(Intent.EXTRA_TEXT, description.ifEmpty { value.title })
+        startActivity(Intent.createChooser(shareIntent, null))
     }
 
     private fun setImmersiveMode(enable: Boolean) {
