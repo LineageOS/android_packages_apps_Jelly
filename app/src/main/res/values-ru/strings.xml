@@ -22,6 +22,7 @@
     <string name="menu_history">История</string>
     <string name="menu_downloads">Загрузки</string>
     <string name="menu_shortcut">Поместить на главный экран</string>
+    <string name="menu_background_shortcuts">Фоновые ярлыки</string>
     <string name="menu_settings">Настройки</string>
     <string name="menu_download">Скачать</string>
     <string name="menu_in_new_tab">Открыть в новой вкладке</string>
@@ -33,16 +34,28 @@
     <string name="download_title">Загрузка файла</string>
     <string name="download_message">Вы действительно хотите скачать %1$s?</string>
     <string name="download_positive">Загрузить</string>
+    <string name="background_shortcuts_title">Фоновые ярлыки</string>
     <string name="background_shortcuts_save_action">Сохранить</string>
+    <string name="background_shortcuts_notification_channel">Управление фоновыми ярлыками</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d экземпляр запущен</item>
+        <item quantity="few">%1$d экземпляра запущено</item>
+        <item quantity="many">%1$d экземпляров запущено</item>
+        <item quantity="other">%1$d экземпляров запущено</item>
+    </plurals>
     <string name="settings_title">Настройки</string>
     <string name="pref_search_engine">Поисковая система</string>
     <string name="pref_start_page">Домашняя страница</string>
+    <string name="pref_start_page_autoload_enabled">Включено</string>
+    <string name="pref_start_page_autoload_disabled">Выключено</string>
     <string name="pref_start_page_dialog_title">Выберите домашнюю страницу</string>
     <string name="pref_start_page_dialog_message">Введите адрес домашней страницы</string>
     <string name="pref_start_page_dialog_reset">Сбросить</string>
     <string name="pref_privacy_security">Конфиденциальность и безопасность</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Не допускать другие приложения к содержимому браузера</string>
+    <string name="pref_dynamic_popup_title">Динамические всплывающие окна</string>
+    <string name="pref_dynamic_popup_summary">Разрешить JavaScript открывать всплывающие окна без участия пользователя</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Включить JavaScript</string>
     <string name="pref_location_title">Доступ к геоданным</string>
@@ -111,4 +124,8 @@
     <string name="location_dialog_allow">Разрешить</string>
     <string name="location_dialog_block">Блокировать</string>
     <string name="location_dialog_cancel">Пока отказать</string>
+    <string name="protected_media_dialog_message">Разрешить защищенные медиа?</string>
+    <string name="protected_media_dialog_grant">Разрешить</string>
+    <string name="protected_media_dialog_deny">Отклонить</string>
+    <string name="media_session_destroy_action">Остановить</string>
 </resources>

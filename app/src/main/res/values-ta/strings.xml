@@ -22,6 +22,7 @@
     <string name="menu_history">வரலாறு</string>
     <string name="menu_downloads">பதிவிறக்கங்கள்</string>
     <string name="menu_shortcut">குறுக்குவழியைச் சேர்க்க</string>
+    <string name="menu_background_shortcuts">பின்னணி குறுக்குவழிகள்</string>
     <string name="menu_settings">அமைப்புகள்</string>
     <string name="menu_download">பதிவிறக்குக</string>
     <string name="menu_in_new_tab">புதிய தாவலில் திறக்க</string>
@@ -33,6 +34,13 @@
     <string name="download_title">கோப்பைப் பதிவிறக்க</string>
     <string name="download_message">%1$s என்பதைப் பதிவிறக்க விரும்புகிறீரா?</string>
     <string name="download_positive">பதிவிறக்குக</string>
+    <string name="background_shortcuts_title">பின்னணி குறுக்குவழிகள்</string>
+    <string name="background_shortcuts_save_action">சேமிக்க</string>
+    <string name="background_shortcuts_notification_channel">பின்னணி குறுக்குவழிகளை மேலாள்க</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d நிகழ்வு இயங்குகின்றது</item>
+        <item quantity="other">%1$d நிகழ்வு இயங்குகின்றன</item>
+    </plurals>
     <string name="settings_title">அமைப்புகள்</string>
     <string name="pref_search_engine">தேடற்பொறி</string>
     <string name="pref_start_page">முகப்புப் பக்கம்</string>
@@ -117,4 +125,5 @@
     <string name="protected_media_dialog_message">பாதுகாக்கப்பட்ட ஊடகத்தை அனுமதிக்கவா?</string>
     <string name="protected_media_dialog_grant">அனுமதிக்க</string>
     <string name="protected_media_dialog_deny">மறுக்க</string>
+    <string name="media_session_destroy_action">நிறுத்துக</string>
 </resources>

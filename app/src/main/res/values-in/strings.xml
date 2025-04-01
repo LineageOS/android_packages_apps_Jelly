@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">Hapus pencarian</string>
     <string name="url_bar_search_previous">Sebelumnya</string>
     <string name="url_bar_search_next">Berikutnya</string>
+    <string name="url_bar_auto_complete_hint">Cari atau ketik URL</string>
     <string name="menu_go_back">Kembali</string>
     <string name="menu_refresh">Segarkan halaman</string>
     <string name="menu_new_tab">Tab baru</string>
@@ -31,6 +32,7 @@
     <string name="download_title">Unduh berkas</string>
     <string name="download_message">Apakah Anda ingin mengunduh %1$s?</string>
     <string name="download_positive">Unduh</string>
+    <string name="background_shortcuts_save_action">Simpan</string>
     <string name="settings_title">Setelan</string>
     <string name="pref_search_engine">Mesin pencarian</string>
     <string name="pref_start_page">Halaman utama</string>
@@ -104,4 +106,6 @@
     <string name="location_dialog_allow">Izinkan</string>
     <string name="location_dialog_block">Blokir</string>
     <string name="location_dialog_cancel">Tolak untuk saat ini</string>
+    <string name="protected_media_dialog_deny">Tolak</string>
+    <string name="media_session_destroy_action">Hentikan</string>
 </resources>

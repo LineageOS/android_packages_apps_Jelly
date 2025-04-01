@@ -6,8 +6,8 @@
 <resources>
     <string name="app_name">Navegador</string>
     <string name="url_bar_more">Mais</string>
-    <string name="url_bar_search_cancel">Cancelar busca</string>
-    <string name="url_bar_search_clear">Limpar busca</string>
+    <string name="url_bar_search_cancel">Cancelar pesquisa</string>
+    <string name="url_bar_search_clear">Limpar pesquisa</string>
     <string name="url_bar_search_previous">Anterior</string>
     <string name="url_bar_search_next">Próximo</string>
     <string name="url_bar_auto_complete_hint">Pesquise ou digite uma URL</string>
@@ -22,6 +22,7 @@
     <string name="menu_history">Histórico</string>
     <string name="menu_downloads">Downloads</string>
     <string name="menu_shortcut">Adicionar atalho</string>
+    <string name="menu_background_shortcuts">Atalhos de segundo plano</string>
     <string name="menu_settings">Configurações</string>
     <string name="menu_download">Baixar</string>
     <string name="menu_in_new_tab">Abrir em nova aba</string>
@@ -29,13 +30,19 @@
     <string name="menu_search">Procurar na página</string>
     <string name="menu_print">Imprimir</string>
     <string name="share_title">Enviar para</string>
-    <string name="dismiss">Dispensar</string>
+    <string name="dismiss">Ignorar</string>
     <string name="download_title">Baixar arquivo</string>
-    <string name="download_message">Deseja baixar %1$s?</string>
+    <string name="download_message">Você deseja baixar %1$s?</string>
     <string name="download_positive">Baixar</string>
+    <string name="background_shortcuts_title">Atalhos de segundo plano</string>
     <string name="background_shortcuts_save_action">Salvar</string>
+    <string name="background_shortcuts_notification_channel">Gerenciar atalhos de segundo plano</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instância em execução</item>
+        <item quantity="other">%1$d instâncias em execução</item>
+    </plurals>
     <string name="settings_title">Configurações</string>
-    <string name="pref_search_engine">Mecanismo de pesquisa</string>
+    <string name="pref_search_engine">Motor de busca</string>
     <string name="pref_start_page">Página inicial</string>
     <string name="pref_start_page_autoload_enabled">Ativado</string>
     <string name="pref_start_page_autoload_disabled">Desativado</string>
@@ -55,7 +62,7 @@
     <string name="pref_cookie_summary">Permitir que sites salvem e leiam cookies</string>
     <string name="pref_screenshot_snap_title">Compartilhamento avançado</string>
     <string name="pref_screenshot_snap_summary">Compartilhar uma pré-visualização da página</string>
-    <string name="pref_cookie_clear">Limpar cookies</string>
+    <string name="pref_cookie_clear">Apagar cookies</string>
     <string name="pref_cookie_clear_done">Todos os cookies foram apagados</string>
     <string name="pref_do_not_track_title">Não Rastreie</string>
     <string name="pref_do_not_track_summary">Enviar uma solicitação pedindo que o site não te rastreie</string>
@@ -65,10 +72,10 @@
     <string name="history_title">Histórico</string>
     <string name="history_empty">Não há nada aqui, navegue na internet para ver seu histórico</string>
     <string name="history_date_format">EEEE, dd \'de\' MMMM \'de\' yyyy, HH:mm</string>
-    <string name="history_delete_title">Limpar histórico</string>
+    <string name="history_delete_title">Apagar histórico</string>
     <string name="history_delete_message">Todo o histórico será apagado, esta ação não poderá ser revertida. Deseja continuar?</string>
-    <string name="history_delete_positive">Limpar</string>
-    <string name="history_deleting_message">Limpando histórico\u2026</string>
+    <string name="history_delete_positive">Apagar</string>
+    <string name="history_deleting_message">Apagando histórico\u2026</string>
     <string name="history_snackbar_item_deleted">Registro eliminado</string>
     <string name="history_snackbar_item_deleted_message">Desfazer</string>
     <string name="favorite_title">Favoritos</string>
@@ -79,10 +86,10 @@
     <string name="favorite_edit_url">URL</string>
     <string name="favorite_edit_positive">Editar</string>
     <string name="favorite_edit_delete">Excluir</string>
-    <string name="favorite_edit_error">Insira uma URL válida</string>
+    <string name="favorite_edit_error">Digite uma URL válida</string>
     <string name="error_no_activity_found">Nenhum app consegue abrir este link</string>
-    <string name="auth_dialog_title">Autenticação Obrigatória</string>
-    <string name="auth_dialog_username">Nome de Usuário:</string>
+    <string name="auth_dialog_title">Autenticação obrigatória</string>
+    <string name="auth_dialog_username">Nome de usuário:</string>
     <string name="auth_dialog_password">Senha:</string>
     <string name="auth_dialog_detail">%1$s exige um nome de usuário e senha.</string>
     <string name="auth_dialog_login">Iniciar sessão</string>
@@ -90,16 +97,16 @@
     <string name="suggestions_provider_history">Histórico</string>
     <string name="suggestions_provider_none">Nenhum</string>
     <string name="search_bar_hint">Pesquisar</string>
-    <string name="ssl_cert_dialog_title">Detalhes do Certificado SSL</string>
+    <string name="ssl_cert_dialog_title">Detalhes do certificado SSL</string>
     <string name="ssl_cert_dialog_trust">Confiar</string>
     <string name="ssl_cert_dialog_trusted">A conexão é segura</string>
     <string name="ssl_cert_dialog_domain">Domínio</string>
     <string name="ssl_cert_dialog_issued_to">Emitido para</string>
     <string name="ssl_cert_dialog_issued_by">Emitido por</string>
-    <string name="ssl_cert_dialog_validity">Período de Validade</string>
-    <string name="ssl_cert_dialog_common_name">Nome Comum (CN)</string>
+    <string name="ssl_cert_dialog_validity">Período de validade</string>
+    <string name="ssl_cert_dialog_common_name">Nome comum (CN)</string>
     <string name="ssl_cert_dialog_organization">Organização (O)</string>
-    <string name="ssl_cert_dialog_organizational_unit">Unidade Organizacional (OU)</string>
+    <string name="ssl_cert_dialog_organizational_unit">Unidade organizacional (OU)</string>
     <string name="ssl_cert_dialog_issued_on">Emitido em</string>
     <string name="ssl_cert_dialog_expires_on">Expira em</string>
     <string name="ssl_cert_dialog_dismiss">Fechar</string>
@@ -118,4 +125,5 @@
     <string name="protected_media_dialog_message">Permitir mídia protegida?</string>
     <string name="protected_media_dialog_grant">Permitir</string>
     <string name="protected_media_dialog_deny">Negar</string>
+    <string name="media_session_destroy_action">Parar</string>
 </resources>

@@ -22,6 +22,7 @@
     <string name="menu_history">Cronologjie</string>
     <string name="menu_downloads">Discjariâts</string>
     <string name="menu_shortcut">Zonte scurte</string>
+    <string name="menu_background_shortcuts">Scurtis dai fonts</string>
     <string name="menu_settings">Impostazions</string>
     <string name="menu_download">Discjame</string>
     <string name="menu_in_new_tab">Vierç intune gnove schede</string>
@@ -33,7 +34,13 @@
     <string name="download_title">Discjame il file</string>
     <string name="download_message">Desideristu discjariâ %1$s?</string>
     <string name="download_positive">Discjame</string>
+    <string name="background_shortcuts_title">Scurtis dai fonts</string>
     <string name="background_shortcuts_save_action">Salve</string>
+    <string name="background_shortcuts_notification_channel">Gjestìs scurtis dai fonts</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d istance in esecuzion</item>
+        <item quantity="other">%1$d istancis in esecuzion</item>
+    </plurals>
     <string name="settings_title">Impostazions</string>
     <string name="pref_search_engine">Motôr di ricercje</string>
     <string name="pref_start_page">Pagjine iniziâl</string>
@@ -118,4 +125,5 @@
     <string name="protected_media_dialog_message">Permeti contignûts multimediâi protets?</string>
     <string name="protected_media_dialog_grant">Permet</string>
     <string name="protected_media_dialog_deny">Dinee</string>
+    <string name="media_session_destroy_action">Interomp</string>
 </resources>

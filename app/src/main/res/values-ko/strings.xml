@@ -22,6 +22,7 @@
     <string name="menu_history">방문 기록</string>
     <string name="menu_downloads">다운로드</string>
     <string name="menu_shortcut">홈 화면에 바로가기 추가</string>
+    <string name="menu_background_shortcuts">백그라운드 바로가기</string>
     <string name="menu_settings">설정</string>
     <string name="menu_download">다운로드</string>
     <string name="menu_in_new_tab">새 탭에서 열기</string>
@@ -33,7 +34,12 @@
     <string name="download_title">파일 다운로드</string>
     <string name="download_message">%1$s 파일을 다운로드하시겠습니까?</string>
     <string name="download_positive">다운로드</string>
+    <string name="background_shortcuts_title">백그라운드 바로가기</string>
     <string name="background_shortcuts_save_action">저장</string>
+    <string name="background_shortcuts_notification_channel">백그라운드 바로가기 관리</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="other">%1$d개 인스턴스 실행 중</item>
+    </plurals>
     <string name="settings_title">설정</string>
     <string name="pref_search_engine">검색 엔진</string>
     <string name="pref_start_page">홈페이지</string>
@@ -118,4 +124,5 @@
     <string name="protected_media_dialog_message">보호된 미디어를 허용하시겠습니까?</string>
     <string name="protected_media_dialog_grant">허용</string>
     <string name="protected_media_dialog_deny">거부</string>
+    <string name="media_session_destroy_action">중지</string>
 </resources>
