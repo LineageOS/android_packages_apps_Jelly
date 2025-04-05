@@ -93,6 +93,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0523402_4480a8d0",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsShare.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-04-05T20:03:37Z",
+      "side": 1,
+      "message": "The first part contains the file format, It\u0027s not a static string, It can be jpg, png, mp3, mp4, ..., so the best solution is to ignore the first part.",
+      "parentUuid": "c2eba426_c7473456",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 79
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75af45bf_aae4d787",
