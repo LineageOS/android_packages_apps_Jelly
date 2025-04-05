@@ -47,6 +47,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8db63909_f6863748",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsShare.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-04-05T20:33:18Z",
+      "side": 1,
+      "message": "Here is a better place for it, because:\n\n1- I have to change the files in the model to `List\u003cFile\u003e` instead of `List\u003cUri\u003e`\n(`FileProvider#getUriForFile()` needs `File` object)\n2- I have repeat this loop again inside the MainActivity",
+      "parentUuid": "19c8f221_f78577f3",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 47
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74ed776d_95e71da7",
