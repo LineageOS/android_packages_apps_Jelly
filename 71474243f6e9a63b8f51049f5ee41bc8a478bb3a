@@ -118,6 +118,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "578bd0e4_82b08cd4",
+        "filename": "app/src/main/java/org/lineageos/jelly/models/WebShare.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-04-05T19:32:01Z",
+      "side": 1,
+      "message": "Also List, not ArrayList, here and everywhere else",
+      "parentUuid": "75af45bf_aae4d787",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11a3df7c_7ecce587",
         "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
         "patchSetId": 3
