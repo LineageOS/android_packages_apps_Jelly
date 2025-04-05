@@ -213,6 +213,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab4e02fa_87c91ad8",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsShare.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-04-05T20:58:34Z",
+      "side": 1,
+      "message": "I don\u0027t think so ... A valid base64 string is the second part only.",
+      "parentUuid": "25712702_a1ba38d6",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 79
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75af45bf_aae4d787",
