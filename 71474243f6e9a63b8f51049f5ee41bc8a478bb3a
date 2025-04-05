@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e8654ca_ae7328bb",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsShare.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-04-05T20:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44fafde9_ead91b18",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 42
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19c8f221_f78577f3",
@@ -84,6 +108,30 @@
       "writtenOn": "2025-04-05T19:29:06Z",
       "side": 1,
       "message": "always pass files even if empty",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 42
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "725b4800_5e59db0c",
+        "filename": "app/src/main/java/org/lineageos/jelly/js/JsShare.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-04-05T20:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74ed776d_95e71da7",
       "range": {
         "startLine": 67,
         "startChar": 0,
