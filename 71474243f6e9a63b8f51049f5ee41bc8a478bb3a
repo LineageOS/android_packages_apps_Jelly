@@ -161,6 +161,30 @@
       },
       "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "943ecdd7_29f852c7",
+        "filename": "app/src/main/java/org/lineageos/jelly/webview/WebClient.kt",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2025-04-05T19:35:58Z",
+      "side": 1,
+      "message": "According to my tests, if I call evaluateJavascript multiple times here, WebShare API doesn\u0027t work anymore!",
+      "parentUuid": "11a3df7c_7ecce587",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 0
+      },
+      "revId": "71474243f6e9a63b8f51049f5ee41bc8a478bb3a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
