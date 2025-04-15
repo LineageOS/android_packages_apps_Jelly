@@ -33,7 +33,6 @@
     <string name="pref_location_summary">Дазваляць вэб-сайтам запытваць доступ да вашага месцазнаходжання</string>
     <string name="pref_cookie_title">Файлы cookie</string>
     <string name="pref_cookie_summary">Дазваляць вэб-сайтам захоўваць і загружаць файлы cookie</string>
-    <string name="pref_screenshot_snap_title">Пашыранае абагуленне</string>
     <string name="pref_cookie_clear">Ачысціць файлы cookie</string>
     <string name="pref_cookie_clear_done">Выдаліць усе файлы cookie</string>
     <string name="pref_do_not_track_title">Не адсочваць</string>
@@ -64,4 +63,5 @@
     <string name="ssl_cert_dialog_validity">Тэрмін дзеяння</string>
     <string name="ssl_cert_dialog_organization">Арганізацыя (O)</string>
     <string name="ssl_cert_dialog_dismiss">Адхіліць</string>
+    <string name="location_dialog_allow">Дазволіць</string>
 </resources>
