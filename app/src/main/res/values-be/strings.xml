@@ -64,5 +64,6 @@
     <string name="ssl_cert_dialog_validity">Тэрмін дзеяння</string>
     <string name="ssl_cert_dialog_organization">Арганізацыя (O)</string>
     <string name="ssl_cert_dialog_dismiss">Адхіліць</string>
+    <string name="location_dialog_message">%1$s хоча атрымаць доступ да вашага месцазнаходжання.</string>
     <string name="location_dialog_allow">Дазволіць</string>
 </resources>

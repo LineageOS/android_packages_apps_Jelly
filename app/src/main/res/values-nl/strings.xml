@@ -114,7 +114,6 @@
     <string name="location_dialog_allow">Sta toe</string>
     <string name="location_dialog_block">Blokkeer</string>
     <string name="location_dialog_cancel">Nu weigeren</string>
-    <string name="protected_media_dialog_message"/>
     <string name="protected_media_dialog_grant">Sta Toe</string>
     <string name="protected_media_dialog_deny">Weiger</string>
 </resources>

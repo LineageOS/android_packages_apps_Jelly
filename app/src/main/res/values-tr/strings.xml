@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">Aramayı temizle</string>
     <string name="url_bar_search_previous">Geri</string>
     <string name="url_bar_search_next">İleri</string>
+    <string name="url_bar_auto_complete_hint">Arayın veya URL yazın</string>
     <string name="menu_go_back">Geri git</string>
     <string name="menu_go_forward">İleri git</string>
     <string name="menu_refresh">Sayfayı yenile</string>
@@ -21,6 +22,7 @@
     <string name="menu_history">Geçmiş</string>
     <string name="menu_downloads">İndirmeler</string>
     <string name="menu_shortcut">Kısayol ekle</string>
+    <string name="menu_background_shortcuts">Arka plan kısayolları</string>
     <string name="menu_settings">Ayarlar</string>
     <string name="menu_download">İndir</string>
     <string name="menu_in_new_tab">Yeni sekmede aç</string>
@@ -32,15 +34,26 @@
     <string name="download_title">Dosyayı indir</string>
     <string name="download_message">%1$s dosyasını indirmek istiyor musunuz?</string>
     <string name="download_positive">İndir</string>
+    <string name="background_shortcuts_title">Arka plan kısayolları</string>
+    <string name="background_shortcuts_save_action">Kaydet</string>
+    <string name="background_shortcuts_notification_channel">Arka plan kısayollarını yönet</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d işlem çalışıyor</item>
+        <item quantity="other">%1$d işlem çalışıyor</item>
+    </plurals>
     <string name="settings_title">Ayarlar</string>
     <string name="pref_search_engine">Arama motoru</string>
     <string name="pref_start_page">Ana sayfa</string>
+    <string name="pref_start_page_autoload_enabled">Etkinleştirildi</string>
+    <string name="pref_start_page_autoload_disabled">Devre dışı</string>
     <string name="pref_start_page_dialog_title">Ana sayfayı seçin</string>
     <string name="pref_start_page_dialog_message">Ana sayfa URL\'sini yazın</string>
     <string name="pref_start_page_dialog_reset">Sıfırla</string>
     <string name="pref_privacy_security">Gizlilik &amp; güvenlik</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Diğer uygulamaların Tarayıcı içeriğini okumasını engelleyin</string>
+    <string name="pref_dynamic_popup_title">Dinamik açılır pencereler</string>
+    <string name="pref_dynamic_popup_summary">Kullanıcı etkileşimi olmadan da JavaScript açılır pencereler gösterebilsin</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">JavaScript\'i etkinleştir</string>
     <string name="pref_location_title">Konum</string>
@@ -85,6 +98,8 @@
     <string name="suggestions_provider_none">Hiçbiri</string>
     <string name="search_bar_hint">Ara</string>
     <string name="ssl_cert_dialog_title">SSL Sertifika Ayrıntıları</string>
+    <string name="ssl_cert_dialog_trust">Güven</string>
+    <string name="ssl_cert_dialog_trusted">Bağlantı güvenli</string>
     <string name="ssl_cert_dialog_domain">Alan Adı</string>
     <string name="ssl_cert_dialog_issued_to">Verilen</string>
     <string name="ssl_cert_dialog_issued_by">Veren</string>
@@ -95,9 +110,20 @@
     <string name="ssl_cert_dialog_issued_on">Verilme</string>
     <string name="ssl_cert_dialog_expires_on">Sona Erme</string>
     <string name="ssl_cert_dialog_dismiss">Reddet</string>
+    <string name="ssl_error_untrusted">Bu sertifika güvenilir bir kaynaktan gelmiyor.</string>
+    <string name="ssl_error_mismatch">Sitenin adı, sertifikadaki ad ile eşleşmiyor.</string>
+    <string name="ssl_error_expired">Bu sertifikanın süresi dolmuş.</string>
+    <string name="ssl_error_not_yet_valid">Bu sertifika henüz geçerli değil.</string>
+    <string name="ssl_error_date_invalid">Bu sertifikanın tarihi geçersiz.</string>
+    <string name="ssl_error_invalid">Bu sertifika geçersiz.</string>
+    <string name="ssl_error_unknown">Bilinmeyen sertifika hatası.</string>
     <string name="location_dialog_title">Konumunuz sağlansın mı? </string>
     <string name="location_dialog_message">%1$s sizin jeokonumunuzu kullanmak istiyor. </string>
     <string name="location_dialog_allow">İzin ver</string>
     <string name="location_dialog_block">Engelle</string>
     <string name="location_dialog_cancel">Geçici olarak reddet</string>
+    <string name="protected_media_dialog_message">Korumalı medyaya izin verilsin mi?</string>
+    <string name="protected_media_dialog_grant">İzin ver</string>
+    <string name="protected_media_dialog_deny">Reddet</string>
+    <string name="media_session_destroy_action">Durdur</string>
 </resources>
