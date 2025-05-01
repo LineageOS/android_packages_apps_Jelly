@@ -84,6 +84,8 @@
     <string name="suggestions_provider_none">Hiçbiri</string>
     <string name="search_bar_hint">Ara</string>
     <string name="ssl_cert_dialog_title">SSL Sertifika Ayrıntıları</string>
+    <string name="ssl_cert_dialog_trust">Güven</string>
+    <string name="ssl_cert_dialog_trusted">Bağlantı güvenli</string>
     <string name="ssl_cert_dialog_domain">Alan Adı</string>
     <string name="ssl_cert_dialog_issued_to">Verilen</string>
     <string name="ssl_cert_dialog_issued_by">Veren</string>
@@ -94,6 +96,13 @@
     <string name="ssl_cert_dialog_issued_on">Verilme</string>
     <string name="ssl_cert_dialog_expires_on">Sona Erme</string>
     <string name="ssl_cert_dialog_dismiss">Reddet</string>
+    <string name="ssl_error_untrusted">Bu sertifika güvenilir bir kaynaktan gelmiyor.</string>
+    <string name="ssl_error_mismatch">Sitenin adı, sertifikadaki ad ile eşleşmiyor.</string>
+    <string name="ssl_error_expired">Bu sertifikanın süresi dolmuş.</string>
+    <string name="ssl_error_not_yet_valid">Bu sertifika henüz geçerli değil.</string>
+    <string name="ssl_error_date_invalid">Bu sertifikanın tarihi geçersiz.</string>
+    <string name="ssl_error_invalid">Bu sertifika geçersiz.</string>
+    <string name="ssl_error_unknown">Bilinmeyen sertifika hatası.</string>
     <string name="location_dialog_title">Konumunuz sağlansın mı? </string>
     <string name="location_dialog_message">%1$s sizin jeokonumunuzu kullanmak istiyor. </string>
     <string name="location_dialog_allow">İzin ver</string>
