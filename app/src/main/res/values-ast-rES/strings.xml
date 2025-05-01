@@ -31,6 +31,10 @@
     <string name="download_title">Descarga d\'un ficheru</string>
     <string name="download_message">¿Quies baxar «%1$s»?</string>
     <string name="download_positive">Baxar</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">Hai %1$d instancia n\'execución</item>
+        <item quantity="other">Hai %1$d instancies n\'execución</item>
+    </plurals>
     <string name="settings_title">Configuración</string>
     <string name="pref_search_engine">Motor de busca</string>
     <string name="pref_start_page">Páxina d\'aniciu</string>
