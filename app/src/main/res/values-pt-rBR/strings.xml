@@ -72,7 +72,7 @@
     <string name="favorite_edit_title">Título</string>
     <string name="favorite_edit_url">URL</string>
     <string name="favorite_edit_positive">Editar</string>
-    <string name="favorite_edit_delete">Excluir</string>
+    <string name="favorite_edit_delete">Apagar</string>
     <string name="favorite_edit_error">Digite uma URL válida</string>
     <string name="error_no_activity_found">Nenhum app consegue abrir este link</string>
     <string name="auth_dialog_title">Autenticação obrigatória</string>
