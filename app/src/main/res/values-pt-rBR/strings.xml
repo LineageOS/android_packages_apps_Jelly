@@ -79,7 +79,7 @@
     <string name="auth_dialog_username">Nome de usuário:</string>
     <string name="auth_dialog_password">Senha:</string>
     <string name="auth_dialog_detail">%1$s exige um nome de usuário e senha.</string>
-    <string name="auth_dialog_login">Iniciar sessão</string>
+    <string name="auth_dialog_login">Conectar-se</string>
     <string name="shortcut_new_incognito_tab">Nova aba anônima</string>
     <string name="suggestions_provider_none">Nenhum</string>
     <string name="search_bar_hint">Pesquisar</string>
