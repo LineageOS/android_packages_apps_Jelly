@@ -5,17 +5,28 @@
 -->
 <resources>
     <string name="app_name">דפדפן</string>
+    <string name="url_bar_more">עוד</string>
+    <string name="url_bar_search_cancel">ביטול חיפוש</string>
+    <string name="url_bar_search_clear">ניקוי חיפוש</string>
+    <string name="url_bar_search_previous">הקודם</string>
+    <string name="url_bar_search_next">הבא</string>
+    <string name="menu_go_back">חזרה</string>
+    <string name="menu_go_forward">המשך</string>
+    <string name="menu_refresh">ריענון עמוד</string>
     <string name="menu_new_tab">כרטיסייה חדשה</string>
     <string name="menu_incognito">כרטיסיית גלישה בסתר</string>
     <string name="menu_fav_add">הוסף למועדפים</string>
     <string name="menu_share">שיתוף</string>
     <string name="menu_favorites">מועדפים</string>
     <string name="menu_history">היסטוריה</string>
+    <string name="menu_downloads">הורדות</string>
     <string name="menu_shortcut">הוסף קיצור דרך</string>
     <string name="menu_settings">הגדרות</string>
     <string name="menu_download">הורד</string>
     <string name="menu_in_new_tab">פתח בכרטיסייה חדשה</string>
+    <string name="menu_desktop_mode">אתר בגרסת מחשב</string>
     <string name="menu_search">חפש בדף</string>
+    <string name="menu_print">הדפסה</string>
     <string name="share_title">שלח אל</string>
     <string name="dismiss">התעלם</string>
     <string name="download_title">הורד קובץ</string>
@@ -39,7 +50,7 @@
     <string name="pref_screenshot_snap_title">שיתוף מתקדם</string>
     <string name="pref_screenshot_snap_summary">שתף תצוגה מקדימה של דף האינטרנט המשותף</string>
     <string name="pref_cookie_clear">מחיקת Cookies</string>
-    <string name="pref_cookie_clear_done">מחק את כל ה־Cookies</string>
+    <string name="pref_cookie_clear_done">מחיקת כל העוגיות</string>
     <string name="pref_do_not_track_title">אל תעקוב</string>
     <string name="pref_do_not_track_summary">שלח בקשת \"אל תעקוב\" לאתרים שבהם אתה מבקר</string>
     <string name="pref_suggestions_provider">ספק הצעות</string>
@@ -57,11 +68,11 @@
     <string name="favorite_title">מועדפים</string>
     <string name="favorite_added">נוסף למועדפים</string>
     <string name="favorite_empty">אין כאן שום דבר, הוסף קישור למועדפים כדי לראות אותו כאן</string>
-    <string name="favorite_edit_dialog_title">ערוך מועדפים</string>
+    <string name="favorite_edit_dialog_title">עריכת מועדפים</string>
     <string name="favorite_edit_title">כותרת</string>
     <string name="favorite_edit_url">כתובת אינטרנט</string>
-    <string name="favorite_edit_positive">ערוך</string>
-    <string name="favorite_edit_delete">מחק</string>
+    <string name="favorite_edit_positive">עריכה</string>
+    <string name="favorite_edit_delete">מחיקה</string>
     <string name="favorite_edit_error">הקלד כתובת תקינה</string>
     <string name="error_no_activity_found">אין ישום שיודע לפתוח קישור זה</string>
     <string name="auth_dialog_title">דרושה הזדהות</string>
@@ -73,6 +84,8 @@
     <string name="suggestions_provider_none">כלום</string>
     <string name="search_bar_hint">חיפוש</string>
     <string name="ssl_cert_dialog_title">פרטי אישור SSL</string>
+    <string name="ssl_cert_dialog_trust">Trust</string>
+    <string name="ssl_cert_dialog_trusted">החיבור מאובטח</string>
     <string name="ssl_cert_dialog_domain">שם מתחם - דומיין</string>
     <string name="ssl_cert_dialog_issued_to">הונפק ל:</string>
     <string name="ssl_cert_dialog_issued_by">הונפק על ידי</string>
@@ -83,4 +96,16 @@
     <string name="ssl_cert_dialog_issued_on">הונפק ב:</string>
     <string name="ssl_cert_dialog_expires_on">תאריך תפוגה:</string>
     <string name="ssl_cert_dialog_dismiss">בטל</string>
+    <string name="ssl_error_untrusted">תעודה זו אינה מונפקת על ידי רשות מהימנה.</string>
+    <string name="ssl_error_mismatch">שם האתר שונה מהשם בתעודה.</string>
+    <string name="ssl_error_expired">פג תוקפה של תעודה זו.</string>
+    <string name="ssl_error_not_yet_valid">התעודה עדיין אינה בתוקף.</string>
+    <string name="ssl_error_date_invalid">לתעודה זו תאריך לא חוקי.</string>
+    <string name="ssl_error_invalid">תעודה זו אינה חוקית.</string>
+    <string name="ssl_error_unknown">שגיאה לא ידועה בתעודה.</string>
+    <string name="location_dialog_title">לספק מיקום?</string>
+    <string name="location_dialog_message">%1$s רוצה להשתמש בנתוני מיקומך.</string>
+    <string name="location_dialog_allow">לאפשר</string>
+    <string name="location_dialog_block">לחסום</string>
+    <string name="location_dialog_cancel">דחייה לעת עתה</string>
 </resources>
