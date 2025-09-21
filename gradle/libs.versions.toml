@@ -5,7 +5,7 @@
 
 [versions]
 agp = "8.13.0"
-kotlin = "1.9.23"
+kotlin = "2.1.10"
 annotation = "1.6.0"
 appcompat = "1.6.1"
 cardview = "1.0.0"
@@ -15,7 +15,7 @@ material = "1.9.0"
 palette = "1.0.0"
 preference = "1.2.0"
 recyclerview = "1.3.0"
-room = "2.6.1"
+room = "2.8.0"
 transition = "1.4.1"
 generateBp = "+"
 
