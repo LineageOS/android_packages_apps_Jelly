@@ -68,7 +68,7 @@ android {
 
 dependencies {
     // Align versions of all Kotlin components
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:2.1.10"))
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.annotation:annotation:1.6.0")
@@ -82,7 +82,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
 
-    val roomVersion = "2.6.1"
+    val roomVersion = "2.8.0"
 
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
