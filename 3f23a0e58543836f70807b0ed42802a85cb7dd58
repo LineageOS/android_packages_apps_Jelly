@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2dd15c1a_46befc13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-09-21T10:22:22Z",
+      "side": 1,
+      "message": "If this bumps Kotlin version implicitly, then we should just bump everything to this version, else we could even merge this in 22.2",
+      "revId": "3f23a0e58543836f70807b0ed42802a85cb7dd58",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
