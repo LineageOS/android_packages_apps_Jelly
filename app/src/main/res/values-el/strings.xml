@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">Εκκαθάριση αναζήτησης</string>
     <string name="url_bar_search_previous">Προηγούμενο</string>
     <string name="url_bar_search_next">Επόμενο</string>
+    <string name="url_bar_auto_complete_hint">Αναζήτηση ή εισαγωγή διεύθυνσης URL</string>
     <string name="menu_go_back">Πίσω</string>
     <string name="menu_go_forward">Εμπρός</string>
     <string name="menu_refresh">Ανανέωση σελίδας</string>
@@ -21,6 +22,7 @@
     <string name="menu_history">Ιστορικό</string>
     <string name="menu_downloads">Λήψεις</string>
     <string name="menu_shortcut">Προσθήκη συντόμευσης</string>
+    <string name="menu_background_shortcuts">Συντομεύσεις παρασκηνίου</string>
     <string name="menu_settings">Ρυθμίσεις</string>
     <string name="menu_download">Λήψη</string>
     <string name="menu_in_new_tab">Άνοιγμα σε νέα καρτέλα</string>
@@ -32,16 +34,26 @@
     <string name="download_title">Λήψη αρχείου</string>
     <string name="download_message">Θέλετε να κάνετε λήψη του %1$s;</string>
     <string name="download_positive">Λήψη</string>
+    <string name="background_shortcuts_title">Συντομεύσεις παρασκηνίου</string>
     <string name="background_shortcuts_save_action">Aποθήκευση</string>
+    <string name="background_shortcuts_notification_channel">Διαχείριση συντομεύσεων παρασκηνίου</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d πρόγραμμα εκτελείται</item>
+        <item quantity="other">%1$d προγράμματα εκτελούνται</item>
+    </plurals>
     <string name="settings_title">Ρυθμίσεις</string>
     <string name="pref_search_engine">Μηχανή αναζήτησης</string>
     <string name="pref_start_page">Αρχική σελίδα</string>
+    <string name="pref_start_page_autoload_enabled">Ενεργοποιημένο</string>
+    <string name="pref_start_page_autoload_disabled">Απενεργοποιημένο</string>
     <string name="pref_start_page_dialog_title">Επιλογή αρχικής σελίδας</string>
     <string name="pref_start_page_dialog_message">Γράψτε το URL της αρχικής σελίδας</string>
     <string name="pref_start_page_dialog_reset">Επαναφορά</string>
     <string name="pref_privacy_security">Απόρρητο &amp; ασφάλεια</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Αποτρέπει άλλες εφαρμογές να διαβάζουν το περιεχόμενο του περιηγητή</string>
+    <string name="pref_dynamic_popup_title">Δυναμικά αναδυόμενα παράθυρα</string>
+    <string name="pref_dynamic_popup_summary">Να επιτρέπεται στο JavaScript να ανοίγει αναδυόμενα παράθυρα χωρίς αλληλεπίδραση χρήστη</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Ενεργοποίηση JavaScript</string>
     <string name="pref_location_title">Τοποθεσία</string>
@@ -110,6 +122,7 @@
     <string name="location_dialog_allow">Αποδοχή</string>
     <string name="location_dialog_block">Αποκλεισμός</string>
     <string name="location_dialog_cancel">Άρνηση για την ώρα</string>
+    <string name="protected_media_dialog_message">Να επιτρέπονται τα προστατευμένα μέσα;</string>
     <string name="protected_media_dialog_grant">Αποδοχή</string>
     <string name="protected_media_dialog_deny">Απόρριψη</string>
     <string name="media_session_destroy_action">Διακοπή</string>
