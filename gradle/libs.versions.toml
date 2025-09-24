@@ -4,7 +4,7 @@
 #
 
 [versions]
-agp = "8.12.3"
+agp = "8.13.0"
 kotlin = "1.9.23"
 annotation = "1.6.0"
 appcompat = "1.6.1"
