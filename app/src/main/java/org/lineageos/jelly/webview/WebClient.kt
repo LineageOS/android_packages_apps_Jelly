@@ -41,20 +41,26 @@ import org.lineageos.jelly.utils.IntentUtils
 import org.lineageos.jelly.utils.UrlUtils
 import java.net.URISyntaxException
 
-internal class WebClient(private val urlBarLayout: UrlBarLayout) : WebViewClient() {
+internal class WebClient(
+    private val context: Context,
+    private val urlBarLayout: UrlBarLayout,
+) : WebViewClient() {
+    private val scripts by lazy {
+        val mediaSessionAPI = AssetLoader.loadAsset(
+            context.resources,
+            "MediaSessionAPI.js",
+        )
+        buildString {
+            appendLine(mediaSessionAPI)
+            appendLine(JsMediaSession.SCRIPT)
+            appendLine(JsShare.SCRIPT)
+        }
+    }
+
     override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
         super.onPageStarted(view, url, favicon)
         urlBarLayout.onPageLoadStarted(url)
         if (view.settings.javaScriptEnabled) {
-            val mediaSessionAPI = AssetLoader.loadAsset(
-                view.context.resources,
-                "MediaSessionAPI.js"
-            )
-            val scripts = listOf(
-                mediaSessionAPI,
-                JsMediaSession.SCRIPT,
-                JsShare.SCRIPT
-            ).joinToString("\n")
             view.evaluateJavascript(scripts, null)
         }
     }
