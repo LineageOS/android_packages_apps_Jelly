@@ -161,7 +161,7 @@ class WebViewExt @JvmOverloads constructor(
             activity, incognito, urlBarLayout, sharedPreferencesExt
         )
         webChromeClient = chromeClient
-        webViewClient = WebClient(urlBarLayout)
+        webViewClient = WebClient(activity, urlBarLayout)
         setFindListener { activeMatchOrdinal, numberOfMatches, _ ->
             urlBarLayout.searchPositionInfo = Pair(activeMatchOrdinal, numberOfMatches)
         }
