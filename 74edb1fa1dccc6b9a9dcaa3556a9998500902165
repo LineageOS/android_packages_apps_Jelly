@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85700f05_a37bfa17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-10-18T18:03:23Z",
+      "side": 1,
+      "message": "Please remove the \"cherry-picked from commit\" lines, since Jelly isn\u0027t the upstream of your project",
+      "revId": "74edb1fa1dccc6b9a9dcaa3556a9998500902165",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
