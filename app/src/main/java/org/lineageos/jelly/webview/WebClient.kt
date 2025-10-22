@@ -96,6 +96,13 @@ internal class WebClient(
                 return true
             }
         }
+
+        val m = UrlUtils.ACCEPTED_URI_SCHEMA.matcher(request.url.toString())
+        if (!m.matches()) {
+            // Stop URL loading for non-accepted schemes
+            return true
+        }
+
         return false
     }
 
