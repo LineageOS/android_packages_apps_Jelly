@@ -33,6 +33,7 @@
     <string name="download_title">Shkarko skedarin</string>
     <string name="download_message">Dëshiron të shkarkosh %1$s?</string>
     <string name="download_positive">Shkarko</string>
+    <string name="background_shortcuts_save_action">Ruaj</string>
     <string name="settings_title">Cilësimet</string>
     <string name="pref_search_engine">Motori i kërkimit</string>
     <string name="pref_start_page">Kryefaqja</string>
@@ -117,4 +118,5 @@
     <string name="protected_media_dialog_message">Lejo media të mbrojtur?</string>
     <string name="protected_media_dialog_grant">Lejo</string>
     <string name="protected_media_dialog_deny">Refuzo</string>
+    <string name="media_session_destroy_action">Ndalo</string>
 </resources>
