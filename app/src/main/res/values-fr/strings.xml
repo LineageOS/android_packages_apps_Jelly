@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">Effacer la recherche</string>
     <string name="url_bar_search_previous">Précédent</string>
     <string name="url_bar_search_next">Suivant</string>
+    <string name="url_bar_auto_complete_hint">Rechercher ou saisir une URL</string>
     <string name="menu_go_back">Retour</string>
     <string name="menu_go_forward">Avancer</string>
     <string name="menu_refresh">Actualiser la page</string>
@@ -21,6 +22,7 @@
     <string name="menu_history">Historique</string>
     <string name="menu_downloads">Téléchargements</string>
     <string name="menu_shortcut">Ajouter un raccourci</string>
+    <string name="menu_background_shortcuts">Raccourcis d\'arrière-plan</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_download">Télécharger</string>
     <string name="menu_in_new_tab">Ouvrir dans un nouvel onglet</string>
@@ -32,7 +34,13 @@
     <string name="download_title">Télécharger le fichier</string>
     <string name="download_message">Voulez-vous télécharger %1$s ?</string>
     <string name="download_positive">Télécharger</string>
+    <string name="background_shortcuts_title">Raccourcis d\'arrière-plan</string>
     <string name="background_shortcuts_save_action">Sauvegarder</string>
+    <string name="background_shortcuts_notification_channel">Gérer les raccourcis d\'arrière-plan</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d instance en cours d\'exécution</item>
+        <item quantity="other">%1$d instances en cours d\'exécution</item>
+    </plurals>
     <string name="settings_title">Paramètres</string>
     <string name="pref_search_engine">Moteur de recherche</string>
     <string name="pref_start_page">Page d\'accueil</string>
@@ -44,6 +52,8 @@
     <string name="pref_privacy_security">Vie privée &amp; sécurité</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Empêcher les autres applications de lire le contenu du navigateur</string>
+    <string name="pref_dynamic_popup_title">Popups dynamiques</string>
+    <string name="pref_dynamic_popup_summary">Autoriser JavaScript à ouvrir des popups sans interaction de l\'utilisateur</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Activer JavaScript</string>
     <string name="pref_location_title">Localisation</string>
@@ -112,6 +122,8 @@
     <string name="location_dialog_allow">Autoriser</string>
     <string name="location_dialog_block">Bloquer</string>
     <string name="location_dialog_cancel">Refuser pour l\'instant</string>
+    <string name="protected_media_dialog_message">Autoriser les médias protégés ?</string>
+    <string name="protected_media_dialog_grant">Accorder</string>
     <string name="protected_media_dialog_deny">Refuser</string>
     <string name="media_session_destroy_action">Arrêter</string>
 </resources>

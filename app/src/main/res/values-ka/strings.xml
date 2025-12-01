@@ -10,6 +10,7 @@
     <string name="url_bar_search_clear">ძიების გასუფთავება</string>
     <string name="url_bar_search_previous">წინა</string>
     <string name="url_bar_search_next">შემდეგი</string>
+    <string name="url_bar_auto_complete_hint">მოძებნეთ ან აკრიფეთ მისამართი</string>
     <string name="menu_go_back">უკან დაბრუნება</string>
     <string name="menu_go_forward">წინ გადასვლა</string>
     <string name="menu_refresh">გვერდის გაახლება</string>
@@ -21,6 +22,7 @@
     <string name="menu_history">ისტორია</string>
     <string name="menu_downloads">ჩამოტვირთვები</string>
     <string name="menu_shortcut">მალსახმობის დამატება</string>
+    <string name="menu_background_shortcuts">ფონის მალსახმობები</string>
     <string name="menu_settings">პარამეტრები</string>
     <string name="menu_download">ჩამოტვირთვა</string>
     <string name="menu_in_new_tab">ახალ ჩანართში გახსნა</string>
@@ -32,15 +34,26 @@
     <string name="download_title">ფაილის ჩამოტვირთვა</string>
     <string name="download_message">ჩამოიტვირთოს %1$s?</string>
     <string name="download_positive">ჩამოტვირთვა</string>
+    <string name="background_shortcuts_title">ფონის მალსახმობები</string>
+    <string name="background_shortcuts_save_action">შენახვა</string>
+    <string name="background_shortcuts_notification_channel">ფონური მალსახმობების მართვა</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="one">%1$d ასლი გაშვებულია</item>
+        <item quantity="other">%1$d ასლი გაშვებულია</item>
+    </plurals>
     <string name="settings_title">პარამეტრები</string>
     <string name="pref_search_engine">საძიებო სისტემა</string>
     <string name="pref_start_page">საწყისი გვერდი</string>
+    <string name="pref_start_page_autoload_enabled">ჩართული</string>
+    <string name="pref_start_page_autoload_disabled">გამორთული</string>
     <string name="pref_start_page_dialog_title">საწყისი გვერდი არჩევა</string>
     <string name="pref_start_page_dialog_message">ჩაწერეთ საწყისი გვერდის ბმული</string>
     <string name="pref_start_page_dialog_reset">განულება</string>
     <string name="pref_privacy_security">პირადულობა და უსაფრთხოება</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">არ აძლევს სხვა აპებს ბრაუზერის შიგთავსის წაკითხვის საშუალებას</string>
+    <string name="pref_dynamic_popup_title">ცვალებადი ამომხტომები</string>
+    <string name="pref_dynamic_popup_summary">ნებართვა, რომ JavaScript გახსნის ამომხტომ სარკმლებს მომხმარებლის ჩაურევლად</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">JavaScript-ის ჩართვა</string>
     <string name="pref_location_title">მდებარეობა</string>
@@ -100,4 +113,8 @@
     <string name="location_dialog_allow">ნებართვა</string>
     <string name="location_dialog_block">აკრძალვა</string>
     <string name="location_dialog_cancel">აკრძალვა ამჯერად</string>
+    <string name="protected_media_dialog_message">გაეშვას დაცული ფაილი?</string>
+    <string name="protected_media_dialog_grant">ნების დართვა</string>
+    <string name="protected_media_dialog_deny">უარყოფა</string>
+    <string name="media_session_destroy_action">შეწყვეტა</string>
 </resources>
