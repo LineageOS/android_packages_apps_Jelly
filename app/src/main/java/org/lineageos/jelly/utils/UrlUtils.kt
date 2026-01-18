@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020-2023 The LineageOS Project
+ * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-FileCopyrightText: 2010 The Android Open Source Project
  * SPDX-License-Identifier: Apache-2.0
  */
