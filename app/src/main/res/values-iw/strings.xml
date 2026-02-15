@@ -16,12 +16,12 @@
     <string name="menu_refresh">ריענון עמוד</string>
     <string name="menu_new_tab">כרטיסייה חדשה</string>
     <string name="menu_incognito">כרטיסיית גלישה בסתר</string>
-    <string name="menu_fav_add">הוסף למועדפים</string>
+    <string name="menu_fav_add">הוספה למועדפים</string>
     <string name="menu_share">שיתוף</string>
     <string name="menu_favorites">מועדפים</string>
     <string name="menu_history">היסטוריה</string>
     <string name="menu_downloads">הורדות</string>
-    <string name="menu_shortcut">הוסף קיצור דרך</string>
+    <string name="menu_shortcut">הוספת קיצור דרך</string>
     <string name="menu_background_shortcuts">קיצורי דרך ברקע</string>
     <string name="menu_settings">הגדרות</string>
     <string name="menu_download">הורד</string>
@@ -82,7 +82,7 @@
     <string name="history_snackbar_item_deleted_message">ביטול</string>
     <string name="favorite_title">מועדפים</string>
     <string name="favorite_added">נוסף למועדפים</string>
-    <string name="favorite_empty">אין כאן שום דבר, הוסף קישור למועדפים כדי לראות אותו כאן</string>
+    <string name="favorite_empty">אין כאן שום דבר, יש להוסיף קישור למועדפים כדי לראות אותו כאן</string>
     <string name="favorite_edit_dialog_title">עריכת מועדפים</string>
     <string name="favorite_edit_title">כותרת</string>
     <string name="favorite_edit_url">כתובת אינטרנט</string>
