@@ -36,6 +36,8 @@
     <string name="settings_title">Setelan</string>
     <string name="pref_search_engine">Mesin pencarian</string>
     <string name="pref_start_page">Halaman utama</string>
+    <string name="pref_start_page_autoload_enabled">Diaktifkan</string>
+    <string name="pref_start_page_autoload_disabled">Dinonaktifkan</string>
     <string name="pref_start_page_dialog_title">Pilih halaman utama</string>
     <string name="pref_start_page_dialog_message">Tulis URL halaman utama</string>
     <string name="pref_start_page_dialog_reset">Atur ulang</string>
@@ -100,12 +102,16 @@
     <string name="ssl_cert_dialog_dismiss">Tutup</string>
     <string name="ssl_error_untrusted">Sertifikat ini tidak berasal dari otoritas terpercaya.</string>
     <string name="ssl_error_mismatch">Nama situs tidak cocok dengan nama pada sertifikat.</string>
+    <string name="ssl_error_expired">Sertifikat ini telah kedaluwarsa.</string>
     <string name="ssl_error_not_yet_valid">Sertifikat ini belum valid.</string>
     <string name="ssl_error_date_invalid">Sertifikat ini memiliki tanggal yang tidak valid.</string>
+    <string name="ssl_error_invalid">Sertifikat ini tidak valid.</string>
+    <string name="ssl_error_unknown">Kesalahan sertifikat tidak diketahui.</string>
     <string name="location_dialog_message">%1$s ingin menggunakan geolokasi Anda.</string>
     <string name="location_dialog_allow">Izinkan</string>
     <string name="location_dialog_block">Blokir</string>
     <string name="location_dialog_cancel">Tolak untuk saat ini</string>
+    <string name="protected_media_dialog_grant">Izinkan</string>
     <string name="protected_media_dialog_deny">Tolak</string>
     <string name="media_session_destroy_action">Hentikan</string>
 </resources>
