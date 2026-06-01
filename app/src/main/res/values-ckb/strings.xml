@@ -40,7 +40,7 @@
     <string name="pref_start_page_dialog_reset">ڕێکخستنەوە</string>
     <string name="pref_privacy_security">تایبەتمەندیی و ئاسایش</string>
     <string name="pref_looklock_title">LookLock (قوفڵی چاو)</string>
-    <string name="pref_looklock_summary">ڕێگری بکە لە ئەپەکانی تر بۆ خوێندنەوەی ناوەڕۆکی وێبگەڕ</string>
+    <string name="pref_looklock_summary">ڕێگری بکە لە بەرنامەکانی تر بۆ خوێندنەوەی ناوەڕۆکی وێبگەڕ</string>
     <string name="pref_js_title">جاڤا سکرێپت</string>
     <string name="pref_js_summary">جاڤا سکرێپت چالاک بکە</string>
     <string name="pref_location_title">شوێن</string>
@@ -74,7 +74,7 @@
     <string name="favorite_edit_positive">دەستکاری بکە</string>
     <string name="favorite_edit_delete">بسڕەوە</string>
     <string name="favorite_edit_error">ناونیشانێکی (URL) دروست بنووسە</string>
-    <string name="error_no_activity_found">هیچ ئەپێک ناتوانێت ئەم لینکە بکاتەوە</string>
+    <string name="error_no_activity_found">هیچ بەرنامەیەک ناتوانێت ئەم لینکە بکاتەوە</string>
     <string name="auth_dialog_title">پێویستی بە چوونەژوورەوەیە</string>
     <string name="auth_dialog_username">ناوی بەکارهێنەر:</string>
     <string name="auth_dialog_password">وشەی تێپەڕ:</string>
