@@ -14,10 +14,10 @@
     <string name="menu_go_back">بڕۆ دواوە</string>
     <string name="menu_go_forward">بڕۆ پێشەوە</string>
     <string name="menu_refresh">پەڕەکە نوێ بکەرەوە</string>
-    <string name="menu_new_tab">تابێکی نوێ</string>
-    <string name="menu_incognito">تابی نادیار</string>
+    <string name="menu_new_tab">پەڕەیەکی نوێ</string>
+    <string name="menu_incognito">پەڕەی نادیار</string>
     <string name="menu_fav_add">زیاد بکە بۆ دڵخوازەکان</string>
-    <string name="menu_share">هاوبەشی پێ بکە</string>
+    <string name="menu_share">هاوبەشکردن</string>
     <string name="menu_favorites">دڵخوازەکان</string>
     <string name="menu_history">مێژوو</string>
     <string name="menu_downloads">داگیراوەکان</string>
@@ -25,7 +25,7 @@
     <string name="menu_background_shortcuts">کورتەکانی پاشبنەما</string>
     <string name="menu_settings">ڕێکخستنەکان</string>
     <string name="menu_download">دایبگرە</string>
-    <string name="menu_in_new_tab">لە تابێکی نوێدا بیکەرەوە</string>
+    <string name="menu_in_new_tab">لە پەڕەیەکی نوێدا بیکەرەوە</string>
     <string name="menu_desktop_mode">وەشانی کۆمپیوتەر</string>
     <string name="menu_search">لە پەڕەکەدا بگەڕێ</string>
     <string name="menu_print">چاپکردن</string>
@@ -93,7 +93,7 @@
     <string name="auth_dialog_password">وشەی تێپەڕ:</string>
     <string name="auth_dialog_detail">%1$s پێویستی بە ناوی بەکارهێنەر و وشەی تێپەڕە.</string>
     <string name="auth_dialog_login">بچۆ ژوورەوە</string>
-    <string name="shortcut_new_incognito_tab">تابی نادیاری نوێ</string>
+    <string name="shortcut_new_incognito_tab">پەڕەی نادیاری نوێ</string>
     <string name="suggestions_provider_history">مێژوو</string>
     <string name="suggestions_provider_none">هیچیان</string>
     <string name="search_bar_hint">بگەڕێ</string>
