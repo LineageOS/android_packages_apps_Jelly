@@ -38,8 +38,10 @@
     <string name="background_shortcuts_save_action">Guardar</string>
     <string name="background_shortcuts_notification_channel">Administrar accesos directos en segundo plano</string>
     <plurals name="background_shortcuts_notification_content">
-        <item quantity="one">%1$d instancia en ejecución</item>
-        <item quantity="other">%1$d instancias en ejecución</item>
+        <item quantity="one">%1$d instancia en ejecución
+</item>
+        <item quantity="other">%1$d instancias en ejecución
+</item>
     </plurals>
     <string name="settings_title">Ajustes</string>
     <string name="pref_search_engine">Motor de búsqueda</string>
