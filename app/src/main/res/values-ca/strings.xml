@@ -38,7 +38,8 @@
     <string name="background_shortcuts_save_action">Desa</string>
     <string name="background_shortcuts_notification_channel">Gestiona les dreceres de fons</string>
     <plurals name="background_shortcuts_notification_content">
-        <item quantity="one">%1$d instància s\'està executant</item>
+        <item quantity="one">%1$d instància s\'està executant
+</item>
         <item quantity="other">S\'estan executant %1$d instàncies</item>
     </plurals>
     <string name="settings_title">Configuració</string>
