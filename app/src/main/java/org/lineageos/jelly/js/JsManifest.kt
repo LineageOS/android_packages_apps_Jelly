@@ -11,6 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.lineageos.jelly.models.PwaManifest
 import org.lineageos.jelly.utils.HttpUtils
 import org.lineageos.jelly.webview.WebViewExtActivity
@@ -35,6 +36,15 @@ class JsManifest(
         }
         resolveIcon(baseUrl, iconUrl) {
             activity.setPwaManifest(pwaManifest)
+        }
+    }
+
+    @JavascriptInterface
+    fun onNewThemeColor(value: String) {
+        scope.launch {
+            withContext(Dispatchers.Main) {
+                activity.setStatusBarColor(value)
+            }
         }
     }
 
@@ -68,6 +78,36 @@ class JsManifest(
                     const baseUrl = $URL();
                     if (!baseUrl) throw new Error('Manifest url not found');
 
+                    let themeColor = null;
+                    const setThemeColor = (value) => {
+                        if (!value || themeColor == value) return;
+                        themeColor = value;
+                        $INTERFACE.onNewThemeColor(value);
+                    };
+                    const getThemeColor = () => {
+                        let matchColor = null;
+                        let lastColor = null;
+
+                        document.querySelectorAll('meta[name="theme-color"]')
+                            .forEach((meta) => {
+                                const media = meta.getAttribute('media');
+                                const content = meta.getAttribute('content')?.trim();
+                                if (!!matchColor || !content) return;
+                                if (window.matchMedia(media).matches) matchColor = content;
+                                lastColor = content;
+                            });
+
+                        return matchColor ?? lastColor;
+                    };
+                    new MutationObserver(
+                        () => setThemeColor(getThemeColor())
+                    ).observe(document.head, {
+                        subtree: true,
+                        childList: true,
+                        attributes: true,
+                        attributeFilter: ['content'],
+                    });
+
                     const res = await fetch(baseUrl);
                     const manifest = await res.json();
 
@@ -79,9 +119,7 @@ class JsManifest(
 
                     const startUrl = manifest.start_url ?? window.location.href;
                     const display = manifest.display ?? 'browser';
-                    const themeColor = document.querySelector('meta[name="theme-color"]')?.content
-                        ?? manifest.theme_color
-                        ?? '#000000';
+                    const mThemeColor = manifest.theme_color ?? '#000000';
                     const shortName = manifest.short_name ?? document.title;
                     const name = manifest.name ?? document.title;
 
@@ -100,7 +138,7 @@ class JsManifest(
 
                     $INTERFACE.onResolved(
                         pwaId, baseUrl, startUrl, iconUrl ?? '',
-                        display, themeColor, shortName, name
+                        display, mThemeColor, shortName, name
                     );
                 } catch (error) {
                     $INTERFACE.onError();
