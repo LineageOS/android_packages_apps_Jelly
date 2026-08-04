@@ -52,6 +52,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
@@ -91,6 +92,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import kotlin.reflect.cast
+import androidx.core.graphics.toColorInt
 
 class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     // View model
@@ -756,6 +758,19 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
     }
 
+    override fun setStatusBarColor(color: String) {
+        if (!isFullscreenPwa) return
+        runCatching {
+            val color = color.toColorInt()
+            val isColorLight = UiUtils.isColorLight(color)
+            WindowCompat.getInsetsController(window, window.decorView).apply {
+                isAppearanceLightStatusBars = isColorLight
+                isAppearanceLightNavigationBars = isColorLight
+            }
+            window.decorView.setBackgroundColor(color)
+        }
+    }
+
     override fun webRequestPermissions(
         permissions: Array<String>,
         cb: ((granted: Array<String>) -> Unit)
@@ -872,24 +887,6 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 true -> ConstraintLayout.LayoutParams.PARENT_ID
                 false -> ConstraintLayout.LayoutParams.UNSET
             }
-        }
-    }
-
-    private fun setStatusBarColor(hex: String) {
-        runCatching {
-            val color = Color.parseColor(hex)
-            if (UiUtils.isColorLight(color)) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    window.insetsController?.setSystemBarsAppearance(
-                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS,
-                        WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
-                    )
-                } else {
-                    @Suppress("Deprecation")
-                    window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                }
-            }
-            window.decorView.setBackgroundColor(color)
         }
     }
 
