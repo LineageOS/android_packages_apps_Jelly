@@ -33,6 +33,7 @@ abstract class WebViewExtActivity : AppCompatActivity() {
     abstract fun updateHistory(title: String, url: String)
     abstract fun replaceHistory(title: String, url: String, newUrl: String)
     abstract fun setPwaManifest(manifest: PwaManifest?)
+    abstract fun setStatusBarColor(color: String)
     abstract fun webRequestPermissions(
         permissions: Array<String>,
         cb: ((granted: Array<String>) -> Unit)
