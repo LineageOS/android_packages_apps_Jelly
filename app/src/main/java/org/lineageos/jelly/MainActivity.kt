@@ -43,6 +43,7 @@ import android.webkit.CookieManager
 import android.webkit.GeolocationPermissions
 import android.webkit.MimeTypeMap
 import android.webkit.WebChromeClient.CustomViewCallback
+import android.webkit.WebView
 import android.widget.LinearLayout
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -222,6 +223,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WebView.setWebContentsDebuggingEnabled(sharedPreferencesExt.webDebuggingEnabled)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         shortcutId = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_ID)

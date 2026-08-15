@@ -76,6 +76,9 @@ class SharedPreferencesExt(context: Context) {
     val reachModeEnabled: Boolean
         get() = sharedPreferences.getBoolean(REACH_MODE_ENABLED_KEY, REACH_MODE_ENABLED_DEFAULT)
 
+    val webDebuggingEnabled: Boolean
+        get() = sharedPreferences.getBoolean(WEB_DEBUGGING_ENABLED_KEY, WEB_DEBUGGING_ENABLED_DEFAULT)
+
     companion object {
         private const val BACKGROUND_SHORTCUTS_KEY = "background_shortcuts"
 
@@ -109,5 +112,8 @@ class SharedPreferencesExt(context: Context) {
 
         private const val REACH_MODE_ENABLED_KEY = "key_reach_mode"
         private const val REACH_MODE_ENABLED_DEFAULT = false
+
+        private const val WEB_DEBUGGING_ENABLED_KEY = "key_web_debugging"
+        private const val WEB_DEBUGGING_ENABLED_DEFAULT = false
     }
 }

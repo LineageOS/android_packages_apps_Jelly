@@ -42,6 +42,13 @@
         app:summary="@string/pref_reach_mode_summary"
         app:title="@string/pref_reach_mode_title" />
 
+    <SwitchPreference
+        app:defaultValue="0"
+        app:iconSpaceReserved="false"
+        app:key="key_web_debugging"
+        app:summary="@string/pref_web_debugging_summary"
+        app:title="@string/pref_web_debugging_title" />
+
     <PreferenceCategory
         app:iconSpaceReserved="false"
         app:title="@string/pref_privacy_security">

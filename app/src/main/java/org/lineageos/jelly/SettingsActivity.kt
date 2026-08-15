@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.webkit.CookieManager
+import android.webkit.WebView
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -81,6 +82,11 @@ class SettingsActivity : AppCompatActivity() {
                     preferenceScreen.removePreference(it)
                 }
             }
+            findPreference<SwitchPreference>("key_web_debugging")?.onPreferenceChangeListener =
+                Preference.OnPreferenceChangeListener { _, newValue ->
+                    WebView.setWebContentsDebuggingEnabled(newValue as Boolean)
+                    true
+                }
         }
 
         override fun onPreferenceChange(preference: Preference, value: Any?): Boolean {
