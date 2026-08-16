@@ -6,7 +6,6 @@
 package org.lineageos.jelly.shortcut
 
 import android.content.ComponentName
-import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Build
@@ -23,6 +22,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.lineageos.jelly.R
 import org.lineageos.jelly.utils.IntentUtils
@@ -47,6 +47,7 @@ class BackgroundShortcutActivity : AppCompatActivity(R.layout.activity_backgroun
     private lateinit var selected: MutableSet<String>
     private lateinit var backgroundShortcuts: List<BackgroundShortcut>
 
+    private var desktopShortcuts: Boolean = false
     private var shortcutId: String? = null
     private var backgroundShortcutService: BackgroundShortcutService? = null
     private var serviceConnection = object : ServiceConnection {
@@ -70,7 +71,18 @@ class BackgroundShortcutActivity : AppCompatActivity(R.layout.activity_backgroun
             setDisplayShowHomeEnabled(true)
         }
 
+        desktopShortcuts = intent.getBooleanExtra(DESKTOP_SHORTCUTS, false)
         shortcutId = intent.getStringExtra(IntentUtils.EXTRA_SHORTCUT_ID)
+
+        title = when (desktopShortcuts) {
+            true -> {
+                lifecycleScope.launch(Dispatchers.IO) {
+                    refresh()
+                }
+                getString(R.string.desktop_shortcuts_title)
+            }
+            false -> getString(R.string.background_shortcuts_title)
+        }
 
         adapter.getSelected = { id -> selected.contains(id) }
         adapter.onLayoutClick = { id ->
@@ -111,13 +123,17 @@ class BackgroundShortcutActivity : AppCompatActivity(R.layout.activity_backgroun
 
     override fun onStart() {
         super.onStart()
-        val intent = Intent(this, BackgroundShortcutService::class.java)
-        bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE)
+        if (!desktopShortcuts) {
+            val intent = Intent(this, BackgroundShortcutService::class.java)
+            bindService(intent, serviceConnection, BIND_AUTO_CREATE)
+        }
     }
 
     override fun onStop() {
         super.onStop()
-        if (backgroundShortcutService != null) unbindService(serviceConnection)
+        if (!desktopShortcuts && backgroundShortcutService != null) {
+            unbindService(serviceConnection)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -142,10 +158,8 @@ class BackgroundShortcutActivity : AppCompatActivity(R.layout.activity_backgroun
     }
 
     private fun refresh() {
-        backgroundShortcutService?.let { service ->
-            val running = service.getRunning()
-            model.next(running)
-        }
+        val running = backgroundShortcutService?.getRunning() ?: setOf()
+        model.next(running)
     }
 
     private fun save() {
@@ -154,10 +168,14 @@ class BackgroundShortcutActivity : AppCompatActivity(R.layout.activity_backgroun
         finish()
     }
 
-    private fun getSavedSelected(): Set<String> = sharedPreferencesExt.backgroundShortcuts
+    private fun getSavedSelected(): Set<String> = when (desktopShortcuts) {
+        true -> sharedPreferencesExt.desktopShortcuts
+        false -> sharedPreferencesExt.backgroundShortcuts
+    }
 
-    private fun setSaveSelected(selected: Set<String>) {
-        sharedPreferencesExt.backgroundShortcuts = selected
+    private fun setSaveSelected(selected: Set<String>) = when (desktopShortcuts) {
+        true -> sharedPreferencesExt.desktopShortcuts = selected
+        false -> sharedPreferencesExt.backgroundShortcuts = selected
     }
 
     private fun getValidSelected(selected: Set<String>): Set<String> {
@@ -165,5 +183,9 @@ class BackgroundShortcutActivity : AppCompatActivity(R.layout.activity_backgroun
         val validSelected = mutableSetOf<String>()
         selected.forEach { if (list.contains(it)) validSelected.add(it) }
         return validSelected.toSet()
+    }
+
+    companion object {
+        const val DESKTOP_SHORTCUTS = "desktop_shortcuts"
     }
 }

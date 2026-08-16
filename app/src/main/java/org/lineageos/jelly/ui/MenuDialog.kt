@@ -17,6 +17,7 @@ import org.lineageos.jelly.R
 
 class MenuDialog(
     context: Context,
+    desktopMode: Boolean,
     private val onClickListener: (option: Option) -> Unit
 ) {
     private val layoutInflater = LayoutInflater.from(context)
@@ -45,6 +46,9 @@ class MenuDialog(
     private val findInPageButton by lazy { view.findViewById<LinearLayout>(R.id.findInPageButton) }
     private val desktopViewSwitch by lazy { view.findViewById<MaterialSwitch>(R.id.desktopViewSwitch) }
     private val printButton by lazy { view.findViewById<LinearLayout>(R.id.printButton) }
+    private val desktopShortcutsButton by lazy {
+        view.findViewById<LinearLayout>(R.id.desktopShortcutsButton)
+    }
     private val backgroundShortcutsButton by lazy {
         view.findViewById<LinearLayout>(R.id.backgroundShortcutsButton)
     }
@@ -57,6 +61,10 @@ class MenuDialog(
         true
     ).apply {
         elevation = context.resources.getDimension(R.dimen.toolbar_elevation)
+    }
+
+    init {
+        desktopViewSwitch.isChecked = desktopMode
     }
 
     var isDesktopMode = false
@@ -81,6 +89,7 @@ class MenuDialog(
         FIND_IN_PAGE,
         DESKTOP_VIEW,
         PRINT,
+        DESKTOP_SHORTCUTS,
         BACKGROUND_SHORTCUTS,
         SETTINGS,
     }
@@ -103,6 +112,7 @@ class MenuDialog(
         findInPageButton.setOnClickListener { triggerOption(Option.FIND_IN_PAGE) }
         desktopViewSwitch.setOnCheckedChangeListener { _, _ -> triggerOption(Option.DESKTOP_VIEW) }
         printButton.setOnClickListener { triggerOption(Option.PRINT) }
+        desktopShortcutsButton.setOnClickListener { triggerOption(Option.DESKTOP_SHORTCUTS) }
         backgroundShortcutsButton.setOnClickListener { triggerOption(Option.BACKGROUND_SHORTCUTS) }
         settingsButton.setOnClickListener { triggerOption(Option.SETTINGS) }
     }
