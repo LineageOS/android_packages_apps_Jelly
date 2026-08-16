@@ -198,9 +198,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
     }
     private var urlIcon: Bitmap? = null
     private var url: String? = null
+    private var desktopMode = false
     private var incognito = false
     private var isFullscreenPwa = false
-    private var desktopMode = false
     private var customView: View? = null
     private var fullScreenCallback: CustomViewCallback? = null
     private lateinit var menuDialog: MenuDialog
@@ -232,20 +232,20 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
             true -> intent.getStringExtra(IntentUtils.EXTRA_PAGE_URL)
             false -> intent.dataString
         }
+        desktopMode = sharedPreferencesExt.desktopShortcuts.contains(shortcutId)
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
         isFullscreenPwa = intent.getStringExtra(MANIFEST_DISPLAY)?.let {
             ALLOWED_FULLSCREEN_PWA_VALUES.contains(it)
         } ?: false
-        desktopMode = false
 
         // Restore from previous instance
         savedInstanceState?.let {
             url = url?.takeIf { url ->
                 url.isNotEmpty()
             } ?: it.getString(IntentUtils.EXTRA_URL, null)
+            desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, desktopMode)
             incognito = it.getBoolean(IntentUtils.EXTRA_INCOGNITO, incognito)
             isFullscreenPwa = it.getBoolean(IntentUtils.EXTRA_FULLSCREEN_PWA, isFullscreenPwa)
-            desktopMode = it.getBoolean(IntentUtils.EXTRA_DESKTOP_MODE, false)
         }
 
         // Make sure prefs are set before loading them
@@ -316,6 +316,14 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                     menuDialog.isDesktopMode = desktopMode
                 }
 
+                MenuDialog.Option.DESKTOP_SHORTCUTS -> Intent(
+                    this,
+                    BackgroundShortcutActivity::class.java
+                ).apply {
+                    putExtra(BackgroundShortcutActivity.DESKTOP_SHORTCUTS, true)
+                    startActivity(this)
+                }
+
                 MenuDialog.Option.BACKGROUND_SHORTCUTS -> backgroundShortcutLauncher.launch(
                     Intent(
                         this,
@@ -334,6 +342,9 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
                 )
             }
             menuDialog.dismiss()
+        }.apply {
+            isDesktopMode = desktopMode
+            initialized = true
         }
         urlBarLayout.onMoreButtonClickCallback = {
             UiUtils.hideKeyboard(window, urlBarLayout)
@@ -468,7 +479,7 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         constraintLayout.addView(webView)
         setUiMode()
         if (webView.initialized) return
-        webView.init(this, urlBarLayout, incognito)
+        webView.init(this, urlBarLayout, desktopMode, incognito)
         if (url != null || sharedPreferencesExt.homePageAutoload) {
             webView.loadUrl(url ?: sharedPreferencesExt.homePage)
         }

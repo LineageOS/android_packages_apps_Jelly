@@ -45,6 +45,9 @@ class MenuDialog(
     private val findInPageButton by lazy { view.findViewById<LinearLayout>(R.id.findInPageButton) }
     private val desktopViewSwitch by lazy { view.findViewById<MaterialSwitch>(R.id.desktopViewSwitch) }
     private val printButton by lazy { view.findViewById<LinearLayout>(R.id.printButton) }
+    private val desktopShortcutsButton by lazy {
+        view.findViewById<LinearLayout>(R.id.desktopShortcutsButton)
+    }
     private val backgroundShortcutsButton by lazy {
         view.findViewById<LinearLayout>(R.id.backgroundShortcutsButton)
     }
@@ -58,6 +61,8 @@ class MenuDialog(
     ).apply {
         elevation = context.resources.getDimension(R.dimen.toolbar_elevation)
     }
+
+    var initialized: Boolean = false
 
     var isDesktopMode = false
         set(value) {
@@ -81,6 +86,7 @@ class MenuDialog(
         FIND_IN_PAGE,
         DESKTOP_VIEW,
         PRINT,
+        DESKTOP_SHORTCUTS,
         BACKGROUND_SHORTCUTS,
         SETTINGS,
     }
@@ -101,8 +107,11 @@ class MenuDialog(
 
         addToHomeScreenButton.setOnClickListener { triggerOption(Option.ADD_TO_HOME_SCREEN) }
         findInPageButton.setOnClickListener { triggerOption(Option.FIND_IN_PAGE) }
-        desktopViewSwitch.setOnCheckedChangeListener { _, _ -> triggerOption(Option.DESKTOP_VIEW) }
+        desktopViewSwitch.setOnCheckedChangeListener { _, _ ->
+            if (initialized) triggerOption(Option.DESKTOP_VIEW)
+        }
         printButton.setOnClickListener { triggerOption(Option.PRINT) }
+        desktopShortcutsButton.setOnClickListener { triggerOption(Option.DESKTOP_SHORTCUTS) }
         backgroundShortcutsButton.setOnClickListener { triggerOption(Option.BACKGROUND_SHORTCUTS) }
         settingsButton.setOnClickListener { triggerOption(Option.SETTINGS) }
     }
