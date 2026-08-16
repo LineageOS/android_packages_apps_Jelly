@@ -185,6 +185,16 @@
                 <com.google.android.material.divider.MaterialDivider style="@style/Theme.Jelly.MenuDivider" />
 
                 <LinearLayout
+                    android:id="@+id/desktopShortcutsButton"
+                    style="@style/Theme.Jelly.MenuItem">
+
+                    <TextView
+                        style="@style/Theme.Jelly.MenuItemTitle"
+                        android:text="@string/menu_desktop_shortcuts"
+                        app:drawableStartCompat="@drawable/ic_desktop" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/backgroundShortcutsButton"
                     style="@style/Theme.Jelly.MenuItem">
 

@@ -152,7 +152,10 @@ class WebViewExt @JvmOverloads constructor(
     }
 
     fun init(
-        activity: WebViewExtActivity, urlBarLayout: UrlBarLayout, incognito: Boolean
+        activity: WebViewExtActivity,
+        urlBarLayout: UrlBarLayout,
+        desktopMode: Boolean,
+        incognito: Boolean,
     ) {
         if (initialized) return
         this.activity = activity
@@ -170,6 +173,7 @@ class WebViewExt @JvmOverloads constructor(
         urlBarLayout.onClearSearchCallback = { clearMatches() }
         urlBarLayout.onSearchPositionChangeCallback = { findNext(it) }
         setup(urlBarLayout)
+        setWebViewDesktopMode(desktopMode)
         initialized = true
     }
 
@@ -192,14 +196,19 @@ class WebViewExt @JvmOverloads constructor(
 
     var isDesktopMode: Boolean
         get() = desktopMode
-        set(desktopMode) {
-            this.desktopMode = desktopMode
-            val settings = settings
-            settings.userAgentString = if (desktopMode) desktopUserAgent else mobileUserAgent
-            settings.useWideViewPort = desktopMode
-            settings.loadWithOverviewMode = desktopMode
+        set(value) {
+            setWebViewDesktopMode(value)
             reload()
         }
+
+    private fun setWebViewDesktopMode(value: Boolean) {
+        desktopMode = value
+        settings.apply {
+            userAgentString = if (value) desktopUserAgent else mobileUserAgent
+            useWideViewPort = value
+            loadWithOverviewMode = value
+        }
+    }
 
     companion object {
         private const val TAG = "WebViewExt"

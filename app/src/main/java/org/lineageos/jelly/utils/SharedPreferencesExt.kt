@@ -27,6 +27,10 @@ class SharedPreferencesExt(context: Context) {
         }
     }
 
+    var desktopShortcuts: Set<String>
+        get() = sharedPreferences.getStringSet(DESKTOP_SHORTCUTS_KEY, setOf<String>())!!
+        set(value) = sharedPreferences.edit { putStringSet(DESKTOP_SHORTCUTS_KEY, value) }
+
     var backgroundShortcuts: Set<String>
         get() = sharedPreferences.getStringSet(BACKGROUND_SHORTCUTS_KEY, setOf<String>())!!
         set(value) = sharedPreferences.edit { putStringSet(BACKGROUND_SHORTCUTS_KEY, value) }
@@ -80,6 +84,8 @@ class SharedPreferencesExt(context: Context) {
         get() = sharedPreferences.getBoolean(WEB_DEBUGGING_ENABLED_KEY, WEB_DEBUGGING_ENABLED_DEFAULT)
 
     companion object {
+        private const val DESKTOP_SHORTCUTS_KEY = "desktop_shortcuts"
+
         private const val BACKGROUND_SHORTCUTS_KEY = "background_shortcuts"
 
         private const val PROTECTED_MEDIA_WHITELIST_KEY = "protected_media_whitelist"
