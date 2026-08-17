@@ -22,6 +22,30 @@
       },
       "revId": "95414ce4d0213c9eaf8bba4e334e42a1bec965df",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67e86ba5_873bedfc",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 21070
+      },
+      "writtenOn": "2026-08-17T09:38:21Z",
+      "side": 1,
+      "message": "Because I need to set `isDesktopMode` value here, look at `isDesktopMode` setter,\nIt changes `isChecked` prop of `desktopViewSwitch` which triggers its `setOnCheckedChangeListener`, as result, `triggerOption` calls very soon which `webView` and `menuDialog` props in MainActivity aren\u0027t still initialized so app crashes, with this `initialized` prop, we can avoid early call to `triggerOption` function.",
+      "parentUuid": "91abc150_52ded2f9",
+      "range": {
+        "startLine": 347,
+        "startChar": 0,
+        "endLine": 347,
+        "endChar": 30
+      },
+      "revId": "95414ce4d0213c9eaf8bba4e334e42a1bec965df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
