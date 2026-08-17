@@ -46,6 +46,30 @@
       },
       "revId": "95414ce4d0213c9eaf8bba4e334e42a1bec965df",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f03ba53e_7784ca97",
+        "filename": "app/src/main/java/org/lineageos/jelly/MainActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-08-17T09:50:53Z",
+      "side": 1,
+      "message": "Then add desktopMode: boolean to MenuDialog ctor and pass it there.\nSet checkbox value before the checklistener",
+      "parentUuid": "67e86ba5_873bedfc",
+      "range": {
+        "startLine": 347,
+        "startChar": 0,
+        "endLine": 347,
+        "endChar": 30
+      },
+      "revId": "95414ce4d0213c9eaf8bba4e334e42a1bec965df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
