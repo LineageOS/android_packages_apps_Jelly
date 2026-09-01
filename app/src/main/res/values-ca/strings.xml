@@ -22,6 +22,7 @@
     <string name="menu_history">Historial</string>
     <string name="menu_downloads">Baixades</string>
     <string name="menu_shortcut">Afegeix una drecera</string>
+    <string name="menu_desktop_shortcuts">Dreceres d\'escriptori</string>
     <string name="menu_background_shortcuts">Dreceres de fons</string>
     <string name="menu_settings">Configuració</string>
     <string name="menu_download">Baixa</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Baixa el fitxer</string>
     <string name="download_message">Vols baixar %1$s?</string>
     <string name="download_positive">Baixa</string>
+    <string name="desktop_shortcuts_title">Dreceres d\'escriptori</string>
     <string name="background_shortcuts_title">Dreceres de fons</string>
     <string name="background_shortcuts_save_action">Desa</string>
     <string name="background_shortcuts_notification_channel">Gestiona les dreceres de fons</string>
@@ -67,6 +69,8 @@
     <string name="pref_cookie_clear_done">Totes les galetes s\'han eliminat</string>
     <string name="pref_do_not_track_title">No vull ser seguit</string>
     <string name="pref_do_not_track_summary">Envia una sol·licitud per evitar el rastreig en els llocs web que visiti</string>
+    <string name="pref_web_debugging_title">Depuració web</string>
+    <string name="pref_web_debugging_summary">Permet la inspecció de pàgines web mitjançant chrome://inspect a través de la depuració USB</string>
     <string name="pref_suggestions_provider">Proveïdor de suggeriments</string>
     <string name="pref_reach_mode_title">Mode simplificat</string>
     <string name="pref_reach_mode_summary">Canvieu els elements de la interfície per a un ús més fàcil amb una sola mà</string>

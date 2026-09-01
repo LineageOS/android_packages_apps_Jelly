@@ -22,6 +22,7 @@
     <string name="menu_history">Zgodovina</string>
     <string name="menu_downloads">Prenosi</string>
     <string name="menu_shortcut">Dodaj bližnjico</string>
+    <string name="menu_desktop_shortcuts">Bližnjice na namizju</string>
     <string name="menu_background_shortcuts">Bližnjice v ozadju</string>
     <string name="menu_settings">Nastavitve</string>
     <string name="menu_download">Prenesi</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Prenesi datoteko</string>
     <string name="download_message">Ali želite prenesti %1$s?</string>
     <string name="download_positive">Prenesi</string>
+    <string name="desktop_shortcuts_title">Bližnjice na namizju</string>
     <string name="background_shortcuts_title">Bližnjice v ozadju</string>
     <string name="background_shortcuts_save_action">Shrani</string>
     <string name="background_shortcuts_notification_channel">Upravljaj bližnjice v ozadju</string>
@@ -68,6 +70,8 @@
     <string name="pref_cookie_clear_done">Vsi piškotki počiščeni</string>
     <string name="pref_do_not_track_title">Ne sledi</string>
     <string name="pref_do_not_track_summary">Spletnim stranem, ki jih obiščete pošlji zahtevo Ne sledi</string>
+    <string name="pref_web_debugging_title">Spletno odpravljanje napak</string>
+    <string name="pref_web_debugging_summary">Dovoli pregledovanje spletnih strani prek chrome://inspect prek razhroščevanja USB</string>
     <string name="pref_suggestions_provider">Ponudnik predlogov</string>
     <string name="pref_reach_mode_title">Način dosega</string>
     <string name="pref_reach_mode_summary">Premakni elemente vmesnika za lažjo enoročno uporabo</string>

@@ -22,6 +22,7 @@
     <string name="menu_history">היסטוריה</string>
     <string name="menu_downloads">הורדות</string>
     <string name="menu_shortcut">הוספת קיצור דרך</string>
+    <string name="menu_desktop_shortcuts">קיצורי דרך בשולחן העבודה</string>
     <string name="menu_background_shortcuts">קיצורי דרך ברקע</string>
     <string name="menu_settings">הגדרות</string>
     <string name="menu_download">הורד</string>
@@ -34,13 +35,13 @@
     <string name="download_title">הורד קובץ</string>
     <string name="download_message">האם להוריד את \"%1$s\"?</string>
     <string name="download_positive">הורד</string>
+    <string name="desktop_shortcuts_title">קיצורי דרך בשולחן העבודה</string>
     <string name="background_shortcuts_title">קיצורי דרך ברקע</string>
     <string name="background_shortcuts_save_action">שמירה</string>
     <string name="background_shortcuts_notification_channel">ניהול קיצורי דרך ברקע</string>
     <plurals name="background_shortcuts_notification_content">
         <item quantity="one">מופע אחד רץ</item>
         <item quantity="two">%1$d מופעים רצים</item>
-        <item quantity="many">%1$d מופעים רצים</item>
         <item quantity="other">%1$d מופעים רצים</item>
     </plurals>
     <string name="settings_title">הגדרות</string>
@@ -68,6 +69,8 @@
     <string name="pref_cookie_clear_done">מחיקת כל העוגיות</string>
     <string name="pref_do_not_track_title">אל תעקוב</string>
     <string name="pref_do_not_track_summary">שלח בקשת \"אל תעקוב\" לאתרים שבהם אתה מבקר</string>
+    <string name="pref_web_debugging_title">ניפוי באגים באינטרנט</string>
+    <string name="pref_web_debugging_summary">אפשר לנפות באגים בדפי אינטרנט באמצעות chrome://inspect דרך ניפוי באגים ב-USB</string>
     <string name="pref_suggestions_provider">ספק הצעות</string>
     <string name="pref_reach_mode_title">מצב יד אחת</string>
     <string name="pref_reach_mode_summary">מאפשר שימוש קל יותר ביד אחת</string>

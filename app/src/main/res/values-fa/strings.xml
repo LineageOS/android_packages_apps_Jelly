@@ -22,6 +22,7 @@
     <string name="menu_history">تاریخچه</string>
     <string name="menu_downloads">بارگیری‌ها</string>
     <string name="menu_shortcut">افزودن میان‌بر</string>
+    <string name="menu_desktop_shortcuts">میانبرهای میز‌کار</string>
     <string name="menu_background_shortcuts">میانبرهای پس زمینه</string>
     <string name="menu_settings">تنظیمات</string>
     <string name="menu_download">بارگیری</string>
@@ -34,6 +35,7 @@
     <string name="download_title">بارگیری پرونده</string>
     <string name="download_message">می‌خواهید %1$s را بارگیری کنید؟</string>
     <string name="download_positive">بارگیری</string>
+    <string name="desktop_shortcuts_title">میانبرهای میز‌کار</string>
     <string name="background_shortcuts_title">میانبرهای پس زمینه</string>
     <string name="background_shortcuts_save_action">ذخیره‌</string>
     <string name="background_shortcuts_notification_channel">مدیریت میانبرهای پس زمینه</string>
@@ -66,6 +68,8 @@
     <string name="pref_cookie_clear_done">تمام کوکی‌ها پاک‌سازی شدند</string>
     <string name="pref_do_not_track_title">ردیابی نکن</string>
     <string name="pref_do_not_track_summary">فرستادن درخواست ردیابی نکن به پایگاه‌های وبی که می‌بینید</string>
+    <string name="pref_web_debugging_title">اشکال‌زدایی وب</string>
+    <string name="pref_web_debugging_summary">اجازه بررسی صفحات وب از طریق chrome://inspect با اشکال‌زدایی USB</string>
     <string name="pref_suggestions_provider">فراهم‌کنندهٔ پیشنهاد</string>
     <string name="pref_reach_mode_title">حالت رسیدن</string>
     <string name="pref_reach_mode_summary">جابجایی عناصر رابط کاربری برای استفاده راحت تر با یک دست</string>

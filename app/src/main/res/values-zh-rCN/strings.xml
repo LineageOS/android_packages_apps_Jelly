@@ -22,6 +22,7 @@
     <string name="menu_history">历史记录</string>
     <string name="menu_downloads">下载</string>
     <string name="menu_shortcut">添加快捷方式</string>
+    <string name="menu_desktop_shortcuts">桌面快捷方式</string>
     <string name="menu_background_shortcuts">后台快捷方式</string>
     <string name="menu_settings">设置</string>
     <string name="menu_download">下载</string>
@@ -34,6 +35,7 @@
     <string name="download_title">下载文件</string>
     <string name="download_message">您想要下载 %1$s 吗？</string>
     <string name="download_positive">下载</string>
+    <string name="desktop_shortcuts_title">桌面快捷方式</string>
     <string name="background_shortcuts_title">后台快捷方式</string>
     <string name="background_shortcuts_save_action">保存</string>
     <string name="background_shortcuts_notification_channel">管理后台快捷方式</string>
@@ -65,6 +67,8 @@
     <string name="pref_cookie_clear_done">已清除所有 Cookies</string>
     <string name="pref_do_not_track_title">不跟踪</string>
     <string name="pref_do_not_track_summary">发送“不跟踪”请求到您浏览的网站</string>
+    <string name="pref_web_debugging_title">网页调试</string>
+    <string name="pref_web_debugging_summary">允许通过 USB 经由 chrome://inspect 调试网页</string>
     <string name="pref_suggestions_provider">建议提供商</string>
     <string name="pref_reach_mode_title">单手模式</string>
     <string name="pref_reach_mode_summary">重新排列界面元素以便于单手操作</string>

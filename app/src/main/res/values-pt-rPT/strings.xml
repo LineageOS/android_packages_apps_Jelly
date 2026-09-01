@@ -22,6 +22,7 @@
     <string name="menu_history">Histórico</string>
     <string name="menu_downloads">Transferências</string>
     <string name="menu_shortcut">Adicionar atalho</string>
+    <string name="menu_desktop_shortcuts">Atalhos do ambiente de trabalho</string>
     <string name="menu_background_shortcuts">Atalhos de fundo</string>
     <string name="menu_settings">Definições</string>
     <string name="menu_download">Transferir</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Transferir ficheiro</string>
     <string name="download_message">Deseja transferir %1$s?</string>
     <string name="download_positive">Transferir</string>
+    <string name="desktop_shortcuts_title">Atalhos do ambiente de trabalho</string>
     <string name="background_shortcuts_title">Atalhos de fundo</string>
     <string name="background_shortcuts_save_action">Guardar</string>
     <string name="background_shortcuts_notification_channel">Gerir atalhos de fundo</string>
@@ -66,6 +68,8 @@
     <string name="pref_cookie_clear_done">Todas as cookies foram apagadas</string>
     <string name="pref_do_not_track_title">Não monitorizar</string>
     <string name="pref_do_not_track_summary">Enviar às paginas que visitar um pedido para não ser monitorizado</string>
+    <string name="pref_web_debugging_title">Depuração web</string>
+    <string name="pref_web_debugging_summary">Permitir inspeção de páginas web via chrome://inspect através da Depuração USB</string>
     <string name="pref_suggestions_provider">Fornecedor de sugestões</string>
     <string name="pref_reach_mode_title">Modo de acesso fácil</string>
     <string name="pref_reach_mode_summary">Reposicionar elementos da interface para uma utilização mais fácil com uma mão</string>

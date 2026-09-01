@@ -22,6 +22,7 @@
     <string name="menu_history">Stair</string>
     <string name="menu_downloads">Íoslódálacha</string>
     <string name="menu_shortcut">Cuir aicearra leis</string>
+    <string name="menu_desktop_shortcuts">Aicearraí deisce</string>
     <string name="menu_background_shortcuts">Aicearraí cúlra</string>
     <string name="menu_settings">Socruithe</string>
     <string name="menu_download">Íoslódáil</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Íoslódáil an comhad</string>
     <string name="download_message">An bhfuil fonn ort %1$s a íoslódáil?</string>
     <string name="download_positive">Íoslódáil</string>
+    <string name="desktop_shortcuts_title">Aicearraí deisce</string>
     <string name="background_shortcuts_title">Aicearraí cúlra</string>
     <string name="background_shortcuts_save_action">Sábháil</string>
     <string name="background_shortcuts_notification_channel">Bainistigh aicearraí cúlra</string>
@@ -69,6 +71,8 @@
     <string name="pref_cookie_clear_done">Glanadh na fianáin go léir</string>
     <string name="pref_do_not_track_title">Ná Rianaigh</string>
     <string name="pref_do_not_track_summary">Seol iarratas Ná Rianaigh chuig láithreáin ghréasáin a dtugann tú cuairt orthu</string>
+    <string name="pref_web_debugging_title">Gréasáin dífhabhtaithe</string>
+    <string name="pref_web_debugging_summary">Ceadaigh leathanaigh ghréasáin a iniúchadh trí chrome://inspect thar USB debugging</string>
     <string name="pref_suggestions_provider">Soláthraí moltaí</string>
     <string name="pref_reach_mode_title">Modh rochtana</string>
     <string name="pref_reach_mode_summary">Athlonnú eilimintí comhéadan le húsáid aon-láimhe níos éasca</string>

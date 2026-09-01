@@ -22,6 +22,7 @@
     <string name="menu_history">Istoric</string>
     <string name="menu_downloads">Descărcări</string>
     <string name="menu_shortcut">Adăugare comandă rapidă</string>
+    <string name="menu_desktop_shortcuts">Comenzi rapide pe desktop</string>
     <string name="menu_background_shortcuts">Comenzi rapide de fundal</string>
     <string name="menu_settings">Setări</string>
     <string name="menu_download">Descărcați</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Descărcați fișierul</string>
     <string name="download_message">Doriţi să descărcați %1$s?</string>
     <string name="download_positive">Descărcați</string>
+    <string name="desktop_shortcuts_title">Comenzi rapide pe desktop</string>
     <string name="background_shortcuts_title">Comenzi rapide de fundal</string>
     <string name="background_shortcuts_save_action">Salvați</string>
     <string name="background_shortcuts_notification_channel">Gestionează comenzile rapide de fundal</string>
@@ -67,6 +69,8 @@
     <string name="pref_cookie_clear_done">Toate cookie-urile au fost șterse</string>
     <string name="pref_do_not_track_title">Nu Urmări</string>
     <string name="pref_do_not_track_summary">Trimite o cerere Nu Urmări site-urilor web pe care le vizitați</string>
+    <string name="pref_web_debugging_title">Depanare web</string>
+    <string name="pref_web_debugging_summary">Permite inspectarea paginilor web pe chrome://inspect prin depanarea USB</string>
     <string name="pref_suggestions_provider">Furnizor de sugestii</string>
     <string name="pref_reach_mode_title">Mod Ajungere</string>
     <string name="pref_reach_mode_summary">Relocalizează elementele de interfață pentru o utilizare mai simplă cu o singură mână</string>

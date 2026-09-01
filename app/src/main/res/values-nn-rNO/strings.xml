@@ -22,6 +22,7 @@
     <string name="menu_history">Logg</string>
     <string name="menu_downloads">Nedlastingar</string>
     <string name="menu_shortcut">Legg til snarveg</string>
+    <string name="menu_desktop_shortcuts">Skrivebordssnarvegar</string>
     <string name="menu_background_shortcuts">Bakgrunnssnarvegar</string>
     <string name="menu_settings">Innstillingar</string>
     <string name="menu_download">Last ned</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Last ned fil</string>
     <string name="download_message">Vil du lasta ned %1$s?</string>
     <string name="download_positive">Last ned</string>
+    <string name="desktop_shortcuts_title">Skrivebordssnarvegar</string>
     <string name="background_shortcuts_title">Bakgrunnssnarvegar</string>
     <string name="background_shortcuts_save_action">Lagra</string>
     <string name="background_shortcuts_notification_channel">Styr bakgrunnssnarvegar</string>
@@ -47,7 +49,7 @@
     <string name="pref_start_page_autoload_enabled">På</string>
     <string name="pref_start_page_autoload_disabled">Av</string>
     <string name="pref_start_page_dialog_title">Vel startside</string>
-    <string name="pref_start_page_dialog_message">Skriv inn nettadressa til startsida</string>
+    <string name="pref_start_page_dialog_message">Skriv nettadressa til startsida</string>
     <string name="pref_start_page_dialog_reset">Nullstill</string>
     <string name="pref_privacy_security">Personvern og tryggleik</string>
     <string name="pref_looklock_title">LookLock</string>
@@ -66,6 +68,8 @@
     <string name="pref_cookie_clear_done">Alle informasjonskapslar er sletta</string>
     <string name="pref_do_not_track_title">Ikkje spor (Do Not Track)</string>
     <string name="pref_do_not_track_summary">Send ein «Ikkje spor»-førespurnad til nettstader du vitjar</string>
+    <string name="pref_web_debugging_title">Nettfeilsøking</string>
+    <string name="pref_web_debugging_summary">Gjer det mogleg å undersøkja nettsider via chrome://inspect over USB-feilsøking</string>
     <string name="pref_suggestions_provider">Forslagsleverandør</string>
     <string name="pref_reach_mode_title">Einhandsmodus</string>
     <string name="pref_reach_mode_summary">Flytt element i grensesnittet for å gjera det lettare å bruka med éi hand</string>
