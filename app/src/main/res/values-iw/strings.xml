@@ -40,7 +40,6 @@
     <plurals name="background_shortcuts_notification_content">
         <item quantity="one">מופע אחד רץ</item>
         <item quantity="two">%1$d מופעים רצים</item>
-        <item quantity="many">%1$d מופעים רצים</item>
         <item quantity="other">%1$d מופעים רצים</item>
     </plurals>
     <string name="settings_title">הגדרות</string>

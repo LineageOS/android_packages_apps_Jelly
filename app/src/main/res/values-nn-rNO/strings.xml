@@ -47,7 +47,7 @@
     <string name="pref_start_page_autoload_enabled">På</string>
     <string name="pref_start_page_autoload_disabled">Av</string>
     <string name="pref_start_page_dialog_title">Vel startside</string>
-    <string name="pref_start_page_dialog_message">Skriv inn nettadressa til startsida</string>
+    <string name="pref_start_page_dialog_message">Skriv nettadressa til startsida</string>
     <string name="pref_start_page_dialog_reset">Nullstill</string>
     <string name="pref_privacy_security">Personvern og tryggleik</string>
     <string name="pref_looklock_title">LookLock</string>
