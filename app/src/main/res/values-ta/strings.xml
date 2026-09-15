@@ -22,6 +22,7 @@
     <string name="menu_history">வரலாறு</string>
     <string name="menu_downloads">பதிவிறக்கங்கள்</string>
     <string name="menu_shortcut">குறுக்குவழியைச் சேர்</string>
+    <string name="menu_desktop_shortcuts">முகப்புக்குறுக்குவழி</string>
     <string name="menu_background_shortcuts">பின்னணிக் குறுக்குவழிகள்</string>
     <string name="menu_settings">அமைப்புகள்</string>
     <string name="menu_download">பதிவிறக்கு</string>
@@ -34,6 +35,7 @@
     <string name="download_title">கோப்பைப் பதிவிறக்கு</string>
     <string name="download_message">%1$s என்பதைப் பதிவிறக்க விரும்புகிறீரா?</string>
     <string name="download_positive">பதிவிறக்கு</string>
+    <string name="desktop_shortcuts_title">முகப்புக்குறுக்குவழி</string>
     <string name="background_shortcuts_title">பின்னணிக் குறுக்குவழிகள்</string>
     <string name="background_shortcuts_save_action">சேமி</string>
     <string name="background_shortcuts_notification_channel">பின்னணிக் குறுக்குவழிகளை மேலாள்</string>
@@ -66,6 +68,8 @@
     <string name="pref_cookie_clear_done">நினைவிகள் முற்றுந் துடைத்தன</string>
     <string name="pref_do_not_track_title">தொடரேல்</string>
     <string name="pref_do_not_track_summary">புகுதளங்களுக்குத் தொடராமை கோரிவிடு</string>
+    <string name="pref_web_debugging_title">வலை வழுநீக்கம்</string>
+    <string name="pref_web_debugging_summary">USB வழுநீக்கம் வழியாக chrome://inspect பயன்படுத்தி வலைப்பக்கங்களை ஆய்விட இசைவுறு</string>
     <string name="pref_suggestions_provider">பரிந்துரை நல்கி</string>
     <string name="pref_reach_mode_title">எட்டுநிலை</string>
     <string name="pref_reach_mode_summary">ஒருகை இயக்கத்திற்கு ஏற்பத் திரையின் கூறுகளை இடமாற்றி அமை</string>

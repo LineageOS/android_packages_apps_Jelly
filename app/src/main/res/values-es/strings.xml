@@ -22,6 +22,7 @@
     <string name="menu_history">Historial</string>
     <string name="menu_downloads">Descargas</string>
     <string name="menu_shortcut">Crear un acceso directo</string>
+    <string name="menu_desktop_shortcuts">Accesos directos del escritorio</string>
     <string name="menu_background_shortcuts">Accesos directos en segundo plano</string>
     <string name="menu_settings">Ajustes</string>
     <string name="menu_download">Descargar</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Descargar archivo</string>
     <string name="download_message">¿Quieres descargar %1$s?</string>
     <string name="download_positive">Descargar</string>
+    <string name="desktop_shortcuts_title">Accesos directos del escritorio</string>
     <string name="background_shortcuts_title">Accesos directos en segundo plano</string>
     <string name="background_shortcuts_save_action">Guardar</string>
     <string name="background_shortcuts_notification_channel">Administrar accesos directos en segundo plano</string>
@@ -68,6 +70,7 @@
     <string name="pref_cookie_clear_done">Se han eliminado todas las cookies</string>
     <string name="pref_do_not_track_title">No rastrear</string>
     <string name="pref_do_not_track_summary">Envía una solicitud para evitar el rastreo en los sitios web que visites</string>
+    <string name="pref_web_debugging_title">Depuración web</string>
     <string name="pref_suggestions_provider">Proveedor de sugerencias</string>
     <string name="pref_reach_mode_title">Modo simplificado</string>
     <string name="pref_reach_mode_summary">Reubica los elementos de la interfaz para facilitar su uso con una sola mano.</string>

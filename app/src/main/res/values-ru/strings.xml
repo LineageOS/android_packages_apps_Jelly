@@ -22,6 +22,7 @@
     <string name="menu_history">История</string>
     <string name="menu_downloads">Загрузки</string>
     <string name="menu_shortcut">Поместить на главный экран</string>
+    <string name="menu_desktop_shortcuts">Ярлыки рабочего стола</string>
     <string name="menu_background_shortcuts">Фоновые ярлыки</string>
     <string name="menu_settings">Настройки</string>
     <string name="menu_download">Скачать</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Загрузка файла</string>
     <string name="download_message">Вы действительно хотите скачать %1$s?</string>
     <string name="download_positive">Загрузить</string>
+    <string name="desktop_shortcuts_title">Ярлыки рабочего стола</string>
     <string name="background_shortcuts_title">Фоновые ярлыки</string>
     <string name="background_shortcuts_save_action">Сохранить</string>
     <string name="background_shortcuts_notification_channel">Управление фоновыми ярлыками</string>
@@ -68,6 +70,7 @@
     <string name="pref_cookie_clear_done">Cookie удалены</string>
     <string name="pref_do_not_track_title">Не отслеживать</string>
     <string name="pref_do_not_track_summary">Браузер будет сообщать сайтам, что Вы не хотите, чтобы Вас отслеживали</string>
+    <string name="pref_web_debugging_title">Веб-отладка</string>
     <string name="pref_suggestions_provider">Провайдер поисковых предложений</string>
     <string name="pref_reach_mode_title">Управление одной рукой</string>
     <string name="pref_reach_mode_summary">Изменение расположения элементов интерфейса для удобного управления одной рукой</string>
