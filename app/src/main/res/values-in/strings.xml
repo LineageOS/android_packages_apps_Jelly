@@ -102,6 +102,7 @@
     <string name="ssl_error_date_invalid">Sertifikat ini memiliki tanggal yang tidak valid.</string>
     <string name="ssl_error_invalid">Sertifikat ini tidak valid.</string>
     <string name="ssl_error_unknown">Kesalahan sertifikat tidak diketahui.</string>
+    <string name="location_dialog_title">Berikan lokasi?</string>
     <string name="location_dialog_message">%1$s ingin menggunakan geolokasi Anda.</string>
     <string name="location_dialog_allow">Izinkan</string>
     <string name="location_dialog_block">Blokir</string>

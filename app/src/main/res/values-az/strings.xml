@@ -83,7 +83,7 @@
     <string name="shortcut_new_incognito_tab">Yeni gizli vərəq</string>
     <string name="suggestions_provider_none">Heç biri</string>
     <string name="search_bar_hint">Axtar</string>
-    <string name="ssl_cert_dialog_title">SSL Sertifikat Detalları</string>
+    <string name="ssl_cert_dialog_title">SSL Sertifikat Ayrıntıları</string>
     <string name="ssl_cert_dialog_trust">Trust</string>
     <string name="ssl_cert_dialog_trusted">Bağlantı güvənlidir</string>
     <string name="ssl_cert_dialog_domain">Domen</string>
