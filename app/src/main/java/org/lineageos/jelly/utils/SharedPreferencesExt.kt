@@ -83,6 +83,11 @@ class SharedPreferencesExt(context: Context) {
     val webDebuggingEnabled: Boolean
         get() = sharedPreferences.getBoolean(WEB_DEBUGGING_ENABLED_KEY, WEB_DEBUGGING_ENABLED_DEFAULT)
 
+    val fullscreenShortcutsEnabled: Boolean
+        get() = sharedPreferences.getBoolean(
+            FULLSCREEN_SHORTCUTS_ENABLED_KEY, FULLSCREEN_SHORTCUTS_ENABLED_DEFAULT
+        )
+
     companion object {
         private const val DESKTOP_SHORTCUTS_KEY = "desktop_shortcuts"
 
@@ -121,5 +126,8 @@ class SharedPreferencesExt(context: Context) {
 
         private const val WEB_DEBUGGING_ENABLED_KEY = "key_web_debugging"
         private const val WEB_DEBUGGING_ENABLED_DEFAULT = false
+
+        private const val FULLSCREEN_SHORTCUTS_ENABLED_KEY = "key_fullscreen_shortcuts"
+        private const val FULLSCREEN_SHORTCUTS_ENABLED_DEFAULT = false
     }
 }
