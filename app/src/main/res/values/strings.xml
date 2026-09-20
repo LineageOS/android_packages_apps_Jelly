@@ -137,6 +137,10 @@
     <string name="pref_web_debugging_title">Web debugging</string>
     <!-- Settings: web debugging preference summary -->
     <string name="pref_web_debugging_summary">Allow inspecting web pages via chrome://inspect over USB debugging</string>
+    <!-- Settings: fullscreen shortcuts preference title -->
+    <string name="pref_fullscreen_shortcuts_title">Fullscreen shortcuts</string>
+    <!-- Settings: fullscreen shortcuts preference summary -->
+    <string name="pref_fullscreen_shortcuts_summary">Force shortcut to open in fullscreen mode</string>
     <!-- Settings: suggestions provider title -->
     <string name="pref_suggestions_provider">Suggestions provider</string>
     <!-- Settings: reach mode title -->

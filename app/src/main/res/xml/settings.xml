@@ -49,6 +49,13 @@
         app:summary="@string/pref_web_debugging_summary"
         app:title="@string/pref_web_debugging_title" />
 
+    <SwitchPreference
+        app:defaultValue="0"
+        app:iconSpaceReserved="false"
+        app:key="key_fullscreen_shortcuts"
+        app:summary="@string/pref_fullscreen_shortcuts_summary"
+        app:title="@string/pref_fullscreen_shortcuts_title" />
+
     <PreferenceCategory
         app:iconSpaceReserved="false"
         app:title="@string/pref_privacy_security">

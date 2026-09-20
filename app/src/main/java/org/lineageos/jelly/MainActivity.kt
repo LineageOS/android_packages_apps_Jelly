@@ -234,9 +234,12 @@ class MainActivity : WebViewExtActivity(), SharedPreferences.OnSharedPreferenceC
         }
         desktopMode = sharedPreferencesExt.desktopShortcuts.contains(shortcutId)
         incognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false)
-        isFullscreenPwa = intent.getStringExtra(MANIFEST_DISPLAY)?.let {
-            ALLOWED_FULLSCREEN_PWA_VALUES.contains(it)
-        } ?: false
+        isFullscreenPwa = when {
+            sharedPreferencesExt.fullscreenShortcutsEnabled && !shortcutId.isNullOrEmpty() -> true
+            else -> intent.getStringExtra(MANIFEST_DISPLAY)?.let {
+                ALLOWED_FULLSCREEN_PWA_VALUES.contains(it)
+            } ?: false
+        }
 
         // Restore from previous instance
         savedInstanceState?.let {
