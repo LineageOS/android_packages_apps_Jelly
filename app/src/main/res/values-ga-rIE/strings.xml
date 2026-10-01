@@ -73,6 +73,8 @@
     <string name="pref_do_not_track_summary">Seol iarratas Ná Rianaigh chuig láithreáin ghréasáin a dtugann tú cuairt orthu</string>
     <string name="pref_web_debugging_title">Gréasáin dífhabhtaithe</string>
     <string name="pref_web_debugging_summary">Ceadaigh leathanaigh ghréasáin a iniúchadh trí chrome://inspect thar USB debugging</string>
+    <string name="pref_fullscreen_shortcuts_title">Aicearraí lánscáileáin</string>
+    <string name="pref_fullscreen_shortcuts_summary">Cuir iallach ar aicearraí oscailt i mód lánscáileáin</string>
     <string name="pref_suggestions_provider">Soláthraí moltaí</string>
     <string name="pref_reach_mode_title">Modh rochtana</string>
     <string name="pref_reach_mode_summary">Athlonnú eilimintí comhéadan le húsáid aon-láimhe níos éasca</string>

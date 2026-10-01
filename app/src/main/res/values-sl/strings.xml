@@ -72,6 +72,8 @@
     <string name="pref_do_not_track_summary">Spletnim stranem, ki jih obiščete pošlji zahtevo Ne sledi</string>
     <string name="pref_web_debugging_title">Spletno odpravljanje napak</string>
     <string name="pref_web_debugging_summary">Dovoli pregledovanje spletnih strani prek chrome://inspect prek razhroščevanja USB</string>
+    <string name="pref_fullscreen_shortcuts_title">Celozaslonske bližnjice</string>
+    <string name="pref_fullscreen_shortcuts_summary">Vsili bližnjicam odpiranje v celozaslonskem načinu</string>
     <string name="pref_suggestions_provider">Ponudnik predlogov</string>
     <string name="pref_reach_mode_title">Način dosega</string>
     <string name="pref_reach_mode_summary">Premakni elemente vmesnika za lažjo enoročno uporabo</string>

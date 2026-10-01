@@ -69,6 +69,8 @@
     <string name="pref_do_not_track_summary">发送“不跟踪”请求到您浏览的网站</string>
     <string name="pref_web_debugging_title">网页调试</string>
     <string name="pref_web_debugging_summary">允许通过 USB 经由 chrome://inspect 调试网页</string>
+    <string name="pref_fullscreen_shortcuts_title">全屏快捷方式</string>
+    <string name="pref_fullscreen_shortcuts_summary">强制快捷方式以全屏模式打开</string>
     <string name="pref_suggestions_provider">建议提供商</string>
     <string name="pref_reach_mode_title">单手模式</string>
     <string name="pref_reach_mode_summary">重新排列界面元素以便于单手操作</string>

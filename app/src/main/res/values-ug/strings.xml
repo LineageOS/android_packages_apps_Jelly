@@ -70,6 +70,8 @@
     <string name="pref_do_not_track_summary">زىيارەت قىلىۋاتقان تور بېكەتكە ئىزلىماسلىق ئىلتىماسى يوللايدۇ</string>
     <string name="pref_web_debugging_title">تور سازلاش</string>
     <string name="pref_web_debugging_summary">USB سازلاش ئارقىلىق chrome://inspect بىلەن تور بەت تەكشۈرۈشكە يول قويىدۇ</string>
+    <string name="pref_fullscreen_shortcuts_title">تولۇق ئېكران تېزلەتمە</string>
+    <string name="pref_fullscreen_shortcuts_summary">تېزلەتمىنى تولۇق ئېكران ھالىتىدە ئېچىشقا مەجبۇرلايدۇ</string>
     <string name="pref_suggestions_provider">تەكلىپ تەمىنلىگۈچى</string>
     <string name="pref_reach_mode_title">يەككە قول ھالىتى</string>
     <string name="pref_reach_mode_summary">ئارايۈز ئېلېمېنتلىرىنى قايتا جايلاشتۇرۇپ يەككە قولدا ئىشلىتىشكە قولايلاشتۇرىدۇ</string>

@@ -70,6 +70,8 @@
     <string name="pref_do_not_track_summary">Invia una richiesta di non tracciabilità ai siti Web visitati</string>
     <string name="pref_web_debugging_title">Debug pagine web</string>
     <string name="pref_web_debugging_summary">Consenti l\'ispezione delle pagine web tramite chrome://inspect tramite il debug USB</string>
+    <string name="pref_fullscreen_shortcuts_title">Scorciatoie a schermo intero</string>
+    <string name="pref_fullscreen_shortcuts_summary">Forza l\'apertura delle scorciatoie in modalità schermo intero</string>
     <string name="pref_suggestions_provider">Provider per suggerimenti</string>
     <string name="pref_reach_mode_title">Modalità una mano</string>
     <string name="pref_reach_mode_summary">Riposiziona gli elementi dell\'interfaccia per facilitare l\'utilizzo ad una sola mano</string>

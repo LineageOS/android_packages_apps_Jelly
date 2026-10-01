@@ -22,6 +22,7 @@
     <string name="menu_history">Előzmények</string>
     <string name="menu_downloads">Letöltések</string>
     <string name="menu_shortcut">Parancsikon létrehozása</string>
+    <string name="menu_desktop_shortcuts">Asztali parancsikonok</string>
     <string name="menu_background_shortcuts">Háttérbéli parancsikonok</string>
     <string name="menu_settings">Beállítások</string>
     <string name="menu_download">Letöltés</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Fájl letöltése</string>
     <string name="download_message">Szeretné letölteni: %1$s?</string>
     <string name="download_positive">Letöltés</string>
+    <string name="desktop_shortcuts_title">Asztali parancsikonok</string>
     <string name="background_shortcuts_title">Háttérbéli parancsikonok</string>
     <string name="background_shortcuts_save_action">Mentés</string>
     <string name="background_shortcuts_notification_channel">A \'Háttérbéli parancsikonok\' kezelése</string>
@@ -66,6 +68,10 @@
     <string name="pref_cookie_clear_done">Az összes süti törölésre került</string>
     <string name="pref_do_not_track_title">Ne kövesse nyomon</string>
     <string name="pref_do_not_track_summary">\"Ne kövessen nyomon\" kérés kiadása a meglátogatott weboldalaknak</string>
+    <string name="pref_web_debugging_title">WEB-hibakeresés</string>
+    <string name="pref_web_debugging_summary">Weboldalak vizsgálatának engedélyezése a chrome://inspect paranccsal USB hibakereséssel</string>
+    <string name="pref_fullscreen_shortcuts_title">Indítás teljesképernyősen</string>
+    <string name="pref_fullscreen_shortcuts_summary">Kényszerített megnyitás teljesképernyős módban</string>
     <string name="pref_suggestions_provider">Javaslatszolgáltató</string>
     <string name="pref_reach_mode_title">Egykezes mód</string>
     <string name="pref_reach_mode_summary">Áthelyezheti a felhasználói felület elemeit, hogy az egykezes használat könnyebbé váljon</string>

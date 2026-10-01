@@ -70,6 +70,8 @@
     <string name="pref_do_not_track_summary">Ziyarət etdiyin vebsaytlara İzləmə tələbi göndər</string>
     <string name="pref_web_debugging_title">Veb sazlama</string>
     <string name="pref_web_debugging_summary">USB sazlama ilə chrome://inspect üzərindən veb səhifələrin incələnməsinə icazə ver</string>
+    <string name="pref_fullscreen_shortcuts_title">Tam ekran qısayolları</string>
+    <string name="pref_fullscreen_shortcuts_summary">Qısayolların tam ekranda açılmasına məcbur et</string>
     <string name="pref_suggestions_provider">Təklif provayderi</string>
     <string name="pref_reach_mode_title">Müraciət rejimi</string>
     <string name="pref_reach_mode_summary">Daha asan tək əlli istifadə üçün interfeys elementlərinin yerini dəyişdirin</string>

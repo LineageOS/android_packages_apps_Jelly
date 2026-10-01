@@ -72,6 +72,8 @@
     <string name="pref_do_not_track_summary">Wysyłaj żądanie Nie Śledź do stron które odwiedzasz</string>
     <string name="pref_web_debugging_title">Debugowanie sieci Web</string>
     <string name="pref_web_debugging_summary">Zezwalaj na sprawdzanie stron internetowych przez chrome://inspect poprzez debugowanie USB</string>
+    <string name="pref_fullscreen_shortcuts_title">Skróty pełnoekranowe</string>
+    <string name="pref_fullscreen_shortcuts_summary">Wymuś otwieranie skrótów w trybie pełnoekranowym</string>
     <string name="pref_suggestions_provider">Dostawca sugestii</string>
     <string name="pref_reach_mode_title">Tryb zasięgu</string>
     <string name="pref_reach_mode_summary">Zmień położenie elementów interfejsu dla łatwiejszej obsługi jedną ręką</string>

@@ -21,6 +21,7 @@
     <string name="menu_history">Riwayat</string>
     <string name="menu_downloads">Unduhan</string>
     <string name="menu_shortcut">Tambahkan pintasan</string>
+    <string name="menu_desktop_shortcuts">Pintasan desktop</string>
     <string name="menu_settings">Setelan</string>
     <string name="menu_download">Unduh</string>
     <string name="menu_in_new_tab">Buka di tab baru</string>
@@ -32,6 +33,7 @@
     <string name="download_title">Unduh berkas</string>
     <string name="download_message">Apakah Anda ingin mengunduh %1$s?</string>
     <string name="download_positive">Unduh</string>
+    <string name="desktop_shortcuts_title">Pintasan desktop</string>
     <string name="background_shortcuts_save_action">Simpan</string>
     <string name="settings_title">Setelan</string>
     <string name="pref_search_engine">Mesin pencarian</string>

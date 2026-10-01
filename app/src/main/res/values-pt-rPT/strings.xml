@@ -70,6 +70,8 @@
     <string name="pref_do_not_track_summary">Enviar às paginas que visitar um pedido para não ser monitorizado</string>
     <string name="pref_web_debugging_title">Depuração web</string>
     <string name="pref_web_debugging_summary">Permitir inspeção de páginas web via chrome://inspect através da Depuração USB</string>
+    <string name="pref_fullscreen_shortcuts_title">Atalhos do ecrã de bloqueio</string>
+    <string name="pref_fullscreen_shortcuts_summary">Forçar atalhos a abrir em ecrã completo</string>
     <string name="pref_suggestions_provider">Fornecedor de sugestões</string>
     <string name="pref_reach_mode_title">Modo de acesso fácil</string>
     <string name="pref_reach_mode_summary">Reposicionar elementos da interface para uma utilização mais fácil com uma mão</string>

@@ -69,6 +69,8 @@
     <string name="pref_do_not_track_summary">ウェブサイトに Do Not Track 要求を送信します</string>
     <string name="pref_web_debugging_title">ウェブデバッグ</string>
     <string name="pref_web_debugging_summary">USB デバッグ経由で chrome://inspect でのウェブページの検証を許可します</string>
+    <string name="pref_fullscreen_shortcuts_title">全画面ショートカット</string>
+    <string name="pref_fullscreen_shortcuts_summary">ショートカットを強制的に全画面表示モードで開きます</string>
     <string name="pref_suggestions_provider">提案プロパイダ</string>
     <string name="pref_reach_mode_title">片手モード</string>
     <string name="pref_reach_mode_summary">片手で簡単に使用できるよう、UI要素を再配置します</string>

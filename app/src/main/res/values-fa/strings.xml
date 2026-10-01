@@ -70,6 +70,8 @@
     <string name="pref_do_not_track_summary">فرستادن درخواست ردیابی نکن به پایگاه‌های وبی که می‌بینید</string>
     <string name="pref_web_debugging_title">اشکال‌زدایی وب</string>
     <string name="pref_web_debugging_summary">اجازه بررسی صفحات وب از طریق chrome://inspect با اشکال‌زدایی USB</string>
+    <string name="pref_fullscreen_shortcuts_title">میانبرهای حالت تمام‌صفحه</string>
+    <string name="pref_fullscreen_shortcuts_summary">اجبار میانبرها به باز شدن در حالت تمام‌صفحه</string>
     <string name="pref_suggestions_provider">فراهم‌کنندهٔ پیشنهاد</string>
     <string name="pref_reach_mode_title">حالت رسیدن</string>
     <string name="pref_reach_mode_summary">جابجایی عناصر رابط کاربری برای استفاده راحت تر با یک دست</string>

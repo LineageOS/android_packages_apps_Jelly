@@ -71,6 +71,8 @@
     <string name="pref_do_not_track_summary">Envia una sol·licitud per evitar el rastreig en els llocs web que visiti</string>
     <string name="pref_web_debugging_title">Depuració web</string>
     <string name="pref_web_debugging_summary">Permet la inspecció de pàgines web mitjançant chrome://inspect a través de la depuració USB</string>
+    <string name="pref_fullscreen_shortcuts_title">Dreceres de pantalla completa</string>
+    <string name="pref_fullscreen_shortcuts_summary">Força les dreceres perquè s\'obrin en mode de pantalla completa</string>
     <string name="pref_suggestions_provider">Proveïdor de suggeriments</string>
     <string name="pref_reach_mode_title">Mode simplificat</string>
     <string name="pref_reach_mode_summary">Canvieu els elements de la interfície per a un ús més fàcil amb una sola mà</string>
