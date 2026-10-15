@@ -90,8 +90,8 @@
     <string name="error_no_activity_found">هیچ بەرنامەیەک ناتوانێت ئەم لینکە بکاتەوە</string>
     <string name="auth_dialog_title">پێویستی بە چوونەژوورەوەیە</string>
     <string name="auth_dialog_username">ناوی بەکارهێنەر:</string>
-    <string name="auth_dialog_password">وشەی تێپەڕ:</string>
-    <string name="auth_dialog_detail">%1$s پێویستی بە ناوی بەکارهێنەر و وشەی تێپەڕە.</string>
+    <string name="auth_dialog_password">تێپەڕەوشە:</string>
+    <string name="auth_dialog_detail">%1$s پێویستی بە ناوی بەکارهێنەر و تێپەڕەوشەیە.</string>
     <string name="auth_dialog_login">بچۆ ژوورەوە</string>
     <string name="shortcut_new_incognito_tab">پەڕەی نادیاری نوێ</string>
     <string name="suggestions_provider_history">مێژوو</string>
