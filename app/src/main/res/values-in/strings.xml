@@ -22,6 +22,7 @@
     <string name="menu_downloads">Unduhan</string>
     <string name="menu_shortcut">Tambahkan pintasan</string>
     <string name="menu_desktop_shortcuts">Pintasan desktop</string>
+    <string name="menu_background_shortcuts">Pintasan latar belakang</string>
     <string name="menu_settings">Setelan</string>
     <string name="menu_download">Unduh</string>
     <string name="menu_in_new_tab">Buka di tab baru</string>
@@ -34,7 +35,12 @@
     <string name="download_message">Apakah Anda ingin mengunduh %1$s?</string>
     <string name="download_positive">Unduh</string>
     <string name="desktop_shortcuts_title">Pintasan desktop</string>
+    <string name="background_shortcuts_title">Pintasan latar belakang</string>
     <string name="background_shortcuts_save_action">Simpan</string>
+    <string name="background_shortcuts_notification_channel">Kelola pintasan latar belakang</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="other">%1$d aktivitas sedang berjalan</item>
+    </plurals>
     <string name="settings_title">Setelan</string>
     <string name="pref_search_engine">Mesin pencarian</string>
     <string name="pref_start_page">Halaman utama</string>
@@ -46,6 +52,8 @@
     <string name="pref_privacy_security">Privasi &amp; keamanan</string>
     <string name="pref_looklock_title">LookLock</string>
     <string name="pref_looklock_summary">Cegah aplikasi lain untuk membaca konten Browser</string>
+    <string name="pref_dynamic_popup_title">Popup dinamis</string>
+    <string name="pref_dynamic_popup_summary">Izinkan JavaScript untuk membuka popup tanpa interaksi pengguna</string>
     <string name="pref_js_title">JavaScript</string>
     <string name="pref_js_summary">Hidupkan JavaScript</string>
     <string name="pref_location_title">Lokasi</string>

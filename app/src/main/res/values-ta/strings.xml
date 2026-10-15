@@ -70,6 +70,8 @@
     <string name="pref_do_not_track_summary">புகுதளங்களுக்குத் தொடராமை கோரிவிடு</string>
     <string name="pref_web_debugging_title">வலை வழுநீக்கம்</string>
     <string name="pref_web_debugging_summary">USB வழுநீக்கம் வழியாக chrome://inspect பயன்படுத்தி வலைப்பக்கங்களை ஆய்விட இசைவுறு</string>
+    <string name="pref_fullscreen_shortcuts_title">முழுத்திரை குறுக்குவழிகள்</string>
+    <string name="pref_fullscreen_shortcuts_summary">குறுக்குவழிகளை முழுத்திரையிற் கட்டாயந்திற</string>
     <string name="pref_suggestions_provider">பரிந்துரை நல்கி</string>
     <string name="pref_reach_mode_title">எட்டுநிலை</string>
     <string name="pref_reach_mode_summary">ஒருகை இயக்கத்திற்கு ஏற்பத் திரையின் கூறுகளை இடமாற்றி அமை</string>
