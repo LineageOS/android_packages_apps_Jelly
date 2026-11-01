@@ -22,7 +22,7 @@
     <string name="menu_history">مێژوو</string>
     <string name="menu_downloads">داگیراوەکان</string>
     <string name="menu_shortcut">کورتە زیاد بکە</string>
-    <string name="menu_desktop_shortcuts">کورتەبڕەکانی ڕوونمای سەرەکی</string>
+    <string name="menu_desktop_shortcuts">قەدبڕەکانی ڕوونمای سەرەکی</string>
     <string name="menu_background_shortcuts">کورتەکانی پاشبنەما</string>
     <string name="menu_settings">ڕێکخستنەکان</string>
     <string name="menu_download">دایبگرە</string>
@@ -35,7 +35,7 @@
     <string name="download_title">داگرتنی پەڕگە</string>
     <string name="download_message">ئایا دەتەوێت %1$s دابگریت؟</string>
     <string name="download_positive">دایبگرە</string>
-    <string name="desktop_shortcuts_title">کورتەبڕەکانی ڕوونمای سەرەکی</string>
+    <string name="desktop_shortcuts_title">قەدبڕەکانی ڕوونمای سەرەکی</string>
     <string name="background_shortcuts_title">کورتەکانی پاشبنەما</string>
     <string name="background_shortcuts_save_action">پاشەکەوتکردن</string>
     <string name="background_shortcuts_notification_channel">بەڕێوەبردنی کورتەکانی پاشبنەما</string>
@@ -70,8 +70,8 @@
     <string name="pref_do_not_track_summary">داواکاریی \"بەدواداچوون مەکە\" بنێرە بۆ ئەو ماڵپەڕانەی سەردانیان دەکەیت</string>
     <string name="pref_web_debugging_title">هەڵەدۆزیی وێب</string>
     <string name="pref_web_debugging_summary">ڕێگەدان بە پشکنینی پەڕەکانی وێب لەڕێگەی chrome://inspect لە کاتی هەڵەدۆزیی USBدا</string>
-    <string name="pref_fullscreen_shortcuts_title">کورتەبڕەکانی تەواوی ڕوونما</string>
-    <string name="pref_fullscreen_shortcuts_summary">ناچارکردنی کورتەبڕەکان بە کردنەوە لە دۆخی تەواوی ڕوونمادا</string>
+    <string name="pref_fullscreen_shortcuts_title">قەدبڕەکانی تەواو ڕوونما</string>
+    <string name="pref_fullscreen_shortcuts_summary">ناچارکردنی قەدبڕەکان بە کردنەوە لە دۆخی تەواو ڕوونمادا</string>
     <string name="pref_suggestions_provider">دابینکەری پێشنیارەکان</string>
     <string name="pref_reach_mode_title">دۆخی دەستپێگەیشتن</string>
     <string name="pref_reach_mode_summary">گۆڕینی شوێنی بەشەکانی ڕووکار بۆ بەکارهێنانی ئاسانتر بە یەک دەست</string>
