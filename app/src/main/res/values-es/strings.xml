@@ -71,6 +71,8 @@
     <string name="pref_do_not_track_title">No rastrear</string>
     <string name="pref_do_not_track_summary">Envía una solicitud para evitar el rastreo en los sitios web que visites</string>
     <string name="pref_web_debugging_title">Depuración web</string>
+    <string name="pref_fullscreen_shortcuts_title">Accesos directos a pantalla completa</string>
+    <string name="pref_fullscreen_shortcuts_summary">Forzar la apertura de accesos directos en modo de pantalla completa</string>
     <string name="pref_suggestions_provider">Proveedor de sugerencias</string>
     <string name="pref_reach_mode_title">Modo simplificado</string>
     <string name="pref_reach_mode_summary">Reubica los elementos de la interfaz para facilitar su uso con una sola mano.</string>

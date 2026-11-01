@@ -22,6 +22,7 @@
     <string name="menu_history">Historique</string>
     <string name="menu_downloads">Téléchargements</string>
     <string name="menu_shortcut">Ajouter un raccourci</string>
+    <string name="menu_desktop_shortcuts">Raccourcis du bureau</string>
     <string name="menu_background_shortcuts">Raccourcis d\'arrière-plan</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_download">Télécharger</string>
@@ -34,6 +35,7 @@
     <string name="download_title">Télécharger le fichier</string>
     <string name="download_message">Voulez-vous télécharger %1$s ?</string>
     <string name="download_positive">Télécharger</string>
+    <string name="desktop_shortcuts_title">Raccourcis du bureau</string>
     <string name="background_shortcuts_title">Raccourcis d\'arrière-plan</string>
     <string name="background_shortcuts_save_action">Sauvegarder</string>
     <string name="background_shortcuts_notification_channel">Gérer les raccourcis d\'arrière-plan</string>
@@ -66,6 +68,10 @@
     <string name="pref_cookie_clear_done">Tous les cookies ont été effacés</string>
     <string name="pref_do_not_track_title">Ne pas me pister</string>
     <string name="pref_do_not_track_summary">Envoyer une requête \"ne pas me pister\" aux sites web que vous visitez</string>
+    <string name="pref_web_debugging_title">Débogage Web</string>
+    <string name="pref_web_debugging_summary">Autoriser l\'inspection des pages web avec chrome://inspect via le débogage USB</string>
+    <string name="pref_fullscreen_shortcuts_title">Raccourcis en plein écran</string>
+    <string name="pref_fullscreen_shortcuts_summary">Forcer l\'ouverture des raccourcis en mode plein écran</string>
     <string name="pref_suggestions_provider">Fournisseur de suggestions</string>
     <string name="pref_reach_mode_title">Mode Accès simplifié</string>
     <string name="pref_reach_mode_summary">Modifier l\'emplacement des éléments de l\'interface pour faciliter l\'utilisation à une main</string>
