@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2017-2025 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">瀏覽器</string>
+    <string name="url_bar_more">更多</string>
+    <string name="url_bar_search_cancel">取消搜尋</string>
+    <string name="url_bar_search_clear">清除搜尋</string>
+    <string name="menu_refresh">重新整理頁面</string>
+    <string name="menu_fav_add">加入我的最愛</string>
+    <string name="menu_shortcut">新增捷徑</string>
+    <string name="menu_settings">設定</string>
+    <string name="menu_in_new_tab">在新分頁中開啟</string>
+    <string name="menu_search">在頁面中尋找</string>
+    <string name="background_shortcuts_save_action">儲存</string>
+    <plurals name="background_shortcuts_notification_content">
+        <item quantity="other">%1$d 個程序正在執行</item>
+    </plurals>
+    <string name="settings_title">設定</string>
+    <string name="pref_start_page">首頁</string>
+    <string name="pref_start_page_autoload_enabled">已啟用</string>
+    <string name="pref_start_page_autoload_disabled">已停用</string>
+    <string name="pref_start_page_dialog_title">選擇首頁</string>
+    <string name="pref_start_page_dialog_message">輸入首頁網址</string>
+    <string name="pref_start_page_dialog_reset">重設</string>
+    <string name="pref_looklock_summary">防止其他應用程式讀取瀏覽器內容</string>
+    <string name="pref_dynamic_popup_summary">允許 JavaScript 在沒有使用者互動的情況下開啟彈出視窗</string>
+    <string name="pref_reach_mode_title">單手模式</string>
+    <string name="pref_reach_mode_summary">重新舖排使用介面以便單手使用</string>
+    <string name="history_title">歷史紀錄</string>
+    <string name="history_empty">此處尚無內容，上網瀏覽後即可在此查看您的瀏覽記錄。</string>
+    <string name="history_date_format">EEEE MMMM dd yyyy, HH:mm</string>
+    <string name="history_delete_title">清除歷史記錄</string>
+    <string name="history_delete_message">您即將刪除所有歷史記錄，此操作無法復原。確定繼續嗎？</string>
+    <string name="history_delete_positive">清除</string>
+    <string name="history_deleting_message">正在清除歷史記錄\u2026</string>
+    <string name="history_snackbar_item_deleted">項目已刪除</string>
+    <string name="history_snackbar_item_deleted_message">復原</string>
+    <string name="favorite_title">我的最愛</string>
+    <string name="favorite_added">已加入我的最愛</string>
+    <string name="favorite_empty">此處尚無內容，新增喜愛連結後即可在此查看</string>
+    <string name="favorite_edit_dialog_title">編輯我的最愛</string>
+    <string name="favorite_edit_title">標題</string>
+    <string name="favorite_edit_url">網址</string>
+    <string name="favorite_edit_positive">編輯</string>
+    <string name="favorite_edit_delete">刪除</string>
+    <string name="favorite_edit_error">請輸入有效網址</string>
+    <string name="error_no_activity_found">沒有應用程式可以處理此連結</string>
+    <string name="auth_dialog_title">需要身份驗證</string>
+    <string name="auth_dialog_username">使用者名稱：</string>
+    <string name="auth_dialog_password">密碼：</string>
+    <string name="auth_dialog_detail">%1$s 需要使用者名稱與密碼。</string>
+    <string name="auth_dialog_login">登入</string>
+    <string name="shortcut_new_incognito_tab">新無痕式分頁</string>
+    <string name="suggestions_provider_none">無</string>
+    <string name="search_bar_hint">搜尋</string>
+    <string name="ssl_cert_dialog_trust">信任</string>
+    <string name="ssl_cert_dialog_trusted">連線安全</string>
+    <string name="ssl_cert_dialog_dismiss">忽略</string>
+    <string name="ssl_error_untrusted">此憑證並非由受信任的憑證機構簽發。</string>
+    <string name="ssl_error_mismatch">網站名稱與憑證上的名稱不相符。</string>
+    <string name="ssl_error_expired">此憑證已過期。</string>
+    <string name="ssl_error_not_yet_valid">此憑證尚未生效。</string>
+    <string name="ssl_error_date_invalid">此憑證日期無效。</string>
+    <string name="ssl_error_invalid">此憑證無效。</string>
+    <string name="ssl_error_unknown">未知的憑證錯誤。</string>
+    <string name="location_dialog_message">%1$s 想使用您的位置資訊。</string>
+    <string name="location_dialog_allow">允許</string>
+    <string name="location_dialog_block">封鎖</string>
+    <string name="location_dialog_cancel">暫時拒絕</string>
+    <string name="protected_media_dialog_grant">允許</string>
+    <string name="protected_media_dialog_deny">拒絕</string>
+    <string name="media_session_destroy_action">停止</string>
+</resources>
